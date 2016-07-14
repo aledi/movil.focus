@@ -1,1 +1,0 @@
- const unsigned char Alamofire_OSX_TestsVersionString[] __attribute__ ((used)) = "@(#)PROGRAM:Alamofire OSX Tests  PROJECT:Alamofire-1" "\n"; const double Alamofire_OSX_TestsVersionNumber __attribute__ ((used)) = (double)1.;
