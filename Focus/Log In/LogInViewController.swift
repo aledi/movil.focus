@@ -29,7 +29,7 @@ class LogInViewController: UIViewController {
     }
 
     @IBAction func logIn(sender: AnyObject) {
-        let url = "http://localhost:8888/focus/api/controller.php"
+        let url = "http://ec2-50-112-177-234.us-west-2.compute.amazonaws.com/focus/api/controller.php"
         let parameters: [String : AnyObject] = [
             "action" : "PANELISTA_LOG_IN",
             "email" : self.emailText.text!,
