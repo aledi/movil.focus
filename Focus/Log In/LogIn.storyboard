@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ysr-db-x1i">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Log In View Controller-->
+        <scene sceneID="baF-ou-RKA">
+            <objects>
+                <viewController id="ysr-db-x1i" customClass="LogInViewController" customModule="Focus" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="68T-V8-yji"/>
+                        <viewControllerLayoutGuide type="bottom" id="zcp-px-vSQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="K0m-YH-NTU">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jdm-e8-RL1">
+                                <rect key="frame" x="255" y="328" width="91" height="30"/>
+                                <state key="normal" title="Iniciar Sesión">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="logIn:" destination="ysr-db-x1i" eventType="touchUpInside" id="uc1-BH-FjH"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Correo Electrónico" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OHL-LD-am2">
+                                <rect key="frame" x="200" y="235" width="200" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="eLG-th-LM2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" returnKeyType="next"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Contraseña" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hop-9n-rE9">
+                                <rect key="frame" x="200" y="273" width="200" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="go" secureTextEntry="YES"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="HrD-nK-eIg">
+                                <rect key="frame" x="225" y="95" width="150" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="K0A-25-Ze0"/>
+                                    <constraint firstAttribute="height" constant="50" id="dRv-bC-IaW"/>
+                                </constraints>
+                            </imageView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feedback" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lrV-2M-kPf">
+                                <rect key="frame" x="262" y="398" width="76" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.4431372549" green="0.77647058820000003" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="lrV-2M-kPf" firstAttribute="top" secondItem="jdm-e8-RL1" secondAttribute="bottom" constant="40" id="6Nq-1s-Qlo"/>
+                            <constraint firstItem="OHL-LD-am2" firstAttribute="top" secondItem="HrD-nK-eIg" secondAttribute="bottom" constant="90" id="AhU-bo-Axs"/>
+                            <constraint firstItem="Hop-9n-rE9" firstAttribute="centerX" secondItem="K0m-YH-NTU" secondAttribute="centerX" id="Qsb-o4-oMU"/>
+                            <constraint firstItem="Hop-9n-rE9" firstAttribute="top" secondItem="OHL-LD-am2" secondAttribute="bottom" constant="8" id="VMe-h4-U0D"/>
+                            <constraint firstItem="lrV-2M-kPf" firstAttribute="centerX" secondItem="K0m-YH-NTU" secondAttribute="centerX" id="WdS-Pk-Eq6"/>
+                            <constraint firstItem="jdm-e8-RL1" firstAttribute="centerX" secondItem="K0m-YH-NTU" secondAttribute="centerX" id="fce-Zp-mgn"/>
+                            <constraint firstItem="jdm-e8-RL1" firstAttribute="top" secondItem="Hop-9n-rE9" secondAttribute="bottom" constant="25" id="gOC-2w-DjC"/>
+                            <constraint firstItem="HrD-nK-eIg" firstAttribute="centerX" secondItem="K0m-YH-NTU" secondAttribute="centerX" id="gfe-NT-UAs"/>
+                            <constraint firstItem="HrD-nK-eIg" firstAttribute="top" secondItem="68T-V8-yji" secondAttribute="bottom" constant="75" id="nyc-g3-Hdm"/>
+                            <constraint firstItem="OHL-LD-am2" firstAttribute="centerX" secondItem="K0m-YH-NTU" secondAttribute="centerX" id="o2D-Lr-c3y"/>
+                            <constraint firstItem="Hop-9n-rE9" firstAttribute="trailing" secondItem="OHL-LD-am2" secondAttribute="trailing" id="sCz-nQ-qx4"/>
+                            <constraint firstItem="Hop-9n-rE9" firstAttribute="leading" secondItem="OHL-LD-am2" secondAttribute="leading" id="tlB-eg-YSm"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Qsb-o4-oMU"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="emailText" destination="OHL-LD-am2" id="YNY-aV-bnz"/>
+                        <outlet property="feedbackLabel" destination="lrV-2M-kPf" id="Eyz-CA-LkS"/>
+                        <outlet property="passwordText" destination="Hop-9n-rE9" id="ppS-jM-WiJ"/>
+                        <segue destination="mbI-nn-iWz" kind="presentation" identifier="logIn" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="hT8-5g-RVL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Bu-P2-kkP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="434" y="330"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="IYc-pV-7BJ">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="mbI-nn-iWz" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VlO-gk-gbq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="938" y="330"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Logo" width="150" height="41"/>
+    </resources>
+</document>

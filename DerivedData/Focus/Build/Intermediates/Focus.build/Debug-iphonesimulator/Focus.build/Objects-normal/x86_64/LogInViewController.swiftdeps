@@ -1,0 +1,450 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "LogInViewController"
+provides-nominal:
+- "C5Focus19LogInViewController"
+provides-member:
+- ["C5Focus19LogInViewController", ""]
+provides-dynamic-lookup:
+- "passwordText"
+- "logIn"
+- "emailText"
+- "feedbackLabel"
+- "didFinishRequest"
+depends-top-level:
+- "NSDictionary"
+- "UITextField"
+- !private "BooleanLiteralType"
+- "UIViewController"
+- "AnyObject"
+- "UILabel"
+- !private "=="
+- !private "Dictionary"
+- !private "StringLiteralType"
+- !private "print"
+- "LogInViewController"
+- !private "String"
+- !private "Alamofire"
+- !private "Int"
+depends-member:
+- !private ["Ps9AnyObject", "Alamofire"]
+- !private ["Ps9AnyObject", "appDelegate"]
+- !private ["Ps9AnyObject", "deinit"]
+- ["Ps9AnyObject", "didFinishRequest"]
+- !private ["Ps9AnyObject", "email"]
+- ["Ps9AnyObject", "emailText"]
+- ["Ps9AnyObject", "feedbackLabel"]
+- !private ["Ps9AnyObject", "hidden"]
+- !private ["Ps9AnyObject", "id"]
+- ["Ps9AnyObject", "init"]
+- ["Ps9AnyObject", "logIn"]
+- !private ["Ps9AnyObject", "nombre"]
+- !private ["Ps9AnyObject", "objectForKey"]
+- ["Ps9AnyObject", "passwordText"]
+- !private ["Ps9AnyObject", "performSegueWithIdentifier"]
+- !private ["Ps9AnyObject", "print"]
+- !private ["Ps9AnyObject", "responseJSON"]
+- !private ["Ps9AnyObject", "text"]
+- !private ["Ps9AnyObject", "user"]
+- !private ["Ps9AnyObject", "validate"]
+- ["Ps9AnyObject", ""]
+- !private ["C5Focus11AppDelegate", "user"]
+- !private ["Sb", "_getBuiltinLogicValue"]
+- !private ["Ps25BooleanLiteralConvertible", "_getBuiltinLogicValue"]
+- !private ["Ps11BooleanType", "_getBuiltinLogicValue"]
+- !private ["Ps11CVarArgType", "Alamofire"]
+- !private ["Ps11CVarArgType", "appDelegate"]
+- ["Ps11CVarArgType", "didFinishRequest"]
+- ["Ps11CVarArgType", "emailText"]
+- ["Ps11CVarArgType", "feedbackLabel"]
+- !private ["Ps11CVarArgType", "hidden"]
+- ["Ps11CVarArgType", "init"]
+- ["Ps11CVarArgType", "logIn"]
+- !private ["Ps11CVarArgType", "objectForKey"]
+- ["Ps11CVarArgType", "passwordText"]
+- !private ["Ps11CVarArgType", "performSegueWithIdentifier"]
+- !private ["Ps11CVarArgType", "print"]
+- !private ["Ps11CVarArgType", "text"]
+- !private ["Ps11CVarArgType", "user"]
+- ["Ps11CVarArgType", ""]
+- !private ["Ps14CollectionType", "Key"]
+- !private ["Ps14CollectionType", "Value"]
+- !private ["Ps28CustomDebugStringConvertible", "Alamofire"]
+- !private ["Ps28CustomDebugStringConvertible", "Failure"]
+- !private ["Ps28CustomDebugStringConvertible", "Key"]
+- !private ["Ps28CustomDebugStringConvertible", "Success"]
+- !private ["Ps28CustomDebugStringConvertible", "Value"]
+- !private ["Ps28CustomDebugStringConvertible", "appDelegate"]
+- ["Ps28CustomDebugStringConvertible", "didFinishRequest"]
+- ["Ps28CustomDebugStringConvertible", "emailText"]
+- ["Ps28CustomDebugStringConvertible", "feedbackLabel"]
+- !private ["Ps28CustomDebugStringConvertible", "hidden"]
+- ["Ps28CustomDebugStringConvertible", "init"]
+- ["Ps28CustomDebugStringConvertible", "logIn"]
+- !private ["Ps28CustomDebugStringConvertible", "objectForKey"]
+- ["Ps28CustomDebugStringConvertible", "passwordText"]
+- !private ["Ps28CustomDebugStringConvertible", "performSegueWithIdentifier"]
+- !private ["Ps28CustomDebugStringConvertible", "print"]
+- !private ["Ps28CustomDebugStringConvertible", "responseJSON"]
+- !private ["Ps28CustomDebugStringConvertible", "result"]
+- !private ["Ps28CustomDebugStringConvertible", "text"]
+- !private ["Ps28CustomDebugStringConvertible", "user"]
+- !private ["Ps28CustomDebugStringConvertible", "validate"]
+- ["Ps28CustomDebugStringConvertible", ""]
+- !private ["Ps23CustomStringConvertible", "Alamofire"]
+- !private ["Ps23CustomStringConvertible", "Failure"]
+- !private ["Ps23CustomStringConvertible", "Key"]
+- !private ["Ps23CustomStringConvertible", "Success"]
+- !private ["Ps23CustomStringConvertible", "Value"]
+- !private ["Ps23CustomStringConvertible", "_getBuiltinLogicValue"]
+- !private ["Ps23CustomStringConvertible", "appDelegate"]
+- ["Ps23CustomStringConvertible", "didFinishRequest"]
+- ["Ps23CustomStringConvertible", "emailText"]
+- ["Ps23CustomStringConvertible", "feedbackLabel"]
+- !private ["Ps23CustomStringConvertible", "hidden"]
+- ["Ps23CustomStringConvertible", "init"]
+- ["Ps23CustomStringConvertible", "logIn"]
+- !private ["Ps23CustomStringConvertible", "objectForKey"]
+- ["Ps23CustomStringConvertible", "passwordText"]
+- !private ["Ps23CustomStringConvertible", "performSegueWithIdentifier"]
+- !private ["Ps23CustomStringConvertible", "print"]
+- !private ["Ps23CustomStringConvertible", "responseJSON"]
+- !private ["Ps23CustomStringConvertible", "result"]
+- !private ["Ps23CustomStringConvertible", "text"]
+- !private ["Ps23CustomStringConvertible", "user"]
+- !private ["Ps23CustomStringConvertible", "validate"]
+- ["Ps23CustomStringConvertible", ""]
+- !private ["Vs10Dictionary", "Key"]
+- !private ["Vs10Dictionary", "Value"]
+- !private ["Ps28DictionaryLiteralConvertible", "Key"]
+- !private ["Ps28DictionaryLiteralConvertible", "Value"]
+- !private ["Ps28DictionaryLiteralConvertible", "objectForKey"]
+- !private ["Ps9Equatable", "Alamofire"]
+- !private ["Ps9Equatable", "POST"]
+- !private ["Ps9Equatable", "_getBuiltinLogicValue"]
+- !private ["Ps9Equatable", "appDelegate"]
+- ["Ps9Equatable", "didFinishRequest"]
+- ["Ps9Equatable", "emailText"]
+- ["Ps9Equatable", "feedbackLabel"]
+- !private ["Ps9Equatable", "hidden"]
+- ["Ps9Equatable", "init"]
+- ["Ps9Equatable", "logIn"]
+- !private ["Ps9Equatable", "objectForKey"]
+- ["Ps9Equatable", "passwordText"]
+- !private ["Ps9Equatable", "performSegueWithIdentifier"]
+- !private ["Ps9Equatable", "print"]
+- !private ["Ps9Equatable", "text"]
+- !private ["Ps9Equatable", "user"]
+- ["Ps9Equatable", ""]
+- !private ["Ps8Hashable", "Alamofire"]
+- !private ["Ps8Hashable", "POST"]
+- !private ["Ps8Hashable", "_getBuiltinLogicValue"]
+- !private ["Ps8Hashable", "appDelegate"]
+- ["Ps8Hashable", "didFinishRequest"]
+- ["Ps8Hashable", "emailText"]
+- ["Ps8Hashable", "feedbackLabel"]
+- !private ["Ps8Hashable", "hidden"]
+- ["Ps8Hashable", "init"]
+- ["Ps8Hashable", "logIn"]
+- !private ["Ps8Hashable", "objectForKey"]
+- ["Ps8Hashable", "passwordText"]
+- !private ["Ps8Hashable", "performSegueWithIdentifier"]
+- !private ["Ps8Hashable", "print"]
+- !private ["Ps8Hashable", "text"]
+- !private ["Ps8Hashable", "user"]
+- ["Ps8Hashable", ""]
+- !private ["Ps9Indexable", "Key"]
+- !private ["Ps9Indexable", "Value"]
+- !private ["C5Focus19LogInViewController", "Alamofire"]
+- ["C5Focus19LogInViewController", "AnyObject"]
+- !private ["C5Focus19LogInViewController", "Int"]
+- ["C5Focus19LogInViewController", "NSDictionary"]
+- !private ["C5Focus19LogInViewController", "String"]
+- ["C5Focus19LogInViewController", "UILabel"]
+- ["C5Focus19LogInViewController", "UITextField"]
+- !private ["C5Focus19LogInViewController", "appDelegate"]
+- ["C5Focus19LogInViewController", "deinit"]
+- ["C5Focus19LogInViewController", "didFinishRequest"]
+- ["C5Focus19LogInViewController", "emailText"]
+- ["C5Focus19LogInViewController", "feedbackLabel"]
+- ["C5Focus19LogInViewController", "init"]
+- ["C5Focus19LogInViewController", "logIn"]
+- ["C5Focus19LogInViewController", "passwordText"]
+- !private ["C5Focus19LogInViewController", "performSegueWithIdentifier"]
+- !private ["C5Focus19LogInViewController", "print"]
+- !private ["O9Alamofire6Method", "POST"]
+- !private ["PSo8NSCoding", "Alamofire"]
+- !private ["PSo8NSCoding", "appDelegate"]
+- ["PSo8NSCoding", "didFinishRequest"]
+- ["PSo8NSCoding", "emailText"]
+- ["PSo8NSCoding", "feedbackLabel"]
+- !private ["PSo8NSCoding", "hidden"]
+- ["PSo8NSCoding", "init"]
+- ["PSo8NSCoding", "logIn"]
+- !private ["PSo8NSCoding", "objectForKey"]
+- ["PSo8NSCoding", "passwordText"]
+- !private ["PSo8NSCoding", "performSegueWithIdentifier"]
+- !private ["PSo8NSCoding", "print"]
+- !private ["PSo8NSCoding", "text"]
+- ["PSo8NSCoding", ""]
+- !private ["PSo9NSCopying", "objectForKey"]
+- !private ["CSo12NSDictionary", "objectForKey"]
+- !private ["PSo26NSExtensionRequestHandling", "Alamofire"]
+- !private ["PSo26NSExtensionRequestHandling", "appDelegate"]
+- ["PSo26NSExtensionRequestHandling", "didFinishRequest"]
+- ["PSo26NSExtensionRequestHandling", "emailText"]
+- ["PSo26NSExtensionRequestHandling", "feedbackLabel"]
+- ["PSo26NSExtensionRequestHandling", "init"]
+- ["PSo26NSExtensionRequestHandling", "logIn"]
+- ["PSo26NSExtensionRequestHandling", "passwordText"]
+- !private ["PSo26NSExtensionRequestHandling", "performSegueWithIdentifier"]
+- !private ["PSo26NSExtensionRequestHandling", "print"]
+- ["PSo26NSExtensionRequestHandling", ""]
+- !private ["PSo17NSFastEnumeration", "objectForKey"]
+- !private ["PSo16NSMutableCopying", "objectForKey"]
+- !private ["CSo8NSObject", "Alamofire"]
+- ["CSo8NSObject", "AnyObject"]
+- !private ["CSo8NSObject", "Int"]
+- ["CSo8NSObject", "NSDictionary"]
+- !private ["CSo8NSObject", "String"]
+- ["CSo8NSObject", "UILabel"]
+- ["CSo8NSObject", "UITextField"]
+- !private ["CSo8NSObject", "appDelegate"]
+- ["CSo8NSObject", "didFinishRequest"]
+- ["CSo8NSObject", "emailText"]
+- ["CSo8NSObject", "feedbackLabel"]
+- !private ["CSo8NSObject", "hidden"]
+- ["CSo8NSObject", "init"]
+- ["CSo8NSObject", "logIn"]
+- !private ["CSo8NSObject", "objectForKey"]
+- ["CSo8NSObject", "passwordText"]
+- !private ["CSo8NSObject", "performSegueWithIdentifier"]
+- !private ["CSo8NSObject", "print"]
+- !private ["CSo8NSObject", "text"]
+- !private ["CSo8NSObject", "user"]
+- !private ["PSo16NSObjectProtocol", "Alamofire"]
+- !private ["PSo16NSObjectProtocol", "appDelegate"]
+- ["PSo16NSObjectProtocol", "didFinishRequest"]
+- ["PSo16NSObjectProtocol", "emailText"]
+- ["PSo16NSObjectProtocol", "feedbackLabel"]
+- !private ["PSo16NSObjectProtocol", "hidden"]
+- ["PSo16NSObjectProtocol", "init"]
+- ["PSo16NSObjectProtocol", "logIn"]
+- !private ["PSo16NSObjectProtocol", "objectForKey"]
+- ["PSo16NSObjectProtocol", "passwordText"]
+- !private ["PSo16NSObjectProtocol", "performSegueWithIdentifier"]
+- !private ["PSo16NSObjectProtocol", "print"]
+- !private ["PSo16NSObjectProtocol", "text"]
+- !private ["PSo16NSObjectProtocol", "user"]
+- ["PSo16NSObjectProtocol", ""]
+- !private ["PSo14NSSecureCoding", "objectForKey"]
+- !private ["Sq", "deinit"]
+- !private ["Ps16RawRepresentable", "POST"]
+- !private ["C9Alamofire7Request", "responseJSON"]
+- !private ["C9Alamofire7Request", "validate"]
+- !private ["V9Alamofire8Response", "result"]
+- !private ["O9Alamofire6Result", "Failure"]
+- !private ["O9Alamofire6Result", "Success"]
+- !private ["Ps12SequenceType", "Key"]
+- !private ["Ps12SequenceType", "Value"]
+- !private ["Ps12SequenceType", "objectForKey"]
+- !private ["SS", "deinit"]
+- !private ["PSo29UIAccessibilityIdentification", "hidden"]
+- !private ["PSo29UIAccessibilityIdentification", "text"]
+- !private ["PSo12UIAppearance", "hidden"]
+- !private ["PSo12UIAppearance", "text"]
+- !private ["PSo21UIAppearanceContainer", "Alamofire"]
+- !private ["PSo21UIAppearanceContainer", "appDelegate"]
+- ["PSo21UIAppearanceContainer", "didFinishRequest"]
+- ["PSo21UIAppearanceContainer", "emailText"]
+- ["PSo21UIAppearanceContainer", "feedbackLabel"]
+- !private ["PSo21UIAppearanceContainer", "hidden"]
+- ["PSo21UIAppearanceContainer", "init"]
+- ["PSo21UIAppearanceContainer", "logIn"]
+- ["PSo21UIAppearanceContainer", "passwordText"]
+- !private ["PSo21UIAppearanceContainer", "performSegueWithIdentifier"]
+- !private ["PSo21UIAppearanceContainer", "print"]
+- !private ["PSo21UIAppearanceContainer", "text"]
+- ["PSo21UIAppearanceContainer", ""]
+- !private ["PSo21UIApplicationDelegate", "user"]
+- !private ["PSo18UIContentContainer", "Alamofire"]
+- !private ["PSo18UIContentContainer", "appDelegate"]
+- ["PSo18UIContentContainer", "didFinishRequest"]
+- ["PSo18UIContentContainer", "emailText"]
+- ["PSo18UIContentContainer", "feedbackLabel"]
+- ["PSo18UIContentContainer", "init"]
+- ["PSo18UIContentContainer", "logIn"]
+- ["PSo18UIContentContainer", "passwordText"]
+- !private ["PSo18UIContentContainer", "performSegueWithIdentifier"]
+- !private ["PSo18UIContentContainer", "print"]
+- ["PSo18UIContentContainer", ""]
+- !private ["CSo9UIControl", "text"]
+- !private ["PSo17UICoordinateSpace", "hidden"]
+- !private ["PSo17UICoordinateSpace", "text"]
+- !private ["PSo13UIDynamicItem", "hidden"]
+- !private ["PSo13UIDynamicItem", "text"]
+- !private ["PSo18UIFocusEnvironment", "Alamofire"]
+- !private ["PSo18UIFocusEnvironment", "appDelegate"]
+- ["PSo18UIFocusEnvironment", "didFinishRequest"]
+- ["PSo18UIFocusEnvironment", "emailText"]
+- ["PSo18UIFocusEnvironment", "feedbackLabel"]
+- !private ["PSo18UIFocusEnvironment", "hidden"]
+- ["PSo18UIFocusEnvironment", "init"]
+- ["PSo18UIFocusEnvironment", "logIn"]
+- ["PSo18UIFocusEnvironment", "passwordText"]
+- !private ["PSo18UIFocusEnvironment", "performSegueWithIdentifier"]
+- !private ["PSo18UIFocusEnvironment", "print"]
+- !private ["PSo18UIFocusEnvironment", "text"]
+- ["PSo18UIFocusEnvironment", ""]
+- !private ["PSo10UIKeyInput", "text"]
+- !private ["CSo7UILabel", "hidden"]
+- !private ["CSo7UILabel", "text"]
+- !private ["CSo11UIResponder", "Alamofire"]
+- ["CSo11UIResponder", "AnyObject"]
+- !private ["CSo11UIResponder", "Int"]
+- ["CSo11UIResponder", "NSDictionary"]
+- !private ["CSo11UIResponder", "String"]
+- ["CSo11UIResponder", "UILabel"]
+- ["CSo11UIResponder", "UITextField"]
+- !private ["CSo11UIResponder", "appDelegate"]
+- ["CSo11UIResponder", "didFinishRequest"]
+- ["CSo11UIResponder", "emailText"]
+- ["CSo11UIResponder", "feedbackLabel"]
+- !private ["CSo11UIResponder", "hidden"]
+- ["CSo11UIResponder", "init"]
+- ["CSo11UIResponder", "logIn"]
+- ["CSo11UIResponder", "passwordText"]
+- !private ["CSo11UIResponder", "performSegueWithIdentifier"]
+- !private ["CSo11UIResponder", "print"]
+- !private ["CSo11UIResponder", "text"]
+- !private ["CSo11UIResponder", "user"]
+- !private ["PSo16UIStateRestoring", "Alamofire"]
+- !private ["PSo16UIStateRestoring", "appDelegate"]
+- ["PSo16UIStateRestoring", "didFinishRequest"]
+- ["PSo16UIStateRestoring", "emailText"]
+- ["PSo16UIStateRestoring", "feedbackLabel"]
+- ["PSo16UIStateRestoring", "init"]
+- ["PSo16UIStateRestoring", "logIn"]
+- ["PSo16UIStateRestoring", "passwordText"]
+- !private ["PSo16UIStateRestoring", "performSegueWithIdentifier"]
+- !private ["PSo16UIStateRestoring", "print"]
+- ["PSo16UIStateRestoring", ""]
+- !private ["CSo11UITextField", "text"]
+- !private ["PSo11UITextInput", "text"]
+- !private ["PSo17UITextInputTraits", "text"]
+- !private ["PSo18UITraitEnvironment", "Alamofire"]
+- !private ["PSo18UITraitEnvironment", "appDelegate"]
+- ["PSo18UITraitEnvironment", "didFinishRequest"]
+- ["PSo18UITraitEnvironment", "emailText"]
+- ["PSo18UITraitEnvironment", "feedbackLabel"]
+- !private ["PSo18UITraitEnvironment", "hidden"]
+- ["PSo18UITraitEnvironment", "init"]
+- ["PSo18UITraitEnvironment", "logIn"]
+- ["PSo18UITraitEnvironment", "passwordText"]
+- !private ["PSo18UITraitEnvironment", "performSegueWithIdentifier"]
+- !private ["PSo18UITraitEnvironment", "print"]
+- !private ["PSo18UITraitEnvironment", "text"]
+- ["PSo18UITraitEnvironment", ""]
+- !private ["CSo6UIView", "hidden"]
+- !private ["CSo6UIView", "text"]
+- !private ["CSo16UIViewController", "Alamofire"]
+- ["CSo16UIViewController", "AnyObject"]
+- !private ["CSo16UIViewController", "Int"]
+- ["CSo16UIViewController", "NSDictionary"]
+- !private ["CSo16UIViewController", "String"]
+- ["CSo16UIViewController", "UILabel"]
+- ["CSo16UIViewController", "UITextField"]
+- !private ["CSo16UIViewController", "appDelegate"]
+- ["CSo16UIViewController", "didFinishRequest"]
+- ["CSo16UIViewController", "emailText"]
+- ["CSo16UIViewController", "feedbackLabel"]
+- ["CSo16UIViewController", "init"]
+- ["CSo16UIViewController", "logIn"]
+- ["CSo16UIViewController", "passwordText"]
+- !private ["CSo16UIViewController", "performSegueWithIdentifier"]
+- !private ["CSo16UIViewController", "print"]
+- ["CSo16UIViewController", ""]
+- !private ["C5Focus4User", "email"]
+- !private ["C5Focus4User", "id"]
+- !private ["C5Focus4User", "nombre"]
+- !private ["Ps33_BuiltinBooleanLiteralConvertible", "_getBuiltinLogicValue"]
+- !private ["Ps21_ObjectiveCBridgeable", "Key"]
+- !private ["Ps21_ObjectiveCBridgeable", "Value"]
+- !private ["Ps21_ObjectiveCBridgeable", "_getBuiltinLogicValue"]
+- !private ["Ps12_Reflectable", "Key"]
+- !private ["Ps12_Reflectable", "Value"]
+- !private ["Ps12_Reflectable", "_getBuiltinLogicValue"]
+- !private ["Ps12_Reflectable", "hidden"]
+- !private ["Ps12_Reflectable", "objectForKey"]
+- !private ["Ps12_Reflectable", "text"]
+depends-nominal:
+- "Ps9AnyObject"
+- !private "C5Focus11AppDelegate"
+- !private "Sb"
+- !private "Ps25BooleanLiteralConvertible"
+- !private "Ps11BooleanType"
+- "Ps11CVarArgType"
+- !private "Ps14CollectionType"
+- "Ps28CustomDebugStringConvertible"
+- "Ps23CustomStringConvertible"
+- !private "Vs10Dictionary"
+- !private "Ps28DictionaryLiteralConvertible"
+- "Ps9Equatable"
+- "Ps8Hashable"
+- !private "Ps9Indexable"
+- "C5Focus19LogInViewController"
+- !private "O9Alamofire6Method"
+- "PSo8NSCoding"
+- !private "PSo9NSCopying"
+- !private "CSo12NSDictionary"
+- "PSo26NSExtensionRequestHandling"
+- !private "PSo17NSFastEnumeration"
+- !private "PSo16NSMutableCopying"
+- "CSo8NSObject"
+- "PSo16NSObjectProtocol"
+- !private "PSo14NSSecureCoding"
+- !private "Sq"
+- !private "Ps16RawRepresentable"
+- !private "C9Alamofire7Request"
+- !private "V9Alamofire8Response"
+- !private "O9Alamofire6Result"
+- !private "Ps12SequenceType"
+- !private "SS"
+- !private "PSo29UIAccessibilityIdentification"
+- !private "PSo12UIAppearance"
+- "PSo21UIAppearanceContainer"
+- !private "PSo21UIApplicationDelegate"
+- "PSo18UIContentContainer"
+- !private "CSo9UIControl"
+- !private "PSo17UICoordinateSpace"
+- !private "PSo13UIDynamicItem"
+- "PSo18UIFocusEnvironment"
+- !private "PSo10UIKeyInput"
+- !private "CSo7UILabel"
+- "CSo11UIResponder"
+- "PSo16UIStateRestoring"
+- !private "CSo11UITextField"
+- !private "PSo11UITextInput"
+- !private "PSo17UITextInputTraits"
+- "PSo18UITraitEnvironment"
+- !private "CSo6UIView"
+- "CSo16UIViewController"
+- !private "C5Focus4User"
+- !private "Ps33_BuiltinBooleanLiteralConvertible"
+- !private "Ps21_ObjectiveCBridgeable"
+- !private "Ps12_Reflectable"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
+- "/Users/eduardocristerna/Desktop/Focus/DerivedData/Focus/Build/Products/Debug-iphonesimulator/Alamofire.framework/Modules/Alamofire.swiftmodule/x86_64.swiftmodule"
+- "/Users/eduardocristerna/Desktop/Focus/DerivedData/Focus/Build/Products/Debug-iphonesimulator/Alamofire.framework/Headers/Alamofire-Swift.h"
+- "/Users/eduardocristerna/Desktop/Focus/DerivedData/Focus/Build/Products/Debug-iphonesimulator/Alamofire.framework/Headers/Alamofire.h"
+- "/Users/eduardocristerna/Desktop/Focus/DerivedData/Focus/Build/Products/Debug-iphonesimulator/Alamofire.framework/Modules/module.modulemap"
+interface-hash: "6b8cc0753c059f6e1de7ce6aec7ade5f"

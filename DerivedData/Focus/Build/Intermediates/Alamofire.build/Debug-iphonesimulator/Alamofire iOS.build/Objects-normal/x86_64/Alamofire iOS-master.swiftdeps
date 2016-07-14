@@ -1,0 +1,21 @@
+version: "Apple Swift version 2.2 (swiftlang-703.0.18.8 clang-703.0.31)"
+options: "6941ca6a942464fc18eef7038c3e5261"
+build_time: [521776520, 919373000]
+inputs:
+  "/Users/eduardocristerna/Desktop/Focus/Alamofire/Source/Timeline.swift": [521776423, 0]
+  "/Users/eduardocristerna/Desktop/Focus/Alamofire/Source/Upload.swift": [521776423, 0]
+  "/Users/eduardocristerna/Desktop/Focus/Alamofire/Source/ParameterEncoding.swift": [521776423, 0]
+  "/Users/eduardocristerna/Desktop/Focus/Alamofire/Source/Request.swift": [521776423, 0]
+  "/Users/eduardocristerna/Desktop/Focus/Alamofire/Source/ResponseSerialization.swift": [521776423, 0]
+  "/Users/eduardocristerna/Desktop/Focus/Alamofire/Source/Error.swift": [521776423, 0]
+  "/Users/eduardocristerna/Desktop/Focus/Alamofire/Source/Manager.swift": [521776423, 0]
+  "/Users/eduardocristerna/Desktop/Focus/Alamofire/Source/Response.swift": [521776423, 0]
+  "/Users/eduardocristerna/Desktop/Focus/Alamofire/Source/Alamofire.swift": [521776423, 0]
+  "/Users/eduardocristerna/Desktop/Focus/Alamofire/Source/MultipartFormData.swift": [521776423, 0]
+  "/Users/eduardocristerna/Desktop/Focus/Alamofire/Source/ServerTrustPolicy.swift": [521776423, 0]
+  "/Users/eduardocristerna/Desktop/Focus/Alamofire/Source/NetworkReachabilityManager.swift": [521776423, 0]
+  "/Users/eduardocristerna/Desktop/Focus/Alamofire/Source/Stream.swift": [521776423, 0]
+  "/Users/eduardocristerna/Desktop/Focus/Alamofire/Source/Download.swift": [521776423, 0]
+  "/Users/eduardocristerna/Desktop/Focus/Alamofire/Source/Validation.swift": [521776423, 0]
+  "/Users/eduardocristerna/Desktop/Focus/Alamofire/Source/Notifications.swift": [521776423, 0]
+  "/Users/eduardocristerna/Desktop/Focus/Alamofire/Source/Result.swift": [521776423, 0]

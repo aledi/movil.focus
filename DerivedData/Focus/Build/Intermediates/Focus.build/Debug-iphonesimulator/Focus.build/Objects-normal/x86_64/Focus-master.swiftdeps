@@ -1,0 +1,9 @@
+version: "Apple Swift version 2.2 (swiftlang-703.0.18.8 clang-703.0.31)"
+options: "5ac5979588aec188e2593a809115e479"
+build_time: [521835873, 826903000]
+inputs:
+  "/Users/eduardocristerna/Desktop/Focus/Focus/Log In/LogInViewController.swift": [521783480, 0]
+  "/Users/eduardocristerna/Desktop/Focus/Focus/ViewController.swift": [521781954, 0]
+  "/Users/eduardocristerna/Desktop/Focus/Focus/AppDelegate.swift": [521774906, 0]
+  "/Users/eduardocristerna/Desktop/Focus/Focus/Model/User.swift": [521775447, 0]
+  "/Users/eduardocristerna/Desktop/Focus/Focus/Extensions/UIViewController.swift": [521781881, 0]
