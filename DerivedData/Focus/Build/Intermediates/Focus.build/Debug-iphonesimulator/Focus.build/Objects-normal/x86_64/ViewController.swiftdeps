@@ -8,9 +8,9 @@ provides-member:
 provides-dynamic-lookup:
 - "viewDidLoad"
 depends-top-level:
-- !private "UILabel"
-- "ViewController"
 - !private "StringLiteralType"
+- "ViewController"
+- !private "UILabel"
 - "UIViewController"
 depends-member:
 - !private ["Ps9AnyObject", "appDelegate"]
@@ -177,7 +177,6 @@ depends-member:
 - !private ["Vs6UInt32", "deinit"]
 - !private ["Vs6UInt64", "deinit"]
 - !private ["Vs5UInt8", "deinit"]
-- !private ["P9Alamofire20URLStringConvertible", "init"]
 - !private ["Sc", "deinit"]
 - !private ["Ps31UnicodeScalarLiteralConvertible", "init"]
 - !private ["C5Focus4User", "email"]
@@ -250,7 +249,6 @@ depends-nominal:
 - !private "Vs6UInt32"
 - !private "Vs6UInt64"
 - !private "Vs5UInt8"
-- !private "P9Alamofire20URLStringConvertible"
 - !private "Sc"
 - !private "Ps31UnicodeScalarLiteralConvertible"
 - !private "C5Focus4User"
@@ -272,7 +270,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
 - "/Users/eduardocristerna/Proyectos/Focus/DerivedData/Focus/Build/Products/Debug-iphonesimulator/Alamofire.framework/Modules/Alamofire.swiftmodule/x86_64.swiftmodule"
-- "/Users/eduardocristerna/Proyectos/Focus/DerivedData/Focus/Build/Products/Debug-iphonesimulator/Alamofire.framework/Headers/Alamofire-Swift.h"
-- "/Users/eduardocristerna/Proyectos/Focus/DerivedData/Focus/Build/Products/Debug-iphonesimulator/Alamofire.framework/Headers/Alamofire-umbrella.h"
-- "/Users/eduardocristerna/Proyectos/Focus/DerivedData/Focus/Build/Products/Debug-iphonesimulator/Alamofire.framework/Modules/module.modulemap"
 interface-hash: "cd5df55077c0660881d87637b2719c62"

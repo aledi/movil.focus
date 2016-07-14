@@ -1,6 +1,6 @@
 version: "Apple Swift version 2.2 (swiftlang-703.0.18.8 clang-703.0.31)"
 options: "9e66f1d8bb7b906009d0ba86eb162ffe"
-build_time: [521854533, 960745000]
+build_time: [521855355, 619371000]
 inputs:
   "/Users/eduardocristerna/Proyectos/Focus/Pods/Alamofire/Source/Alamofire.swift": [521854456, 0]
   "/Users/eduardocristerna/Proyectos/Focus/Pods/Alamofire/Source/Download.swift": [521854456, 0]

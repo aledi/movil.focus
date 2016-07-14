@@ -8,19 +8,19 @@ provides-member:
 provides-dynamic-lookup:
 depends-top-level:
 - "CustomStringConvertible"
-- "NSData"
-- "NSURLRequest"
+- !private "??"
 - "Response"
 - "NSHTTPURLResponse"
-- "Result"
-- "CustomDebugStringConvertible"
-- "String"
-- !private "UnicodeScalarType"
 - !private "StringLiteralType"
 - "ErrorType"
-- !private "??"
-- "Timeline"
+- "Result"
+- "NSData"
+- "CustomDebugStringConvertible"
+- "String"
 - !private "!="
+- !private "UnicodeScalarType"
+- "NSURLRequest"
+- "Timeline"
 depends-member:
 - !private ["Ps9AnyObject", "init"]
 - !private ["Ps9AnyObject", "length"]

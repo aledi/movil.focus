@@ -9,23 +9,22 @@ provides-dynamic-lookup:
 - "emailText"
 - "didFinishRequest"
 - "passwordText"
-- "feedbackLabel"
 - "logIn"
+- "feedbackLabel"
 depends-top-level:
+- "AnyObject"
 - "UILabel"
-- !private "BooleanLiteralType"
-- !private "Int"
+- !private "StringLiteralType"
 - "UITextField"
 - !private "String"
-- !private "Alamofire"
-- !private "StringLiteralType"
+- !private "Int"
 - !private "Dictionary"
-- "NSDictionary"
-- !private "print"
-- "LogInViewController"
-- "AnyObject"
-- "UIViewController"
 - !private "=="
+- !private "BooleanLiteralType"
+- !private "Alamofire"
+- "NSDictionary"
+- "LogInViewController"
+- "UIViewController"
 depends-member:
 - !private ["Ps9AnyObject", "Alamofire"]
 - !private ["Ps9AnyObject", "appDelegate"]
@@ -42,11 +41,8 @@ depends-member:
 - !private ["Ps9AnyObject", "objectForKey"]
 - ["Ps9AnyObject", "passwordText"]
 - !private ["Ps9AnyObject", "performSegueWithIdentifier"]
-- !private ["Ps9AnyObject", "print"]
-- !private ["Ps9AnyObject", "responseJSON"]
 - !private ["Ps9AnyObject", "text"]
 - !private ["Ps9AnyObject", "user"]
-- !private ["Ps9AnyObject", "validate"]
 - ["Ps9AnyObject", ""]
 - !private ["C5Focus11AppDelegate", "user"]
 - !private ["Sb", "_getBuiltinLogicValue"]
@@ -63,16 +59,13 @@ depends-member:
 - !private ["Ps11CVarArgType", "objectForKey"]
 - ["Ps11CVarArgType", "passwordText"]
 - !private ["Ps11CVarArgType", "performSegueWithIdentifier"]
-- !private ["Ps11CVarArgType", "print"]
 - !private ["Ps11CVarArgType", "text"]
 - !private ["Ps11CVarArgType", "user"]
 - ["Ps11CVarArgType", ""]
 - !private ["Ps14CollectionType", "Key"]
 - !private ["Ps14CollectionType", "Value"]
 - !private ["Ps28CustomDebugStringConvertible", "Alamofire"]
-- !private ["Ps28CustomDebugStringConvertible", "Failure"]
 - !private ["Ps28CustomDebugStringConvertible", "Key"]
-- !private ["Ps28CustomDebugStringConvertible", "Success"]
 - !private ["Ps28CustomDebugStringConvertible", "Value"]
 - !private ["Ps28CustomDebugStringConvertible", "appDelegate"]
 - ["Ps28CustomDebugStringConvertible", "didFinishRequest"]
@@ -84,17 +77,11 @@ depends-member:
 - !private ["Ps28CustomDebugStringConvertible", "objectForKey"]
 - ["Ps28CustomDebugStringConvertible", "passwordText"]
 - !private ["Ps28CustomDebugStringConvertible", "performSegueWithIdentifier"]
-- !private ["Ps28CustomDebugStringConvertible", "print"]
-- !private ["Ps28CustomDebugStringConvertible", "responseJSON"]
-- !private ["Ps28CustomDebugStringConvertible", "result"]
 - !private ["Ps28CustomDebugStringConvertible", "text"]
 - !private ["Ps28CustomDebugStringConvertible", "user"]
-- !private ["Ps28CustomDebugStringConvertible", "validate"]
 - ["Ps28CustomDebugStringConvertible", ""]
 - !private ["Ps23CustomStringConvertible", "Alamofire"]
-- !private ["Ps23CustomStringConvertible", "Failure"]
 - !private ["Ps23CustomStringConvertible", "Key"]
-- !private ["Ps23CustomStringConvertible", "Success"]
 - !private ["Ps23CustomStringConvertible", "Value"]
 - !private ["Ps23CustomStringConvertible", "_getBuiltinLogicValue"]
 - !private ["Ps23CustomStringConvertible", "appDelegate"]
@@ -107,12 +94,8 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "objectForKey"]
 - ["Ps23CustomStringConvertible", "passwordText"]
 - !private ["Ps23CustomStringConvertible", "performSegueWithIdentifier"]
-- !private ["Ps23CustomStringConvertible", "print"]
-- !private ["Ps23CustomStringConvertible", "responseJSON"]
-- !private ["Ps23CustomStringConvertible", "result"]
 - !private ["Ps23CustomStringConvertible", "text"]
 - !private ["Ps23CustomStringConvertible", "user"]
-- !private ["Ps23CustomStringConvertible", "validate"]
 - ["Ps23CustomStringConvertible", ""]
 - !private ["Vs10Dictionary", "Key"]
 - !private ["Vs10Dictionary", "Value"]
@@ -120,7 +103,6 @@ depends-member:
 - !private ["Ps28DictionaryLiteralConvertible", "Value"]
 - !private ["Ps28DictionaryLiteralConvertible", "objectForKey"]
 - !private ["Ps9Equatable", "Alamofire"]
-- !private ["Ps9Equatable", "POST"]
 - !private ["Ps9Equatable", "_getBuiltinLogicValue"]
 - !private ["Ps9Equatable", "appDelegate"]
 - ["Ps9Equatable", "didFinishRequest"]
@@ -132,12 +114,10 @@ depends-member:
 - !private ["Ps9Equatable", "objectForKey"]
 - ["Ps9Equatable", "passwordText"]
 - !private ["Ps9Equatable", "performSegueWithIdentifier"]
-- !private ["Ps9Equatable", "print"]
 - !private ["Ps9Equatable", "text"]
 - !private ["Ps9Equatable", "user"]
 - ["Ps9Equatable", ""]
 - !private ["Ps8Hashable", "Alamofire"]
-- !private ["Ps8Hashable", "POST"]
 - !private ["Ps8Hashable", "_getBuiltinLogicValue"]
 - !private ["Ps8Hashable", "appDelegate"]
 - ["Ps8Hashable", "didFinishRequest"]
@@ -149,7 +129,6 @@ depends-member:
 - !private ["Ps8Hashable", "objectForKey"]
 - ["Ps8Hashable", "passwordText"]
 - !private ["Ps8Hashable", "performSegueWithIdentifier"]
-- !private ["Ps8Hashable", "print"]
 - !private ["Ps8Hashable", "text"]
 - !private ["Ps8Hashable", "user"]
 - ["Ps8Hashable", ""]
@@ -171,8 +150,6 @@ depends-member:
 - ["C5Focus19LogInViewController", "logIn"]
 - ["C5Focus19LogInViewController", "passwordText"]
 - !private ["C5Focus19LogInViewController", "performSegueWithIdentifier"]
-- !private ["C5Focus19LogInViewController", "print"]
-- !private ["O9Alamofire6Method", "POST"]
 - !private ["PSo8NSCoding", "Alamofire"]
 - !private ["PSo8NSCoding", "appDelegate"]
 - ["PSo8NSCoding", "didFinishRequest"]
@@ -184,7 +161,6 @@ depends-member:
 - !private ["PSo8NSCoding", "objectForKey"]
 - ["PSo8NSCoding", "passwordText"]
 - !private ["PSo8NSCoding", "performSegueWithIdentifier"]
-- !private ["PSo8NSCoding", "print"]
 - !private ["PSo8NSCoding", "text"]
 - ["PSo8NSCoding", ""]
 - !private ["PSo9NSCopying", "objectForKey"]
@@ -198,7 +174,6 @@ depends-member:
 - ["PSo26NSExtensionRequestHandling", "logIn"]
 - ["PSo26NSExtensionRequestHandling", "passwordText"]
 - !private ["PSo26NSExtensionRequestHandling", "performSegueWithIdentifier"]
-- !private ["PSo26NSExtensionRequestHandling", "print"]
 - ["PSo26NSExtensionRequestHandling", ""]
 - !private ["PSo17NSFastEnumeration", "objectForKey"]
 - !private ["PSo16NSMutableCopying", "objectForKey"]
@@ -219,7 +194,6 @@ depends-member:
 - !private ["CSo8NSObject", "objectForKey"]
 - ["CSo8NSObject", "passwordText"]
 - !private ["CSo8NSObject", "performSegueWithIdentifier"]
-- !private ["CSo8NSObject", "print"]
 - !private ["CSo8NSObject", "text"]
 - !private ["CSo8NSObject", "user"]
 - !private ["PSo16NSObjectProtocol", "Alamofire"]
@@ -233,18 +207,11 @@ depends-member:
 - !private ["PSo16NSObjectProtocol", "objectForKey"]
 - ["PSo16NSObjectProtocol", "passwordText"]
 - !private ["PSo16NSObjectProtocol", "performSegueWithIdentifier"]
-- !private ["PSo16NSObjectProtocol", "print"]
 - !private ["PSo16NSObjectProtocol", "text"]
 - !private ["PSo16NSObjectProtocol", "user"]
 - ["PSo16NSObjectProtocol", ""]
 - !private ["PSo14NSSecureCoding", "objectForKey"]
 - !private ["Sq", "deinit"]
-- !private ["Ps16RawRepresentable", "POST"]
-- !private ["C9Alamofire7Request", "responseJSON"]
-- !private ["C9Alamofire7Request", "validate"]
-- !private ["V9Alamofire8Response", "result"]
-- !private ["O9Alamofire6Result", "Failure"]
-- !private ["O9Alamofire6Result", "Success"]
 - !private ["Ps12SequenceType", "Key"]
 - !private ["Ps12SequenceType", "Value"]
 - !private ["Ps12SequenceType", "objectForKey"]
@@ -263,7 +230,6 @@ depends-member:
 - ["PSo21UIAppearanceContainer", "logIn"]
 - ["PSo21UIAppearanceContainer", "passwordText"]
 - !private ["PSo21UIAppearanceContainer", "performSegueWithIdentifier"]
-- !private ["PSo21UIAppearanceContainer", "print"]
 - !private ["PSo21UIAppearanceContainer", "text"]
 - ["PSo21UIAppearanceContainer", ""]
 - !private ["PSo21UIApplicationDelegate", "user"]
@@ -276,7 +242,6 @@ depends-member:
 - ["PSo18UIContentContainer", "logIn"]
 - ["PSo18UIContentContainer", "passwordText"]
 - !private ["PSo18UIContentContainer", "performSegueWithIdentifier"]
-- !private ["PSo18UIContentContainer", "print"]
 - ["PSo18UIContentContainer", ""]
 - !private ["CSo9UIControl", "text"]
 - !private ["PSo17UICoordinateSpace", "hidden"]
@@ -293,7 +258,6 @@ depends-member:
 - ["PSo18UIFocusEnvironment", "logIn"]
 - ["PSo18UIFocusEnvironment", "passwordText"]
 - !private ["PSo18UIFocusEnvironment", "performSegueWithIdentifier"]
-- !private ["PSo18UIFocusEnvironment", "print"]
 - !private ["PSo18UIFocusEnvironment", "text"]
 - ["PSo18UIFocusEnvironment", ""]
 - !private ["PSo10UIKeyInput", "text"]
@@ -315,7 +279,6 @@ depends-member:
 - ["CSo11UIResponder", "logIn"]
 - ["CSo11UIResponder", "passwordText"]
 - !private ["CSo11UIResponder", "performSegueWithIdentifier"]
-- !private ["CSo11UIResponder", "print"]
 - !private ["CSo11UIResponder", "text"]
 - !private ["CSo11UIResponder", "user"]
 - !private ["PSo16UIStateRestoring", "Alamofire"]
@@ -327,7 +290,6 @@ depends-member:
 - ["PSo16UIStateRestoring", "logIn"]
 - ["PSo16UIStateRestoring", "passwordText"]
 - !private ["PSo16UIStateRestoring", "performSegueWithIdentifier"]
-- !private ["PSo16UIStateRestoring", "print"]
 - ["PSo16UIStateRestoring", ""]
 - !private ["CSo11UITextField", "text"]
 - !private ["PSo11UITextInput", "text"]
@@ -342,7 +304,6 @@ depends-member:
 - ["PSo18UITraitEnvironment", "logIn"]
 - ["PSo18UITraitEnvironment", "passwordText"]
 - !private ["PSo18UITraitEnvironment", "performSegueWithIdentifier"]
-- !private ["PSo18UITraitEnvironment", "print"]
 - !private ["PSo18UITraitEnvironment", "text"]
 - ["PSo18UITraitEnvironment", ""]
 - !private ["CSo6UIView", "hidden"]
@@ -362,7 +323,6 @@ depends-member:
 - ["CSo16UIViewController", "logIn"]
 - ["CSo16UIViewController", "passwordText"]
 - !private ["CSo16UIViewController", "performSegueWithIdentifier"]
-- !private ["CSo16UIViewController", "print"]
 - ["CSo16UIViewController", ""]
 - !private ["C5Focus4User", "email"]
 - !private ["C5Focus4User", "id"]
@@ -393,7 +353,6 @@ depends-nominal:
 - "Ps8Hashable"
 - !private "Ps9Indexable"
 - "C5Focus19LogInViewController"
-- !private "O9Alamofire6Method"
 - "PSo8NSCoding"
 - !private "PSo9NSCopying"
 - !private "CSo12NSDictionary"
@@ -404,10 +363,6 @@ depends-nominal:
 - "PSo16NSObjectProtocol"
 - !private "PSo14NSSecureCoding"
 - !private "Sq"
-- !private "Ps16RawRepresentable"
-- !private "C9Alamofire7Request"
-- !private "V9Alamofire8Response"
-- !private "O9Alamofire6Result"
 - !private "Ps12SequenceType"
 - !private "SS"
 - !private "PSo29UIAccessibilityIdentification"
@@ -444,7 +399,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
 - "/Users/eduardocristerna/Proyectos/Focus/DerivedData/Focus/Build/Products/Debug-iphonesimulator/Alamofire.framework/Modules/Alamofire.swiftmodule/x86_64.swiftmodule"
-- "/Users/eduardocristerna/Proyectos/Focus/DerivedData/Focus/Build/Products/Debug-iphonesimulator/Alamofire.framework/Headers/Alamofire-Swift.h"
-- "/Users/eduardocristerna/Proyectos/Focus/DerivedData/Focus/Build/Products/Debug-iphonesimulator/Alamofire.framework/Headers/Alamofire-umbrella.h"
-- "/Users/eduardocristerna/Proyectos/Focus/DerivedData/Focus/Build/Products/Debug-iphonesimulator/Alamofire.framework/Modules/module.modulemap"
 interface-hash: "6b8cc0753c059f6e1de7ce6aec7ade5f"

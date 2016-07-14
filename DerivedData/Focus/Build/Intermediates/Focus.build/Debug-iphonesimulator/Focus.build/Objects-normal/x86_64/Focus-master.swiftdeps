@@ -1,9 +1,9 @@
 version: "Apple Swift version 2.2 (swiftlang-703.0.18.8 clang-703.0.31)"
 options: "efb00475a71f728be0e4186b423d4701"
-build_time: [521854627, 456381000]
+build_time: [521855361, 275534000]
 inputs:
-  "/Users/eduardocristerna/Proyectos/Focus/Focus/Log In/LogInViewController.swift": [521854625, 0]
-  "/Users/eduardocristerna/Proyectos/Focus/Focus/ViewController.swift": [521838782, 0]
-  "/Users/eduardocristerna/Proyectos/Focus/Focus/AppDelegate.swift": [521838782, 0]
-  "/Users/eduardocristerna/Proyectos/Focus/Focus/Model/User.swift": [521838782, 0]
-  "/Users/eduardocristerna/Proyectos/Focus/Focus/Extensions/UIViewController.swift": [521838782, 0]
+  "/Users/eduardocristerna/Proyectos/Focus/Focus/Log In/LogInViewController.swift": !dirty [521854625, 0]
+  "/Users/eduardocristerna/Proyectos/Focus/Focus/ViewController.swift": !dirty [521838782, 0]
+  "/Users/eduardocristerna/Proyectos/Focus/Focus/AppDelegate.swift": !dirty [521838782, 0]
+  "/Users/eduardocristerna/Proyectos/Focus/Focus/Model/User.swift": !dirty [521838782, 0]
+  "/Users/eduardocristerna/Proyectos/Focus/Focus/Extensions/UIViewController.swift": !dirty [521838782, 0]

@@ -6,23 +6,23 @@ provides-nominal:
 provides-member:
 - ["C5Focus11AppDelegate", ""]
 provides-dynamic-lookup:
-- "applicationDidBecomeActive"
-- "window"
-- "applicationWillResignActive"
-- "application"
-- "applicationWillTerminate"
 - "applicationDidEnterBackground"
+- "application"
+- "applicationWillResignActive"
+- "window"
+- "applicationDidBecomeActive"
+- "applicationWillTerminate"
 - "applicationWillEnterForeground"
 depends-top-level:
-- !private "BooleanLiteralType"
-- "User"
-- "NSObject"
-- "UIWindow"
-- "UIApplication"
-- "UIApplicationDelegate"
 - "Bool"
-- "UIResponder"
+- "User"
+- !private "BooleanLiteralType"
 - "AnyObject"
+- "UIWindow"
+- "NSObject"
+- "UIApplicationDelegate"
+- "UIApplication"
+- "UIResponder"
 - "AppDelegate"
 depends-member:
 - ["Ps9AnyObject", "User"]
@@ -249,7 +249,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
 - "/Users/eduardocristerna/Proyectos/Focus/DerivedData/Focus/Build/Products/Debug-iphonesimulator/Alamofire.framework/Modules/Alamofire.swiftmodule/x86_64.swiftmodule"
-- "/Users/eduardocristerna/Proyectos/Focus/DerivedData/Focus/Build/Products/Debug-iphonesimulator/Alamofire.framework/Headers/Alamofire-Swift.h"
-- "/Users/eduardocristerna/Proyectos/Focus/DerivedData/Focus/Build/Products/Debug-iphonesimulator/Alamofire.framework/Headers/Alamofire-umbrella.h"
-- "/Users/eduardocristerna/Proyectos/Focus/DerivedData/Focus/Build/Products/Debug-iphonesimulator/Alamofire.framework/Modules/module.modulemap"
 interface-hash: "7d939f647da60b0a2c8d44770d335d02"

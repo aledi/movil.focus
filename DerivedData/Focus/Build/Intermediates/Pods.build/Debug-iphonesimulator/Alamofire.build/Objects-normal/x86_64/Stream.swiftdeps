@@ -10,26 +10,26 @@ provides-member:
 - ["C9Alamofire7Manager", "stream"]
 - ["C9Alamofire7Manager", "stream"]
 provides-dynamic-lookup:
+- "streamTaskReadClosed"
+- "URLSession"
+- "URLSession"
+- "URLSession"
+- "URLSession"
 - "streamTaskBetterRouteDiscovered"
 - "streamTaskDidBecomeInputStream"
 - "streamTaskWriteClosed"
-- "URLSession"
-- "URLSession"
-- "URLSession"
-- "URLSession"
-- "streamTaskReadClosed"
 depends-top-level:
 - !private "dispatch_sync"
-- "NSURLSessionStreamDelegate"
-- "NSOutputStream"
-- "Int"
-- "NSInputStream"
-- "Manager"
 - "NSURLSessionStreamTask"
 - "NSNetService"
-- "Request"
-- "Void"
 - "NSURLSession"
+- "NSOutputStream"
+- "NSInputStream"
+- "Int"
+- "NSURLSessionStreamDelegate"
+- "Manager"
+- "Void"
+- "Request"
 - "String"
 depends-member:
 - !private ["Ps9AnyObject", "NetService"]
