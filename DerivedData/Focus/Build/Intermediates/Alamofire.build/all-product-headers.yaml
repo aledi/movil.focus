@@ -4,28 +4,28 @@
   'roots': [
     {
       'type': 'directory',
-      'name': "/Users/eduardocristerna/Desktop/Focus/DerivedData/Focus/Build/Products/Debug-iphonesimulator/Alamofire.framework/Headers",
+      'name': "/Users/eduardocristerna/Proyectos/Focus/DerivedData/Focus/Build/Products/Debug-iphonesimulator/Alamofire.framework/Headers",
       'contents': [
         {
           'type': 'file',
           'name': "Alamofire-Swift.h",
-          'external-contents': "/Users/eduardocristerna/Desktop/Focus/DerivedData/Focus/Build/Products/Debug-iphonesimulator/Alamofire.framework/Headers/Alamofire-Swift.h"
+          'external-contents': "/Users/eduardocristerna/Proyectos/Focus/DerivedData/Focus/Build/Products/Debug-iphonesimulator/Alamofire.framework/Headers/Alamofire-Swift.h"
         },
         {
           'type': 'file',
           'name': "Alamofire.h",
-          'external-contents': "/Users/eduardocristerna/Desktop/Focus/Alamofire/Source/Alamofire.h"
+          'external-contents': "/Users/eduardocristerna/Downloads/Alamofire-master/Source/Alamofire.h"
         }
       ]
     },
     {
       'type': 'directory',
-      'name': "/Users/eduardocristerna/Desktop/Focus/DerivedData/Focus/Build/Products/Debug-iphonesimulator/Alamofire.framework/Modules",
+      'name': "/Users/eduardocristerna/Proyectos/Focus/DerivedData/Focus/Build/Products/Debug-iphonesimulator/Alamofire.framework/Modules",
       'contents': [
         {
           'type': 'file',
           'name': "module.modulemap",
-          'external-contents': "/Users/eduardocristerna/Desktop/Focus/DerivedData/Focus/Build/Intermediates/Alamofire.build/Debug-iphonesimulator/Alamofire iOS.build/module.modulemap"
+          'external-contents': "/Users/eduardocristerna/Proyectos/Focus/DerivedData/Focus/Build/Intermediates/Alamofire.build/Debug-iphonesimulator/Alamofire iOS.build/module.modulemap"
         }
       ]
     }
