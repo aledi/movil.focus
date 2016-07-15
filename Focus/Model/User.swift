@@ -6,19 +6,20 @@
 //  Copyright © 2016 Eduardo Cristerna. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 class User {
     
-    var id: Int?
-    var email: String?
-    var nombre: String?
+    var id: Int
+    var email: String
+    var nombre: String
+    var paneles: [Panel]
     
     init(id: Int, email: String, nombre: String) {
         self.id = id
         self.email = email
         self.nombre = nombre
+        self.paneles = [Panel]()
     }
     
     static func saveUser(user: User) {
