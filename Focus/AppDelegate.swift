@@ -12,17 +12,9 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var user: User = User()
+    var user: User?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        
-//        let storyboard = UIStoryboard(name: "LogIn", bundle: NSBundle.mainBundle())
-//        let initialVC = storyboard.instantiateInitialViewController()
-//        
-//        // Set root view controller and make windows visible
-//        self.window?.rootViewController = initialVC
-//        self.window?.makeKeyAndVisible()
-        
         return true
     }
 
