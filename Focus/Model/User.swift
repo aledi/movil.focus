@@ -11,9 +11,9 @@ import UIKit
 
 class User {
     
-    var id: Int?
-    var email: String?
-    var nombre: String?
+    var id: Int
+    var email: String
+    var nombre: String
     
     init(id: Int, email: String, nombre: String) {
         self.id = id
@@ -24,6 +24,11 @@ class User {
     static func saveUser(user: User) {
         let delegate = UIApplication.sharedApplication().delegate as! AppDelegate
         delegate.user = user
+    }
+    
+    static var currentUser: User? {
+        let delegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        return delegate.user
     }
     
 }
