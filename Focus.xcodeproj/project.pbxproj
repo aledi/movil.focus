@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		400F4EF41D49B46500538BCD /* EncuestasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400F4EF31D49B46500538BCD /* EncuestasViewController.swift */; };
 		405313051D385ED10073751A /* Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405313041D385ED10073751A /* Controller.swift */; };
 		4053130A1D386EFA0073751A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 405313091D386EFA0073751A /* Main.storyboard */; };
 		4053130C1D386F370073751A /* PanelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4053130B1D386F370073751A /* PanelsViewController.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		400F4EF31D49B46500538BCD /* EncuestasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EncuestasViewController.swift; path = Main/EncuestasViewController.swift; sourceTree = "<group>"; };
 		405313041D385ED10073751A /* Controller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Controller.swift; path = Model/Controller.swift; sourceTree = "<group>"; };
 		405313091D386EFA0073751A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Main/Main.storyboard; sourceTree = "<group>"; };
 		4053130B1D386F370073751A /* PanelsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PanelsViewController.swift; path = Main/PanelsViewController.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 			children = (
 				405313091D386EFA0073751A /* Main.storyboard */,
 				4053130B1D386F370073751A /* PanelsViewController.swift */,
+				400F4EF31D49B46500538BCD /* EncuestasViewController.swift */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -281,6 +284,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				400F4EF41D49B46500538BCD /* EncuestasViewController.swift in Sources */,
 				40FF0DB01D371F4000ED8A64 /* LogInViewController.swift in Sources */,
 				40AFB76F1D49A3D800C0099A /* Encuesta.swift in Sources */,
 				40AFB76D1D49A25100C0099A /* Panel.swift in Sources */,
