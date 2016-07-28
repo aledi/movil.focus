@@ -16,7 +16,6 @@ class LogInViewController: UIViewController {
 
     @IBAction func logIn(sender: AnyObject) {
         let parameters: [String : AnyObject] = [
-            "action" : "PANELISTA_LOG_IN",
             "email" : self.emailText.text!,
             "password" : self.passwordText.text!
         ]

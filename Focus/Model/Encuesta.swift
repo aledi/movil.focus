@@ -1,23 +1,23 @@
 //
-//  Panel.swift
+//  Encuesta.swift
 //  Focus
 //
-//  Created by Eduardo Cristerna on 14/07/16.
+//  Created by Eduardo Cristerna on 27/07/16.
 //  Copyright © 2016 Eduardo Cristerna. All rights reserved.
 //
 
 import Foundation
-import UIKit
 
-class Panel {
+class Encuesta {
     
     var id: Int
     var nombre: String
     var fechaInicio: NSDate
     var fechaFin: NSDate
-    var encuestas: [Encuesta]?
+    var contestada: Bool
+    var preguntas: [Pregunta]?
     
-    init(id: Int, nombre: String, fechaInicio: String, fechaFin: String) {
+    init(id: Int, nombre: String, fechaInicio: String, fechaFin: String, contestada: Bool) {
         self.id = id
         self.nombre = nombre
         
@@ -26,11 +26,8 @@ class Panel {
         
         self.fechaInicio = dateFormatter.dateFromString(fechaInicio)!
         self.fechaFin = dateFormatter.dateFromString(fechaInicio)!
-    }
-    
-    static func savePaneles(paneles: [Panel]?) {
-        let delegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        delegate.paneles = paneles
+        
+        self.contestada = contestada
     }
     
 }
