@@ -16,12 +16,11 @@ class LogInViewController: UIViewController {
 
     @IBAction func logIn(sender: AnyObject) {
         let parameters: [String : AnyObject] = [
-            "action" : "PANELISTA_LOG_IN",
             "email" : self.emailText.text!,
             "password" : self.passwordText.text!
         ]
         
-        Controller.request(parameters, withSuccessHandler: self.successHandler, andErrorHandler: self.errorHandler)
+        Controller.requestForAction(.LOG_IN, withParameters: parameters, withSuccessHandler: self.successHandler, andErrorHandler: self.errorHandler)
     }
     
     func successHandler(response: NSDictionary) {

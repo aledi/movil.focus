@@ -6,7 +6,6 @@
 //  Copyright © 2016 Eduardo Cristerna. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 class User {

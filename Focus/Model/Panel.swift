@@ -2,7 +2,7 @@
 //  Panel.swift
 //  Focus
 //
-//  Created by Eduardo Cristerna on 27/07/16.
+//  Created by Eduardo Cristerna on 14/07/16.
 //  Copyright © 2016 Eduardo Cristerna. All rights reserved.
 //
 
