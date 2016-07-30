@@ -10,6 +10,8 @@ import UIKit
 
 class PanelsViewController: UITableViewController {
     
+    var paneles: [Panel]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -37,7 +39,7 @@ class PanelsViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.appDelegate().paneles?.count ?? 0
+        return self.paneles?.count ?? 0
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -45,10 +47,15 @@ class PanelsViewController: UITableViewController {
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "MMMM d, YYYY"
         
-        if let panel = self.appDelegate().paneles?[indexPath.row] {
+        if let panel = self.paneles?[indexPath.row] {
             (cell.viewWithTag(10) as! UILabel).text = panel.nombre
             (cell.viewWithTag(20) as! UILabel).text = dateFormatter.stringFromDate(panel.fechaInicio)
             (cell.viewWithTag(30) as! UILabel).text = dateFormatter.stringFromDate(panel.fechaFin)
+            
+            if (panel.encuestas?.count == 0) {
+                cell.accessoryType = .None
+                cell.selectionStyle = .None
+            }
         }
         
         return cell
@@ -56,27 +63,42 @@ class PanelsViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        let panel = self.appDelegate().paneles![indexPath.row]
-        self.performSegueWithIdentifier("showEncuestas", sender: panel)
+        let panel = self.paneles![indexPath.row]
+        
+        if (panel.encuestas?.count > 0) {
+            self.performSegueWithIdentifier("showEncuestas", sender: panel)
+            return
+        }
+        
+        let alertController = UIAlertController(
+            title: "No hay Encuestas",
+            message: "Este panel aún no cuenta con encuestas. Por favor, espere a que una encuesta sea habilitada.",
+            preferredStyle: .Alert
+        )
+        
+        alertController.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
+        
+        self.presentViewController(alertController, animated: true, completion: nil)
+        
     }
     
     // MARK: - Fetch
     
     func successHandler(response: NSDictionary) {
-        var paneles: [Panel] = [Panel]()
+        self.paneles = []
         
         if let panels = response["paneles"] as? [AnyObject] {
             for object in panels {
                 let panel = object as! NSDictionary
                 let newPanel = Panel(id: panel["id"] as! Int, nombre: panel["nombre"] as! String, fechaInicio: panel["fechaInicio"] as! String, fechaFin: panel["fechaFin"] as! String)
                 
-                var encuestas: [Encuesta] = [Encuesta]()
+                var encuestas: [Encuesta] = []
                 
                 for object2 in panel["encuestas"] as! [AnyObject] {
                     let survey = object2 as! NSDictionary
                     let newSurvey = Encuesta(id: survey["id"] as! Int, nombre: survey["nombre"] as! String, fechaInicio: survey["fechaInicio"] as! String, fechaFin: survey["fechaFin"] as! String, contestada: survey["contestada"] as! Bool)
                     
-                    var preguntas: [Pregunta] = [Pregunta]()
+                    var preguntas: [Pregunta] = []
                     
                     for object3 in survey["preguntas"] as! [AnyObject] {
                         let question = object3 as! NSDictionary
@@ -90,10 +112,10 @@ class PanelsViewController: UITableViewController {
                 }
                 
                 newPanel.encuestas = encuestas
-                paneles.append(newPanel)
+                self.paneles!.append(newPanel)
             }
             
-            self.appDelegate().paneles = paneles
+            self.appDelegate().paneles = self.paneles
             self.tableView.reloadData()
         }
     }
