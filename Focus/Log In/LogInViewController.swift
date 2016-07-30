@@ -28,6 +28,10 @@ class LogInViewController: UIViewController {
             if let id = response["id"] as? Int, email = response["email"] as? String, nombre = response["nombre"] as? String {
                 let user = User(id: id, email: email, nombre: nombre)
                 User.saveUser(user)
+                
+                if let user = User.currentUser {
+                    NSUserDefaults.saveUserDefaults(user)
+                }
             }
             
             self.performSegueWithIdentifier("logIn", sender: self)
