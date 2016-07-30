@@ -33,10 +33,34 @@ class EncuestasViewController: UITableViewController {
             (cell.viewWithTag(20) as! UILabel).text = dateFormatter.stringFromDate(encuesta.fechaInicio)
             (cell.viewWithTag(30) as! UILabel).text = dateFormatter.stringFromDate(encuesta.fechaFin)
             
-            cell.accessoryType = encuesta.contestada ? .Checkmark : .DisclosureIndicator
+            if (encuesta.contestada) {
+                cell.accessoryType = .Checkmark
+                cell.selectionStyle = .None
+            }
         }
         
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        let encuesta = self.encuestas![indexPath.row]
+        
+        if (!encuesta.contestada) {
+            // TODO: Responder encuesta
+            return
+        }
+        
+        let alertController = UIAlertController(
+            title: "Encuesta Contestada",
+            message: "Esta encuesta ya ha sido contestada. Solo puede responder una vez a la encuesta.",
+            preferredStyle: .Alert
+        )
+        
+        alertController.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
+        
+        self.presentViewController(alertController, animated: true, completion: nil)
+        
     }
     
 }
