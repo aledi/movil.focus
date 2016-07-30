@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MessageUI
 
 enum Sections: Int {
     case User
@@ -15,7 +16,7 @@ enum Sections: Int {
     case LogOut
 }
 
-class ProfileViewController: UITableViewController {
+class ProfileViewController: UITableViewController, MFMailComposeViewControllerDelegate {
     
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var emailLabel: UILabel!
@@ -53,12 +54,15 @@ class ProfileViewController: UITableViewController {
         }
     }
     
+    // MARK: - Selection
+    
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
         switch Sections(rawValue: indexPath.section)! {
         case .Contact:
-            break
+            indexPath.row == 0 ? self.sendEmail() : self.call()
+            return
         case .LogOut:
             let alertController = UIAlertController(
                 title: "Cerrar Sesión",
@@ -73,9 +77,60 @@ class ProfileViewController: UITableViewController {
             alertController.addAction(UIAlertAction(title: "Cancelar", style: .Cancel, handler: nil))
             
             self.presentViewController(alertController, animated: true, completion: nil)
+            
+            return
         default:
-            break
+            return
         }
+    }
+    
+    func call() {
+        if let phoneURL: NSURL = NSURL(string: "tel://\(phoneNumber)") {
+            if (UIApplication.sharedApplication().canOpenURL(phoneURL)) {
+                UIApplication.sharedApplication().openURL(phoneURL)
+            }
+        }
+    }
+    
+    func sendEmail() {
+        let mailComposeViewController = self.mailComposerViewController()
+        
+        if (MFMailComposeViewController.canSendMail()) {
+            self.presentViewController(mailComposeViewController, animated: true, completion: nil)
+        } else {
+            self.showSendMailErrorAlert()
+        }
+    }
+    
+    // MARK: - Helpers
+    
+    func showSendMailErrorAlert() {
+        let alertController = UIAlertController(
+            title: "Error",
+            message: "Su dispositivo parece no estar configurado para enviar correo.",
+            preferredStyle: .Alert
+        )
+        
+        alertController.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
+        
+        self.presentViewController(alertController, animated: true, completion: nil)
+    }
+    
+    func mailComposerViewController() -> MFMailComposeViewController {
+        let mailComposerViewController = MFMailComposeViewController()
+        
+        mailComposerViewController.mailComposeDelegate = self
+        mailComposerViewController.setToRecipients([email])
+        mailComposerViewController.setSubject("")
+        mailComposerViewController.setMessageBody("", isHTML: false)
+        
+        return mailComposerViewController
+    }
+    
+    // MARK: - MFMailComposeViewControllerDelegate
+    
+    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
+        controller.dismissViewControllerAnimated(true, completion: nil)
     }
     
 }

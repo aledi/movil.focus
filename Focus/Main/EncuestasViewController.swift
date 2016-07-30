@@ -33,7 +33,10 @@ class EncuestasViewController: UITableViewController {
             (cell.viewWithTag(20) as! UILabel).text = dateFormatter.stringFromDate(encuesta.fechaInicio)
             (cell.viewWithTag(30) as! UILabel).text = dateFormatter.stringFromDate(encuesta.fechaFin)
             
-            cell.accessoryType = encuesta.contestada ? .Checkmark : .DisclosureIndicator
+            if (encuesta.contestada) {
+                cell.accessoryType = .Checkmark
+                cell.selectionStyle = .None
+            }
         }
         
         return cell
