@@ -35,11 +35,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.user = storedUser
         
-        let storyboardName = "Main"
-        let storyboard = UIStoryboard(name: storyboardName, bundle: nil)
-        
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        self.window?.rootViewController = storyboard.instantiateInitialViewController()
+        self.window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
         self.window?.makeKeyAndVisible()
     }
     

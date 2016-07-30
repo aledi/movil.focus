@@ -63,7 +63,6 @@ class PanelsViewController: UITableViewController {
     
     @IBAction func logOut(sender: AnyObject) {
         NSUserDefaults.removeUserDefaults()
-        
         self.performSegueWithIdentifier("logOut", sender: nil)
     }
     
