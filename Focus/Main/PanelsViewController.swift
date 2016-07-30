@@ -55,15 +55,9 @@ class PanelsViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
         let panel = self.appDelegate().paneles![indexPath.row]
         self.performSegueWithIdentifier("showEncuestas", sender: panel)
-    }
-    
-    // MARK: - Actions
-    
-    @IBAction func logOut(sender: AnyObject) {
-        NSUserDefaults.removeUserDefaults()
-        self.performSegueWithIdentifier("logOut", sender: nil)
     }
     
     // MARK: - Fetch
