@@ -14,4 +14,14 @@ extension UIViewController {
         return UIApplication.sharedApplication().delegate as! AppDelegate
     }
     
+    func dismissSegueSourceViewController(segue: UIStoryboardSegue) {
+        if #available(iOS 9, *) {
+            return
+        }
+        
+        if (!segue.sourceViewController.isBeingDismissed()) {
+            segue.sourceViewController.dismissViewControllerAnimated(true, completion: nil)
+        }
+    }
+    
 }

@@ -12,6 +12,21 @@ class EncuestasViewController: UITableViewController {
 
     var encuestas: [Encuesta]?
     
+    // MARK: - Navigation
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        super.prepareForSegue(segue, sender: sender)
+        
+        if (segue.identifier == "answerEncuesta") {
+            let navigationController = segue.destinationViewController as! UINavigationController
+            (navigationController.topViewController as! PreguntasViewController).preguntas = (sender as! Encuesta).preguntas
+        }
+    }
+    
+    @IBAction func doneAnsweringEncuesta(segue: UIStoryboardSegue) {
+        segue.destinationViewController.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -47,7 +62,24 @@ class EncuestasViewController: UITableViewController {
         let encuesta = self.encuestas![indexPath.row]
         
         if (!encuesta.contestada) {
-            // TODO: Responder encuesta
+            let alertController = UIAlertController(
+                title: "Atención",
+                message: "Una vez iniciada la encuesta, deberá contestarla completamente. No se podrá salir y regresar de la encuesta, ni contestarla nuevamente.",
+                preferredStyle: .Alert
+            )
+            
+            alertController.addAction(UIAlertAction(title: "Responder", style: .Default, handler: { (action) in
+                let encuesta = self.encuestas![indexPath.row]
+                encuesta.contestada = true
+                
+                self.tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .None)
+                self.performSegueWithIdentifier("answerEncuesta", sender: encuesta)
+            }))
+            
+            alertController.addAction(UIAlertAction(title: "Cancelar", style: .Cancel, handler: nil))
+            
+            self.presentViewController(alertController, animated: true, completion: nil)
+            
             return
         }
         

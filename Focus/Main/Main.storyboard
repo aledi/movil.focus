@@ -321,7 +321,7 @@
         <scene sceneID="DEp-0h-wnp">
             <objects>
                 <navigationController title="Perfil" id="rxQ-el-cC7" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Perfil" id="SKm-Ta-N9I"/>
+                    <tabBarItem key="tabBarItem" title="Perfil" image="ProfileTabIcon" id="SKm-Ta-N9I"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="BjS-Og-Xd8">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -431,16 +431,27 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Encuestas" id="Ytz-E3-JSc"/>
+                    <connections>
+                        <segue destination="8lg-Jt-Xct" kind="presentation" identifier="answerEncuesta" id="pm3-pS-ZBW"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W3N-s9-UXJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1633" y="431"/>
         </scene>
+        <!--Preguntas-->
+        <scene sceneID="6Bg-JF-0IH">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Preguntas" id="8lg-Jt-Xct" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XuM-XE-AAN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2159.5" y="431"/>
+        </scene>
         <!--Paneles-->
         <scene sceneID="ZSG-rd-8tv">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="B0c-4w-wjZ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Paneles" id="Yeg-RG-XmL"/>
+                    <tabBarItem key="tabBarItem" title="Paneles" image="PanelesTabIcon" id="Yeg-RG-XmL"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="P2O-Oo-kQz">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -454,4 +465,8 @@
             <point key="canvasLocation" x="-5" y="431"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="PanelesTabIcon" width="30" height="30"/>
+        <image name="ProfileTabIcon" width="30" height="30"/>
+    </resources>
 </document>

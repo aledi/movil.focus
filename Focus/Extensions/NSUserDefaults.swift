@@ -14,6 +14,7 @@ extension NSUserDefaults {
         let defaults = NSUserDefaults.standardUserDefaults()
         
         defaults.setObject(user.id, forKey: "id")
+        defaults.setObject(user.username, forKey: "username")
         defaults.setObject(user.email, forKey: "email")
         defaults.setObject(user.nombre, forKey: "nombre")
         
@@ -23,17 +24,18 @@ extension NSUserDefaults {
     static func retreiveUserDefaults() -> User? {
         let defaults = NSUserDefaults.standardUserDefaults()
         
-        guard let id = defaults.objectForKey("id") as? Int, email = defaults.objectForKey("email") as? String, nombre = defaults.objectForKey("nombre") as? String else {
+        guard let id = defaults.objectForKey("id") as? Int, username = defaults.objectForKey("username") as? String, email = defaults.objectForKey("email") as? String, nombre = defaults.objectForKey("nombre") as? String else {
             return nil
         }
         
-        return User(id: id, email: email, nombre: nombre)
+        return User(id: id, username: username, email: email, nombre: nombre)
     }
     
     static func removeUserDefaults() {
         let defaults = NSUserDefaults.standardUserDefaults()
         
         defaults.removeObjectForKey("id")
+        defaults.removeObjectForKey("username")
         defaults.removeObjectForKey("email")
         defaults.removeObjectForKey("nombre")
         
