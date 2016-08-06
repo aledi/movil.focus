@@ -13,6 +13,7 @@
 		405313051D385ED10073751A /* Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405313041D385ED10073751A /* Controller.swift */; };
 		4053130A1D386EFA0073751A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 405313091D386EFA0073751A /* Main.storyboard */; };
 		4053130C1D386F370073751A /* PanelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4053130B1D386F370073751A /* PanelsViewController.swift */; };
+		40A8DC301D56801B0065B734 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A8DC2F1D56801B0065B734 /* RegistrationViewController.swift */; };
 		40AFB76D1D49A25100C0099A /* Panel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AFB76C1D49A25100C0099A /* Panel.swift */; };
 		40AFB76F1D49A3D800C0099A /* Encuesta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AFB76E1D49A3D800C0099A /* Encuesta.swift */; };
 		40AFB7711D49A50800C0099A /* Pregunta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AFB7701D49A50800C0099A /* Pregunta.swift */; };
@@ -48,6 +49,7 @@
 		405313041D385ED10073751A /* Controller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Controller.swift; path = Model/Controller.swift; sourceTree = "<group>"; };
 		405313091D386EFA0073751A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Main/Main.storyboard; sourceTree = "<group>"; };
 		4053130B1D386F370073751A /* PanelsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PanelsViewController.swift; path = Main/PanelsViewController.swift; sourceTree = "<group>"; };
+		40A8DC2F1D56801B0065B734 /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegistrationViewController.swift; path = "Log In/RegistrationViewController.swift"; sourceTree = "<group>"; };
 		40AFB76C1D49A25100C0099A /* Panel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Panel.swift; path = Model/Panel.swift; sourceTree = "<group>"; };
 		40AFB76E1D49A3D800C0099A /* Encuesta.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Encuesta.swift; path = Model/Encuesta.swift; sourceTree = "<group>"; };
 		40AFB7701D49A50800C0099A /* Pregunta.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Pregunta.swift; path = Model/Pregunta.swift; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 			children = (
 				40FF0DAD1D371DB600ED8A64 /* LogIn.storyboard */,
 				40FF0DAF1D371F4000ED8A64 /* LogInViewController.swift */,
+				40A8DC2F1D56801B0065B734 /* RegistrationViewController.swift */,
 			);
 			name = "Log In";
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 				40FF0DB01D371F4000ED8A64 /* LogInViewController.swift in Sources */,
 				40AFB76F1D49A3D800C0099A /* Encuesta.swift in Sources */,
 				40AFB76D1D49A25100C0099A /* Panel.swift in Sources */,
+				40A8DC301D56801B0065B734 /* RegistrationViewController.swift in Sources */,
 				40E7F9C01D4D353700BCD0DB /* NSUserDefaults.swift in Sources */,
 				40AFB7711D49A50800C0099A /* Pregunta.swift in Sources */,
 				40E7F9C21D4D5A9E00BCD0DB /* ProfileViewController.swift in Sources */,

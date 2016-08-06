@@ -11,11 +11,13 @@ import UIKit
 class User {
     
     var id: Int
+    var username: String
     var email: String
     var nombre: String
     
-    init(id: Int, email: String, nombre: String) {
+    init(id: Int, username: String, email: String, nombre: String) {
         self.id = id
+        self.username = username
         self.email = email
         self.nombre = nombre
     }

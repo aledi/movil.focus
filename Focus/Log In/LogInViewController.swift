@@ -10,13 +10,30 @@ import UIKit
 
 class LogInViewController: UIViewController {
     
-    @IBOutlet weak var emailText: UITextField!
-    @IBOutlet weak var passwordText: UITextField!
-    @IBOutlet weak var feedbackLabel: UILabel!
+    @IBOutlet var usernameText: UITextField!
+    @IBOutlet var passwordText: UITextField!
+    @IBOutlet var feedbackLabel: UILabel!
 
+    @IBAction func cancelRegistration(segue: UIStoryboardSegue) {
+        self.dismissSegueSourceViewController(segue)
+    }
+    
+    @IBAction func doneRegistration(segue: UIStoryboardSegue) {
+        self.dismissSegueSourceViewController(segue)
+        
+        self.usernameText.text = "Carlos"
+        self.passwordText.text = "pass"
+        
+        self.logInAttempt()
+    }
+    
     @IBAction func logIn(sender: AnyObject) {
+        self.logInAttempt()
+    }
+    
+    func logInAttempt() {
         let parameters: [String : AnyObject] = [
-            "email" : self.emailText.text!,
+            "username" : self.usernameText.text!,
             "password" : self.passwordText.text!
         ]
         
@@ -25,8 +42,8 @@ class LogInViewController: UIViewController {
     
     func successHandler(response: NSDictionary) {
         if (response["status"] as? String == "SUCCESS") {
-            if let id = response["id"] as? Int, email = response["email"] as? String, nombre = response["nombre"] as? String {
-                let user = User(id: id, email: email, nombre: nombre)
+            if let id = response["id"] as? Int, username = response["username"] as? String, email = response["email"] as? String, nombre = response["nombre"] as? String {
+                let user = User(id: id, username: username, email: email, nombre: nombre)
                 User.saveUser(user)
                 
                 if let user = User.currentUser {
