@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Log In View Controller-->
@@ -38,11 +39,11 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="logIn:" destination="ysr-db-x1i" eventType="touchUpInside" id="KJX-gI-shv"/>
+                                    <action selector="logInAttempt:" destination="ysr-db-x1i" eventType="touchUpInside" id="zDD-eG-sge"/>
                                 </connections>
                             </button>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feedback" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lpV-hI-lji">
-                                <rect key="frame" x="262" y="346" width="76" height="21"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feedback" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lpV-hI-lji">
+                                <rect key="frame" x="45" y="346" width="510" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -71,8 +72,10 @@
                         </subviews>
                         <color key="backgroundColor" red="0.4431372549" green="0.77647058820000003" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="lpV-hI-lji" firstAttribute="leading" secondItem="K0m-YH-NTU" secondAttribute="leadingMargin" constant="25" id="7q1-WR-Cft"/>
                             <constraint firstItem="lpV-hI-lji" firstAttribute="centerX" secondItem="K0m-YH-NTU" secondAttribute="centerX" id="CzZ-ec-JEg"/>
                             <constraint firstItem="Hur-U3-hBL" firstAttribute="centerX" secondItem="K0m-YH-NTU" secondAttribute="centerX" id="GK1-Ok-0sK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="lpV-hI-lji" secondAttribute="trailing" constant="25" id="MGc-gt-ciE"/>
                             <constraint firstItem="Xbh-et-kZ3" firstAttribute="centerX" secondItem="K0m-YH-NTU" secondAttribute="centerX" id="Qg5-Ns-w98"/>
                             <constraint firstItem="Hur-U3-hBL" firstAttribute="height" secondItem="aqX-M4-lpv" secondAttribute="height" id="SWk-hR-SdW"/>
                             <constraint firstItem="lpV-hI-lji" firstAttribute="top" secondItem="BcE-aV-yV2" secondAttribute="bottom" constant="15" id="URM-JR-iLz"/>

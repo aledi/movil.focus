@@ -52,7 +52,7 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
             self.passwordText.becomeFirstResponder()
         } else {
             textField.resignFirstResponder()
-            self.logInAttempt()
+            self.logIn()
         }
         
         return false
@@ -72,18 +72,18 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         self.usernameText.text = "Carlos"
         self.passwordText.text = "pass"
         
-        self.logInAttempt()
+        self.logIn()
     }
     
-    @IBAction func logIn(sender: AnyObject) {
-        self.logInAttempt()
+    @IBAction func logInAttempt(sender: AnyObject) {
+        self.logIn()
     }
     
     // -----------------------------------------------------------------------------------------------------------
     // MARK: - LogIn
     // -----------------------------------------------------------------------------------------------------------
     
-    func logInAttempt() {
+    func logIn() {
         let parameters: [String : AnyObject] = [
             "username" : self.usernameText.text!,
             "password" : self.passwordText.text!
