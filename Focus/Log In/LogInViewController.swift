@@ -8,12 +8,60 @@
 
 import UIKit
 
-class LogInViewController: UIViewController {
+class LogInViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var usernameText: UITextField!
     @IBOutlet var passwordText: UITextField!
     @IBOutlet var feedbackLabel: UILabel!
-
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardWillShow), name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardWillHide), name: UIKeyboardWillHideNotification, object: nil)
+    }
+    
+    // -----------------------------------------------------------------------------------------------------------
+    // MARK: - Keyboard
+    // -----------------------------------------------------------------------------------------------------------
+    
+    func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
+            if (view.frame.origin.y == 0) {
+                self.view.frame.origin.y -= keyboardSize.height
+            }
+        }
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
+            if (view.frame.origin.y != 0) {
+                self.view.frame.origin.y += keyboardSize.height
+            }
+        }
+    }
+    
+    func dismissKeyboard() {
+        self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        if (textField.tag == 10) {
+            self.passwordText.becomeFirstResponder()
+        } else {
+            textField.resignFirstResponder()
+            self.logIn()
+        }
+        
+        return false
+    }
+    
+    // -----------------------------------------------------------------------------------------------------------
+    // MARK: - Actions
+    // -----------------------------------------------------------------------------------------------------------
+    
     @IBAction func cancelRegistration(segue: UIStoryboardSegue) {
         self.dismissSegueSourceViewController(segue)
     }
@@ -24,14 +72,18 @@ class LogInViewController: UIViewController {
         self.usernameText.text = "Carlos"
         self.passwordText.text = "pass"
         
-        self.logInAttempt()
+        self.logIn()
     }
     
-    @IBAction func logIn(sender: AnyObject) {
-        self.logInAttempt()
+    @IBAction func logInAttempt(sender: AnyObject) {
+        self.logIn()
     }
     
-    func logInAttempt() {
+    // -----------------------------------------------------------------------------------------------------------
+    // MARK: - LogIn
+    // -----------------------------------------------------------------------------------------------------------
+    
+    func logIn() {
         let parameters: [String : AnyObject] = [
             "username" : self.usernameText.text!,
             "password" : self.passwordText.text!
