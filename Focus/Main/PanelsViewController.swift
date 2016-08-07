@@ -57,8 +57,8 @@ class PanelsViewController: UITableViewController {
         
         if let panel = self.paneles?[indexPath.row] {
             (cell.viewWithTag(10) as! UILabel).text = panel.nombre
-            (cell.viewWithTag(20) as! UILabel).text = dateFormatter.stringFromDate(panel.fechaInicio)
-            (cell.viewWithTag(30) as! UILabel).text = dateFormatter.stringFromDate(panel.fechaFin)
+            (cell.viewWithTag(20) as! UILabel).text = dateFormatter.stringFromDate(panel.fechaInicio).capitalizedString
+            (cell.viewWithTag(30) as! UILabel).text = dateFormatter.stringFromDate(panel.fechaFin).capitalizedString
             
             if (panel.encuestas?.count == 0) {
                 cell.accessoryType = .None

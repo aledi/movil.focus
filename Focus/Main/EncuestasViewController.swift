@@ -52,8 +52,8 @@ class EncuestasViewController: UITableViewController {
         if let encuesta = self.encuestas?[indexPath.row] {
             (cell.viewWithTag(10) as! UILabel).text = encuesta.nombre
             (cell.viewWithTag(15) as! UILabel).text = "\(encuesta.preguntas?.count ?? 0) pregunta(s)"
-            (cell.viewWithTag(20) as! UILabel).text = dateFormatter.stringFromDate(encuesta.fechaInicio)
-            (cell.viewWithTag(30) as! UILabel).text = dateFormatter.stringFromDate(encuesta.fechaFin)
+            (cell.viewWithTag(20) as! UILabel).text = dateFormatter.stringFromDate(encuesta.fechaInicio).capitalizedString
+            (cell.viewWithTag(30) as! UILabel).text = dateFormatter.stringFromDate(encuesta.fechaFin).capitalizedString
             
             if (encuesta.contestada) {
                 cell.accessoryType = .Checkmark

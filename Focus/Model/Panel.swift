@@ -36,7 +36,7 @@ class Panel {
         self.nombre = nombre
         
         let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "yyyy-mm-dd"
+        dateFormatter.dateFormat = "YYYY-MM-dd"
         
         self.fechaInicio = dateFormatter.dateFromString(fechaInicio)!
         self.fechaFin = dateFormatter.dateFromString(fechaFin)!
