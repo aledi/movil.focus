@@ -12,6 +12,10 @@ class PanelsViewController: UITableViewController {
     
     var paneles: [Panel]?
     
+    // -----------------------------------------------------------------------------------------------------------
+    // MARK: - Lifecycle
+    // -----------------------------------------------------------------------------------------------------------
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,7 +26,9 @@ class PanelsViewController: UITableViewController {
         Controller.requestForAction(.GET_DATA, withParameters: parameters, withSuccessHandler: self.successHandler, andErrorHandler: self.errorHandler)
     }
     
+    // -----------------------------------------------------------------------------------------------------------
     // MARK: - Navigation
+    // -----------------------------------------------------------------------------------------------------------
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         super.prepareForSegue(segue, sender: sender)
@@ -32,7 +38,9 @@ class PanelsViewController: UITableViewController {
         }
     }
     
-    // MARK: - Table view data source
+    // -----------------------------------------------------------------------------------------------------------
+    // MARK: - TableView
+    // -----------------------------------------------------------------------------------------------------------
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
@@ -82,7 +90,9 @@ class PanelsViewController: UITableViewController {
         
     }
     
+    // -----------------------------------------------------------------------------------------------------------
     // MARK: - Fetch
+    // -----------------------------------------------------------------------------------------------------------
     
     func successHandler(response: NSDictionary) {
         self.paneles = []
@@ -102,7 +112,7 @@ class PanelsViewController: UITableViewController {
                     
                     for object3 in survey["preguntas"] as! [AnyObject] {
                         let question = object3 as! NSDictionary
-                        let newQuestion = Pregunta(id: question["id"] as! Int, tipo: question["tipo"] as! Int, numPregunta: question["numPregunta"] as! Int, pregunta: question["pregunta"] as! String, video: question["video"] as! String, imagen: question["video"] as! String, op1: question["op1"] as! String, op2: question["op2"] as! String, op3: question["op3"] as! String, op4: question["op4"] as! String, op5: question["op5"] as! String, op6: question["op6"] as! String, op7: question["op7"] as! String, op8: question["op8"] as! String, op9: question["op9"] as! String, op10: question["op10"] as! String)
+                        let newQuestion = Pregunta(id: question["id"] as! Int, tipo: question["tipo"] as! Int, numPregunta: question["numPregunta"] as! Int, pregunta: question["pregunta"] as! String, video: question["video"] as! String, imagen: question["imagen"] as! String, opciones: question["opciones"] as! [String])
                         
                         preguntas.append(newQuestion)
                     }

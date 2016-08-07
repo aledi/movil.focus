@@ -25,7 +25,7 @@ class Encuesta {
         dateFormatter.dateFormat = "yyyy-mm-dd"
         
         self.fechaInicio = dateFormatter.dateFromString(fechaInicio)!
-        self.fechaFin = dateFormatter.dateFromString(fechaInicio)!
+        self.fechaFin = dateFormatter.dateFromString(fechaFin)!
         
         self.contestada = contestada
     }

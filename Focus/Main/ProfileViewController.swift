@@ -23,7 +23,9 @@ class ProfileViewController: UITableViewController, MFMailComposeViewControllerD
     @IBOutlet var panelsLabel: UILabel!
     @IBOutlet var encuestasLabel: UILabel!
     
+    // -----------------------------------------------------------------------------------------------------------
     // MARK: - Lifecycle
+    // -----------------------------------------------------------------------------------------------------------
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -44,7 +46,9 @@ class ProfileViewController: UITableViewController, MFMailComposeViewControllerD
         self.encuestasLabel.text = "\(pending)"
     }
     
+    // -----------------------------------------------------------------------------------------------------------
     // MARK: - Navigation
+    // -----------------------------------------------------------------------------------------------------------
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         super.prepareForSegue(segue, sender: sender)
@@ -54,7 +58,9 @@ class ProfileViewController: UITableViewController, MFMailComposeViewControllerD
         }
     }
     
-    // MARK: - Selection
+    // -----------------------------------------------------------------------------------------------------------
+    // MARK: - TableView
+    // -----------------------------------------------------------------------------------------------------------
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
@@ -84,6 +90,10 @@ class ProfileViewController: UITableViewController, MFMailComposeViewControllerD
         }
     }
     
+    // -----------------------------------------------------------------------------------------------------------
+    // MARK: - Helpers
+    // -----------------------------------------------------------------------------------------------------------
+    
     func call() {
         if let phoneURL: NSURL = NSURL(string: "tel://\(phoneNumber)") {
             if (UIApplication.sharedApplication().canOpenURL(phoneURL)) {
@@ -101,8 +111,6 @@ class ProfileViewController: UITableViewController, MFMailComposeViewControllerD
             self.showSendMailErrorAlert()
         }
     }
-    
-    // MARK: - Helpers
     
     func showSendMailErrorAlert() {
         let alertController = UIAlertController(
@@ -127,7 +135,9 @@ class ProfileViewController: UITableViewController, MFMailComposeViewControllerD
         return mailComposerViewController
     }
     
+    // -----------------------------------------------------------------------------------------------------------
     // MARK: - MFMailComposeViewControllerDelegate
+    // -----------------------------------------------------------------------------------------------------------
     
     func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
         controller.dismissViewControllerAnimated(true, completion: nil)

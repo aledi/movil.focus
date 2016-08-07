@@ -39,7 +39,7 @@ class Panel {
         dateFormatter.dateFormat = "yyyy-mm-dd"
         
         self.fechaInicio = dateFormatter.dateFromString(fechaInicio)!
-        self.fechaFin = dateFormatter.dateFromString(fechaInicio)!
+        self.fechaFin = dateFormatter.dateFromString(fechaFin)!
     }
     
     static func savePaneles(paneles: [Panel]?) {

@@ -9,20 +9,10 @@
         <scene sceneID="THd-yf-Gcy">
             <objects>
                 <tableViewController id="bBo-24-3YA" customClass="PreguntasViewController" customModule="Focus" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="E5W-Pa-Ns7">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="182" sectionHeaderHeight="18" sectionFooterHeight="18" id="E5W-Pa-Ns7">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" id="5kq-H0-0mK">
-                                <rect key="frame" x="0.0" y="114" width="600" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5kq-H0-0mK" id="Wqk-iD-oZA">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <connections>
                             <outlet property="dataSource" destination="bBo-24-3YA" id="Y39-1u-dXC"/>
                             <outlet property="delegate" destination="bBo-24-3YA" id="NDf-vv-KsI"/>
@@ -31,10 +21,13 @@
                     <navigationItem key="navigationItem" title="Encuesta" id="P4G-Vn-0Ra">
                         <barButtonItem key="rightBarButtonItem" title="Terminar" id="P9u-ba-0cP">
                             <connections>
-                                <segue destination="xdV-o2-f8F" kind="unwind" unwindAction="doneAnsweringEncuesta:" id="2q5-7f-gy3"/>
+                                <action selector="doneAnswering:" destination="bBo-24-3YA" id="2md-YM-sZV"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="xdV-o2-f8F" kind="unwind" identifier="doneAnswering" unwindAction="doneAnsweringEncuesta:" id="7dg-Kf-kNB"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vZy-eT-J9o" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="xdV-o2-f8F" userLabel="Exit" sceneMemberID="exit"/>
