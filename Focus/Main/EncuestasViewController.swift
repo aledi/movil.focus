@@ -12,14 +12,19 @@ class EncuestasViewController: UITableViewController {
 
     var encuestas: [Encuesta]?
     
+    // -----------------------------------------------------------------------------------------------------------
     // MARK: - Navigation
+    // -----------------------------------------------------------------------------------------------------------
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         super.prepareForSegue(segue, sender: sender)
         
         if (segue.identifier == "answerEncuesta") {
             let navigationController = segue.destinationViewController as! UINavigationController
-            (navigationController.topViewController as! PreguntasViewController).preguntas = (sender as! Encuesta).preguntas
+            let preguntasViewController = navigationController.topViewController as! PreguntasViewController
+            
+            preguntasViewController.preguntas = (sender as! Encuesta).preguntas
+            preguntasViewController.idEncuesta = (sender as! Encuesta).id
         }
     }
     
@@ -27,7 +32,9 @@ class EncuestasViewController: UITableViewController {
         segue.destinationViewController.dismissViewControllerAnimated(true, completion: nil)
     }
     
-    // MARK: - Table view data source
+    // -----------------------------------------------------------------------------------------------------------
+    // MARK: - TableView
+    // -----------------------------------------------------------------------------------------------------------
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1

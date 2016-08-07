@@ -14,6 +14,9 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var passwordText: UITextField!
     @IBOutlet var feedbackLabel: UILabel!
     
+    // -----------------------------------------------------------------------------------------------------------
+    // MARK: - Lifecycle
+    // -----------------------------------------------------------------------------------------------------------
     
     override func viewDidLoad() {
         super.viewDidLoad()
