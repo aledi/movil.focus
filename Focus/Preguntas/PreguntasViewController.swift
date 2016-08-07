@@ -76,8 +76,44 @@ class PreguntasViewController: UITableViewController {
             respuesta += "\(pregunta.respuesta)|"
         }
         
-        print(respuesta)
+        let parameters: [String : AnyObject] = [
+            "encuesta" : self.idEncuesta!,
+            "panelista" : User.currentUser!.id,
+            "respuestas" : respuesta
+        ]
         
-        self.performSegueWithIdentifier("doneAnswering", sender: nil)
+        Controller.requestForAction(.SAVE_ANSWERS, withParameters: parameters, withSuccessHandler: self.successHandler, andErrorHandler: self.errorHandler)
+    }
+    
+    func successHandler(response: NSDictionary) {
+        if (response["status"] as? String == "SUCCESS") {
+            let alertController = UIAlertController(
+                title: "Respuestas Guardadas",
+                message: "Gracias por responder la encuesta.",
+                preferredStyle: .Alert
+            )
+            
+            alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (action) in
+                self.performSegueWithIdentifier("doneAnswering", sender: nil)
+            }))
+            
+            self.presentViewController(alertController, animated: true, completion: nil)
+        } else {
+            let alertController = UIAlertController(
+                title: "Error",
+                message: "No pudimos guardar tus respuestas en este momento. Por favor, inténtalo más tarde.",
+                preferredStyle: .Alert
+            )
+            
+            alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (action) in
+                self.performSegueWithIdentifier("doneAnswering", sender: nil)
+            }))
+            
+            self.presentViewController(alertController, animated: true, completion: nil)
+        }
+    }
+    
+    func errorHandler(response: NSDictionary) {
+        print(response["error"])
     }
 }

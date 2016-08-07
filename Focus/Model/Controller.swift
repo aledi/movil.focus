@@ -11,6 +11,7 @@ import Alamofire
 enum Actions: String {
     case LOG_IN = "PANELISTA_LOG_IN"
     case GET_DATA = "GET_MOBILE_DATA"
+    case SAVE_ANSWERS = "SAVE_RESPUESTAS"
 }
 
 class Controller {
