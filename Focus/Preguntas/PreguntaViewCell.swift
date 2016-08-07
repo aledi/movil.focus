@@ -48,12 +48,17 @@ class PreguntaViewCell: UITableViewCell, UITextViewDelegate {
         
         self.preguntaLabel.text = pregunta.pregunta
         
-        if (pregunta.imagen == "") {
-            self.imagenHeightConstraint.constant = 0
-            self.imagenBottomConstraint.constant = 0
-        } else {
-            self.imagenHeightConstraint.constant = 100
-            self.imagenBottomConstraint.constant = 15
+        self.imagenHeightConstraint.constant = 0
+        self.imagenBottomConstraint.constant = 0
+        
+        if (pregunta.imagen != "") {
+            if let url =  NSURL(string: pregunta.imagen) {
+                if let image = UIImage(data: NSData(contentsOfURL: url)!) {
+                    self.imagenHeightConstraint.constant = 200
+                    self.imagenBottomConstraint.constant = 15
+                    self.imagen.image = image
+                }
+            }
         }
         
         if (tipo == .Abierta) {

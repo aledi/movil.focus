@@ -54,6 +54,7 @@ class PreguntasViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier(PREGUNTA_CELL, forIndexPath: indexPath) as! PreguntaViewCell
         cell.pregunta = self.preguntas![indexPath.section]
         cell.configureForPregunta()
+        cell.selectionStyle = .None
         
         return cell
     }
