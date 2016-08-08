@@ -30,7 +30,7 @@ class ProfileViewController: UITableViewController, MFMailComposeViewControllerD
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        guard let user = User.currentUser, paneles = self.appDelegate().paneles else {
+        guard let user = User.currentUser, paneles = self.appDelegate.paneles else {
             return
         }
         
@@ -77,6 +77,7 @@ class ProfileViewController: UITableViewController, MFMailComposeViewControllerD
             )
             
             alertController.addAction(UIAlertAction(title: "Cerrar", style: .Destructive, handler: { (action) in
+                Controller.requestForAction(.UNREGISTER_DEVICE, withParameters: ["id" : User.currentUser!.id], withSuccessHandler: nil, andErrorHandler: nil)
                 self.performSegueWithIdentifier("logOut", sender: nil)
             }))
             

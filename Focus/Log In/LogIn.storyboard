@@ -69,9 +69,14 @@
                                     <outlet property="delegate" destination="ysr-db-x1i" id="d0R-P4-oep"/>
                                 </connections>
                             </textField>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="W5U-un-ki4">
+                                <rect key="frame" x="290" y="400" width="20" height="20"/>
+                                <color key="color" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.4431372549" green="0.77647058820000003" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="W5U-un-ki4" firstAttribute="top" secondItem="lpV-hI-lji" secondAttribute="bottom" constant="8" id="1Ya-gS-PDD"/>
                             <constraint firstItem="lpV-hI-lji" firstAttribute="leading" secondItem="K0m-YH-NTU" secondAttribute="leadingMargin" constant="25" id="7q1-WR-Cft"/>
                             <constraint firstItem="lpV-hI-lji" firstAttribute="centerX" secondItem="K0m-YH-NTU" secondAttribute="centerX" id="CzZ-ec-JEg"/>
                             <constraint firstItem="Hur-U3-hBL" firstAttribute="centerX" secondItem="K0m-YH-NTU" secondAttribute="centerX" id="GK1-Ok-0sK"/>
@@ -82,6 +87,7 @@
                             <constraint firstItem="Hur-U3-hBL" firstAttribute="width" secondItem="aqX-M4-lpv" secondAttribute="width" id="WAH-es-vdG"/>
                             <constraint firstItem="BcE-aV-yV2" firstAttribute="centerX" secondItem="K0m-YH-NTU" secondAttribute="centerX" id="YSx-NQ-t9V"/>
                             <constraint firstItem="9o2-Zr-y2t" firstAttribute="top" secondItem="Hur-U3-hBL" secondAttribute="bottom" constant="8" id="ZJs-dP-Sqz"/>
+                            <constraint firstItem="W5U-un-ki4" firstAttribute="centerX" secondItem="K0m-YH-NTU" secondAttribute="centerX" id="f9Z-XL-IKH"/>
                             <constraint firstItem="aqX-M4-lpv" firstAttribute="centerX" secondItem="K0m-YH-NTU" secondAttribute="centerX" id="nUA-yS-eAK"/>
                             <constraint firstItem="aqX-M4-lpv" firstAttribute="top" secondItem="Xbh-et-kZ3" secondAttribute="bottom" constant="75" id="nbF-PT-Kuc"/>
                             <constraint firstItem="9o2-Zr-y2t" firstAttribute="centerX" secondItem="K0m-YH-NTU" secondAttribute="centerX" id="nmp-xW-KIC"/>
@@ -93,6 +99,7 @@
                     <connections>
                         <outlet property="feedbackLabel" destination="lpV-hI-lji" id="pdE-X9-auB"/>
                         <outlet property="passwordText" destination="Hur-U3-hBL" id="iS6-gV-Vdp"/>
+                        <outlet property="spinner" destination="W5U-un-ki4" id="DV1-Bc-Z7e"/>
                         <outlet property="usernameText" destination="aqX-M4-lpv" id="Q12-ii-Afp"/>
                         <segue destination="mbI-nn-iWz" kind="presentation" identifier="logIn" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="hT8-5g-RVL"/>
                     </connections>

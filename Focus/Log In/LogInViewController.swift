@@ -13,6 +13,7 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var usernameText: UITextField!
     @IBOutlet var passwordText: UITextField!
     @IBOutlet var feedbackLabel: UILabel!
+    @IBOutlet var spinner: UIActivityIndicatorView!
     
     // -----------------------------------------------------------------------------------------------------------
     // MARK: - Lifecycle
@@ -20,6 +21,8 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.spinner.hidden = true
         
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardWillShow), name: UIKeyboardWillShowNotification, object: nil)
@@ -92,6 +95,9 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
             "password" : self.passwordText.text!
         ]
         
+        self.spinner.hidden = false
+        self.spinner.startAnimating()
+        
         Controller.requestForAction(.LOG_IN, withParameters: parameters, withSuccessHandler: self.successHandler, andErrorHandler: self.errorHandler)
     }
     
@@ -105,6 +111,11 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
                     NSUserDefaults.saveUserDefaults(user)
                 }
             }
+            
+            self.appDelegate.registerForPushNotifications()
+            
+            self.spinner.stopAnimating()
+            self.spinner.hidden = true
             
             self.performSegueWithIdentifier("logIn", sender: self)
         } else {

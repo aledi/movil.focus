@@ -29,7 +29,9 @@ class EncuestasViewController: UITableViewController {
     }
     
     @IBAction func doneAnsweringEncuesta(segue: UIStoryboardSegue) {
-        segue.destinationViewController.dismissViewControllerAnimated(true, completion: nil)
+        self.dismissSegueSourceViewController(segue)
+        
+        self.tableView.reloadData()
     }
     
     // -----------------------------------------------------------------------------------------------------------
@@ -79,7 +81,6 @@ class EncuestasViewController: UITableViewController {
                 let encuesta = self.encuestas![indexPath.row]
                 encuesta.contestada = true
                 
-                self.tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .None)
                 self.performSegueWithIdentifier("answerEncuesta", sender: encuesta)
             }))
             

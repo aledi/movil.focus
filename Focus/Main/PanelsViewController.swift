@@ -125,7 +125,7 @@ class PanelsViewController: UITableViewController {
                 self.paneles!.append(newPanel)
             }
             
-            self.appDelegate().paneles = self.paneles
+            self.appDelegate.paneles = self.paneles
             self.tableView.reloadData()
         }
     }
