@@ -55,6 +55,7 @@ class ProfileViewController: UITableViewController, MFMailComposeViewControllerD
         
         if (segue.identifier == "logOut") {
             NSUserDefaults.removeUserDefaults()
+            self.appDelegate.user = nil
         }
     }
     

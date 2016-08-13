@@ -26,22 +26,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func applicationDidEnterBackground(application: UIApplication) {
+        guard let user = User.currentUser, paneles = self.paneles else {
+            UIApplication.sharedApplication().applicationIconBadgeNumber = 0
+            return
+        }
+        
+        var pending = 0
+        
+        for panel in paneles {
+            pending += panel.encuestasPendientes
+        }
+        
+        UIApplication.sharedApplication().applicationIconBadgeNumber = pending
     }
     
     func applicationWillEnterForeground(application: UIApplication) {
-    }
-    
-    func applicationDidBecomeActive(application: UIApplication) {
         guard let storedUser = NSUserDefaults.retreiveUserDefaults() else {
             return
         }
         
         self.user = storedUser
-        self.registerForPushNotifications()
+        
+        if (self.user!.token == "") {
+            self.registerForPushNotifications()
+        }
         
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         self.window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
         self.window?.makeKeyAndVisible()
+    }
+    
+    func applicationDidBecomeActive(application: UIApplication) {
     }
     
     func applicationWillTerminate(application: UIApplication) {
@@ -54,7 +69,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func registerForPushNotifications() {
         let notificationSettings = UIUserNotificationSettings(forTypes: [.Badge, .Sound, .Alert], categories: nil)
         UIApplication.sharedApplication().registerUserNotificationSettings(notificationSettings)
-        
     }
     
     func application(application: UIApplication, didRegisterUserNotificationSettings notificationSettings: UIUserNotificationSettings) {
@@ -79,7 +93,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             "deviceType" : 1
         ]
         
-        Controller.requestForAction(.REGISTER_DEVICE, withParameters: parameters, withSuccessHandler: nil, andErrorHandler: nil)
+        if (self.user!.token == "") {
+            self.user!.token = tokenString
+            Controller.requestForAction(.REGISTER_DEVICE, withParameters: parameters, withSuccessHandler: nil, andErrorHandler: nil)
+        }
         
         print("Device Token:", tokenString)
     }
@@ -89,4 +106,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
 }
-

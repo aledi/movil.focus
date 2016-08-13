@@ -114,19 +114,22 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
             
             self.appDelegate.registerForPushNotifications()
             
-            self.spinner.stopAnimating()
-            self.spinner.hidden = true
-            
             self.performSegueWithIdentifier("logIn", sender: self)
         } else {
             self.feedbackLabel.hidden = false
             self.feedbackLabel.text = "Usuario o contraseña incorrectos"
         }
+        
+        self.spinner.stopAnimating()
+        self.spinner.hidden = true
     }
     
     func errorHandler(response: NSDictionary) {
         self.feedbackLabel.hidden = false
         self.feedbackLabel.text = "Servidor No Disponible"
+        
+        self.spinner.stopAnimating()
+        self.spinner.hidden = true
         
         print(response["error"])
     }

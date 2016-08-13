@@ -12,7 +12,7 @@
             <rect key="frame" x="0.0" y="0.0" width="486" height="812"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yoL-q3-JOK" id="KwG-mW-Vyz">
-                <rect key="frame" x="0.0" y="0.0" width="486" height="811.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="486" height="812"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pregunta" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W1F-lT-UC9">
@@ -28,7 +28,7 @@
                         </constraints>
                     </imageView>
                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Indique aquí su respuesta..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="00a-tG-C9Y">
-                        <rect key="frame" x="23" y="358.5" width="440" height="100"/>
+                        <rect key="frame" x="23" y="359" width="440" height="100"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="100" id="Lrf-Tl-pLh"/>
@@ -37,7 +37,7 @@
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qAh-A4-5Mu">
-                        <rect key="frame" x="23" y="473.5" width="440" height="25"/>
+                        <rect key="frame" x="23" y="474" width="440" height="25"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" tag="10" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Opción 1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="SN1-an-fyf">
                                 <rect key="frame" x="0.0" y="0.0" width="407" height="25"/>
@@ -72,7 +72,7 @@
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hdf-uY-mB3">
-                        <rect key="frame" x="23" y="506.5" width="440" height="25"/>
+                        <rect key="frame" x="23" y="507" width="440" height="25"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" tag="10" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Opción 2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="DVp-zQ-oPi">
                                 <rect key="frame" x="0.0" y="0.0" width="407" height="25"/>
@@ -142,7 +142,7 @@
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C8B-jd-IzC">
-                        <rect key="frame" x="23" y="572.5" width="440" height="25"/>
+                        <rect key="frame" x="23" y="573" width="440" height="25"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" tag="10" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Opción 4" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="3jp-cr-lYY">
                                 <rect key="frame" x="0.0" y="0.0" width="407" height="25"/>
@@ -177,7 +177,7 @@
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zob-dh-oBo">
-                        <rect key="frame" x="23" y="605.5" width="440" height="25"/>
+                        <rect key="frame" x="23" y="606" width="440" height="25"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" tag="10" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Opción 5" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="xka-AW-Mqw">
                                 <rect key="frame" x="0.0" y="0.0" width="407" height="25"/>
@@ -212,7 +212,7 @@
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9rX-Jq-aTz">
-                        <rect key="frame" x="23" y="638.5" width="440" height="25"/>
+                        <rect key="frame" x="23" y="639" width="440" height="25"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" tag="10" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Opción 6" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="8LF-Hu-YYN">
                                 <rect key="frame" x="0.0" y="0.0" width="407" height="25"/>
@@ -247,7 +247,7 @@
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ddY-U6-XxJ">
-                        <rect key="frame" x="23" y="671.5" width="440" height="25"/>
+                        <rect key="frame" x="23" y="672" width="440" height="25"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" tag="10" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Opción 7" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="K07-Ue-558">
                                 <rect key="frame" x="0.0" y="0.0" width="407" height="25"/>
@@ -282,7 +282,7 @@
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XFj-PQ-es1">
-                        <rect key="frame" x="23" y="704.5" width="440" height="25"/>
+                        <rect key="frame" x="23" y="705" width="440" height="25"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" tag="10" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Opción 8" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Amj-oj-dpi">
                                 <rect key="frame" x="0.0" y="0.0" width="407" height="25"/>
@@ -317,7 +317,7 @@
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="feH-p4-pWT">
-                        <rect key="frame" x="23" y="737.5" width="440" height="25"/>
+                        <rect key="frame" x="23" y="738" width="440" height="25"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" tag="10" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Opción 9" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Jpl-11-x3S">
                                 <rect key="frame" x="0.0" y="0.0" width="407" height="25"/>
@@ -352,7 +352,7 @@
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YNH-4q-x3R">
-                        <rect key="frame" x="23" y="770.5" width="440" height="25"/>
+                        <rect key="frame" x="23" y="771" width="440" height="25"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" tag="10" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Opción 10" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="t5s-jp-qYr">
                                 <rect key="frame" x="0.0" y="0.0" width="407" height="25"/>
