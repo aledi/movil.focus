@@ -14,6 +14,7 @@ class User {
     var username: String
     var email: String
     var nombre: String
+    var token: String = ""
     
     init(id: Int, username: String, email: String, nombre: String) {
         self.id = id

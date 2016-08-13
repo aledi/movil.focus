@@ -10,8 +10,12 @@ import UIKit
 
 extension UIViewController {
     
-    func appDelegate() -> AppDelegate {
-        return UIApplication.sharedApplication().delegate as! AppDelegate
+    var appDelegate: AppDelegate {
+        get {
+            return UIApplication.sharedApplication().delegate as! AppDelegate
+        } set {
+            
+        }
     }
     
     func dismissSegueSourceViewController(segue: UIStoryboardSegue) {

@@ -20,6 +20,7 @@
 		40AFB76D1D49A25100C0099A /* Panel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AFB76C1D49A25100C0099A /* Panel.swift */; };
 		40AFB76F1D49A3D800C0099A /* Encuesta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AFB76E1D49A3D800C0099A /* Encuesta.swift */; };
 		40AFB7711D49A50800C0099A /* Pregunta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AFB7701D49A50800C0099A /* Pregunta.swift */; };
+		40D810661D5811EE00EB8FCE /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D810651D5811EE00EB8FCE /* LoadingViewController.swift */; };
 		40E7F9C01D4D353700BCD0DB /* NSUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E7F9BF1D4D353700BCD0DB /* NSUserDefaults.swift */; };
 		40E7F9C21D4D5A9E00BCD0DB /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E7F9C11D4D5A9E00BCD0DB /* ProfileViewController.swift */; };
 		40FF0D981D37138500ED8A64 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40FF0D971D37138500ED8A64 /* AppDelegate.swift */; };
@@ -59,6 +60,7 @@
 		40AFB76C1D49A25100C0099A /* Panel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Panel.swift; path = Model/Panel.swift; sourceTree = "<group>"; };
 		40AFB76E1D49A3D800C0099A /* Encuesta.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Encuesta.swift; path = Model/Encuesta.swift; sourceTree = "<group>"; };
 		40AFB7701D49A50800C0099A /* Pregunta.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Pregunta.swift; path = Model/Pregunta.swift; sourceTree = "<group>"; };
+		40D810651D5811EE00EB8FCE /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoadingViewController.swift; path = Main/LoadingViewController.swift; sourceTree = "<group>"; };
 		40E7F9BF1D4D353700BCD0DB /* NSUserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSUserDefaults.swift; path = Extensions/NSUserDefaults.swift; sourceTree = "<group>"; };
 		40E7F9C11D4D5A9E00BCD0DB /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = Main/ProfileViewController.swift; sourceTree = "<group>"; };
 		40FF0D941D37138500ED8A64 /* Focus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Focus.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,6 +115,7 @@
 				405313091D386EFA0073751A /* Main.storyboard */,
 				4053130B1D386F370073751A /* PanelsViewController.swift */,
 				400F4EF31D49B46500538BCD /* EncuestasViewController.swift */,
+				40D810651D5811EE00EB8FCE /* LoadingViewController.swift */,
 				40E7F9C11D4D5A9E00BCD0DB /* ProfileViewController.swift */,
 			);
 			name = Main;
@@ -228,6 +231,12 @@
 				TargetAttributes = {
 					40FF0D931D37138500ED8A64 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = THM755QUA7;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -320,6 +329,7 @@
 			files = (
 				400F4EF41D49B46500538BCD /* EncuestasViewController.swift in Sources */,
 				40FF0DB01D371F4000ED8A64 /* LogInViewController.swift in Sources */,
+				40D810661D5811EE00EB8FCE /* LoadingViewController.swift in Sources */,
 				40AFB76F1D49A3D800C0099A /* Encuesta.swift in Sources */,
 				40AFB76D1D49A25100C0099A /* Panel.swift in Sources */,
 				40A8DC301D56801B0065B734 /* RegistrationViewController.swift in Sources */,
@@ -439,11 +449,12 @@
 			baseConfigurationReference = 8D0555816C82429F1139FA96 /* Pods-Focus.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = Focus/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ecristerna.Focus;
+				PRODUCT_BUNDLE_IDENTIFIER = mx.com.focus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -453,11 +464,12 @@
 			baseConfigurationReference = 84BC2C57732DF31E68E48A05 /* Pods-Focus.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = Focus/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ecristerna.Focus;
+				PRODUCT_BUNDLE_IDENTIFIER = mx.com.focus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
