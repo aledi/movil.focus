@@ -73,21 +73,24 @@ class PreguntaViewCell: UITableViewCell, UITextViewDelegate {
             for i in 0...9 {
                 self.heightConstraints[i].constant = 0
                 self.bottomConstraints[i].constant = 0
+                self.buttons[i].alpha = 0
             }
         } else {
             self.textViewHeightConstraint.constant = 0
             self.textViewBottomConstraint.constant = 0
             
             for i in 0..<pregunta.opciones.count {
-                self.heightConstraints[i].constant = 25
+                self.heightConstraints[i].constant = 50
                 self.bottomConstraints[i].constant = 8
                 self.labels[i].text = pregunta.opciones[i]
                 self.buttons[i].selected = pregunta.selectedOptions[i]
+                self.buttons[i].alpha = 1.0
             }
             
             for i in pregunta.opciones.count..<10 {
                 self.heightConstraints[i].constant = 0
                 self.bottomConstraints[i].constant = 0
+                self.buttons[i].alpha = 0
             }
         }
     }
