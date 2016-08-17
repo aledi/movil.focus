@@ -22,8 +22,6 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.spinner.hidden = true
-        
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardWillShow), name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardWillHide), name: UIKeyboardWillHideNotification, object: nil)
@@ -95,7 +93,6 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
             "password" : self.passwordText.text!
         ]
         
-        self.spinner.hidden = false
         self.spinner.startAnimating()
         
         Controller.requestForAction(.LOG_IN, withParameters: parameters, withSuccessHandler: self.successHandler, andErrorHandler: self.errorHandler)
@@ -112,24 +109,77 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
                 }
             }
             
-            self.appDelegate.registerForPushNotifications()
+            var paneles: [Panel] = []
+            if let panels = response["paneles"] as? [AnyObject] {
+                for object in panels {
+                    let panel = object as! NSDictionary
+                    let newPanel = Panel(id: panel["id"] as! Int, nombre: panel["nombre"] as! String, fechaInicio: panel["fechaInicio"] as! String, fechaFin: panel["fechaFin"] as! String)
+                    
+                    var encuestas: [Encuesta] = []
+                    
+                    for object2 in panel["encuestas"] as! [AnyObject] {
+                        let survey = object2 as! NSDictionary
+                        let newSurvey = Encuesta(id: survey["id"] as! Int, nombre: survey["nombre"] as! String, fechaInicio: survey["fechaInicio"] as! String, fechaFin: survey["fechaFin"] as! String, contestada: survey["contestada"] as! Bool)
+                        
+                        var preguntas: [Pregunta] = []
+                        
+                        for object3 in survey["preguntas"] as! [AnyObject] {
+                            let question = object3 as! NSDictionary
+                            let newQuestion = Pregunta(id: question["id"] as! Int, tipo: question["tipo"] as! Int, numPregunta: question["numPregunta"] as! Int, pregunta: question["pregunta"] as! String, video: question["video"] as! String, imagen: question["imagen"] as! String, opciones: question["opciones"] as! [String])
+                            
+                            preguntas.append(newQuestion)
+                        }
+                        
+                        newSurvey.preguntas = preguntas
+                        encuestas.append(newSurvey)
+                    }
+                    
+                    newPanel.encuestas = encuestas
+                    paneles.append(newPanel)
+                }
+                
+                self.appDelegate.paneles = paneles
+            }
             
+            self.appDelegate.registerForPushNotifications()
+            self.spinner.stopAnimating()
             self.performSegueWithIdentifier("logIn", sender: self)
         } else {
-            self.feedbackLabel.hidden = false
             self.feedbackLabel.text = "Usuario o contraseña incorrectos"
         }
         
         self.spinner.stopAnimating()
-        self.spinner.hidden = true
     }
     
     func errorHandler(response: NSDictionary) {
-        self.feedbackLabel.hidden = false
-        self.feedbackLabel.text = "Servidor No Disponible"
-        
         self.spinner.stopAnimating()
-        self.spinner.hidden = true
+        var alertTitle = ""
+        var alertMessage = ""
+        
+        switch (response["error"] as! NSError).code {
+        case -1009:
+            alertTitle = "Sin conexión a internet"
+            alertMessage = "Para utilizar la aplicación, su dispositivo debe estar conectado a internet."
+        case -1003:
+            alertTitle = "Servidor no disponible"
+            alertMessage = "Nuestro servidor no está disponible por el momento."
+        default:
+            break
+        }
+        
+        let alertController = UIAlertController(
+            title: alertTitle,
+            message: alertMessage,
+            preferredStyle: .Alert
+        )
+        
+        alertController.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
+        
+        alertController.addAction(UIAlertAction(title: "Reintentar", style: .Default, handler: { (action) in
+            self.logIn()
+        }))
+        
+        self.presentViewController(alertController, animated: true, completion: nil)
         
         print(response["error"])
     }

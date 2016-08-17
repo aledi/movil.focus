@@ -19,9 +19,7 @@ class LoadingViewController: UIViewController {
             "panelista" : "\(User.currentUser!.id)"
         ]
         
-        self.spinner.hidden = false
         self.spinner.startAnimating()
-        
         Controller.requestForAction(.GET_DATA, withParameters: parameters, withSuccessHandler: self.successHandler, andErrorHandler: self.errorHandler)
     }
     
@@ -61,17 +59,45 @@ class LoadingViewController: UIViewController {
             }
             
             self.appDelegate.paneles = paneles
-            
             self.spinner.stopAnimating()
-            self.spinner.hidden = true
-            
             self.performSegueWithIdentifier("showContent", sender: nil)
         }
     }
     
     func errorHandler(response: NSDictionary) {
         self.spinner.stopAnimating()
-        self.spinner.hidden = true
+        var alertTitle = ""
+        var alertMessage = ""
+        
+        switch (response["error"] as! NSError).code {
+        case -1009:
+            alertTitle = "Sin conexión a internet"
+            alertMessage = "Para utilizar la aplicación, su dispositivo debe estar conectado a internet."
+        case -1003:
+            alertTitle = "Servidor no disponible"
+            alertMessage = "Nuestro servidor no está disponible por el momento."
+        default:
+            break
+        }
+        
+        let alertController = UIAlertController(
+            title: alertTitle,
+            message: alertMessage,
+            preferredStyle: .Alert
+        )
+        
+        alertController.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
+        
+        alertController.addAction(UIAlertAction(title: "Reintentar", style: .Default, handler: { (action) in
+            let parameters: [String : AnyObject] = [
+                "panelista" : "\(User.currentUser!.id)"
+            ]
+            
+            self.spinner.startAnimating()
+            Controller.requestForAction(.GET_DATA, withParameters: parameters, withSuccessHandler: self.successHandler, andErrorHandler: self.errorHandler)
+        }))
+        
+        self.presentViewController(alertController, animated: true, completion: nil)
         
         print(response["error"])
     }
