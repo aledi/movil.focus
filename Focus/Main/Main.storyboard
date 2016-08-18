@@ -110,7 +110,7 @@
                                 <color key="color" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descargando Datos" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="756-ig-TlF">
-                                <rect key="frame" x="25" y="120" width="550" height="30"/>
+                                <rect key="frame" x="25" y="236" width="550" height="30"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
                                 <color key="textColor" red="0.12549019610000001" green="0.13725490200000001" blue="0.51372549020000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -121,8 +121,8 @@
                             <constraint firstItem="02l-hB-ya1" firstAttribute="centerX" secondItem="Kpz-rg-63K" secondAttribute="centerX" id="Bpf-RZ-qkX"/>
                             <constraint firstAttribute="trailing" secondItem="756-ig-TlF" secondAttribute="trailing" constant="25" id="eh3-us-55d"/>
                             <constraint firstItem="02l-hB-ya1" firstAttribute="centerY" secondItem="Kpz-rg-63K" secondAttribute="centerY" id="f2C-57-QYc"/>
+                            <constraint firstItem="02l-hB-ya1" firstAttribute="top" secondItem="756-ig-TlF" secondAttribute="bottom" constant="15" id="hAJ-1C-bxi"/>
                             <constraint firstItem="756-ig-TlF" firstAttribute="leading" secondItem="Kpz-rg-63K" secondAttribute="leading" constant="25" id="kaq-gv-nqq"/>
-                            <constraint firstItem="756-ig-TlF" firstAttribute="top" secondItem="vE5-ts-w9S" secondAttribute="bottom" constant="100" id="tuU-Zu-Em1"/>
                         </constraints>
                     </view>
                     <connections>

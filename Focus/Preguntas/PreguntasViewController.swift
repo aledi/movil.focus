@@ -65,6 +65,8 @@ class PreguntasViewController: UITableViewController {
     // -----------------------------------------------------------------------------------------------------------
     
     @IBAction func doneAnswering(sender: AnyObject) {
+        self.respuesta = ""
+        
         for pregunta in self.preguntas! {
             if (pregunta.tipo == TipoPregunta.Multiple.rawValue) {
                 for i in 0..<pregunta.opciones.count {
@@ -89,7 +91,7 @@ class PreguntasViewController: UITableViewController {
     
     func successHandler(response: NSDictionary) {
         let alertTitle = (response["status"] as? String == "SUCCESS") ? "Respuestas Guardadas" : "Error"
-        let alertMesssage = (response["status"] as? String == "SUCCESS") ? "Gracias por responder la encuesta." : "No pudimos guardar tus respuestas en este momento. Por favor, inténtalo más tarde."
+        let alertMesssage = (response["status"] as? String == "SUCCESS") ? "Gracias por responder la encuesta." : "No pudimos guardar tus respuestas en este momento."
         
         func firstBlock(action: UIAlertAction) {
             self.performSegueWithIdentifier("doneAnswering", sender: nil)
@@ -99,6 +101,8 @@ class PreguntasViewController: UITableViewController {
     }
     
     func errorHandler(response: NSDictionary) {
+        self.successHandler(response)
         print(response["error"])
     }
+    
 }
