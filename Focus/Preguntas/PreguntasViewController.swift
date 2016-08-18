@@ -14,6 +14,7 @@ class PreguntasViewController: UITableViewController {
     
     var idEncuesta: Int?
     var preguntas: [Pregunta]?
+    var respuesta: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,8 +65,6 @@ class PreguntasViewController: UITableViewController {
     // -----------------------------------------------------------------------------------------------------------
     
     @IBAction func doneAnswering(sender: AnyObject) {
-        var respuesta = ""
-        
         for pregunta in self.preguntas! {
             if (pregunta.tipo == TipoPregunta.Multiple.rawValue) {
                 for i in 0..<pregunta.opciones.count {
@@ -73,44 +72,29 @@ class PreguntasViewController: UITableViewController {
                 }
             }
             
-            respuesta += "\(pregunta.respuesta)|"
+            self.respuesta += "\(pregunta.respuesta)|"
         }
-        
+    }
+    
+    func saveAnswers() {
         let parameters: [String : AnyObject] = [
             "encuesta" : self.idEncuesta!,
             "panelista" : User.currentUser!.id,
-            "respuestas" : respuesta
+            "respuestas" : self.respuesta
         ]
         
         Controller.requestForAction(.SAVE_ANSWERS, withParameters: parameters, withSuccessHandler: self.successHandler, andErrorHandler: self.errorHandler)
     }
     
     func successHandler(response: NSDictionary) {
-        if (response["status"] as? String == "SUCCESS") {
-            let alertController = UIAlertController(
-                title: "Respuestas Guardadas",
-                message: "Gracias por responder la encuesta.",
-                preferredStyle: .Alert
-            )
-            
-            alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (action) in
-                self.performSegueWithIdentifier("doneAnswering", sender: nil)
-            }))
-            
-            self.presentViewController(alertController, animated: true, completion: nil)
-        } else {
-            let alertController = UIAlertController(
-                title: "Error",
-                message: "No pudimos guardar tus respuestas en este momento. Por favor, inténtalo más tarde.",
-                preferredStyle: .Alert
-            )
-            
-            alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (action) in
-                self.performSegueWithIdentifier("doneAnswering", sender: nil)
-            }))
-            
-            self.presentViewController(alertController, animated: true, completion: nil)
+        let alertTitle = (response["status"] as? String == "SUCCESS") ? "Respuestas Guardadas" : "Error"
+        let alertMesssage = (response["status"] as? String == "SUCCESS") ? "Gracias por responder la encuesta." : "No pudimos guardar tus respuestas en este momento. Por favor, inténtalo más tarde."
+        
+        func firstBlock(action: UIAlertAction) {
+            self.performSegueWithIdentifier("doneAnswering", sender: nil)
         }
+        
+        self.presentAlertWithTitle(alertTitle, withMessage: alertMesssage, withButtonTitles: ["OK"], withButtonStyles: [.Cancel], andButtonHandlers: [firstBlock])
     }
     
     func errorHandler(response: NSDictionary) {

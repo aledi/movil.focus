@@ -14,7 +14,10 @@ class LoadingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.loadContent()
+    }
+    
+    func loadContent() {
         let parameters: [String : AnyObject] = [
             "panelista" : "\(User.currentUser!.id)"
         ]
@@ -80,25 +83,11 @@ class LoadingViewController: UIViewController {
             break
         }
         
-        let alertController = UIAlertController(
-            title: alertTitle,
-            message: alertMessage,
-            preferredStyle: .Alert
-        )
+        func firstBlock(action: UIAlertAction) {
+            self.loadContent()
+        }
         
-        alertController.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
-        
-        alertController.addAction(UIAlertAction(title: "Reintentar", style: .Default, handler: { (action) in
-            let parameters: [String : AnyObject] = [
-                "panelista" : "\(User.currentUser!.id)"
-            ]
-            
-            self.spinner.startAnimating()
-            Controller.requestForAction(.GET_DATA, withParameters: parameters, withSuccessHandler: self.successHandler, andErrorHandler: self.errorHandler)
-        }))
-        
-        self.presentViewController(alertController, animated: true, completion: nil)
-        
+        self.presentAlertWithTitle(alertTitle, withMessage: alertMessage, withButtonTitles: ["Reintentar", "OK"], withButtonStyles: [.Default, .Cancel], andButtonHandlers: [firstBlock, nil])
         print(response["error"])
     }
 

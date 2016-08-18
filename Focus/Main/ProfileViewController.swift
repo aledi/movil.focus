@@ -71,20 +71,12 @@ class ProfileViewController: UITableViewController, MFMailComposeViewControllerD
             indexPath.row == 0 ? self.sendEmail() : self.call()
             return
         case .LogOut:
-            let alertController = UIAlertController(
-                title: "Cerrar Sesión",
-                message: "La próxima vez que abra la aplicación se le pedirán sus datos de acceso.",
-                preferredStyle: .Alert
-            )
-            
-            alertController.addAction(UIAlertAction(title: "Cerrar", style: .Destructive, handler: { (action) in
+            func firstBlock(action: UIAlertAction) {
                 Controller.requestForAction(.UNREGISTER_DEVICE, withParameters: ["id" : User.currentUser!.id], withSuccessHandler: nil, andErrorHandler: nil)
                 self.performSegueWithIdentifier("logOut", sender: nil)
-            }))
+            }
             
-            alertController.addAction(UIAlertAction(title: "Cancelar", style: .Cancel, handler: nil))
-            
-            self.presentViewController(alertController, animated: true, completion: nil)
+            self.presentAlertWithTitle("Cerrar Sesión", withMessage: "La próxima vez que abra la aplicación se le pedirán sus datos de acceso.", withButtonTitles: ["Cerrar", "Cancelar"], withButtonStyles: [.Destructive, .Cancel], andButtonHandlers: [firstBlock, nil])
             
             return
         default:
@@ -115,15 +107,7 @@ class ProfileViewController: UITableViewController, MFMailComposeViewControllerD
     }
     
     func showSendMailErrorAlert() {
-        let alertController = UIAlertController(
-            title: "Error",
-            message: "Su dispositivo parece no estar configurado para enviar correo.",
-            preferredStyle: .Alert
-        )
-        
-        alertController.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
-        
-        self.presentViewController(alertController, animated: true, completion: nil)
+        self.presentAlertWithTitle("Error", withMessage: "Su dispositivo parece no estar configurado para enviar correo.", withButtonTitles: ["OK"], withButtonStyles: [.Cancel], andButtonHandlers: [nil])
     }
     
     func mailComposerViewController() -> MFMailComposeViewController {

@@ -12,7 +12,6 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var usernameText: UITextField!
     @IBOutlet var passwordText: UITextField!
-    @IBOutlet var feedbackLabel: UILabel!
     @IBOutlet var spinner: UIActivityIndicatorView!
     
     // -----------------------------------------------------------------------------------------------------------
@@ -145,7 +144,7 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
             self.spinner.stopAnimating()
             self.performSegueWithIdentifier("logIn", sender: self)
         } else {
-            self.feedbackLabel.text = "Usuario o contraseña incorrectos"
+            self.presentAlertWithTitle("Usuario o contraseña incorrectos", withMessage: "Verifique su usuario y contraseña", withButtonTitles: ["OK"], withButtonStyles: [.Cancel], andButtonHandlers: [nil])
         }
         
         self.spinner.stopAnimating()
@@ -167,20 +166,11 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
             break
         }
         
-        let alertController = UIAlertController(
-            title: alertTitle,
-            message: alertMessage,
-            preferredStyle: .Alert
-        )
-        
-        alertController.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
-        
-        alertController.addAction(UIAlertAction(title: "Reintentar", style: .Default, handler: { (action) in
+        func firstBlock(action: UIAlertAction) {
             self.logIn()
-        }))
+        }
         
-        self.presentViewController(alertController, animated: true, completion: nil)
-        
+        self.presentAlertWithTitle(alertTitle, withMessage: alertMessage, withButtonTitles: ["Reintentar", "OK"], withButtonStyles: [.Default, .Cancel], andButtonHandlers: [firstBlock, nil])
         print(response["error"])
     }
     
