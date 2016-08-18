@@ -20,6 +20,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Encuesta" id="P4G-Vn-0Ra">
                         <barButtonItem key="rightBarButtonItem" title="Terminar" id="P9u-ba-0cP">
+                            <color key="tintColor" red="0.12549019610000001" green="0.13725490200000001" blue="0.51372549020000002" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="doneAnswering:" destination="bBo-24-3YA" id="2md-YM-sZV"/>
                             </connections>
