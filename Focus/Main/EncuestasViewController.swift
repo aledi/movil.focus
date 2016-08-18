@@ -11,6 +11,7 @@ import UIKit
 class EncuestasViewController: UITableViewController {
 
     var encuestas: [Encuesta]?
+    var selectedEncuesta: Encuesta?
     
     // -----------------------------------------------------------------------------------------------------------
     // MARK: - Navigation
@@ -23,8 +24,8 @@ class EncuestasViewController: UITableViewController {
             let navigationController = segue.destinationViewController as! UINavigationController
             let preguntasViewController = navigationController.topViewController as! PreguntasViewController
             
-            preguntasViewController.preguntas = (sender as! Encuesta).preguntas
-            preguntasViewController.idEncuesta = (sender as! Encuesta).id
+            preguntasViewController.preguntas = self.selectedEncuesta!.preguntas
+            preguntasViewController.id = sender as? Int
         }
     }
     
@@ -67,12 +68,16 @@ class EncuestasViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        let encuesta = self.encuestas![indexPath.row]
+        self.selectedEncuesta = self.encuestas![indexPath.row]
         
-        if (!encuesta.contestada) {
+        if (!self.selectedEncuesta!.contestada) {
             func firstBlock(action: UIAlertAction) {
-                encuesta.contestada = true
-                self.performSegueWithIdentifier("answerEncuesta", sender: encuesta)
+                let parameters: [String : AnyObject] = [
+                    "encuesta" : self.selectedEncuesta!.id,
+                    "panelista" : User.currentUser!.id
+                ]
+                
+                Controller.requestForAction(.START_SURVEY, withParameters: parameters, withSuccessHandler: self.successHandler, andErrorHandler: self.errorHandler)
             }
             
             self.presentAlertWithTitle("Atención", withMessage: "Una vez iniciada la encuesta, deberá contestarla completamente. No se podrá salir y regresar de la encuesta, ni contestarla nuevamente.", withButtonTitles: ["Responder", "Cancelar"], withButtonStyles: [.Default, .Cancel], andButtonHandlers: [firstBlock, nil])
@@ -81,6 +86,35 @@ class EncuestasViewController: UITableViewController {
         }
         
         self.presentAlertWithTitle("Encuesta Contestada", withMessage: "Esta encuesta ya ha sido contestada. Solo puede responder una vez a la encuesta.", withButtonTitles: ["OK"], withButtonStyles: [.Cancel], andButtonHandlers: [nil])
+    }
+    
+    func successHandler(response: NSDictionary) {
+        if (response["status"] as? String == "SUCCESS") {
+            let id = response["id"] as! Int
+            self.selectedEncuesta!.contestada = true
+            self.performSegueWithIdentifier("answerEncuesta", sender: id)
+        } else {
+            self.presentAlertWithTitle("Error", withMessage: "No hemos podido iniciar tu sesión. Por favor, intenta más tarde.", withButtonTitles: ["OK"], withButtonStyles: [.Cancel], andButtonHandlers: [nil])
+        }
+    }
+    
+    func errorHandler(response: NSDictionary) {
+        var alertTitle = ""
+        var alertMessage = ""
+        
+        switch (response["error"] as! NSError).code {
+        case -1009:
+            alertTitle = "Sin conexión a internet"
+            alertMessage = "Para contestar la encuesta, su dispositivo debe estar conectado a internet."
+        case -1003:
+            alertTitle = "Servidor no disponible"
+            alertMessage = "Nuestro servidor no está disponible por el momento."
+        default:
+            break
+        }
+        
+        self.presentAlertWithTitle(alertTitle, withMessage: alertMessage, withButtonTitles: ["OK"], withButtonStyles: [.Cancel], andButtonHandlers: [nil])
+        print(response["error"])
     }
     
 }
