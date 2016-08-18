@@ -25,7 +25,7 @@ extension NSUserDefaults {
     static func retreiveUserDefaults() -> User? {
         let defaults = NSUserDefaults.standardUserDefaults()
         
-        guard let id = defaults.objectForKey("id") as? Int, username = defaults.objectForKey("username") as? String, email = defaults.objectForKey("email") as? String, nombre = defaults.objectForKey("nombre") as? String, token = defaults.objectForKey("token") as? String else {
+        guard let id = defaults.objectForKey("id") as? Int, username = defaults.objectForKey("username") as? String, email = defaults.objectForKey("email") as? String, nombre = defaults.objectForKey("nombre") as? String, _ = defaults.objectForKey("token") as? String else {
             return nil
         }
         

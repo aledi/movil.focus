@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var paneles: [Panel]?
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        self.showStoryboard()
         return true
     }
     
@@ -26,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func applicationDidEnterBackground(application: UIApplication) {
-        guard let user = User.currentUser, paneles = self.paneles else {
+        guard let _ = User.currentUser, paneles = self.paneles else {
             UIApplication.sharedApplication().applicationIconBadgeNumber = 0
             return
         }
@@ -41,6 +42,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func applicationWillEnterForeground(application: UIApplication) {
+        self.showStoryboard()
+    }
+    
+    func applicationDidBecomeActive(application: UIApplication) {
+    }
+    
+    func applicationWillTerminate(application: UIApplication) {
+    }
+    
+    func showStoryboard() {
         guard let storedUser = NSUserDefaults.retreiveUserDefaults() else {
             return
         }
@@ -54,12 +65,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         self.window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
         self.window?.makeKeyAndVisible()
-    }
-    
-    func applicationDidBecomeActive(application: UIApplication) {
-    }
-    
-    func applicationWillTerminate(application: UIApplication) {
     }
     
     // -----------------------------------------------------------------------------------------------------------

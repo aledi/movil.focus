@@ -75,15 +75,7 @@ class PanelsViewController: UITableViewController {
             return
         }
         
-        let alertController = UIAlertController(
-            title: "No hay Encuestas",
-            message: "Este panel aún no cuenta con encuestas. Por favor, espere a que una encuesta sea habilitada.",
-            preferredStyle: .Alert
-        )
-        
-        alertController.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
-        
-        self.presentViewController(alertController, animated: true, completion: nil)
+        self.presentAlertWithTitle("No hay Encuestas", withMessage: "Este panel aún no cuenta con encuestas. Por favor, espere a que una encuesta sea habilitada.", withButtonTitles: ["OK"], withButtonStyles: [.Cancel], andButtonHandlers: [nil])
     }
     
 }

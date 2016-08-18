@@ -30,7 +30,6 @@ class EncuestasViewController: UITableViewController {
     
     @IBAction func doneAnsweringEncuesta(segue: UIStoryboardSegue) {
         self.dismissSegueSourceViewController(segue)
-        
         self.tableView.reloadData()
     }
     
@@ -71,36 +70,17 @@ class EncuestasViewController: UITableViewController {
         let encuesta = self.encuestas![indexPath.row]
         
         if (!encuesta.contestada) {
-            let alertController = UIAlertController(
-                title: "Atención",
-                message: "Una vez iniciada la encuesta, deberá contestarla completamente. No se podrá salir y regresar de la encuesta, ni contestarla nuevamente.",
-                preferredStyle: .Alert
-            )
-            
-            alertController.addAction(UIAlertAction(title: "Responder", style: .Default, handler: { (action) in
-                let encuesta = self.encuestas![indexPath.row]
+            func firstBlock(action: UIAlertAction) {
                 encuesta.contestada = true
-                
                 self.performSegueWithIdentifier("answerEncuesta", sender: encuesta)
-            }))
+            }
             
-            alertController.addAction(UIAlertAction(title: "Cancelar", style: .Cancel, handler: nil))
-            
-            self.presentViewController(alertController, animated: true, completion: nil)
+            self.presentAlertWithTitle("Atención", withMessage: "Una vez iniciada la encuesta, deberá contestarla completamente. No se podrá salir y regresar de la encuesta, ni contestarla nuevamente.", withButtonTitles: ["Responder", "Cancelar"], withButtonStyles: [.Default, .Cancel], andButtonHandlers: [firstBlock, nil])
             
             return
         }
         
-        let alertController = UIAlertController(
-            title: "Encuesta Contestada",
-            message: "Esta encuesta ya ha sido contestada. Solo puede responder una vez a la encuesta.",
-            preferredStyle: .Alert
-        )
-        
-        alertController.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
-        
-        self.presentViewController(alertController, animated: true, completion: nil)
-        
+        self.presentAlertWithTitle("Encuesta Contestada", withMessage: "Esta encuesta ya ha sido contestada. Solo puede responder una vez a la encuesta.", withButtonTitles: ["OK"], withButtonStyles: [.Cancel], andButtonHandlers: [nil])
     }
     
 }

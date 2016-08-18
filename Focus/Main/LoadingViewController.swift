@@ -14,14 +14,15 @@ class LoadingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.loadContent()
+    }
+    
+    func loadContent() {
         let parameters: [String : AnyObject] = [
             "panelista" : "\(User.currentUser!.id)"
         ]
         
-        self.spinner.hidden = false
         self.spinner.startAnimating()
-        
         Controller.requestForAction(.GET_DATA, withParameters: parameters, withSuccessHandler: self.successHandler, andErrorHandler: self.errorHandler)
     }
     
@@ -61,18 +62,32 @@ class LoadingViewController: UIViewController {
             }
             
             self.appDelegate.paneles = paneles
-            
             self.spinner.stopAnimating()
-            self.spinner.hidden = true
-            
             self.performSegueWithIdentifier("showContent", sender: nil)
         }
     }
     
     func errorHandler(response: NSDictionary) {
         self.spinner.stopAnimating()
-        self.spinner.hidden = true
+        var alertTitle = ""
+        var alertMessage = ""
         
+        switch (response["error"] as! NSError).code {
+        case -1009:
+            alertTitle = "Sin conexión a internet"
+            alertMessage = "Para utilizar la aplicación, su dispositivo debe estar conectado a internet."
+        case -1003:
+            alertTitle = "Servidor no disponible"
+            alertMessage = "Nuestro servidor no está disponible por el momento."
+        default:
+            break
+        }
+        
+        func firstBlock(action: UIAlertAction) {
+            self.loadContent()
+        }
+        
+        self.presentAlertWithTitle(alertTitle, withMessage: alertMessage, withButtonTitles: ["Reintentar", "OK"], withButtonStyles: [.Default, .Cancel], andButtonHandlers: [firstBlock, nil])
         print(response["error"])
     }
 
