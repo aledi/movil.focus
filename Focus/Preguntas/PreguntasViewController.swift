@@ -12,7 +12,7 @@ let PREGUNTA_CELL = "PreguntaViewCell"
 
 class PreguntasViewController: UITableViewController {
     
-    var idEncuesta: Int?
+    var id: Int?
     var preguntas: [Pregunta]?
     var respuesta: String = ""
     
@@ -74,12 +74,13 @@ class PreguntasViewController: UITableViewController {
             
             self.respuesta += "\(pregunta.respuesta)|"
         }
+        
+        self.saveAnswers()
     }
     
     func saveAnswers() {
         let parameters: [String : AnyObject] = [
-            "encuesta" : self.idEncuesta!,
-            "panelista" : User.currentUser!.id,
+            "id" : self.id!,
             "respuestas" : self.respuesta
         ]
         
