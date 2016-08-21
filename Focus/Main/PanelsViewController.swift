@@ -19,6 +19,7 @@ class PanelsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        UIApplication.sharedApplication().setStatusBarStyle(.LightContent, animated: false)
         self.paneles = self.appDelegate.paneles
         self.tableView.reloadData()
     }

@@ -30,6 +30,8 @@ class ProfileViewController: UITableViewController, MFMailComposeViewControllerD
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
+        UIApplication.sharedApplication().setStatusBarStyle(.LightContent, animated: false)
+        
         guard let user = User.currentUser, paneles = self.appDelegate.paneles else {
             return
         }

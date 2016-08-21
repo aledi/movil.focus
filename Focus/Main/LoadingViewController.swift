@@ -14,6 +14,8 @@ class LoadingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        UIApplication.sharedApplication().setStatusBarStyle(.Default, animated: false)
         self.loadContent()
     }
     
