@@ -52,12 +52,10 @@ class PreguntaViewCell: UITableViewCell, UITextViewDelegate {
         self.imagenBottomConstraint.constant = 0
         
         if (pregunta.imagen != "") {
-            if let url =  NSURL(string: pregunta.imagen) {
-                if let image = UIImage(data: NSData(contentsOfURL: url)!) {
-                    self.imagenHeightConstraint.constant = 200
-                    self.imagenBottomConstraint.constant = 15
-                    self.imagen.image = image
-                }
+            if let url =  NSURL(string: pregunta.imagen), data = NSData(contentsOfURL: url), image = UIImage(data: data) {
+                self.imagenHeightConstraint.constant = 200
+                self.imagenBottomConstraint.constant = 15
+                self.imagen.image = image
             }
         }
         
