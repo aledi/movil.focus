@@ -12,6 +12,7 @@ class EncuestasViewController: UITableViewController {
 
     var encuestas: [Encuesta]?
     var selectedEncuesta: Encuesta?
+    var loadingAlert: UIAlertController?
     
     // -----------------------------------------------------------------------------------------------------------
     // MARK: - Navigation
@@ -77,6 +78,8 @@ class EncuestasViewController: UITableViewController {
                     "panelista" : User.currentUser!.id
                 ]
                 
+                
+                self.loadingAlert = self.presentAlertWithTitle("Cargando", withMessage: nil, withButtonTitles: [], withButtonStyles: [], andButtonHandlers: [])
                 Controller.requestForAction(.START_SURVEY, withParameters: parameters, withSuccessHandler: self.successHandler, andErrorHandler: self.errorHandler)
             }
             
@@ -89,32 +92,36 @@ class EncuestasViewController: UITableViewController {
     }
     
     func successHandler(response: NSDictionary) {
-        if (response["status"] as? String == "SUCCESS") {
-            let id = response["id"] as! Int
-            self.selectedEncuesta!.contestada = true
-            self.performSegueWithIdentifier("answerEncuesta", sender: id)
-        } else {
-            self.presentAlertWithTitle("Error", withMessage: "No hemos podido iniciar tu sesión. Por favor, intenta más tarde.", withButtonTitles: ["OK"], withButtonStyles: [.Cancel], andButtonHandlers: [nil])
-        }
+        self.loadingAlert?.dismissViewControllerAnimated(true, completion: { 
+            if (response["status"] as? String == "SUCCESS") {
+                let id = response["id"] as! Int
+                self.selectedEncuesta!.contestada = true
+                self.performSegueWithIdentifier("answerEncuesta", sender: id)
+            } else {
+                self.presentAlertWithTitle("Error", withMessage: "No hemos podido iniciar tu sesión. Por favor, intenta más tarde.", withButtonTitles: ["OK"], withButtonStyles: [.Cancel], andButtonHandlers: [nil])
+            }
+        })
     }
     
     func errorHandler(response: NSDictionary) {
-        var alertTitle = ""
-        var alertMessage = ""
-        
-        switch (response["error"] as! NSError).code {
-        case -1009:
-            alertTitle = "Sin conexión a internet"
-            alertMessage = "Para contestar la encuesta, su dispositivo debe estar conectado a internet."
-        case -1003:
-            alertTitle = "Servidor no disponible"
-            alertMessage = "Nuestro servidor no está disponible por el momento."
-        default:
-            break
-        }
-        
-        self.presentAlertWithTitle(alertTitle, withMessage: alertMessage, withButtonTitles: ["OK"], withButtonStyles: [.Cancel], andButtonHandlers: [nil])
-        print(response["error"])
+        self.loadingAlert?.dismissViewControllerAnimated(true, completion: { 
+            var alertTitle = ""
+            var alertMessage = ""
+            
+            switch (response["error"] as! NSError).code {
+            case -1009:
+                alertTitle = "Sin conexión a internet"
+                alertMessage = "Para contestar la encuesta, su dispositivo debe estar conectado a internet."
+            case -1003:
+                alertTitle = "Servidor no disponible"
+                alertMessage = "Nuestro servidor no está disponible por el momento."
+            default:
+                break
+            }
+            
+            self.presentAlertWithTitle(alertTitle, withMessage: alertMessage, withButtonTitles: ["OK"], withButtonStyles: [.Cancel], andButtonHandlers: [nil])
+            print(response["error"])
+        })
     }
     
 }
