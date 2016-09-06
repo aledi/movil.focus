@@ -30,7 +30,7 @@ extension UIViewController {
         }
     }
     
-    func presentAlertWithTitle(title: String, withMessage message: String, withButtonTitles buttonTitles: [String], withButtonStyles styles: [UIAlertActionStyle], andButtonHandlers handlers: [AlertHandler?]) {
+    func presentAlertWithTitle(title: String?, withMessage message: String?, withButtonTitles buttonTitles: [String], withButtonStyles styles: [UIAlertActionStyle], andButtonHandlers handlers: [AlertHandler?]) -> UIAlertController {
         let alertController = UIAlertController(
             title: title,
             message: message,
@@ -42,6 +42,7 @@ extension UIViewController {
         }
         
         self.presentViewController(alertController, animated: true, completion: nil)
+        return alertController
     }
     
 }
