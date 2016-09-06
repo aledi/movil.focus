@@ -23,6 +23,11 @@ class PreguntasViewController: UITableViewController {
         self.tableView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
     }
     
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.dismissKeyboard()
+    }
+    
     func dismissKeyboard() {
         self.view.endEditing(true)
     }
@@ -65,6 +70,7 @@ class PreguntasViewController: UITableViewController {
     // -----------------------------------------------------------------------------------------------------------
     
     @IBAction func doneAnswering(sender: AnyObject) {
+        self.dismissKeyboard()
         self.respuesta = ""
         
         for pregunta in self.preguntas! {
@@ -74,10 +80,21 @@ class PreguntasViewController: UITableViewController {
                 }
             }
             
+            if (pregunta.respuesta.isEmpty) {
+                return self.missingAnswerAlert(pregunta.numPregunta)
+            }
+            
             self.respuesta += "\(pregunta.respuesta)|"
         }
         
         self.saveAnswers()
+    }
+    
+    func missingAnswerAlert(numPregunta: Int) {
+        let alertTitle = "La pregunta \(numPregunta) no ha sido respondida."
+        let alertMesssage = "Por favor, responda a todas las preguntas e intente enviar las respuestas nuevamente."
+        
+        self.presentAlertWithTitle(alertTitle, withMessage: alertMesssage, withButtonTitles: ["OK"], withButtonStyles: [.Cancel], andButtonHandlers: [nil])
     }
     
     func saveAnswers() {
