@@ -57,6 +57,8 @@
     <string name="server_unavailable_message">Nuestro servidor no está disponible por el momento.</string>
     <string name="error_start_survey_title">Error</string>
     <string name="error_start_survey_message">Por favor, intenta más tarde.</string>
+    <string name="error_save_survey_title">La pregunta %d no ha sido contestada</string>
+    <string name="error_save_survey_message">Por favor, responda a todas las preguntas e intente enviar las respuestas nuevamente.</string>
 
     <!-- Helpers -->
     <string name="image_description">Image</string>

@@ -56,6 +56,7 @@ public class PreguntasFragment extends Fragment {
     private int panelId;
     private LinearLayout preguntasList;
     private List<Pregunta> preguntas;
+    private String respuestas;
     private View loader;
 
     // region Listeners variables
@@ -287,8 +288,12 @@ public class PreguntasFragment extends Fragment {
     public void saveRespuestas() {
         enableBack = false;
         UIUtils.hideKeyboardIfShowing(activity);
+        int invalidPregunta = checkForInvalidPregunta();
 
-        // TODO: Check for invalid fields.
+        if (invalidPregunta > 0) {
+            UIUtils.showAlertDialog(getString(R.string.error_save_survey_title, invalidPregunta), R.string.error_save_survey_message, activity);
+            return;
+        }
 
         if (NetworkManager.isNetworkUnavailable(activity)) {
             return;
@@ -311,25 +316,33 @@ public class PreguntasFragment extends Fragment {
     // endregion
 
     // region Helper methods
-    private RequestParams getRequestParams() {
-        RequestParams params = new RequestParams();
-        String respuestas = "";
-
+    private int checkForInvalidPregunta() {
         for (Pregunta pregunta : preguntas) {
             if (pregunta.getTipo() == MULTIPLE_OPTION) {
-                String respuesta = "";
+                String respuestaMultipleOption = "";
                 List<String> respuestasSeleccionadas = pregunta.getRespuestasSeleccionadas();
 
                 for (String respuestaSeleccionada : respuestasSeleccionadas) {
-                    respuesta += respuestaSeleccionada + "&";
+                    respuestaMultipleOption += respuestaSeleccionada + "&";
                 }
 
-                pregunta.setRespuesta(respuesta);
+                pregunta.setRespuesta(respuestaMultipleOption);
             }
 
-            respuestas += pregunta.getRespuesta() + "|";
+            String respuesta = pregunta.getRespuesta();
+
+            if (!TextUtils.isValidString(respuesta)) {
+                return pregunta.getNumPregunta();
+            }
+
+            respuestas += respuesta + "|";
         }
 
+        return 0;
+    }
+
+    private RequestParams getRequestParams() {
+        RequestParams params = new RequestParams();
         params.put(ID, encuestaId);
         params.put(RESPUESTAS, respuestas);
 
