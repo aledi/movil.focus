@@ -44,9 +44,9 @@ import static com.android.focus.model.Pregunta.TEXT_ANSWER;
 import static com.android.focus.network.APIConstants.ID;
 import static com.android.focus.network.APIConstants.RESPUESTAS;
 
-public class EncuestaFragment extends Fragment {
+public class PreguntasFragment extends Fragment {
 
-    public static final String FRAGMENT_TAG = EncuestaFragment.class.getCanonicalName();
+    public static final String FRAGMENT_TAG = PreguntasFragment.class.getCanonicalName();
     private static final String ARGS_PANEL_ID = FRAGMENT_TAG + ".panelId";
     private static final String ARGS_ENCUESTA_ID = FRAGMENT_TAG + ".encuestaId";
 
@@ -73,11 +73,11 @@ public class EncuestaFragment extends Fragment {
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
      *
-     * @return A new instance of fragment EncuestaFragment.
+     * @return A new instance of fragment PreguntasFragment.
      */
     @NonNull
-    public static EncuestaFragment newInstance(int panelId, int encuestaId) {
-        EncuestaFragment fragment = new EncuestaFragment();
+    public static PreguntasFragment newInstance(int panelId, int encuestaId) {
+        PreguntasFragment fragment = new PreguntasFragment();
         Bundle args = new Bundle();
         args.putInt(ARGS_PANEL_ID, panelId);
         args.putInt(ARGS_ENCUESTA_ID, encuestaId);

@@ -20,7 +20,7 @@ import com.android.focus.model.Encuesta;
 import com.android.focus.model.User;
 import com.android.focus.network.HttpResponseHandler;
 import com.android.focus.network.NetworkManager;
-import com.android.focus.paneles.activities.EncuestaActivity;
+import com.android.focus.paneles.activities.PreguntasActivity;
 import com.android.focus.utils.DateUtils;
 import com.android.focus.utils.UIUtils;
 import com.loopj.android.http.RequestParams;
@@ -35,8 +35,8 @@ import static com.android.focus.network.APIConstants.ENCUESTA;
 import static com.android.focus.network.APIConstants.PANELISTA;
 import static com.android.focus.network.APIConstants.STATUS;
 import static com.android.focus.network.APIConstants.SUCCESS;
-import static com.android.focus.paneles.activities.EncuestaActivity.EXTRA_ENCUESTA_ID;
-import static com.android.focus.paneles.activities.EncuestaActivity.EXTRA_PANEL_ID;
+import static com.android.focus.paneles.activities.PreguntasActivity.EXTRA_ENCUESTA_ID;
+import static com.android.focus.paneles.activities.PreguntasActivity.EXTRA_PANEL_ID;
 
 public class EncuestasFragment extends Fragment {
 
@@ -188,7 +188,7 @@ public class EncuestasFragment extends Fragment {
                     encuesta.setContestada(true);
                     updateLoader(true, View.GONE);
 
-                    Intent intent = new Intent(getActivity(), EncuestaActivity.class);
+                    Intent intent = new Intent(getActivity(), PreguntasActivity.class);
                     intent.putExtra(EXTRA_PANEL_ID, panelId);
                     intent.putExtra(EXTRA_ENCUESTA_ID, encuesta.getId());
                     startActivity(intent);

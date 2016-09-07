@@ -6,15 +6,15 @@ import android.view.MenuItem;
 
 import com.android.focus.R;
 import com.android.focus.ToolbarActivity;
-import com.android.focus.paneles.fragments.EncuestaFragment;
+import com.android.focus.paneles.fragments.PreguntasFragment;
 
-public class EncuestaActivity extends ToolbarActivity {
+public class PreguntasActivity extends ToolbarActivity {
 
-    private static final String TAG = EncuestaActivity.class.getCanonicalName();
+    private static final String TAG = PreguntasActivity.class.getCanonicalName();
     public static final String EXTRA_PANEL_ID = TAG + ".panelId";
     public static final String EXTRA_ENCUESTA_ID = TAG + ".encuestaId";
 
-    private EncuestaFragment fragment;
+    private PreguntasFragment fragment;
 
     // region Activity lifecycle
     @Override
@@ -22,12 +22,12 @@ public class EncuestaActivity extends ToolbarActivity {
         title = getString(R.string.survey);
         super.onCreate(savedInstanceState);
 
-        fragment = EncuestaFragment.newInstance(getIntent().getIntExtra(EXTRA_PANEL_ID, -1), getIntent().getIntExtra(EXTRA_ENCUESTA_ID, -1));
+        fragment = PreguntasFragment.newInstance(getIntent().getIntExtra(EXTRA_PANEL_ID, -1), getIntent().getIntExtra(EXTRA_ENCUESTA_ID, -1));
 
         if (savedInstanceState == null) {
             getSupportFragmentManager()
                     .beginTransaction()
-                    .replace(R.id.container, fragment, EncuestaFragment.FRAGMENT_TAG)
+                    .replace(R.id.container, fragment, PreguntasFragment.FRAGMENT_TAG)
                     .commit();
         }
     }

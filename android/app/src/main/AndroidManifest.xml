@@ -41,7 +41,7 @@
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".paneles.activities.EncuestaActivity"
+            android:name=".paneles.activities.PreguntasActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
     </application>
