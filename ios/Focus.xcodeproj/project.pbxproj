@@ -14,6 +14,7 @@
 		405313051D385ED10073751A /* Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405313041D385ED10073751A /* Controller.swift */; };
 		4053130A1D386EFA0073751A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 405313091D386EFA0073751A /* Main.storyboard */; };
 		4053130C1D386F370073751A /* PanelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4053130B1D386F370073751A /* PanelsViewController.swift */; };
+		406537251D7FA8D7000C7C9C /* PrivacyPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406537241D7FA8D7000C7C9C /* PrivacyPolicyViewController.swift */; };
 		40A8DC301D56801B0065B734 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A8DC2F1D56801B0065B734 /* RegistrationViewController.swift */; };
 		40A8DC321D569E010065B734 /* PreguntaViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40A8DC311D569E010065B734 /* PreguntaViewCell.xib */; };
 		40A8DC341D569E1B0065B734 /* PreguntaViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A8DC331D569E1B0065B734 /* PreguntaViewCell.swift */; };
@@ -54,6 +55,7 @@
 		405313041D385ED10073751A /* Controller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Controller.swift; path = Model/Controller.swift; sourceTree = "<group>"; };
 		405313091D386EFA0073751A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Main/Main.storyboard; sourceTree = "<group>"; };
 		4053130B1D386F370073751A /* PanelsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PanelsViewController.swift; path = Main/PanelsViewController.swift; sourceTree = "<group>"; };
+		406537241D7FA8D7000C7C9C /* PrivacyPolicyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PrivacyPolicyViewController.swift; path = Main/PrivacyPolicyViewController.swift; sourceTree = "<group>"; };
 		40A8DC2F1D56801B0065B734 /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegistrationViewController.swift; path = "Log In/RegistrationViewController.swift"; sourceTree = "<group>"; };
 		40A8DC311D569E010065B734 /* PreguntaViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PreguntaViewCell.xib; path = Preguntas/PreguntaViewCell.xib; sourceTree = "<group>"; };
 		40A8DC331D569E1B0065B734 /* PreguntaViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreguntaViewCell.swift; path = Preguntas/PreguntaViewCell.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				4053130B1D386F370073751A /* PanelsViewController.swift */,
 				400F4EF31D49B46500538BCD /* EncuestasViewController.swift */,
 				40E7F9C11D4D5A9E00BCD0DB /* ProfileViewController.swift */,
+				406537241D7FA8D7000C7C9C /* PrivacyPolicyViewController.swift */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 				40A8DC341D569E1B0065B734 /* PreguntaViewCell.swift in Sources */,
 				405313051D385ED10073751A /* Controller.swift in Sources */,
 				40FF0DAB1D37143500ED8A64 /* User.swift in Sources */,
+				406537251D7FA8D7000C7C9C /* PrivacyPolicyViewController.swift in Sources */,
 				400E9D3F1D5021B3006AAD64 /* PreguntasViewController.swift in Sources */,
 				40FF0DFE1D373C6B00ED8A64 /* UIViewController.swift in Sources */,
 			);

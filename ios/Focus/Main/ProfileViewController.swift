@@ -70,7 +70,12 @@ class ProfileViewController: UITableViewController, MFMailComposeViewControllerD
         
         switch Sections(rawValue: indexPath.section)! {
         case .Contact:
-            indexPath.row == 0 ? self.sendEmail() : self.call()
+            if (indexPath.row == 0) {
+                self.sendEmail()
+            } else if (indexPath.row == 1) {
+                self.call()
+            }
+            
             return
         case .LogOut:
             func firstBlock(action: UIAlertAction) {

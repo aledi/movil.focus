@@ -15,15 +15,16 @@ enum Actions: String {
     case SAVE_ANSWERS = "SAVE_RESPUESTAS"
     case REGISTER_DEVICE = "REGISTER_DEVICE"
     case UNREGISTER_DEVICE = "UNREGISTER_DEVICE"
+    case PRIVACY_POLICY = "PRIVACY_POLICY"
 }
 
 class Controller {
     
     typealias RequestDidEndHandler = (NSDictionary) -> ()
     
-    private static let url = "http://ec2-52-26-0-111.us-west-2.compute.amazonaws.com/focus/api/controller.php"
+    private static let url = "http://192.168.1.16:8888/focus/api/controller.php"
     
-    static func requestForAction(action: Actions, withParameters parameters: [String : AnyObject], withSuccessHandler successHandler: RequestDidEndHandler?, andErrorHandler errorHandler: RequestDidEndHandler?) {
+    static func requestForAction(action: Actions, withParameters parameters: [String : AnyObject], withSuccessHandler successHandler: RequestDidEndHandler?, andErrorHandler errorHandler: RequestDidEndHandler? = nil) {
         var requestParameters = parameters
         requestParameters["action"] = action.rawValue
         
