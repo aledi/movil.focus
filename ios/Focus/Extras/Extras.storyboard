@@ -25,7 +25,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t7T-Oz-ytY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="871" y="227"/>
+            <point key="canvasLocation" x="871" y="327"/>
         </scene>
         <!--Bienvenido-->
         <scene sceneID="bte-Wv-6gd">
@@ -36,18 +36,18 @@
                         <viewControllerLayoutGuide type="bottom" id="cEN-SY-KFR"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="j5U-JK-eqW">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="800"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="740"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Rv-BV-M3S">
-                                <rect key="frame" x="0.0" y="64" width="600" height="736"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="676"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UX4-W2-IAQ" userLabel="ContentView">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="676"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="675"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e4g-5q-XgC">
                                                 <rect key="frame" x="25" y="271" width="550" height="223.5"/>
-                                                <mutableString key="text">Su inscripción al panel Focus ha sido confirmada. A partir de ahora queda registrado para participar en nuestros estudios y compartir su opinión.  Tendrá la posibilidad de ganar magníficos premios.  Pronto llegará la invitación para la primera encuesta. ¡Espérala!  Opina y gana premios al instante.  Gracias por tu tiempo,</mutableString>
+                                                <string key="text">Su inscripción al panel Focus ha sido confirmada. A partir de ahora queda registrado para participar en nuestros estudios y compartir su opinión.  Tendrá la posibilidad de ganar magníficos premios.  Pronto llegará la invitación para la primera encuesta. ¡Espérala!  Opina y gana premios al instante.  Gracias por tu tiempo,</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -66,13 +66,13 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Natalia Barbosa Atención al Panelista atencion@focuscg.com.mx focuscg.com.mx" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Noj-If-PVn">
-                                                <rect key="frame" x="367" y="519.5" width="207.5" height="81.5"/>
+                                                <rect key="frame" x="367" y="519" width="207.5" height="81.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UL1-U0-HpG">
-                                                <rect key="frame" x="431" y="620.5" width="143" height="30"/>
+                                                <rect key="frame" x="431" y="620" width="143" height="30"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                 <state key="normal" title="Aviso de Privacidad">
                                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -134,7 +134,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="600" height="800"/>
+                    <size key="freeformSize" width="600" height="740"/>
                     <connections>
                         <outlet property="salutLabel" destination="ZYB-XR-S62" id="gvb-1K-BYL"/>
                         <outlet property="scrollView" destination="1Rv-BV-M3S" id="Cac-DI-eLY"/>
@@ -150,7 +150,7 @@
                 <viewControllerPlaceholder storyboardName="Main" id="8Os-62-ANH" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Qp-GJ-4B7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2185.5" y="478"/>
+            <point key="canvasLocation" x="2198" y="327"/>
         </scene>
         <!--Aviso de Privacidad-->
         <scene sceneID="inC-Qp-5UR">
@@ -161,11 +161,11 @@
                         <viewControllerLayoutGuide type="bottom" id="cpR-hu-IoP"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="GXM-sM-Yqu">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="800"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="740"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="wFX-Oh-F7w">
-                                <rect key="frame" x="15" y="72" width="570" height="723"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="wFX-Oh-F7w">
+                                <rect key="frame" x="15" y="72" width="570" height="663"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">En cumplimiento con la Ley Federal de Protección de datos personales en posesión de los particulares, en lo sucesivo "La Ley", Focus Estudios Cualitativos SA de CV denominada en delante "Focus Estudios Cualitativos", con domicilio en Calle Independencia 233 colonia Centro, San Pedro Garza García, nuevo León C.P. 66230 con RFC FEC980226G92, es responsable del tratamiento de los datos personales que usted proporcione, así como de su protección, en términos y de conformidad con los principios previstos en "La Ley".
 
@@ -188,7 +188,7 @@ Para el caso de que usted quisiera Acceder, Rectificar, Cancelar u Oponerse (Der
 El área responsable de resguardar sus datos personales, así como dar continuidad a la solicitud que usted realice en cuanto a sus derechos ARCO o a limitar el uso y divulgación de sus datos, es el área de sistemas, la cual pone a su disposición el siguiente correo: focus@focuscg.com.mx con la finalidad de atender sus peticiones relacionadas al tratamiento de sus datos personales.
 
 Le informamos que sus datos personales no serán transferidos a terceros, salvo en el caso de que usted proporcione como referencia a esta empresa. Sin embargo, Focus Estudios Cualitativos hará transferencia de datos personales en el caso de que autoridad competente así lo solicite por mandato judicial.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
@@ -207,7 +207,7 @@ Le informamos que sus datos personales no serán transferidos a terceros, salvo 
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XM8-Eh-z9F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1672" y="1276"/>
+            <point key="canvasLocation" x="1672" y="1246"/>
         </scene>
     </scenes>
     <resources>
