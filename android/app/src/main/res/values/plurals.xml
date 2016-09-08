@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="preguntas_count">
+        <item quantity="one">%s pregunta</item>
+        <item quantity="other">%s preguntas</item>
+    </plurals>
+</resources>
