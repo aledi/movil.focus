@@ -337,7 +337,31 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="x4f-8J-Ns0" kind="show" id="mSh-1u-7AQ"/>
+                                            <segue destination="KRj-AO-AHx" kind="show" id="EbM-5p-a4W"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CallCell" id="mLb-Yf-FNR">
+                                        <rect key="frame" x="0.0" y="521.5" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mLb-Yf-FNR" id="0GM-Um-9iB">
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ngv-Yr-3JY">
+                                                    <rect key="frame" x="15" y="12" width="537" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="ngv-Yr-3JY" secondAttribute="trailing" constant="15" id="DRf-sc-egj"/>
+                                                <constraint firstItem="ngv-Yr-3JY" firstAttribute="centerY" secondItem="0GM-Um-9iB" secondAttribute="centerY" id="Lht-wF-p47"/>
+                                                <constraint firstItem="ngv-Yr-3JY" firstAttribute="leading" secondItem="0GM-Um-9iB" secondAttribute="leading" constant="15" id="awM-2N-2uc"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="NdK-gL-xLZ" kind="presentation" id="B47-MM-8dq"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -345,7 +369,7 @@
                             <tableViewSection id="Cyi-qu-D99">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LogOutCell" id="1sJ-I1-LoW">
-                                        <rect key="frame" x="0.0" y="557.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="601.5" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1sJ-I1-LoW" id="eL9-vw-cZj">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
@@ -387,62 +411,13 @@
             </objects>
             <point key="canvasLocation" x="822" y="1208"/>
         </scene>
-        <!--Aviso de Privacidad-->
-        <scene sceneID="9PG-gv-Y1c">
+        <!--PrivacyPolicy-->
+        <scene sceneID="CtM-aO-fNu">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="x4f-8J-Ns0" customClass="PrivacyPolicyViewController" customModule="Focus" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="DeY-ci-4eX"/>
-                        <viewControllerLayoutGuide type="bottom" id="aEy-Ub-eIm"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="YfH-0M-KAq">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="pF1-bD-YHd">
-                                <rect key="frame" x="8" y="69" width="584" height="477"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">En cumplimiento con la Ley Federal de Protección de datos personales en posesión de los particulares, en lo sucesivo "La Ley", Focus Estudios Cualitativos SA de CV denominada en delante "Focus Estudios Cualitativos", con domicilio en Calle Independencia 233 colonia Centro, San Pedro Garza García, nuevo León C.P. 66230 con RFC FEC980226G92, es responsable del tratamiento de los datos personales que usted proporcione, así como de su protección, en términos y de conformidad con los principios previstos en "La Ley".
-
-Los datos personales que usted nos proporcione ya sea directamente, vía telefónica o vía Internet podrán incluir de manera enunciativa, más no limitativa, lo siguiente:
-- Datos de Identificación: Su nombre, fecha de nacimiento, edad, nacionalidad.
-- Datos de Contacto: Domicilio, correo electrónico y números telefónicos.
-- Datos Académicos y Laborales: Formación profesional y académica, experiencia laboral, referencias personales. 
-- Datos Comerciales y Financieros: Número de cuenta bancaria, información de pagos, información de compras, Referencias comerciales y bancarias; datos que serán recabados sólo en los términos del artículo 10 fracción IV de "La Ley". 
-
-Datos que, cuando los proporcione, quedarán resguardados en nuestra base de datos con el objeto de protegerlos para que no se realice ningún uso indebido de los mismos, por lo que nos responsabilizamos para lograr optimizar su información sin otro fin que el de servir fielmente a quienes nos confían sus datos personales.
-
-Al obtener sus datos personales, se tiene como finalidad y destino el satisfacer la relación jurídica o contractual existente entre esta institución y usted; tratamiento que podrá consistir en la identificación de la persona, proveer servicios y productos requeridos, contacto, reclutamiento y selección, suministro de los insumos necesarios para nuestro correcto desarrollo, hacerle llegar los productos adquiridos, dándole el oportuno seguimiento a sus pedidos; así como para fines de publicidad y promoción con efectos mercadológicos, además de poner a su disposición nuestros servicios en el mercado en el ramo que hoy en día nos especializamos, enfocados en satisfacer sus requerimientos.
-
-La finalidad del tratamiento de sus datos personales sólo se concentra en las relaciones jurídicas que se tienen con clientes, proveedores y personal.
-
-En el caso de que usted quiera limitar el uso o divulgación de sus datos personales, evitando recibir publicidad, promociones o evitar algún otro contacto de cualquier naturaleza usted podrá ponerse en contacto con nuestra área encargada del tratamiento de sus datos personales.
-
-Para el caso de que usted quisiera Acceder, Rectificar, Cancelar u Oponerse (Derechos ARCO) al tratamiento de los datos y revocar el consentimiento que para tal fin nos haya otorgado, tácita o expresamente, lo podrá realizar en cualquier momento, para ello es necesario que usted presente solicitud la cual debe contener: Nombre del titular y domicilio o medio para comunicarle respuesta, documento que acredite su identidad, descripción del derecho que pretende ejercer y cualquier otro dato que facilite la localización de los datos. Una vez presentada esta solicitud, se le dará respuesta en un plazo no mayor a 20 días a través del medio que proporcionó para contactarlo.
-
-El área responsable de resguardar sus datos personales, así como dar continuidad a la solicitud que usted realice en cuanto a sus derechos ARCO o a limitar el uso y divulgación de sus datos, es el área de sistemas, la cual pone a su disposición el siguiente correo: focus@focuscg.com.mx con la finalidad de atender sus peticiones relacionadas al tratamiento de sus datos personales.
-
-Le informamos que sus datos personales no serán transferidos a terceros, salvo en el caso de que usted proporcione como referencia a esta empresa. Sin embargo, Focus Estudios Cualitativos hará transferencia de datos personales en el caso de que autoridad competente así lo solicite por mandato judicial.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="aEy-Ub-eIm" firstAttribute="top" secondItem="pF1-bD-YHd" secondAttribute="bottom" constant="5" id="QzE-Y1-YQf"/>
-                            <constraint firstItem="pF1-bD-YHd" firstAttribute="leading" secondItem="YfH-0M-KAq" secondAttribute="leading" constant="8" id="elH-kh-SNE"/>
-                            <constraint firstItem="pF1-bD-YHd" firstAttribute="top" secondItem="DeY-ci-4eX" secondAttribute="bottom" constant="5" id="gXp-8O-h4N"/>
-                            <constraint firstAttribute="trailing" secondItem="pF1-bD-YHd" secondAttribute="trailing" constant="8" id="jbJ-Xi-bSE"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Aviso de Privacidad" id="XRV-pp-qRa"/>
-                    <connections>
-                        <outlet property="contentTextView" destination="pF1-bD-YHd" id="wHY-0Z-Epl"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dm8-fx-nhJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="Extras" referencedIdentifier="PrivacyPolicy" id="KRj-AO-AHx" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Eqc-VD-BAH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1633" y="1208"/>
+            <point key="canvasLocation" x="1333" y="1129"/>
         </scene>
         <!--Perfil-->
         <scene sceneID="DEp-0h-wnp">
@@ -473,7 +448,15 @@ Le informamos que sus datos personales no serán transferidos a terceros, salvo 
                 <viewControllerPlaceholder storyboardName="LogIn" id="blo-G0-Ogi" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y9u-SA-CiK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="822" y="1670"/>
+            <point key="canvasLocation" x="1309" y="1288"/>
+        </scene>
+        <!--Extras-->
+        <scene sceneID="Ql6-G6-hG5">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Extras" id="NdK-gL-xLZ" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kgd-Ey-oUs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1308.5" y="1419"/>
         </scene>
         <!--Encuestas-->
         <scene sceneID="KDt-1D-qwh">

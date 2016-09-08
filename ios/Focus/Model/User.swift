@@ -14,13 +14,15 @@ class User {
     var username: String
     var email: String
     var nombre: String
+    var genero: Int
     var token: String = ""
     
-    init(id: Int, username: String, email: String, nombre: String) {
+    init(id: Int, username: String, email: String, nombre: String, genero: Int) {
         self.id = id
         self.username = username
         self.email = email
         self.nombre = nombre
+        self.genero = genero
     }
     
     static func saveUser(user: User) {
@@ -31,6 +33,14 @@ class User {
     static var currentUser: User? {
         let delegate = UIApplication.sharedApplication().delegate as! AppDelegate
         return delegate.user
+    }
+    
+    var firstName: String {
+        return self.nombre.componentsSeparatedByString(" ")[0]
+    }
+    
+    var isMale: Bool {
+        return self.genero == 0
     }
     
 }
