@@ -19,13 +19,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="zaZ-cM-jz0">
-                                <rect key="frame" x="50" y="95" width="500" height="167"/>
+                                <rect key="frame" x="50" y="95" width="500" height="166.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="zaZ-cM-jz0" secondAttribute="height" multiplier="3:1" id="AIz-ZS-Es3"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright © 2016 Focus Consulting Group, SA. de C.V." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sGj-rQ-NMK">
-                                <rect key="frame" x="25" y="569" width="550" height="16"/>
+                                <rect key="frame" x="50" y="569" width="500" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -38,8 +38,8 @@
                             <constraint firstItem="zaZ-cM-jz0" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Qp1-4g-1M4"/>
                             <constraint firstItem="zaZ-cM-jz0" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="50" id="c0b-68-asS"/>
                             <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="sGj-rQ-NMK" secondAttribute="bottom" constant="15" id="cJH-dC-4Mc"/>
-                            <constraint firstAttribute="trailing" secondItem="sGj-rQ-NMK" secondAttribute="trailing" constant="25" id="lHy-Bu-Lfe"/>
-                            <constraint firstItem="sGj-rQ-NMK" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="25" id="t3d-p9-35d"/>
+                            <constraint firstAttribute="trailing" secondItem="sGj-rQ-NMK" secondAttribute="trailing" constant="50" id="lHy-Bu-Lfe"/>
+                            <constraint firstItem="sGj-rQ-NMK" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="50" id="t3d-p9-35d"/>
                         </constraints>
                     </view>
                 </viewController>
