@@ -13,6 +13,9 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var usernameText: UITextField!
     @IBOutlet var passwordText: UITextField!
     @IBOutlet var spinner: UIActivityIndicatorView!
+    @IBOutlet var scrollView: UIScrollView!
+    
+    var activeField: UITextField?
     
     // -----------------------------------------------------------------------------------------------------------
     // MARK: - Lifecycle
@@ -23,28 +26,38 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         
         UIApplication.sharedApplication().setStatusBarStyle(.Default, animated: false)
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardWillShow), name: UIKeyboardWillShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardWillHide), name: UIKeyboardWillHideNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.keyboardDidShow(_:)), name: UIKeyboardDidShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.keyboardWillBeHidden(_:)), name: UIKeyboardWillHideNotification, object: nil)
     }
     
     // -----------------------------------------------------------------------------------------------------------
     // MARK: - Keyboard
     // -----------------------------------------------------------------------------------------------------------
     
-    func keyboardWillShow(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
-            if (view.frame.origin.y == 0) {
-                self.view.frame.origin.y -= keyboardSize.height
+    func textFieldDidEndEditing(textField: UITextField) {
+        self.activeField = nil
+    }
+    
+    func textFieldDidBeginEditing(textField: UITextField) {
+        self.activeField = textField
+    }
+    
+    func keyboardDidShow(notification: NSNotification) {
+        if let activeField = self.activeField, keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
+            self.scrollView.contentInset = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyboardSize.height + 10, right: 0.0)
+            self.scrollView.scrollIndicatorInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyboardSize.height + 10, right: 0.0)
+            var aRect = self.view.frame
+            aRect.size.height -= keyboardSize.size.height
+            
+            if (!CGRectContainsPoint(aRect, activeField.frame.origin)) {
+                self.scrollView.scrollRectToVisible(activeField.frame, animated: true)
             }
         }
     }
     
-    func keyboardWillHide(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
-            if (view.frame.origin.y != 0) {
-                self.view.frame.origin.y += keyboardSize.height
-            }
-        }
+    func keyboardWillBeHidden(notification: NSNotification) {
+        self.scrollView.contentInset = UIEdgeInsetsZero
+        self.scrollView.scrollIndicatorInsets = UIEdgeInsetsZero
     }
     
     func dismissKeyboard() {
