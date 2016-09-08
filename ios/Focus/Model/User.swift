@@ -35,4 +35,12 @@ class User {
         return delegate.user
     }
     
+    var firstName: String {
+        return self.nombre.componentsSeparatedByString(" ")[0]
+    }
+    
+    var isMale: Bool {
+        return self.genero == 0
+    }
+    
 }
