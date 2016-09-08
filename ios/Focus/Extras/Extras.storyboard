@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="teC-DU-NsS">
+            <objects>
+                <navigationController id="4MF-SS-dYG" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Wfm-Wf-vP4">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.12549019610000001" green="0.13725490200000001" blue="0.51372549020000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="lwk-43-vns" kind="relationship" relationship="rootViewController" id="J7t-9d-s8Q"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t7T-Oz-ytY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="778" y="478"/>
+        </scene>
+        <!--Bienvenido-->
+        <scene sceneID="bte-Wv-6gd">
+            <objects>
+                <viewController id="lwk-43-vns" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="D5i-Cy-fiM"/>
+                        <viewControllerLayoutGuide type="bottom" id="cEN-SY-KFR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="j5U-JK-eqW">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UWT-mx-L2j">
+                                <rect key="frame" x="282" y="247" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="1YZ-ub-mHi" kind="show" id="4Ce-bb-5DO"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="UWT-mx-L2j" firstAttribute="centerY" secondItem="j5U-JK-eqW" secondAttribute="centerY" id="ArF-KU-me8"/>
+                            <constraint firstItem="UWT-mx-L2j" firstAttribute="centerX" secondItem="j5U-JK-eqW" secondAttribute="centerX" id="uFx-jO-wFk"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Bienvenido" id="GRL-6k-v54"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WOS-zn-FRN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1633" y="478"/>
+        </scene>
+        <!--Storyboard Reference-->
+        <scene sceneID="8C5-jd-yCJ">
+            <objects>
+                <viewControllerPlaceholder id="8Os-62-ANH" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Qp-GJ-4B7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2188.5" y="484"/>
+        </scene>
+        <!--Aviso de Privacidad-->
+        <scene sceneID="inC-Qp-5UR">
+            <objects>
+                <viewController storyboardIdentifier="PrivacyPolicy" automaticallyAdjustsScrollViewInsets="NO" id="1YZ-ub-mHi" customClass="PrivacyPolicyViewController" customModule="Focus" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Nke-l3-kLJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="cpR-hu-IoP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GXM-sM-Yqu">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="wFX-Oh-F7w">
+                                <rect key="frame" x="8" y="25" width="584" height="570"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">En cumplimiento con la Ley Federal de Protección de datos personales en posesión de los particulares, en lo sucesivo "La Ley", Focus Estudios Cualitativos SA de CV denominada en delante "Focus Estudios Cualitativos", con domicilio en Calle Independencia 233 colonia Centro, San Pedro Garza García, nuevo León C.P. 66230 con RFC FEC980226G92, es responsable del tratamiento de los datos personales que usted proporcione, así como de su protección, en términos y de conformidad con los principios previstos en "La Ley".
+
+Los datos personales que usted nos proporcione ya sea directamente, vía telefónica o vía Internet podrán incluir de manera enunciativa, más no limitativa, lo siguiente:
+- Datos de Identificación: Su nombre, fecha de nacimiento, edad, nacionalidad.
+- Datos de Contacto: Domicilio, correo electrónico y números telefónicos.
+- Datos Académicos y Laborales: Formación profesional y académica, experiencia laboral, referencias personales. 
+- Datos Comerciales y Financieros: Número de cuenta bancaria, información de pagos, información de compras, Referencias comerciales y bancarias; datos que serán recabados sólo en los términos del artículo 10 fracción IV de "La Ley". 
+
+Datos que, cuando los proporcione, quedarán resguardados en nuestra base de datos con el objeto de protegerlos para que no se realice ningún uso indebido de los mismos, por lo que nos responsabilizamos para lograr optimizar su información sin otro fin que el de servir fielmente a quienes nos confían sus datos personales.
+
+Al obtener sus datos personales, se tiene como finalidad y destino el satisfacer la relación jurídica o contractual existente entre esta institución y usted; tratamiento que podrá consistir en la identificación de la persona, proveer servicios y productos requeridos, contacto, reclutamiento y selección, suministro de los insumos necesarios para nuestro correcto desarrollo, hacerle llegar los productos adquiridos, dándole el oportuno seguimiento a sus pedidos; así como para fines de publicidad y promoción con efectos mercadológicos, además de poner a su disposición nuestros servicios en el mercado en el ramo que hoy en día nos especializamos, enfocados en satisfacer sus requerimientos.
+
+La finalidad del tratamiento de sus datos personales sólo se concentra en las relaciones jurídicas que se tienen con clientes, proveedores y personal.
+
+En el caso de que usted quiera limitar el uso o divulgación de sus datos personales, evitando recibir publicidad, promociones o evitar algún otro contacto de cualquier naturaleza usted podrá ponerse en contacto con nuestra área encargada del tratamiento de sus datos personales.
+
+Para el caso de que usted quisiera Acceder, Rectificar, Cancelar u Oponerse (Derechos ARCO) al tratamiento de los datos y revocar el consentimiento que para tal fin nos haya otorgado, tácita o expresamente, lo podrá realizar en cualquier momento, para ello es necesario que usted presente solicitud la cual debe contener: Nombre del titular y domicilio o medio para comunicarle respuesta, documento que acredite su identidad, descripción del derecho que pretende ejercer y cualquier otro dato que facilite la localización de los datos. Una vez presentada esta solicitud, se le dará respuesta en un plazo no mayor a 20 días a través del medio que proporcionó para contactarlo.
+
+El área responsable de resguardar sus datos personales, así como dar continuidad a la solicitud que usted realice en cuanto a sus derechos ARCO o a limitar el uso y divulgación de sus datos, es el área de sistemas, la cual pone a su disposición el siguiente correo: focus@focuscg.com.mx con la finalidad de atender sus peticiones relacionadas al tratamiento de sus datos personales.
+
+Le informamos que sus datos personales no serán transferidos a terceros, salvo en el caso de que usted proporcione como referencia a esta empresa. Sin embargo, Focus Estudios Cualitativos hará transferencia de datos personales en el caso de que autoridad competente así lo solicite por mandato judicial.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cpR-hu-IoP" firstAttribute="top" secondItem="wFX-Oh-F7w" secondAttribute="bottom" constant="5" id="EIV-VR-K6u"/>
+                            <constraint firstAttribute="trailing" secondItem="wFX-Oh-F7w" secondAttribute="trailing" constant="8" id="GuX-X3-xAA"/>
+                            <constraint firstItem="wFX-Oh-F7w" firstAttribute="top" secondItem="Nke-l3-kLJ" secondAttribute="bottom" constant="5" id="KwQ-jT-NwG"/>
+                            <constraint firstItem="wFX-Oh-F7w" firstAttribute="leading" secondItem="GXM-sM-Yqu" secondAttribute="leading" constant="8" id="rhF-zX-kdT"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Aviso de Privacidad" id="TJz-a8-YB5"/>
+                    <connections>
+                        <outlet property="contentTextView" destination="wFX-Oh-F7w" id="4P8-so-SOH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XM8-Eh-z9F" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1633" y="1208"/>
+        </scene>
+    </scenes>
+</document>

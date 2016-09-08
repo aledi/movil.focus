@@ -21,6 +21,7 @@
 		40AFB76D1D49A25100C0099A /* Panel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AFB76C1D49A25100C0099A /* Panel.swift */; };
 		40AFB76F1D49A3D800C0099A /* Encuesta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AFB76E1D49A3D800C0099A /* Encuesta.swift */; };
 		40AFB7711D49A50800C0099A /* Pregunta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AFB7701D49A50800C0099A /* Pregunta.swift */; };
+		40CC5DB31D80EF5900E1D8E5 /* Extras.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40CC5DB21D80EF5900E1D8E5 /* Extras.storyboard */; };
 		40D810661D5811EE00EB8FCE /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D810651D5811EE00EB8FCE /* LoadingViewController.swift */; };
 		40E7F9C01D4D353700BCD0DB /* NSUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E7F9BF1D4D353700BCD0DB /* NSUserDefaults.swift */; };
 		40E7F9C21D4D5A9E00BCD0DB /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E7F9C11D4D5A9E00BCD0DB /* ProfileViewController.swift */; };
@@ -62,6 +63,7 @@
 		40AFB76C1D49A25100C0099A /* Panel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Panel.swift; path = Model/Panel.swift; sourceTree = "<group>"; };
 		40AFB76E1D49A3D800C0099A /* Encuesta.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Encuesta.swift; path = Model/Encuesta.swift; sourceTree = "<group>"; };
 		40AFB7701D49A50800C0099A /* Pregunta.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Pregunta.swift; path = Model/Pregunta.swift; sourceTree = "<group>"; };
+		40CC5DB21D80EF5900E1D8E5 /* Extras.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Extras.storyboard; path = Extras/Extras.storyboard; sourceTree = "<group>"; };
 		40D810651D5811EE00EB8FCE /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoadingViewController.swift; path = Main/LoadingViewController.swift; sourceTree = "<group>"; };
 		40E7F9BF1D4D353700BCD0DB /* NSUserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSUserDefaults.swift; path = Extensions/NSUserDefaults.swift; sourceTree = "<group>"; };
 		40E7F9C11D4D5A9E00BCD0DB /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = Main/ProfileViewController.swift; sourceTree = "<group>"; };
@@ -124,6 +126,14 @@
 			name = Main;
 			sourceTree = "<group>";
 		};
+		40CC5DB11D80EF0A00E1D8E5 /* Extras */ = {
+			isa = PBXGroup;
+			children = (
+				40CC5DB21D80EF5900E1D8E5 /* Extras.storyboard */,
+			);
+			name = Extras;
+			sourceTree = "<group>";
+		};
 		40FF0D8B1D37138500ED8A64 = {
 			isa = PBXGroup;
 			children = (
@@ -153,6 +163,7 @@
 				40FF0DAC1D371D5A00ED8A64 /* Log In */,
 				405313081D386E1C0073751A /* Main */,
 				400E9D3B1D50208A006AAD64 /* Preguntas */,
+				40CC5DB11D80EF0A00E1D8E5 /* Extras */,
 				40FF0DA31D37138500ED8A64 /* Info.plist */,
 			);
 			path = Focus;
@@ -267,6 +278,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				40FF0DAE1D371DB600ED8A64 /* LogIn.storyboard in Resources */,
+				40CC5DB31D80EF5900E1D8E5 /* Extras.storyboard in Resources */,
 				400E9D3D1D5020CA006AAD64 /* Preguntas.storyboard in Resources */,
 				40FF0DA21D37138500ED8A64 /* LaunchScreen.storyboard in Resources */,
 				40FF0D9F1D37138500ED8A64 /* Assets.xcassets in Resources */,

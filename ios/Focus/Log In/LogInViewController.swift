@@ -100,8 +100,8 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     
     func successHandler(response: NSDictionary) {
         if (response["status"] as? String == "SUCCESS") {
-            if let id = response["id"] as? Int, username = response["username"] as? String, email = response["email"] as? String, nombre = response["nombre"] as? String {
-                let user = User(id: id, username: username, email: email, nombre: nombre)
+            if let id = response["id"] as? Int, username = response["username"] as? String, genero = response["genero"] as? Int, email = response["email"] as? String, nombre = response["nombre"] as? String {
+                let user = User(id: id, username: username, email: email, nombre: nombre, genero: genero)
                 User.saveUser(user)
                 
                 if let user = User.currentUser {

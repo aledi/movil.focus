@@ -14,13 +14,15 @@ class User {
     var username: String
     var email: String
     var nombre: String
+    var genero: Int
     var token: String = ""
     
-    init(id: Int, username: String, email: String, nombre: String) {
+    init(id: Int, username: String, email: String, nombre: String, genero: Int) {
         self.id = id
         self.username = username
         self.email = email
         self.nombre = nombre
+        self.genero = genero
     }
     
     static func saveUser(user: User) {
