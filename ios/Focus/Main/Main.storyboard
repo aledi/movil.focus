@@ -399,7 +399,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pF1-bD-YHd">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="pF1-bD-YHd">
                                 <rect key="frame" x="8" y="69" width="584" height="477"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">En cumplimiento con la Ley Federal de Protección de datos personales en posesión de los particulares, en lo sucesivo "La Ley", Focus Estudios Cualitativos SA de CV denominada en delante "Focus Estudios Cualitativos", con domicilio en Calle Independencia 233 colonia Centro, San Pedro Garza García, nuevo León C.P. 66230 con RFC FEC980226G92, es responsable del tratamiento de los datos personales que usted proporcione, así como de su protección, en términos y de conformidad con los principios previstos en "La Ley".
