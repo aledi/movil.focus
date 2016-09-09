@@ -104,9 +104,13 @@ class RegistrationViewController: UIViewController, UIPickerViewDelegate, UIPick
     // -----------------------------------------------------------------------------------------------------------
     
     func configurePickers() {
+        let calendar = NSCalendar.currentCalendar()
+        
         self.birthdayPicker.addTarget(self, action: #selector(self.dateChanged(_:)), forControlEvents: .ValueChanged)
 //        self.birthdayPicker.addTarget(self, action: #selector(self.datePickerDidShow(_:)), forControlEvents: .EditingDidBegin)
         self.birthdayPicker.datePickerMode = .Date
+        self.birthdayPicker.minimumDate = calendar.dateByAddingUnit(.Year, value: -100, toDate: NSDate(), options: [])
+        self.birthdayPicker.maximumDate = calendar.dateByAddingUnit(.Year, value: -18, toDate: NSDate(), options: [])
         self.birthdayText.inputView = self.birthdayPicker
         
         self.educationPicker.delegate = self
@@ -279,18 +283,56 @@ class RegistrationViewController: UIViewController, UIPickerViewDelegate, UIPick
             "cp" : self.postalText.text!
         ]
         
-        Controller.requestForAction(.REGISTER_USER, withParameters: parameters, withSuccessHandler: nil)
-        
-        let user = User(id: 1, username: "Carlos", email: "carlosmay@hotmail.com", nombre: "Carlos Mayo Rodríguez", genero: 0)
+        Controller.requestForAction(.REGISTER_USER, withParameters: parameters, withSuccessHandler: successHandler, andErrorHandler: errorHandler)
+    }
+    
+    func saveUser(id: Int) {
+        let user = User(id: id, username: self.usernameText.text!, email: self.emailText.text!, nombre: "\(self.nameText.text!) \(self.lastnameText.text!)", genero: self.maleButton.selected ? 0 : 1)
         User.saveUser(user)
         
         if let user = User.currentUser {
             NSUserDefaults.saveUserDefaults(user)
         }
+    }
+    
+    // -----------------------------------------------------------------------------------------------------------
+    // MARK: - Handlers
+    // -----------------------------------------------------------------------------------------------------------
+    
+    func successHandler(response: NSDictionary) {
+        if (response["status"] as? String == "SUCCESS") {
+            self.saveUser(response["id"] as! Int)
+            self.appDelegate.paneles = []
+            self.appDelegate.registerForPushNotifications()
+            self.performSegueWithIdentifier("welcome", sender: nil)
+        } else if (response["status"] as? String == "USER_EXISTS") {
+            self.userExistsAlert()
+        } else {
+            self.errorAlert()
+        }
+    }
+    
+    func errorHandler(response: NSDictionary) {
+        var alertTitle = ""
+        var alertMessage = ""
         
-        self.appDelegate.paneles = []
-        self.appDelegate.registerForPushNotifications()
-        self.performSegueWithIdentifier("welcome", sender: nil)
+        switch (response["error"] as! NSError).code {
+        case -1009:
+            alertTitle = "Sin conexión a internet"
+            alertMessage = "Para utilizar la aplicación, su dispositivo debe estar conectado a internet."
+        case -1003:
+            alertTitle = "Servidor no disponible"
+            alertMessage = "Nuestro servidor no está disponible por el momento."
+        default:
+            break
+        }
+        
+        func firstBlock(action: UIAlertAction) {
+            self.register()
+        }
+        
+        self.presentAlertWithTitle(alertTitle, withMessage: alertMessage, withButtonTitles: ["Reintentar", "OK"], withButtonStyles: [.Default, .Cancel], andButtonHandlers: [firstBlock, nil])
+        print(response["error"])
     }
     
     // -----------------------------------------------------------------------------------------------------------
@@ -305,14 +347,20 @@ class RegistrationViewController: UIViewController, UIPickerViewDelegate, UIPick
         self.presentAlertWithTitle("Faltan Datos", withMessage: "Por favor, ingresa todos los datos solicitados.", withButtonTitles: ["OK"], withButtonStyles: [.Cancel], andButtonHandlers: [firstBlock])
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func userExistsAlert() {
+        func firstBlock(action: UIAlertAction) {
+            self.usernameText.becomeFirstResponder()
+        }
+        
+        self.presentAlertWithTitle("Usuario Existente", withMessage: "El usuario que ingresó ya existe. Por favor, intente con otro usuario.", withButtonTitles: ["OK"], withButtonStyles: [.Cancel], andButtonHandlers: [firstBlock])
     }
-    */
+    
+    func errorAlert() {
+        func firstBlock(action: UIAlertAction) {
+            self.register()
+        }
+        
+        self.presentAlertWithTitle("Error", withMessage: "Hubo un error al guardar su registro. Por favor, intente de nuevo o contáctenos para ayudarle.", withButtonTitles: ["Reintentar", "OK"], withButtonStyles: [.Default, .Cancel], andButtonHandlers: [firstBlock, nil])
+    }
     
 }
