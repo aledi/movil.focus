@@ -13,15 +13,22 @@ class RegistrationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        UIApplication.sharedApplication().setStatusBarStyle(.Default, animated: false)
+        UIApplication.sharedApplication().setStatusBarStyle(.LightContent, animated: false)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func register(sender: AnyObject) {
+        let user = User(id: 1, username: "Carlos", email: "carlosmay@hotmail.com", nombre: "Carlos Mayo Rodríguez", genero: 0)
+        User.saveUser(user)
+        
+        if let user = User.currentUser {
+            NSUserDefaults.saveUserDefaults(user)
+        }
+        
+        self.appDelegate.paneles = []
+        self.appDelegate.registerForPushNotifications()
+        self.performSegueWithIdentifier("welcome", sender: nil)
     }
     
-
     /*
     // MARK: - Navigation
 
@@ -31,5 +38,5 @@ class RegistrationViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
 }

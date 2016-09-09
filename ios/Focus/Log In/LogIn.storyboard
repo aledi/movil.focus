@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ysr-db-x1i">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ysr-db-x1i">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -33,7 +33,7 @@
                                                 </connections>
                                             </textField>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="Xbh-et-kZ3">
-                                                <rect key="frame" x="50" y="75" width="500" height="166.5"/>
+                                                <rect key="frame" x="50" y="75" width="500" height="167"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="Xbh-et-kZ3" secondAttribute="height" multiplier="3:1" id="tso-zh-PjD"/>
                                                 </constraints>
@@ -44,7 +44,7 @@
                                                     <color key="titleColor" red="0.0" green="0.31372549020000001" blue="0.72941176470000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="mLg-ET-sFb" kind="presentation" identifier="register" id="qpQ-c9-Hz5"/>
+                                                    <segue destination="Wde-ce-ydr" kind="presentation" id="uXz-bz-2Zh"/>
                                                 </connections>
                                             </button>
                                             <textField opaque="NO" clipsSubviews="YES" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Usuario" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aqX-M4-lpv">
@@ -60,7 +60,7 @@
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9o2-Zr-y2t">
                                                 <rect key="frame" x="50" y="399" width="500" height="40"/>
-                                                <color key="backgroundColor" red="0.12549019610000001" green="0.13725490200000001" blue="0.51372549020000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" red="0.12549019607843137" green="0.13725490196078433" blue="0.50980392156862742" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="0js-AC-wz9"/>
                                                 </constraints>
@@ -129,22 +129,6 @@
             </objects>
             <point key="canvasLocation" x="434" y="330"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="UiC-rn-jOG">
-            <objects>
-                <navigationController modalPresentationStyle="formSheet" id="mLg-ET-sFb" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="WLa-lQ-XLQ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="zsh-8v-Rab" kind="relationship" relationship="rootViewController" id="mIW-oj-3hk"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="boZ-Ce-3uR" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="434" y="1066"/>
-        </scene>
         <!--Registro-->
         <scene sceneID="Bgg-FM-OcD">
             <objects>
@@ -159,24 +143,33 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Registro" id="iqf-62-jNZ">
-                        <barButtonItem key="leftBarButtonItem" title="Cancelar" id="5XU-6j-WVq">
-                            <color key="tintColor" red="0.12549019610000001" green="0.13725490200000001" blue="0.51372549020000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <barButtonItem key="leftBarButtonItem" title="Cancelar" id="uBW-yj-13c">
                             <connections>
-                                <segue destination="6LY-6X-jqp" kind="unwind" unwindAction="cancelRegistration:" id="C7E-2b-tfE"/>
+                                <segue destination="6LY-6X-jqp" kind="unwind" unwindAction="cancelRegistration:" id="jzL-XK-hYK"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Enviar" id="HOB-nd-xWb">
-                            <color key="tintColor" red="0.12549019610000001" green="0.13725490200000001" blue="0.51372549020000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <barButtonItem key="rightBarButtonItem" title="Enviar" id="IQP-Ik-zkR">
                             <connections>
-                                <segue destination="6LY-6X-jqp" kind="unwind" unwindAction="doneRegistration:" id="R9s-oW-gKE"/>
+                                <action selector="register:" destination="zsh-8v-Rab" id="9ZN-gd-19O"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="fu1-G0-kpp" kind="showDetail" identifier="welcome" id="eC2-EA-ywS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tsc-d9-eBr" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="6LY-6X-jqp" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1207" y="1066"/>
+        </scene>
+        <!--Welcome-->
+        <scene sceneID="JKx-te-1BO">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Extras" referencedIdentifier="Welcome" id="fu1-G0-kpp" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mrg-HY-kQn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1753.5" y="1066"/>
         </scene>
         <!--TabController-->
         <scene sceneID="IYc-pV-7BJ">
@@ -185,6 +178,28 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VlO-gk-gbq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="938" y="330"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="SWf-N4-zLy">
+            <objects>
+                <navigationController id="Wde-ce-ydr" sceneMemberID="viewController">
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4nC-as-Bm6">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.12549019610000001" green="0.13725490200000001" blue="0.51372549020000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="zsh-8v-Rab" kind="relationship" relationship="rootViewController" id="KIQ-uG-0gp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GVE-rq-q6l" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="434" y="1066"/>
         </scene>
     </scenes>
     <resources>
