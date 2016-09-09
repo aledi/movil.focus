@@ -107,7 +107,6 @@ class RegistrationViewController: UIViewController, UIPickerViewDelegate, UIPick
         let calendar = NSCalendar.currentCalendar()
         
         self.birthdayPicker.addTarget(self, action: #selector(self.dateChanged(_:)), forControlEvents: .ValueChanged)
-//        self.birthdayPicker.addTarget(self, action: #selector(self.datePickerDidShow(_:)), forControlEvents: .EditingDidBegin)
         self.birthdayPicker.datePickerMode = .Date
         self.birthdayPicker.minimumDate = calendar.dateByAddingUnit(.Year, value: -100, toDate: NSDate(), options: [])
         self.birthdayPicker.maximumDate = calendar.dateByAddingUnit(.Year, value: -18, toDate: NSDate(), options: [])
@@ -121,12 +120,6 @@ class RegistrationViewController: UIViewController, UIPickerViewDelegate, UIPick
         self.statePicker.dataSource = self
         self.stateText.inputView = self.statePicker
     }
-    
-//    func datePickerDidShow(sender: UIDatePicker) {
-//        let formatter = NSDateFormatter()
-//        formatter.dateFormat = "YYYY-MM-dd"
-//        self.birthdayText.text = formatter.stringFromDate(sender.date)
-//    }
     
     func dateChanged(sender: UIDatePicker) {
         let formatter = NSDateFormatter()
@@ -163,6 +156,12 @@ class RegistrationViewController: UIViewController, UIPickerViewDelegate, UIPick
     }
     
     func textFieldDidBeginEditing(textField: UITextField) {
+        if (textField == self.birthdayText) {
+            let formatter = NSDateFormatter()
+            formatter.dateFormat = "MMMM dd, YYYY"
+            self.birthdayText.text = formatter.stringFromDate(self.birthdayPicker.date)
+        }
+        
         self.activeField = textField
     }
     
