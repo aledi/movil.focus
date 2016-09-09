@@ -87,10 +87,11 @@ class RegistrationViewController: UIViewController, UIPickerViewDelegate, UIPick
         super.viewDidLoad()
         
         UIApplication.sharedApplication().setStatusBarStyle(.LightContent, animated: false)
-        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
+        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.keyboardDidShow(_:)), name: UIKeyboardDidShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.keyboardWillBeHidden(_:)), name: UIKeyboardWillHideNotification, object: nil)
         
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
         self.configurePickers()
     }
     
@@ -197,13 +198,9 @@ class RegistrationViewController: UIViewController, UIPickerViewDelegate, UIPick
     // -----------------------------------------------------------------------------------------------------------
     
     @IBAction func gender(sender: RadioButton) {
+        self.maleButton.selected = false
+        self.femaleButton.selected = false
         sender.selected = true
-        
-        if (sender == self.maleButton) {
-            self.femaleButton.selected = false
-        } else {
-            self.maleButton.selected = false
-        }
     }
     
     @IBAction func registerAttempt(sender: AnyObject) {
