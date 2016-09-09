@@ -10,12 +10,26 @@ import UIKit
 
 class RegistrationViewController: UIViewController {
     
+    @IBOutlet var scrollView: UIScrollView!
+    
+    @IBOutlet var usernameText: UITextField!
+    @IBOutlet var passwordText: UITextField!
+    
+    @IBOutlet var nameText: UITextField!
+    @IBOutlet var lastnameText: UITextField!
+    @IBOutlet var emailText: UITextField!
+    @IBOutlet var birthdayText: UITextField!
+    @IBOutlet var educationText: UITextField!
+    
+    @IBOutlet var maleButton: RadioButton!
+    @IBOutlet var femaleButton: RadioButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         UIApplication.sharedApplication().setStatusBarStyle(.LightContent, animated: false)
     }
-
+    
     @IBAction func register(sender: AnyObject) {
         let user = User(id: 1, username: "Carlos", email: "carlosmay@hotmail.com", nombre: "Carlos Mayo Rodríguez", genero: 0)
         User.saveUser(user)
