@@ -232,6 +232,9 @@
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="selected" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="gender:" destination="zsh-8v-Rab" eventType="touchUpInside" id="g8e-TH-uRg"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NYE-E8-cOk" customClass="RadioButton" customModule="Focus" customModuleProvider="target">
                                                 <rect key="frame" x="175" y="426" width="125" height="25"/>
@@ -246,6 +249,9 @@
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="selected" value="NO"/>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="gender:" destination="zsh-8v-Rab" eventType="touchUpInside" id="uLT-JG-DRx"/>
+                                                </connections>
                                             </button>
                                             <textField opaque="NO" clipsSubviews="YES" tag="70" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Educación" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a8X-5C-zVf">
                                                 <rect key="frame" x="25" y="466" width="550" height="30"/>
@@ -416,7 +422,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Enviar" id="IQP-Ik-zkR">
                             <connections>
-                                <action selector="register:" destination="zsh-8v-Rab" id="9ZN-gd-19O"/>
+                                <action selector="registerAttempt:" destination="zsh-8v-Rab" id="WUR-7X-tgj"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
