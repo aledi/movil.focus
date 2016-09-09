@@ -11,9 +11,11 @@ import UIKit
 
 class RadioButton: UIButton {
     
+    var multiSelection: Bool = false
+    
     @IBInspectable override var selected: Bool {
         didSet {
-            let image = selected ? UIImage(named: "SelectedButton") : UIImage(named: "UnselectedButton")
+            let image = selected ? UIImage(named: self.multiSelection ? "MarkedButton" : "SelectedButton") : UIImage(named: self.multiSelection ? "UnmarkedButton" : "UnselectedButton")
             self.setImage(image, forState: .Normal)
         }
     }

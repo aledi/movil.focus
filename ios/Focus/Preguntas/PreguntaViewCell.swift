@@ -26,7 +26,13 @@ class PreguntaViewCell: UITableViewCell, UITextViewDelegate {
     @IBOutlet var heightConstraints: [NSLayoutConstraint]!
     @IBOutlet var bottomConstraints: [NSLayoutConstraint]!
     
-    var tipo: TipoPregunta?
+    var tipo: TipoPregunta? {
+        didSet {
+            for button in self.buttons {
+                button.multiSelection = (tipo == .Multiple)
+            }
+        }
+    }
     var pregunta: Pregunta? {
         didSet {
             guard let pregunta = self.pregunta else {
