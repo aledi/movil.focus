@@ -49,9 +49,9 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Video" id="G8K-NW-mq3">
-                        <barButtonItem key="leftBarButtonItem" title="Cancelar" id="vsR-dm-6EC">
+                        <barButtonItem key="leftBarButtonItem" title="Cerrar" id="vsR-dm-6EC">
                             <connections>
-                                <segue destination="pM6-X8-bOK" kind="unwind" unwindAction="dismissVideoPlayer:" id="pLq-6r-un6"/>
+                                <segue destination="pM6-X8-bOK" kind="unwind" identifier="exit" unwindAction="dismissVideoPlayer:" id="pLq-6r-un6"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

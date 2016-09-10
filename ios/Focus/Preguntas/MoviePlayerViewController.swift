@@ -16,19 +16,18 @@ class MoviePlayerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let playerHeight = self.view.frame.size.height / 3
-        
-        let url: NSURL = NSURL(string: "http://ec2-52-26-0-111.us-west-2.compute.amazonaws.com/focus/resources/videos/test.m4v")!
-//        let url: NSURL = NSURL(string: "http://192.168.1.16:8888/focus/resources/videos/test.m4v")!
-        
-        moviePlayer = MPMoviePlayerController(contentURL: url)
-        moviePlayer.view.frame = CGRect(x: 0, y: self.view.frame.size.height / 2 - playerHeight / 2, width: self.view.frame.size.width, height: playerHeight)
-        
-        self.view.addSubview(moviePlayer.view)
-        moviePlayer.fullscreen = true
-        
-        moviePlayer.controlStyle = MPMovieControlStyle.Embedded
-        
+        if let url = NSURL(string: Controller.videosURL + "test.m4v") {
+            moviePlayer = MPMoviePlayerController(contentURL: url)
+            
+            moviePlayer.view.frame = CGRectMake(0, 44, self.view.frame.size.width, self.view.frame.size.height - 44)
+            self.view.addSubview(moviePlayer.view)
+            
+            moviePlayer.fullscreen = true
+            moviePlayer.controlStyle = .Fullscreen
+        } else {
+            self.presentAlertWithTitle("Video no disponible", withMessage: "No hemos podido cargar el video. Por favor, póngase en contacto con nosotros.", withButtonTitles: ["OK"], withButtonStyles: [.Cancel], andButtonHandlers: [nil])
+            self.performSegueWithIdentifier("exit", sender: nil)
+        }
     }
     
     override func viewWillDisappear(animated: Bool) {

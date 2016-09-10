@@ -30,6 +30,11 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.keyboardWillBeHidden(_:)), name: UIKeyboardWillHideNotification, object: nil)
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        UIApplication.sharedApplication().setStatusBarStyle(.Default, animated: false)
+    }
+    
     // -----------------------------------------------------------------------------------------------------------
     // MARK: - Keyboard
     // -----------------------------------------------------------------------------------------------------------
