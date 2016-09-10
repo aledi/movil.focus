@@ -43,6 +43,14 @@ class PreguntaViewCell: UITableViewCell, UITextViewDelegate {
         }
     }
     
+    var videoHandler: Selector? {
+        didSet {
+            for button in self.buttons {
+                button.addTarget(nil, action: videoHandler!, forControlEvents: .TouchUpInside)
+            }
+        }
+    }
+    
     // -----------------------------------------------------------------------------------------------------------
     // MARK: - Configure
     // -----------------------------------------------------------------------------------------------------------

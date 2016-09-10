@@ -33,6 +33,19 @@ class PreguntasViewController: UITableViewController {
     }
     
     // -----------------------------------------------------------------------------------------------------------
+    // MARK: - Video
+    // -----------------------------------------------------------------------------------------------------------
+    
+    @IBAction func dismissVideoPlayer(segue: UIStoryboardSegue) {
+        self.dismissSegueSourceViewController(segue)
+    }
+    
+    func presentVideo() {
+        let moviePlayerController = UIStoryboard(name: "Preguntas", bundle: nil).instantiateViewControllerWithIdentifier("Video")
+        self.presentViewController(moviePlayerController, animated: true, completion: nil)
+    }
+    
+    // -----------------------------------------------------------------------------------------------------------
     // MARK: - TableView
     // -----------------------------------------------------------------------------------------------------------
     
@@ -61,6 +74,7 @@ class PreguntasViewController: UITableViewController {
         cell.pregunta = self.preguntas![indexPath.section]
         cell.configureForPregunta()
         cell.selectionStyle = .None
+        cell.videoHandler = #selector(self.presentVideo)
         
         return cell
     }

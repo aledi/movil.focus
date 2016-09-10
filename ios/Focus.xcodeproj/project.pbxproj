@@ -15,6 +15,7 @@
 		4053130A1D386EFA0073751A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 405313091D386EFA0073751A /* Main.storyboard */; };
 		4053130C1D386F370073751A /* PanelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4053130B1D386F370073751A /* PanelsViewController.swift */; };
 		406537251D7FA8D7000C7C9C /* PrivacyPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406537241D7FA8D7000C7C9C /* PrivacyPolicyViewController.swift */; };
+		408C37F11D838B4000A75784 /* MoviePlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408C37F01D838B4000A75784 /* MoviePlayerViewController.swift */; };
 		40A8DC301D56801B0065B734 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A8DC2F1D56801B0065B734 /* RegistrationViewController.swift */; };
 		40A8DC321D569E010065B734 /* PreguntaViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40A8DC311D569E010065B734 /* PreguntaViewCell.xib */; };
 		40A8DC341D569E1B0065B734 /* PreguntaViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A8DC331D569E1B0065B734 /* PreguntaViewCell.swift */; };
@@ -58,6 +59,7 @@
 		405313091D386EFA0073751A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Main/Main.storyboard; sourceTree = "<group>"; };
 		4053130B1D386F370073751A /* PanelsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PanelsViewController.swift; path = Main/PanelsViewController.swift; sourceTree = "<group>"; };
 		406537241D7FA8D7000C7C9C /* PrivacyPolicyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PrivacyPolicyViewController.swift; path = Extras/PrivacyPolicyViewController.swift; sourceTree = "<group>"; };
+		408C37F01D838B4000A75784 /* MoviePlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MoviePlayerViewController.swift; path = Preguntas/MoviePlayerViewController.swift; sourceTree = "<group>"; };
 		40A8DC2F1D56801B0065B734 /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegistrationViewController.swift; path = "Log In/RegistrationViewController.swift"; sourceTree = "<group>"; };
 		40A8DC311D569E010065B734 /* PreguntaViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PreguntaViewCell.xib; path = Preguntas/PreguntaViewCell.xib; sourceTree = "<group>"; };
 		40A8DC331D569E1B0065B734 /* PreguntaViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreguntaViewCell.swift; path = Preguntas/PreguntaViewCell.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				400E9D3E1D5021B3006AAD64 /* PreguntasViewController.swift */,
 				40A8DC331D569E1B0065B734 /* PreguntaViewCell.swift */,
 				40A8DC311D569E010065B734 /* PreguntaViewCell.xib */,
+				408C37F01D838B4000A75784 /* MoviePlayerViewController.swift */,
 			);
 			name = Preguntas;
 			sourceTree = "<group>";
@@ -355,6 +358,7 @@
 				40AFB7711D49A50800C0099A /* Pregunta.swift in Sources */,
 				4004146B1D56B899005113D1 /* RadioButton.swift in Sources */,
 				40E7F9C21D4D5A9E00BCD0DB /* ProfileViewController.swift in Sources */,
+				408C37F11D838B4000A75784 /* MoviePlayerViewController.swift in Sources */,
 				40FF0D981D37138500ED8A64 /* AppDelegate.swift in Sources */,
 				4053130C1D386F370073751A /* PanelsViewController.swift in Sources */,
 				40A8DC341D569E1B0065B734 /* PreguntaViewCell.swift in Sources */,
