@@ -125,8 +125,12 @@ class PreguntasViewController: UITableViewController {
     }
     
     func successHandler(response: NSDictionary) {
-        let alertTitle = (response["status"] as? String == "SUCCESS") ? "Respuestas Guardadas" : "Error"
-        let alertMesssage = (response["status"] as? String == "SUCCESS") ? "Gracias por responder la encuesta." : "No pudimos guardar tus respuestas en este momento."
+        if (response["status"] as? String != "SUCCESS") {
+            return self.errorHandler(response)
+        }
+        
+        let alertTitle = "Respuestas Guardadas"
+        let alertMesssage = "Gracias por responder la encuesta."
         
         func firstBlock(action: UIAlertAction) {
             self.performSegueWithIdentifier("doneAnswering", sender: nil)
@@ -136,7 +140,15 @@ class PreguntasViewController: UITableViewController {
     }
     
     func errorHandler(response: NSDictionary) {
-        self.successHandler(response)
+        let alertTitle = "Error"
+        let alertMesssage = "No pudimos guardar tus respuestas en este momento. Intente de nuevo o póngase en contacto."
+        
+        func firstBlock(action: UIAlertAction) {
+            self.saveAnswers()
+        }
+        
+        self.presentAlertWithTitle(alertTitle, withMessage: alertMesssage, withButtonTitles: ["Reintentar", "OK"], withButtonStyles: [.Default, .Cancel], andButtonHandlers: [firstBlock, nil])
+        
         print(response["error"])
     }
     

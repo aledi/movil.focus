@@ -23,6 +23,13 @@ class Controller {
     
     typealias RequestDidEndHandler = (NSDictionary) -> ()
     
+    static private let alamofireManager: Alamofire.Manager = {
+        let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
+        configuration.timeoutIntervalForResource = 60
+        
+        return Alamofire.Manager(configuration: configuration)
+    }()
+    
 //    private static let baseURL = "http://ec2-52-26-0-111.us-west-2.compute.amazonaws.com/"
     private static let baseURL = "http://192.168.1.16:8888/"
     private static let apiURL = Controller.baseURL + "focus/api/controller.php"
@@ -34,7 +41,7 @@ class Controller {
         var requestParameters = parameters
         requestParameters["action"] = action.rawValue
         
-        Alamofire.request(.POST, apiURL, parameters: requestParameters).validate().responseJSON { response in
+        self.alamofireManager.request(.POST, apiURL, parameters: requestParameters).validate().responseJSON { response in
             switch response.result {
             case .Success(let JSON):
                 if let successHandler = successHandler {
