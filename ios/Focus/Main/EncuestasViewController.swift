@@ -112,11 +112,9 @@ class EncuestasViewController: UITableViewController {
             case -1009:
                 alertTitle = "Sin conexión a internet"
                 alertMessage = "Para contestar la encuesta, su dispositivo debe estar conectado a internet."
-            case -1003:
+            default:
                 alertTitle = "Servidor no disponible"
                 alertMessage = "Nuestro servidor no está disponible por el momento."
-            default:
-                break
             }
             
             self.presentAlertWithTitle(alertTitle, withMessage: alertMessage, withButtonTitles: ["OK"], withButtonStyles: [.Cancel], andButtonHandlers: [nil])

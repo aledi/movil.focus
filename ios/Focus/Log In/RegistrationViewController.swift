@@ -316,11 +316,9 @@ class RegistrationViewController: UIViewController, UIPickerViewDelegate, UIPick
         case -1009:
             alertTitle = "Sin conexión a internet"
             alertMessage = "Para utilizar la aplicación, su dispositivo debe estar conectado a internet."
-        case -1003:
+        default:
             alertTitle = "Servidor no disponible"
             alertMessage = "Nuestro servidor no está disponible por el momento."
-        default:
-            break
         }
         
         func firstBlock(action: UIAlertAction) {
