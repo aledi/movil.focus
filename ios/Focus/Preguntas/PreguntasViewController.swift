@@ -40,9 +40,13 @@ class PreguntasViewController: UITableViewController {
         self.dismissSegueSourceViewController(segue)
     }
     
-    func presentVideo() {
-        let moviePlayerController = UIStoryboard(name: "Preguntas", bundle: nil).instantiateViewControllerWithIdentifier("Video")
-        self.presentViewController(moviePlayerController, animated: true, completion: nil)
+    func presentVideo(sender: UIButton) {
+        let navigationController = UIStoryboard(name: "Preguntas", bundle: nil).instantiateViewControllerWithIdentifier("Video") as! UINavigationController
+        let moviePlayerController = navigationController.topViewController as! MoviePlayerViewController
+        
+        moviePlayerController.videoName = self.preguntas![sender.tag].video
+        
+        self.presentViewController(navigationController, animated: true, completion: nil)
     }
     
     // -----------------------------------------------------------------------------------------------------------
@@ -72,9 +76,9 @@ class PreguntasViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(PREGUNTA_CELL, forIndexPath: indexPath) as! PreguntaViewCell
         cell.pregunta = self.preguntas![indexPath.section]
-        cell.configureForPregunta()
-        cell.selectionStyle = .None
         cell.videoHandler = #selector(self.presentVideo)
+        cell.configureForPregunta(indexPath.section)
+        cell.selectionStyle = .None
         
         return cell
     }

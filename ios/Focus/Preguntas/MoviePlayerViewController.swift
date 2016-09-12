@@ -12,11 +12,12 @@ import MediaPlayer
 class MoviePlayerViewController: UIViewController {
     
     var moviePlayer: MPMoviePlayerController!
+    var videoName: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let url = NSURL(string: Controller.videosURL + "test.m4v") {
+        if let video = self.videoName, url = NSURL(string: Controller.videosURL + video) {
             moviePlayer = MPMoviePlayerController(contentURL: url)
             
             moviePlayer.view.frame = CGRectMake(0, 44, self.view.frame.size.width, self.view.frame.size.height - 44)
