@@ -76,12 +76,10 @@ class PreguntaViewCell: UITableViewCell, UITextViewDelegate {
             self.videoBottomConstraint.constant = 15
         }
         
-        if (pregunta.imagen != "") {
-            if let url =  NSURL(string: Controller.imagesURL + pregunta.imagen), data = NSData(contentsOfURL: url), image = UIImage(data: data) {
-                self.imagenHeightConstraint.constant = 200
-                self.imagenBottomConstraint.constant = 15
-                self.imagen.image = image
-            }
+        if let image = pregunta.imagen {
+            self.imagenHeightConstraint.constant = 200
+            self.imagenBottomConstraint.constant = 15
+            self.imagen.image = image
         }
         
         if (tipo == .Abierta) {
