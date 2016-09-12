@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 enum TipoPregunta: Int {
     case Abierta = 1
@@ -22,7 +23,7 @@ class Pregunta {
     var numPregunta: Int
     var pregunta: String
     var video: String
-    var imagen: String
+    var imagen: UIImage? = nil
     var opciones: [String]
     var selectedOptions: [Bool] = [false, false, false, false, false, false, false, false, false, false]
     var respuesta: String = ""
@@ -33,7 +34,11 @@ class Pregunta {
         self.numPregunta = numPregunta
         self.pregunta = pregunta
         self.video = video
-        self.imagen = imagen
+        
+        if let url = NSURL(string: Controller.imagesURL + imagen), data = NSData(contentsOfURL: url), image = UIImage(data: data) {
+            self.imagen = image
+        }
+        
         self.opciones = opciones
     }
     

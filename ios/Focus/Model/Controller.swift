@@ -23,20 +23,22 @@ class Controller {
     
     typealias RequestDidEndHandler = (NSDictionary) -> ()
     
-    private static let url = "http://ec2-52-26-0-111.us-west-2.compute.amazonaws.com/focus/api/controller.php"
-//    private static let url = "http://192.168.1.16:8888/focus/api/controller.php"
+//    private static let baseURL = "http://ec2-52-26-0-111.us-west-2.compute.amazonaws.com/"
+    private static let baseURL = "http://192.168.1.16:8888/"
+    private static let apiURL = Controller.baseURL + "focus/api/controller.php"
+    
+    static let videosURL = Controller.baseURL + "focus/resources/videos/"
+    static let imagesURL = Controller.baseURL + "focus/resources/images/"
     
     static func requestForAction(action: Actions, withParameters parameters: [String : AnyObject], withSuccessHandler successHandler: RequestDidEndHandler?, andErrorHandler errorHandler: RequestDidEndHandler? = nil) {
         var requestParameters = parameters
         requestParameters["action"] = action.rawValue
         
-        Alamofire.request(.POST, url, parameters: requestParameters).validate().responseJSON { response in
+        Alamofire.request(.POST, apiURL, parameters: requestParameters).validate().responseJSON { response in
             switch response.result {
             case .Success(let JSON):
-                let response = JSON as! NSDictionary
-                
                 if let successHandler = successHandler {
-                    successHandler(response)
+                    successHandler(JSON as! NSDictionary)
                 }
             case .Failure(let error):
                 if let errorHandler = errorHandler {

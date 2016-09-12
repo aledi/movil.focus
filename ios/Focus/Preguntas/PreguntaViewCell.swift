@@ -12,6 +12,10 @@ class PreguntaViewCell: UITableViewCell, UITextViewDelegate {
 
     @IBOutlet var preguntaLabel: UILabel!
     
+    @IBOutlet var videoButton: UIButton!
+    @IBOutlet var videoHeightConstraint: NSLayoutConstraint!
+    @IBOutlet var videoBottomConstraint: NSLayoutConstraint!
+    
     @IBOutlet var imagen: UIImageView!
     @IBOutlet var imagenHeightConstraint: NSLayoutConstraint!
     @IBOutlet var imagenBottomConstraint: NSLayoutConstraint!
@@ -43,26 +47,39 @@ class PreguntaViewCell: UITableViewCell, UITextViewDelegate {
         }
     }
     
+    var videoHandler: Selector? {
+        didSet {
+            self.videoButton.addTarget(nil, action: videoHandler!, forControlEvents: .TouchUpInside)
+        }
+    }
+    
     // -----------------------------------------------------------------------------------------------------------
     // MARK: - Configure
     // -----------------------------------------------------------------------------------------------------------
     
-    func configureForPregunta() {
+    func configureForPregunta(numPregunta: Int) {
         guard let pregunta = self.pregunta else {
             return
         }
         
         self.preguntaLabel.text = pregunta.pregunta
         
+        self.videoButton.tag = numPregunta
+        
+        self.videoHeightConstraint.constant = 0
+        self.videoBottomConstraint.constant = 0
         self.imagenHeightConstraint.constant = 0
         self.imagenBottomConstraint.constant = 0
         
-        if (pregunta.imagen != "") {
-            if let url =  NSURL(string: pregunta.imagen), data = NSData(contentsOfURL: url), image = UIImage(data: data) {
-                self.imagenHeightConstraint.constant = 200
-                self.imagenBottomConstraint.constant = 15
-                self.imagen.image = image
-            }
+        if (pregunta.video != "") {
+            self.videoHeightConstraint.constant = 40
+            self.videoBottomConstraint.constant = 15
+        }
+        
+        if let image = pregunta.imagen {
+            self.imagenHeightConstraint.constant = 200
+            self.imagenBottomConstraint.constant = 15
+            self.imagen.image = image
         }
         
         if (tipo == .Abierta) {

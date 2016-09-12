@@ -82,7 +82,8 @@ class LoadingViewController: UIViewController {
             alertTitle = "Servidor no disponible"
             alertMessage = "Nuestro servidor no está disponible por el momento."
         default:
-            break
+            alertTitle = "Servidor no disponible"
+            alertMessage = "Nuestro servidor no está disponible por el momento."
         }
         
         func firstBlock(action: UIAlertAction) {

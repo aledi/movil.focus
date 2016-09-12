@@ -35,6 +35,53 @@
             </objects>
             <point key="canvasLocation" x="1164" y="509"/>
         </scene>
+        <!--Video-->
+        <scene sceneID="cTW-fz-bQ5">
+            <objects>
+                <viewController id="bIp-UC-lIf" customClass="MoviePlayerViewController" customModule="Focus" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="e8X-rE-2FK"/>
+                        <viewControllerLayoutGuide type="bottom" id="wJ5-eg-3v8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ME9-62-XoC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Video" id="G8K-NW-mq3">
+                        <barButtonItem key="leftBarButtonItem" title="Cerrar" id="vsR-dm-6EC">
+                            <connections>
+                                <segue destination="pM6-X8-bOK" kind="unwind" identifier="exit" unwindAction="dismissVideoPlayer:" id="pLq-6r-un6"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gSv-oH-Epp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="pM6-X8-bOK" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1164" y="1206"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="XKN-Zu-XdG">
+            <objects>
+                <navigationController storyboardIdentifier="Video" id="ENt-6b-bgW" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mzz-NQ-pgG">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.12549019610000001" green="0.13725490200000001" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="bIp-UC-lIf" kind="relationship" relationship="rootViewController" id="gMi-Fs-VBK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aC6-70-NmW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="344" y="1206"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="joX-V6-7BQ">
             <objects>
