@@ -83,7 +83,7 @@ class ProfileViewController: UITableViewController, MFMailComposeViewControllerD
                 self.performSegueWithIdentifier("logOut", sender: nil)
             }
             
-            self.presentAlertWithTitle("Cerrar Sesión", withMessage: "La próxima vez que abra la aplicación se le pedirán sus datos de acceso.", withButtonTitles: ["Cerrar", "Cancelar"], withButtonStyles: [.Destructive, .Cancel], andButtonHandlers: [firstBlock, nil])
+            self.presentAlertWithTitle("Cerrar Sesión", withMessage: "La próxima vez que abra la aplicación se le pedirán sus datos de acceso.", withButtonTitles: ["Cancelar", "Cerrar"], withButtonStyles: [.Cancel, .Destructive], andButtonHandlers: [nil, firstBlock])
             
             return
         default:
