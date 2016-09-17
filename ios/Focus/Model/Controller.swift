@@ -31,7 +31,7 @@ class Controller {
     }()
     
 //    private static let baseURL = "http://ec2-52-26-0-111.us-west-2.compute.amazonaws.com/"
-    private static let baseURL = "http://192.168.1.16:8888/"
+    private static let baseURL = "http://192.168.1.68:8888/"
     private static let apiURL = Controller.baseURL + "focus/api/controller.php"
     
     static let videosURL = Controller.baseURL + "focus/resources/videos/"
