@@ -176,6 +176,7 @@ class PreguntaViewCell: UITableViewCell, UITextViewDelegate {
     
     @IBAction func resetSelection(sender: AnyObject) {
         self.pregunta?.respuesta = ""
+        self.pregunta?.nextOption = 1
         
         for button in self.buttons {
             button.selected = false
