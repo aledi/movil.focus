@@ -30,10 +30,15 @@ class PreguntaViewCell: UITableViewCell, UITextViewDelegate {
     @IBOutlet var heightConstraints: [NSLayoutConstraint]!
     @IBOutlet var bottomConstraints: [NSLayoutConstraint]!
     
+    @IBOutlet var resetButton: UIButton!
+    @IBOutlet var resetHeightConstraint: NSLayoutConstraint!
+    @IBOutlet var resetBottomConstraint: NSLayoutConstraint!
+    
     var tipo: TipoPregunta? {
         didSet {
             for button in self.buttons {
                 button.multiSelection = (tipo == .Multiple)
+                button.ordered = (tipo == .Ordenamiento)
             }
         }
     }
@@ -96,6 +101,10 @@ class PreguntaViewCell: UITableViewCell, UITextViewDelegate {
                 self.bottomConstraints[i].constant = 0
                 self.buttons[i].alpha = 0
             }
+            
+            self.resetBottomConstraint.constant = 0
+            self.resetHeightConstraint.constant = 0
+            self.resetButton.alpha = 0
         } else {
             self.textViewHeightConstraint.constant = 0
             self.textViewBottomConstraint.constant = 0
@@ -112,6 +121,16 @@ class PreguntaViewCell: UITableViewCell, UITextViewDelegate {
                 self.heightConstraints[i].constant = 0
                 self.bottomConstraints[i].constant = 0
                 self.buttons[i].alpha = 0
+            }
+            
+            if (tipo == .Ordenamiento) {
+                self.resetBottomConstraint.constant = 8
+                self.resetHeightConstraint.constant = 50
+                self.resetButton.alpha = 1.0
+            } else {
+                self.resetBottomConstraint.constant = 0
+                self.resetHeightConstraint.constant = 0
+                self.resetButton.alpha = 0
             }
         }
     }
@@ -146,7 +165,21 @@ class PreguntaViewCell: UITableViewCell, UITextViewDelegate {
             sender.selected = !sender.selected
             pregunta.selectedOptions[index] = sender.selected
         case .Ordenamiento:
-            break
+            if (!sender.selected) {
+                sender.optionNumber = pregunta.nextOption
+                sender.selected = true
+                pregunta.respuesta += "\(pregunta.opciones[index])&"
+                pregunta.nextOption += 1
+            }
+        }
+    }
+    
+    @IBAction func resetSelection(sender: AnyObject) {
+        self.pregunta?.respuesta = ""
+        self.pregunta?.nextOption = 1
+        
+        for button in self.buttons {
+            button.selected = false
         }
     }
     

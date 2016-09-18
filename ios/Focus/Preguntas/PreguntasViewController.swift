@@ -98,7 +98,7 @@ class PreguntasViewController: UITableViewController {
                 }
             }
             
-            if (pregunta.respuesta.isEmpty) {
+            if (pregunta.respuesta.isEmpty || pregunta.nextOption <= pregunta.opciones.count) {
                 return self.missingAnswerAlert(pregunta.numPregunta)
             }
             
