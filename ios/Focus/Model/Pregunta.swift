@@ -27,6 +27,7 @@ class Pregunta {
     var opciones: [String]
     var selectedOptions: [Bool] = [false, false, false, false, false, false, false, false, false, false]
     var respuesta: String = ""
+    var nextOption: Int = 1
     
     init(id: Int, tipo: Int, numPregunta: Int, pregunta: String, video: String, imagen: String, opciones: [String]) {
         self.id = id

@@ -1,53 +1,48 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="1157" id="yoL-q3-JOK" customClass="PreguntaViewCell" customModule="Focus" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="486" height="1157"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="1224" id="yoL-q3-JOK" customClass="PreguntaViewCell" customModule="Focus" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="486" height="1224"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yoL-q3-JOK" id="KwG-mW-Vyz">
-                <rect key="frame" x="0.0" y="0.0" width="486" height="1157"/>
+                <frame key="frameInset" width="486" height="1223"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pregunta" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W1F-lT-UC9">
-                        <rect key="frame" x="23" y="15" width="440" height="154"/>
                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                        <color key="textColor" red="0.12549019610000001" green="0.13725490200000001" blue="0.51372549020000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="textColor" red="0.12549019610000001" green="0.13725490200000001" blue="0.51372549020000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Dud-To-3vh">
-                        <rect key="frame" x="23" y="239" width="440" height="200"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="200" id="0kV-51-cvd"/>
                         </constraints>
                     </imageView>
                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Indique aquí su respuesta..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="00a-tG-C9Y">
-                        <rect key="frame" x="23" y="454" width="440" height="100"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="100" id="Lrf-Tl-pLh"/>
                         </constraints>
-                        <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qAh-A4-5Mu">
-                        <rect key="frame" x="23" y="569" width="440" height="50"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" tag="10" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Opción 1 " lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="SN1-an-fyf">
-                                <rect key="frame" x="0.0" y="0.0" width="407" height="50"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MBg-tV-naU" customClass="RadioButton" customModule="Focus" customModuleProvider="target">
-                                <rect key="frame" x="415" y="13" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="Egc-hU-YY2"/>
                                     <constraint firstAttribute="width" constant="25" id="Ukz-YK-3zU"/>
@@ -61,7 +56,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="SN1-an-fyf" firstAttribute="top" secondItem="qAh-A4-5Mu" secondAttribute="top" id="6qo-hR-5GI"/>
                             <constraint firstItem="SN1-an-fyf" firstAttribute="leading" secondItem="qAh-A4-5Mu" secondAttribute="leading" id="736-rN-7CV"/>
@@ -73,16 +68,13 @@
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hdf-uY-mB3">
-                        <rect key="frame" x="23" y="627" width="440" height="50"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" tag="10" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Opción 2" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="DVp-zQ-oPi">
-                                <rect key="frame" x="0.0" y="0.0" width="407" height="50"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hZE-7l-AZV" customClass="RadioButton" customModule="Focus" customModuleProvider="target">
-                                <rect key="frame" x="415" y="13" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="Isf-G4-2T0"/>
                                     <constraint firstAttribute="width" constant="25" id="Isu-da-9HC"/>
@@ -96,7 +88,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="DVp-zQ-oPi" firstAttribute="top" secondItem="hdf-uY-mB3" secondAttribute="top" id="1pb-AY-Irq"/>
                             <constraint firstAttribute="trailing" secondItem="hZE-7l-AZV" secondAttribute="trailing" id="4lz-GA-Ymg"/>
@@ -108,16 +100,13 @@
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MXK-J6-cMt">
-                        <rect key="frame" x="23" y="685" width="440" height="50"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" tag="10" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Opción 3" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="rnw-Bk-QpB">
-                                <rect key="frame" x="0.0" y="0.0" width="407" height="50"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5cc-EG-twg" customClass="RadioButton" customModule="Focus" customModuleProvider="target">
-                                <rect key="frame" x="415" y="13" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="1bx-QQ-eCy"/>
                                     <constraint firstAttribute="width" constant="25" id="SHl-U8-1Ce"/>
@@ -131,7 +120,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="5cc-EG-twg" firstAttribute="centerY" secondItem="rnw-Bk-QpB" secondAttribute="centerY" id="B7d-Wf-dAH"/>
                             <constraint firstItem="5cc-EG-twg" firstAttribute="leading" secondItem="rnw-Bk-QpB" secondAttribute="trailing" constant="8" id="Kpe-bH-Yl4"/>
@@ -143,16 +132,13 @@
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C8B-jd-IzC">
-                        <rect key="frame" x="23" y="743" width="440" height="50"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" tag="10" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Opción 4" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="3jp-cr-lYY">
-                                <rect key="frame" x="0.0" y="0.0" width="407" height="50"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9TH-2a-yJS" customClass="RadioButton" customModule="Focus" customModuleProvider="target">
-                                <rect key="frame" x="415" y="13" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="25" id="6qR-LW-dFX"/>
                                     <constraint firstAttribute="height" constant="25" id="lkT-A0-vDl"/>
@@ -166,7 +152,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="50" id="1fm-cA-Vh7"/>
                             <constraint firstItem="3jp-cr-lYY" firstAttribute="leading" secondItem="C8B-jd-IzC" secondAttribute="leading" id="4Rq-9b-7u3"/>
@@ -178,16 +164,13 @@
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zob-dh-oBo">
-                        <rect key="frame" x="23" y="801" width="440" height="50"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" tag="10" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Opción 5" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="xka-AW-Mqw">
-                                <rect key="frame" x="0.0" y="0.0" width="407" height="50"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iSW-Do-937" customClass="RadioButton" customModule="Focus" customModuleProvider="target">
-                                <rect key="frame" x="415" y="13" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="25" id="51J-aY-pBa"/>
                                     <constraint firstAttribute="height" constant="25" id="fkX-8Y-dbz"/>
@@ -201,7 +184,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="xka-AW-Mqw" firstAttribute="top" secondItem="zob-dh-oBo" secondAttribute="top" id="0uf-p3-fCe"/>
                             <constraint firstAttribute="trailing" secondItem="iSW-Do-937" secondAttribute="trailing" id="1BJ-kO-9h4"/>
@@ -213,16 +196,13 @@
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9rX-Jq-aTz">
-                        <rect key="frame" x="23" y="859" width="440" height="50"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" tag="10" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Opción 6" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="8LF-Hu-YYN">
-                                <rect key="frame" x="0.0" y="0.0" width="407" height="50"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qo5-XQ-Yjc" customClass="RadioButton" customModule="Focus" customModuleProvider="target">
-                                <rect key="frame" x="415" y="13" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="JaR-zT-vSm"/>
                                     <constraint firstAttribute="width" constant="25" id="k0G-V5-aH2"/>
@@ -236,7 +216,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="50" id="2Xq-ju-KPP"/>
                             <constraint firstAttribute="bottom" secondItem="8LF-Hu-YYN" secondAttribute="bottom" id="7e2-eY-2h7"/>
@@ -248,16 +228,13 @@
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ddY-U6-XxJ">
-                        <rect key="frame" x="23" y="917" width="440" height="50"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" tag="10" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Opción 7" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="K07-Ue-558">
-                                <rect key="frame" x="0.0" y="0.0" width="407" height="50"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A51-fR-gkS" customClass="RadioButton" customModule="Focus" customModuleProvider="target">
-                                <rect key="frame" x="415" y="13" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="ABo-lU-xoT"/>
                                     <constraint firstAttribute="width" constant="25" id="Bt2-Ue-2lm"/>
@@ -271,7 +248,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="A51-fR-gkS" firstAttribute="leading" secondItem="K07-Ue-558" secondAttribute="trailing" constant="8" id="Xld-eX-4P5"/>
                             <constraint firstAttribute="height" constant="50" id="YQB-aQ-IRD"/>
@@ -283,16 +260,13 @@
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XFj-PQ-es1">
-                        <rect key="frame" x="23" y="975" width="440" height="50"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" tag="10" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Opción 8" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Amj-oj-dpi">
-                                <rect key="frame" x="0.0" y="0.0" width="407" height="50"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JPj-st-vm7" customClass="RadioButton" customModule="Focus" customModuleProvider="target">
-                                <rect key="frame" x="415" y="13" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="25" id="WD5-Nw-KB5"/>
                                     <constraint firstAttribute="height" constant="25" id="yQF-XT-WJX"/>
@@ -306,7 +280,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="JPj-st-vm7" secondAttribute="trailing" id="CWt-0U-H5C"/>
                             <constraint firstItem="JPj-st-vm7" firstAttribute="leading" secondItem="Amj-oj-dpi" secondAttribute="trailing" constant="8" id="G47-Me-X2y"/>
@@ -318,16 +292,13 @@
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="feH-p4-pWT">
-                        <rect key="frame" x="23" y="1033" width="440" height="50"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" tag="10" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Opción 9" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Jpl-11-x3S">
-                                <rect key="frame" x="0.0" y="0.0" width="407" height="50"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HP9-Zn-5zf" customClass="RadioButton" customModule="Focus" customModuleProvider="target">
-                                <rect key="frame" x="415" y="13" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="25" id="3Eo-7q-4vf"/>
                                     <constraint firstAttribute="height" constant="25" id="VCd-TX-zqP"/>
@@ -341,7 +312,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Jpl-11-x3S" firstAttribute="top" secondItem="feH-p4-pWT" secondAttribute="top" id="2hR-p6-4FL"/>
                             <constraint firstAttribute="height" constant="50" id="54T-xl-G5J"/>
@@ -353,16 +324,13 @@
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YNH-4q-x3R">
-                        <rect key="frame" x="23" y="1091" width="440" height="50"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" tag="10" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Opción 10" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="t5s-jp-qYr">
-                                <rect key="frame" x="0.0" y="0.0" width="407" height="50"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X9j-uq-0fF" customClass="RadioButton" customModule="Focus" customModuleProvider="target">
-                                <rect key="frame" x="415" y="13" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="TTy-Mf-Sr2"/>
                                     <constraint firstAttribute="width" constant="25" id="xdm-bw-2DD"/>
@@ -376,7 +344,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="t5s-jp-qYr" firstAttribute="top" secondItem="YNH-4q-x3R" secondAttribute="top" id="2F2-Sk-Seo"/>
                             <constraint firstItem="X9j-uq-0fF" firstAttribute="leading" secondItem="t5s-jp-qYr" secondAttribute="trailing" constant="8" id="A4W-q4-LfY"/>
@@ -388,23 +356,34 @@
                         </constraints>
                     </view>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Xk-My-ejn">
-                        <rect key="frame" x="25" y="184" width="436" height="40"/>
-                        <color key="backgroundColor" red="0.12549019610000001" green="0.13725490200000001" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.12549019610000001" green="0.13725490200000001" blue="0.50980392159999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="40" id="RJY-7l-uVG"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <state key="normal" title="Ver Video">
-                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0sN-DB-2dw">
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="9gl-Ka-trG"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                        <state key="normal" title="Reiniciar">
+                            <color key="titleColor" red="0.12549019610000001" green="0.13725490200000001" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="resetSelection:" destination="yoL-q3-JOK" eventType="touchUpInside" id="YSS-e2-fXm"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="hdf-uY-mB3" firstAttribute="top" secondItem="qAh-A4-5Mu" secondAttribute="bottom" constant="8" id="2CE-jA-mmn"/>
                     <constraint firstAttribute="trailingMargin" secondItem="9rX-Jq-aTz" secondAttribute="trailing" constant="15" id="2kN-7e-lQ5"/>
                     <constraint firstAttribute="trailingMargin" secondItem="W1F-lT-UC9" secondAttribute="trailing" constant="15" id="5LB-kp-tBo"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="YNH-4q-x3R" secondAttribute="bottom" constant="8" id="6Vd-vw-Wl7"/>
+                    <constraint firstAttribute="bottom" secondItem="0sN-DB-2dw" secondAttribute="bottom" constant="8" id="AEd-Uk-sHw"/>
                     <constraint firstAttribute="trailing" secondItem="0Xk-My-ejn" secondAttribute="trailing" constant="25" id="B2Q-Ul-jmE"/>
                     <constraint firstItem="C8B-jd-IzC" firstAttribute="top" secondItem="MXK-J6-cMt" secondAttribute="bottom" constant="8" id="B8H-HB-sv8"/>
                     <constraint firstAttribute="trailingMargin" secondItem="ddY-U6-XxJ" secondAttribute="trailing" constant="15" id="BjQ-As-LqG"/>
@@ -413,6 +392,7 @@
                     <constraint firstItem="9rX-Jq-aTz" firstAttribute="leading" secondItem="KwG-mW-Vyz" secondAttribute="leadingMargin" constant="15" id="FXH-Sd-D03"/>
                     <constraint firstItem="feH-p4-pWT" firstAttribute="top" secondItem="XFj-PQ-es1" secondAttribute="bottom" constant="8" id="IDR-kE-QLU"/>
                     <constraint firstItem="0Xk-My-ejn" firstAttribute="top" secondItem="W1F-lT-UC9" secondAttribute="bottom" constant="15" id="IO7-Ja-5Kj"/>
+                    <constraint firstItem="0sN-DB-2dw" firstAttribute="centerX" secondItem="KwG-mW-Vyz" secondAttribute="centerX" id="LHW-Bh-5q0"/>
                     <constraint firstAttribute="trailingMargin" secondItem="hdf-uY-mB3" secondAttribute="trailing" constant="15" id="LbL-Jc-YoS"/>
                     <constraint firstAttribute="trailingMargin" secondItem="Dud-To-3vh" secondAttribute="trailing" constant="15" id="NUW-xZ-5FW"/>
                     <constraint firstItem="zob-dh-oBo" firstAttribute="top" secondItem="C8B-jd-IzC" secondAttribute="bottom" constant="8" id="OH1-4c-SHm"/>
@@ -437,6 +417,7 @@
                     <constraint firstItem="zob-dh-oBo" firstAttribute="leading" secondItem="KwG-mW-Vyz" secondAttribute="leadingMargin" constant="15" id="jIf-3h-47d"/>
                     <constraint firstItem="00a-tG-C9Y" firstAttribute="top" secondItem="Dud-To-3vh" secondAttribute="bottom" constant="15" id="jKO-Vz-9gJ"/>
                     <constraint firstItem="W1F-lT-UC9" firstAttribute="top" secondItem="KwG-mW-Vyz" secondAttribute="top" constant="15" id="lEi-qS-nOQ"/>
+                    <constraint firstItem="0sN-DB-2dw" firstAttribute="top" secondItem="YNH-4q-x3R" secondAttribute="bottom" constant="8" id="qap-CW-Qq6"/>
                     <constraint firstAttribute="trailingMargin" secondItem="00a-tG-C9Y" secondAttribute="trailing" constant="15" id="qxa-Gk-PYX"/>
                     <constraint firstAttribute="trailingMargin" secondItem="feH-p4-pWT" secondAttribute="trailing" constant="15" id="t9D-cC-yXB"/>
                     <constraint firstAttribute="trailingMargin" secondItem="XFj-PQ-es1" secondAttribute="trailing" constant="15" id="tpt-eS-gUJ"/>
@@ -451,6 +432,9 @@
                 <outlet property="imagenBottomConstraint" destination="jKO-Vz-9gJ" id="Emw-O6-eUz"/>
                 <outlet property="imagenHeightConstraint" destination="0kV-51-cvd" id="Eho-WW-mTB"/>
                 <outlet property="preguntaLabel" destination="W1F-lT-UC9" id="Yag-uh-JtH"/>
+                <outlet property="resetBottomConstraint" destination="AEd-Uk-sHw" id="o84-hv-TaR"/>
+                <outlet property="resetButton" destination="0sN-DB-2dw" id="DKh-7k-adS"/>
+                <outlet property="resetHeightConstraint" destination="9gl-Ka-trG" id="U9k-hJ-czp"/>
                 <outlet property="textView" destination="00a-tG-C9Y" id="zOz-KL-Rjh"/>
                 <outlet property="textViewBottomConstraint" destination="YVS-Sz-0Ty" id="b7X-XC-Tg6"/>
                 <outlet property="textViewHeightConstraint" destination="Lrf-Tl-pLh" id="lEx-9a-b3O"/>
@@ -506,9 +490,10 @@
                 <outletCollection property="bottomConstraints" destination="Oht-qS-hVZ" collectionClass="NSMutableArray" id="ssT-E7-Tuf"/>
                 <outletCollection property="bottomConstraints" destination="IDR-kE-QLU" collectionClass="NSMutableArray" id="dT9-iE-ghB"/>
                 <outletCollection property="bottomConstraints" destination="gA7-pj-zGv" collectionClass="NSMutableArray" id="uHf-Kj-fsc"/>
-                <outletCollection property="bottomConstraints" destination="6Vd-vw-Wl7" collectionClass="NSMutableArray" id="zAn-rF-nF1"/>
+                <outletCollection property="heightConstraints" destination="2kN-7e-lQ5" collectionClass="NSMutableArray" id="2lA-Bu-Awx"/>
+                <outletCollection property="bottomConstraints" destination="qap-CW-Qq6" collectionClass="NSMutableArray" id="ewG-ku-m7H"/>
             </connections>
-            <point key="canvasLocation" x="295" y="618.5"/>
+            <point key="canvasLocation" x="295" y="652"/>
         </tableViewCell>
     </objects>
     <resources>
