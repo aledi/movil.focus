@@ -69,6 +69,7 @@
 		40CC5DB21D80EF5900E1D8E5 /* Extras.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Extras.storyboard; path = Extras/Extras.storyboard; sourceTree = "<group>"; };
 		40CC5DB41D80F77300E1D8E5 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WelcomeViewController.swift; path = Extras/WelcomeViewController.swift; sourceTree = "<group>"; };
 		40D810651D5811EE00EB8FCE /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoadingViewController.swift; path = Main/LoadingViewController.swift; sourceTree = "<group>"; };
+		40DDEC941D8E622F00B02BF9 /* Focus.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Focus.entitlements; sourceTree = "<group>"; };
 		40E7F9BF1D4D353700BCD0DB /* NSUserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSUserDefaults.swift; path = Extensions/NSUserDefaults.swift; sourceTree = "<group>"; };
 		40E7F9C11D4D5A9E00BCD0DB /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = Main/ProfileViewController.swift; sourceTree = "<group>"; };
 		40FF0D941D37138500ED8A64 /* Focus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Focus.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -161,6 +162,7 @@
 		40FF0D961D37138500ED8A64 /* Focus */ = {
 			isa = PBXGroup;
 			children = (
+				40DDEC941D8E622F00B02BF9 /* Focus.entitlements */,
 				40FF0D971D37138500ED8A64 /* AppDelegate.swift */,
 				40FF0DA01D37138500ED8A64 /* LaunchScreen.storyboard */,
 				40FF0D9E1D37138500ED8A64 /* Assets.xcassets */,
@@ -473,6 +475,7 @@
 			baseConfigurationReference = 8D0555816C82429F1139FA96 /* Pods-Focus.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Focus/Focus.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
@@ -491,6 +494,7 @@
 			baseConfigurationReference = 84BC2C57732DF31E68E48A05 /* Pods-Focus.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Focus/Focus.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
