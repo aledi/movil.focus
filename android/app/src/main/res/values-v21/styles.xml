@@ -18,11 +18,22 @@
 
     <!-- EditText -->
     <style name="EditText" parent="Widget.AppCompat.EditText">
+        <item name="android:background">@drawable/border</item>
+        <item name="android:gravity">center</item>
+        <item name="android:imeOptions">actionNext</item>
         <item name="android:inputType">text</item>
         <item name="android:maxLines">1</item>
         <item name="android:textColor">@color/black</item>
         <item name="android:textColorHint">@color/text_hint</item>
         <item name="android:textSize">@dimen/font_16sp</item>
+    </style>
+
+    <!-- TextView -->
+    <style name="TextViewBoldClickable" parent="TextView">
+        <item name="android:background">@drawable/ripple_effect</item>
+        <item name="android:clickable">true</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textColor">@color/blueDark</item>
     </style>
 
     <!-- Button -->
