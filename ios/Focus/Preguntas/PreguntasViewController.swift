@@ -44,7 +44,10 @@ class PreguntasViewController: UITableViewController {
         let navigationController = UIStoryboard(name: "Preguntas", bundle: nil).instantiateViewControllerWithIdentifier("Video") as! UINavigationController
         let moviePlayerController = navigationController.topViewController as! MoviePlayerViewController
         
-        moviePlayerController.videoName = self.preguntas![sender.tag].video
+        let pregunta = self.preguntas![sender.tag]
+        
+        moviePlayerController.videoName = pregunta.video
+        pregunta.didSeeVideo = true
         
         self.presentViewController(navigationController, animated: true, completion: nil)
     }
@@ -98,8 +101,16 @@ class PreguntasViewController: UITableViewController {
                 }
             }
             
-            if (pregunta.respuesta.isEmpty || pregunta.nextOption <= pregunta.opciones.count) {
+            if (!pregunta.didSeeVideo) {
+               return self.missingVideo(pregunta.numPregunta)
+            }
+            
+            if (pregunta.respuesta.isEmpty) {
                 return self.missingAnswerAlert(pregunta.numPregunta)
+            }
+            
+            if (pregunta.tipo == TipoPregunta.Ordenamiento.rawValue && pregunta.nextOption <= pregunta.opciones.count) {
+                return self.missingOrder(pregunta.numPregunta)
             }
             
             self.respuesta += "\(pregunta.respuesta)|"
@@ -111,6 +122,20 @@ class PreguntasViewController: UITableViewController {
     func missingAnswerAlert(numPregunta: Int) {
         let alertTitle = "La pregunta \(numPregunta) no ha sido respondida."
         let alertMesssage = "Por favor, responda a todas las preguntas e intente enviar las respuestas nuevamente."
+        
+        self.presentAlertWithTitle(alertTitle, withMessage: alertMesssage, withButtonTitles: ["OK"], withButtonStyles: [.Cancel], andButtonHandlers: [nil])
+    }
+    
+    func missingVideo(numPregunta: Int) {
+        let alertTitle = "El video de la pregunta \(numPregunta) no ha sido visto."
+        let alertMesssage = "Por favor, vea el video antes de responder a la pregunta."
+        
+        self.presentAlertWithTitle(alertTitle, withMessage: alertMesssage, withButtonTitles: ["OK"], withButtonStyles: [.Cancel], andButtonHandlers: [nil])
+    }
+    
+    func missingOrder(numPregunta: Int) {
+        let alertTitle = "La pregunta \(numPregunta) no ha sido ordenada."
+        let alertMesssage = "Por favor, ordene todas las opciones disponibles."
         
         self.presentAlertWithTitle(alertTitle, withMessage: alertMesssage, withButtonTitles: ["OK"], withButtonStyles: [.Cancel], andButtonHandlers: [nil])
     }

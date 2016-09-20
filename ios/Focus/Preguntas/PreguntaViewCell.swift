@@ -76,7 +76,7 @@ class PreguntaViewCell: UITableViewCell, UITextViewDelegate {
         self.imagenHeightConstraint.constant = 0
         self.imagenBottomConstraint.constant = 0
         
-        if (pregunta.video != "") {
+        if (!pregunta.video.isEmpty) {
             self.videoHeightConstraint.constant = 40
             self.videoBottomConstraint.constant = 15
         }
@@ -93,8 +93,8 @@ class PreguntaViewCell: UITableViewCell, UITextViewDelegate {
             self.textView.layer.borderWidth = 0.5
             self.textView.layer.borderColor = UIColor.lightGrayColor().CGColor
             self.textView.delegate = self
-            self.textView.text = self.pregunta!.respuesta == "" ? "Indique aquí su respuesta..." : self.pregunta!.respuesta
-            self.textView.textColor = self.pregunta!.respuesta == "" ? UIColor.lightGrayColor() : UIColor.blackColor()
+            self.textView.text = self.pregunta!.respuesta.isEmpty ? "Indique aquí su respuesta..." : self.pregunta!.respuesta
+            self.textView.textColor = self.pregunta!.respuesta.isEmpty ? UIColor.lightGrayColor() : UIColor.blackColor()
             
             for i in 0...9 {
                 self.heightConstraints[i].constant = 0

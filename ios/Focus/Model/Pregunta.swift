@@ -28,6 +28,7 @@ class Pregunta {
     var selectedOptions: [Bool] = [false, false, false, false, false, false, false, false, false, false]
     var respuesta: String = ""
     var nextOption: Int = 1
+    var didSeeVideo: Bool
     
     init(id: Int, tipo: Int, numPregunta: Int, pregunta: String, video: String, imagen: String, opciones: [String]) {
         self.id = id
@@ -35,6 +36,7 @@ class Pregunta {
         self.numPregunta = numPregunta
         self.pregunta = pregunta
         self.video = video
+        self.didSeeVideo = self.video.isEmpty
         
         if let url = NSURL(string: Controller.imagesURL + imagen), data = NSData(contentsOfURL: url), image = UIImage(data: data) {
             self.imagen = image
