@@ -30,12 +30,12 @@ class Controller {
         return Alamofire.Manager(configuration: configuration)
     }()
     
-//    private static let baseURL = "http://ec2-52-26-0-111.us-west-2.compute.amazonaws.com/"
-    private static let baseURL = "http://192.168.1.68:8888/"
-    private static let apiURL = Controller.baseURL + "focus/api/controller.php"
+    private static let baseURL = "http://54.187.187.98/paneles/"
+//    private static let baseURL = "http://192.168.1.68:8888/focus/"
+    private static let apiURL = Controller.baseURL + "api/controller.php"
     
-    static let videosURL = Controller.baseURL + "focus/resources/videos/"
-    static let imagesURL = Controller.baseURL + "focus/resources/images/"
+    static let videosURL = Controller.baseURL + "resources/videos/"
+    static let imagesURL = Controller.baseURL + "resources/images/"
     
     static func requestForAction(action: Actions, withParameters parameters: [String : AnyObject], withSuccessHandler successHandler: RequestDidEndHandler?, andErrorHandler errorHandler: RequestDidEndHandler? = nil) {
         var requestParameters = parameters
