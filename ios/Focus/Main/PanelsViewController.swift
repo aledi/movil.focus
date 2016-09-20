@@ -45,10 +45,18 @@ class PanelsViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.paneles?.count ?? 0
+        return (self.paneles == nil || self.paneles!.count == 0) ? 1 : self.paneles!.count
+    }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return (self.paneles == nil || self.paneles!.count == 0) ? 270 : super.tableView(tableView, heightForRowAtIndexPath: indexPath)
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        if (self.paneles == nil || self.paneles!.count == 0) {
+            return tableView.dequeueReusableCellWithIdentifier("noContentCell", forIndexPath: indexPath)
+        }
+        
         let cell = tableView.dequeueReusableCellWithIdentifier("panelCell", forIndexPath: indexPath)
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "MMMM d, YYYY"
