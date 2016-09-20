@@ -2,15 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "file-list-tick-7.png",
+      "filename" : "ic_paneles@1x.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "ic_paneles@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
+      "filename" : "ic_paneles@3x.png",
       "scale" : "3x"
     }
   ],
