@@ -96,14 +96,17 @@
     <string name="panels">Paneles</string>
     <string name="startDate">Fecha de Inicio:\u0020</string>
     <string name="endDate">Fecha de Fin:\u0020</string>
-    <string name="no_active_panels">Sin Paneles Activos\u0020</string>
+    <string name="no_active_panels">Sin Paneles Activos</string>
 
     <!-- Surveys -->
     <string name="survey">Encuesta</string>
     <string name="surveys">Encuestas</string>
     <string name="done">Terminar</string>
-    <string name="text_answer_hint">Indique aquí su respuesta</string>
     <string name="view_video">Ver Video</string>
+    <string name="video">Video</string>
+    <string name="video_unavailable">Video No Disponible\nPor favor póngase en contacto.</string>
+    <string name="text_answer_hint">Indique aquí su respuesta</string>
+    <string name="reset">REINICIAR</string>
 
     <!-- Profile -->
     <string name="profile">Profile</string>

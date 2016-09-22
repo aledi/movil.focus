@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ViewSwitcher xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/view_switcher"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black">
+
+    <VideoView
+        android:id="@+id/video"
+        android:layout_width="match_parent"
+        android:layout_height="260dp" />
+
+    <TextView
+        style="@style/TextViewPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/video_unavailable"
+        android:textColor="@color/white" />
+</ViewSwitcher>
