@@ -1,5 +1,6 @@
 package com.android.focus.model;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -51,7 +52,7 @@ public class Panel {
     }
 
     public List<Encuesta> getEncuestas() {
-        return encuestas;
+        return (encuestas == null) ? new ArrayList<Encuesta>() : encuestas;
     }
 
     public void setEncuestas(List<Encuesta> encuestas) {
@@ -69,11 +70,21 @@ public class Panel {
     }
 
     public static String getActivePanels() {
-        return "1";
+        return Integer.toString(userPanels.size());
     }
 
     public static String getPendingSurveys() {
-        return "0";
+        int pendingSurveys = 0;
+
+        for (Panel userPanel : userPanels) {
+            List<Encuesta> encuestas = userPanel.getEncuestas();
+
+            for (Encuesta encuesta : encuestas) {
+                pendingSurveys += encuesta.isContestada() ? 0 : 1;
+            }
+        }
+
+        return Integer.toString(pendingSurveys);
     }
     // endregion
 }
