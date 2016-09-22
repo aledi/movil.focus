@@ -24,7 +24,22 @@
         </activity>
 
         <activity
-            android:name="com.android.focus.authentication.AuthenticationActivity"
+            android:name=".authentication.AuthenticationActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".authentication.RegistrationActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".authentication.WelcomeActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".authentication.PrivacyPolicyActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
 
@@ -44,5 +59,9 @@
             android:name=".paneles.activities.PreguntasActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".paneles.activities.VideoViewActivity"
+            android:screenOrientation="portrait" />
     </application>
 </manifest>
