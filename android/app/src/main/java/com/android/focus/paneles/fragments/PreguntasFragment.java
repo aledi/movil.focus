@@ -2,14 +2,21 @@ package com.android.focus.paneles.fragments;
 
 import android.app.Activity;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.CardView;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
@@ -26,12 +33,15 @@ import com.android.focus.model.Encuesta;
 import com.android.focus.model.Pregunta;
 import com.android.focus.network.HttpResponseHandler;
 import com.android.focus.network.NetworkManager;
+import com.android.focus.paneles.activities.VideoViewActivity;
 import com.android.focus.utils.TextUtils;
 import com.android.focus.utils.UIUtils;
 import com.loopj.android.http.RequestParams;
 
 import org.json.JSONObject;
 
+import java.io.InputStream;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -39,6 +49,7 @@ import cz.msebera.android.httpclient.Header;
 
 import static com.android.focus.model.Pregunta.MAX_OPTIONS;
 import static com.android.focus.model.Pregunta.MULTIPLE_OPTION;
+import static com.android.focus.model.Pregunta.ORDERING;
 import static com.android.focus.model.Pregunta.SINGLE_OPTION;
 import static com.android.focus.model.Pregunta.TEXT_ANSWER;
 import static com.android.focus.network.APIConstants.ID;
@@ -101,24 +112,17 @@ public class PreguntasFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
 
-        View view = inflater.inflate(R.layout.fragment_encuesta, container, false);
-
-        preguntasList = (LinearLayout) view.findViewById(R.id.list_preguntas);
+        View view = inflater.inflate(R.layout.fragment_preguntas, container, false);
         loader = view.findViewById(R.id.loader);
 
-        return view;
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-
         preguntas = Encuesta.getPreguntas(panelId, encuestaId);
-        preguntasList.removeAllViews();
+        preguntasList = (LinearLayout) view.findViewById(R.id.list_preguntas);
 
         for (Pregunta pregunta : preguntas) {
             preguntasList.addView(createViewForPregunta(pregunta));
         }
+
+        return view;
     }
 
     @Override
@@ -130,13 +134,13 @@ public class PreguntasFragment extends Fragment {
     }
     // endregion
 
-    // region UI methods
+    // region UI methods - Question
     private View createViewForPregunta(Pregunta pregunta) {
         View view = View.inflate(FocusApp.getContext(), R.layout.fragment_preguntas_item, null);
         TextView text = (TextView) view.findViewById(R.id.txt_pregunta);
         text.setText(pregunta.getNumPregunta() + ".- " + pregunta.getPregunta());
-        ImageView image = (ImageView) view.findViewById(R.id.image);
-        image.setVisibility(TextUtils.isValidString(pregunta.getImagen()) ? View.VISIBLE : View.GONE);
+        setUpForImage((ImageView) view.findViewById(R.id.image), pregunta.getImagen());
+        setUpForVideo((CardView) view.findViewById(R.id.card_video), (Button) view.findViewById(R.id.video), pregunta);
 
         switch (pregunta.getTipo()) {
             case TEXT_ANSWER:
@@ -148,11 +152,41 @@ public class PreguntasFragment extends Fragment {
             case MULTIPLE_OPTION:
                 setUpForMultipleOptionAnswer(pregunta, view);
                 break;
+            case ORDERING:
+                setUpForOrderingAnswer(pregunta, view);
         }
 
         return view;
     }
 
+    private void setUpForImage(ImageView image, String url) {
+        if (!TextUtils.isValidString(url)) {
+            image.setVisibility(View.GONE);
+            return;
+        }
+
+        image.setVisibility(View.VISIBLE);
+        new ImageLoaderClass(image).execute(url);
+    }
+
+    private void setUpForVideo(CardView card, Button video, final Pregunta pregunta) {
+        card.setVisibility(TextUtils.isValidString(pregunta.getVideo()) ? View.VISIBLE : View.GONE);
+        video.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (!pregunta.isVideoVisto()) {
+                    pregunta.setVideoVisto(true);
+                }
+
+                Intent intent = new Intent(getActivity(), VideoViewActivity.class);
+                intent.putExtra(VideoViewActivity.EXTRA_VIDEO_URL, pregunta.getVideo());
+                startActivity(intent);
+            }
+        });
+    }
+    // endregion
+
+    // region UI methods - Open Answer
     private void setUpForOpenAnswer(final Pregunta pregunta, View view) {
         EditText respuesta = (EditText) view.findViewById(R.id.txt_respuesta);
         respuesta.setVisibility(View.VISIBLE);
@@ -175,7 +209,9 @@ public class PreguntasFragment extends Fragment {
             }
         });
     }
+    // endregion
 
+    // region UI methods - Single Option
     private void setUpForSingleOptionAnswer(final Pregunta pregunta, View view) {
         RadioGroup radioGroup = (RadioGroup) view.findViewById(R.id.radio_group);
         radioGroup.setVisibility(View.VISIBLE);
@@ -224,13 +260,14 @@ public class PreguntasFragment extends Fragment {
 
         return buttons;
     }
+    // endregion
 
+    // region UI methods - Multiple Option
     private void setUpForMultipleOptionAnswer(final Pregunta pregunta, View view) {
         LinearLayout multipleOptionLayout = (LinearLayout) view.findViewById(R.id.layout_multiple_option);
         multipleOptionLayout.setVisibility(View.VISIBLE);
         List<String> opciones = pregunta.getOpciones();
         List<CheckBox> buttons = getCheckBoxesForMultipleOption(view);
-
 
         for (int i = 0; i < MAX_OPTIONS; i++) {
             final CheckBox checkBox = buttons.get(i);
@@ -274,7 +311,92 @@ public class PreguntasFragment extends Fragment {
     }
     // endregion
 
-    // region Click actions
+    // region UI methods - Ordering
+    private void setUpForOrderingAnswer(final Pregunta pregunta, final View view) {
+        LinearLayout orderingLayout = (LinearLayout) view.findViewById(R.id.layout_ordering);
+        orderingLayout.setVisibility(View.VISIBLE);
+        List<String> opciones = pregunta.getOpciones();
+        final List<CheckBox> buttons = getCheckBoxesForOrdering(view);
+
+        for (int i = 0; i < MAX_OPTIONS; i++) {
+            final CheckBox checkBox = buttons.get(i);
+            checkBox.setButtonDrawable(R.drawable.ic_check_off);
+            checkBox.setChecked(false);
+
+            if (i < opciones.size()) {
+                final String opcion = opciones.get(i);
+                checkBox.setText(opcion);
+                checkBox.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+                    @Override
+                    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                        if (isChecked) {
+                            int index = pregunta.getNextIndex();
+                            pregunta.setRespuestaOrdenada(index, opcion);
+                            checkBox.setButtonDrawable(getNumberDrawable(index + 1));
+                        } else {
+                            checkBox.setOnCheckedChangeListener(null);
+                        }
+                    }
+                });
+            } else {
+                checkBox.setVisibility(View.GONE);
+            }
+        }
+
+        TextView resetButton = (TextView) view.findViewById(R.id.btn_reset);
+        resetButton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                pregunta.clearRespuestasOrdenadas();
+                setUpForOrderingAnswer(pregunta, view);
+            }
+        });
+    }
+
+    private List<CheckBox> getCheckBoxesForOrdering(View view) {
+        List<CheckBox> buttons = new ArrayList<>();
+        buttons.add((CheckBox) view.findViewById(R.id.btn_ordering_0));
+        buttons.add((CheckBox) view.findViewById(R.id.btn_ordering_1));
+        buttons.add((CheckBox) view.findViewById(R.id.btn_ordering_2));
+        buttons.add((CheckBox) view.findViewById(R.id.btn_ordering_3));
+        buttons.add((CheckBox) view.findViewById(R.id.btn_ordering_4));
+        buttons.add((CheckBox) view.findViewById(R.id.btn_ordering_5));
+        buttons.add((CheckBox) view.findViewById(R.id.btn_ordering_6));
+        buttons.add((CheckBox) view.findViewById(R.id.btn_ordering_7));
+        buttons.add((CheckBox) view.findViewById(R.id.btn_ordering_8));
+        buttons.add((CheckBox) view.findViewById(R.id.btn_ordering_9));
+
+        return buttons;
+    }
+
+    private int getNumberDrawable(int number) {
+        switch (number) {
+            case 1:
+                return R.drawable.selected01;
+            case 2:
+                return R.drawable.selected02;
+            case 3:
+                return R.drawable.selected03;
+            case 4:
+                return R.drawable.selected04;
+            case 5:
+                return R.drawable.selected05;
+            case 6:
+                return R.drawable.selected06;
+            case 7:
+                return R.drawable.selected07;
+            case 8:
+                return R.drawable.selected08;
+            case 9:
+                return R.drawable.selected09;
+            case 10:
+            default:
+                return R.drawable.selected10;
+        }
+    }
+    // endregion
+
+    // region Click Actions
     public void handleOnBackPressedEvent() {
         if (!enableBack) {
             return;
@@ -284,7 +406,7 @@ public class PreguntasFragment extends Fragment {
     }
     // endregion
 
-    // region Encuesta actions
+    // region Encuesta Actions
     public void saveRespuestas() {
         enableBack = false;
         UIUtils.hideKeyboardIfShowing(activity);
@@ -303,6 +425,7 @@ public class PreguntasFragment extends Fragment {
 
         NetworkManager.saveAnswers(getRequestParams(), new HttpResponseHandler() {
             @Override
+
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
                 UIUtils.showAlertDialog(R.string.success_save_title, R.string.success_save_message, activity, positiveButtonListener);
             }
@@ -313,11 +436,13 @@ public class PreguntasFragment extends Fragment {
             }
         });
     }
-    // endregion
 
-    // region Helper methods
     private int checkForInvalidPregunta() {
         for (Pregunta pregunta : preguntas) {
+            if (!pregunta.isVideoVisto()) {
+                return pregunta.getNumPregunta();
+            }
+
             if (pregunta.getTipo() == MULTIPLE_OPTION) {
                 String respuestaMultipleOption = "";
                 List<String> respuestasSeleccionadas = pregunta.getRespuestasSeleccionadas();
@@ -327,6 +452,19 @@ public class PreguntasFragment extends Fragment {
                 }
 
                 pregunta.setRespuesta(respuestaMultipleOption);
+            } else if (pregunta.getTipo() == ORDERING) {
+                String respuestaOrdenamiento = "";
+                String[] respuestasOrdenadas = pregunta.getRespuestasOrdenadas();
+
+                for (String respuestaOrdenada : respuestasOrdenadas) {
+                    if (respuestaOrdenada.equals("")) {
+                        return pregunta.getNumPregunta();
+                    } else {
+                        respuestaOrdenamiento += respuestaOrdenada + "&";
+                    }
+                }
+
+                pregunta.setRespuesta(respuestaOrdenamiento);
             }
 
             String respuesta = pregunta.getRespuesta();
@@ -347,6 +485,39 @@ public class PreguntasFragment extends Fragment {
         params.put(RESPUESTAS, respuestas);
 
         return params;
+    }
+    // endregion
+
+    // region Static classes
+    private class ImageLoaderClass extends AsyncTask<String, String, Bitmap> {
+
+        Bitmap bitmap;
+        ImageView imageView;
+
+        ImageLoaderClass(ImageView imageView) {
+            this.imageView = imageView;
+        }
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+
+        }
+
+        protected Bitmap doInBackground(String... args) {
+            try {
+                bitmap = BitmapFactory.decodeStream((InputStream) new URL(args[0]).getContent());
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            return bitmap;
+        }
+
+        protected void onPostExecute(Bitmap image) {
+            if (image != null) {
+                imageView.setImageBitmap(image);
+            }
+        }
     }
     // endregion
 }

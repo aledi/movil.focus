@@ -36,7 +36,7 @@ public class PreguntasActivity extends ToolbarActivity {
     // region Menu methods
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_encuesta, menu);
+        getMenuInflater().inflate(R.menu.menu_preguntas, menu);
 
         return super.onCreateOptionsMenu(menu);
     }
@@ -46,7 +46,6 @@ public class PreguntasActivity extends ToolbarActivity {
         switch (item.getItemId()) {
             case R.id.save_respuestas:
                 fragment.saveRespuestas();
-
                 return true;
         }
 
