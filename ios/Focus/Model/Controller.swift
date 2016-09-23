@@ -30,7 +30,7 @@ class Controller {
         return Alamofire.Manager(configuration: configuration)
     }()
     
-    private static let baseURL = "http://54.187.187.98/paneles/"
+    private static let baseURL = "http://54.244.80.189/paneles/"
 //    private static let baseURL = "http://192.168.1.68:8888/focus/"
     private static let apiURL = Controller.baseURL + "api/controller.php"
     
