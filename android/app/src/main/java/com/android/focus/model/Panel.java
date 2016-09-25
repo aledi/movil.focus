@@ -66,7 +66,7 @@ public class Panel {
     }
 
     public static List<Panel> getUserPaneles() {
-        return userPanels;
+        return (userPanels == null) ? new ArrayList<Panel>() : userPanels;
     }
 
     public static String getActivePanels() {
