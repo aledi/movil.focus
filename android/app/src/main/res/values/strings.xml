@@ -12,6 +12,7 @@
 
     <!-- Registration -->
     <string name="sign_up">Registrarse</string>
+    <string name="sign_up_error">No se ha podido registrar al usuario. Intente más tarde.</string>
     <string name="register">Registro</string>
     <string name="send_registration">Enviar</string>
     <string name="user_info">Información del Usuario</string>
@@ -22,12 +23,26 @@
     <string name="genre">Género</string>
     <string name="male">Masculino</string>
     <string name="female">Femenino</string>
+    <string-array name="month_array">
+        <item>Enero</item>
+        <item>Febrero</item>
+        <item>Marzo</item>
+        <item>Abril</item>
+        <item>Mayo</item>
+        <item>Junio</item>
+        <item>Julio</item>
+        <item>Agosto</item>
+        <item>Septiembre</item>
+        <item>Octubre</item>
+        <item>Noviembre</item>
+        <item>Diciembre</item>
+    </string-array>
     <string name="education">Educación</string>
     <string-array name="education_array">
         <item>Nivel de Educación</item>
         <item>Primaria</item>
         <item>Secundaria</item>
-        <item>Preparatoria</item>
+        <item>Preparatoria o Técnica</item>
         <item>Profesional</item>
         <item>Posgrado</item>
         <item>Ninguno</item>
