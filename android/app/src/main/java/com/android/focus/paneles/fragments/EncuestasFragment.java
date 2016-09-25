@@ -149,11 +149,9 @@ public class EncuestasFragment extends Fragment {
 
     // region Click Actions
     public void handleOnBackPressedEvent() {
-        if (!enableBack) {
-            return;
+        if (enableBack) {
+            activity.finish();
         }
-
-        activity.finish();
     }
     // endregion
 

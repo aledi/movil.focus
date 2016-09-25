@@ -1,6 +1,7 @@
 package com.android.focus.paneles.activities;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 
 import com.android.focus.R;
 import com.android.focus.ToolbarActivity;
@@ -27,6 +28,19 @@ public class EncuestasActivity extends ToolbarActivity {
                     .replace(R.id.container, fragment, EncuestasFragment.FRAGMENT_TAG)
                     .commit();
         }
+    }
+    // endregion
+
+    // Menu methods
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                fragment.handleOnBackPressedEvent();
+                return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
     // endregion
 
