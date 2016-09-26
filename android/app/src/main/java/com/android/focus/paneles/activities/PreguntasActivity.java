@@ -19,6 +19,7 @@ public class PreguntasActivity extends ToolbarActivity {
     // region Activity lifecycle
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        displayHomeAsUpEnabled = false;
         title = getString(R.string.survey);
         super.onCreate(savedInstanceState);
 
@@ -56,7 +57,7 @@ public class PreguntasActivity extends ToolbarActivity {
     // region OnBackPressed interface
     @Override
     public void onBackPressed() {
-        fragment.handleOnBackPressedEvent();
+        // Do nothing.
     }
     // endregion
 }
