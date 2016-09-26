@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="mlM-L3-Inp">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Encuesta-->
+        <scene sceneID="THd-yf-Gcy">
+            <objects>
+                <tableViewController id="bBo-24-3YA" customClass="PreguntasViewController" customModule="Focus" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="182" sectionHeaderHeight="18" sectionFooterHeight="18" id="E5W-Pa-Ns7">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <connections>
+                            <outlet property="dataSource" destination="bBo-24-3YA" id="Y39-1u-dXC"/>
+                            <outlet property="delegate" destination="bBo-24-3YA" id="NDf-vv-KsI"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Encuesta" id="P4G-Vn-0Ra">
+                        <barButtonItem key="rightBarButtonItem" title="Terminar" id="P9u-ba-0cP">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="doneAnswering:" destination="bBo-24-3YA" id="2md-YM-sZV"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="xdV-o2-f8F" kind="unwind" identifier="doneAnswering" unwindAction="doneAnsweringEncuesta:" id="7dg-Kf-kNB"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vZy-eT-J9o" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="xdV-o2-f8F" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1164" y="509"/>
+        </scene>
+        <!--Video-->
+        <scene sceneID="cTW-fz-bQ5">
+            <objects>
+                <viewController id="bIp-UC-lIf" customClass="MoviePlayerViewController" customModule="Focus" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="e8X-rE-2FK"/>
+                        <viewControllerLayoutGuide type="bottom" id="wJ5-eg-3v8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ME9-62-XoC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Video" id="G8K-NW-mq3">
+                        <barButtonItem key="leftBarButtonItem" title="Cerrar" id="vsR-dm-6EC">
+                            <connections>
+                                <segue destination="pM6-X8-bOK" kind="unwind" identifier="exit" unwindAction="dismissVideoPlayer:" id="pLq-6r-un6"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gSv-oH-Epp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="pM6-X8-bOK" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1164" y="1206"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="XKN-Zu-XdG">
+            <objects>
+                <navigationController storyboardIdentifier="Video" id="ENt-6b-bgW" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mzz-NQ-pgG">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.12549019610000001" green="0.13725490200000001" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="bIp-UC-lIf" kind="relationship" relationship="rootViewController" id="gMi-Fs-VBK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aC6-70-NmW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="344" y="1206"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="joX-V6-7BQ">
+            <objects>
+                <navigationController modalPresentationStyle="formSheet" id="mlM-L3-Inp" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pts-cy-t0l">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.12549019610000001" green="0.13725490200000001" blue="0.51372549020000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="bBo-24-3YA" kind="relationship" relationship="rootViewController" id="uRI-6n-Jsa"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fh3-Yc-ILT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="344" y="509"/>
+        </scene>
+    </scenes>
+</document>

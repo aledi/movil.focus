@@ -1,0 +1,180 @@
+<resources>
+    <string name="app_name">Focus</string>
+
+    <!-- Splash -->
+    <string name="copyright">Copyright © 2016 Focus Consulting Group, SA. de C.V.</string>
+
+    <!-- Authentication -->
+    <string name="username">Usuario</string>
+    <string name="password">Contraseña</string>
+    <string name="sign_in">Iniciar Sesión</string>
+    <string name="sign_in_error">Usuario o contraseña incorrectos</string>
+
+    <!-- Registration -->
+    <string name="sign_up">Registrarse</string>
+    <string name="sign_up_error">No se ha podido registrar al usuario. Intente más tarde.</string>
+    <string name="register">Registro</string>
+    <string name="send_registration">Enviar</string>
+    <string name="user_info">Información del Usuario</string>
+    <string name="general_info">Información General</string>
+    <string name="first_name">Nombre(s)</string>
+    <string name="last_name">Apellido(s)</string>
+    <string name="email">Correo Electrónico</string>
+    <string name="genre">Género</string>
+    <string name="male">Masculino</string>
+    <string name="female">Femenino</string>
+    <string-array name="month_array">
+        <item>Enero</item>
+        <item>Febrero</item>
+        <item>Marzo</item>
+        <item>Abril</item>
+        <item>Mayo</item>
+        <item>Junio</item>
+        <item>Julio</item>
+        <item>Agosto</item>
+        <item>Septiembre</item>
+        <item>Octubre</item>
+        <item>Noviembre</item>
+        <item>Diciembre</item>
+    </string-array>
+    <string name="education">Educación</string>
+    <string-array name="education_array">
+        <item>Nivel de Educación</item>
+        <item>Primaria</item>
+        <item>Secundaria</item>
+        <item>Preparatoria o Técnica</item>
+        <item>Profesional</item>
+        <item>Posgrado</item>
+        <item>Ninguno</item>
+    </string-array>
+    <string name="address">Dirección</string>
+    <string name="street">Calle</string>
+    <string name="street_num">Número</string>
+    <string name="colonia">Colonia</string>
+    <string name="city">Municipio</string>
+    <string name="state">Estado</string>
+    <string-array name="state_array">
+        <item>Selecciona un estado</item>
+        <item>Aguascalientes</item>
+        <item>Baja California</item>
+        <item>Baja California Sur</item>
+        <item>Campeche</item>
+        <item>Coahuila</item>
+        <item>Colima</item>
+        <item>Chiapas</item>
+        <item>Ciudad de México</item>
+        <item>Durango</item>
+        <item>Guanajuato</item>
+        <item>Guerrero</item>
+        <item>Hidalgo</item>
+        <item>Jalisco</item>
+        <item>Estado de México</item>
+        <item>Michoacán</item>
+        <item>Morelos</item>
+        <item>Nayarit</item>
+        <item>Nuevo León</item>
+        <item>Oaxaca</item>
+        <item>Puebla</item>
+        <item>Querétaro</item>
+        <item>Quintana Roo</item>
+        <item>San Luis Potosí</item>
+        <item>Sinaloa</item>
+        <item>Sonora</item>
+        <item>Tabasco</item>
+        <item>Tamaulipas</item>
+        <item>Tlaxcala</item>
+        <item>Veracruz</item>
+        <item>Yucatan</item>
+        <item>Zacatecas</item>
+    </string-array>
+    <string name="zip_code">Código Postal</string>
+
+    <!-- Welcome -->
+    <string name="continuar">Continuar</string>
+    <string name="welcome_to_focus">¡%s a la app de panelistas Focus!</string>
+    <string name="welcome_message_1">Su inscripción al panel Focus ha sido confirmada. A partir de ahora queda %s para participar en nuestros estudios y compartir su opinión</string>
+    <string name="welcome_message_2">Tendrá la posibilidad de ganar magníficos premios.</string>
+    <string name="welcome_message_3">Pronto llegará la invitación para la primera encuesta. ¡Espérala!</string>
+    <string name="welcome_message_4">Opina y gana premios al instante.</string>
+    <string name="welcome_message_5">Gracias por tu tiempo,</string>
+    <string name="welcome_footer_1">Natalia Barbosa</string>
+    <string name="welcome_footer_2">Atención al Panelista</string>
+    <string name="welcome_footer_3">atencion@focuscg.com.mx</string>
+    <string name="welcome_footer_4">focuscg.com.mx</string>
+
+    <!-- Loading -->
+    <string name="loading_data">Cargando Datos</string>
+    <string name="no_internet_message">Para utilizar la aplicación, su dispositivo debe estar conectado a internet.</string>
+    <string name="try_again">Reintentar</string>
+
+    <!-- Panels -->
+    <string name="panels">Paneles</string>
+    <string name="startDate">Fecha de Inicio:\u0020</string>
+    <string name="endDate">Fecha de Fin:\u0020</string>
+    <string name="no_active_panels">Sin Paneles Activos</string>
+
+    <!-- Surveys -->
+    <string name="survey">Encuesta</string>
+    <string name="surveys">Encuestas</string>
+    <string name="done">Terminar</string>
+    <string name="view_video">Ver Video</string>
+    <string name="video">Video</string>
+    <string name="video_unavailable">Video No Disponible\nPor favor póngase en contacto.</string>
+    <string name="text_answer_hint">Indique aquí su respuesta</string>
+    <string name="reset">REINICIAR</string>
+
+    <!-- Profile -->
+    <string name="profile">Profile</string>
+    <string name="user">Usuario</string>
+    <string name="active_panels">Paneles Activos</string>
+    <string name="pending_surveys">Encuestas Pendientes</string>
+    <string name="contact">Contacto</string>
+    <string name="send_email">Enviar Correo</string>
+    <string name="call_phone">Llamar</string>
+    <string name="sign_out">Cerrar Sesión</string>
+    <string name="sign_out_message">La próxima vez que abra la aplicación se le pedirán sus datos de acceso.</string>
+
+    <!-- Toasts -->
+    <string name="no_internet">Sin Conexión A Internet</string>
+
+    <!-- Dialogs -->
+    <string name="no_surveys_title">No Hay Encuestas</string>
+    <string name="no_surveys_message">Este panel aún no cuenta con encuestas. Por favor, espere a que una encuesta sea habilitada.</string>
+    <string name="answered_title">Encuesta Contestada</string>
+    <string name="answered_message">Esta encuensta ya ha sido contestada. Solo se puede contestar una vez.</string>
+    <string name="no_answered_title">Atención</string>
+    <string name="no_answered_message">Una vez iniciada la encuesta, deberá contestarla completamente. No se podrá salir y regresar de la encuesta, ni contestarla nuevamente.</string>
+    <string name="no_answered_button">Contestar</string>
+    <string name="success_save_title">Respuestas Guardadas</string>
+    <string name="success_save_message">Gracias por responder la encuesta.</string>
+    <string name="error_save_title">Error</string>
+    <string name="error_save_message">No pudimos guardar tus respuestas en este momento.</string>
+    <string name="server_unavailable_title">Servidor No Disponible</string>
+    <string name="server_unavailable_message">Nuestro servidor no está disponible por el momento.</string>
+    <string name="error_start_survey_title">Error</string>
+    <string name="error_start_survey_message">Por favor, intenta más tarde.</string>
+    <string name="error_save_survey_title">La pregunta %d no ha sido contestada</string>
+    <string name="error_save_survey_message">Por favor, responda a todas las preguntas e intente enviar las respuestas nuevamente.</string>
+    <string name="error_unseen_video_title">El video de la pregunta %d no ha sido visto.</string>
+    <string name="error_unseen_video_message">Por favor, vea el video antes de responder a la pregunta.</string>
+
+    <!-- Helpers -->
+    <string name="image_description">Image</string>
+    <string name="cancel">Cancelar</string>
+
+    <!-- Privacy Policy -->
+    <string name="privacy_policy">Aviso de Privacidad</string>
+    <string name="privacy_policy_text">En cumplimiento con la Ley Federal de Protección de datos personales en posesión de los particulares, en lo sucesivo \"La Ley\", Focus Estudios Cualitativos SA de CV denominada en delante \"Focus Estudios Cualitativos\", con domicilio en Calle Independencia 233 colonia Centro, San Pedro Garza García, Nuevo León C.P. 66230 con RFC FEC980226G92, es responsable del tratamiento de los datos personales que usted proporcione, así como de su protección, en términos y de conformidad con los principios previstos en \"La Ley\".
+        \n\nLos datos personales que usted nos proporcione ya sea directamente, vía telefónica o vía Internet podrán incluir de manera enunciativa, más no limitativa, lo siguiente:
+        \n- Datos de Identificación: Su nombre, fecha de nacimiento, edad, nacionalidad.
+        \n- Datos de Contacto: Domicilio, correo electrónico y números telefónicos.
+        \n- Datos Académicos y Laborales: Formación profesional y académica, experiencia laboral, referencias personales.
+        \n- Datos Comerciales y Financieros: Número de cuenta bancaria, información de pagos, información de compras, Referencias comerciales y bancarias; datos que serán recabados sólo en los términos del artículo 10 fracción IV de \"La Ley\".
+        \n\nDatos que, cuando los proporcione, quedarán resguardados en nuestra base de datos con el objeto de protegerlos para que no se realice ningún uso indebido de los mismos, por lo que nos responsabilizamos para lograr optimizar su información sin otro fin que el de servir fielmente a quienes nos confían sus datos personales.
+        \n\nAl obtener sus datos personales, se tiene como finalidad y destino el satisfacer la relación jurídica o contractual existente entre esta institución y usted; tratamiento que podrá consistir en la identificación de la persona, proveer servicios y productos requeridos, contacto, reclutamiento y selección, suministro de los insumos necesarios para nuestro correcto desarrollo, hacerle llegar los productos adquiridos, dándole el oportuno seguimiento a sus pedidos; así como para fines de publicidad y promoción con efectos mercadológicos, además de poner a su disposición nuestros servicios en el mercado en el ramo que hoy en día nos especializamos, enfocados en satisfacer sus requerimientos.
+        \n\nLa finalidad del tratamiento de sus datos personales sólo se concentra en las relaciones jurídicas que se tienen con clientes, proveedores y personal.
+        \n\nEn el caso de que usted quiera limitar el uso o divulgación de sus datos personales, evitando recibir publicidad, promociones o evitar algún otro contacto de cualquier naturaleza usted podrá ponerse en contacto con nuestra área encargada del tratamiento de sus datos personales.
+        \n\nPara el caso de que usted quisiera Acceder, Rectificar, Cancelar u Oponerse (Derechos ARCO) al tratamiento de los datos y revocar el consentimiento que para tal fin nos haya otorgado, tácita o expresamente, lo podrá realizar en cualquier momento, para ello es necesario que usted presente solicitud la cual debe contener: Nombre del titular y domicilio o medio para comunicarle respuesta, documento que acredite su identidad, descripción del derecho que pretende ejercer y cualquier otro dato que facilite la localización de los datos. Una vez presentada esta solicitud, se le dará respuesta en un plazo no mayor a 20 días a través del medio que proporcionó para contactarlo.
+        \n\nEl área responsable de resguardar sus datos personales, así como dar continuidad a la solicitud que usted realice en cuanto a sus derechos ARCO o a limitar el uso y divulgación de sus datos, es el área de sistemas, la cual pone a su disposición el siguiente correo: focus@focuscg.com.mx con la finalidad de atender sus peticiones relacionadas al tratamiento de sus datos personales.
+        \n\nLe informamos que sus datos personales no serán transferidos a terceros, salvo en el caso de que usted proporcione como referencia a esta empresa. Sin embargo, Focus Estudios Cualitativos hará transferencia de datos personales en el caso de que autoridad competente así lo solicite por mandato judicial.\n</string>
+</resources>

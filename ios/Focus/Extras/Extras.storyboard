@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="4MF-SS-dYG">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="teC-DU-NsS">
+            <objects>
+                <navigationController storyboardIdentifier="Welcome" id="4MF-SS-dYG" sceneMemberID="viewController">
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Wfm-Wf-vP4">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.12549019610000001" green="0.13725490200000001" blue="0.51372549020000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="lwk-43-vns" kind="relationship" relationship="rootViewController" id="J7t-9d-s8Q"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t7T-Oz-ytY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="871" y="327"/>
+        </scene>
+        <!--Bienvenido-->
+        <scene sceneID="bte-Wv-6gd">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="lwk-43-vns" customClass="WelcomeViewController" customModule="Focus" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="D5i-Cy-fiM"/>
+                        <viewControllerLayoutGuide type="bottom" id="cEN-SY-KFR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="j5U-JK-eqW">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="740"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Rv-BV-M3S">
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UX4-W2-IAQ" userLabel="ContentView">
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e4g-5q-XgC">
+                                                <string key="text">Su inscripción al panel Focus ha sido confirmada. A partir de ahora queda registrado para participar en nuestros estudios y compartir su opinión.</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="on8-HE-AHQ">
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="on8-HE-AHQ" secondAttribute="height" multiplier="3:1" id="QDw-NN-nai"/>
+                                                    <constraint firstAttribute="height" constant="75" id="aU0-ei-idc"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Estimado Rafa," textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZYB-XR-S62">
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Natalia Barbosa Atención al Panelista atencion@focuscg.com.mx focuscg.com.mx" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Noj-If-PVn">
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UL1-U0-HpG">
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <state key="normal" title="Aviso de Privacidad">
+                                                    <color key="titleColor" red="0.12549019610000001" green="0.13725490200000001" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="1YZ-ub-mHi" kind="show" id="hK0-Ms-1dc"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¡Bienvenido a la app de panelistas Focus!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UF1-66-QJu">
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cje-gS-kWp">
+                                                <string key="text">Tendrá la posibilidad de ganar magníficos premios.  Pronto llegará la invitación para la primera encuesta ¡Espérala!  Opina y gana premios al instante.  Gracias por tu tiempo,</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="UF1-66-QJu" firstAttribute="top" secondItem="on8-HE-AHQ" secondAttribute="bottom" constant="35" id="1ls-GH-bKe"/>
+                                            <constraint firstItem="UL1-U0-HpG" firstAttribute="trailing" secondItem="Noj-If-PVn" secondAttribute="trailing" id="9Ye-hI-szm"/>
+                                            <constraint firstAttribute="trailing" secondItem="cje-gS-kWp" secondAttribute="trailing" constant="25" id="9jD-Mo-4co"/>
+                                            <constraint firstItem="e4g-5q-XgC" firstAttribute="leading" secondItem="UX4-W2-IAQ" secondAttribute="leading" constant="25" id="9m5-et-MlX"/>
+                                            <constraint firstItem="UL1-U0-HpG" firstAttribute="top" secondItem="Noj-If-PVn" secondAttribute="bottom" constant="20" id="A5w-BA-CzY"/>
+                                            <constraint firstAttribute="trailing" secondItem="ZYB-XR-S62" secondAttribute="trailing" constant="25" id="FHg-w1-a6U"/>
+                                            <constraint firstAttribute="trailing" secondItem="UF1-66-QJu" secondAttribute="trailing" constant="25" id="Fkd-5k-OGN"/>
+                                            <constraint firstItem="Noj-If-PVn" firstAttribute="top" secondItem="cje-gS-kWp" secondAttribute="bottom" constant="15" id="GfI-dK-0iq"/>
+                                            <constraint firstAttribute="trailing" secondItem="Noj-If-PVn" secondAttribute="trailing" constant="25" id="NkX-Uk-nV5"/>
+                                            <constraint firstItem="cje-gS-kWp" firstAttribute="top" secondItem="e4g-5q-XgC" secondAttribute="bottom" constant="15" id="RUD-UY-vJw"/>
+                                            <constraint firstItem="cje-gS-kWp" firstAttribute="leading" secondItem="UX4-W2-IAQ" secondAttribute="leading" constant="25" id="bDc-nh-yHJ"/>
+                                            <constraint firstItem="e4g-5q-XgC" firstAttribute="top" secondItem="ZYB-XR-S62" secondAttribute="bottom" constant="25" id="eEI-4X-Ojv"/>
+                                            <constraint firstItem="ZYB-XR-S62" firstAttribute="top" secondItem="UF1-66-QJu" secondAttribute="bottom" constant="35" id="et4-WG-jQ7"/>
+                                            <constraint firstItem="UF1-66-QJu" firstAttribute="leading" secondItem="UX4-W2-IAQ" secondAttribute="leading" constant="25" id="fbQ-s7-Jn5"/>
+                                            <constraint firstAttribute="trailing" secondItem="e4g-5q-XgC" secondAttribute="trailing" constant="25" id="kOQ-Mv-48h"/>
+                                            <constraint firstItem="ZYB-XR-S62" firstAttribute="leading" secondItem="UX4-W2-IAQ" secondAttribute="leading" constant="25" id="kTK-Rj-hjj"/>
+                                            <constraint firstItem="on8-HE-AHQ" firstAttribute="centerX" secondItem="UX4-W2-IAQ" secondAttribute="centerX" id="lEd-jx-sJ3"/>
+                                            <constraint firstAttribute="bottom" secondItem="UL1-U0-HpG" secondAttribute="bottom" constant="25" id="oF0-TQ-N0Y"/>
+                                            <constraint firstItem="on8-HE-AHQ" firstAttribute="top" secondItem="UX4-W2-IAQ" secondAttribute="top" constant="50" id="piY-zb-ebI"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="UX4-W2-IAQ" firstAttribute="top" secondItem="1Rv-BV-M3S" secondAttribute="top" id="B4f-ie-s2E"/>
+                                    <constraint firstAttribute="bottom" secondItem="UX4-W2-IAQ" secondAttribute="bottom" id="G02-Cw-w5c"/>
+                                    <constraint firstItem="UX4-W2-IAQ" firstAttribute="leading" secondItem="1Rv-BV-M3S" secondAttribute="leading" id="rxg-TE-326"/>
+                                    <constraint firstAttribute="trailing" secondItem="UX4-W2-IAQ" secondAttribute="trailing" id="t0Y-VK-STg"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="1Rv-BV-M3S" secondAttribute="trailing" id="6J9-SN-Oim"/>
+                            <constraint firstItem="1Rv-BV-M3S" firstAttribute="top" secondItem="D5i-Cy-fiM" secondAttribute="bottom" id="Eun-EZ-WI0"/>
+                            <constraint firstItem="cEN-SY-KFR" firstAttribute="top" secondItem="1Rv-BV-M3S" secondAttribute="bottom" id="ZOv-4V-QIz"/>
+                            <constraint firstItem="UX4-W2-IAQ" firstAttribute="width" secondItem="j5U-JK-eqW" secondAttribute="width" id="uhY-MI-L2u"/>
+                            <constraint firstItem="1Rv-BV-M3S" firstAttribute="leading" secondItem="j5U-JK-eqW" secondAttribute="leading" id="xTL-BP-CcR"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Bienvenido" id="GRL-6k-v54">
+                        <barButtonItem key="rightBarButtonItem" title="Continuar" id="b8v-Cx-VZg">
+                            <connections>
+                                <segue destination="8Os-62-ANH" kind="showDetail" id="vxX-M3-y0b"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="740"/>
+                    <connections>
+                        <outlet property="firstParagraphLabel" destination="e4g-5q-XgC" id="fzh-c9-buH"/>
+                        <outlet property="salutLabel" destination="ZYB-XR-S62" id="gvb-1K-BYL"/>
+                        <outlet property="scrollView" destination="1Rv-BV-M3S" id="Cac-DI-eLY"/>
+                        <outlet property="welcomeLabel" destination="UF1-66-QJu" id="vjm-WP-Rnq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WOS-zn-FRN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1672" y="327"/>
+        </scene>
+        <!--TabController-->
+        <scene sceneID="8C5-jd-yCJ">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="TabController" id="8Os-62-ANH" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Qp-GJ-4B7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2198" y="327"/>
+        </scene>
+        <!--Aviso de Privacidad-->
+        <scene sceneID="inC-Qp-5UR">
+            <objects>
+                <viewController storyboardIdentifier="PrivacyPolicy" automaticallyAdjustsScrollViewInsets="NO" id="1YZ-ub-mHi" customClass="PrivacyPolicyViewController" customModule="Focus" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Nke-l3-kLJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="cpR-hu-IoP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GXM-sM-Yqu">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="740"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="wFX-Oh-F7w">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <string key="text">En cumplimiento con la Ley Federal de Protección de datos personales en posesión de los particulares, en lo sucesivo "La Ley", Focus Estudios Cualitativos SA de CV denominada en delante "Focus Estudios Cualitativos", con domicilio en Calle Independencia 233 colonia Centro, San Pedro Garza García, nuevo León C.P. 66230 con RFC FEC980226G92, es responsable del tratamiento de los datos personales que usted proporcione, así como de su protección, en términos y de conformidad con los principios previstos en "La Ley".
+
+Los datos personales que usted nos proporcione ya sea directamente, vía telefónica o vía Internet podrán incluir de manera enunciativa, más no limitativa, lo siguiente:
+- Datos de Identificación: Su nombre, fecha de nacimiento, edad, nacionalidad.
+- Datos de Contacto: Domicilio, correo electrónico y números telefónicos.
+- Datos Académicos y Laborales: Formación profesional y académica, experiencia laboral, referencias personales. 
+- Datos Comerciales y Financieros: Número de cuenta bancaria, información de pagos, información de compras, Referencias comerciales y bancarias; datos que serán recabados sólo en los términos del artículo 10 fracción IV de "La Ley". 
+
+Datos que, cuando los proporcione, quedarán resguardados en nuestra base de datos con el objeto de protegerlos para que no se realice ningún uso indebido de los mismos, por lo que nos responsabilizamos para lograr optimizar su información sin otro fin que el de servir fielmente a quienes nos confían sus datos personales.
+
+Al obtener sus datos personales, se tiene como finalidad y destino el satisfacer la relación jurídica o contractual existente entre esta institución y usted; tratamiento que podrá consistir en la identificación de la persona, proveer servicios y productos requeridos, contacto, reclutamiento y selección, suministro de los insumos necesarios para nuestro correcto desarrollo, hacerle llegar los productos adquiridos, dándole el oportuno seguimiento a sus pedidos; así como para fines de publicidad y promoción con efectos mercadológicos, además de poner a su disposición nuestros servicios en el mercado en el ramo que hoy en día nos especializamos, enfocados en satisfacer sus requerimientos.
+
+La finalidad del tratamiento de sus datos personales sólo se concentra en las relaciones jurídicas que se tienen con clientes, proveedores y personal.
+
+En el caso de que usted quiera limitar el uso o divulgación de sus datos personales, evitando recibir publicidad, promociones o evitar algún otro contacto de cualquier naturaleza usted podrá ponerse en contacto con nuestra área encargada del tratamiento de sus datos personales.
+
+Para el caso de que usted quisiera Acceder, Rectificar, Cancelar u Oponerse (Derechos ARCO) al tratamiento de los datos y revocar el consentimiento que para tal fin nos haya otorgado, tácita o expresamente, lo podrá realizar en cualquier momento, para ello es necesario que usted presente solicitud la cual debe contener: Nombre del titular y domicilio o medio para comunicarle respuesta, documento que acredite su identidad, descripción del derecho que pretende ejercer y cualquier otro dato que facilite la localización de los datos. Una vez presentada esta solicitud, se le dará respuesta en un plazo no mayor a 20 días a través del medio que proporcionó para contactarlo.
+
+El área responsable de resguardar sus datos personales, así como dar continuidad a la solicitud que usted realice en cuanto a sus derechos ARCO o a limitar el uso y divulgación de sus datos, es el área de sistemas, la cual pone a su disposición el siguiente correo: focus@focuscg.com.mx con la finalidad de atender sus peticiones relacionadas al tratamiento de sus datos personales.
+
+Le informamos que sus datos personales no serán transferidos a terceros, salvo en el caso de que usted proporcione como referencia a esta empresa. Sin embargo, Focus Estudios Cualitativos hará transferencia de datos personales en el caso de que autoridad competente así lo solicite por mandato judicial.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="cpR-hu-IoP" firstAttribute="top" secondItem="wFX-Oh-F7w" secondAttribute="bottom" constant="5" id="EIV-VR-K6u"/>
+                            <constraint firstAttribute="trailing" secondItem="wFX-Oh-F7w" secondAttribute="trailing" constant="15" id="GuX-X3-xAA"/>
+                            <constraint firstItem="wFX-Oh-F7w" firstAttribute="top" secondItem="Nke-l3-kLJ" secondAttribute="bottom" constant="8" id="KwQ-jT-NwG"/>
+                            <constraint firstItem="wFX-Oh-F7w" firstAttribute="leading" secondItem="GXM-sM-Yqu" secondAttribute="leading" constant="15" id="rhF-zX-kdT"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Aviso de Privacidad" id="TJz-a8-YB5"/>
+                    <connections>
+                        <outlet property="contentTextView" destination="wFX-Oh-F7w" id="4P8-so-SOH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XM8-Eh-z9F" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1672" y="1246"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Logo" width="400" height="120"/>
+    </resources>
+</document>

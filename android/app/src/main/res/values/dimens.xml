@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Font -->
+    <dimen name="font_16sp">16sp</dimen>
+    <dimen name="font_18sp">18sp</dimen>
+    <dimen name="font_24sp">24sp</dimen>
+    <dimen name="font_30sp">30sp</dimen>
+
+    <!-- Toolbar -->
+    <dimen name="toolbar_elevation">4dp</dimen>
+    <dimen name="toolbar_height">56dp</dimen>
+    <dimen name="toolbar_padding_right">6dp</dimen>
+
+    <!-- Divider -->
+    <dimen name="divider_height">1dp</dimen>
+
+    <!-- TextView -->
+    <dimen name="text_view_height">56dp</dimen>
+    <dimen name="text_view_height_mini">36dp</dimen>
+    <dimen name="text_view_height_extended">72dp</dimen>
+
+    <!-- EditText -->
+    <dimen name="edit_text_height">56dp</dimen>
+    <dimen name="edit_text_multiline_padding_top">16dp</dimen>
+    <dimen name="edit_text_padding_bottom">16dp</dimen>
+    <dimen name="edit_text_padding_left">16dp</dimen>
+    <dimen name="edit_text_padding_right">16dp</dimen>
+
+    <!-- Button -->
+    <dimen name="button_height">64dp</dimen>
+
+    <!-- Radio Button -->
+    <dimen name="radio_button_height">36dp</dimen>
+    <dimen name="radio_button_padding_left">32dp</dimen>
+
+    <!-- CheckBox -->
+    <dimen name="check_box_padding_left">8dp</dimen>
+
+    <!-- CardView -->
+    <dimen name="card_elevation">4dp</dimen>
+    <dimen name="card_layout_margin_bottom">2dp</dimen>
+    <dimen name="card_layout_margin_top">2dp</dimen>
+
+    <!-- Spinner -->
+    <dimen name="spinner_margin_right">16dp</dimen>
+</resources>
