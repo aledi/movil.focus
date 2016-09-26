@@ -155,6 +155,8 @@
     <string name="error_start_survey_message">Por favor, intenta más tarde.</string>
     <string name="error_save_survey_title">La pregunta %d no ha sido contestada</string>
     <string name="error_save_survey_message">Por favor, responda a todas las preguntas e intente enviar las respuestas nuevamente.</string>
+    <string name="error_unseen_video_title">El video de la pregunta %d no ha sido visto.</string>
+    <string name="error_unseen_video_message">Por favor, vea el video antes de responder a la pregunta.</string>
 
     <!-- Helpers -->
     <string name="image_description">Image</string>
