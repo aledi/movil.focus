@@ -65,8 +65,9 @@ public class PreguntasFragment extends Fragment {
     private boolean enableBack = true;
     private int encuestaId;
     private int panelId;
-    private LinearLayout preguntasList;
     private List<Pregunta> preguntas;
+    private String dialogTitle;
+    private int dialogMessage;
     private String respuestas;
     private View loader;
 
@@ -116,7 +117,7 @@ public class PreguntasFragment extends Fragment {
         loader = view.findViewById(R.id.loader);
 
         preguntas = Encuesta.getPreguntas(panelId, encuestaId);
-        preguntasList = (LinearLayout) view.findViewById(R.id.list_preguntas);
+        LinearLayout preguntasList = (LinearLayout) view.findViewById(R.id.list_preguntas);
 
         for (Pregunta pregunta : preguntas) {
             preguntasList.addView(createViewForPregunta(pregunta));
@@ -218,7 +219,6 @@ public class PreguntasFragment extends Fragment {
         final List<String> opciones = pregunta.getOpciones();
         List<RadioButton> buttons = getRadioButtonsForSingleOption(view);
 
-
         for (int i = 0; i < MAX_OPTIONS; i++) {
             final RadioButton radioButton = buttons.get(i);
 
@@ -242,7 +242,6 @@ public class PreguntasFragment extends Fragment {
                 radioButton.setVisibility(View.GONE);
             }
         }
-
     }
 
     private List<RadioButton> getRadioButtonsForSingleOption(View view) {
@@ -291,7 +290,6 @@ public class PreguntasFragment extends Fragment {
                 checkBox.setVisibility(View.GONE);
             }
         }
-
     }
 
     private List<CheckBox> getCheckBoxesForMultipleOption(View view) {
@@ -396,24 +394,13 @@ public class PreguntasFragment extends Fragment {
     }
     // endregion
 
-    // region Click Actions
-    public void handleOnBackPressedEvent() {
-        if (!enableBack) {
-            return;
-        }
-
-        activity.finish();
-    }
-    // endregion
-
     // region Encuesta Actions
     public void saveRespuestas() {
         enableBack = false;
         UIUtils.hideKeyboardIfShowing(activity);
-        int invalidPregunta = checkForInvalidPregunta();
 
-        if (invalidPregunta > 0) {
-            UIUtils.showAlertDialog(getString(R.string.error_save_survey_title, invalidPregunta), R.string.error_save_survey_message, activity);
+        if (checkForInvalidRespuesta()) {
+            UIUtils.showAlertDialog(dialogTitle, dialogMessage, activity);
             return;
         }
 
@@ -437,10 +424,13 @@ public class PreguntasFragment extends Fragment {
         });
     }
 
-    private int checkForInvalidPregunta() {
+    private boolean checkForInvalidRespuesta() {
         for (Pregunta pregunta : preguntas) {
             if (!pregunta.isVideoVisto()) {
-                return pregunta.getNumPregunta();
+                dialogTitle = getString(R.string.error_unseen_video_title, pregunta.getNumPregunta());
+                dialogMessage = R.string.error_unseen_video_message;
+
+                return true;
             }
 
             if (pregunta.getTipo() == MULTIPLE_OPTION) {
@@ -458,7 +448,10 @@ public class PreguntasFragment extends Fragment {
 
                 for (String respuestaOrdenada : respuestasOrdenadas) {
                     if (respuestaOrdenada.equals("")) {
-                        return pregunta.getNumPregunta();
+                        dialogTitle = getString(R.string.error_save_survey_title, pregunta.getNumPregunta());
+                        dialogMessage = R.string.error_save_survey_message;
+
+                        return true;
                     } else {
                         respuestaOrdenamiento += respuestaOrdenada + "&";
                     }
@@ -470,13 +463,16 @@ public class PreguntasFragment extends Fragment {
             String respuesta = pregunta.getRespuesta();
 
             if (!TextUtils.isValidString(respuesta)) {
-                return pregunta.getNumPregunta();
+                dialogTitle = getString(R.string.error_save_survey_title, pregunta.getNumPregunta());
+                dialogMessage = R.string.error_save_survey_message;
+
+                return true;
             }
 
             respuestas += respuesta + "|";
         }
 
-        return 0;
+        return false;
     }
 
     private RequestParams getRequestParams() {
