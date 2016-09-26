@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.ViewSwitcher;
 
 import com.android.focus.FocusApp;
 import com.android.focus.R;
@@ -27,7 +28,7 @@ import static com.android.focus.paneles.activities.EncuestasActivity.EXTRA_PANEL
 public class PanelesFragment extends Fragment {
 
     private LinearLayout panelsList;
-    private TextView noActivePanels;
+    private ViewSwitcher viewSwitcher;
 
     // region Factory methods
 
@@ -54,7 +55,7 @@ public class PanelesFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_paneles, container, false);
 
         panelsList = (LinearLayout) view.findViewById(R.id.list_panels);
-        noActivePanels = (TextView) view.findViewById(R.id.txt_no_active_panels);
+        viewSwitcher = (ViewSwitcher) view.findViewById(R.id.view_switcher);
 
         return view;
     }
@@ -70,11 +71,7 @@ public class PanelesFragment extends Fragment {
     // region UI methods
     private void updateView(List<Panel> panels) {
         panelsList.removeAllViews();
-
-        if (panels.isEmpty()) {
-            noActivePanels.setVisibility(View.VISIBLE);
-            return;
-        }
+        viewSwitcher.setDisplayedChild(panels.isEmpty() ? 1 : 0);
 
         for (Panel panel : panels) {
             panelsList.addView(createViewForPanel(panel));

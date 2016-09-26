@@ -7,15 +7,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
+import com.android.focus.authentication.WelcomeActivity;
+
 public class ToolbarActivity extends AppCompatActivity {
 
     private static boolean isAppInForeground = false;
     private static int resumed = 0;
     private static int stopped = 0;
 
+    protected boolean displayHomeAsUpEnabled = true;
     protected int layoutId = R.layout.activity_toolbar;
     protected String title;
-    private boolean displayHomeAsUpEnabled;
 
     // region Activity lifecycle
     @Override
@@ -30,7 +32,6 @@ public class ToolbarActivity extends AppCompatActivity {
 
         Toolbar toolbar = ((Toolbar) findViewById(R.id.toolbar));
         setSupportActionBar(toolbar);
-        displayHomeAsUpEnabled = (layoutId == R.layout.activity_toolbar);
         setTitle(title);
     }
 
@@ -43,7 +44,7 @@ public class ToolbarActivity extends AppCompatActivity {
         if (!isAppInForeground) {
             isAppInForeground = true;
 
-            if (this instanceof LoadingActivity) {
+            if ((this instanceof WelcomeActivity) || (this instanceof LoadingActivity)) {
                 return;
             }
 
@@ -73,7 +74,6 @@ public class ToolbarActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case android.R.id.home:
                 finish();
-
                 return true;
         }
 

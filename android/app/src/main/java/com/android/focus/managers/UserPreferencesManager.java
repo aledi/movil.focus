@@ -16,6 +16,7 @@ import org.json.JSONObject;
 import java.util.List;
 
 import static com.android.focus.model.User.EMAIL;
+import static com.android.focus.model.User.GENERO;
 import static com.android.focus.model.User.ID;
 import static com.android.focus.model.User.NOMBRE;
 import static com.android.focus.model.User.USERNAME;
@@ -42,6 +43,7 @@ public class UserPreferencesManager {
         setString(USERNAME, user.getUsername());
         setString(EMAIL, user.getEmail());
         setString(NOMBRE, user.getNombre());
+        setInt(GENERO, user.getGenero());
     }
 
     public static User getCurrentUser() {
@@ -51,6 +53,7 @@ public class UserPreferencesManager {
         currentUser.setUsername(getString(USERNAME));
         currentUser.setEmail(getString(EMAIL));
         currentUser.setNombre(getString(NOMBRE));
+        currentUser.setGenero(getInt(GENERO));
 
         return currentUser;
     }
@@ -61,6 +64,7 @@ public class UserPreferencesManager {
         remove(USERNAME);
         remove(EMAIL);
         remove(NOMBRE);
+        remove(GENERO);
     }
     // endregion
 

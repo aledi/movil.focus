@@ -27,6 +27,7 @@ public class MainActivity extends ToolbarActivity implements OnPageChangeListene
     // region Activity lifecycle
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        displayHomeAsUpEnabled = false;
         layoutId = R.layout.activity_main;
         title = getString(R.string.panels);
         super.onCreate(savedInstanceState);

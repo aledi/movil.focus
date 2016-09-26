@@ -50,6 +50,7 @@ public class AuthenticationFragment extends Fragment implements OnClickListener,
     private EditText username;
     private EditText password;
     private RequestParams params;
+    private TextView signUpButton;
     private View loader;
 
     // region Text watchers
@@ -61,7 +62,7 @@ public class AuthenticationFragment extends Fragment implements OnClickListener,
 
         @Override
         public void onTextChanged(CharSequence s, int start, int before, int count) {
-            username.setBackgroundResource(R.drawable.edit_text_border);
+            username.setBackgroundResource(R.drawable.border);
         }
 
         @Override
@@ -78,7 +79,7 @@ public class AuthenticationFragment extends Fragment implements OnClickListener,
 
         @Override
         public void onTextChanged(CharSequence s, int start, int before, int count) {
-            password.setBackgroundResource(R.drawable.edit_text_border);
+            password.setBackgroundResource(R.drawable.border);
         }
 
         @Override
@@ -111,15 +112,18 @@ public class AuthenticationFragment extends Fragment implements OnClickListener,
         super.onCreateView(inflater, container, savedInstanceState);
 
         View view = inflater.inflate(R.layout.fragment_authentication, container, false);
+        loader = view.findViewById(R.id.loader);
 
         username = (EditText) view.findViewById(R.id.txt_username);
         username.addTextChangedListener(usernameTextWatcher);
         password = (EditText) view.findViewById(R.id.txt_password);
         password.addTextChangedListener(passwordTextWatcher);
         password.setOnEditorActionListener(this);
+
         signInButton = (Button) view.findViewById(R.id.btn_sign_in);
         signInButton.setOnClickListener(this);
-        loader = view.findViewById(R.id.loader);
+        signUpButton = (TextView) view.findViewById(R.id.btn_sign_up);
+        signUpButton.setOnClickListener(this);
 
         return view;
     }
@@ -149,12 +153,12 @@ public class AuthenticationFragment extends Fragment implements OnClickListener,
 
         if (!TextUtils.isValidString(username)) {
             invalidFields = true;
-            this.username.setBackgroundResource(R.drawable.edit_text_border_invalid);
+            this.username.setBackgroundResource(R.drawable.border_invalid);
         }
 
-        if (!TextUtils.isValidString(password)) {
+        if (!TextUtils.isValidPassword(password)) {
             invalidFields = true;
-            this.password.setBackgroundResource(R.drawable.edit_text_border_invalid);
+            this.password.setBackgroundResource(R.drawable.border_invalid);
         }
 
         if (invalidFields) {
@@ -173,6 +177,8 @@ public class AuthenticationFragment extends Fragment implements OnClickListener,
     public void onClick(View view) {
         if (view.equals(signInButton)) {
             signIn();
+        } else if (view.equals(signUpButton)) {
+            signUp();
         }
     }
 
@@ -186,19 +192,16 @@ public class AuthenticationFragment extends Fragment implements OnClickListener,
     }
     // endregion
 
-    // region Click actions
+    // region Click Actions
     public void handleOnBackPressedEvent() {
-        if (!enableBack) {
-            return;
+        if (enableBack) {
+            activity.finish();
         }
-
-        activity.finish();
     }
 
     private void signIn() {
-        params = new RequestParams();
-        enableBack = false;
         UIUtils.hideKeyboardIfShowing(activity);
+        params = new RequestParams();
 
         if (checkForInvalidFields()) {
             return;
@@ -209,6 +212,7 @@ public class AuthenticationFragment extends Fragment implements OnClickListener,
         }
 
         loader.setVisibility(View.VISIBLE);
+        enableBack = false;
 
         NetworkManager.sigIn(params, new HttpResponseHandler() {
             @Override
@@ -236,6 +240,10 @@ public class AuthenticationFragment extends Fragment implements OnClickListener,
                 showError(errorResponse);
             }
         });
+    }
+
+    private void signUp() {
+        startActivity(new Intent(activity, RegistrationActivity.class));
     }
     // endregion
 }

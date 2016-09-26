@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Spinner -->
+    <dimen name="spinner_margin_right">2dp</dimen>
+</resources>

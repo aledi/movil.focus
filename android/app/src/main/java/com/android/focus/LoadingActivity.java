@@ -33,6 +33,7 @@ public class LoadingActivity extends ToolbarActivity {
     // region Activity lifecycle
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        displayHomeAsUpEnabled = false;
         layoutId = R.layout.activity_loading;
         super.onCreate(savedInstanceState);
 

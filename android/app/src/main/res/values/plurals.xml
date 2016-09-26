@@ -4,4 +4,24 @@
         <item quantity="one">%s pregunta</item>
         <item quantity="other">%s preguntas</item>
     </plurals>
+
+    <plurals name="welcome">
+        <item quantity="one">Bienvenida</item>
+        <item quantity="other">Bienvenido</item>
+    </plurals>
+
+    <plurals name="user">
+        <item quantity="one">Usuaria</item>
+        <item quantity="other">Usuario</item>
+    </plurals>
+
+    <plurals name="dear_user">
+        <item quantity="one">Estimada %s</item>
+        <item quantity="other">Estimado %s</item>
+    </plurals>
+
+    <plurals name="registered_user">
+        <item quantity="one">registrada</item>
+        <item quantity="other">registrado</item>
+    </plurals>
 </resources>

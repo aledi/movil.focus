@@ -9,6 +9,7 @@ import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 
 import com.android.focus.FocusApp;
+import com.android.focus.R;
 
 /**
  * Utils to perform UI actions.
@@ -85,7 +86,7 @@ public class UIUtils {
                 .setPositiveButton(positiveButton, positiveButtonListener);
 
         if (cancelable) {
-            builder.setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
+            builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     dialog.dismiss();

@@ -1,5 +1,7 @@
 package com.android.focus.model;
 
+import com.android.focus.utils.TextUtils;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,7 +26,9 @@ public class Pregunta {
     private String imagen;
     private List<String> opciones;
     private String respuesta;
-    private List<String> respuestasSeleccionadas;
+    private boolean videoVisto;
+    private List<String> respuestasSeleccionadas = new ArrayList<>();
+    private String[] respuestasOrdenadas = {"", "", "", "", "", "", "", "", "", ""};
 
     // region Getters and setters
     public int getId() {
@@ -91,22 +95,56 @@ public class Pregunta {
         this.respuesta = respuesta;
     }
 
-    public List<String> getRespuestasSeleccionadas() {
-        if (respuestasSeleccionadas == null) {
-            respuestasSeleccionadas = new ArrayList<>();
-        }
+    public boolean isVideoVisto() {
+        return (!TextUtils.isValidString(video)) || videoVisto;
+    }
 
+    public void setVideoVisto(boolean videoVisto) {
+        this.videoVisto = videoVisto;
+    }
+
+    public List<String> getRespuestasSeleccionadas() {
         return respuestasSeleccionadas;
     }
 
-    public void setRespuestaSeleccionada(String respuestaSeleccionada) {
-        List<String> respuestasSeleccionadas = getRespuestasSeleccionadas();
-        respuestasSeleccionadas.add(respuestaSeleccionada);
+    public void setRespuestaSeleccionada(String respuesta) {
+        respuestasSeleccionadas.add(respuesta);
     }
 
-    public void removeRespuestaSeleccionada(String respuestaSeleccionada) {
-        List<String> respuestasSeleccionadas = getRespuestasSeleccionadas();
-        respuestasSeleccionadas.remove(respuestaSeleccionada);
+    public void removeRespuestaSeleccionada(String respuesta) {
+        respuestasSeleccionadas.remove(respuesta);
+    }
+
+    public String[] getRespuestasOrdenadas() {
+        return respuestasOrdenadas;
+    }
+
+    public void setRespuestaOrdenada(int index, String respuesta) {
+        respuestasOrdenadas[index] = respuesta;
+    }
+
+    public void removeRespuestaOrdenada(String opcion) {
+        respuestasOrdenadas[getOpcionIndex(opcion)] = "";
+    }
+
+    public int getNextIndex() {
+        return getOpcionIndex("");
+    }
+
+    public void clearRespuestasOrdenadas() {
+        for (int i = 0; i < MAX_OPTIONS; i++) {
+            respuestasOrdenadas[i] = "";
+        }
+    }
+
+    private int getOpcionIndex(String opcion) {
+        for (int i = 0; i < MAX_OPTIONS; i++) {
+            if (opcion.equals(respuestasOrdenadas[i])) {
+                return i;
+            }
+        }
+
+        return 0;
     }
     // endregion
 }
