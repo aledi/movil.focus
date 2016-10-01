@@ -27,7 +27,7 @@ import static com.android.focus.network.APIConstants.START_SURVEY;
 
 public class NetworkManager {
 
-    private static final String URL = "http://54.244.80.189/paneles/api/controller.php";
+    private static final String URL = "http://focusestudios.mx/paneles/api/controller.php";
 
     //  region HTTP Requests
     public static void sigIn(RequestParams params, AsyncHttpResponseHandler responseHandler) {
