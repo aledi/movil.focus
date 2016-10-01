@@ -368,7 +368,7 @@ class RegistrationViewController: UIViewController, UIPickerViewDelegate, UIPick
             input.becomeFirstResponder()
         }
         
-        self.presentAlertWithTitle("Faltan Datos", withMessage: "Los datos marcados con un asterisco (*) son obligatorios.", withButtonTitles: ["OK"], withButtonStyles: [.Cancel], andButtonHandlers: [firstBlock])
+        self.presentAlertWithTitle("Faltan Datos", withMessage: "Por favor, ingresa todos los datos obligatorios.", withButtonTitles: ["OK"], withButtonStyles: [.Cancel], andButtonHandlers: [firstBlock])
     }
     
     func userExistsAlert() {
