@@ -23,6 +23,7 @@
     <string name="genre">Género</string>
     <string name="male">Masculino</string>
     <string name="female">Femenino</string>
+    <string name="birthday">Fecha de Nacimiento</string>
     <string-array name="month_array">
         <item>Enero</item>
         <item>Febrero</item>
