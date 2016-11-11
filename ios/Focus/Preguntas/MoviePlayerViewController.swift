@@ -26,7 +26,7 @@ class MoviePlayerViewController: UIViewController {
             moviePlayer.fullscreen = true
             moviePlayer.controlStyle = .Fullscreen
         } else {
-            self.presentAlertWithTitle("Video no disponible", withMessage: "No hemos podido cargar el video. Por favor, póngase en contacto.", withButtonTitles: ["OK"], withButtonStyles: [.Cancel], andButtonHandlers: [nil])
+            self.presentAlertWithTitle("Video no disponible", withMessage: "No hemos podido cargar el video. Por favor, póngase en contacto con el servicio de soporte.", withButtonTitles: ["OK"], withButtonStyles: [.Cancel], andButtonHandlers: [nil])
             self.performSegueWithIdentifier("exit", sender: nil)
         }
     }

@@ -17,6 +17,7 @@ enum Actions: String {
     case UNREGISTER_DEVICE = "UNREGISTER_DEVICE"
     case PRIVACY_POLICY = "PRIVACY_POLICY"
     case REGISTER_USER = "ALTA_PANELISTA"
+    case CHANGE_PASSWORD = "CHANGE_PANELISTA_PASSWORD"
 }
 
 class Controller {
