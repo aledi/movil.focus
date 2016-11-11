@@ -25,6 +25,7 @@
 		40CC5DB31D80EF5900E1D8E5 /* Extras.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40CC5DB21D80EF5900E1D8E5 /* Extras.storyboard */; };
 		40CC5DB51D80F77300E1D8E5 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CC5DB41D80F77300E1D8E5 /* WelcomeViewController.swift */; };
 		40D810661D5811EE00EB8FCE /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D810651D5811EE00EB8FCE /* LoadingViewController.swift */; };
+		40E400E21DD421480095488F /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E400E11DD421480095488F /* Button.swift */; };
 		40E7F9C01D4D353700BCD0DB /* NSUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E7F9BF1D4D353700BCD0DB /* NSUserDefaults.swift */; };
 		40E7F9C21D4D5A9E00BCD0DB /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E7F9C11D4D5A9E00BCD0DB /* ProfileViewController.swift */; };
 		40FF0D981D37138500ED8A64 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40FF0D971D37138500ED8A64 /* AppDelegate.swift */; };
@@ -70,6 +71,7 @@
 		40CC5DB41D80F77300E1D8E5 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WelcomeViewController.swift; path = Extras/WelcomeViewController.swift; sourceTree = "<group>"; };
 		40D810651D5811EE00EB8FCE /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoadingViewController.swift; path = Main/LoadingViewController.swift; sourceTree = "<group>"; };
 		40DDEC941D8E622F00B02BF9 /* Focus.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Focus.entitlements; sourceTree = "<group>"; };
+		40E400E11DD421480095488F /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Button.swift; path = Extensions/Button.swift; sourceTree = "<group>"; };
 		40E7F9BF1D4D353700BCD0DB /* NSUserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSUserDefaults.swift; path = Extensions/NSUserDefaults.swift; sourceTree = "<group>"; };
 		40E7F9C11D4D5A9E00BCD0DB /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = Main/ProfileViewController.swift; sourceTree = "<group>"; };
 		40FF0D941D37138500ED8A64 /* Focus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Focus.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -205,6 +207,7 @@
 				40FF0DFD1D373C6B00ED8A64 /* UIViewController.swift */,
 				40E7F9BF1D4D353700BCD0DB /* NSUserDefaults.swift */,
 				4004146A1D56B899005113D1 /* RadioButton.swift */,
+				40E400E11DD421480095488F /* Button.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -357,6 +360,7 @@
 				40AFB76D1D49A25100C0099A /* Panel.swift in Sources */,
 				40A8DC301D56801B0065B734 /* RegistrationViewController.swift in Sources */,
 				40E7F9C01D4D353700BCD0DB /* NSUserDefaults.swift in Sources */,
+				40E400E21DD421480095488F /* Button.swift in Sources */,
 				40AFB7711D49A50800C0099A /* Pregunta.swift in Sources */,
 				4004146B1D56B899005113D1 /* RadioButton.swift in Sources */,
 				40E7F9C21D4D5A9E00BCD0DB /* ProfileViewController.swift in Sources */,
