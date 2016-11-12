@@ -284,7 +284,7 @@
                                                     <outlet property="delegate" destination="zsh-8v-Rab" id="dhO-UE-TfS"/>
                                                 </connections>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" tag="110" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Municipio" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J19-TS-dEC">
+                                            <textField opaque="NO" clipsSubviews="YES" tag="110" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Estado" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J19-TS-dEC">
                                                 <rect key="frame" x="25" y="697" width="270" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
@@ -292,7 +292,7 @@
                                                     <outlet property="delegate" destination="zsh-8v-Rab" id="rxl-ZY-Aa4"/>
                                                 </connections>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" tag="120" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Estado" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bOa-Te-iMi">
+                                            <textField opaque="NO" clipsSubviews="YES" tag="120" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Municipio" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bOa-Te-iMi">
                                                 <rect key="frame" x="25" y="735" width="270" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
@@ -436,7 +436,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="birthdayText" destination="6MU-7k-Hjh" id="Tp5-fR-7Sb"/>
-                        <outlet property="cityText" destination="J19-TS-dEC" id="ogD-IZ-X1Y"/>
+                        <outlet property="cityText" destination="bOa-Te-iMi" id="pPe-tG-EtM"/>
                         <outlet property="coloniaText" destination="7IE-v6-lIf" id="wyi-o4-hOA"/>
                         <outlet property="contentView" destination="79w-Ng-goz" id="O54-vc-WSw"/>
                         <outlet property="educationText" destination="a8X-5C-zVf" id="M1F-1d-LSK"/>
@@ -448,7 +448,7 @@
                         <outlet property="passwordText" destination="6Kh-Ns-KLQ" id="e17-dR-pIg"/>
                         <outlet property="postalText" destination="WLw-uM-OD7" id="5q8-fj-B0p"/>
                         <outlet property="scrollView" destination="ggt-eq-AWX" id="mgT-JP-eST"/>
-                        <outlet property="stateText" destination="bOa-Te-iMi" id="u4v-yt-O6r"/>
+                        <outlet property="stateText" destination="J19-TS-dEC" id="x5I-Vi-K5l"/>
                         <outlet property="streetText" destination="pYX-Pu-AfA" id="3lg-8P-z9D"/>
                         <outlet property="usernameText" destination="amr-vJ-2us" id="Ix2-Wj-bN2"/>
                         <segue destination="fu1-G0-kpp" kind="showDetail" identifier="welcome" id="eC2-EA-ywS"/>

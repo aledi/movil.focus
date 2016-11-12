@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4004146B1D56B899005113D1 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4004146A1D56B899005113D1 /* RadioButton.swift */; };
+		400A4E821DD69195002C02BA /* estados.plist in Resources */ = {isa = PBXBuildFile; fileRef = 400A4E811DD69195002C02BA /* estados.plist */; };
 		400E9D3D1D5020CA006AAD64 /* Preguntas.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 400E9D3C1D5020CA006AAD64 /* Preguntas.storyboard */; };
 		400E9D3F1D5021B3006AAD64 /* PreguntasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400E9D3E1D5021B3006AAD64 /* PreguntasViewController.swift */; };
 		400F4EF41D49B46500538BCD /* EncuestasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400F4EF31D49B46500538BCD /* EncuestasViewController.swift */; };
@@ -54,6 +55,7 @@
 
 /* Begin PBXFileReference section */
 		4004146A1D56B899005113D1 /* RadioButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RadioButton.swift; path = Extensions/RadioButton.swift; sourceTree = "<group>"; };
+		400A4E811DD69195002C02BA /* estados.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = estados.plist; sourceTree = "<group>"; };
 		400E9D3C1D5020CA006AAD64 /* Preguntas.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Preguntas.storyboard; path = Preguntas/Preguntas.storyboard; sourceTree = "<group>"; };
 		400E9D3E1D5021B3006AAD64 /* PreguntasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreguntasViewController.swift; path = Preguntas/PreguntasViewController.swift; sourceTree = "<group>"; };
 		400F4EF31D49B46500538BCD /* EncuestasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EncuestasViewController.swift; path = Main/EncuestasViewController.swift; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 				400E9D3B1D50208A006AAD64 /* Preguntas */,
 				40CC5DB11D80EF0A00E1D8E5 /* Extras */,
 				40FF0DA31D37138500ED8A64 /* Info.plist */,
+				400A4E811DD69195002C02BA /* estados.plist */,
 			);
 			path = Focus;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 			files = (
 				40FF0DAE1D371DB600ED8A64 /* LogIn.storyboard in Resources */,
 				40CC5DB31D80EF5900E1D8E5 /* Extras.storyboard in Resources */,
+				400A4E821DD69195002C02BA /* estados.plist in Resources */,
 				400E9D3D1D5020CA006AAD64 /* Preguntas.storyboard in Resources */,
 				40FF0DA21D37138500ED8A64 /* LaunchScreen.storyboard in Resources */,
 				40FF0D9F1D37138500ED8A64 /* Assets.xcassets in Resources */,
