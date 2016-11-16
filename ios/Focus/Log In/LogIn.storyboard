@@ -92,8 +92,8 @@
                                                 <color key="color" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </activityIndicatorView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OqW-hR-zU1">
-                                                <rect key="frame" x="71" y="448.5" width="178" height="30"/>
-                                                <state key="normal" title="¿Olvidaste tu contraseña?">
+                                                <rect key="frame" x="79" y="448.5" width="162" height="30"/>
+                                                <state key="normal" title="¿Olvidó su Contraseña?">
                                                     <color key="titleColor" red="0.12549019610000001" green="0.13725490200000001" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <connections>
@@ -489,7 +489,7 @@
                         <sections>
                             <tableViewSection headerTitle="Para recuperar su contraseña, por favor ingrese su nombre de usuario, o el correo electrónico que utilizó para registrarse." footerTitle="La contraseña le será enviada al correo al que está asociada su cuenta." id="xGp-TT-7Ob">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="h8k-uv-W4S">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="h8k-uv-W4S">
                                         <rect key="frame" x="0.0" y="92" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="h8k-uv-W4S" id="yQt-Ih-o56">
@@ -510,7 +510,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="PA1-4t-I15">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="PA1-4t-I15">
                                         <rect key="frame" x="0.0" y="136" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PA1-4t-I15" id="Bx2-wM-jiU">
@@ -541,8 +541,16 @@
                                 <segue destination="FYv-e6-gSr" kind="unwind" unwindAction="cancelPasswordForgot:" id="Smg-HQ-uei"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Enviar" id="iRl-aI-aor"/>
+                        <barButtonItem key="rightBarButtonItem" title="Enviar" id="iRl-aI-aor">
+                            <connections>
+                                <action selector="recoverPassword:" destination="kf9-JV-OgH" id="f8W-fd-dV6"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="emailText" destination="crd-YL-KPO" id="dZn-Ju-4qT"/>
+                        <outlet property="userText" destination="B7c-zr-rJB" id="e8t-wW-NzM"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0nj-R1-mQn" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="FYv-e6-gSr" userLabel="Exit" sceneMemberID="exit"/>
