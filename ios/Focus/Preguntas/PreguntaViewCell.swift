@@ -10,7 +10,8 @@ import UIKit
 
 class PreguntaViewCell: UITableViewCell, UITextViewDelegate {
 
-    @IBOutlet var preguntaLabel: UILabel!
+    @IBOutlet var tituloLabel: UILabel!
+    @IBOutlet var tituloHeightConstraint: NSLayoutConstraint!
     
     @IBOutlet var videoButton: UIButton!
     @IBOutlet var videoHeightConstraint: NSLayoutConstraint!
@@ -19,6 +20,8 @@ class PreguntaViewCell: UITableViewCell, UITextViewDelegate {
     @IBOutlet var imagen: UIImageView!
     @IBOutlet var imagenHeightConstraint: NSLayoutConstraint!
     @IBOutlet var imagenBottomConstraint: NSLayoutConstraint!
+    
+    @IBOutlet var preguntaLabel: UILabel!
     
     @IBOutlet var textView: UITextView!
     @IBOutlet var textViewHeightConstraint: NSLayoutConstraint!
@@ -67,7 +70,8 @@ class PreguntaViewCell: UITableViewCell, UITextViewDelegate {
             return
         }
         
-        self.preguntaLabel.text = pregunta.pregunta
+        self.tituloLabel.text = pregunta.titulo
+        self.tituloHeightConstraint.constant = pregunta.titulo.isEmpty ? 0 : 60
         
         self.videoButton.tag = numPregunta
         
@@ -86,6 +90,8 @@ class PreguntaViewCell: UITableViewCell, UITextViewDelegate {
             self.imagenBottomConstraint.constant = 15
             self.imagen.image = image
         }
+        
+        self.preguntaLabel.text = pregunta.pregunta
         
         if (tipo == .Abierta) {
             self.textViewHeightConstraint.constant = 100

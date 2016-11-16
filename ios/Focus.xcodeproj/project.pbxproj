@@ -169,7 +169,6 @@
 		40FF0D961D37138500ED8A64 /* Focus */ = {
 			isa = PBXGroup;
 			children = (
-				40DDEC941D8E622F00B02BF9 /* Focus.entitlements */,
 				40FF0D971D37138500ED8A64 /* AppDelegate.swift */,
 				40FF0DA01D37138500ED8A64 /* LaunchScreen.storyboard */,
 				40FF0D9E1D37138500ED8A64 /* Assets.xcassets */,
@@ -181,6 +180,7 @@
 				40CC5DB11D80EF0A00E1D8E5 /* Extras */,
 				40FF0DA31D37138500ED8A64 /* Info.plist */,
 				400A4E811DD69195002C02BA /* estados.plist */,
+				40DDEC941D8E622F00B02BF9 /* Focus.entitlements */,
 			);
 			path = Focus;
 			sourceTree = "<group>";
