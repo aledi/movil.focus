@@ -84,6 +84,10 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     // MARK: - Actions
     // -----------------------------------------------------------------------------------------------------------
     
+    @IBAction func cancelPasswordForgot(segue: UIStoryboardSegue) {
+        self.dismissSegueSourceViewController(segue)
+    }
+    
     @IBAction func cancelRegistration(segue: UIStoryboardSegue) {
         self.dismissSegueSourceViewController(segue)
     }
