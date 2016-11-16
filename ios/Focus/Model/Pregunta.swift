@@ -21,6 +21,7 @@ class Pregunta {
     var id: Int
     var tipo: Int
     var numPregunta: Int
+    var titulo: String
     var pregunta: String
     var video: String
     var imagen: UIImage? = nil
@@ -30,10 +31,11 @@ class Pregunta {
     var nextOption: Int = 1
     var didSeeVideo: Bool
     
-    init(id: Int, tipo: Int, numPregunta: Int, pregunta: String, video: String, imagen: String, opciones: [String]) {
+    init(id: Int, tipo: Int, numPregunta: Int, titulo: String, pregunta: String, video: String, imagen: String, opciones: [String]) {
         self.id = id
         self.tipo = tipo
         self.numPregunta = numPregunta
+        self.titulo = titulo
         self.pregunta = pregunta
         self.video = video
         self.didSeeVideo = self.video.isEmpty
