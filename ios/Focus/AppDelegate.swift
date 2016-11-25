@@ -8,9 +8,6 @@
 
 import UIKit
 
-let phoneNumber: String = "+528183387258"
-let email: String = "atencion@focuscg.com.mx"
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     

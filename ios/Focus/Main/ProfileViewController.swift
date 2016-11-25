@@ -16,6 +16,9 @@ enum Sections: Int {
     case LogOut
 }
 
+let phoneNumber: String = "+528183387258"
+let email: String = "atencion@focuscg.com.mx"
+
 class ProfileViewController: UITableViewController, MFMailComposeViewControllerDelegate {
     
     @IBOutlet var nameLabel: UILabel!
