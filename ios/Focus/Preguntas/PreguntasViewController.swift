@@ -10,6 +10,7 @@ import UIKit
 
 let PREGUNTA_CELL = "PreguntaViewCell"
 let PREGUNTA_COMBO_CELL = "PreguntaComboViewCell"
+let PREGUNTA_ESCALA_CELL = "PreguntaEscalaViewCell"
 
 class PreguntasViewController: UITableViewController {
     
@@ -22,6 +23,7 @@ class PreguntasViewController: UITableViewController {
         
         self.tableView.registerNib(UINib(nibName: PREGUNTA_CELL, bundle: nil), forCellReuseIdentifier: PREGUNTA_CELL)
         self.tableView.registerNib(UINib(nibName: PREGUNTA_COMBO_CELL, bundle: nil), forCellReuseIdentifier: PREGUNTA_COMBO_CELL)
+        self.tableView.registerNib(UINib(nibName: PREGUNTA_ESCALA_CELL, bundle: nil), forCellReuseIdentifier: PREGUNTA_ESCALA_CELL)
         
         self.tableView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
     }
@@ -84,6 +86,14 @@ class PreguntasViewController: UITableViewController {
         
         if (pregunta.tipo == TipoPregunta.Unica.rawValue && pregunta.asCombo) {
             let cell = tableView.dequeueReusableCellWithIdentifier(PREGUNTA_COMBO_CELL, forIndexPath: indexPath) as! PreguntaComboViewCell
+            
+            cell.pregunta = pregunta
+            cell.videoHandler = #selector(self.presentVideo)
+            cell.configureForPregunta(indexPath.section)
+            
+            return cell
+        } else if (pregunta.tipo == TipoPregunta.Escala.rawValue) {
+            let cell = tableView.dequeueReusableCellWithIdentifier(PREGUNTA_ESCALA_CELL, forIndexPath: indexPath) as! PreguntaEscalaViewCell
             
             cell.pregunta = pregunta
             cell.videoHandler = #selector(self.presentVideo)
