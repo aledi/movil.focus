@@ -12,6 +12,8 @@
 		400E9D3D1D5020CA006AAD64 /* Preguntas.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 400E9D3C1D5020CA006AAD64 /* Preguntas.storyboard */; };
 		400E9D3F1D5021B3006AAD64 /* PreguntasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400E9D3E1D5021B3006AAD64 /* PreguntasViewController.swift */; };
 		400F4EF41D49B46500538BCD /* EncuestasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400F4EF31D49B46500538BCD /* EncuestasViewController.swift */; };
+		402F247C1DF49FA0004E5EF2 /* PreguntaComboViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 402F247B1DF49FA0004E5EF2 /* PreguntaComboViewCell.xib */; };
+		402F247E1DF49FB4004E5EF2 /* PreguntaComboViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402F247D1DF49FB4004E5EF2 /* PreguntaComboViewCell.swift */; };
 		405313051D385ED10073751A /* Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405313041D385ED10073751A /* Controller.swift */; };
 		4053130A1D386EFA0073751A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 405313091D386EFA0073751A /* Main.storyboard */; };
 		4053130C1D386F370073751A /* PanelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4053130B1D386F370073751A /* PanelsViewController.swift */; };
@@ -60,6 +62,8 @@
 		400E9D3C1D5020CA006AAD64 /* Preguntas.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Preguntas.storyboard; path = Preguntas/Preguntas.storyboard; sourceTree = "<group>"; };
 		400E9D3E1D5021B3006AAD64 /* PreguntasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreguntasViewController.swift; path = Preguntas/PreguntasViewController.swift; sourceTree = "<group>"; };
 		400F4EF31D49B46500538BCD /* EncuestasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EncuestasViewController.swift; path = Main/EncuestasViewController.swift; sourceTree = "<group>"; };
+		402F247B1DF49FA0004E5EF2 /* PreguntaComboViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PreguntaComboViewCell.xib; path = Preguntas/PreguntaComboViewCell.xib; sourceTree = "<group>"; };
+		402F247D1DF49FB4004E5EF2 /* PreguntaComboViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreguntaComboViewCell.swift; sourceTree = "<group>"; };
 		405313041D385ED10073751A /* Controller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Controller.swift; path = Model/Controller.swift; sourceTree = "<group>"; };
 		405313091D386EFA0073751A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Main/Main.storyboard; sourceTree = "<group>"; };
 		4053130B1D386F370073751A /* PanelsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PanelsViewController.swift; path = Main/PanelsViewController.swift; sourceTree = "<group>"; };
@@ -122,6 +126,8 @@
 				400E9D3E1D5021B3006AAD64 /* PreguntasViewController.swift */,
 				40A8DC331D569E1B0065B734 /* PreguntaViewCell.swift */,
 				40A8DC311D569E010065B734 /* PreguntaViewCell.xib */,
+				402F247D1DF49FB4004E5EF2 /* PreguntaComboViewCell.swift */,
+				402F247B1DF49FA0004E5EF2 /* PreguntaComboViewCell.xib */,
 				408C37F01D838B4000A75784 /* MoviePlayerViewController.swift */,
 			);
 			name = Preguntas;
@@ -303,6 +309,7 @@
 				400E9D3D1D5020CA006AAD64 /* Preguntas.storyboard in Resources */,
 				40FF0DA21D37138500ED8A64 /* LaunchScreen.storyboard in Resources */,
 				40FF0D9F1D37138500ED8A64 /* Assets.xcassets in Resources */,
+				402F247C1DF49FA0004E5EF2 /* PreguntaComboViewCell.xib in Resources */,
 				40A8DC321D569E010065B734 /* PreguntaViewCell.xib in Resources */,
 				4053130A1D386EFA0073751A /* Main.storyboard in Resources */,
 			);
@@ -378,6 +385,7 @@
 				40E400E41DD547330095488F /* ChangePasswordViewController.swift in Sources */,
 				408C37F11D838B4000A75784 /* MoviePlayerViewController.swift in Sources */,
 				40FF0D981D37138500ED8A64 /* AppDelegate.swift in Sources */,
+				402F247E1DF49FB4004E5EF2 /* PreguntaComboViewCell.swift in Sources */,
 				4053130C1D386F370073751A /* PanelsViewController.swift in Sources */,
 				40A8DC341D569E1B0065B734 /* PreguntaViewCell.swift in Sources */,
 				405313051D385ED10073751A /* Controller.swift in Sources */,
