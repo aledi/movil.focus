@@ -40,11 +40,12 @@ class PreguntaViewCell: UITableViewCell, UITextViewDelegate {
     var tipo: TipoPregunta? {
         didSet {
             for button in self.buttons {
-                button.multiSelection = (tipo == .Multiple)
-                button.ordered = (tipo == .Ordenamiento)
+                button.multiSelection = tipo == .Multiple
+                button.ordered = tipo == .Ordenamiento
             }
         }
     }
+    
     var pregunta: Pregunta? {
         didSet {
             guard let pregunta = self.pregunta else {
