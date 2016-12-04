@@ -14,6 +14,8 @@ enum TipoPregunta: Int {
     case Unica = 2
     case Multiple = 3
     case Ordenamiento = 4
+    case Matriz = 5
+    case Escala = 6
 }
 
 class Pregunta {
@@ -21,20 +23,24 @@ class Pregunta {
     var id: Int
     var tipo: Int
     var numPregunta: Int
+    var asCombo: Bool
     var titulo: String
     var pregunta: String
     var video: String
     var imagen: UIImage? = nil
     var opciones: [String]
-    var selectedOptions: [Bool] = [false, false, false, false, false, false, false, false, false, false]
+    var subPreguntas: [String]
+    var selectedOptions: [Bool] = [false, false, false, false, false, false, false, false, false, false,
+                                   false, false, false, false, false, false, false, false, false, false]
     var respuesta: String = ""
     var nextOption: Int = 1
     var didSeeVideo: Bool
     
-    init(id: Int, tipo: Int, numPregunta: Int, titulo: String, pregunta: String, video: String, imagen: String, opciones: [String]) {
+    init(id: Int, tipo: Int, numPregunta: Int, asCombo: Bool, titulo: String, pregunta: String, video: String, imagen: String, opciones: [String], subPreguntas: [String]) {
         self.id = id
         self.tipo = tipo
         self.numPregunta = numPregunta
+        self.asCombo = asCombo
         self.titulo = titulo
         self.pregunta = pregunta
         self.video = video
@@ -45,6 +51,7 @@ class Pregunta {
         }
         
         self.opciones = opciones
+        self.subPreguntas = subPreguntas
     }
     
 }

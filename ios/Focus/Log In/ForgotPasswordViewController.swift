@@ -63,7 +63,7 @@ class ForgotPasswordViewController: UITableViewController {
                 let email = response["email"] as! String
                 
                 alertTitle = "Contraseña Enviada"
-                alertMessage = "Hemos enviado un correo a \(email) con su contraseña."
+                alertMessage = "Hemos enviado un correo a \(email) con su contraseña. Si usted no recibe el correo en pocos minutos, por favor revise su bandeja de correo SPAM."
                 self.cleanFields()
             } else if (status == "WRONG_USER") {
                 alertTitle = "Sin Registros"

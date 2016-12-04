@@ -40,11 +40,12 @@ class PreguntaViewCell: UITableViewCell, UITextViewDelegate {
     var tipo: TipoPregunta? {
         didSet {
             for button in self.buttons {
-                button.multiSelection = (tipo == .Multiple)
-                button.ordered = (tipo == .Ordenamiento)
+                button.multiSelection = tipo == .Multiple
+                button.ordered = tipo == .Ordenamiento
             }
         }
     }
+    
     var pregunta: Pregunta? {
         didSet {
             guard let pregunta = self.pregunta else {
@@ -102,7 +103,7 @@ class PreguntaViewCell: UITableViewCell, UITextViewDelegate {
             self.textView.text = self.pregunta!.respuesta.isEmpty ? "Indique aquí su respuesta..." : self.pregunta!.respuesta
             self.textView.textColor = self.pregunta!.respuesta.isEmpty ? UIColor.lightGrayColor() : UIColor.blackColor()
             
-            for i in 0...9 {
+            for i in 0...19 {
                 self.heightConstraints[i].constant = 0
                 self.bottomConstraints[i].constant = 0
                 self.buttons[i].alpha = 0
@@ -123,7 +124,7 @@ class PreguntaViewCell: UITableViewCell, UITextViewDelegate {
                 self.buttons[i].alpha = 1.0
             }
             
-            for i in pregunta.opciones.count..<10 {
+            for i in pregunta.opciones.count..<20 {
                 self.heightConstraints[i].constant = 0
                 self.bottomConstraints[i].constant = 0
                 self.buttons[i].alpha = 0
@@ -162,7 +163,7 @@ class PreguntaViewCell: UITableViewCell, UITextViewDelegate {
             
             sender.selected = true
             
-            for i in 0...9 {
+            for i in 0...19 {
                 pregunta.selectedOptions[i] = self.buttons[i].selected
             }
             
@@ -177,6 +178,8 @@ class PreguntaViewCell: UITableViewCell, UITextViewDelegate {
                 pregunta.respuesta += "\(pregunta.opciones[index])&"
                 pregunta.nextOption += 1
             }
+        default:
+            break
         }
     }
     
