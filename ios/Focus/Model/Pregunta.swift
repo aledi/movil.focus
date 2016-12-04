@@ -14,6 +14,8 @@ enum TipoPregunta: Int {
     case Unica = 2
     case Multiple = 3
     case Ordenamiento = 4
+    case Matriz = 5
+    case Escala = 6
 }
 
 class Pregunta {
