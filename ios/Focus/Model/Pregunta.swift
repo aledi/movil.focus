@@ -36,6 +36,14 @@ class Pregunta {
     var nextOption: Int = 1
     var didSeeVideo: Bool
     
+    var minScale: Double {
+        return self.opciones.count > 0 ? (Double(self.opciones[0]) ?? 0) : 0
+    }
+    
+    var maxScale: Double {
+        return self.opciones.count > 1 ? (Double(self.opciones[1]) ?? 0) : 0
+    }
+    
     init(id: Int, tipo: Int, numPregunta: Int, asCombo: Bool, titulo: String, pregunta: String, video: String, imagen: String, opciones: [String], subPreguntas: [String]) {
         self.id = id
         self.tipo = tipo
