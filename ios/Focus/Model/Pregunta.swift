@@ -37,19 +37,11 @@ class Pregunta {
     var didSeeVideo: Bool
     
     var minScale: Double {
-        if (self.opciones.count > 0) {
-            return Double(self.opciones[0]) ?? 0
-        }
-        
-        return 0
+        return self.opciones.count > 0 ? (Double(self.opciones[0]) ?? 0) : 0
     }
     
     var maxScale: Double {
-        if (self.opciones.count > 1) {
-            return Double(self.opciones[1]) ?? 0
-        }
-        
-        return 0
+        return self.opciones.count > 1 ? (Double(self.opciones[1]) ?? 0) : 0
     }
     
     init(id: Int, tipo: Int, numPregunta: Int, asCombo: Bool, titulo: String, pregunta: String, video: String, imagen: String, opciones: [String], subPreguntas: [String]) {

@@ -68,8 +68,8 @@ class PreguntaEscalaViewCell: UITableViewCell {
         
         self.stepper.minimumValue = pregunta.minScale
         self.stepper.maximumValue = pregunta.maxScale
-        
         self.stepper.value = pregunta.respuesta.isEmpty ? pregunta.minScale : Double(pregunta.respuesta)!
+        
         self.responseLabel.text = pregunta.respuesta.isEmpty ? "\(Int(pregunta.minScale))" : pregunta.respuesta
     }
 
