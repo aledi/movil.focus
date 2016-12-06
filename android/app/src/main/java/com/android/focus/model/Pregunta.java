@@ -15,12 +15,12 @@ public class Pregunta {
     public static final int SINGLE_OPTION = 2;
     public static final int MULTIPLE_OPTION = 3;
     public static final int ORDERING = 4;
-    public static final int MAX_OPTIONS = 10;
+    public static final int MAX_OPTIONS = 20;
 
-    private boolean contestada;
     private int id;
     private int tipo;
     private int numPregunta;
+    private String titulo;
     private String pregunta;
     private String video;
     private String imagen;
@@ -28,7 +28,7 @@ public class Pregunta {
     private String respuesta;
     private boolean videoVisto;
     private List<String> respuestasSeleccionadas = new ArrayList<>();
-    private String[] respuestasOrdenadas = {"", "", "", "", "", "", "", "", "", ""};
+    private String[] respuestasOrdenadas = {"", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""};
 
     // region Getters and setters
     public int getId() {
@@ -53,6 +53,14 @@ public class Pregunta {
 
     public void setNumPregunta(int numPregunta) {
         this.numPregunta = numPregunta;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
     }
 
     public String getPregunta() {
