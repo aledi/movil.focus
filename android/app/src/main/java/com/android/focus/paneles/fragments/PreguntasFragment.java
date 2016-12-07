@@ -611,7 +611,7 @@ public class PreguntasFragment extends Fragment {
         List<String> opciones;
 
         ArrayDefaultAdapter(List<String> opciones) {
-            super(getActivity(), android.R.layout.simple_spinner_item, opciones);
+            super(getActivity(), R.layout.simple_spinner_item, opciones);
 
             this.opciones = opciones;
         }
@@ -621,12 +621,20 @@ public class PreguntasFragment extends Fragment {
             return (position != 0);
         }
 
+        @NonNull
         @Override
-        public View getDropDownView(int position, View convertView, ViewGroup parent) {
-            TextView textView = (TextView) super.getDropDownView(position, convertView, parent);
+        public View getView(int position, View convertView, @NonNull ViewGroup parent) {
+            return getView((TextView) super.getView(position, convertView, parent), position);
+        }
 
+        @Override
+        public View getDropDownView(int position, View convertView, @NonNull ViewGroup parent) {
+            return getView((TextView) super.getDropDownView(position, convertView, parent), position);
+        }
+
+        private View getView(TextView textView, int position) {
             if (position == 0) {
-                textView.setTextColor(getResources().getColor(R.color.grayPrimary));
+                textView.setTextColor(getResources().getColor(R.color.text_hint));
             } else {
                 textView.setTextColor(getResources().getColor(R.color.black));
             }
