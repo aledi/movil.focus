@@ -142,7 +142,6 @@ class PreguntasViewController: UITableViewController {
                 for i in 0..<pregunta.subPreguntas.count {
                     let selectedOption = pregunta.selectedSubPreguntas[i]
                     pregunta.respuesta += "\(pregunta.opciones[selectedOption])&"
-                    print(pregunta.respuesta)
                 }
             }
             

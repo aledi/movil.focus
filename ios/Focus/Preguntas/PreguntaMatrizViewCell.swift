@@ -30,7 +30,6 @@ class PreguntaMatrizViewCell: UITableViewCell, UIPickerViewDelegate, UIPickerVie
     @IBOutlet var bottomConstraints: [NSLayoutConstraint]!
     
     var optionsPickers: [UIPickerView] = []
-    
     var pregunta: Pregunta?
     var videoHandler: Selector? {
         didSet {
@@ -86,12 +85,12 @@ class PreguntaMatrizViewCell: UITableViewCell, UIPickerViewDelegate, UIPickerVie
             }
             
             let newPicker = UIPickerView()
-            
             newPicker.delegate = self
             newPicker.dataSource = self
+            self.optionsPickers.append(newPicker)
+            
             self.textFields[i].alpha = 1.0
             self.textFields[i].inputView = newPicker
-            self.optionsPickers.append(newPicker)
         }
         
         for i in pregunta.subPreguntas.count..<20 {

@@ -33,7 +33,7 @@ class Pregunta {
     var selectedOptions: [Bool] = [false, false, false, false, false, false, false, false, false, false,
                                    false, false, false, false, false, false, false, false, false, false]
     var selectedSubPreguntas: [Int] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-                                   0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+                                       0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     var respuesta: String = ""
     var nextOption: Int = 1
     var didSeeVideo: Bool
