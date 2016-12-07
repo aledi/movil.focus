@@ -135,6 +135,9 @@
     <string name="sign_out">Cerrar Sesión</string>
     <string name="sign_out_message">La próxima vez que abra la aplicación se le pedirán sus datos de acceso.</string>
 
+    <!-- Change Password -->
+    <string name="change_password">Cambiar Contraseña</string>
+
     <!-- Toasts -->
     <string name="no_internet">Sin Conexión A Internet</string>
 
