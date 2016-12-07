@@ -16,6 +16,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
@@ -25,6 +27,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.android.focus.FocusApp;
@@ -220,6 +223,11 @@ public class PreguntasFragment extends Fragment {
 
     // region UI methods - Single Option
     private void setUpForSingleOptionAnswer(final Pregunta pregunta, View view) {
+        if (pregunta.isCombo()) {
+            setUpForSingleOptionAsComboAnswer(pregunta, view);
+            return;
+        }
+
         RadioGroup radioGroup = (RadioGroup) view.findViewById(R.id.radio_group);
         radioGroup.setVisibility(View.VISIBLE);
         final List<String> opciones = pregunta.getOpciones();
@@ -248,6 +256,32 @@ public class PreguntasFragment extends Fragment {
                 radioButton.setVisibility(View.GONE);
             }
         }
+    }
+
+    private void setUpForSingleOptionAsComboAnswer(final Pregunta pregunta, View view) {
+        Spinner spinner = (Spinner) view.findViewById(R.id.spinner_options);
+        spinner.setVisibility(View.VISIBLE);
+        final List<String> opciones = new ArrayList<>();
+        opciones.add(getString(R.string.text_answer_combo));
+        opciones.addAll(pregunta.getOpciones());
+        ArrayDefaultAdapter adapter = new ArrayDefaultAdapter(opciones);
+        adapter.setDropDownViewResource(R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                if (position == 0) {
+                    return;
+                }
+
+                pregunta.setRespuesta(opciones.get(position));
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                // Do nothing.
+            }
+        });
     }
 
     private List<RadioButton> getRadioButtonsForSingleOption(View view) {
@@ -569,6 +603,35 @@ public class PreguntasFragment extends Fragment {
             if (image != null) {
                 imageView.setImageBitmap(image);
             }
+        }
+    }
+
+    private class ArrayDefaultAdapter extends ArrayAdapter<String> {
+
+        List<String> opciones;
+
+        ArrayDefaultAdapter(List<String> opciones) {
+            super(getActivity(), android.R.layout.simple_spinner_item, opciones);
+
+            this.opciones = opciones;
+        }
+
+        @Override
+        public boolean isEnabled(int position) {
+            return (position != 0);
+        }
+
+        @Override
+        public View getDropDownView(int position, View convertView, ViewGroup parent) {
+            TextView textView = (TextView) super.getDropDownView(position, convertView, parent);
+
+            if (position == 0) {
+                textView.setTextColor(getResources().getColor(R.color.grayPrimary));
+            } else {
+                textView.setTextColor(getResources().getColor(R.color.black));
+            }
+
+            return textView;
         }
     }
     // endregion

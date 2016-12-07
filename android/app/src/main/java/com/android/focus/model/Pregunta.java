@@ -20,6 +20,7 @@ public class Pregunta {
     private int id;
     private int tipo;
     private int numPregunta;
+    private boolean combo;
     private String titulo;
     private String pregunta;
     private String video;
@@ -53,6 +54,14 @@ public class Pregunta {
 
     public void setNumPregunta(int numPregunta) {
         this.numPregunta = numPregunta;
+    }
+
+    public boolean isCombo() {
+        return combo;
+    }
+
+    public void setCombo(boolean combo) {
+        this.combo = combo;
     }
 
     public String getTitulo() {
