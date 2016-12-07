@@ -14,12 +14,14 @@
         android:background="@drawable/ripple_effect">
 
         <TextView
-            android:id="@+id/txt_pregunta"
+            android:id="@+id/txt_title"
             style="@style/TextViewTitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:minHeight="@dimen/text_view_height"
+            android:minHeight="@dimen/text_view_height_mini"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingTop="16dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -27,23 +29,17 @@
         <ImageView
             android:id="@+id/image"
             android:layout_width="0dp"
-            android:layout_height="140dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginTop="8dp"
+            android:layout_height="0dp"
             android:contentDescription="@string/image_description"
-            android:visibility="gone"
+            android:visibility="visible"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/txt_pregunta" />
+            app:layout_constraintTop_toBottomOf="@id/txt_title" />
 
         <android.support.v7.widget.CardView
             android:id="@+id/card_video"
             android:layout_width="0dp"
-            android:layout_height="@dimen/button_height"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginTop="8dp"
+            android:layout_height="0dp"
             android:visibility="gone"
             app:cardBackgroundColor="@color/bluePrimary"
             app:cardElevation="@dimen/card_elevation"
@@ -61,6 +57,19 @@
                 android:text="@string/view_video" />
         </android.support.v7.widget.CardView>
 
+        <TextView
+            android:id="@+id/txt_pregunta"
+            style="@style/TextViewTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:minHeight="@dimen/text_view_height"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingTop="16dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/card_video" />
+
         <EditText
             android:id="@+id/txt_respuesta"
             style="@style/EditTextBody"
@@ -75,7 +84,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/card_video" />
+            app:layout_constraintTop_toBottomOf="@id/txt_pregunta" />
 
         <!-- Single Option -->
         <RadioGroup
@@ -90,77 +99,165 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/card_video">
+            app:layout_constraintTop_toBottomOf="@id/txt_pregunta">
 
             <RadioButton
                 android:id="@+id/btn_single_option_0"
                 style="@style/RadioButton"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/radio_button_height" />
+                android:layout_height="wrap_content" />
 
             <RadioButton
                 android:id="@+id/btn_single_option_1"
                 style="@style/RadioButton"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/radio_button_height"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="8dp" />
 
             <RadioButton
                 android:id="@+id/btn_single_option_2"
                 style="@style/RadioButton"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/radio_button_height"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="8dp" />
 
             <RadioButton
                 android:id="@+id/btn_single_option_3"
                 style="@style/RadioButton"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/radio_button_height"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="8dp" />
 
             <RadioButton
                 android:id="@+id/btn_single_option_4"
                 style="@style/RadioButton"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/radio_button_height"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="8dp" />
 
             <RadioButton
                 android:id="@+id/btn_single_option_5"
                 style="@style/RadioButton"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/radio_button_height"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="8dp" />
 
             <RadioButton
                 android:id="@+id/btn_single_option_6"
                 style="@style/RadioButton"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/radio_button_height"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="8dp" />
 
             <RadioButton
                 android:id="@+id/btn_single_option_7"
                 style="@style/RadioButton"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/radio_button_height"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="8dp" />
 
             <RadioButton
                 android:id="@+id/btn_single_option_8"
                 style="@style/RadioButton"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/radio_button_height"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="8dp" />
 
             <RadioButton
                 android:id="@+id/btn_single_option_9"
                 style="@style/RadioButton"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/radio_button_height"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp" />
+
+            <RadioButton
+                android:id="@+id/btn_single_option_10"
+                style="@style/RadioButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp" />
+
+            <RadioButton
+                android:id="@+id/btn_single_option_11"
+                style="@style/RadioButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp" />
+
+            <RadioButton
+                android:id="@+id/btn_single_option_12"
+                style="@style/RadioButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp" />
+
+            <RadioButton
+                android:id="@+id/btn_single_option_13"
+                style="@style/RadioButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp" />
+
+            <RadioButton
+                android:id="@+id/btn_single_option_14"
+                style="@style/RadioButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp" />
+
+            <RadioButton
+                android:id="@+id/btn_single_option_15"
+                style="@style/RadioButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp" />
+
+            <RadioButton
+                android:id="@+id/btn_single_option_16"
+                style="@style/RadioButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp" />
+
+            <RadioButton
+                android:id="@+id/btn_single_option_17"
+                style="@style/RadioButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp" />
+
+            <RadioButton
+                android:id="@+id/btn_single_option_18"
+                style="@style/RadioButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp" />
+
+            <RadioButton
+                android:id="@+id/btn_single_option_19"
+                style="@style/RadioButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
                 android:layout_marginTop="8dp" />
         </RadioGroup>
+
+        <!-- Single Option - Combo -->
+        <Spinner
+            android:id="@+id/spinner_options"
+            style="@style/Spinner"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="8dp"
+            android:orientation="vertical"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_pregunta" />
 
         <!-- Multiple Option -->
         <LinearLayout
@@ -176,67 +273,127 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/card_video">
+            app:layout_constraintTop_toBottomOf="@id/txt_pregunta">
 
             <CheckBox
                 android:id="@+id/btn_multiple_option_0"
                 style="@style/CheckBox"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/radio_button_height" />
+                android:layout_height="wrap_content" />
 
             <CheckBox
                 android:id="@+id/btn_multiple_option_1"
                 style="@style/CheckBox"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/radio_button_height" />
+                android:layout_height="wrap_content" />
 
             <CheckBox
                 android:id="@+id/btn_multiple_option_2"
                 style="@style/CheckBox"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/radio_button_height" />
+                android:layout_height="wrap_content" />
 
             <CheckBox
                 android:id="@+id/btn_multiple_option_3"
                 style="@style/CheckBox"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/radio_button_height" />
+                android:layout_height="wrap_content" />
 
             <CheckBox
                 android:id="@+id/btn_multiple_option_4"
                 style="@style/CheckBox"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/radio_button_height" />
+                android:layout_height="wrap_content" />
 
             <CheckBox
                 android:id="@+id/btn_multiple_option_5"
                 style="@style/CheckBox"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/radio_button_height" />
+                android:layout_height="wrap_content" />
 
             <CheckBox
                 android:id="@+id/btn_multiple_option_6"
                 style="@style/CheckBox"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/radio_button_height" />
+                android:layout_height="wrap_content" />
 
             <CheckBox
                 android:id="@+id/btn_multiple_option_7"
                 style="@style/CheckBox"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/radio_button_height" />
+                android:layout_height="wrap_content" />
 
             <CheckBox
                 android:id="@+id/btn_multiple_option_8"
                 style="@style/CheckBox"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/radio_button_height" />
+                android:layout_height="wrap_content" />
 
             <CheckBox
                 android:id="@+id/btn_multiple_option_9"
                 style="@style/CheckBox"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/radio_button_height" />
+                android:layout_height="wrap_content" />
+
+            <CheckBox
+                android:id="@+id/btn_multiple_option_10"
+                style="@style/CheckBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <CheckBox
+                android:id="@+id/btn_multiple_option_11"
+                style="@style/CheckBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <CheckBox
+                android:id="@+id/btn_multiple_option_12"
+                style="@style/CheckBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <CheckBox
+                android:id="@+id/btn_multiple_option_13"
+                style="@style/CheckBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <CheckBox
+                android:id="@+id/btn_multiple_option_14"
+                style="@style/CheckBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <CheckBox
+                android:id="@+id/btn_multiple_option_15"
+                style="@style/CheckBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <CheckBox
+                android:id="@+id/btn_multiple_option_16"
+                style="@style/CheckBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <CheckBox
+                android:id="@+id/btn_multiple_option_17"
+                style="@style/CheckBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <CheckBox
+                android:id="@+id/btn_multiple_option_18"
+                style="@style/CheckBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <CheckBox
+                android:id="@+id/btn_multiple_option_19"
+                style="@style/CheckBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
         </LinearLayout>
 
         <!-- Ordering -->
@@ -253,67 +410,127 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/card_video">
+            app:layout_constraintTop_toBottomOf="@id/txt_pregunta">
 
             <CheckBox
                 android:id="@+id/btn_ordering_0"
                 style="@style/CheckBox"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/radio_button_height" />
+                android:layout_height="wrap_content" />
 
             <CheckBox
                 android:id="@+id/btn_ordering_1"
                 style="@style/CheckBox"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/radio_button_height" />
+                android:layout_height="wrap_content" />
 
             <CheckBox
                 android:id="@+id/btn_ordering_2"
                 style="@style/CheckBox"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/radio_button_height" />
+                android:layout_height="wrap_content" />
 
             <CheckBox
                 android:id="@+id/btn_ordering_3"
                 style="@style/CheckBox"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/radio_button_height" />
+                android:layout_height="wrap_content" />
 
             <CheckBox
                 android:id="@+id/btn_ordering_4"
                 style="@style/CheckBox"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/radio_button_height" />
+                android:layout_height="wrap_content" />
 
             <CheckBox
                 android:id="@+id/btn_ordering_5"
                 style="@style/CheckBox"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/radio_button_height" />
+                android:layout_height="wrap_content" />
 
             <CheckBox
                 android:id="@+id/btn_ordering_6"
                 style="@style/CheckBox"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/radio_button_height" />
+                android:layout_height="wrap_content" />
 
             <CheckBox
                 android:id="@+id/btn_ordering_7"
                 style="@style/CheckBox"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/radio_button_height" />
+                android:layout_height="wrap_content" />
 
             <CheckBox
                 android:id="@+id/btn_ordering_8"
                 style="@style/CheckBox"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/radio_button_height" />
+                android:layout_height="wrap_content" />
 
             <CheckBox
                 android:id="@+id/btn_ordering_9"
                 style="@style/CheckBox"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/radio_button_height" />
+                android:layout_height="wrap_content" />
+
+            <CheckBox
+                android:id="@+id/btn_ordering_10"
+                style="@style/CheckBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <CheckBox
+                android:id="@+id/btn_ordering_11"
+                style="@style/CheckBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <CheckBox
+                android:id="@+id/btn_ordering_12"
+                style="@style/CheckBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <CheckBox
+                android:id="@+id/btn_ordering_13"
+                style="@style/CheckBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <CheckBox
+                android:id="@+id/btn_ordering_14"
+                style="@style/CheckBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <CheckBox
+                android:id="@+id/btn_ordering_15"
+                style="@style/CheckBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <CheckBox
+                android:id="@+id/btn_ordering_16"
+                style="@style/CheckBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <CheckBox
+                android:id="@+id/btn_ordering_17"
+                style="@style/CheckBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <CheckBox
+                android:id="@+id/btn_ordering_18"
+                style="@style/CheckBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <CheckBox
+                android:id="@+id/btn_ordering_19"
+                style="@style/CheckBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
             <TextView
                 android:id="@+id/btn_reset"

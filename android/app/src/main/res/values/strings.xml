@@ -122,6 +122,7 @@
     <string name="video">Video</string>
     <string name="video_unavailable">Video No Disponible\nPor favor póngase en contacto.</string>
     <string name="text_answer_hint">Indique aquí su respuesta</string>
+    <string name="text_answer_combo">Elija su respuesta</string>
     <string name="reset">REINICIAR</string>
 
     <!-- Profile -->
