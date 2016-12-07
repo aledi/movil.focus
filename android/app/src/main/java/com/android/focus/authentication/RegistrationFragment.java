@@ -27,6 +27,7 @@ import com.android.focus.managers.UserPreferencesManager;
 import com.android.focus.model.User;
 import com.android.focus.network.HttpResponseHandler;
 import com.android.focus.network.NetworkManager;
+import com.android.focus.utils.ArrayDefaultAdapter;
 import com.android.focus.utils.DateUtils;
 import com.android.focus.utils.TextUtils;
 import com.android.focus.utils.UIUtils;
@@ -81,7 +82,7 @@ public class RegistrationFragment extends Fragment implements OnCheckedChangeLis
     private Spinner daySpinner;
     private int month = 0;
     private Spinner monthSpinner;
-    private int year = 1998;
+    private int year = DateUtils.getMinYear();
     private Spinner yearSpinner;
     private int education;
     private Spinner educationSpinner;
@@ -195,7 +196,7 @@ public class RegistrationFragment extends Fragment implements OnCheckedChangeLis
         yearSpinner.setAdapter(yearAdapter);
         yearSpinner.setOnItemSelectedListener(this);
         yearSpinner.setSelection(0);
-        ArrayAdapter<CharSequence> educationAdapter = ArrayAdapter.createFromResource(getActivity(), R.array.education_array, android.R.layout.simple_spinner_item);
+        ArrayDefaultAdapter educationAdapter = new ArrayDefaultAdapter(getResources().getStringArray(R.array.education_array), getActivity());
         educationAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         educationSpinner = (Spinner) view.findViewById(R.id.spinner_education);
         educationSpinner.setAdapter(educationAdapter);
@@ -211,11 +212,12 @@ public class RegistrationFragment extends Fragment implements OnCheckedChangeLis
         zipCode.addTextChangedListener(new BorderTextWatcher(zipCode));
         city = (EditText) view.findViewById(R.id.txt_city);
         city.addTextChangedListener(new BorderTextWatcher(city));
-        ArrayAdapter<CharSequence> stateAdapter = ArrayAdapter.createFromResource(getActivity(), R.array.state_array, android.R.layout.simple_spinner_item);
-        stateAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        ArrayDefaultAdapter stateAdapter = new ArrayDefaultAdapter(getResources().getStringArray(R.array.state_array), getActivity());
+        stateAdapter.setDropDownViewResource(R.layout.simple_spinner_dropdown_item);
         stateSpinner = (Spinner) view.findViewById(R.id.spinner_state);
         stateSpinner.setAdapter(stateAdapter);
         stateSpinner.setOnItemSelectedListener(this);
+        stateSpinner.setSelection(0);
 
         registerUser = (Button) view.findViewById(R.id.btn_register_user);
         registerUser.setOnClickListener(this);
@@ -294,7 +296,7 @@ public class RegistrationFragment extends Fragment implements OnCheckedChangeLis
 
         if (education == 0) {
             invalidFields = true;
-            setInvalidBorder(educationSpinner);
+            setInvalidBorder(educationSpinner.getChildAt(0));
         }
 
         if (!TextUtils.isValidString(streetText)) {
@@ -324,7 +326,7 @@ public class RegistrationFragment extends Fragment implements OnCheckedChangeLis
 
         if (state.equals("0")) {
             invalidFields = true;
-            setInvalidBorder(stateSpinner);
+            setInvalidBorder(stateSpinner.getChildAt(0));
         }
 
         if (invalidFields) {
