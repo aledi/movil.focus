@@ -32,6 +32,8 @@ class Pregunta {
     var subPreguntas: [String]
     var selectedOptions: [Bool] = [false, false, false, false, false, false, false, false, false, false,
                                    false, false, false, false, false, false, false, false, false, false]
+    var selectedSubPreguntas: [Int] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                                   0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     var respuesta: String = ""
     var nextOption: Int = 1
     var didSeeVideo: Bool
@@ -42,6 +44,20 @@ class Pregunta {
     
     var maxScale: Double {
         return self.opciones.count > 1 ? (Double(self.opciones[1]) ?? 0) : 0
+    }
+    
+    var matrizAnswered: Bool {
+        if (self.tipo != TipoPregunta.Matriz.rawValue) {
+            return true
+        }
+        
+        for selected in self.selectedSubPreguntas {
+            if (selected == -1) {
+                return false
+            }
+        }
+        
+        return true
     }
     
     init(id: Int, tipo: Int, numPregunta: Int, asCombo: Bool, titulo: String, pregunta: String, video: String, imagen: String, opciones: [String], subPreguntas: [String]) {
@@ -60,6 +76,10 @@ class Pregunta {
         
         self.opciones = opciones
         self.subPreguntas = subPreguntas
+        
+        for index in 0..<subPreguntas.count {
+            self.selectedSubPreguntas[index] = -1
+        }
     }
     
 }
