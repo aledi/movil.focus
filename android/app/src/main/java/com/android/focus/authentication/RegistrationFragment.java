@@ -9,10 +9,12 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.EditText;
@@ -57,7 +59,7 @@ import static com.android.focus.network.APIConstants.STATUS;
 import static com.android.focus.network.APIConstants.SUCCESS;
 import static com.android.focus.network.APIConstants.USERNAME;
 
-public class RegistrationFragment extends Fragment implements OnCheckedChangeListener, OnItemSelectedListener {
+public class RegistrationFragment extends Fragment implements OnCheckedChangeListener, OnItemSelectedListener, OnClickListener {
 
     private static final String TAG = RegistrationFragment.class.getCanonicalName();
     public static final String FRAGMENT_TAG = TAG + ".registrationFragment";
@@ -92,6 +94,8 @@ public class RegistrationFragment extends Fragment implements OnCheckedChangeLis
     private List<String> states;
     private Spinner stateSpinner;
     private String state;
+    // Button.
+    private Button registerUser;
 
     // region TextWatcher variables
     private TextWatcher usernameTextWatcher = new TextWatcher() {
@@ -212,6 +216,9 @@ public class RegistrationFragment extends Fragment implements OnCheckedChangeLis
         stateSpinner = (Spinner) view.findViewById(R.id.spinner_state);
         stateSpinner.setAdapter(stateAdapter);
         stateSpinner.setOnItemSelectedListener(this);
+
+        registerUser = (Button) view.findViewById(R.id.btn_register_user);
+        registerUser.setOnClickListener(this);
 
         return view;
     }
@@ -434,6 +441,13 @@ public class RegistrationFragment extends Fragment implements OnCheckedChangeLis
 
     public void onNothingSelected(AdapterView<?> parent) {
         // Do nothing.
+    }
+
+    @Override
+    public void onClick(View view) {
+        if (view.equals(registerUser)) {
+            registerUser();
+        }
     }
     // endregion
 
