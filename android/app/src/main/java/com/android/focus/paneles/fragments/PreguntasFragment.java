@@ -17,7 +17,6 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
@@ -37,6 +36,7 @@ import com.android.focus.model.Pregunta;
 import com.android.focus.network.HttpResponseHandler;
 import com.android.focus.network.NetworkManager;
 import com.android.focus.paneles.activities.VideoViewActivity;
+import com.android.focus.utils.ArrayDefaultAdapter;
 import com.android.focus.utils.TextUtils;
 import com.android.focus.utils.UIUtils;
 import com.loopj.android.http.RequestParams;
@@ -264,7 +264,7 @@ public class PreguntasFragment extends Fragment {
         final List<String> opciones = new ArrayList<>();
         opciones.add(getString(R.string.text_answer_combo));
         opciones.addAll(pregunta.getOpciones());
-        ArrayDefaultAdapter adapter = new ArrayDefaultAdapter(opciones);
+        ArrayDefaultAdapter adapter = new ArrayDefaultAdapter(opciones, getActivity());
         adapter.setDropDownViewResource(R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -603,43 +603,6 @@ public class PreguntasFragment extends Fragment {
             if (image != null) {
                 imageView.setImageBitmap(image);
             }
-        }
-    }
-
-    private class ArrayDefaultAdapter extends ArrayAdapter<String> {
-
-        List<String> opciones;
-
-        ArrayDefaultAdapter(List<String> opciones) {
-            super(getActivity(), R.layout.simple_spinner_item, opciones);
-
-            this.opciones = opciones;
-        }
-
-        @Override
-        public boolean isEnabled(int position) {
-            return (position != 0);
-        }
-
-        @NonNull
-        @Override
-        public View getView(int position, View convertView, @NonNull ViewGroup parent) {
-            return getView((TextView) super.getView(position, convertView, parent), position);
-        }
-
-        @Override
-        public View getDropDownView(int position, View convertView, @NonNull ViewGroup parent) {
-            return getView((TextView) super.getDropDownView(position, convertView, parent), position);
-        }
-
-        private View getView(TextView textView, int position) {
-            if (position == 0) {
-                textView.setTextColor(getResources().getColor(R.color.text_hint));
-            } else {
-                textView.setTextColor(getResources().getColor(R.color.black));
-            }
-
-            return textView;
         }
     }
     // endregion

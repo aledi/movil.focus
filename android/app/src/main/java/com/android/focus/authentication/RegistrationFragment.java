@@ -9,10 +9,12 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.EditText;
@@ -25,6 +27,7 @@ import com.android.focus.managers.UserPreferencesManager;
 import com.android.focus.model.User;
 import com.android.focus.network.HttpResponseHandler;
 import com.android.focus.network.NetworkManager;
+import com.android.focus.utils.ArrayDefaultAdapter;
 import com.android.focus.utils.DateUtils;
 import com.android.focus.utils.TextUtils;
 import com.android.focus.utils.UIUtils;
@@ -57,7 +60,7 @@ import static com.android.focus.network.APIConstants.STATUS;
 import static com.android.focus.network.APIConstants.SUCCESS;
 import static com.android.focus.network.APIConstants.USERNAME;
 
-public class RegistrationFragment extends Fragment implements OnCheckedChangeListener, OnItemSelectedListener {
+public class RegistrationFragment extends Fragment implements OnCheckedChangeListener, OnItemSelectedListener, OnClickListener {
 
     private static final String TAG = RegistrationFragment.class.getCanonicalName();
     public static final String FRAGMENT_TAG = TAG + ".registrationFragment";
@@ -79,7 +82,7 @@ public class RegistrationFragment extends Fragment implements OnCheckedChangeLis
     private Spinner daySpinner;
     private int month = 0;
     private Spinner monthSpinner;
-    private int year = 1998;
+    private int year = DateUtils.getMinYear();
     private Spinner yearSpinner;
     private int education;
     private Spinner educationSpinner;
@@ -92,6 +95,8 @@ public class RegistrationFragment extends Fragment implements OnCheckedChangeLis
     private List<String> states;
     private Spinner stateSpinner;
     private String state;
+    // Button.
+    private Button registerUser;
 
     // region TextWatcher variables
     private TextWatcher usernameTextWatcher = new TextWatcher() {
@@ -191,7 +196,7 @@ public class RegistrationFragment extends Fragment implements OnCheckedChangeLis
         yearSpinner.setAdapter(yearAdapter);
         yearSpinner.setOnItemSelectedListener(this);
         yearSpinner.setSelection(0);
-        ArrayAdapter<CharSequence> educationAdapter = ArrayAdapter.createFromResource(getActivity(), R.array.education_array, android.R.layout.simple_spinner_item);
+        ArrayDefaultAdapter educationAdapter = new ArrayDefaultAdapter(getResources().getStringArray(R.array.education_array), getActivity());
         educationAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         educationSpinner = (Spinner) view.findViewById(R.id.spinner_education);
         educationSpinner.setAdapter(educationAdapter);
@@ -207,11 +212,15 @@ public class RegistrationFragment extends Fragment implements OnCheckedChangeLis
         zipCode.addTextChangedListener(new BorderTextWatcher(zipCode));
         city = (EditText) view.findViewById(R.id.txt_city);
         city.addTextChangedListener(new BorderTextWatcher(city));
-        ArrayAdapter<CharSequence> stateAdapter = ArrayAdapter.createFromResource(getActivity(), R.array.state_array, android.R.layout.simple_spinner_item);
-        stateAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        ArrayDefaultAdapter stateAdapter = new ArrayDefaultAdapter(getResources().getStringArray(R.array.state_array), getActivity());
+        stateAdapter.setDropDownViewResource(R.layout.simple_spinner_dropdown_item);
         stateSpinner = (Spinner) view.findViewById(R.id.spinner_state);
         stateSpinner.setAdapter(stateAdapter);
         stateSpinner.setOnItemSelectedListener(this);
+        stateSpinner.setSelection(0);
+
+        registerUser = (Button) view.findViewById(R.id.btn_register_user);
+        registerUser.setOnClickListener(this);
 
         return view;
     }
@@ -287,7 +296,7 @@ public class RegistrationFragment extends Fragment implements OnCheckedChangeLis
 
         if (education == 0) {
             invalidFields = true;
-            setInvalidBorder(educationSpinner);
+            setInvalidBorder(educationSpinner.getChildAt(0));
         }
 
         if (!TextUtils.isValidString(streetText)) {
@@ -317,7 +326,7 @@ public class RegistrationFragment extends Fragment implements OnCheckedChangeLis
 
         if (state.equals("0")) {
             invalidFields = true;
-            setInvalidBorder(stateSpinner);
+            setInvalidBorder(stateSpinner.getChildAt(0));
         }
 
         if (invalidFields) {
@@ -434,6 +443,13 @@ public class RegistrationFragment extends Fragment implements OnCheckedChangeLis
 
     public void onNothingSelected(AdapterView<?> parent) {
         // Do nothing.
+    }
+
+    @Override
+    public void onClick(View view) {
+        if (view.equals(registerUser)) {
+            registerUser();
+        }
     }
     // endregion
 

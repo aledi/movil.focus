@@ -70,11 +70,12 @@ public class Panel {
     }
 
     public static String getActivePanels() {
-        return Integer.toString(userPanels.size());
+        return Integer.toString(getUserPaneles().size());
     }
 
     public static String getPendingSurveys() {
         int pendingSurveys = 0;
+        List<Panel> userPanels = getUserPaneles();
 
         for (Panel userPanel : userPanels) {
             List<Encuesta> encuestas = userPanel.getEncuestas();

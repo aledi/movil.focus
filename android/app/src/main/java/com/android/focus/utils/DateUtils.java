@@ -29,4 +29,8 @@ public class DateUtils {
 
         return years;
     }
+
+    public static int getMinYear() {
+        return Calendar.getInstance().get(Calendar.YEAR) - 18;
+    }
 }
