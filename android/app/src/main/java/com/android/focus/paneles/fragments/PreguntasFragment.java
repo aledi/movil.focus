@@ -16,6 +16,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
@@ -25,6 +27,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.android.focus.FocusApp;
@@ -138,6 +141,7 @@ public class PreguntasFragment extends Fragment {
     // region UI methods - Question
     private View createViewForPregunta(Pregunta pregunta) {
         View view = View.inflate(FocusApp.getContext(), R.layout.fragment_preguntas_item, null);
+        setUpForTitle((TextView) view.findViewById(R.id.txt_title), pregunta.getTitulo());
         TextView text = (TextView) view.findViewById(R.id.txt_pregunta);
         text.setText(pregunta.getNumPregunta() + ".- " + pregunta.getPregunta());
         setUpForImage((ImageView) view.findViewById(R.id.image), pregunta.getImagen());
@@ -158,6 +162,11 @@ public class PreguntasFragment extends Fragment {
         }
 
         return view;
+    }
+
+    private void setUpForTitle(TextView textView, String title) {
+        textView.setVisibility(TextUtils.isValidString(title) ? View.VISIBLE : View.GONE);
+        textView.setText(title);
     }
 
     private void setUpForImage(ImageView image, String url) {
@@ -214,6 +223,11 @@ public class PreguntasFragment extends Fragment {
 
     // region UI methods - Single Option
     private void setUpForSingleOptionAnswer(final Pregunta pregunta, View view) {
+        if (pregunta.isCombo()) {
+            setUpForSingleOptionAsComboAnswer(pregunta, view);
+            return;
+        }
+
         RadioGroup radioGroup = (RadioGroup) view.findViewById(R.id.radio_group);
         radioGroup.setVisibility(View.VISIBLE);
         final List<String> opciones = pregunta.getOpciones();
@@ -244,6 +258,32 @@ public class PreguntasFragment extends Fragment {
         }
     }
 
+    private void setUpForSingleOptionAsComboAnswer(final Pregunta pregunta, View view) {
+        Spinner spinner = (Spinner) view.findViewById(R.id.spinner_options);
+        spinner.setVisibility(View.VISIBLE);
+        final List<String> opciones = new ArrayList<>();
+        opciones.add(getString(R.string.text_answer_combo));
+        opciones.addAll(pregunta.getOpciones());
+        ArrayDefaultAdapter adapter = new ArrayDefaultAdapter(opciones);
+        adapter.setDropDownViewResource(R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                if (position == 0) {
+                    return;
+                }
+
+                pregunta.setRespuesta(opciones.get(position));
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                // Do nothing.
+            }
+        });
+    }
+
     private List<RadioButton> getRadioButtonsForSingleOption(View view) {
         List<RadioButton> buttons = new ArrayList<>();
         buttons.add((RadioButton) view.findViewById(R.id.btn_single_option_0));
@@ -256,6 +296,16 @@ public class PreguntasFragment extends Fragment {
         buttons.add((RadioButton) view.findViewById(R.id.btn_single_option_7));
         buttons.add((RadioButton) view.findViewById(R.id.btn_single_option_8));
         buttons.add((RadioButton) view.findViewById(R.id.btn_single_option_9));
+        buttons.add((RadioButton) view.findViewById(R.id.btn_single_option_10));
+        buttons.add((RadioButton) view.findViewById(R.id.btn_single_option_11));
+        buttons.add((RadioButton) view.findViewById(R.id.btn_single_option_12));
+        buttons.add((RadioButton) view.findViewById(R.id.btn_single_option_13));
+        buttons.add((RadioButton) view.findViewById(R.id.btn_single_option_14));
+        buttons.add((RadioButton) view.findViewById(R.id.btn_single_option_15));
+        buttons.add((RadioButton) view.findViewById(R.id.btn_single_option_16));
+        buttons.add((RadioButton) view.findViewById(R.id.btn_single_option_17));
+        buttons.add((RadioButton) view.findViewById(R.id.btn_single_option_18));
+        buttons.add((RadioButton) view.findViewById(R.id.btn_single_option_19));
 
         return buttons;
     }
@@ -304,6 +354,16 @@ public class PreguntasFragment extends Fragment {
         buttons.add((CheckBox) view.findViewById(R.id.btn_multiple_option_7));
         buttons.add((CheckBox) view.findViewById(R.id.btn_multiple_option_8));
         buttons.add((CheckBox) view.findViewById(R.id.btn_multiple_option_9));
+        buttons.add((CheckBox) view.findViewById(R.id.btn_multiple_option_10));
+        buttons.add((CheckBox) view.findViewById(R.id.btn_multiple_option_11));
+        buttons.add((CheckBox) view.findViewById(R.id.btn_multiple_option_12));
+        buttons.add((CheckBox) view.findViewById(R.id.btn_multiple_option_13));
+        buttons.add((CheckBox) view.findViewById(R.id.btn_multiple_option_14));
+        buttons.add((CheckBox) view.findViewById(R.id.btn_multiple_option_15));
+        buttons.add((CheckBox) view.findViewById(R.id.btn_multiple_option_16));
+        buttons.add((CheckBox) view.findViewById(R.id.btn_multiple_option_17));
+        buttons.add((CheckBox) view.findViewById(R.id.btn_multiple_option_18));
+        buttons.add((CheckBox) view.findViewById(R.id.btn_multiple_option_19));
 
         return buttons;
     }
@@ -363,6 +423,16 @@ public class PreguntasFragment extends Fragment {
         buttons.add((CheckBox) view.findViewById(R.id.btn_ordering_7));
         buttons.add((CheckBox) view.findViewById(R.id.btn_ordering_8));
         buttons.add((CheckBox) view.findViewById(R.id.btn_ordering_9));
+        buttons.add((CheckBox) view.findViewById(R.id.btn_ordering_10));
+        buttons.add((CheckBox) view.findViewById(R.id.btn_ordering_11));
+        buttons.add((CheckBox) view.findViewById(R.id.btn_ordering_12));
+        buttons.add((CheckBox) view.findViewById(R.id.btn_ordering_13));
+        buttons.add((CheckBox) view.findViewById(R.id.btn_ordering_14));
+        buttons.add((CheckBox) view.findViewById(R.id.btn_ordering_15));
+        buttons.add((CheckBox) view.findViewById(R.id.btn_ordering_16));
+        buttons.add((CheckBox) view.findViewById(R.id.btn_ordering_17));
+        buttons.add((CheckBox) view.findViewById(R.id.btn_ordering_18));
+        buttons.add((CheckBox) view.findViewById(R.id.btn_ordering_19));
 
         return buttons;
     }
@@ -388,8 +458,28 @@ public class PreguntasFragment extends Fragment {
             case 9:
                 return R.drawable.selected09;
             case 10:
-            default:
                 return R.drawable.selected10;
+            case 11:
+                return R.drawable.selected11;
+            case 12:
+                return R.drawable.selected12;
+            case 13:
+                return R.drawable.selected13;
+            case 14:
+                return R.drawable.selected14;
+            case 15:
+                return R.drawable.selected15;
+            case 16:
+                return R.drawable.selected16;
+            case 17:
+                return R.drawable.selected17;
+            case 18:
+                return R.drawable.selected18;
+            case 19:
+                return R.drawable.selected19;
+            case 20:
+            default:
+                return R.drawable.selected20;
         }
     }
     // endregion
@@ -513,6 +603,43 @@ public class PreguntasFragment extends Fragment {
             if (image != null) {
                 imageView.setImageBitmap(image);
             }
+        }
+    }
+
+    private class ArrayDefaultAdapter extends ArrayAdapter<String> {
+
+        List<String> opciones;
+
+        ArrayDefaultAdapter(List<String> opciones) {
+            super(getActivity(), R.layout.simple_spinner_item, opciones);
+
+            this.opciones = opciones;
+        }
+
+        @Override
+        public boolean isEnabled(int position) {
+            return (position != 0);
+        }
+
+        @NonNull
+        @Override
+        public View getView(int position, View convertView, @NonNull ViewGroup parent) {
+            return getView((TextView) super.getView(position, convertView, parent), position);
+        }
+
+        @Override
+        public View getDropDownView(int position, View convertView, @NonNull ViewGroup parent) {
+            return getView((TextView) super.getDropDownView(position, convertView, parent), position);
+        }
+
+        private View getView(TextView textView, int position) {
+            if (position == 0) {
+                textView.setTextColor(getResources().getColor(R.color.text_hint));
+            } else {
+                textView.setTextColor(getResources().getColor(R.color.black));
+            }
+
+            return textView;
         }
     }
     // endregion
