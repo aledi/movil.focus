@@ -14,7 +14,6 @@
     <string name="sign_up">Registrarse</string>
     <string name="sign_up_error">No se ha podido registrar al usuario. Intente más tarde.</string>
     <string name="register">Registro</string>
-    <string name="send_registration">Enviar</string>
     <string name="user_info">Información del Usuario</string>
     <string name="general_info">Información General</string>
     <string name="first_name">Nombre(s)</string>
@@ -138,6 +137,9 @@
 
     <!-- Change Password -->
     <string name="change_password">Cambiar Contraseña</string>
+    <string name="current_password">Contraseña Actual</string>
+    <string name="new_password">Nueva Contraseña</string>
+    <string name="confirm_new_password">Confirma Contraseña</string>
 
     <!-- Toasts -->
     <string name="no_internet">Sin Conexión A Internet</string>
@@ -165,6 +167,7 @@
 
     <!-- Helpers -->
     <string name="image_description">Image</string>
+    <string name="send">Enviar</string>
     <string name="cancel">Cancelar</string>
 
     <!-- Privacy Policy -->
