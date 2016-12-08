@@ -28,6 +28,7 @@ import com.android.focus.model.User;
 import com.android.focus.network.HttpResponseHandler;
 import com.android.focus.network.NetworkManager;
 import com.android.focus.utils.ArrayDefaultAdapter;
+import com.android.focus.utils.BorderTextWatcher;
 import com.android.focus.utils.DateUtils;
 import com.android.focus.utils.TextUtils;
 import com.android.focus.utils.UIUtils;
@@ -519,32 +520,6 @@ public class RegistrationFragment extends Fragment implements OnCheckedChangeLis
     public void handleOnBackPressedEvent() {
         if (enableBack) {
             activity.finish();
-        }
-    }
-    // endregion
-
-    // region Static classes
-    private class BorderTextWatcher implements TextWatcher {
-
-        EditText editText;
-
-        BorderTextWatcher(EditText editText) {
-            this.editText = editText;
-        }
-
-        @Override
-        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-            // Do nothing.
-        }
-
-        @Override
-        public void onTextChanged(CharSequence s, int start, int before, int count) {
-            // Do nothing
-        }
-
-        @Override
-        public void afterTextChanged(Editable s) {
-            setValidBorder(editText);
         }
     }
     // endregion

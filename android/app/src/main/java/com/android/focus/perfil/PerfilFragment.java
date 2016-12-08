@@ -31,6 +31,8 @@ public class PerfilFragment extends Fragment implements OnClickListener {
     // User.
     private TextView email;
     private TextView user;
+    // Password
+    private TextView changePasswordButton;
     // Panels.
     private TextView activePanelsCount;
     private TextView pendingSurveysCount;
@@ -81,6 +83,8 @@ public class PerfilFragment extends Fragment implements OnClickListener {
 
         user = (TextView) view.findViewById(R.id.txt_user);
         email = (TextView) view.findViewById(R.id.txt_email);
+        changePasswordButton = (TextView) view.findViewById(R.id.btn_change_password);
+        changePasswordButton.setOnClickListener(this);
 
         activePanelsCount = (TextView) view.findViewById(R.id.txt_active_panels_count);
         pendingSurveysCount = (TextView) view.findViewById(R.id.txt_pending_surveys_count);
@@ -126,7 +130,9 @@ public class PerfilFragment extends Fragment implements OnClickListener {
     // region Listeners
     @Override
     public void onClick(View view) {
-        if (view.equals(sendEmailButton)) {
+        if (view.equals(changePasswordButton)) {
+            startActivity(new Intent(activity, ChangePasswordActivity.class));
+        } else if (view.equals(sendEmailButton)) {
             sendEmail();
         } else if (view.equals(callPhoneButton)) {
             callPhone();

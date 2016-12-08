@@ -63,5 +63,9 @@
         <activity
             android:name=".paneles.activities.VideoViewActivity"
             android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".perfil.ChangePasswordActivity"
+            android:screenOrientation="portrait" />
     </application>
 </manifest>
