@@ -50,6 +50,7 @@ public class AuthenticationFragment extends Fragment implements OnClickListener,
     private EditText username;
     private EditText password;
     private RequestParams params;
+    private TextView forgotPasswordButton;
     private TextView signUpButton;
     private View loader;
 
@@ -124,6 +125,8 @@ public class AuthenticationFragment extends Fragment implements OnClickListener,
         signInButton.setOnClickListener(this);
         signUpButton = (TextView) view.findViewById(R.id.btn_sign_up);
         signUpButton.setOnClickListener(this);
+        forgotPasswordButton = (TextView) view.findViewById(R.id.btn_forgot_password);
+        forgotPasswordButton.setOnClickListener(this);
 
         return view;
     }
@@ -178,7 +181,9 @@ public class AuthenticationFragment extends Fragment implements OnClickListener,
         if (view.equals(signInButton)) {
             signIn();
         } else if (view.equals(signUpButton)) {
-            signUp();
+            startActivity(new Intent(activity, RegistrationActivity.class));
+        } else if (view.equals(forgotPasswordButton)) {
+            startActivity(new Intent(activity, RecoverPasswordActivity.class));
         }
     }
 
@@ -240,10 +245,6 @@ public class AuthenticationFragment extends Fragment implements OnClickListener,
                 showError(errorResponse);
             }
         });
-    }
-
-    private void signUp() {
-        startActivity(new Intent(activity, RegistrationActivity.class));
     }
     // endregion
 }

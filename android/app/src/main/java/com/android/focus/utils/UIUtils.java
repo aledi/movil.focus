@@ -64,6 +64,15 @@ public class UIUtils {
         });
     }
 
+    public static void showAlertDialog(String title, String message, Activity activity) {
+        showDialog(title, message, android.R.string.ok, false, activity, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+    }
+
     public static void showAlertDialog(int title, int message, Activity activity, DialogInterface.OnClickListener positiveButtonListener) {
         showDialog(title, message, android.R.string.ok, false, activity, positiveButtonListener);
     }

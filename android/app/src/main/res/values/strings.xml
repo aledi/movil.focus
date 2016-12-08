@@ -89,6 +89,18 @@
     </string-array>
     <string name="zip_code">Código Postal</string>
 
+    <!-- Recover Password -->
+    <string name="forgot_password">¿Olvidó su Contraseña?</string>
+    <string name="recover_password">Recuperar Contraseña</string>
+    <string name="recover_password_title">Para recuperar su contraseña, por favor ingrese su nombre de usuario, o el correo electrónico que utilizó para registrarse.</string>
+    <string name="recover_password_footer">La contraseña le será enviada al correo al que está asociada su cuenta.</string>
+    <string name="recover_password_success_title">Envío Exitoso</string>
+    <string name="recover_password_success_message">Hemos enviado un correo a %s con su contraseña. Si usted no recibe el correo en pocos minutos, por favor revise su bandeja de correon SPAM.</string>
+    <string name="recover_password_error">Hubo un error al enviar su petición. Por favor, intente más tarde o póngase en contacto con el servicio de soporte.</string>
+    <string name="recover_password_empty_fields_title">Campos Requeridos</string>
+    <string name="recover_password_empty_fields_message">Por favor, ingrese su nombre de usuario o correo electrónico.</string>
+    <string name="wrong_user">No hemos encontrado un usuario registrado con los datos proporcionados, Por favor, verifique los datos.</string>
+
     <!-- Welcome -->
     <string name="continuar">Continuar</string>
     <string name="welcome_to_focus">¡%s a la app de panelistas Focus!</string>
