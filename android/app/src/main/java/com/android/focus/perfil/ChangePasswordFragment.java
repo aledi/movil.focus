@@ -105,16 +105,8 @@ public class ChangePasswordFragment extends Fragment implements OnClickListener,
         Toast.makeText(activity, error, Toast.LENGTH_SHORT).show();
     }
 
-    private void setValidBorder(View view) {
-        setBorder(view, R.drawable.border);
-    }
-
     private void setInvalidBorder(View view) {
-        setBorder(view, R.drawable.border_invalid);
-    }
-
-    private void setBorder(View view, int resourceId) {
-        view.setBackgroundResource(resourceId);
+        view.setBackgroundResource(R.drawable.border_invalid);
     }
     // endregion
 

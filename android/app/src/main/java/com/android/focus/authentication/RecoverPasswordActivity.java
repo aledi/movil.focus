@@ -51,4 +51,11 @@ public class RecoverPasswordActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
     // endregion
+
+    // region OnBackPressed interface
+    @Override
+    public void onBackPressed() {
+        fragment.handleOnBackPressedEvent();
+    }
+    // endregion
 }

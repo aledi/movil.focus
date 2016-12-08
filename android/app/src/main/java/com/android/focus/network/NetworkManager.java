@@ -17,6 +17,7 @@ import static com.android.focus.network.APIConstants.ACTION;
 import static com.android.focus.network.APIConstants.CHANGE_PASSWORD;
 import static com.android.focus.network.APIConstants.GET_DATA;
 import static com.android.focus.network.APIConstants.PRIVACY_POLICY;
+import static com.android.focus.network.APIConstants.RECOVER_PASSWORD;
 import static com.android.focus.network.APIConstants.REGISTER_USER;
 import static com.android.focus.network.APIConstants.SAVE_ANSWERS;
 import static com.android.focus.network.APIConstants.SIGN_IN;
@@ -57,6 +58,10 @@ public class NetworkManager {
 
     public static void changePassword(RequestParams params, AsyncHttpResponseHandler responseHandler) {
         post(CHANGE_PASSWORD, params, responseHandler);
+    }
+
+    public static void recoverPassword(RequestParams params, AsyncHttpResponseHandler responseHandler) {
+        post(RECOVER_PASSWORD, params, responseHandler);
     }
 
     private static void post(String action, RequestParams params, AsyncHttpResponseHandler responseHandler) {
