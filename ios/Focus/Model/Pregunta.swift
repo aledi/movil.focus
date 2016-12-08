@@ -32,8 +32,8 @@ class Pregunta {
     var subPreguntas: [String]
     var selectedOptions: [Bool] = [false, false, false, false, false, false, false, false, false, false,
                                    false, false, false, false, false, false, false, false, false, false]
-    var selectedSubPreguntas: [Int] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-                                       0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    var selectedSubPreguntas: [Int] = [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
+                                       -1, -1, -1, -1, -1, -1, -1, -1, -1, -1]
     var respuesta: String = ""
     var nextOption: Int = 1
     var didSeeVideo: Bool
@@ -47,12 +47,8 @@ class Pregunta {
     }
     
     var matrizAnswered: Bool {
-        if (self.tipo != TipoPregunta.Matriz.rawValue) {
-            return true
-        }
-        
-        for selected in self.selectedSubPreguntas {
-            if (selected == -1) {
+        for i in 0..<self.subPreguntas.count {
+            if (self.selectedSubPreguntas[i] == -1) {
                 return false
             }
         }
@@ -76,10 +72,6 @@ class Pregunta {
         
         self.opciones = opciones
         self.subPreguntas = subPreguntas
-        
-        for index in 0..<subPreguntas.count {
-            self.selectedSubPreguntas[index] = -1
-        }
     }
     
 }
