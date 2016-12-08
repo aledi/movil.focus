@@ -11,6 +11,7 @@ import UIKit
 let PREGUNTA_CELL = "PreguntaViewCell"
 let PREGUNTA_COMBO_CELL = "PreguntaComboViewCell"
 let PREGUNTA_ESCALA_CELL = "PreguntaEscalaViewCell"
+let PREGUNTA_MATRIZ_CELL = "PreguntaMatrizViewCell"
 
 class PreguntasViewController: UITableViewController {
     
@@ -24,6 +25,7 @@ class PreguntasViewController: UITableViewController {
         self.tableView.registerNib(UINib(nibName: PREGUNTA_CELL, bundle: nil), forCellReuseIdentifier: PREGUNTA_CELL)
         self.tableView.registerNib(UINib(nibName: PREGUNTA_COMBO_CELL, bundle: nil), forCellReuseIdentifier: PREGUNTA_COMBO_CELL)
         self.tableView.registerNib(UINib(nibName: PREGUNTA_ESCALA_CELL, bundle: nil), forCellReuseIdentifier: PREGUNTA_ESCALA_CELL)
+        self.tableView.registerNib(UINib(nibName: PREGUNTA_MATRIZ_CELL, bundle: nil), forCellReuseIdentifier: PREGUNTA_MATRIZ_CELL)
         
         self.tableView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
     }
@@ -92,6 +94,14 @@ class PreguntasViewController: UITableViewController {
             cell.configureForPregunta(indexPath.section)
             
             return cell
+        } else if (pregunta.tipo == TipoPregunta.Matriz.rawValue) {
+            let cell = tableView.dequeueReusableCellWithIdentifier(PREGUNTA_MATRIZ_CELL, forIndexPath: indexPath) as! PreguntaMatrizViewCell
+            
+            cell.pregunta = pregunta
+            cell.videoHandler = #selector(self.presentVideo)
+            cell.configureForPregunta(indexPath.section)
+            
+            return cell
         } else if (pregunta.tipo == TipoPregunta.Escala.rawValue) {
             let cell = tableView.dequeueReusableCellWithIdentifier(PREGUNTA_ESCALA_CELL, forIndexPath: indexPath) as! PreguntaEscalaViewCell
             
@@ -123,6 +133,15 @@ class PreguntasViewController: UITableViewController {
             if (pregunta.tipo == TipoPregunta.Multiple.rawValue) {
                 for i in 0..<pregunta.opciones.count {
                     pregunta.respuesta += pregunta.selectedOptions[i] ? "\(pregunta.opciones[i])&" : ""
+                }
+            } else if (pregunta.tipo == TipoPregunta.Matriz.rawValue) {
+                if (!pregunta.matrizAnswered) {
+                    return self.missingAnswerAlert(pregunta.numPregunta)
+                }
+                
+                for i in 0..<pregunta.subPreguntas.count {
+                    let selectedOption = pregunta.selectedSubPreguntas[i]
+                    pregunta.respuesta += "\(pregunta.opciones[selectedOption])&"
                 }
             }
             

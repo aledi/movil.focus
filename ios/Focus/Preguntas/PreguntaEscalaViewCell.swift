@@ -26,7 +26,6 @@ class PreguntaEscalaViewCell: UITableViewCell {
     @IBOutlet var responseLabel: UILabel!
     @IBOutlet var stepper: UIStepper!
     
-    var optionsPicker = UIPickerView()
     var pregunta: Pregunta?
     var videoHandler: Selector? {
         didSet {

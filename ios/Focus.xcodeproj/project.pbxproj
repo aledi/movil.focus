@@ -12,6 +12,8 @@
 		400E9D3D1D5020CA006AAD64 /* Preguntas.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 400E9D3C1D5020CA006AAD64 /* Preguntas.storyboard */; };
 		400E9D3F1D5021B3006AAD64 /* PreguntasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400E9D3E1D5021B3006AAD64 /* PreguntasViewController.swift */; };
 		400F4EF41D49B46500538BCD /* EncuestasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400F4EF31D49B46500538BCD /* EncuestasViewController.swift */; };
+		402DC9971DF790610062877C /* PreguntaMatrizViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 402DC9961DF790610062877C /* PreguntaMatrizViewCell.xib */; };
+		402DC9991DF791680062877C /* PreguntaMatrizViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402DC9981DF791680062877C /* PreguntaMatrizViewCell.swift */; };
 		402F247C1DF49FA0004E5EF2 /* PreguntaComboViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 402F247B1DF49FA0004E5EF2 /* PreguntaComboViewCell.xib */; };
 		402F247E1DF49FB4004E5EF2 /* PreguntaComboViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402F247D1DF49FB4004E5EF2 /* PreguntaComboViewCell.swift */; };
 		402F24801DF4CF3D004E5EF2 /* PreguntaEscalaViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 402F247F1DF4CF3D004E5EF2 /* PreguntaEscalaViewCell.xib */; };
@@ -64,6 +66,8 @@
 		400E9D3C1D5020CA006AAD64 /* Preguntas.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Preguntas.storyboard; path = Preguntas/Preguntas.storyboard; sourceTree = "<group>"; };
 		400E9D3E1D5021B3006AAD64 /* PreguntasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreguntasViewController.swift; path = Preguntas/PreguntasViewController.swift; sourceTree = "<group>"; };
 		400F4EF31D49B46500538BCD /* EncuestasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EncuestasViewController.swift; path = Main/EncuestasViewController.swift; sourceTree = "<group>"; };
+		402DC9961DF790610062877C /* PreguntaMatrizViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PreguntaMatrizViewCell.xib; path = Preguntas/PreguntaMatrizViewCell.xib; sourceTree = "<group>"; };
+		402DC9981DF791680062877C /* PreguntaMatrizViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreguntaMatrizViewCell.swift; path = Preguntas/PreguntaMatrizViewCell.swift; sourceTree = "<group>"; };
 		402F247B1DF49FA0004E5EF2 /* PreguntaComboViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PreguntaComboViewCell.xib; path = Preguntas/PreguntaComboViewCell.xib; sourceTree = "<group>"; };
 		402F247D1DF49FB4004E5EF2 /* PreguntaComboViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreguntaComboViewCell.swift; sourceTree = "<group>"; };
 		402F247F1DF4CF3D004E5EF2 /* PreguntaEscalaViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PreguntaEscalaViewCell.xib; path = Preguntas/PreguntaEscalaViewCell.xib; sourceTree = "<group>"; };
@@ -134,6 +138,8 @@
 				402F247B1DF49FA0004E5EF2 /* PreguntaComboViewCell.xib */,
 				402F24811DF4CF51004E5EF2 /* PreguntaEscalaViewCell.swift */,
 				402F247F1DF4CF3D004E5EF2 /* PreguntaEscalaViewCell.xib */,
+				402DC9981DF791680062877C /* PreguntaMatrizViewCell.swift */,
+				402DC9961DF790610062877C /* PreguntaMatrizViewCell.xib */,
 				408C37F01D838B4000A75784 /* MoviePlayerViewController.swift */,
 			);
 			name = Preguntas;
@@ -314,6 +320,7 @@
 				40CC5DB31D80EF5900E1D8E5 /* Extras.storyboard in Resources */,
 				400A4E821DD69195002C02BA /* estados.plist in Resources */,
 				400E9D3D1D5020CA006AAD64 /* Preguntas.storyboard in Resources */,
+				402DC9971DF790610062877C /* PreguntaMatrizViewCell.xib in Resources */,
 				40FF0DA21D37138500ED8A64 /* LaunchScreen.storyboard in Resources */,
 				40FF0D9F1D37138500ED8A64 /* Assets.xcassets in Resources */,
 				402F247C1DF49FA0004E5EF2 /* PreguntaComboViewCell.xib in Resources */,
@@ -378,6 +385,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				400F4EF41D49B46500538BCD /* EncuestasViewController.swift in Sources */,
+				402DC9991DF791680062877C /* PreguntaMatrizViewCell.swift in Sources */,
 				40982F1C1DDBECD40031EBED /* ForgotPasswordViewController.swift in Sources */,
 				40FF0DB01D371F4000ED8A64 /* LogInViewController.swift in Sources */,
 				40D810661D5811EE00EB8FCE /* LoadingViewController.swift in Sources */,
