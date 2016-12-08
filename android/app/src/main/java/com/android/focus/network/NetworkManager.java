@@ -14,6 +14,7 @@ import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
 
 import static com.android.focus.network.APIConstants.ACTION;
+import static com.android.focus.network.APIConstants.CHANGE_PASSWORD;
 import static com.android.focus.network.APIConstants.GET_DATA;
 import static com.android.focus.network.APIConstants.PRIVACY_POLICY;
 import static com.android.focus.network.APIConstants.REGISTER_USER;
@@ -52,6 +53,10 @@ public class NetworkManager {
 
     public static void saveAnswers(RequestParams params, AsyncHttpResponseHandler responseHandler) {
         post(SAVE_ANSWERS, params, responseHandler);
+    }
+
+    public static void changePassword(RequestParams params, AsyncHttpResponseHandler responseHandler) {
+        post(CHANGE_PASSWORD, params, responseHandler);
     }
 
     private static void post(String action, RequestParams params, AsyncHttpResponseHandler responseHandler) {

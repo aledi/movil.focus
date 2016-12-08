@@ -509,7 +509,7 @@ public class PreguntasFragment extends Fragment {
 
             @Override
             public void onFailure(int statusCode, Header[] headers, String errorResponse, Throwable throwable) {
-                UIUtils.showAlertDialog(R.string.error_save_title, R.string.error_save_message, activity, positiveButtonListener);
+                UIUtils.showAlertDialog(R.string.error, R.string.error_save_message, activity, positiveButtonListener);
             }
         });
     }

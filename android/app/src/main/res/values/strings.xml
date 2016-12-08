@@ -140,6 +140,11 @@
     <string name="current_password">Contraseña Actual</string>
     <string name="new_password">Nueva Contraseña</string>
     <string name="confirm_new_password">Confirma Contraseña</string>
+    <string name="confirm_new_password_error">Los campos de nueva contraseña no coinciden.</string>
+    <string name="change_password_success_title">Cambio Exitoso</string>
+    <string name="change_password_success_message">Su nueva contraseña ha sido guardada. A partir de este momento, utilícela para iniciar sesión en la aplicación.</string>
+    <string name="change_password_error">Hubo un error al intentar cambiar su contraseña. Por favor, intente más tarde o póngase en contacto con el servicio de soporte.</string>
+    <string name="wrong_password">Su contraseña actual no coincide con nuestros registros.</string>
 
     <!-- Toasts -->
     <string name="no_internet">Sin Conexión A Internet</string>
@@ -154,7 +159,6 @@
     <string name="no_answered_button">Contestar</string>
     <string name="success_save_title">Respuestas Guardadas</string>
     <string name="success_save_message">Gracias por responder la encuesta.</string>
-    <string name="error_save_title">Error</string>
     <string name="error_save_message">No pudimos guardar tus respuestas en este momento.</string>
     <string name="server_unavailable_title">Servidor No Disponible</string>
     <string name="server_unavailable_message">Nuestro servidor no está disponible por el momento.</string>
@@ -169,6 +173,7 @@
     <string name="image_description">Image</string>
     <string name="send">Enviar</string>
     <string name="cancel">Cancelar</string>
+    <string name="error">Error</string>
 
     <!-- Privacy Policy -->
     <string name="privacy_policy">Aviso de Privacidad</string>

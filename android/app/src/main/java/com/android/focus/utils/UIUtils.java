@@ -56,7 +56,7 @@ public class UIUtils {
     }
 
     public static void showAlertDialog(String title, int message, Activity activity) {
-        showDialog(title, message, android.R.string.ok, false, activity, new DialogInterface.OnClickListener() {
+        showDialog(title, getString(message), android.R.string.ok, false, activity, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 dialog.dismiss();
@@ -76,10 +76,10 @@ public class UIUtils {
     }
 
     private static void showDialog(int title, int message, int positiveButton, boolean cancelable, Activity activity, final DialogInterface.OnClickListener positiveButtonListener) {
-        showDialog(getString(title), message, positiveButton, cancelable, activity, positiveButtonListener);
+        showDialog(getString(title), getString(message), positiveButton, cancelable, activity, positiveButtonListener);
     }
 
-    private static void showDialog(String title, int message, int positiveButton, boolean cancelable, Activity activity, final DialogInterface.OnClickListener positiveButtonListener) {
+    private static void showDialog(String title, String message, int positiveButton, boolean cancelable, Activity activity, final DialogInterface.OnClickListener positiveButtonListener) {
         AlertDialog.Builder builder = new AlertDialog.Builder(activity)
                 .setTitle(title)
                 .setMessage(message)
