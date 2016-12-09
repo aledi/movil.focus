@@ -120,6 +120,7 @@ class PreguntaViewCell: UITableViewCell, UITextViewDelegate {
                 self.heightConstraints[i].constant = 50
                 self.bottomConstraints[i].constant = 8
                 self.labels[i].text = pregunta.opciones[i]
+                self.buttons[i].optionNumber = pregunta.selectedOrder[i]
                 self.buttons[i].selected = pregunta.selectedOptions[i]
                 self.buttons[i].alpha = 1.0
             }
@@ -151,7 +152,14 @@ class PreguntaViewCell: UITableViewCell, UITextViewDelegate {
             return
         }
         
-        let index = self.buttons.indexOf(sender)!
+        var index = 0
+        
+        for (i, button) in self.buttons.enumerate() {
+            if (button == sender) {
+                index = i
+                break
+            }
+        }
         
         switch (self.tipo!) {
         case .Abierta:
@@ -176,6 +184,8 @@ class PreguntaViewCell: UITableViewCell, UITextViewDelegate {
                 sender.optionNumber = pregunta.nextOption
                 sender.selected = true
                 pregunta.respuesta += "\(pregunta.opciones[index])&"
+                pregunta.selectedOrder[index] = pregunta.nextOption
+                pregunta.selectedOptions[index] = true
                 pregunta.nextOption += 1
             }
         default:

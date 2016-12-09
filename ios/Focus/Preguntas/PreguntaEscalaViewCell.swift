@@ -67,12 +67,16 @@ class PreguntaEscalaViewCell: UITableViewCell {
         
         self.stepper.minimumValue = pregunta.minScale
         self.stepper.maximumValue = pregunta.maxScale
-        self.stepper.value = pregunta.respuesta.isEmpty ? pregunta.minScale : Double(pregunta.respuesta)!
+        self.stepper.value = pregunta.respuesta.isEmpty ? 0 : Double(pregunta.respuesta)!
         
-        self.responseLabel.text = pregunta.respuesta.isEmpty ? "\(Int(pregunta.minScale))" : pregunta.respuesta
+        self.responseLabel.text = pregunta.respuesta.isEmpty ? nil : pregunta.respuesta
     }
 
     @IBAction func stepperChanged(sender: UIStepper) {
+        if (self.pregunta!.respuesta.isEmpty) {
+            sender.value = sender.minimumValue
+        }
+        
         let value = Int(sender.value)
         
         self.pregunta?.respuesta = "\(value)"

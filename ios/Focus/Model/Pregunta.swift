@@ -32,6 +32,8 @@ class Pregunta {
     var subPreguntas: [String]
     var selectedOptions: [Bool] = [false, false, false, false, false, false, false, false, false, false,
                                    false, false, false, false, false, false, false, false, false, false]
+    var selectedOrder: [Int] = [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
+                                -1, -1, -1, -1, -1, -1, -1, -1, -1, -1]
     var selectedSubPreguntas: [Int] = [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
                                        -1, -1, -1, -1, -1, -1, -1, -1, -1, -1]
     var respuesta: String = ""
