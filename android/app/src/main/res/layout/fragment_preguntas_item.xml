@@ -543,8 +543,7 @@
                 android:id="@+id/btn_reset"
                 style="@style/TextViewBoldClickable"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/text_view_height_mini"
-                android:layout_marginTop="8dp"
+                android:layout_height="@dimen/text_view_height"
                 android:gravity="center"
                 android:text="@string/reset" />
         </LinearLayout>

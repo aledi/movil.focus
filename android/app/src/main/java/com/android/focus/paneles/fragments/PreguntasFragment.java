@@ -641,8 +641,11 @@ public class PreguntasFragment extends Fragment {
             } else if (pregunta.getTipo() == ORDERING) {
                 String respuestaOrdenamiento = "";
                 String[] respuestasOrdenadas = pregunta.getRespuestasOrdenadas();
+                List<String> opciones = pregunta.getOpciones();
 
-                for (String respuestaOrdenada : respuestasOrdenadas) {
+                for (int i = 0; i < opciones.size(); i++) {
+                    String respuestaOrdenada = respuestasOrdenadas[i];
+
                     if (respuestaOrdenada.equals("")) {
                         dialogTitle = getString(R.string.error_save_survey_title, pregunta.getNumPregunta());
                         dialogMessage = R.string.error_save_survey_message;
