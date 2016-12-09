@@ -135,6 +135,7 @@
     <string name="text_answer_hint">Indique aquí su respuesta</string>
     <string name="text_answer_combo">Elija su respuesta</string>
     <string name="reset">REINICIAR</string>
+    <string name="answer">Respuesta:</string>
 
     <!-- Profile -->
     <string name="profile">Profile</string>

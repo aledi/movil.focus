@@ -53,6 +53,7 @@ import cz.msebera.android.httpclient.Header;
 import static com.android.focus.model.Pregunta.MAX_OPTIONS;
 import static com.android.focus.model.Pregunta.MULTIPLE_OPTION;
 import static com.android.focus.model.Pregunta.ORDERING;
+import static com.android.focus.model.Pregunta.SCALE;
 import static com.android.focus.model.Pregunta.SINGLE_OPTION;
 import static com.android.focus.model.Pregunta.TEXT_ANSWER;
 import static com.android.focus.network.APIConstants.ID;
@@ -159,6 +160,9 @@ public class PreguntasFragment extends Fragment {
                 break;
             case ORDERING:
                 setUpForOrderingAnswer(pregunta, view);
+                break;
+            case SCALE:
+                setUpForScaleAnswer(pregunta, view);
         }
 
         return view;
@@ -481,6 +485,46 @@ public class PreguntasFragment extends Fragment {
             default:
                 return R.drawable.selected20;
         }
+    }
+    // endregion
+
+    // region UI methods - Scale
+    private void setUpForScaleAnswer(final Pregunta pregunta, View view) {
+        LinearLayout scaleLayout = (LinearLayout) view.findViewById(R.id.layout_scale);
+        scaleLayout.setVisibility(View.VISIBLE);
+
+        final int minScale = pregunta.getMinScale();
+        final int maxScale = pregunta.getMaxScale();
+        final TextView answer = (TextView) view.findViewById(R.id.txt_answer);
+        final ImageView addButton = (ImageView) view.findViewById(R.id.btn_add);
+        final ImageView minusButton = (ImageView) view.findViewById(R.id.btn_minus);
+
+        OnClickListener listener = new OnClickListener() {
+            int scale;
+
+            @Override
+            public void onClick(View view) {
+                if (view.equals(addButton)) {
+                    if (scale == maxScale) {
+                        return;
+                    }
+
+                    scale += 1;
+                } else if (view.equals(minusButton)) {
+                    if (scale == minScale) {
+                        return;
+                    }
+
+                    scale -= 1;
+                }
+
+                pregunta.setRespuesta(Integer.toString(scale));
+                answer.setText(pregunta.getRespuesta());
+            }
+        };
+
+        addButton.setOnClickListener(listener);
+        minusButton.setOnClickListener(listener);
     }
     // endregion
 
