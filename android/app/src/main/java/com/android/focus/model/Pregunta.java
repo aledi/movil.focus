@@ -15,6 +15,7 @@ public class Pregunta {
     public static final int SINGLE_OPTION = 2;
     public static final int MULTIPLE_OPTION = 3;
     public static final int ORDERING = 4;
+    public static final int SCALE = 6;
     public static final int MAX_OPTIONS = 20;
 
     private int id;
@@ -152,6 +153,14 @@ public class Pregunta {
         for (int i = 0; i < MAX_OPTIONS; i++) {
             respuestasOrdenadas[i] = "";
         }
+    }
+
+    public int getMinScale() {
+        return opciones.size() > 0 ? Integer.valueOf(opciones.get(0)) : 0;
+    }
+
+    public int getMaxScale() {
+        return opciones.size() > 1 ? Integer.valueOf(opciones.get(1)) : 0;
     }
 
     private int getOpcionIndex(String opcion) {
