@@ -28,10 +28,12 @@ public class Pregunta {
     private String video;
     private String imagen;
     private List<String> opciones;
+    private List<String> subPreguntas;
     private String respuesta;
     private boolean videoVisto;
     private List<String> respuestasSeleccionadas = new ArrayList<>();
     private String[] respuestasOrdenadas = {"", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""};
+    private int[] selectedSubPreguntas = new int[]{-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
 
     // region Getters and setters
     public int getId() {
@@ -106,6 +108,14 @@ public class Pregunta {
         this.opciones = opciones;
     }
 
+    public List<String> getSubPreguntas() {
+        return subPreguntas;
+    }
+
+    public void setSubPreguntas(List<String> subPreguntas) {
+        this.subPreguntas = subPreguntas;
+    }
+
     public String getRespuesta() {
         return respuesta;
     }
@@ -162,6 +172,24 @@ public class Pregunta {
 
     public int getMaxScale() {
         return opciones.size() > 1 ? Integer.valueOf(opciones.get(1)) : 0;
+    }
+
+    public void setSubPregunta(int index, int value) {
+        selectedSubPreguntas[index] = value;
+    }
+
+    public int getSubPregunta(int index) {
+        return selectedSubPreguntas[index];
+    }
+
+    public boolean isMatrixAnswered() {
+        for (int i = 0; i < subPreguntas.size(); i++) {
+            if (selectedSubPreguntas[i] == -1) {
+                return false;
+            }
+        }
+
+        return true;
     }
 
     private int getOpcionIndex(String opcion) {

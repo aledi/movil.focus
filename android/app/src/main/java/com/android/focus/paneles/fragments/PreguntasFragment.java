@@ -17,6 +17,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
@@ -50,6 +51,7 @@ import java.util.List;
 
 import cz.msebera.android.httpclient.Header;
 
+import static com.android.focus.model.Pregunta.MATRIX;
 import static com.android.focus.model.Pregunta.MAX_OPTIONS;
 import static com.android.focus.model.Pregunta.MULTIPLE_OPTION;
 import static com.android.focus.model.Pregunta.ORDERING;
@@ -66,7 +68,6 @@ public class PreguntasFragment extends Fragment {
     private static final String ARGS_ENCUESTA_ID = FRAGMENT_TAG + ".encuestaId";
 
     private Activity activity;
-    private boolean enableBack = true;
     private int encuestaId;
     private int panelId;
     private List<Pregunta> preguntas;
@@ -160,6 +161,9 @@ public class PreguntasFragment extends Fragment {
                 break;
             case ORDERING:
                 setUpForOrderingAnswer(pregunta, view);
+                break;
+            case MATRIX:
+                setUpForMatrixAnswer(pregunta, view);
                 break;
             case SCALE:
                 setUpForScaleAnswer(pregunta, view);
@@ -271,7 +275,7 @@ public class PreguntasFragment extends Fragment {
         ArrayDefaultAdapter adapter = new ArrayDefaultAdapter(opciones, getActivity());
         adapter.setDropDownViewResource(R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        spinner.setOnItemSelectedListener(new OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 if (position == 0) {
@@ -488,6 +492,50 @@ public class PreguntasFragment extends Fragment {
     }
     // endregion
 
+    // region UI methods - Matrix
+    private void setUpForMatrixAnswer(Pregunta pregunta, View view) {
+        LinearLayout matrixLayout = (LinearLayout) view.findViewById(R.id.layout_matrix);
+        matrixLayout.setVisibility(View.VISIBLE);
+
+        List<String> subQuestions = pregunta.getSubPreguntas();
+        List<String> opciones = new ArrayList<>();
+        opciones.add(getString(R.string.text_answer_combo));
+        opciones.addAll(pregunta.getOpciones());
+
+        for (int i = 0; i < subQuestions.size(); i++) {
+            String subQuestion = subQuestions.get(i);
+            View subQuestionLayout = View.inflate(getActivity(), R.layout.layout_answer_matrix, null);
+            setUpSubQuestionLayout(pregunta, subQuestion, opciones, i, subQuestionLayout);
+            matrixLayout.addView(subQuestionLayout);
+        }
+    }
+
+    private void setUpSubQuestionLayout(final Pregunta pregunta, String subQuestionText, final List<String> opciones, final int index, View view) {
+        TextView subQuestion = (TextView) view.findViewById(R.id.txt_sub_question);
+        subQuestion.setText(subQuestionText);
+
+        ArrayDefaultAdapter adapter = new ArrayDefaultAdapter(opciones, getActivity());
+        adapter.setDropDownViewResource(R.layout.simple_spinner_dropdown_item);
+        Spinner spinner = (Spinner) view.findViewById(R.id.spinner_options);
+        spinner.setAdapter(adapter);
+        spinner.setOnItemSelectedListener(new OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                if (position == 0) {
+                    return;
+                }
+
+                pregunta.setSubPregunta(index, position - 1);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                // Do nothing.
+            }
+        });
+    }
+    // endregion
+
     // region UI methods - Scale
     private void setUpForScaleAnswer(final Pregunta pregunta, View view) {
         LinearLayout scaleLayout = (LinearLayout) view.findViewById(R.id.layout_scale);
@@ -530,7 +578,6 @@ public class PreguntasFragment extends Fragment {
 
     // region Encuesta Actions
     public void saveRespuestas() {
-        enableBack = false;
         UIUtils.hideKeyboardIfShowing(activity);
 
         if (checkForInvalidRespuesta()) {
@@ -592,6 +639,18 @@ public class PreguntasFragment extends Fragment {
                 }
 
                 pregunta.setRespuesta(respuestaOrdenamiento);
+            } else if (pregunta.getTipo() == MATRIX) {
+                String respuestaMatriz = "";
+                List<String> opciones = pregunta.getOpciones();
+                List<String> subPreguntas = pregunta.getSubPreguntas();
+
+                if (pregunta.isMatrixAnswered()) {
+                    for (int i = 0; i < subPreguntas.size(); i++) {
+                        respuestaMatriz += opciones.get(pregunta.getSubPregunta(i)) + "&";
+                    }
+                }
+
+                pregunta.setRespuesta(respuestaMatriz);
             }
 
             String respuesta = pregunta.getRespuesta();
