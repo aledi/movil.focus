@@ -29,7 +29,10 @@ import static com.android.focus.network.APIConstants.START_SURVEY;
 
 public class NetworkManager {
 
-    private static final String URL = "http://focusestudios.mx/paneles/api/controller.php";
+    private static final String BASIC_URL = "http://focusestudios.mx/paneles/";
+    private static final String URL = BASIC_URL + "api/controller.php";
+    public static final String IMAGES_URL = BASIC_URL + "resources/images/";
+    public static final String VIDEOS_URL = BASIC_URL + "resources/videos/";
 
     //  region HTTP Requests
     public static void sigIn(RequestParams params, AsyncHttpResponseHandler responseHandler) {
