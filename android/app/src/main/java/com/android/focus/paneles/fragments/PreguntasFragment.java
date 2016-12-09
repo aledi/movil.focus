@@ -3,9 +3,6 @@ package com.android.focus.paneles.fragments;
 import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
@@ -41,11 +38,10 @@ import com.android.focus.utils.ArrayDefaultAdapter;
 import com.android.focus.utils.TextUtils;
 import com.android.focus.utils.UIUtils;
 import com.loopj.android.http.RequestParams;
+import com.squareup.picasso.Picasso;
 
 import org.json.JSONObject;
 
-import java.io.InputStream;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -75,6 +71,7 @@ public class PreguntasFragment extends Fragment {
     private int dialogMessage;
     private String respuestas;
     private View loader;
+    private Picasso picasso;
 
     // region Listeners variables
     private DialogInterface.OnClickListener positiveButtonListener = new DialogInterface.OnClickListener() {
@@ -112,6 +109,7 @@ public class PreguntasFragment extends Fragment {
 
         panelId = getArguments().getInt(ARGS_PANEL_ID);
         encuestaId = getArguments().getInt(ARGS_ENCUESTA_ID);
+        picasso = Picasso.with(FocusApp.getContext());
     }
 
     @Override
@@ -184,11 +182,22 @@ public class PreguntasFragment extends Fragment {
         }
 
         image.setVisibility(View.VISIBLE);
-        new ImageLoaderClass(image).execute(url);
+        picasso.load(getImageUrl(url)).into(image);
+    }
+
+    private String getImageUrl(String url) {
+        return NetworkManager.IMAGES_URL + url;
     }
 
     private void setUpForVideo(CardView card, Button video, final Pregunta pregunta) {
-        card.setVisibility(TextUtils.isValidString(pregunta.getVideo()) ? View.VISIBLE : View.GONE);
+        final String url = pregunta.getVideo();
+
+        if (!TextUtils.isValidString(url)) {
+            card.setVisibility(View.GONE);
+            return;
+        }
+
+        card.setVisibility(View.VISIBLE);
         video.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -197,10 +206,14 @@ public class PreguntasFragment extends Fragment {
                 }
 
                 Intent intent = new Intent(getActivity(), VideoViewActivity.class);
-                intent.putExtra(VideoViewActivity.EXTRA_VIDEO_URL, pregunta.getVideo());
+                intent.putExtra(VideoViewActivity.EXTRA_VIDEO_URL, getVideoUrl(url));
                 startActivity(intent);
             }
         });
+    }
+
+    private String getVideoUrl(String url) {
+        return NetworkManager.VIDEOS_URL + url;
     }
     // endregion
 
@@ -674,39 +687,6 @@ public class PreguntasFragment extends Fragment {
         params.put(RESPUESTAS, respuestas);
 
         return params;
-    }
-    // endregion
-
-    // region Static classes
-    private class ImageLoaderClass extends AsyncTask<String, String, Bitmap> {
-
-        Bitmap bitmap;
-        ImageView imageView;
-
-        ImageLoaderClass(ImageView imageView) {
-            this.imageView = imageView;
-        }
-
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-
-        }
-
-        protected Bitmap doInBackground(String... args) {
-            try {
-                bitmap = BitmapFactory.decodeStream((InputStream) new URL(args[0]).getContent());
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-            return bitmap;
-        }
-
-        protected void onPostExecute(Bitmap image) {
-            if (image != null) {
-                imageView.setImageBitmap(image);
-            }
-        }
     }
     // endregion
 }
