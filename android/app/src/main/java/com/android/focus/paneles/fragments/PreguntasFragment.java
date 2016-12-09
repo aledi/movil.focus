@@ -619,6 +619,8 @@ public class PreguntasFragment extends Fragment {
     }
 
     private boolean checkForInvalidRespuesta() {
+        respuestas = "";
+
         for (Pregunta pregunta : preguntas) {
             if (!pregunta.isVideoVisto()) {
                 dialogTitle = getString(R.string.error_unseen_video_title, pregunta.getNumPregunta());
