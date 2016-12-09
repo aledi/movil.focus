@@ -16,6 +16,9 @@ enum Sections: Int {
     case LogOut
 }
 
+let phoneNumber: String = "+528183387258"
+let email: String = "atencion@focuscg.com.mx"
+
 class ProfileViewController: UITableViewController, MFMailComposeViewControllerDelegate {
     
     @IBOutlet var nameLabel: UILabel!
@@ -26,6 +29,11 @@ class ProfileViewController: UITableViewController, MFMailComposeViewControllerD
     // -----------------------------------------------------------------------------------------------------------
     // MARK: - Lifecycle
     // -----------------------------------------------------------------------------------------------------------
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
+    }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)

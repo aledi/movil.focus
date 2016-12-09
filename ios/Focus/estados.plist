@@ -1,0 +1,2762 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>abreviacion</key>
+		<string></string>
+		<key>estado</key>
+		<string>-Sin Especificar-</string>
+		<key>municipios</key>
+		<array>
+			<string>-Sin Especificar-</string>
+		</array>
+	</dict>
+	<dict>
+		<key>abreviacion</key>
+		<string>AGS</string>
+		<key>estado</key>
+		<string>Aguascalientes</string>
+		<key>municipios</key>
+		<array>
+			<string>Aguascalientes</string>
+			<string>Asientos</string>
+			<string>Calvillo</string>
+			<string>Cosío</string>
+			<string>Jesús María</string>
+			<string>Pabellón de Arteaga</string>
+			<string>Rincón de Romos</string>
+			<string>San José de Gracia</string>
+			<string>Tepezalá</string>
+			<string>El Llano</string>
+			<string>San Francisco de los Romo</string>
+		</array>
+	</dict>
+	<dict>
+		<key>abreviacion</key>
+		<string>BC</string>
+		<key>estado</key>
+		<string>Baja California</string>
+		<key>municipios</key>
+		<array>
+			<string>Ensenada</string>
+			<string>Mexicali</string>
+			<string>Tecate</string>
+			<string>Tijuana</string>
+			<string>Playas de Rosarito</string>
+		</array>
+	</dict>
+	<dict>
+		<key>abreviacion</key>
+		<string>BCS</string>
+		<key>estado</key>
+		<string>Baja California Sur</string>
+		<key>municipios</key>
+		<array>
+			<string>Comondú</string>
+			<string>Mulegé</string>
+			<string>La Paz</string>
+			<string>Los Cabos</string>
+			<string>Loreto</string>
+		</array>
+	</dict>
+	<dict>
+		<key>abreviacion</key>
+		<string>CAMP</string>
+		<key>estado</key>
+		<string>Campeche</string>
+		<key>municipios</key>
+		<array>
+			<string>Calkiní</string>
+			<string>Campeche</string>
+			<string>Carmen</string>
+			<string>Champotón</string>
+			<string>Hecelchakán</string>
+			<string>Hopelchén</string>
+			<string>Palizada</string>
+			<string>Tenabo</string>
+			<string>Escárcega</string>
+			<string>Calakmul</string>
+			<string>Candelaria</string>
+		</array>
+	</dict>
+	<dict>
+		<key>abreviacion</key>
+		<string>COAH</string>
+		<key>estado</key>
+		<string>Coahuila de Zaragoza</string>
+		<key>municipios</key>
+		<array>
+			<string>Abasolo</string>
+			<string>Acuña</string>
+			<string>Allende</string>
+			<string>Arteaga</string>
+			<string>Candela</string>
+			<string>Castaños</string>
+			<string>Cuatro Ciénegas</string>
+			<string>Escobedo</string>
+			<string>Francisco I. Madero</string>
+			<string>Frontera</string>
+			<string>General Cepeda</string>
+			<string>Guerrero</string>
+			<string>Hidalgo</string>
+			<string>Jiménez</string>
+			<string>Juárez</string>
+			<string>Lamadrid</string>
+			<string>Matamoros</string>
+			<string>Monclova</string>
+			<string>Morelos</string>
+			<string>Múzquiz</string>
+			<string>Nadadores</string>
+			<string>Nava</string>
+			<string>Ocampo</string>
+			<string>Parras</string>
+			<string>Piedras Negras</string>
+			<string>Progreso</string>
+			<string>Ramos Arizpe</string>
+			<string>Sabinas</string>
+			<string>Sacramento</string>
+			<string>Saltillo</string>
+			<string>San Buenaventura</string>
+			<string>San Juan de Sabinas</string>
+			<string>San Pedro</string>
+			<string>Sierra Mojada</string>
+			<string>Torreón</string>
+			<string>Viesca</string>
+			<string>Villa Unión</string>
+			<string>Zaragoza</string>
+		</array>
+	</dict>
+	<dict>
+		<key>abreviacion</key>
+		<string>COL</string>
+		<key>estado</key>
+		<string>Colima</string>
+		<key>municipios</key>
+		<array>
+			<string>Armería</string>
+			<string>Colima</string>
+			<string>Comala</string>
+			<string>Coquimatlán</string>
+			<string>Cuauhtémoc</string>
+			<string>Ixtlahuacán</string>
+			<string>Manzanillo</string>
+			<string>Minatitlán</string>
+			<string>Tecomán</string>
+			<string>Villa de Álvarez</string>
+		</array>
+	</dict>
+	<dict>
+		<key>abreviacion</key>
+		<string>CHIS</string>
+		<key>estado</key>
+		<string>Chiapas</string>
+		<key>municipios</key>
+		<array>
+			<string>Acacoyagua</string>
+			<string>Acala</string>
+			<string>Acapetahua</string>
+			<string>Altamirano</string>
+			<string>Amatán</string>
+			<string>Amatenango de la Frontera</string>
+			<string>Amatenango del Valle</string>
+			<string>Angel Albino Corzo</string>
+			<string>Arriaga</string>
+			<string>Bejucal de Ocampo</string>
+			<string>Bella Vista</string>
+			<string>Berriozábal</string>
+			<string>Bochil</string>
+			<string>El Bosque</string>
+			<string>Cacahoatán</string>
+			<string>Catazajá</string>
+			<string>Cintalapa</string>
+			<string>Coapilla</string>
+			<string>Comitán de Domínguez</string>
+			<string>La Concordia</string>
+			<string>Copainalá</string>
+			<string>Chalchihuitán</string>
+			<string>Chamula</string>
+			<string>Chanal</string>
+			<string>Chapultenango</string>
+			<string>Chenalhó</string>
+			<string>Chiapa de Corzo</string>
+			<string>Chiapilla</string>
+			<string>Chicoasén</string>
+			<string>Chicomuselo</string>
+			<string>Chilón</string>
+			<string>Escuintla</string>
+			<string>Francisco León</string>
+			<string>Frontera Comalapa</string>
+			<string>Frontera Hidalgo</string>
+			<string>La Grandeza</string>
+			<string>Huehuetán</string>
+			<string>Huixtán</string>
+			<string>Huitiupán</string>
+			<string>Huixtla</string>
+			<string>La Independencia</string>
+			<string>Ixhuatán</string>
+			<string>Ixtacomitán</string>
+			<string>Ixtapa</string>
+			<string>Ixtapangajoya</string>
+			<string>Jiquipilas</string>
+			<string>Jitotol</string>
+			<string>Juárez</string>
+			<string>Larráinzar</string>
+			<string>La Libertad</string>
+			<string>Mapastepec</string>
+			<string>Las Margaritas</string>
+			<string>Mazapa de Madero</string>
+			<string>Mazatán</string>
+			<string>Metapa</string>
+			<string>Mitontic</string>
+			<string>Motozintla</string>
+			<string>Nicolás Ruíz</string>
+			<string>Ocosingo</string>
+			<string>Ocotepec</string>
+			<string>Ocozocoautla de Espinosa</string>
+			<string>Ostuacán</string>
+			<string>Osumacinta</string>
+			<string>Oxchuc</string>
+			<string>Palenque</string>
+			<string>Pantelhó</string>
+			<string>Pantepec</string>
+			<string>Pichucalco</string>
+			<string>Pijijiapan</string>
+			<string>El Porvenir</string>
+			<string>Villa Comaltitlán</string>
+			<string>Pueblo Nuevo Solistahuacán</string>
+			<string>Rayón</string>
+			<string>Reforma</string>
+			<string>Las Rosas</string>
+			<string>Sabanilla</string>
+			<string>Salto de Agua</string>
+			<string>San Cristóbal de las Casas</string>
+			<string>San Fernando</string>
+			<string>Siltepec</string>
+			<string>Simojovel</string>
+			<string>Sitalá</string>
+			<string>Socoltenango</string>
+			<string>Solosuchiapa</string>
+			<string>Soyaló</string>
+			<string>Suchiapa</string>
+			<string>Suchiate</string>
+			<string>Sunuapa</string>
+			<string>Tapachula</string>
+			<string>Tapalapa</string>
+			<string>Tapilula</string>
+			<string>Tecpatán</string>
+			<string>Tenejapa</string>
+			<string>Teopisca</string>
+			<string>Tila</string>
+			<string>Tonalá</string>
+			<string>Totolapa</string>
+			<string>La Trinitaria</string>
+			<string>Tumbalá</string>
+			<string>Tuxtla Gutiérrez</string>
+			<string>Tuxtla Chico</string>
+			<string>Tuzantán</string>
+			<string>Tzimol</string>
+			<string>Unión Juárez</string>
+			<string>Venustiano Carranza</string>
+			<string>Villa Corzo</string>
+			<string>Villaflores</string>
+			<string>Yajalón</string>
+			<string>San Lucas</string>
+			<string>Zinacantán</string>
+			<string>San Juan Cancuc</string>
+			<string>Aldama</string>
+			<string>Benemérito de las Américas</string>
+			<string>Maravilla Tenejapa</string>
+			<string>Marqués de Comillas</string>
+			<string>Montecristo de Guerrero</string>
+			<string>San Andrés Duraznal</string>
+			<string>Santiago el Pinar</string>
+		</array>
+	</dict>
+	<dict>
+		<key>abreviacion</key>
+		<string>CHIH</string>
+		<key>estado</key>
+		<string>Chihuahua</string>
+		<key>municipios</key>
+		<array>
+			<string>Ahumada</string>
+			<string>Aldama</string>
+			<string>Allende</string>
+			<string>Aquiles Serdán</string>
+			<string>Ascensión</string>
+			<string>Bachíniva</string>
+			<string>Balleza</string>
+			<string>Batopilas</string>
+			<string>Bocoyna</string>
+			<string>Buenaventura</string>
+			<string>Camargo</string>
+			<string>Carichí</string>
+			<string>Casas Grandes</string>
+			<string>Coronado</string>
+			<string>Coyame del Sotol</string>
+			<string>La Cruz</string>
+			<string>Cuauhtémoc</string>
+			<string>Cusihuiriachi</string>
+			<string>Chihuahua</string>
+			<string>Chínipas</string>
+			<string>Delicias</string>
+			<string>Dr. Belisario Domínguez</string>
+			<string>Galeana</string>
+			<string>Santa Isabel</string>
+			<string>Gómez Farías</string>
+			<string>Gran Morelos</string>
+			<string>Guachochi</string>
+			<string>Guadalupe</string>
+			<string>Guadalupe y Calvo</string>
+			<string>Guazapares</string>
+			<string>Guerrero</string>
+			<string>Hidalgo del Parral</string>
+			<string>Huejotitán</string>
+			<string>Ignacio Zaragoza</string>
+			<string>Janos</string>
+			<string>Jiménez</string>
+			<string>Juárez</string>
+			<string>Julimes</string>
+			<string>López</string>
+			<string>Madera</string>
+			<string>Maguarichi</string>
+			<string>Manuel Benavides</string>
+			<string>Matachí</string>
+			<string>Matamoros</string>
+			<string>Meoqui</string>
+			<string>Morelos</string>
+			<string>Moris</string>
+			<string>Namiquipa</string>
+			<string>Nonoava</string>
+			<string>Nuevo Casas Grandes</string>
+			<string>Ocampo</string>
+			<string>Ojinaga</string>
+			<string>Praxedis G. Guerrero</string>
+			<string>Riva Palacio</string>
+			<string>Rosales</string>
+			<string>Rosario</string>
+			<string>San Francisco de Borja</string>
+			<string>San Francisco de Conchos</string>
+			<string>San Francisco del Oro</string>
+			<string>Santa Bárbara</string>
+			<string>Satevó</string>
+			<string>Saucillo</string>
+			<string>Temósachic</string>
+			<string>El Tule</string>
+			<string>Urique</string>
+			<string>Uruachi</string>
+			<string>Valle de Zaragoza</string>
+		</array>
+	</dict>
+	<dict>
+		<key>abreviacion</key>
+		<string>CDMX</string>
+		<key>estado</key>
+		<string>Ciudad de México</string>
+		<key>municipios</key>
+		<array>
+			<string>Azcapotzalco</string>
+			<string>Coyoacán</string>
+			<string>Cuajimalpa de Morelos</string>
+			<string>Gustavo A. Madero</string>
+			<string>Iztacalco</string>
+			<string>Iztapalapa</string>
+			<string>La Magdalena Contreras</string>
+			<string>Milpa Alta</string>
+			<string>Álvaro Obregón</string>
+			<string>Tláhuac</string>
+			<string>Tlalpan</string>
+			<string>Xochimilco</string>
+			<string>Benito Juárez</string>
+			<string>Cuauhtémoc</string>
+			<string>Miguel Hidalgo</string>
+			<string>Venustiano Carranza</string>
+		</array>
+	</dict>
+	<dict>
+		<key>abreviacion</key>
+		<string>DGO</string>
+		<key>estado</key>
+		<string>Durango</string>
+		<key>municipios</key>
+		<array>
+			<string>Canatlán</string>
+			<string>Canelas</string>
+			<string>Coneto de Comonfort</string>
+			<string>Cuencamé</string>
+			<string>Durango</string>
+			<string>General Simón Bolívar</string>
+			<string>Gómez Palacio</string>
+			<string>Guadalupe Victoria</string>
+			<string>Guanaceví</string>
+			<string>Hidalgo</string>
+			<string>Indé</string>
+			<string>Lerdo</string>
+			<string>Mapimí</string>
+			<string>Mezquital</string>
+			<string>Nazas</string>
+			<string>Nombre de Dios</string>
+			<string>Ocampo</string>
+			<string>El Oro</string>
+			<string>Otáez</string>
+			<string>Pánuco de Coronado</string>
+			<string>Peñón Blanco</string>
+			<string>Poanas</string>
+			<string>Pueblo Nuevo</string>
+			<string>Rodeo</string>
+			<string>San Bernardo</string>
+			<string>San Dimas</string>
+			<string>San Juan de Guadalupe</string>
+			<string>San Juan del Río</string>
+			<string>San Luis del Cordero</string>
+			<string>San Pedro del Gallo</string>
+			<string>Santa Clara</string>
+			<string>Santiago Papasquiaro</string>
+			<string>Súchil</string>
+			<string>Tamazula</string>
+			<string>Tepehuanes</string>
+			<string>Tlahualilo</string>
+			<string>Topia</string>
+			<string>Vicente Guerrero</string>
+			<string>Nuevo Ideal</string>
+		</array>
+	</dict>
+	<dict>
+		<key>abreviacion</key>
+		<string>GTO</string>
+		<key>estado</key>
+		<string>Guanajuato</string>
+		<key>municipios</key>
+		<array>
+			<string>Abasolo</string>
+			<string>Acámbaro</string>
+			<string>San Miguel de Allende</string>
+			<string>Apaseo el Alto</string>
+			<string>Apaseo el Grande</string>
+			<string>Atarjea</string>
+			<string>Celaya</string>
+			<string>Manuel Doblado</string>
+			<string>Comonfort</string>
+			<string>Coroneo</string>
+			<string>Cortazar</string>
+			<string>Cuerámaro</string>
+			<string>Doctor Mora</string>
+			<string>Dolores Hidalgo Cuna de la Independencia Nacional</string>
+			<string>Guanajuato</string>
+			<string>Huanímaro</string>
+			<string>Irapuato</string>
+			<string>Jaral del Progreso</string>
+			<string>Jerécuaro</string>
+			<string>León</string>
+			<string>Moroleón</string>
+			<string>Ocampo</string>
+			<string>Pénjamo</string>
+			<string>Pueblo Nuevo</string>
+			<string>Purísima del Rincón</string>
+			<string>Romita</string>
+			<string>Salamanca</string>
+			<string>Salvatierra</string>
+			<string>San Diego de la Unión</string>
+			<string>San Felipe</string>
+			<string>San Francisco del Rincón</string>
+			<string>San José Iturbide</string>
+			<string>San Luis de la Paz</string>
+			<string>Santa Catarina</string>
+			<string>Santa Cruz de Juventino Rosas</string>
+			<string>Santiago Maravatío</string>
+			<string>Silao de la Victoria</string>
+			<string>Tarandacuao</string>
+			<string>Tarimoro</string>
+			<string>Tierra Blanca</string>
+			<string>Uriangato</string>
+			<string>Valle de Santiago</string>
+			<string>Victoria</string>
+			<string>Villagrán</string>
+			<string>Xichú</string>
+			<string>Yuriria</string>
+		</array>
+	</dict>
+	<dict>
+		<key>abreviacion</key>
+		<string>GRO</string>
+		<key>estado</key>
+		<string>Guerrero</string>
+		<key>municipios</key>
+		<array>
+			<string>Acapulco de Juárez</string>
+			<string>Ahuacuotzingo</string>
+			<string>Ajuchitlán del Progreso</string>
+			<string>Alcozauca de Guerrero</string>
+			<string>Alpoyeca</string>
+			<string>Apaxtla</string>
+			<string>Arcelia</string>
+			<string>Atenango del Río</string>
+			<string>Atlamajalcingo del Monte</string>
+			<string>Atlixtac</string>
+			<string>Atoyac de Álvarez</string>
+			<string>Ayutla de los Libres</string>
+			<string>Azoyú</string>
+			<string>Benito Juárez</string>
+			<string>Buenavista de Cuéllar</string>
+			<string>Coahuayutla de José María Izazaga</string>
+			<string>Cocula</string>
+			<string>Copala</string>
+			<string>Copalillo</string>
+			<string>Copanatoyac</string>
+			<string>Coyuca de Benítez</string>
+			<string>Coyuca de Catalán</string>
+			<string>Cuajinicuilapa</string>
+			<string>Cualác</string>
+			<string>Cuautepec</string>
+			<string>Cuetzala del Progreso</string>
+			<string>Cutzamala de Pinzón</string>
+			<string>Chilapa de Álvarez</string>
+			<string>Chilpancingo de los Bravo</string>
+			<string>Florencio Villarreal</string>
+			<string>General Canuto A. Neri</string>
+			<string>General Heliodoro Castillo</string>
+			<string>Huamuxtitlán</string>
+			<string>Huitzuco de los Figueroa</string>
+			<string>Iguala de la Independencia</string>
+			<string>Igualapa</string>
+			<string>Ixcateopan de Cuauhtémoc</string>
+			<string>Zihuatanejo de Azueta</string>
+			<string>Juan R. Escudero</string>
+			<string>Leonardo Bravo</string>
+			<string>Malinaltepec</string>
+			<string>Mártir de Cuilapan</string>
+			<string>Metlatónoc</string>
+			<string>Mochitlán</string>
+			<string>Olinalá</string>
+			<string>Ometepec</string>
+			<string>Pedro Ascencio Alquisiras</string>
+			<string>Petatlán</string>
+			<string>Pilcaya</string>
+			<string>Pungarabato</string>
+			<string>Quechultenango</string>
+			<string>San Luis Acatlán</string>
+			<string>San Marcos</string>
+			<string>San Miguel Totolapan</string>
+			<string>Taxco de Alarcón</string>
+			<string>Tecoanapa</string>
+			<string>Técpan de Galeana</string>
+			<string>Teloloapan</string>
+			<string>Tepecoacuilco de Trujano</string>
+			<string>Tetipac</string>
+			<string>Tixtla de Guerrero</string>
+			<string>Tlacoachistlahuaca</string>
+			<string>Tlacoapa</string>
+			<string>Tlalchapa</string>
+			<string>Tlalixtaquilla de Maldonado</string>
+			<string>Tlapa de Comonfort</string>
+			<string>Tlapehuala</string>
+			<string>La Unión de Isidoro Montes de Oca</string>
+			<string>Xalpatláhuac</string>
+			<string>Xochihuehuetlán</string>
+			<string>Xochistlahuaca</string>
+			<string>Zapotitlán Tablas</string>
+			<string>Zirándaro</string>
+			<string>Zitlala</string>
+			<string>Eduardo Neri</string>
+			<string>Acatepec</string>
+			<string>Marquelia</string>
+			<string>Cochoapa el Grande</string>
+			<string>José Joaquín de Herrera</string>
+			<string>Juchitán</string>
+			<string>Iliatenco</string>
+		</array>
+	</dict>
+	<dict>
+		<key>abreviacion</key>
+		<string>HGO</string>
+		<key>estado</key>
+		<string>Hidalgo</string>
+		<key>municipios</key>
+		<array>
+			<string>Acatlán</string>
+			<string>Acaxochitlán</string>
+			<string>Actopan</string>
+			<string>Agua Blanca de Iturbide</string>
+			<string>Ajacuba</string>
+			<string>Alfajayucan</string>
+			<string>Almoloya</string>
+			<string>Apan</string>
+			<string>El Arenal</string>
+			<string>Atitalaquia</string>
+			<string>Atlapexco</string>
+			<string>Atotonilco el Grande</string>
+			<string>Atotonilco de Tula</string>
+			<string>Calnali</string>
+			<string>Cardonal</string>
+			<string>Cuautepec de Hinojosa</string>
+			<string>Chapantongo</string>
+			<string>Chapulhuacán</string>
+			<string>Chilcuautla</string>
+			<string>Eloxochitlán</string>
+			<string>Emiliano Zapata</string>
+			<string>Epazoyucan</string>
+			<string>Francisco I. Madero</string>
+			<string>Huasca de Ocampo</string>
+			<string>Huautla</string>
+			<string>Huazalingo</string>
+			<string>Huehuetla</string>
+			<string>Huejutla de Reyes</string>
+			<string>Huichapan</string>
+			<string>Ixmiquilpan</string>
+			<string>Jacala de Ledezma</string>
+			<string>Jaltocán</string>
+			<string>Juárez Hidalgo</string>
+			<string>Lolotla</string>
+			<string>Metepec</string>
+			<string>San Agustín Metzquititlán</string>
+			<string>Metztitlán</string>
+			<string>Mineral del Chico</string>
+			<string>Mineral del Monte</string>
+			<string>La Misión</string>
+			<string>Mixquiahuala de Juárez</string>
+			<string>Molango de Escamilla</string>
+			<string>Nicolás Flores</string>
+			<string>Nopala de Villagrán</string>
+			<string>Omitlán de Juárez</string>
+			<string>San Felipe Orizatlán</string>
+			<string>Pacula</string>
+			<string>Pachuca de Soto</string>
+			<string>Pisaflores</string>
+			<string>Progreso de Obregón</string>
+			<string>Mineral de la Reforma</string>
+			<string>San Agustín Tlaxiaca</string>
+			<string>San Bartolo Tutotepec</string>
+			<string>San Salvador</string>
+			<string>Santiago de Anaya</string>
+			<string>Santiago Tulantepec de Lugo Guerrero</string>
+			<string>Singuilucan</string>
+			<string>Tasquillo</string>
+			<string>Tecozautla</string>
+			<string>Tenango de Doria</string>
+			<string>Tepeapulco</string>
+			<string>Tepehuacán de Guerrero</string>
+			<string>Tepeji del Río de Ocampo</string>
+			<string>Tepetitlán</string>
+			<string>Tetepango</string>
+			<string>Villa de Tezontepec</string>
+			<string>Tezontepec de Aldama</string>
+			<string>Tianguistengo</string>
+			<string>Tizayuca</string>
+			<string>Tlahuelilpan</string>
+			<string>Tlahuiltepa</string>
+			<string>Tlanalapa</string>
+			<string>Tlanchinol</string>
+			<string>Tlaxcoapan</string>
+			<string>Tolcayuca</string>
+			<string>Tula de Allende</string>
+			<string>Tulancingo de Bravo</string>
+			<string>Xochiatipan</string>
+			<string>Xochicoatlán</string>
+			<string>Yahualica</string>
+			<string>Zacualtipán de Ángeles</string>
+			<string>Zapotlán de Juárez</string>
+			<string>Zempoala</string>
+			<string>Zimapán</string>
+		</array>
+	</dict>
+	<dict>
+		<key>abreviacion</key>
+		<string>JAL</string>
+		<key>estado</key>
+		<string>Jalisco</string>
+		<key>municipios</key>
+		<array>
+			<string>Acatic</string>
+			<string>Acatlán de Juárez</string>
+			<string>Ahualulco de Mercado</string>
+			<string>Amacueca</string>
+			<string>Amatitán</string>
+			<string>Ameca</string>
+			<string>San Juanito de Escobedo</string>
+			<string>Arandas</string>
+			<string>El Arenal</string>
+			<string>Atemajac de Brizuela</string>
+			<string>Atengo</string>
+			<string>Atenguillo</string>
+			<string>Atotonilco el Alto</string>
+			<string>Atoyac</string>
+			<string>Autlán de Navarro</string>
+			<string>Ayotlán</string>
+			<string>Ayutla</string>
+			<string>La Barca</string>
+			<string>Bolaños</string>
+			<string>Cabo Corrientes</string>
+			<string>Casimiro Castillo</string>
+			<string>Cihuatlán</string>
+			<string>Zapotlán el Grande</string>
+			<string>Cocula</string>
+			<string>Colotlán</string>
+			<string>Concepción de Buenos Aires</string>
+			<string>Cuautitlán de García Barragán</string>
+			<string>Cuautla</string>
+			<string>Cuquío</string>
+			<string>Chapala</string>
+			<string>Chimaltitán</string>
+			<string>Chiquilistlán</string>
+			<string>Degollado</string>
+			<string>Ejutla</string>
+			<string>Encarnación de Díaz</string>
+			<string>Etzatlán</string>
+			<string>El Grullo</string>
+			<string>Guachinango</string>
+			<string>Guadalajara</string>
+			<string>Hostotipaquillo</string>
+			<string>Huejúcar</string>
+			<string>Huejuquilla el Alto</string>
+			<string>La Huerta</string>
+			<string>Ixtlahuacán de los Membrillos</string>
+			<string>Ixtlahuacán del Río</string>
+			<string>Jalostotitlán</string>
+			<string>Jamay</string>
+			<string>Jesús María</string>
+			<string>Jilotlán de los Dolores</string>
+			<string>Jocotepec</string>
+			<string>Juanacatlán</string>
+			<string>Juchitlán</string>
+			<string>Lagos de Moreno</string>
+			<string>El Limón</string>
+			<string>Magdalena</string>
+			<string>Santa María del Oro</string>
+			<string>La Manzanilla de la Paz</string>
+			<string>Mascota</string>
+			<string>Mazamitla</string>
+			<string>Mexticacán</string>
+			<string>Mezquitic</string>
+			<string>Mixtlán</string>
+			<string>Ocotlán</string>
+			<string>Ojuelos de Jalisco</string>
+			<string>Pihuamo</string>
+			<string>Poncitlán</string>
+			<string>Puerto Vallarta</string>
+			<string>Villa Purificación</string>
+			<string>Quitupan</string>
+			<string>El Salto</string>
+			<string>San Cristóbal de la Barranca</string>
+			<string>San Diego de Alejandría</string>
+			<string>San Juan de los Lagos</string>
+			<string>San Julián</string>
+			<string>San Marcos</string>
+			<string>San Martín de Bolaños</string>
+			<string>San Martín Hidalgo</string>
+			<string>San Miguel el Alto</string>
+			<string>Gómez Farías</string>
+			<string>San Sebastián del Oeste</string>
+			<string>Santa María de los Ángeles</string>
+			<string>Sayula</string>
+			<string>Tala</string>
+			<string>Talpa de Allende</string>
+			<string>Tamazula de Gordiano</string>
+			<string>Tapalpa</string>
+			<string>Tecalitlán</string>
+			<string>Tecolotlán</string>
+			<string>Techaluta de Montenegro</string>
+			<string>Tenamaxtlán</string>
+			<string>Teocaltiche</string>
+			<string>Teocuitatlán de Corona</string>
+			<string>Tepatitlán de Morelos</string>
+			<string>Tequila</string>
+			<string>Teuchitlán</string>
+			<string>Tizapán el Alto</string>
+			<string>Tlajomulco de Zúñiga</string>
+			<string>San Pedro Tlaquepaque</string>
+			<string>Tolimán</string>
+			<string>Tomatlán</string>
+			<string>Tonalá</string>
+			<string>Tonaya</string>
+			<string>Tonila</string>
+			<string>Totatiche</string>
+			<string>Tototlán</string>
+			<string>Tuxcacuesco</string>
+			<string>Tuxcueca</string>
+			<string>Tuxpan</string>
+			<string>Unión de San Antonio</string>
+			<string>Unión de Tula</string>
+			<string>Valle de Guadalupe</string>
+			<string>Valle de Juárez</string>
+			<string>San Gabriel</string>
+			<string>Villa Corona</string>
+			<string>Villa Guerrero</string>
+			<string>Villa Hidalgo</string>
+			<string>Cañadas de Obregón</string>
+			<string>Yahualica de González Gallo</string>
+			<string>Zacoalco de Torres</string>
+			<string>Zapopan</string>
+			<string>Zapotiltic</string>
+			<string>Zapotitlán de Vadillo</string>
+			<string>Zapotlán del Rey</string>
+			<string>Zapotlanejo</string>
+			<string>San Ignacio Cerro Gordo</string>
+		</array>
+	</dict>
+	<dict>
+		<key>abreviacion</key>
+		<string>EDOMEX</string>
+		<key>estado</key>
+		<string>México</string>
+		<key>municipios</key>
+		<array>
+			<string>Acambay de Ruíz Castañeda</string>
+			<string>Acolman</string>
+			<string>Aculco</string>
+			<string>Almoloya de Alquisiras</string>
+			<string>Almoloya de Juárez</string>
+			<string>Almoloya del Río</string>
+			<string>Amanalco</string>
+			<string>Amatepec</string>
+			<string>Amecameca</string>
+			<string>Apaxco</string>
+			<string>Atenco</string>
+			<string>Atizapán</string>
+			<string>Atizapán de Zaragoza</string>
+			<string>Atlacomulco</string>
+			<string>Atlautla</string>
+			<string>Axapusco</string>
+			<string>Ayapango</string>
+			<string>Calimaya</string>
+			<string>Capulhuac</string>
+			<string>Coacalco de Berriozábal</string>
+			<string>Coatepec Harinas</string>
+			<string>Cocotitlán</string>
+			<string>Coyotepec</string>
+			<string>Cuautitlán</string>
+			<string>Chalco</string>
+			<string>Chapa de Mota</string>
+			<string>Chapultepec</string>
+			<string>Chiautla</string>
+			<string>Chicoloapan</string>
+			<string>Chiconcuac</string>
+			<string>Chimalhuacán</string>
+			<string>Donato Guerra</string>
+			<string>Ecatepec de Morelos</string>
+			<string>Ecatzingo</string>
+			<string>Huehuetoca</string>
+			<string>Hueypoxtla</string>
+			<string>Huixquilucan</string>
+			<string>Isidro Fabela</string>
+			<string>Ixtapaluca</string>
+			<string>Ixtapan de la Sal</string>
+			<string>Ixtapan del Oro</string>
+			<string>Ixtlahuaca</string>
+			<string>Xalatlaco</string>
+			<string>Jaltenco</string>
+			<string>Jilotepec</string>
+			<string>Jilotzingo</string>
+			<string>Jiquipilco</string>
+			<string>Jocotitlán</string>
+			<string>Joquicingo</string>
+			<string>Juchitepec</string>
+			<string>Lerma</string>
+			<string>Malinalco</string>
+			<string>Melchor Ocampo</string>
+			<string>Metepec</string>
+			<string>Mexicaltzingo</string>
+			<string>Morelos</string>
+			<string>Naucalpan de Juárez</string>
+			<string>Nezahualcóyotl</string>
+			<string>Nextlalpan</string>
+			<string>Nicolás Romero</string>
+			<string>Nopaltepec</string>
+			<string>Ocoyoacac</string>
+			<string>Ocuilan</string>
+			<string>El Oro</string>
+			<string>Otumba</string>
+			<string>Otzoloapan</string>
+			<string>Otzolotepec</string>
+			<string>Ozumba</string>
+			<string>Papalotla</string>
+			<string>La Paz</string>
+			<string>Polotitlán</string>
+			<string>Rayón</string>
+			<string>San Antonio la Isla</string>
+			<string>San Felipe del Progreso</string>
+			<string>San Martín de las Pirámides</string>
+			<string>San Mateo Atenco</string>
+			<string>San Simón de Guerrero</string>
+			<string>Santo Tomás</string>
+			<string>Soyaniquilpan de Juárez</string>
+			<string>Sultepec</string>
+			<string>Tecámac</string>
+			<string>Tejupilco</string>
+			<string>Temamatla</string>
+			<string>Temascalapa</string>
+			<string>Temascalcingo</string>
+			<string>Temascaltepec</string>
+			<string>Temoaya</string>
+			<string>Tenancingo</string>
+			<string>Tenango del Aire</string>
+			<string>Tenango del Valle</string>
+			<string>Teoloyucan</string>
+			<string>Teotihuacán</string>
+			<string>Tepetlaoxtoc</string>
+			<string>Tepetlixpa</string>
+			<string>Tepotzotlán</string>
+			<string>Tequixquiac</string>
+			<string>Texcaltitlán</string>
+			<string>Texcalyacac</string>
+			<string>Texcoco</string>
+			<string>Tezoyuca</string>
+			<string>Tianguistenco</string>
+			<string>Timilpan</string>
+			<string>Tlalmanalco</string>
+			<string>Tlalnepantla de Baz</string>
+			<string>Tlatlaya</string>
+			<string>Toluca</string>
+			<string>Tonatico</string>
+			<string>Tultepec</string>
+			<string>Tultitlán</string>
+			<string>Valle de Bravo</string>
+			<string>Villa de Allende</string>
+			<string>Villa del Carbón</string>
+			<string>Villa Guerrero</string>
+			<string>Villa Victoria</string>
+			<string>Xonacatlán</string>
+			<string>Zacazonapan</string>
+			<string>Zacualpan</string>
+			<string>Zinacantepec</string>
+			<string>Zumpahuacán</string>
+			<string>Zumpango</string>
+			<string>Cuautitlán Izcalli</string>
+			<string>Valle de Chalco Solidaridad</string>
+			<string>Luvianos</string>
+			<string>San José del Rincón</string>
+			<string>Tonanitla</string>
+		</array>
+	</dict>
+	<dict>
+		<key>abreviacion</key>
+		<string>MICH</string>
+		<key>estado</key>
+		<string>Michoacán de Ocampo</string>
+		<key>municipios</key>
+		<array>
+			<string>Acuitzio</string>
+			<string>Aguililla</string>
+			<string>Álvaro Obregón</string>
+			<string>Angamacutiro</string>
+			<string>Angangueo</string>
+			<string>Apatzingán</string>
+			<string>Aporo</string>
+			<string>Aquila</string>
+			<string>Ario</string>
+			<string>Arteaga</string>
+			<string>Briseñas</string>
+			<string>Buenavista</string>
+			<string>Carácuaro</string>
+			<string>Coahuayana</string>
+			<string>Coalcomán de Vázquez Pallares</string>
+			<string>Coeneo</string>
+			<string>Contepec</string>
+			<string>Copándaro</string>
+			<string>Cotija</string>
+			<string>Cuitzeo</string>
+			<string>Charapan</string>
+			<string>Charo</string>
+			<string>Chavinda</string>
+			<string>Cherán</string>
+			<string>Chilchota</string>
+			<string>Chinicuila</string>
+			<string>Chucándiro</string>
+			<string>Churintzio</string>
+			<string>Churumuco</string>
+			<string>Ecuandureo</string>
+			<string>Epitacio Huerta</string>
+			<string>Erongarícuaro</string>
+			<string>Gabriel Zamora</string>
+			<string>Hidalgo</string>
+			<string>La Huacana</string>
+			<string>Huandacareo</string>
+			<string>Huaniqueo</string>
+			<string>Huetamo</string>
+			<string>Huiramba</string>
+			<string>Indaparapeo</string>
+			<string>Irimbo</string>
+			<string>Ixtlán</string>
+			<string>Jacona</string>
+			<string>Jiménez</string>
+			<string>Jiquilpan</string>
+			<string>Juárez</string>
+			<string>Jungapeo</string>
+			<string>Lagunillas</string>
+			<string>Madero</string>
+			<string>Maravatío</string>
+			<string>Marcos Castellanos</string>
+			<string>Lázaro Cárdenas</string>
+			<string>Morelia</string>
+			<string>Morelos</string>
+			<string>Múgica</string>
+			<string>Nahuatzen</string>
+			<string>Nocupétaro</string>
+			<string>Nuevo Parangaricutiro</string>
+			<string>Nuevo Urecho</string>
+			<string>Numarán</string>
+			<string>Ocampo</string>
+			<string>Pajacuarán</string>
+			<string>Panindícuaro</string>
+			<string>Parácuaro</string>
+			<string>Paracho</string>
+			<string>Pátzcuaro</string>
+			<string>Penjamillo</string>
+			<string>Peribán</string>
+			<string>La Piedad</string>
+			<string>Purépero</string>
+			<string>Puruándiro</string>
+			<string>Queréndaro</string>
+			<string>Quiroga</string>
+			<string>Cojumatlán de Régules</string>
+			<string>Los Reyes</string>
+			<string>Sahuayo</string>
+			<string>San Lucas</string>
+			<string>Santa Ana Maya</string>
+			<string>Salvador Escalante</string>
+			<string>Senguio</string>
+			<string>Susupuato</string>
+			<string>Tacámbaro</string>
+			<string>Tancítaro</string>
+			<string>Tangamandapio</string>
+			<string>Tangancícuaro</string>
+			<string>Tanhuato</string>
+			<string>Taretan</string>
+			<string>Tarímbaro</string>
+			<string>Tepalcatepec</string>
+			<string>Tingambato</string>
+			<string>Tingüindín</string>
+			<string>Tiquicheo de Nicolás Romero</string>
+			<string>Tlalpujahua</string>
+			<string>Tlazazalca</string>
+			<string>Tocumbo</string>
+			<string>Tumbiscatío</string>
+			<string>Turicato</string>
+			<string>Tuxpan</string>
+			<string>Tuzantla</string>
+			<string>Tzintzuntzan</string>
+			<string>Tzitzio</string>
+			<string>Uruapan</string>
+			<string>Venustiano Carranza</string>
+			<string>Villamar</string>
+			<string>Vista Hermosa</string>
+			<string>Yurécuaro</string>
+			<string>Zacapu</string>
+			<string>Zamora</string>
+			<string>Zináparo</string>
+			<string>Zinapécuaro</string>
+			<string>Ziracuaretiro</string>
+			<string>Zitácuaro</string>
+			<string>José Sixto Verduzco</string>
+		</array>
+	</dict>
+	<dict>
+		<key>abreviacion</key>
+		<string>MOR</string>
+		<key>estado</key>
+		<string>Morelos</string>
+		<key>municipios</key>
+		<array>
+			<string>Amacuzac</string>
+			<string>Atlatlahucan</string>
+			<string>Axochiapan</string>
+			<string>Ayala</string>
+			<string>Coatlán del Río</string>
+			<string>Cuautla</string>
+			<string>Cuernavaca</string>
+			<string>Emiliano Zapata</string>
+			<string>Huitzilac</string>
+			<string>Jantetelco</string>
+			<string>Jiutepec</string>
+			<string>Jojutla</string>
+			<string>Jonacatepec</string>
+			<string>Mazatepec</string>
+			<string>Miacatlán</string>
+			<string>Ocuituco</string>
+			<string>Puente de Ixtla</string>
+			<string>Temixco</string>
+			<string>Tepalcingo</string>
+			<string>Tepoztlán</string>
+			<string>Tetecala</string>
+			<string>Tetela del Volcán</string>
+			<string>Tlalnepantla</string>
+			<string>Tlaltizapán de Zapata</string>
+			<string>Tlaquiltenango</string>
+			<string>Tlayacapan</string>
+			<string>Totolapan</string>
+			<string>Xochitepec</string>
+			<string>Yautepec</string>
+			<string>Yecapixtla</string>
+			<string>Zacatepec</string>
+			<string>Zacualpan de Amilpas</string>
+			<string>Temoac</string>
+		</array>
+	</dict>
+	<dict>
+		<key>abreviacion</key>
+		<string>NAY</string>
+		<key>estado</key>
+		<string>Nayarit</string>
+		<key>municipios</key>
+		<array>
+			<string>Acaponeta</string>
+			<string>Ahuacatlán</string>
+			<string>Amatlán de Cañas</string>
+			<string>Compostela</string>
+			<string>Huajicori</string>
+			<string>Ixtlán del Río</string>
+			<string>Jala</string>
+			<string>Xalisco</string>
+			<string>Del Nayar</string>
+			<string>Rosamorada</string>
+			<string>Ruíz</string>
+			<string>San Blas</string>
+			<string>San Pedro Lagunillas</string>
+			<string>Santa María del Oro</string>
+			<string>Santiago Ixcuintla</string>
+			<string>Tecuala</string>
+			<string>Tepic</string>
+			<string>Tuxpan</string>
+			<string>La Yesca</string>
+			<string>Bahía de Banderas</string>
+		</array>
+	</dict>
+	<dict>
+		<key>abreviacion</key>
+		<string>NL</string>
+		<key>estado</key>
+		<string>Nuevo León</string>
+		<key>municipios</key>
+		<array>
+			<string>Abasolo</string>
+			<string>Agualeguas</string>
+			<string>Los Aldamas</string>
+			<string>Allende</string>
+			<string>Anáhuac</string>
+			<string>Apodaca</string>
+			<string>Aramberri</string>
+			<string>Bustamante</string>
+			<string>Cadereyta Jiménez</string>
+			<string>El Carmen</string>
+			<string>Cerralvo</string>
+			<string>Ciénega de Flores</string>
+			<string>China</string>
+			<string>Doctor Arroyo</string>
+			<string>Doctor Coss</string>
+			<string>Doctor González</string>
+			<string>Galeana</string>
+			<string>García</string>
+			<string>San Pedro Garza García</string>
+			<string>General Bravo</string>
+			<string>General Escobedo</string>
+			<string>General Terán</string>
+			<string>General Treviño</string>
+			<string>General Zaragoza</string>
+			<string>General Zuazua</string>
+			<string>Guadalupe</string>
+			<string>Los Herreras</string>
+			<string>Higueras</string>
+			<string>Hualahuises</string>
+			<string>Iturbide</string>
+			<string>Juárez</string>
+			<string>Lampazos de Naranjo</string>
+			<string>Linares</string>
+			<string>Marín</string>
+			<string>Melchor Ocampo</string>
+			<string>Mier y Noriega</string>
+			<string>Mina</string>
+			<string>Montemorelos</string>
+			<string>Monterrey</string>
+			<string>Parás</string>
+			<string>Pesquería</string>
+			<string>Los Ramones</string>
+			<string>Rayones</string>
+			<string>Sabinas Hidalgo</string>
+			<string>Salinas Victoria</string>
+			<string>San Nicolás de los Garza</string>
+			<string>Hidalgo</string>
+			<string>Santa Catarina</string>
+			<string>Santiago</string>
+			<string>Vallecillo</string>
+			<string>Villaldama</string>
+		</array>
+	</dict>
+	<dict>
+		<key>abreviacion</key>
+		<string>OAX</string>
+		<key>estado</key>
+		<string>Oaxaca</string>
+		<key>municipios</key>
+		<array>
+			<string>Abejones</string>
+			<string>Acatlán de Pérez Figueroa</string>
+			<string>Asunción Cacalotepec</string>
+			<string>Asunción Cuyotepeji</string>
+			<string>Asunción Ixtaltepec</string>
+			<string>Asunción Nochixtlán</string>
+			<string>Asunción Ocotlán</string>
+			<string>Asunción Tlacolulita</string>
+			<string>Ayotzintepec</string>
+			<string>El Barrio de la Soledad</string>
+			<string>Calihualá</string>
+			<string>Candelaria Loxicha</string>
+			<string>Ciénega de Zimatlán</string>
+			<string>Ciudad Ixtepec</string>
+			<string>Coatecas Altas</string>
+			<string>Coicoyán de las Flores</string>
+			<string>La Compañía</string>
+			<string>Concepción Buenavista</string>
+			<string>Concepción Pápalo</string>
+			<string>Constancia del Rosario</string>
+			<string>Cosolapa</string>
+			<string>Cosoltepec</string>
+			<string>Cuilápam de Guerrero</string>
+			<string>Cuyamecalco Villa de Zaragoza</string>
+			<string>Chahuites</string>
+			<string>Chalcatongo de Hidalgo</string>
+			<string>Chiquihuitlán de Benito Juárez</string>
+			<string>Heroica Ciudad de Ejutla de Crespo</string>
+			<string>Eloxochitlán de Flores Magón</string>
+			<string>El Espinal</string>
+			<string>Tamazulápam del Espíritu Santo</string>
+			<string>Fresnillo de Trujano</string>
+			<string>Guadalupe Etla</string>
+			<string>Guadalupe de Ramírez</string>
+			<string>Guelatao de Juárez</string>
+			<string>Guevea de Humboldt</string>
+			<string>Mesones Hidalgo</string>
+			<string>Villa Hidalgo</string>
+			<string>Heroica Ciudad de Huajuapan de León</string>
+			<string>Huautepec</string>
+			<string>Huautla de Jiménez</string>
+			<string>Ixtlán de Juárez</string>
+			<string>Heroica Ciudad de Juchitán de Zaragoza</string>
+			<string>Loma Bonita</string>
+			<string>Magdalena Apasco</string>
+			<string>Magdalena Jaltepec</string>
+			<string>Santa Magdalena Jicotlán</string>
+			<string>Magdalena Mixtepec</string>
+			<string>Magdalena Ocotlán</string>
+			<string>Magdalena Peñasco</string>
+			<string>Magdalena Teitipac</string>
+			<string>Magdalena Tequisistlán</string>
+			<string>Magdalena Tlacotepec</string>
+			<string>Magdalena Zahuatlán</string>
+			<string>Mariscala de Juárez</string>
+			<string>Mártires de Tacubaya</string>
+			<string>Matías Romero Avendaño</string>
+			<string>Mazatlán Villa de Flores</string>
+			<string>Miahuatlán de Porfirio Díaz</string>
+			<string>Mixistlán de la Reforma</string>
+			<string>Monjas</string>
+			<string>Natividad</string>
+			<string>Nazareno Etla</string>
+			<string>Nejapa de Madero</string>
+			<string>Ixpantepec Nieves</string>
+			<string>Santiago Niltepec</string>
+			<string>Oaxaca de Juárez</string>
+			<string>Ocotlán de Morelos</string>
+			<string>La Pe</string>
+			<string>Pinotepa de Don Luis</string>
+			<string>Pluma Hidalgo</string>
+			<string>San José del Progreso</string>
+			<string>Putla Villa de Guerrero</string>
+			<string>Santa Catarina Quioquitani</string>
+			<string>Reforma de Pineda</string>
+			<string>La Reforma</string>
+			<string>Reyes Etla</string>
+			<string>Rojas de Cuauhtémoc</string>
+			<string>Salina Cruz</string>
+			<string>San Agustín Amatengo</string>
+			<string>San Agustín Atenango</string>
+			<string>San Agustín Chayuco</string>
+			<string>San Agustín de las Juntas</string>
+			<string>San Agustín Etla</string>
+			<string>San Agustín Loxicha</string>
+			<string>San Agustín Tlacotepec</string>
+			<string>San Agustín Yatareni</string>
+			<string>San Andrés Cabecera Nueva</string>
+			<string>San Andrés Dinicuiti</string>
+			<string>San Andrés Huaxpaltepec</string>
+			<string>San Andrés Huayápam</string>
+			<string>San Andrés Ixtlahuaca</string>
+			<string>San Andrés Lagunas</string>
+			<string>San Andrés Nuxiño</string>
+			<string>San Andrés Paxtlán</string>
+			<string>San Andrés Sinaxtla</string>
+			<string>San Andrés Solaga</string>
+			<string>San Andrés Teotilálpam</string>
+			<string>San Andrés Tepetlapa</string>
+			<string>San Andrés Yaá</string>
+			<string>San Andrés Zabache</string>
+			<string>San Andrés Zautla</string>
+			<string>San Antonino Castillo Velasco</string>
+			<string>San Antonino el Alto</string>
+			<string>San Antonino Monte Verde</string>
+			<string>San Antonio Acutla</string>
+			<string>San Antonio de la Cal</string>
+			<string>San Antonio Huitepec</string>
+			<string>San Antonio Nanahuatípam</string>
+			<string>San Antonio Sinicahua</string>
+			<string>San Antonio Tepetlapa</string>
+			<string>San Baltazar Chichicápam</string>
+			<string>San Baltazar Loxicha</string>
+			<string>San Baltazar Yatzachi el Bajo</string>
+			<string>San Bartolo Coyotepec</string>
+			<string>San Bartolomé Ayautla</string>
+			<string>San Bartolomé Loxicha</string>
+			<string>San Bartolomé Quialana</string>
+			<string>San Bartolomé Yucuañe</string>
+			<string>San Bartolomé Zoogocho</string>
+			<string>San Bartolo Soyaltepec</string>
+			<string>San Bartolo Yautepec</string>
+			<string>San Bernardo Mixtepec</string>
+			<string>San Blas Atempa</string>
+			<string>San Carlos Yautepec</string>
+			<string>San Cristóbal Amatlán</string>
+			<string>San Cristóbal Amoltepec</string>
+			<string>San Cristóbal Lachirioag</string>
+			<string>San Cristóbal Suchixtlahuaca</string>
+			<string>San Dionisio del Mar</string>
+			<string>San Dionisio Ocotepec</string>
+			<string>San Dionisio Ocotlán</string>
+			<string>San Esteban Atatlahuca</string>
+			<string>San Felipe Jalapa de Díaz</string>
+			<string>San Felipe Tejalápam</string>
+			<string>San Felipe Usila</string>
+			<string>San Francisco Cahuacuá</string>
+			<string>San Francisco Cajonos</string>
+			<string>San Francisco Chapulapa</string>
+			<string>San Francisco Chindúa</string>
+			<string>San Francisco del Mar</string>
+			<string>San Francisco Huehuetlán</string>
+			<string>San Francisco Ixhuatán</string>
+			<string>San Francisco Jaltepetongo</string>
+			<string>San Francisco Lachigoló</string>
+			<string>San Francisco Logueche</string>
+			<string>San Francisco Nuxaño</string>
+			<string>San Francisco Ozolotepec</string>
+			<string>San Francisco Sola</string>
+			<string>San Francisco Telixtlahuaca</string>
+			<string>San Francisco Teopan</string>
+			<string>San Francisco Tlapancingo</string>
+			<string>San Gabriel Mixtepec</string>
+			<string>San Ildefonso Amatlán</string>
+			<string>San Ildefonso Sola</string>
+			<string>San Ildefonso Villa Alta</string>
+			<string>San Jacinto Amilpas</string>
+			<string>San Jacinto Tlacotepec</string>
+			<string>San Jerónimo Coatlán</string>
+			<string>San Jerónimo Silacayoapilla</string>
+			<string>San Jerónimo Sosola</string>
+			<string>San Jerónimo Taviche</string>
+			<string>San Jerónimo Tecóatl</string>
+			<string>San Jorge Nuchita</string>
+			<string>San José Ayuquila</string>
+			<string>San José Chiltepec</string>
+			<string>San José del Peñasco</string>
+			<string>San José Estancia Grande</string>
+			<string>San José Independencia</string>
+			<string>San José Lachiguiri</string>
+			<string>San José Tenango</string>
+			<string>San Juan Achiutla</string>
+			<string>San Juan Atepec</string>
+			<string>Ánimas Trujano</string>
+			<string>San Juan Bautista Atatlahuca</string>
+			<string>San Juan Bautista Coixtlahuaca</string>
+			<string>San Juan Bautista Cuicatlán</string>
+			<string>San Juan Bautista Guelache</string>
+			<string>San Juan Bautista Jayacatlán</string>
+			<string>San Juan Bautista Lo de Soto</string>
+			<string>San Juan Bautista Suchitepec</string>
+			<string>San Juan Bautista Tlacoatzintepec</string>
+			<string>San Juan Bautista Tlachichilco</string>
+			<string>San Juan Bautista Tuxtepec</string>
+			<string>San Juan Cacahuatepec</string>
+			<string>San Juan Cieneguilla</string>
+			<string>San Juan Coatzóspam</string>
+			<string>San Juan Colorado</string>
+			<string>San Juan Comaltepec</string>
+			<string>San Juan Cotzocón</string>
+			<string>San Juan Chicomezúchil</string>
+			<string>San Juan Chilateca</string>
+			<string>San Juan del Estado</string>
+			<string>San Juan del Río</string>
+			<string>San Juan Diuxi</string>
+			<string>San Juan Evangelista Analco</string>
+			<string>San Juan Guelavía</string>
+			<string>San Juan Guichicovi</string>
+			<string>San Juan Ihualtepec</string>
+			<string>San Juan Juquila Mixes</string>
+			<string>San Juan Juquila Vijanos</string>
+			<string>San Juan Lachao</string>
+			<string>San Juan Lachigalla</string>
+			<string>San Juan Lajarcia</string>
+			<string>San Juan Lalana</string>
+			<string>San Juan de los Cués</string>
+			<string>San Juan Mazatlán</string>
+			<string>San Juan Mixtepec</string>
+			<string>San Juan Mixtepec</string>
+			<string>San Juan Ñumí</string>
+			<string>San Juan Ozolotepec</string>
+			<string>San Juan Petlapa</string>
+			<string>San Juan Quiahije</string>
+			<string>San Juan Quiotepec</string>
+			<string>San Juan Sayultepec</string>
+			<string>San Juan Tabaá</string>
+			<string>San Juan Tamazola</string>
+			<string>San Juan Teita</string>
+			<string>San Juan Teitipac</string>
+			<string>San Juan Tepeuxila</string>
+			<string>San Juan Teposcolula</string>
+			<string>San Juan Yaeé</string>
+			<string>San Juan Yatzona</string>
+			<string>San Juan Yucuita</string>
+			<string>San Lorenzo</string>
+			<string>San Lorenzo Albarradas</string>
+			<string>San Lorenzo Cacaotepec</string>
+			<string>San Lorenzo Cuaunecuiltitla</string>
+			<string>San Lorenzo Texmelúcan</string>
+			<string>San Lorenzo Victoria</string>
+			<string>San Lucas Camotlán</string>
+			<string>San Lucas Ojitlán</string>
+			<string>San Lucas Quiaviní</string>
+			<string>San Lucas Zoquiápam</string>
+			<string>San Luis Amatlán</string>
+			<string>San Marcial Ozolotepec</string>
+			<string>San Marcos Arteaga</string>
+			<string>San Martín de los Cansecos</string>
+			<string>San Martín Huamelúlpam</string>
+			<string>San Martín Itunyoso</string>
+			<string>San Martín Lachilá</string>
+			<string>San Martín Peras</string>
+			<string>San Martín Tilcajete</string>
+			<string>San Martín Toxpalan</string>
+			<string>San Martín Zacatepec</string>
+			<string>San Mateo Cajonos</string>
+			<string>Capulálpam de Méndez</string>
+			<string>San Mateo del Mar</string>
+			<string>San Mateo Yoloxochitlán</string>
+			<string>San Mateo Etlatongo</string>
+			<string>San Mateo Nejápam</string>
+			<string>San Mateo Peñasco</string>
+			<string>San Mateo Piñas</string>
+			<string>San Mateo Río Hondo</string>
+			<string>San Mateo Sindihui</string>
+			<string>San Mateo Tlapiltepec</string>
+			<string>San Melchor Betaza</string>
+			<string>San Miguel Achiutla</string>
+			<string>San Miguel Ahuehuetitlán</string>
+			<string>San Miguel Aloápam</string>
+			<string>San Miguel Amatitlán</string>
+			<string>San Miguel Amatlán</string>
+			<string>San Miguel Coatlán</string>
+			<string>San Miguel Chicahua</string>
+			<string>San Miguel Chimalapa</string>
+			<string>San Miguel del Puerto</string>
+			<string>San Miguel del Río</string>
+			<string>San Miguel Ejutla</string>
+			<string>San Miguel el Grande</string>
+			<string>San Miguel Huautla</string>
+			<string>San Miguel Mixtepec</string>
+			<string>San Miguel Panixtlahuaca</string>
+			<string>San Miguel Peras</string>
+			<string>San Miguel Piedras</string>
+			<string>San Miguel Quetzaltepec</string>
+			<string>San Miguel Santa Flor</string>
+			<string>Villa Sola de Vega</string>
+			<string>San Miguel Soyaltepec</string>
+			<string>San Miguel Suchixtepec</string>
+			<string>Villa Talea de Castro</string>
+			<string>San Miguel Tecomatlán</string>
+			<string>San Miguel Tenango</string>
+			<string>San Miguel Tequixtepec</string>
+			<string>San Miguel Tilquiápam</string>
+			<string>San Miguel Tlacamama</string>
+			<string>San Miguel Tlacotepec</string>
+			<string>San Miguel Tulancingo</string>
+			<string>San Miguel Yotao</string>
+			<string>San Nicolás</string>
+			<string>San Nicolás Hidalgo</string>
+			<string>San Pablo Coatlán</string>
+			<string>San Pablo Cuatro Venados</string>
+			<string>San Pablo Etla</string>
+			<string>San Pablo Huitzo</string>
+			<string>San Pablo Huixtepec</string>
+			<string>San Pablo Macuiltianguis</string>
+			<string>San Pablo Tijaltepec</string>
+			<string>San Pablo Villa de Mitla</string>
+			<string>San Pablo Yaganiza</string>
+			<string>San Pedro Amuzgos</string>
+			<string>San Pedro Apóstol</string>
+			<string>San Pedro Atoyac</string>
+			<string>San Pedro Cajonos</string>
+			<string>San Pedro Coxcaltepec Cántaros</string>
+			<string>San Pedro Comitancillo</string>
+			<string>San Pedro el Alto</string>
+			<string>San Pedro Huamelula</string>
+			<string>San Pedro Huilotepec</string>
+			<string>San Pedro Ixcatlán</string>
+			<string>San Pedro Ixtlahuaca</string>
+			<string>San Pedro Jaltepetongo</string>
+			<string>San Pedro Jicayán</string>
+			<string>San Pedro Jocotipac</string>
+			<string>San Pedro Juchatengo</string>
+			<string>San Pedro Mártir</string>
+			<string>San Pedro Mártir Quiechapa</string>
+			<string>San Pedro Mártir Yucuxaco</string>
+			<string>San Pedro Mixtepec</string>
+			<string>San Pedro Mixtepec</string>
+			<string>San Pedro Molinos</string>
+			<string>San Pedro Nopala</string>
+			<string>San Pedro Ocopetatillo</string>
+			<string>San Pedro Ocotepec</string>
+			<string>San Pedro Pochutla</string>
+			<string>San Pedro Quiatoni</string>
+			<string>San Pedro Sochiápam</string>
+			<string>San Pedro Tapanatepec</string>
+			<string>San Pedro Taviche</string>
+			<string>San Pedro Teozacoalco</string>
+			<string>San Pedro Teutila</string>
+			<string>San Pedro Tidaá</string>
+			<string>San Pedro Topiltepec</string>
+			<string>San Pedro Totolápam</string>
+			<string>Villa de Tututepec de Melchor Ocampo</string>
+			<string>San Pedro Yaneri</string>
+			<string>San Pedro Yólox</string>
+			<string>San Pedro y San Pablo Ayutla</string>
+			<string>Villa de Etla</string>
+			<string>San Pedro y San Pablo Teposcolula</string>
+			<string>San Pedro y San Pablo Tequixtepec</string>
+			<string>San Pedro Yucunama</string>
+			<string>San Raymundo Jalpan</string>
+			<string>San Sebastián Abasolo</string>
+			<string>San Sebastián Coatlán</string>
+			<string>San Sebastián Ixcapa</string>
+			<string>San Sebastián Nicananduta</string>
+			<string>San Sebastián Río Hondo</string>
+			<string>San Sebastián Tecomaxtlahuaca</string>
+			<string>San Sebastián Teitipac</string>
+			<string>San Sebastián Tutla</string>
+			<string>San Simón Almolongas</string>
+			<string>San Simón Zahuatlán</string>
+			<string>Santa Ana</string>
+			<string>Santa Ana Ateixtlahuaca</string>
+			<string>Santa Ana Cuauhtémoc</string>
+			<string>Santa Ana del Valle</string>
+			<string>Santa Ana Tavela</string>
+			<string>Santa Ana Tlapacoyan</string>
+			<string>Santa Ana Yareni</string>
+			<string>Santa Ana Zegache</string>
+			<string>Santa Catalina Quierí</string>
+			<string>Santa Catarina Cuixtla</string>
+			<string>Santa Catarina Ixtepeji</string>
+			<string>Santa Catarina Juquila</string>
+			<string>Santa Catarina Lachatao</string>
+			<string>Santa Catarina Loxicha</string>
+			<string>Santa Catarina Mechoacán</string>
+			<string>Santa Catarina Minas</string>
+			<string>Santa Catarina Quiané</string>
+			<string>Santa Catarina Tayata</string>
+			<string>Santa Catarina Ticuá</string>
+			<string>Santa Catarina Yosonotú</string>
+			<string>Santa Catarina Zapoquila</string>
+			<string>Santa Cruz Acatepec</string>
+			<string>Santa Cruz Amilpas</string>
+			<string>Santa Cruz de Bravo</string>
+			<string>Santa Cruz Itundujia</string>
+			<string>Santa Cruz Mixtepec</string>
+			<string>Santa Cruz Nundaco</string>
+			<string>Santa Cruz Papalutla</string>
+			<string>Santa Cruz Tacache de Mina</string>
+			<string>Santa Cruz Tacahua</string>
+			<string>Santa Cruz Tayata</string>
+			<string>Santa Cruz Xitla</string>
+			<string>Santa Cruz Xoxocotlán</string>
+			<string>Santa Cruz Zenzontepec</string>
+			<string>Santa Gertrudis</string>
+			<string>Santa Inés del Monte</string>
+			<string>Santa Inés Yatzeche</string>
+			<string>Santa Lucía del Camino</string>
+			<string>Santa Lucía Miahuatlán</string>
+			<string>Santa Lucía Monteverde</string>
+			<string>Santa Lucía Ocotlán</string>
+			<string>Santa María Alotepec</string>
+			<string>Santa María Apazco</string>
+			<string>Santa María la Asunción</string>
+			<string>Heroica Ciudad de Tlaxiaco</string>
+			<string>Ayoquezco de Aldama</string>
+			<string>Santa María Atzompa</string>
+			<string>Santa María Camotlán</string>
+			<string>Santa María Colotepec</string>
+			<string>Santa María Cortijo</string>
+			<string>Santa María Coyotepec</string>
+			<string>Santa María Chachoápam</string>
+			<string>Villa de Chilapa de Díaz</string>
+			<string>Santa María Chilchotla</string>
+			<string>Santa María Chimalapa</string>
+			<string>Santa María del Rosario</string>
+			<string>Santa María del Tule</string>
+			<string>Santa María Ecatepec</string>
+			<string>Santa María Guelacé</string>
+			<string>Santa María Guienagati</string>
+			<string>Santa María Huatulco</string>
+			<string>Santa María Huazolotitlán</string>
+			<string>Santa María Ipalapa</string>
+			<string>Santa María Ixcatlán</string>
+			<string>Santa María Jacatepec</string>
+			<string>Santa María Jalapa del Marqués</string>
+			<string>Santa María Jaltianguis</string>
+			<string>Santa María Lachixío</string>
+			<string>Santa María Mixtequilla</string>
+			<string>Santa María Nativitas</string>
+			<string>Santa María Nduayaco</string>
+			<string>Santa María Ozolotepec</string>
+			<string>Santa María Pápalo</string>
+			<string>Santa María Peñoles</string>
+			<string>Santa María Petapa</string>
+			<string>Santa María Quiegolani</string>
+			<string>Santa María Sola</string>
+			<string>Santa María Tataltepec</string>
+			<string>Santa María Tecomavaca</string>
+			<string>Santa María Temaxcalapa</string>
+			<string>Santa María Temaxcaltepec</string>
+			<string>Santa María Teopoxco</string>
+			<string>Santa María Tepantlali</string>
+			<string>Santa María Texcatitlán</string>
+			<string>Santa María Tlahuitoltepec</string>
+			<string>Santa María Tlalixtac</string>
+			<string>Santa María Tonameca</string>
+			<string>Santa María Totolapilla</string>
+			<string>Santa María Xadani</string>
+			<string>Santa María Yalina</string>
+			<string>Santa María Yavesía</string>
+			<string>Santa María Yolotepec</string>
+			<string>Santa María Yosoyúa</string>
+			<string>Santa María Yucuhiti</string>
+			<string>Santa María Zacatepec</string>
+			<string>Santa María Zaniza</string>
+			<string>Santa María Zoquitlán</string>
+			<string>Santiago Amoltepec</string>
+			<string>Santiago Apoala</string>
+			<string>Santiago Apóstol</string>
+			<string>Santiago Astata</string>
+			<string>Santiago Atitlán</string>
+			<string>Santiago Ayuquililla</string>
+			<string>Santiago Cacaloxtepec</string>
+			<string>Santiago Camotlán</string>
+			<string>Santiago Comaltepec</string>
+			<string>Santiago Chazumba</string>
+			<string>Santiago Choápam</string>
+			<string>Santiago del Río</string>
+			<string>Santiago Huajolotitlán</string>
+			<string>Santiago Huauclilla</string>
+			<string>Santiago Ihuitlán Plumas</string>
+			<string>Santiago Ixcuintepec</string>
+			<string>Santiago Ixtayutla</string>
+			<string>Santiago Jamiltepec</string>
+			<string>Santiago Jocotepec</string>
+			<string>Santiago Juxtlahuaca</string>
+			<string>Santiago Lachiguiri</string>
+			<string>Santiago Lalopa</string>
+			<string>Santiago Laollaga</string>
+			<string>Santiago Laxopa</string>
+			<string>Santiago Llano Grande</string>
+			<string>Santiago Matatlán</string>
+			<string>Santiago Miltepec</string>
+			<string>Santiago Minas</string>
+			<string>Santiago Nacaltepec</string>
+			<string>Santiago Nejapilla</string>
+			<string>Santiago Nundiche</string>
+			<string>Santiago Nuyoó</string>
+			<string>Santiago Pinotepa Nacional</string>
+			<string>Santiago Suchilquitongo</string>
+			<string>Santiago Tamazola</string>
+			<string>Santiago Tapextla</string>
+			<string>Villa Tejúpam de la Unión</string>
+			<string>Santiago Tenango</string>
+			<string>Santiago Tepetlapa</string>
+			<string>Santiago Tetepec</string>
+			<string>Santiago Texcalcingo</string>
+			<string>Santiago Textitlán</string>
+			<string>Santiago Tilantongo</string>
+			<string>Santiago Tillo</string>
+			<string>Santiago Tlazoyaltepec</string>
+			<string>Santiago Xanica</string>
+			<string>Santiago Xiacuí</string>
+			<string>Santiago Yaitepec</string>
+			<string>Santiago Yaveo</string>
+			<string>Santiago Yolomécatl</string>
+			<string>Santiago Yosondúa</string>
+			<string>Santiago Yucuyachi</string>
+			<string>Santiago Zacatepec</string>
+			<string>Santiago Zoochila</string>
+			<string>Nuevo Zoquiápam</string>
+			<string>Santo Domingo Ingenio</string>
+			<string>Santo Domingo Albarradas</string>
+			<string>Santo Domingo Armenta</string>
+			<string>Santo Domingo Chihuitán</string>
+			<string>Santo Domingo de Morelos</string>
+			<string>Santo Domingo Ixcatlán</string>
+			<string>Santo Domingo Nuxaá</string>
+			<string>Santo Domingo Ozolotepec</string>
+			<string>Santo Domingo Petapa</string>
+			<string>Santo Domingo Roayaga</string>
+			<string>Santo Domingo Tehuantepec</string>
+			<string>Santo Domingo Teojomulco</string>
+			<string>Santo Domingo Tepuxtepec</string>
+			<string>Santo Domingo Tlatayápam</string>
+			<string>Santo Domingo Tomaltepec</string>
+			<string>Santo Domingo Tonalá</string>
+			<string>Santo Domingo Tonaltepec</string>
+			<string>Santo Domingo Xagacía</string>
+			<string>Santo Domingo Yanhuitlán</string>
+			<string>Santo Domingo Yodohino</string>
+			<string>Santo Domingo Zanatepec</string>
+			<string>Santos Reyes Nopala</string>
+			<string>Santos Reyes Pápalo</string>
+			<string>Santos Reyes Tepejillo</string>
+			<string>Santos Reyes Yucuná</string>
+			<string>Santo Tomás Jalieza</string>
+			<string>Santo Tomás Mazaltepec</string>
+			<string>Santo Tomás Ocotepec</string>
+			<string>Santo Tomás Tamazulapan</string>
+			<string>San Vicente Coatlán</string>
+			<string>San Vicente Lachixío</string>
+			<string>San Vicente Nuñú</string>
+			<string>Silacayoápam</string>
+			<string>Sitio de Xitlapehua</string>
+			<string>Soledad Etla</string>
+			<string>Villa de Tamazulápam del Progreso</string>
+			<string>Tanetze de Zaragoza</string>
+			<string>Taniche</string>
+			<string>Tataltepec de Valdés</string>
+			<string>Teococuilco de Marcos Pérez</string>
+			<string>Teotitlán de Flores Magón</string>
+			<string>Teotitlán del Valle</string>
+			<string>Teotongo</string>
+			<string>Tepelmeme Villa de Morelos</string>
+			<string>Heroica Villa Tezoatlán de Segura y Luna, Cuna de la Independencia de Oaxaca</string>
+			<string>San Jerónimo Tlacochahuaya</string>
+			<string>Tlacolula de Matamoros</string>
+			<string>Tlacotepec Plumas</string>
+			<string>Tlalixtac de Cabrera</string>
+			<string>Totontepec Villa de Morelos</string>
+			<string>Trinidad Zaachila</string>
+			<string>La Trinidad Vista Hermosa</string>
+			<string>Unión Hidalgo</string>
+			<string>Valerio Trujano</string>
+			<string>San Juan Bautista Valle Nacional</string>
+			<string>Villa Díaz Ordaz</string>
+			<string>Yaxe</string>
+			<string>Magdalena Yodocono de Porfirio Díaz</string>
+			<string>Yogana</string>
+			<string>Yutanduchi de Guerrero</string>
+			<string>Villa de Zaachila</string>
+			<string>San Mateo Yucutindoo</string>
+			<string>Zapotitlán Lagunas</string>
+			<string>Zapotitlán Palmas</string>
+			<string>Santa Inés de Zaragoza</string>
+			<string>Zimatlán de Álvarez</string>
+		</array>
+	</dict>
+	<dict>
+		<key>abreviacion</key>
+		<string>PUE</string>
+		<key>estado</key>
+		<string>Puebla</string>
+		<key>municipios</key>
+		<array>
+			<string>Acajete</string>
+			<string>Acateno</string>
+			<string>Acatlán</string>
+			<string>Acatzingo</string>
+			<string>Acteopan</string>
+			<string>Ahuacatlán</string>
+			<string>Ahuatlán</string>
+			<string>Ahuazotepec</string>
+			<string>Ahuehuetitla</string>
+			<string>Ajalpan</string>
+			<string>Albino Zertuche</string>
+			<string>Aljojuca</string>
+			<string>Altepexi</string>
+			<string>Amixtlán</string>
+			<string>Amozoc</string>
+			<string>Aquixtla</string>
+			<string>Atempan</string>
+			<string>Atexcal</string>
+			<string>Atlixco</string>
+			<string>Atoyatempan</string>
+			<string>Atzala</string>
+			<string>Atzitzihuacán</string>
+			<string>Atzitzintla</string>
+			<string>Axutla</string>
+			<string>Ayotoxco de Guerrero</string>
+			<string>Calpan</string>
+			<string>Caltepec</string>
+			<string>Camocuautla</string>
+			<string>Caxhuacan</string>
+			<string>Coatepec</string>
+			<string>Coatzingo</string>
+			<string>Cohetzala</string>
+			<string>Cohuecan</string>
+			<string>Coronango</string>
+			<string>Coxcatlán</string>
+			<string>Coyomeapan</string>
+			<string>Coyotepec</string>
+			<string>Cuapiaxtla de Madero</string>
+			<string>Cuautempan</string>
+			<string>Cuautinchán</string>
+			<string>Cuautlancingo</string>
+			<string>Cuayuca de Andrade</string>
+			<string>Cuetzalan del Progreso</string>
+			<string>Cuyoaco</string>
+			<string>Chalchicomula de Sesma</string>
+			<string>Chapulco</string>
+			<string>Chiautla</string>
+			<string>Chiautzingo</string>
+			<string>Chiconcuautla</string>
+			<string>Chichiquila</string>
+			<string>Chietla</string>
+			<string>Chigmecatitlán</string>
+			<string>Chignahuapan</string>
+			<string>Chignautla</string>
+			<string>Chila</string>
+			<string>Chila de la Sal</string>
+			<string>Honey</string>
+			<string>Chilchotla</string>
+			<string>Chinantla</string>
+			<string>Domingo Arenas</string>
+			<string>Eloxochitlán</string>
+			<string>Epatlán</string>
+			<string>Esperanza</string>
+			<string>Francisco Z. Mena</string>
+			<string>General Felipe Ángeles</string>
+			<string>Guadalupe</string>
+			<string>Guadalupe Victoria</string>
+			<string>Hermenegildo Galeana</string>
+			<string>Huaquechula</string>
+			<string>Huatlatlauca</string>
+			<string>Huauchinango</string>
+			<string>Huehuetla</string>
+			<string>Huehuetlán el Chico</string>
+			<string>Huejotzingo</string>
+			<string>Hueyapan</string>
+			<string>Hueytamalco</string>
+			<string>Hueytlalpan</string>
+			<string>Huitzilan de Serdán</string>
+			<string>Huitziltepec</string>
+			<string>Atlequizayan</string>
+			<string>Ixcamilpa de Guerrero</string>
+			<string>Ixcaquixtla</string>
+			<string>Ixtacamaxtitlán</string>
+			<string>Ixtepec</string>
+			<string>Izúcar de Matamoros</string>
+			<string>Jalpan</string>
+			<string>Jolalpan</string>
+			<string>Jonotla</string>
+			<string>Jopala</string>
+			<string>Juan C. Bonilla</string>
+			<string>Juan Galindo</string>
+			<string>Juan N. Méndez</string>
+			<string>Lafragua</string>
+			<string>Libres</string>
+			<string>La Magdalena Tlatlauquitepec</string>
+			<string>Mazapiltepec de Juárez</string>
+			<string>Mixtla</string>
+			<string>Molcaxac</string>
+			<string>Cañada Morelos</string>
+			<string>Naupan</string>
+			<string>Nauzontla</string>
+			<string>Nealtican</string>
+			<string>Nicolás Bravo</string>
+			<string>Nopalucan</string>
+			<string>Ocotepec</string>
+			<string>Ocoyucan</string>
+			<string>Olintla</string>
+			<string>Oriental</string>
+			<string>Pahuatlán</string>
+			<string>Palmar de Bravo</string>
+			<string>Pantepec</string>
+			<string>Petlalcingo</string>
+			<string>Piaxtla</string>
+			<string>Puebla</string>
+			<string>Quecholac</string>
+			<string>Quimixtlán</string>
+			<string>Rafael Lara Grajales</string>
+			<string>Los Reyes de Juárez</string>
+			<string>San Andrés Cholula</string>
+			<string>San Antonio Cañada</string>
+			<string>San Diego la Mesa Tochimiltzingo</string>
+			<string>San Felipe Teotlalcingo</string>
+			<string>San Felipe Tepatlán</string>
+			<string>San Gabriel Chilac</string>
+			<string>San Gregorio Atzompa</string>
+			<string>San Jerónimo Tecuanipan</string>
+			<string>San Jerónimo Xayacatlán</string>
+			<string>San José Chiapa</string>
+			<string>San José Miahuatlán</string>
+			<string>San Juan Atenco</string>
+			<string>San Juan Atzompa</string>
+			<string>San Martín Texmelucan</string>
+			<string>San Martín Totoltepec</string>
+			<string>San Matías Tlalancaleca</string>
+			<string>San Miguel Ixitlán</string>
+			<string>San Miguel Xoxtla</string>
+			<string>San Nicolás Buenos Aires</string>
+			<string>San Nicolás de los Ranchos</string>
+			<string>San Pablo Anicano</string>
+			<string>San Pedro Cholula</string>
+			<string>San Pedro Yeloixtlahuaca</string>
+			<string>San Salvador el Seco</string>
+			<string>San Salvador el Verde</string>
+			<string>San Salvador Huixcolotla</string>
+			<string>San Sebastián Tlacotepec</string>
+			<string>Santa Catarina Tlaltempan</string>
+			<string>Santa Inés Ahuatempan</string>
+			<string>Santa Isabel Cholula</string>
+			<string>Santiago Miahuatlán</string>
+			<string>Huehuetlán el Grande</string>
+			<string>Santo Tomás Hueyotlipan</string>
+			<string>Soltepec</string>
+			<string>Tecali de Herrera</string>
+			<string>Tecamachalco</string>
+			<string>Tecomatlán</string>
+			<string>Tehuacán</string>
+			<string>Tehuitzingo</string>
+			<string>Tenampulco</string>
+			<string>Teopantlán</string>
+			<string>Teotlalco</string>
+			<string>Tepanco de López</string>
+			<string>Tepango de Rodríguez</string>
+			<string>Tepatlaxco de Hidalgo</string>
+			<string>Tepeaca</string>
+			<string>Tepemaxalco</string>
+			<string>Tepeojuma</string>
+			<string>Tepetzintla</string>
+			<string>Tepexco</string>
+			<string>Tepexi de Rodríguez</string>
+			<string>Tepeyahualco</string>
+			<string>Tepeyahualco de Cuauhtémoc</string>
+			<string>Tetela de Ocampo</string>
+			<string>Teteles de Avila Castillo</string>
+			<string>Teziutlán</string>
+			<string>Tianguismanalco</string>
+			<string>Tilapa</string>
+			<string>Tlacotepec de Benito Juárez</string>
+			<string>Tlacuilotepec</string>
+			<string>Tlachichuca</string>
+			<string>Tlahuapan</string>
+			<string>Tlaltenango</string>
+			<string>Tlanepantla</string>
+			<string>Tlaola</string>
+			<string>Tlapacoya</string>
+			<string>Tlapanalá</string>
+			<string>Tlatlauquitepec</string>
+			<string>Tlaxco</string>
+			<string>Tochimilco</string>
+			<string>Tochtepec</string>
+			<string>Totoltepec de Guerrero</string>
+			<string>Tulcingo</string>
+			<string>Tuzamapan de Galeana</string>
+			<string>Tzicatlacoyan</string>
+			<string>Venustiano Carranza</string>
+			<string>Vicente Guerrero</string>
+			<string>Xayacatlán de Bravo</string>
+			<string>Xicotepec</string>
+			<string>Xicotlán</string>
+			<string>Xiutetelco</string>
+			<string>Xochiapulco</string>
+			<string>Xochiltepec</string>
+			<string>Xochitlán de Vicente Suárez</string>
+			<string>Xochitlán Todos Santos</string>
+			<string>Yaonáhuac</string>
+			<string>Yehualtepec</string>
+			<string>Zacapala</string>
+			<string>Zacapoaxtla</string>
+			<string>Zacatlán</string>
+			<string>Zapotitlán</string>
+			<string>Zapotitlán de Méndez</string>
+			<string>Zaragoza</string>
+			<string>Zautla</string>
+			<string>Zihuateutla</string>
+			<string>Zinacatepec</string>
+			<string>Zongozotla</string>
+			<string>Zoquiapan</string>
+			<string>Zoquitlán</string>
+		</array>
+	</dict>
+	<dict>
+		<key>abreviacion</key>
+		<string>QRO</string>
+		<key>estado</key>
+		<string>Querétaro</string>
+		<key>municipios</key>
+		<array>
+			<string>Amealco de Bonfil</string>
+			<string>Pinal de Amoles</string>
+			<string>Arroyo Seco</string>
+			<string>Cadereyta de Montes</string>
+			<string>Colón</string>
+			<string>Corregidora</string>
+			<string>Ezequiel Montes</string>
+			<string>Huimilpan</string>
+			<string>Jalpan de Serra</string>
+			<string>Landa de Matamoros</string>
+			<string>El Marqués</string>
+			<string>Pedro Escobedo</string>
+			<string>Peñamiller</string>
+			<string>Querétaro</string>
+			<string>San Joaquín</string>
+			<string>San Juan del Río</string>
+			<string>Tequisquiapan</string>
+			<string>Tolimán</string>
+		</array>
+	</dict>
+	<dict>
+		<key>abreviacion</key>
+		<string>QROO</string>
+		<key>estado</key>
+		<string>Quintana Roo</string>
+		<key>municipios</key>
+		<array>
+			<string>Cozumel</string>
+			<string>Felipe Carrillo Puerto</string>
+			<string>Isla Mujeres</string>
+			<string>Othón P. Blanco</string>
+			<string>Benito Juárez</string>
+			<string>José María Morelos</string>
+			<string>Lázaro Cárdenas</string>
+			<string>Solidaridad</string>
+			<string>Tulum</string>
+			<string>Bacalar</string>
+			<string>Puerto Morelos</string>
+		</array>
+	</dict>
+	<dict>
+		<key>abreviacion</key>
+		<string>SLP</string>
+		<key>estado</key>
+		<string>San Luis Potosí</string>
+		<key>municipios</key>
+		<array>
+			<string>Ahualulco</string>
+			<string>Alaquines</string>
+			<string>Aquismón</string>
+			<string>Armadillo de los Infante</string>
+			<string>Cárdenas</string>
+			<string>Catorce</string>
+			<string>Cedral</string>
+			<string>Cerritos</string>
+			<string>Cerro de San Pedro</string>
+			<string>Ciudad del Maíz</string>
+			<string>Ciudad Fernández</string>
+			<string>Tancanhuitz</string>
+			<string>Ciudad Valles</string>
+			<string>Coxcatlán</string>
+			<string>Charcas</string>
+			<string>Ebano</string>
+			<string>Guadalcázar</string>
+			<string>Huehuetlán</string>
+			<string>Lagunillas</string>
+			<string>Matehuala</string>
+			<string>Mexquitic de Carmona</string>
+			<string>Moctezuma</string>
+			<string>Rayón</string>
+			<string>Rioverde</string>
+			<string>Salinas</string>
+			<string>San Antonio</string>
+			<string>San Ciro de Acosta</string>
+			<string>San Luis Potosí</string>
+			<string>San Martín Chalchicuautla</string>
+			<string>San Nicolás Tolentino</string>
+			<string>Santa Catarina</string>
+			<string>Santa María del Río</string>
+			<string>Santo Domingo</string>
+			<string>San Vicente Tancuayalab</string>
+			<string>Soledad de Graciano Sánchez</string>
+			<string>Tamasopo</string>
+			<string>Tamazunchale</string>
+			<string>Tampacán</string>
+			<string>Tampamolón Corona</string>
+			<string>Tamuín</string>
+			<string>Tanlajás</string>
+			<string>Tanquián de Escobedo</string>
+			<string>Tierra Nueva</string>
+			<string>Vanegas</string>
+			<string>Venado</string>
+			<string>Villa de Arriaga</string>
+			<string>Villa de Guadalupe</string>
+			<string>Villa de la Paz</string>
+			<string>Villa de Ramos</string>
+			<string>Villa de Reyes</string>
+			<string>Villa Hidalgo</string>
+			<string>Villa Juárez</string>
+			<string>Axtla de Terrazas</string>
+			<string>Xilitla</string>
+			<string>Zaragoza</string>
+			<string>Villa de Arista</string>
+			<string>Matlapa</string>
+			<string>El Naranjo</string>
+		</array>
+	</dict>
+	<dict>
+		<key>abreviacion</key>
+		<string>SIN</string>
+		<key>estado</key>
+		<string>Sinaloa</string>
+		<key>municipios</key>
+		<array>
+			<string>Ahome</string>
+			<string>Angostura</string>
+			<string>Badiraguato</string>
+			<string>Concordia</string>
+			<string>Cosalá</string>
+			<string>Culiacán</string>
+			<string>Choix</string>
+			<string>Elota</string>
+			<string>Escuinapa</string>
+			<string>El Fuerte</string>
+			<string>Guasave</string>
+			<string>Mazatlán</string>
+			<string>Mocorito</string>
+			<string>Rosario</string>
+			<string>Salvador Alvarado</string>
+			<string>San Ignacio</string>
+			<string>Sinaloa</string>
+			<string>Navolato</string>
+		</array>
+	</dict>
+	<dict>
+		<key>abreviacion</key>
+		<string>SON</string>
+		<key>estado</key>
+		<string>Sonora</string>
+		<key>municipios</key>
+		<array>
+			<string>Aconchi</string>
+			<string>Agua Prieta</string>
+			<string>Alamos</string>
+			<string>Altar</string>
+			<string>Arivechi</string>
+			<string>Arizpe</string>
+			<string>Atil</string>
+			<string>Bacadéhuachi</string>
+			<string>Bacanora</string>
+			<string>Bacerac</string>
+			<string>Bacoachi</string>
+			<string>Bácum</string>
+			<string>Banámichi</string>
+			<string>Baviácora</string>
+			<string>Bavispe</string>
+			<string>Benjamín Hill</string>
+			<string>Caborca</string>
+			<string>Cajeme</string>
+			<string>Cananea</string>
+			<string>Carbó</string>
+			<string>La Colorada</string>
+			<string>Cucurpe</string>
+			<string>Cumpas</string>
+			<string>Divisaderos</string>
+			<string>Empalme</string>
+			<string>Etchojoa</string>
+			<string>Fronteras</string>
+			<string>Granados</string>
+			<string>Guaymas</string>
+			<string>Hermosillo</string>
+			<string>Huachinera</string>
+			<string>Huásabas</string>
+			<string>Huatabampo</string>
+			<string>Huépac</string>
+			<string>Imuris</string>
+			<string>Magdalena</string>
+			<string>Mazatán</string>
+			<string>Moctezuma</string>
+			<string>Naco</string>
+			<string>Nácori Chico</string>
+			<string>Nacozari de García</string>
+			<string>Navojoa</string>
+			<string>Nogales</string>
+			<string>Onavas</string>
+			<string>Opodepe</string>
+			<string>Oquitoa</string>
+			<string>Pitiquito</string>
+			<string>Puerto Peñasco</string>
+			<string>Quiriego</string>
+			<string>Rayón</string>
+			<string>Rosario</string>
+			<string>Sahuaripa</string>
+			<string>San Felipe de Jesús</string>
+			<string>San Javier</string>
+			<string>San Luis Río Colorado</string>
+			<string>San Miguel de Horcasitas</string>
+			<string>San Pedro de la Cueva</string>
+			<string>Santa Ana</string>
+			<string>Santa Cruz</string>
+			<string>Sáric</string>
+			<string>Soyopa</string>
+			<string>Suaqui Grande</string>
+			<string>Tepache</string>
+			<string>Trincheras</string>
+			<string>Tubutama</string>
+			<string>Ures</string>
+			<string>Villa Hidalgo</string>
+			<string>Villa Pesqueira</string>
+			<string>Yécora</string>
+			<string>General Plutarco Elías Calles</string>
+			<string>Benito Juárez</string>
+			<string>San Ignacio Río Muerto</string>
+		</array>
+	</dict>
+	<dict>
+		<key>abreviacion</key>
+		<string>TAB</string>
+		<key>estado</key>
+		<string>Tabasco</string>
+		<key>municipios</key>
+		<array>
+			<string>Balancán</string>
+			<string>Cárdenas</string>
+			<string>Centla</string>
+			<string>Centro</string>
+			<string>Comalcalco</string>
+			<string>Cunduacán</string>
+			<string>Emiliano Zapata</string>
+			<string>Huimanguillo</string>
+			<string>Jalapa</string>
+			<string>Jalpa de Méndez</string>
+			<string>Jonuta</string>
+			<string>Macuspana</string>
+			<string>Nacajuca</string>
+			<string>Paraíso</string>
+			<string>Tacotalpa</string>
+			<string>Teapa</string>
+			<string>Tenosique</string>
+		</array>
+	</dict>
+	<dict>
+		<key>abreviacion</key>
+		<string>TAM</string>
+		<key>estado</key>
+		<string>Tamaulipas</string>
+		<key>municipios</key>
+		<array>
+			<string>Abasolo</string>
+			<string>Aldama</string>
+			<string>Altamira</string>
+			<string>Antiguo Morelos</string>
+			<string>Burgos</string>
+			<string>Bustamante</string>
+			<string>Camargo</string>
+			<string>Casas</string>
+			<string>Ciudad Madero</string>
+			<string>Cruillas</string>
+			<string>Gómez Farías</string>
+			<string>González</string>
+			<string>Güémez</string>
+			<string>Guerrero</string>
+			<string>Gustavo Díaz Ordaz</string>
+			<string>Hidalgo</string>
+			<string>Jaumave</string>
+			<string>Jiménez</string>
+			<string>Llera</string>
+			<string>Mainero</string>
+			<string>El Mante</string>
+			<string>Matamoros</string>
+			<string>Méndez</string>
+			<string>Mier</string>
+			<string>Miguel Alemán</string>
+			<string>Miquihuana</string>
+			<string>Nuevo Laredo</string>
+			<string>Nuevo Morelos</string>
+			<string>Ocampo</string>
+			<string>Padilla</string>
+			<string>Palmillas</string>
+			<string>Reynosa</string>
+			<string>Río Bravo</string>
+			<string>San Carlos</string>
+			<string>San Fernando</string>
+			<string>San Nicolás</string>
+			<string>Soto la Marina</string>
+			<string>Tampico</string>
+			<string>Tula</string>
+			<string>Valle Hermoso</string>
+			<string>Victoria</string>
+			<string>Villagrán</string>
+			<string>Xicoténcatl</string>
+		</array>
+	</dict>
+	<dict>
+		<key>abreviacion</key>
+		<string>TLAX</string>
+		<key>estado</key>
+		<string>Tlaxcala</string>
+		<key>municipios</key>
+		<array>
+			<string>Amaxac de Guerrero</string>
+			<string>Apetatitlán de Antonio Carvajal</string>
+			<string>Atlangatepec</string>
+			<string>Atltzayanca</string>
+			<string>Apizaco</string>
+			<string>Calpulalpan</string>
+			<string>El Carmen Tequexquitla</string>
+			<string>Cuapiaxtla</string>
+			<string>Cuaxomulco</string>
+			<string>Chiautempan</string>
+			<string>Muñoz de Domingo Arenas</string>
+			<string>Españita</string>
+			<string>Huamantla</string>
+			<string>Hueyotlipan</string>
+			<string>Ixtacuixtla de Mariano Matamoros</string>
+			<string>Ixtenco</string>
+			<string>Mazatecochco de José María Morelos</string>
+			<string>Contla de Juan Cuamatzi</string>
+			<string>Tepetitla de Lardizábal</string>
+			<string>Sanctórum de Lázaro Cárdenas</string>
+			<string>Nanacamilpa de Mariano Arista</string>
+			<string>Acuamanala de Miguel Hidalgo</string>
+			<string>Natívitas</string>
+			<string>Panotla</string>
+			<string>San Pablo del Monte</string>
+			<string>Santa Cruz Tlaxcala</string>
+			<string>Tenancingo</string>
+			<string>Teolocholco</string>
+			<string>Tepeyanco</string>
+			<string>Terrenate</string>
+			<string>Tetla de la Solidaridad</string>
+			<string>Tetlatlahuca</string>
+			<string>Tlaxcala</string>
+			<string>Tlaxco</string>
+			<string>Tocatlán</string>
+			<string>Totolac</string>
+			<string>Ziltlaltépec de Trinidad Sánchez Santos</string>
+			<string>Tzompantepec</string>
+			<string>Xaloztoc</string>
+			<string>Xaltocan</string>
+			<string>Papalotla de Xicohténcatl</string>
+			<string>Xicohtzinco</string>
+			<string>Yauhquemehcan</string>
+			<string>Zacatelco</string>
+			<string>Benito Juárez</string>
+			<string>Emiliano Zapata</string>
+			<string>Lázaro Cárdenas</string>
+			<string>La Magdalena Tlaltelulco</string>
+			<string>San Damián Texóloc</string>
+			<string>San Francisco Tetlanohcan</string>
+			<string>San Jerónimo Zacualpan</string>
+			<string>San José Teacalco</string>
+			<string>San Juan Huactzinco</string>
+			<string>San Lorenzo Axocomanitla</string>
+			<string>San Lucas Tecopilco</string>
+			<string>Santa Ana Nopalucan</string>
+			<string>Santa Apolonia Teacalco</string>
+			<string>Santa Catarina Ayometla</string>
+			<string>Santa Cruz Quilehtla</string>
+			<string>Santa Isabel Xiloxoxtla</string>
+		</array>
+	</dict>
+	<dict>
+		<key>abreviacion</key>
+		<string>VER</string>
+		<key>estado</key>
+		<string>Veracruz de Ignacio de la Llave</string>
+		<key>municipios</key>
+		<array>
+			<string>Acajete</string>
+			<string>Acatlán</string>
+			<string>Acayucan</string>
+			<string>Actopan</string>
+			<string>Acula</string>
+			<string>Acultzingo</string>
+			<string>Camarón de Tejeda</string>
+			<string>Alpatláhuac</string>
+			<string>Alto Lucero de Gutiérrez Barrios</string>
+			<string>Altotonga</string>
+			<string>Alvarado</string>
+			<string>Amatitlán</string>
+			<string>Naranjos Amatlán</string>
+			<string>Amatlán de los Reyes</string>
+			<string>Angel R. Cabada</string>
+			<string>La Antigua</string>
+			<string>Apazapan</string>
+			<string>Aquila</string>
+			<string>Astacinga</string>
+			<string>Atlahuilco</string>
+			<string>Atoyac</string>
+			<string>Atzacan</string>
+			<string>Atzalan</string>
+			<string>Tlaltetela</string>
+			<string>Ayahualulco</string>
+			<string>Banderilla</string>
+			<string>Benito Juárez</string>
+			<string>Boca del Río</string>
+			<string>Calcahualco</string>
+			<string>Camerino Z. Mendoza</string>
+			<string>Carrillo Puerto</string>
+			<string>Catemaco</string>
+			<string>Cazones de Herrera</string>
+			<string>Cerro Azul</string>
+			<string>Citlaltépetl</string>
+			<string>Coacoatzintla</string>
+			<string>Coahuitlán</string>
+			<string>Coatepec</string>
+			<string>Coatzacoalcos</string>
+			<string>Coatzintla</string>
+			<string>Coetzala</string>
+			<string>Colipa</string>
+			<string>Comapa</string>
+			<string>Córdoba</string>
+			<string>Cosamaloapan de Carpio</string>
+			<string>Cosautlán de Carvajal</string>
+			<string>Coscomatepec</string>
+			<string>Cosoleacaque</string>
+			<string>Cotaxtla</string>
+			<string>Coxquihui</string>
+			<string>Coyutla</string>
+			<string>Cuichapa</string>
+			<string>Cuitláhuac</string>
+			<string>Chacaltianguis</string>
+			<string>Chalma</string>
+			<string>Chiconamel</string>
+			<string>Chiconquiaco</string>
+			<string>Chicontepec</string>
+			<string>Chinameca</string>
+			<string>Chinampa de Gorostiza</string>
+			<string>Las Choapas</string>
+			<string>Chocamán</string>
+			<string>Chontla</string>
+			<string>Chumatlán</string>
+			<string>Emiliano Zapata</string>
+			<string>Espinal</string>
+			<string>Filomeno Mata</string>
+			<string>Fortín</string>
+			<string>Gutiérrez Zamora</string>
+			<string>Hidalgotitlán</string>
+			<string>Huatusco</string>
+			<string>Huayacocotla</string>
+			<string>Hueyapan de Ocampo</string>
+			<string>Huiloapan de Cuauhtémoc</string>
+			<string>Ignacio de la Llave</string>
+			<string>Ilamatlán</string>
+			<string>Isla</string>
+			<string>Ixcatepec</string>
+			<string>Ixhuacán de los Reyes</string>
+			<string>Ixhuatlán del Café</string>
+			<string>Ixhuatlancillo</string>
+			<string>Ixhuatlán del Sureste</string>
+			<string>Ixhuatlán de Madero</string>
+			<string>Ixmatlahuacan</string>
+			<string>Ixtaczoquitlán</string>
+			<string>Jalacingo</string>
+			<string>Xalapa</string>
+			<string>Jalcomulco</string>
+			<string>Jáltipan</string>
+			<string>Jamapa</string>
+			<string>Jesús Carranza</string>
+			<string>Xico</string>
+			<string>Jilotepec</string>
+			<string>Juan Rodríguez Clara</string>
+			<string>Juchique de Ferrer</string>
+			<string>Landero y Coss</string>
+			<string>Lerdo de Tejada</string>
+			<string>Magdalena</string>
+			<string>Maltrata</string>
+			<string>Manlio Fabio Altamirano</string>
+			<string>Mariano Escobedo</string>
+			<string>Martínez de la Torre</string>
+			<string>Mecatlán</string>
+			<string>Mecayapan</string>
+			<string>Medellín de Bravo</string>
+			<string>Miahuatlán</string>
+			<string>Las Minas</string>
+			<string>Minatitlán</string>
+			<string>Misantla</string>
+			<string>Mixtla de Altamirano</string>
+			<string>Moloacán</string>
+			<string>Naolinco</string>
+			<string>Naranjal</string>
+			<string>Nautla</string>
+			<string>Nogales</string>
+			<string>Oluta</string>
+			<string>Omealca</string>
+			<string>Orizaba</string>
+			<string>Otatitlán</string>
+			<string>Oteapan</string>
+			<string>Ozuluama de Mascareñas</string>
+			<string>Pajapan</string>
+			<string>Pánuco</string>
+			<string>Papantla</string>
+			<string>Paso del Macho</string>
+			<string>Paso de Ovejas</string>
+			<string>La Perla</string>
+			<string>Perote</string>
+			<string>Platón Sánchez</string>
+			<string>Playa Vicente</string>
+			<string>Poza Rica de Hidalgo</string>
+			<string>Las Vigas de Ramírez</string>
+			<string>Pueblo Viejo</string>
+			<string>Puente Nacional</string>
+			<string>Rafael Delgado</string>
+			<string>Rafael Lucio</string>
+			<string>Los Reyes</string>
+			<string>Río Blanco</string>
+			<string>Saltabarranca</string>
+			<string>San Andrés Tenejapan</string>
+			<string>San Andrés Tuxtla</string>
+			<string>San Juan Evangelista</string>
+			<string>Santiago Tuxtla</string>
+			<string>Sayula de Alemán</string>
+			<string>Soconusco</string>
+			<string>Sochiapa</string>
+			<string>Soledad Atzompa</string>
+			<string>Soledad de Doblado</string>
+			<string>Soteapan</string>
+			<string>Tamalín</string>
+			<string>Tamiahua</string>
+			<string>Tampico Alto</string>
+			<string>Tancoco</string>
+			<string>Tantima</string>
+			<string>Tantoyuca</string>
+			<string>Tatatila</string>
+			<string>Castillo de Teayo</string>
+			<string>Tecolutla</string>
+			<string>Tehuipango</string>
+			<string>Álamo Temapache</string>
+			<string>Tempoal</string>
+			<string>Tenampa</string>
+			<string>Tenochtitlán</string>
+			<string>Teocelo</string>
+			<string>Tepatlaxco</string>
+			<string>Tepetlán</string>
+			<string>Tepetzintla</string>
+			<string>Tequila</string>
+			<string>José Azueta</string>
+			<string>Texcatepec</string>
+			<string>Texhuacán</string>
+			<string>Texistepec</string>
+			<string>Tezonapa</string>
+			<string>Tierra Blanca</string>
+			<string>Tihuatlán</string>
+			<string>Tlacojalpan</string>
+			<string>Tlacolulan</string>
+			<string>Tlacotalpan</string>
+			<string>Tlacotepec de Mejía</string>
+			<string>Tlachichilco</string>
+			<string>Tlalixcoyan</string>
+			<string>Tlalnelhuayocan</string>
+			<string>Tlapacoyan</string>
+			<string>Tlaquilpa</string>
+			<string>Tlilapan</string>
+			<string>Tomatlán</string>
+			<string>Tonayán</string>
+			<string>Totutla</string>
+			<string>Tuxpan</string>
+			<string>Tuxtilla</string>
+			<string>Ursulo Galván</string>
+			<string>Vega de Alatorre</string>
+			<string>Veracruz</string>
+			<string>Villa Aldama</string>
+			<string>Xoxocotla</string>
+			<string>Yanga</string>
+			<string>Yecuatla</string>
+			<string>Zacualpan</string>
+			<string>Zaragoza</string>
+			<string>Zentla</string>
+			<string>Zongolica</string>
+			<string>Zontecomatlán de López y Fuentes</string>
+			<string>Zozocolco de Hidalgo</string>
+			<string>Agua Dulce</string>
+			<string>El Higo</string>
+			<string>Nanchital de Lázaro Cárdenas del Río</string>
+			<string>Tres Valles</string>
+			<string>Carlos A. Carrillo</string>
+			<string>Tatahuicapan de Juárez</string>
+			<string>Uxpanapa</string>
+			<string>San Rafael</string>
+			<string>Santiago Sochiapan</string>
+		</array>
+	</dict>
+	<dict>
+		<key>abreviacion</key>
+		<string>YUC</string>
+		<key>estado</key>
+		<string>Yucatán</string>
+		<key>municipios</key>
+		<array>
+			<string>Abalá</string>
+			<string>Acanceh</string>
+			<string>Akil</string>
+			<string>Baca</string>
+			<string>Bokobá</string>
+			<string>Buctzotz</string>
+			<string>Cacalchén</string>
+			<string>Calotmul</string>
+			<string>Cansahcab</string>
+			<string>Cantamayec</string>
+			<string>Celestún</string>
+			<string>Cenotillo</string>
+			<string>Conkal</string>
+			<string>Cuncunul</string>
+			<string>Cuzamá</string>
+			<string>Chacsinkín</string>
+			<string>Chankom</string>
+			<string>Chapab</string>
+			<string>Chemax</string>
+			<string>Chicxulub Pueblo</string>
+			<string>Chichimilá</string>
+			<string>Chikindzonot</string>
+			<string>Chocholá</string>
+			<string>Chumayel</string>
+			<string>Dzán</string>
+			<string>Dzemul</string>
+			<string>Dzidzantún</string>
+			<string>Dzilam de Bravo</string>
+			<string>Dzilam González</string>
+			<string>Dzitás</string>
+			<string>Dzoncauich</string>
+			<string>Espita</string>
+			<string>Halachó</string>
+			<string>Hocabá</string>
+			<string>Hoctún</string>
+			<string>Homún</string>
+			<string>Huhí</string>
+			<string>Hunucmá</string>
+			<string>Ixil</string>
+			<string>Izamal</string>
+			<string>Kanasín</string>
+			<string>Kantunil</string>
+			<string>Kaua</string>
+			<string>Kinchil</string>
+			<string>Kopomá</string>
+			<string>Mama</string>
+			<string>Maní</string>
+			<string>Maxcanú</string>
+			<string>Mayapán</string>
+			<string>Mérida</string>
+			<string>Mocochá</string>
+			<string>Motul</string>
+			<string>Muna</string>
+			<string>Muxupip</string>
+			<string>Opichén</string>
+			<string>Oxkutzcab</string>
+			<string>Panabá</string>
+			<string>Peto</string>
+			<string>Progreso</string>
+			<string>Quintana Roo</string>
+			<string>Río Lagartos</string>
+			<string>Sacalum</string>
+			<string>Samahil</string>
+			<string>Sanahcat</string>
+			<string>San Felipe</string>
+			<string>Santa Elena</string>
+			<string>Seyé</string>
+			<string>Sinanché</string>
+			<string>Sotuta</string>
+			<string>Sucilá</string>
+			<string>Sudzal</string>
+			<string>Suma</string>
+			<string>Tahdziú</string>
+			<string>Tahmek</string>
+			<string>Teabo</string>
+			<string>Tecoh</string>
+			<string>Tekal de Venegas</string>
+			<string>Tekantó</string>
+			<string>Tekax</string>
+			<string>Tekit</string>
+			<string>Tekom</string>
+			<string>Telchac Pueblo</string>
+			<string>Telchac Puerto</string>
+			<string>Temax</string>
+			<string>Temozón</string>
+			<string>Tepakán</string>
+			<string>Tetiz</string>
+			<string>Teya</string>
+			<string>Ticul</string>
+			<string>Timucuy</string>
+			<string>Tinum</string>
+			<string>Tixcacalcupul</string>
+			<string>Tixkokob</string>
+			<string>Tixmehuac</string>
+			<string>Tixpéhual</string>
+			<string>Tizimín</string>
+			<string>Tunkás</string>
+			<string>Tzucacab</string>
+			<string>Uayma</string>
+			<string>Ucú</string>
+			<string>Umán</string>
+			<string>Valladolid</string>
+			<string>Xocchel</string>
+			<string>Yaxcabá</string>
+			<string>Yaxkukul</string>
+			<string>Yobaín</string>
+		</array>
+	</dict>
+	<dict>
+		<key>abreviacion</key>
+		<string>ZAC</string>
+		<key>estado</key>
+		<string>Zacatecas</string>
+		<key>municipios</key>
+		<array>
+			<string>Apozol</string>
+			<string>Apulco</string>
+			<string>Atolinga</string>
+			<string>Benito Juárez</string>
+			<string>Calera</string>
+			<string>Cañitas de Felipe Pescador</string>
+			<string>Concepción del Oro</string>
+			<string>Cuauhtémoc</string>
+			<string>Chalchihuites</string>
+			<string>Fresnillo</string>
+			<string>Trinidad García de la Cadena</string>
+			<string>Genaro Codina</string>
+			<string>General Enrique Estrada</string>
+			<string>General Francisco R. Murguía</string>
+			<string>El Plateado de Joaquín Amaro</string>
+			<string>General Pánfilo Natera</string>
+			<string>Guadalupe</string>
+			<string>Huanusco</string>
+			<string>Jalpa</string>
+			<string>Jerez</string>
+			<string>Jiménez del Teul</string>
+			<string>Juan Aldama</string>
+			<string>Juchipila</string>
+			<string>Loreto</string>
+			<string>Luis Moya</string>
+			<string>Mazapil</string>
+			<string>Melchor Ocampo</string>
+			<string>Mezquital del Oro</string>
+			<string>Miguel Auza</string>
+			<string>Momax</string>
+			<string>Monte Escobedo</string>
+			<string>Morelos</string>
+			<string>Moyahua de Estrada</string>
+			<string>Nochistlán de Mejía</string>
+			<string>Noria de Ángeles</string>
+			<string>Ojocaliente</string>
+			<string>Pánuco</string>
+			<string>Pinos</string>
+			<string>Río Grande</string>
+			<string>Sain Alto</string>
+			<string>El Salvador</string>
+			<string>Sombrerete</string>
+			<string>Susticacán</string>
+			<string>Tabasco</string>
+			<string>Tepechitlán</string>
+			<string>Tepetongo</string>
+			<string>Teúl de González Ortega</string>
+			<string>Tlaltenango de Sánchez Román</string>
+			<string>Valparaíso</string>
+			<string>Vetagrande</string>
+			<string>Villa de Cos</string>
+			<string>Villa García</string>
+			<string>Villa González Ortega</string>
+			<string>Villa Hidalgo</string>
+			<string>Villanueva</string>
+			<string>Zacatecas</string>
+			<string>Trancoso</string>
+			<string>Santa María de la Paz</string>
+		</array>
+	</dict>
+</array>
+</plist>

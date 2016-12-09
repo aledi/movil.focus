@@ -26,8 +26,8 @@ class RegistrationViewController: UIViewController, UIPickerViewDelegate, UIPick
     @IBOutlet var streetText: UITextField!
     @IBOutlet var numberText: UITextField!
     @IBOutlet var coloniaText: UITextField!
-    @IBOutlet var cityText: UITextField!
     @IBOutlet var stateText: UITextField!
+    @IBOutlet var cityText: UITextField!
     @IBOutlet var postalText: UITextField!
     
     var activeField: UITextField?
@@ -36,41 +36,7 @@ class RegistrationViewController: UIViewController, UIPickerViewDelegate, UIPick
     var genderPicker = UIPickerView()
     var educationPicker = UIPickerView()
     var statePicker = UIPickerView()
-    
-    let states: [(String, String)] = [
-        ("", "-Sin especificar-"),
-        ("AGS", "Aguascalientes"),
-        ("BC", "Baja California"),
-        ("BCS", "Baja California Sur"),
-        ("CAMP", "Campeche"),
-        ("COAH", "Coahuila"),
-        ("COL", "Colima"),
-        ("CHIS", "Chiapas"),
-        ("CDMX", "Ciudad de México"),
-        ("DGO", "Durango"),
-        ("GTO", "Guanajuato"),
-        ("GRO", "Guerrero"),
-        ("HGO", "Hidalgo"),
-        ("JAL", "Jalisco"),
-        ("EDOMEX", "Estado de México"),
-        ("MICH", "Michoacán"),
-        ("MOR", "Morelos"),
-        ("NAY", "Nayarit"),
-        ("NL", "Nuevo León"),
-        ("OAX", "Oaxaca"),
-        ("PUE", "Puebla"),
-        ("QRO", "Querétaro"),
-        ("QROO", "Quintana Roo"),
-        ("SLP", "San Luis Potosí"),
-        ("SIN", "Sinaloa"),
-        ("SON", "Sonora"),
-        ("TAB", "Tabasco"),
-        ("TAM", "Tamaulipas"),
-        ("TLAX", "Tlaxcala"),
-        ("VER", "Veracruz"),
-        ("YUC", "Yucatan"),
-        ("ZAC", "Zacatecas")
-    ]
+    var cityPicker = UIPickerView()
     
     let education: [(Int, String)] = [
         (0, "Nivel de Educación"),
@@ -88,6 +54,8 @@ class RegistrationViewController: UIViewController, UIPickerViewDelegate, UIPick
         (1, "Mujer")
     ]
     
+    var states = [[String : AnyObject]]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -97,7 +65,14 @@ class RegistrationViewController: UIViewController, UIPickerViewDelegate, UIPick
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.keyboardWillBeHidden(_:)), name: UIKeyboardWillHideNotification, object: nil)
         
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
+        self.fetchEstados()
         self.configurePickers()
+    }
+    
+    func fetchEstados() {
+        if let path = NSBundle.mainBundle().pathForResource("estados", ofType: "plist") {
+            self.states = NSArray(contentsOfFile: path) as! [[String : AnyObject]]
+        }
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -129,6 +104,10 @@ class RegistrationViewController: UIViewController, UIPickerViewDelegate, UIPick
         self.statePicker.delegate = self
         self.statePicker.dataSource = self
         self.stateText.inputView = self.statePicker
+        
+        self.cityPicker.delegate = self
+        self.cityPicker.dataSource = self
+        self.cityText.inputView = self.cityPicker
     }
     
     func dateChanged(sender: UIDatePicker) {
@@ -150,7 +129,11 @@ class RegistrationViewController: UIViewController, UIPickerViewDelegate, UIPick
             return self.education.count
         }
         
-        return self.states.count
+        if (pickerView == self.statePicker) {
+            return self.states.count
+        }
+        
+        return self.municipiosForStateAtIndex(self.statePicker.selectedRowInComponent(0)).count
     }
     
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
@@ -162,7 +145,11 @@ class RegistrationViewController: UIViewController, UIPickerViewDelegate, UIPick
             return self.education[row].1
         }
         
-        return self.states[row].1
+        if (pickerView == self.statePicker) {
+            return self.estadoAtIndex(row)
+        }
+        
+        return self.municipiosForStateAtIndex(self.statePicker.selectedRowInComponent(0))[row]
     }
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
@@ -170,8 +157,18 @@ class RegistrationViewController: UIViewController, UIPickerViewDelegate, UIPick
             self.genderText.text = (row > 0) ? self.gender[row].1 : nil
         } else if (pickerView == self.educationPicker) {
             self.educationText.text = (row > 0) ? self.education[row].1 : nil
+        } else if (pickerView == self.statePicker) {
+            self.stateText.text = (row > 0) ? self.estadoAtIndex(row) : nil
+            self.cityPicker.selectRow(0, inComponent: 0, animated: false)
+            self.cityText.text = nil
         } else {
-            self.stateText.text = (row > 0) ? self.states[row].1 : nil
+            if (self.statePicker.selectedRowInComponent(0) == 0) {
+                self.cityText.text = nil
+                return
+            }
+            
+            let municipios = self.municipiosForStateAtIndex(self.statePicker.selectedRowInComponent(0))
+            self.cityText.text = municipios[row]
         }
     }
     
@@ -305,8 +302,8 @@ class RegistrationViewController: UIViewController, UIPickerViewDelegate, UIPick
         parameters["educacion"] = self.education[self.educationPicker.selectedRowInComponent(0)].0
         parameters["calleNumero"] = "\(self.streetText.text ?? "") \(self.numberText.text ?? "")"
         parameters["colonia"] = self.coloniaText.text ?? ""
+        parameters["estado"] = self.states[self.statePicker.selectedRowInComponent(0)]["abreviacion"] as! String
         parameters["municipio"] = self.cityText.text ?? ""
-        parameters["estado"] = self.states[self.statePicker.selectedRowInComponent(0)].0
         parameters["cp"] = self.postalText.text ?? ""
         
         Controller.requestForAction(.REGISTER_USER, withParameters: parameters, withSuccessHandler: successHandler, andErrorHandler: errorHandler)
@@ -385,6 +382,18 @@ class RegistrationViewController: UIViewController, UIPickerViewDelegate, UIPick
         }
         
         self.presentAlertWithTitle("Error", withMessage: "Hubo un error al guardar su registro. Por favor, intente de nuevo o contáctenos para ayudarle.", withButtonTitles: ["Reintentar", "OK"], withButtonStyles: [.Default, .Cancel], andButtonHandlers: [firstBlock, nil])
+    }
+    
+    // -----------------------------------------------------------------------------------------------------------
+    // MARK: - Helpers
+    // -----------------------------------------------------------------------------------------------------------
+    
+    func estadoAtIndex(index: Int) -> String {
+        return self.states[index]["estado"] as! String
+    }
+    
+    func municipiosForStateAtIndex(index: Int) -> [String] {
+        return self.states[index]["municipios"] as! [String]
     }
     
 }

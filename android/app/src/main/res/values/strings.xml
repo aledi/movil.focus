@@ -14,7 +14,6 @@
     <string name="sign_up">Registrarse</string>
     <string name="sign_up_error">No se ha podido registrar al usuario. Intente más tarde.</string>
     <string name="register">Registro</string>
-    <string name="send_registration">Enviar</string>
     <string name="user_info">Información del Usuario</string>
     <string name="general_info">Información General</string>
     <string name="first_name">Nombre(s)</string>
@@ -23,6 +22,7 @@
     <string name="genre">Género</string>
     <string name="male">Masculino</string>
     <string name="female">Femenino</string>
+    <string name="birthday">Fecha de Nacimiento</string>
     <string-array name="month_array">
         <item>Enero</item>
         <item>Febrero</item>
@@ -89,6 +89,18 @@
     </string-array>
     <string name="zip_code">Código Postal</string>
 
+    <!-- Recover Password -->
+    <string name="forgot_password">¿Olvidó su Contraseña?</string>
+    <string name="recover_password">Recuperar Contraseña</string>
+    <string name="recover_password_title">Para recuperar su contraseña, por favor ingrese su nombre de usuario, o el correo electrónico que utilizó para registrarse.</string>
+    <string name="recover_password_footer">La contraseña le será enviada al correo al que está asociada su cuenta.</string>
+    <string name="recover_password_success_title">Envío Exitoso</string>
+    <string name="recover_password_success_message">Hemos enviado un correo a %s con su contraseña. Si usted no recibe el correo en pocos minutos, por favor revise su bandeja de correon SPAM.</string>
+    <string name="recover_password_error">Hubo un error al enviar su petición. Por favor, intente más tarde o póngase en contacto con el servicio de soporte.</string>
+    <string name="recover_password_empty_fields_title">Campos Requeridos</string>
+    <string name="recover_password_empty_fields_message">Por favor, ingrese su nombre de usuario o correo electrónico.</string>
+    <string name="wrong_user">No hemos encontrado un usuario registrado con los datos proporcionados, Por favor, verifique los datos.</string>
+
     <!-- Welcome -->
     <string name="continuar">Continuar</string>
     <string name="welcome_to_focus">¡%s a la app de panelistas Focus!</string>
@@ -121,7 +133,9 @@
     <string name="video">Video</string>
     <string name="video_unavailable">Video No Disponible\nPor favor póngase en contacto.</string>
     <string name="text_answer_hint">Indique aquí su respuesta</string>
+    <string name="text_answer_combo">Elija su respuesta</string>
     <string name="reset">REINICIAR</string>
+    <string name="answer">Respuesta:</string>
 
     <!-- Profile -->
     <string name="profile">Profile</string>
@@ -133,6 +147,17 @@
     <string name="call_phone">Llamar</string>
     <string name="sign_out">Cerrar Sesión</string>
     <string name="sign_out_message">La próxima vez que abra la aplicación se le pedirán sus datos de acceso.</string>
+
+    <!-- Change Password -->
+    <string name="change_password">Cambiar Contraseña</string>
+    <string name="current_password">Contraseña Actual</string>
+    <string name="new_password">Nueva Contraseña</string>
+    <string name="confirm_new_password">Confirma Contraseña</string>
+    <string name="confirm_new_password_error">Los campos de nueva contraseña no coinciden.</string>
+    <string name="change_password_success_title">Cambio Exitoso</string>
+    <string name="change_password_success_message">Su nueva contraseña ha sido guardada. A partir de este momento, utilícela para iniciar sesión en la aplicación.</string>
+    <string name="change_password_error">Hubo un error al intentar cambiar su contraseña. Por favor, intente más tarde o póngase en contacto con el servicio de soporte.</string>
+    <string name="wrong_password">Su contraseña actual no coincide con nuestros registros.</string>
 
     <!-- Toasts -->
     <string name="no_internet">Sin Conexión A Internet</string>
@@ -147,7 +172,6 @@
     <string name="no_answered_button">Contestar</string>
     <string name="success_save_title">Respuestas Guardadas</string>
     <string name="success_save_message">Gracias por responder la encuesta.</string>
-    <string name="error_save_title">Error</string>
     <string name="error_save_message">No pudimos guardar tus respuestas en este momento.</string>
     <string name="server_unavailable_title">Servidor No Disponible</string>
     <string name="server_unavailable_message">Nuestro servidor no está disponible por el momento.</string>
@@ -160,7 +184,9 @@
 
     <!-- Helpers -->
     <string name="image_description">Image</string>
+    <string name="send">Enviar</string>
     <string name="cancel">Cancelar</string>
+    <string name="error">Error</string>
 
     <!-- Privacy Policy -->
     <string name="privacy_policy">Aviso de Privacidad</string>

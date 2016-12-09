@@ -50,7 +50,7 @@ class LoadingViewController: UIViewController {
                     
                     for object3 in survey["preguntas"] as! [AnyObject] {
                         let question = object3 as! NSDictionary
-                        let newQuestion = Pregunta(id: question["id"] as! Int, tipo: question["tipo"] as! Int, numPregunta: question["numPregunta"] as! Int, pregunta: question["pregunta"] as! String, video: question["video"] as! String, imagen: question["imagen"] as! String, opciones: question["opciones"] as! [String])
+                        let newQuestion = Pregunta(id: question["id"] as! Int, tipo: question["tipo"] as! Int, numPregunta: question["numPregunta"] as! Int, asCombo: question["combo"] as! Bool, titulo: question["titulo"] as! String, pregunta: question["pregunta"] as! String, video: question["video"] as! String, imagen: question["imagen"] as! String, opciones: question["opciones"] as! [String], subPreguntas: question["subPreguntas"] as! [String])
                         
                         preguntas.append(newQuestion)
                     }

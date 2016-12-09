@@ -13,7 +13,9 @@ public class DateUtils {
     public static final String DATE_FORMAT = "yyyy-MM-dd";
 
     public static String dateFormat(Date date) {
-        return new SimpleDateFormat(DATE_FORMAT_LONG, Locale.getDefault()).format(date);
+        String text = new SimpleDateFormat(DATE_FORMAT_LONG, Locale.getDefault()).format(date);
+
+        return text.substring(0, 1).toUpperCase() + text.substring(1);
     }
 
     public static List<String> getYears() {
@@ -26,5 +28,9 @@ public class DateUtils {
         }
 
         return years;
+    }
+
+    public static int getMinYear() {
+        return Calendar.getInstance().get(Calendar.YEAR) - 18;
     }
 }

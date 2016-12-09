@@ -11,11 +11,11 @@ public class APIConstants {
     static final String REGISTER_DEVICE = "REGISTER_DEVICE";
     static final String UNREGISTER_DEVICE = "UNREGISTER_DEVICE";
     static final String PRIVACY_POLICY = "PRIVACY_POLICY";
+    static final String CHANGE_PASSWORD = "CHANGE_PANELISTA_PASSWORD";
+    static final String RECOVER_PASSWORD = "FORGOT_PANELISTA_PASSWORD";
 
     public static final String STATUS = "status";
     public static final String CONTENT = "content";
-    public static final String SUCCESS = "SUCCESS";
-
     public static final String USERNAME = "username";
     public static final String PASSWORD = "password";
     public static final String PANELS = "paneles";
@@ -23,4 +23,11 @@ public class APIConstants {
     public static final String ENCUESTA = "encuesta";
     public static final String RESPUESTAS = "respuestas";
     public static final String ID = "id";
+    public static final String OLD_PASSWORD = "old";
+    public static final String NEW_PASSWORD = "new";
+    public static final String EMAIL = "email";
+
+    public static final String SUCCESS = "SUCCESS";
+    public static final String WRONG_PASSWORD = "WRONG_PASSWORD";
+    public static final String WRONG_USER = "WRONG_USER";
 }

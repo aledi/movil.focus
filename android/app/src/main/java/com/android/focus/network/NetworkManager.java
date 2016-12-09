@@ -14,8 +14,10 @@ import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
 
 import static com.android.focus.network.APIConstants.ACTION;
+import static com.android.focus.network.APIConstants.CHANGE_PASSWORD;
 import static com.android.focus.network.APIConstants.GET_DATA;
 import static com.android.focus.network.APIConstants.PRIVACY_POLICY;
+import static com.android.focus.network.APIConstants.RECOVER_PASSWORD;
 import static com.android.focus.network.APIConstants.REGISTER_USER;
 import static com.android.focus.network.APIConstants.SAVE_ANSWERS;
 import static com.android.focus.network.APIConstants.SIGN_IN;
@@ -27,7 +29,10 @@ import static com.android.focus.network.APIConstants.START_SURVEY;
 
 public class NetworkManager {
 
-    private static final String URL = "http://focusestudios.mx/paneles/api/controller.php";
+    private static final String BASIC_URL = "http://focusestudios.mx/paneles/";
+    private static final String URL = BASIC_URL + "api/controller.php";
+    public static final String IMAGES_URL = BASIC_URL + "resources/images/";
+    public static final String VIDEOS_URL = BASIC_URL + "resources/videos/";
 
     //  region HTTP Requests
     public static void sigIn(RequestParams params, AsyncHttpResponseHandler responseHandler) {
@@ -52,6 +57,14 @@ public class NetworkManager {
 
     public static void saveAnswers(RequestParams params, AsyncHttpResponseHandler responseHandler) {
         post(SAVE_ANSWERS, params, responseHandler);
+    }
+
+    public static void changePassword(RequestParams params, AsyncHttpResponseHandler responseHandler) {
+        post(CHANGE_PASSWORD, params, responseHandler);
+    }
+
+    public static void recoverPassword(RequestParams params, AsyncHttpResponseHandler responseHandler) {
+        post(RECOVER_PASSWORD, params, responseHandler);
     }
 
     private static void post(String action, RequestParams params, AsyncHttpResponseHandler responseHandler) {

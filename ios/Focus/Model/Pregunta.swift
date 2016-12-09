@@ -14,6 +14,8 @@ enum TipoPregunta: Int {
     case Unica = 2
     case Multiple = 3
     case Ordenamiento = 4
+    case Matriz = 5
+    case Escala = 6
 }
 
 class Pregunta {
@@ -21,19 +23,47 @@ class Pregunta {
     var id: Int
     var tipo: Int
     var numPregunta: Int
+    var asCombo: Bool
+    var titulo: String
     var pregunta: String
     var video: String
     var imagen: UIImage? = nil
     var opciones: [String]
-    var selectedOptions: [Bool] = [false, false, false, false, false, false, false, false, false, false]
+    var subPreguntas: [String]
+    var selectedOptions: [Bool] = [false, false, false, false, false, false, false, false, false, false,
+                                   false, false, false, false, false, false, false, false, false, false]
+    var selectedOrder: [Int] = [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
+                                -1, -1, -1, -1, -1, -1, -1, -1, -1, -1]
+    var selectedSubPreguntas: [Int] = [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
+                                       -1, -1, -1, -1, -1, -1, -1, -1, -1, -1]
     var respuesta: String = ""
     var nextOption: Int = 1
     var didSeeVideo: Bool
     
-    init(id: Int, tipo: Int, numPregunta: Int, pregunta: String, video: String, imagen: String, opciones: [String]) {
+    var minScale: Double {
+        return self.opciones.count > 0 ? (Double(self.opciones[0]) ?? 0) : 0
+    }
+    
+    var maxScale: Double {
+        return self.opciones.count > 1 ? (Double(self.opciones[1]) ?? 0) : 0
+    }
+    
+    var matrizAnswered: Bool {
+        for i in 0..<self.subPreguntas.count {
+            if (self.selectedSubPreguntas[i] == -1) {
+                return false
+            }
+        }
+        
+        return true
+    }
+    
+    init(id: Int, tipo: Int, numPregunta: Int, asCombo: Bool, titulo: String, pregunta: String, video: String, imagen: String, opciones: [String], subPreguntas: [String]) {
         self.id = id
         self.tipo = tipo
         self.numPregunta = numPregunta
+        self.asCombo = asCombo
+        self.titulo = titulo
         self.pregunta = pregunta
         self.video = video
         self.didSeeVideo = self.video.isEmpty
@@ -43,6 +73,7 @@ class Pregunta {
         }
         
         self.opciones = opciones
+        self.subPreguntas = subPreguntas
     }
     
 }

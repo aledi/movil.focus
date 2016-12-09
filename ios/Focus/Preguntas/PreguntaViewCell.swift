@@ -10,7 +10,8 @@ import UIKit
 
 class PreguntaViewCell: UITableViewCell, UITextViewDelegate {
 
-    @IBOutlet var preguntaLabel: UILabel!
+    @IBOutlet var tituloLabel: UILabel!
+    @IBOutlet var tituloHeightConstraint: NSLayoutConstraint!
     
     @IBOutlet var videoButton: UIButton!
     @IBOutlet var videoHeightConstraint: NSLayoutConstraint!
@@ -19,6 +20,8 @@ class PreguntaViewCell: UITableViewCell, UITextViewDelegate {
     @IBOutlet var imagen: UIImageView!
     @IBOutlet var imagenHeightConstraint: NSLayoutConstraint!
     @IBOutlet var imagenBottomConstraint: NSLayoutConstraint!
+    
+    @IBOutlet var preguntaLabel: UILabel!
     
     @IBOutlet var textView: UITextView!
     @IBOutlet var textViewHeightConstraint: NSLayoutConstraint!
@@ -37,11 +40,12 @@ class PreguntaViewCell: UITableViewCell, UITextViewDelegate {
     var tipo: TipoPregunta? {
         didSet {
             for button in self.buttons {
-                button.multiSelection = (tipo == .Multiple)
-                button.ordered = (tipo == .Ordenamiento)
+                button.multiSelection = tipo == .Multiple
+                button.ordered = tipo == .Ordenamiento
             }
         }
     }
+    
     var pregunta: Pregunta? {
         didSet {
             guard let pregunta = self.pregunta else {
@@ -67,7 +71,8 @@ class PreguntaViewCell: UITableViewCell, UITextViewDelegate {
             return
         }
         
-        self.preguntaLabel.text = pregunta.pregunta
+        self.tituloLabel.text = pregunta.titulo
+        self.tituloHeightConstraint.constant = pregunta.titulo.isEmpty ? 0 : 60
         
         self.videoButton.tag = numPregunta
         
@@ -87,6 +92,8 @@ class PreguntaViewCell: UITableViewCell, UITextViewDelegate {
             self.imagen.image = image
         }
         
+        self.preguntaLabel.text = pregunta.pregunta
+        
         if (tipo == .Abierta) {
             self.textViewHeightConstraint.constant = 100
             self.textViewBottomConstraint.constant = 15
@@ -96,7 +103,7 @@ class PreguntaViewCell: UITableViewCell, UITextViewDelegate {
             self.textView.text = self.pregunta!.respuesta.isEmpty ? "Indique aquí su respuesta..." : self.pregunta!.respuesta
             self.textView.textColor = self.pregunta!.respuesta.isEmpty ? UIColor.lightGrayColor() : UIColor.blackColor()
             
-            for i in 0...9 {
+            for i in 0...19 {
                 self.heightConstraints[i].constant = 0
                 self.bottomConstraints[i].constant = 0
                 self.buttons[i].alpha = 0
@@ -113,11 +120,12 @@ class PreguntaViewCell: UITableViewCell, UITextViewDelegate {
                 self.heightConstraints[i].constant = 50
                 self.bottomConstraints[i].constant = 8
                 self.labels[i].text = pregunta.opciones[i]
+                self.buttons[i].optionNumber = pregunta.selectedOrder[i]
                 self.buttons[i].selected = pregunta.selectedOptions[i]
                 self.buttons[i].alpha = 1.0
             }
             
-            for i in pregunta.opciones.count..<10 {
+            for i in pregunta.opciones.count..<20 {
                 self.heightConstraints[i].constant = 0
                 self.bottomConstraints[i].constant = 0
                 self.buttons[i].alpha = 0
@@ -144,7 +152,14 @@ class PreguntaViewCell: UITableViewCell, UITextViewDelegate {
             return
         }
         
-        let index = self.buttons.indexOf(sender)!
+        var index = 0
+        
+        for (i, button) in self.buttons.enumerate() {
+            if (button == sender) {
+                index = i
+                break
+            }
+        }
         
         switch (self.tipo!) {
         case .Abierta:
@@ -156,7 +171,7 @@ class PreguntaViewCell: UITableViewCell, UITextViewDelegate {
             
             sender.selected = true
             
-            for i in 0...9 {
+            for i in 0...19 {
                 pregunta.selectedOptions[i] = self.buttons[i].selected
             }
             
@@ -169,8 +184,12 @@ class PreguntaViewCell: UITableViewCell, UITextViewDelegate {
                 sender.optionNumber = pregunta.nextOption
                 sender.selected = true
                 pregunta.respuesta += "\(pregunta.opciones[index])&"
+                pregunta.selectedOrder[index] = pregunta.nextOption
+                pregunta.selectedOptions[index] = true
                 pregunta.nextOption += 1
             }
+        default:
+            break
         }
     }
     

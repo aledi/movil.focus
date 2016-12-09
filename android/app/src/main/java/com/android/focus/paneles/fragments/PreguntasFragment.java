@@ -3,9 +3,6 @@ package com.android.focus.paneles.fragments;
 import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
@@ -16,6 +13,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
@@ -25,6 +24,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.android.focus.FocusApp;
@@ -34,22 +34,24 @@ import com.android.focus.model.Pregunta;
 import com.android.focus.network.HttpResponseHandler;
 import com.android.focus.network.NetworkManager;
 import com.android.focus.paneles.activities.VideoViewActivity;
+import com.android.focus.utils.ArrayDefaultAdapter;
 import com.android.focus.utils.TextUtils;
 import com.android.focus.utils.UIUtils;
 import com.loopj.android.http.RequestParams;
+import com.squareup.picasso.Picasso;
 
 import org.json.JSONObject;
 
-import java.io.InputStream;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
 import cz.msebera.android.httpclient.Header;
 
+import static com.android.focus.model.Pregunta.MATRIX;
 import static com.android.focus.model.Pregunta.MAX_OPTIONS;
 import static com.android.focus.model.Pregunta.MULTIPLE_OPTION;
 import static com.android.focus.model.Pregunta.ORDERING;
+import static com.android.focus.model.Pregunta.SCALE;
 import static com.android.focus.model.Pregunta.SINGLE_OPTION;
 import static com.android.focus.model.Pregunta.TEXT_ANSWER;
 import static com.android.focus.network.APIConstants.ID;
@@ -62,7 +64,6 @@ public class PreguntasFragment extends Fragment {
     private static final String ARGS_ENCUESTA_ID = FRAGMENT_TAG + ".encuestaId";
 
     private Activity activity;
-    private boolean enableBack = true;
     private int encuestaId;
     private int panelId;
     private List<Pregunta> preguntas;
@@ -70,6 +71,7 @@ public class PreguntasFragment extends Fragment {
     private int dialogMessage;
     private String respuestas;
     private View loader;
+    private Picasso picasso;
 
     // region Listeners variables
     private DialogInterface.OnClickListener positiveButtonListener = new DialogInterface.OnClickListener() {
@@ -107,6 +109,7 @@ public class PreguntasFragment extends Fragment {
 
         panelId = getArguments().getInt(ARGS_PANEL_ID);
         encuestaId = getArguments().getInt(ARGS_ENCUESTA_ID);
+        picasso = Picasso.with(FocusApp.getContext());
     }
 
     @Override
@@ -138,6 +141,7 @@ public class PreguntasFragment extends Fragment {
     // region UI methods - Question
     private View createViewForPregunta(Pregunta pregunta) {
         View view = View.inflate(FocusApp.getContext(), R.layout.fragment_preguntas_item, null);
+        setUpForTitle((TextView) view.findViewById(R.id.txt_title), pregunta.getTitulo());
         TextView text = (TextView) view.findViewById(R.id.txt_pregunta);
         text.setText(pregunta.getNumPregunta() + ".- " + pregunta.getPregunta());
         setUpForImage((ImageView) view.findViewById(R.id.image), pregunta.getImagen());
@@ -155,9 +159,20 @@ public class PreguntasFragment extends Fragment {
                 break;
             case ORDERING:
                 setUpForOrderingAnswer(pregunta, view);
+                break;
+            case MATRIX:
+                setUpForMatrixAnswer(pregunta, view);
+                break;
+            case SCALE:
+                setUpForScaleAnswer(pregunta, view);
         }
 
         return view;
+    }
+
+    private void setUpForTitle(TextView textView, String title) {
+        textView.setVisibility(TextUtils.isValidString(title) ? View.VISIBLE : View.GONE);
+        textView.setText(title);
     }
 
     private void setUpForImage(ImageView image, String url) {
@@ -167,11 +182,22 @@ public class PreguntasFragment extends Fragment {
         }
 
         image.setVisibility(View.VISIBLE);
-        new ImageLoaderClass(image).execute(url);
+        picasso.load(getImageUrl(url)).into(image);
+    }
+
+    private String getImageUrl(String url) {
+        return NetworkManager.IMAGES_URL + url;
     }
 
     private void setUpForVideo(CardView card, Button video, final Pregunta pregunta) {
-        card.setVisibility(TextUtils.isValidString(pregunta.getVideo()) ? View.VISIBLE : View.GONE);
+        final String url = pregunta.getVideo();
+
+        if (!TextUtils.isValidString(url)) {
+            card.setVisibility(View.GONE);
+            return;
+        }
+
+        card.setVisibility(View.VISIBLE);
         video.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -180,10 +206,14 @@ public class PreguntasFragment extends Fragment {
                 }
 
                 Intent intent = new Intent(getActivity(), VideoViewActivity.class);
-                intent.putExtra(VideoViewActivity.EXTRA_VIDEO_URL, pregunta.getVideo());
+                intent.putExtra(VideoViewActivity.EXTRA_VIDEO_URL, getVideoUrl(url));
                 startActivity(intent);
             }
         });
+    }
+
+    private String getVideoUrl(String url) {
+        return NetworkManager.VIDEOS_URL + url;
     }
     // endregion
 
@@ -214,6 +244,11 @@ public class PreguntasFragment extends Fragment {
 
     // region UI methods - Single Option
     private void setUpForSingleOptionAnswer(final Pregunta pregunta, View view) {
+        if (pregunta.isCombo()) {
+            setUpForSingleOptionAsComboAnswer(pregunta, view);
+            return;
+        }
+
         RadioGroup radioGroup = (RadioGroup) view.findViewById(R.id.radio_group);
         radioGroup.setVisibility(View.VISIBLE);
         final List<String> opciones = pregunta.getOpciones();
@@ -244,6 +279,32 @@ public class PreguntasFragment extends Fragment {
         }
     }
 
+    private void setUpForSingleOptionAsComboAnswer(final Pregunta pregunta, View view) {
+        Spinner spinner = (Spinner) view.findViewById(R.id.spinner_options);
+        spinner.setVisibility(View.VISIBLE);
+        final List<String> opciones = new ArrayList<>();
+        opciones.add(getString(R.string.text_answer_combo));
+        opciones.addAll(pregunta.getOpciones());
+        ArrayDefaultAdapter adapter = new ArrayDefaultAdapter(opciones, getActivity());
+        adapter.setDropDownViewResource(R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
+        spinner.setOnItemSelectedListener(new OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                if (position == 0) {
+                    return;
+                }
+
+                pregunta.setRespuesta(opciones.get(position));
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                // Do nothing.
+            }
+        });
+    }
+
     private List<RadioButton> getRadioButtonsForSingleOption(View view) {
         List<RadioButton> buttons = new ArrayList<>();
         buttons.add((RadioButton) view.findViewById(R.id.btn_single_option_0));
@@ -256,6 +317,16 @@ public class PreguntasFragment extends Fragment {
         buttons.add((RadioButton) view.findViewById(R.id.btn_single_option_7));
         buttons.add((RadioButton) view.findViewById(R.id.btn_single_option_8));
         buttons.add((RadioButton) view.findViewById(R.id.btn_single_option_9));
+        buttons.add((RadioButton) view.findViewById(R.id.btn_single_option_10));
+        buttons.add((RadioButton) view.findViewById(R.id.btn_single_option_11));
+        buttons.add((RadioButton) view.findViewById(R.id.btn_single_option_12));
+        buttons.add((RadioButton) view.findViewById(R.id.btn_single_option_13));
+        buttons.add((RadioButton) view.findViewById(R.id.btn_single_option_14));
+        buttons.add((RadioButton) view.findViewById(R.id.btn_single_option_15));
+        buttons.add((RadioButton) view.findViewById(R.id.btn_single_option_16));
+        buttons.add((RadioButton) view.findViewById(R.id.btn_single_option_17));
+        buttons.add((RadioButton) view.findViewById(R.id.btn_single_option_18));
+        buttons.add((RadioButton) view.findViewById(R.id.btn_single_option_19));
 
         return buttons;
     }
@@ -304,6 +375,16 @@ public class PreguntasFragment extends Fragment {
         buttons.add((CheckBox) view.findViewById(R.id.btn_multiple_option_7));
         buttons.add((CheckBox) view.findViewById(R.id.btn_multiple_option_8));
         buttons.add((CheckBox) view.findViewById(R.id.btn_multiple_option_9));
+        buttons.add((CheckBox) view.findViewById(R.id.btn_multiple_option_10));
+        buttons.add((CheckBox) view.findViewById(R.id.btn_multiple_option_11));
+        buttons.add((CheckBox) view.findViewById(R.id.btn_multiple_option_12));
+        buttons.add((CheckBox) view.findViewById(R.id.btn_multiple_option_13));
+        buttons.add((CheckBox) view.findViewById(R.id.btn_multiple_option_14));
+        buttons.add((CheckBox) view.findViewById(R.id.btn_multiple_option_15));
+        buttons.add((CheckBox) view.findViewById(R.id.btn_multiple_option_16));
+        buttons.add((CheckBox) view.findViewById(R.id.btn_multiple_option_17));
+        buttons.add((CheckBox) view.findViewById(R.id.btn_multiple_option_18));
+        buttons.add((CheckBox) view.findViewById(R.id.btn_multiple_option_19));
 
         return buttons;
     }
@@ -363,6 +444,16 @@ public class PreguntasFragment extends Fragment {
         buttons.add((CheckBox) view.findViewById(R.id.btn_ordering_7));
         buttons.add((CheckBox) view.findViewById(R.id.btn_ordering_8));
         buttons.add((CheckBox) view.findViewById(R.id.btn_ordering_9));
+        buttons.add((CheckBox) view.findViewById(R.id.btn_ordering_10));
+        buttons.add((CheckBox) view.findViewById(R.id.btn_ordering_11));
+        buttons.add((CheckBox) view.findViewById(R.id.btn_ordering_12));
+        buttons.add((CheckBox) view.findViewById(R.id.btn_ordering_13));
+        buttons.add((CheckBox) view.findViewById(R.id.btn_ordering_14));
+        buttons.add((CheckBox) view.findViewById(R.id.btn_ordering_15));
+        buttons.add((CheckBox) view.findViewById(R.id.btn_ordering_16));
+        buttons.add((CheckBox) view.findViewById(R.id.btn_ordering_17));
+        buttons.add((CheckBox) view.findViewById(R.id.btn_ordering_18));
+        buttons.add((CheckBox) view.findViewById(R.id.btn_ordering_19));
 
         return buttons;
     }
@@ -388,15 +479,118 @@ public class PreguntasFragment extends Fragment {
             case 9:
                 return R.drawable.selected09;
             case 10:
-            default:
                 return R.drawable.selected10;
+            case 11:
+                return R.drawable.selected11;
+            case 12:
+                return R.drawable.selected12;
+            case 13:
+                return R.drawable.selected13;
+            case 14:
+                return R.drawable.selected14;
+            case 15:
+                return R.drawable.selected15;
+            case 16:
+                return R.drawable.selected16;
+            case 17:
+                return R.drawable.selected17;
+            case 18:
+                return R.drawable.selected18;
+            case 19:
+                return R.drawable.selected19;
+            case 20:
+            default:
+                return R.drawable.selected20;
         }
+    }
+    // endregion
+
+    // region UI methods - Matrix
+    private void setUpForMatrixAnswer(Pregunta pregunta, View view) {
+        LinearLayout matrixLayout = (LinearLayout) view.findViewById(R.id.layout_matrix);
+        matrixLayout.setVisibility(View.VISIBLE);
+
+        List<String> subQuestions = pregunta.getSubPreguntas();
+        List<String> opciones = new ArrayList<>();
+        opciones.add(getString(R.string.text_answer_combo));
+        opciones.addAll(pregunta.getOpciones());
+
+        for (int i = 0; i < subQuestions.size(); i++) {
+            String subQuestion = subQuestions.get(i);
+            View subQuestionLayout = View.inflate(getActivity(), R.layout.layout_answer_matrix, null);
+            setUpSubQuestionLayout(pregunta, subQuestion, opciones, i, subQuestionLayout);
+            matrixLayout.addView(subQuestionLayout);
+        }
+    }
+
+    private void setUpSubQuestionLayout(final Pregunta pregunta, String subQuestionText, final List<String> opciones, final int index, View view) {
+        TextView subQuestion = (TextView) view.findViewById(R.id.txt_sub_question);
+        subQuestion.setText(subQuestionText);
+
+        ArrayDefaultAdapter adapter = new ArrayDefaultAdapter(opciones, getActivity());
+        adapter.setDropDownViewResource(R.layout.simple_spinner_dropdown_item);
+        Spinner spinner = (Spinner) view.findViewById(R.id.spinner_options);
+        spinner.setAdapter(adapter);
+        spinner.setOnItemSelectedListener(new OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                if (position == 0) {
+                    return;
+                }
+
+                pregunta.setSubPregunta(index, position - 1);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                // Do nothing.
+            }
+        });
+    }
+    // endregion
+
+    // region UI methods - Scale
+    private void setUpForScaleAnswer(final Pregunta pregunta, View view) {
+        LinearLayout scaleLayout = (LinearLayout) view.findViewById(R.id.layout_scale);
+        scaleLayout.setVisibility(View.VISIBLE);
+
+        final int minScale = pregunta.getMinScale();
+        final int maxScale = pregunta.getMaxScale();
+        final TextView answer = (TextView) view.findViewById(R.id.txt_answer);
+        final ImageView addButton = (ImageView) view.findViewById(R.id.btn_add);
+        final ImageView minusButton = (ImageView) view.findViewById(R.id.btn_minus);
+
+        OnClickListener listener = new OnClickListener() {
+            int scale;
+
+            @Override
+            public void onClick(View view) {
+                if (view.equals(addButton)) {
+                    if (scale == maxScale) {
+                        return;
+                    }
+
+                    scale += 1;
+                } else if (view.equals(minusButton)) {
+                    if (scale == minScale) {
+                        return;
+                    }
+
+                    scale -= 1;
+                }
+
+                pregunta.setRespuesta(Integer.toString(scale));
+                answer.setText(pregunta.getRespuesta());
+            }
+        };
+
+        addButton.setOnClickListener(listener);
+        minusButton.setOnClickListener(listener);
     }
     // endregion
 
     // region Encuesta Actions
     public void saveRespuestas() {
-        enableBack = false;
         UIUtils.hideKeyboardIfShowing(activity);
 
         if (checkForInvalidRespuesta()) {
@@ -419,12 +613,14 @@ public class PreguntasFragment extends Fragment {
 
             @Override
             public void onFailure(int statusCode, Header[] headers, String errorResponse, Throwable throwable) {
-                UIUtils.showAlertDialog(R.string.error_save_title, R.string.error_save_message, activity, positiveButtonListener);
+                UIUtils.showAlertDialog(R.string.error, R.string.error_save_message, activity, positiveButtonListener);
             }
         });
     }
 
     private boolean checkForInvalidRespuesta() {
+        respuestas = "";
+
         for (Pregunta pregunta : preguntas) {
             if (!pregunta.isVideoVisto()) {
                 dialogTitle = getString(R.string.error_unseen_video_title, pregunta.getNumPregunta());
@@ -445,8 +641,11 @@ public class PreguntasFragment extends Fragment {
             } else if (pregunta.getTipo() == ORDERING) {
                 String respuestaOrdenamiento = "";
                 String[] respuestasOrdenadas = pregunta.getRespuestasOrdenadas();
+                List<String> opciones = pregunta.getOpciones();
 
-                for (String respuestaOrdenada : respuestasOrdenadas) {
+                for (int i = 0; i < opciones.size(); i++) {
+                    String respuestaOrdenada = respuestasOrdenadas[i];
+
                     if (respuestaOrdenada.equals("")) {
                         dialogTitle = getString(R.string.error_save_survey_title, pregunta.getNumPregunta());
                         dialogMessage = R.string.error_save_survey_message;
@@ -458,6 +657,18 @@ public class PreguntasFragment extends Fragment {
                 }
 
                 pregunta.setRespuesta(respuestaOrdenamiento);
+            } else if (pregunta.getTipo() == MATRIX) {
+                String respuestaMatriz = "";
+                List<String> opciones = pregunta.getOpciones();
+                List<String> subPreguntas = pregunta.getSubPreguntas();
+
+                if (pregunta.isMatrixAnswered()) {
+                    for (int i = 0; i < subPreguntas.size(); i++) {
+                        respuestaMatriz += opciones.get(pregunta.getSubPregunta(i)) + "&";
+                    }
+                }
+
+                pregunta.setRespuesta(respuestaMatriz);
             }
 
             String respuesta = pregunta.getRespuesta();
@@ -481,39 +692,6 @@ public class PreguntasFragment extends Fragment {
         params.put(RESPUESTAS, respuestas);
 
         return params;
-    }
-    // endregion
-
-    // region Static classes
-    private class ImageLoaderClass extends AsyncTask<String, String, Bitmap> {
-
-        Bitmap bitmap;
-        ImageView imageView;
-
-        ImageLoaderClass(ImageView imageView) {
-            this.imageView = imageView;
-        }
-
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-
-        }
-
-        protected Bitmap doInBackground(String... args) {
-            try {
-                bitmap = BitmapFactory.decodeStream((InputStream) new URL(args[0]).getContent());
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-            return bitmap;
-        }
-
-        protected void onPostExecute(Bitmap image) {
-            if (image != null) {
-                imageView.setImageBitmap(image);
-            }
-        }
     }
     // endregion
 }

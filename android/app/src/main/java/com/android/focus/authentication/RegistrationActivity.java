@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 import android.view.MenuItem;
 
 import com.android.focus.R;
@@ -42,20 +41,10 @@ public class RegistrationActivity extends AppCompatActivity {
 
     // region Menu methods
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_registration, menu);
-
-        return super.onCreateOptionsMenu(menu);
-    }
-
-    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
                 fragment.handleOnBackPressedEvent();
-                return true;
-            case R.id.register_user:
-                fragment.registerUser();
                 return true;
         }
 

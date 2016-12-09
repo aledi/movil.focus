@@ -19,6 +19,8 @@ class PanelsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
+        
         UIApplication.sharedApplication().setStatusBarStyle(.LightContent, animated: false)
         self.paneles = self.appDelegate.paneles
         self.tableView.reloadData()

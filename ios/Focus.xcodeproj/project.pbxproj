@@ -8,14 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		4004146B1D56B899005113D1 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4004146A1D56B899005113D1 /* RadioButton.swift */; };
+		400A4E821DD69195002C02BA /* estados.plist in Resources */ = {isa = PBXBuildFile; fileRef = 400A4E811DD69195002C02BA /* estados.plist */; };
 		400E9D3D1D5020CA006AAD64 /* Preguntas.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 400E9D3C1D5020CA006AAD64 /* Preguntas.storyboard */; };
 		400E9D3F1D5021B3006AAD64 /* PreguntasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400E9D3E1D5021B3006AAD64 /* PreguntasViewController.swift */; };
 		400F4EF41D49B46500538BCD /* EncuestasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400F4EF31D49B46500538BCD /* EncuestasViewController.swift */; };
+		402DC9971DF790610062877C /* PreguntaMatrizViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 402DC9961DF790610062877C /* PreguntaMatrizViewCell.xib */; };
+		402DC9991DF791680062877C /* PreguntaMatrizViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402DC9981DF791680062877C /* PreguntaMatrizViewCell.swift */; };
+		402F247C1DF49FA0004E5EF2 /* PreguntaComboViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 402F247B1DF49FA0004E5EF2 /* PreguntaComboViewCell.xib */; };
+		402F247E1DF49FB4004E5EF2 /* PreguntaComboViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402F247D1DF49FB4004E5EF2 /* PreguntaComboViewCell.swift */; };
+		402F24801DF4CF3D004E5EF2 /* PreguntaEscalaViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 402F247F1DF4CF3D004E5EF2 /* PreguntaEscalaViewCell.xib */; };
+		402F24821DF4CF51004E5EF2 /* PreguntaEscalaViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402F24811DF4CF51004E5EF2 /* PreguntaEscalaViewCell.swift */; };
 		405313051D385ED10073751A /* Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405313041D385ED10073751A /* Controller.swift */; };
 		4053130A1D386EFA0073751A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 405313091D386EFA0073751A /* Main.storyboard */; };
 		4053130C1D386F370073751A /* PanelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4053130B1D386F370073751A /* PanelsViewController.swift */; };
 		406537251D7FA8D7000C7C9C /* PrivacyPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406537241D7FA8D7000C7C9C /* PrivacyPolicyViewController.swift */; };
 		408C37F11D838B4000A75784 /* MoviePlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408C37F01D838B4000A75784 /* MoviePlayerViewController.swift */; };
+		40982F1C1DDBECD40031EBED /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40982F1B1DDBECD40031EBED /* ForgotPasswordViewController.swift */; };
 		40A8DC301D56801B0065B734 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A8DC2F1D56801B0065B734 /* RegistrationViewController.swift */; };
 		40A8DC321D569E010065B734 /* PreguntaViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40A8DC311D569E010065B734 /* PreguntaViewCell.xib */; };
 		40A8DC341D569E1B0065B734 /* PreguntaViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A8DC331D569E1B0065B734 /* PreguntaViewCell.swift */; };
@@ -25,6 +33,8 @@
 		40CC5DB31D80EF5900E1D8E5 /* Extras.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40CC5DB21D80EF5900E1D8E5 /* Extras.storyboard */; };
 		40CC5DB51D80F77300E1D8E5 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CC5DB41D80F77300E1D8E5 /* WelcomeViewController.swift */; };
 		40D810661D5811EE00EB8FCE /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D810651D5811EE00EB8FCE /* LoadingViewController.swift */; };
+		40E400E21DD421480095488F /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E400E11DD421480095488F /* Button.swift */; };
+		40E400E41DD547330095488F /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E400E31DD547330095488F /* ChangePasswordViewController.swift */; };
 		40E7F9C01D4D353700BCD0DB /* NSUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E7F9BF1D4D353700BCD0DB /* NSUserDefaults.swift */; };
 		40E7F9C21D4D5A9E00BCD0DB /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E7F9C11D4D5A9E00BCD0DB /* ProfileViewController.swift */; };
 		40FF0D981D37138500ED8A64 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40FF0D971D37138500ED8A64 /* AppDelegate.swift */; };
@@ -52,14 +62,22 @@
 
 /* Begin PBXFileReference section */
 		4004146A1D56B899005113D1 /* RadioButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RadioButton.swift; path = Extensions/RadioButton.swift; sourceTree = "<group>"; };
+		400A4E811DD69195002C02BA /* estados.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = estados.plist; sourceTree = "<group>"; };
 		400E9D3C1D5020CA006AAD64 /* Preguntas.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Preguntas.storyboard; path = Preguntas/Preguntas.storyboard; sourceTree = "<group>"; };
 		400E9D3E1D5021B3006AAD64 /* PreguntasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreguntasViewController.swift; path = Preguntas/PreguntasViewController.swift; sourceTree = "<group>"; };
 		400F4EF31D49B46500538BCD /* EncuestasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EncuestasViewController.swift; path = Main/EncuestasViewController.swift; sourceTree = "<group>"; };
+		402DC9961DF790610062877C /* PreguntaMatrizViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PreguntaMatrizViewCell.xib; path = Preguntas/PreguntaMatrizViewCell.xib; sourceTree = "<group>"; };
+		402DC9981DF791680062877C /* PreguntaMatrizViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreguntaMatrizViewCell.swift; path = Preguntas/PreguntaMatrizViewCell.swift; sourceTree = "<group>"; };
+		402F247B1DF49FA0004E5EF2 /* PreguntaComboViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PreguntaComboViewCell.xib; path = Preguntas/PreguntaComboViewCell.xib; sourceTree = "<group>"; };
+		402F247D1DF49FB4004E5EF2 /* PreguntaComboViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreguntaComboViewCell.swift; sourceTree = "<group>"; };
+		402F247F1DF4CF3D004E5EF2 /* PreguntaEscalaViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PreguntaEscalaViewCell.xib; path = Preguntas/PreguntaEscalaViewCell.xib; sourceTree = "<group>"; };
+		402F24811DF4CF51004E5EF2 /* PreguntaEscalaViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreguntaEscalaViewCell.swift; path = Preguntas/PreguntaEscalaViewCell.swift; sourceTree = "<group>"; };
 		405313041D385ED10073751A /* Controller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Controller.swift; path = Model/Controller.swift; sourceTree = "<group>"; };
 		405313091D386EFA0073751A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Main/Main.storyboard; sourceTree = "<group>"; };
 		4053130B1D386F370073751A /* PanelsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PanelsViewController.swift; path = Main/PanelsViewController.swift; sourceTree = "<group>"; };
 		406537241D7FA8D7000C7C9C /* PrivacyPolicyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PrivacyPolicyViewController.swift; path = Extras/PrivacyPolicyViewController.swift; sourceTree = "<group>"; };
 		408C37F01D838B4000A75784 /* MoviePlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MoviePlayerViewController.swift; path = Preguntas/MoviePlayerViewController.swift; sourceTree = "<group>"; };
+		40982F1B1DDBECD40031EBED /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ForgotPasswordViewController.swift; path = "Log In/ForgotPasswordViewController.swift"; sourceTree = "<group>"; };
 		40A8DC2F1D56801B0065B734 /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegistrationViewController.swift; path = "Log In/RegistrationViewController.swift"; sourceTree = "<group>"; };
 		40A8DC311D569E010065B734 /* PreguntaViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PreguntaViewCell.xib; path = Preguntas/PreguntaViewCell.xib; sourceTree = "<group>"; };
 		40A8DC331D569E1B0065B734 /* PreguntaViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreguntaViewCell.swift; path = Preguntas/PreguntaViewCell.swift; sourceTree = "<group>"; };
@@ -70,6 +88,8 @@
 		40CC5DB41D80F77300E1D8E5 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WelcomeViewController.swift; path = Extras/WelcomeViewController.swift; sourceTree = "<group>"; };
 		40D810651D5811EE00EB8FCE /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoadingViewController.swift; path = Main/LoadingViewController.swift; sourceTree = "<group>"; };
 		40DDEC941D8E622F00B02BF9 /* Focus.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Focus.entitlements; sourceTree = "<group>"; };
+		40E400E11DD421480095488F /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Button.swift; path = Extensions/Button.swift; sourceTree = "<group>"; };
+		40E400E31DD547330095488F /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChangePasswordViewController.swift; path = Main/ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		40E7F9BF1D4D353700BCD0DB /* NSUserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSUserDefaults.swift; path = Extensions/NSUserDefaults.swift; sourceTree = "<group>"; };
 		40E7F9C11D4D5A9E00BCD0DB /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = Main/ProfileViewController.swift; sourceTree = "<group>"; };
 		40FF0D941D37138500ED8A64 /* Focus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Focus.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,6 +134,12 @@
 				400E9D3E1D5021B3006AAD64 /* PreguntasViewController.swift */,
 				40A8DC331D569E1B0065B734 /* PreguntaViewCell.swift */,
 				40A8DC311D569E010065B734 /* PreguntaViewCell.xib */,
+				402F247D1DF49FB4004E5EF2 /* PreguntaComboViewCell.swift */,
+				402F247B1DF49FA0004E5EF2 /* PreguntaComboViewCell.xib */,
+				402F24811DF4CF51004E5EF2 /* PreguntaEscalaViewCell.swift */,
+				402F247F1DF4CF3D004E5EF2 /* PreguntaEscalaViewCell.xib */,
+				402DC9981DF791680062877C /* PreguntaMatrizViewCell.swift */,
+				402DC9961DF790610062877C /* PreguntaMatrizViewCell.xib */,
 				408C37F01D838B4000A75784 /* MoviePlayerViewController.swift */,
 			);
 			name = Preguntas;
@@ -127,6 +153,7 @@
 				4053130B1D386F370073751A /* PanelsViewController.swift */,
 				400F4EF31D49B46500538BCD /* EncuestasViewController.swift */,
 				40E7F9C11D4D5A9E00BCD0DB /* ProfileViewController.swift */,
+				40E400E31DD547330095488F /* ChangePasswordViewController.swift */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -162,7 +189,6 @@
 		40FF0D961D37138500ED8A64 /* Focus */ = {
 			isa = PBXGroup;
 			children = (
-				40DDEC941D8E622F00B02BF9 /* Focus.entitlements */,
 				40FF0D971D37138500ED8A64 /* AppDelegate.swift */,
 				40FF0DA01D37138500ED8A64 /* LaunchScreen.storyboard */,
 				40FF0D9E1D37138500ED8A64 /* Assets.xcassets */,
@@ -173,6 +199,8 @@
 				400E9D3B1D50208A006AAD64 /* Preguntas */,
 				40CC5DB11D80EF0A00E1D8E5 /* Extras */,
 				40FF0DA31D37138500ED8A64 /* Info.plist */,
+				400A4E811DD69195002C02BA /* estados.plist */,
+				40DDEC941D8E622F00B02BF9 /* Focus.entitlements */,
 			);
 			path = Focus;
 			sourceTree = "<group>";
@@ -195,6 +223,7 @@
 				40FF0DAD1D371DB600ED8A64 /* LogIn.storyboard */,
 				40FF0DAF1D371F4000ED8A64 /* LogInViewController.swift */,
 				40A8DC2F1D56801B0065B734 /* RegistrationViewController.swift */,
+				40982F1B1DDBECD40031EBED /* ForgotPasswordViewController.swift */,
 			);
 			name = "Log In";
 			sourceTree = "<group>";
@@ -205,6 +234,7 @@
 				40FF0DFD1D373C6B00ED8A64 /* UIViewController.swift */,
 				40E7F9BF1D4D353700BCD0DB /* NSUserDefaults.swift */,
 				4004146A1D56B899005113D1 /* RadioButton.swift */,
+				40E400E11DD421480095488F /* Button.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -286,10 +316,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				40FF0DAE1D371DB600ED8A64 /* LogIn.storyboard in Resources */,
+				402F24801DF4CF3D004E5EF2 /* PreguntaEscalaViewCell.xib in Resources */,
 				40CC5DB31D80EF5900E1D8E5 /* Extras.storyboard in Resources */,
+				400A4E821DD69195002C02BA /* estados.plist in Resources */,
 				400E9D3D1D5020CA006AAD64 /* Preguntas.storyboard in Resources */,
+				402DC9971DF790610062877C /* PreguntaMatrizViewCell.xib in Resources */,
 				40FF0DA21D37138500ED8A64 /* LaunchScreen.storyboard in Resources */,
 				40FF0D9F1D37138500ED8A64 /* Assets.xcassets in Resources */,
+				402F247C1DF49FA0004E5EF2 /* PreguntaComboViewCell.xib in Resources */,
 				40A8DC321D569E010065B734 /* PreguntaViewCell.xib in Resources */,
 				4053130A1D386EFA0073751A /* Main.storyboard in Resources */,
 			);
@@ -351,17 +385,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				400F4EF41D49B46500538BCD /* EncuestasViewController.swift in Sources */,
+				402DC9991DF791680062877C /* PreguntaMatrizViewCell.swift in Sources */,
+				40982F1C1DDBECD40031EBED /* ForgotPasswordViewController.swift in Sources */,
 				40FF0DB01D371F4000ED8A64 /* LogInViewController.swift in Sources */,
 				40D810661D5811EE00EB8FCE /* LoadingViewController.swift in Sources */,
 				40AFB76F1D49A3D800C0099A /* Encuesta.swift in Sources */,
 				40AFB76D1D49A25100C0099A /* Panel.swift in Sources */,
 				40A8DC301D56801B0065B734 /* RegistrationViewController.swift in Sources */,
 				40E7F9C01D4D353700BCD0DB /* NSUserDefaults.swift in Sources */,
+				40E400E21DD421480095488F /* Button.swift in Sources */,
 				40AFB7711D49A50800C0099A /* Pregunta.swift in Sources */,
 				4004146B1D56B899005113D1 /* RadioButton.swift in Sources */,
 				40E7F9C21D4D5A9E00BCD0DB /* ProfileViewController.swift in Sources */,
+				40E400E41DD547330095488F /* ChangePasswordViewController.swift in Sources */,
 				408C37F11D838B4000A75784 /* MoviePlayerViewController.swift in Sources */,
 				40FF0D981D37138500ED8A64 /* AppDelegate.swift in Sources */,
+				402F247E1DF49FB4004E5EF2 /* PreguntaComboViewCell.swift in Sources */,
 				4053130C1D386F370073751A /* PanelsViewController.swift in Sources */,
 				40A8DC341D569E1B0065B734 /* PreguntaViewCell.swift in Sources */,
 				405313051D385ED10073751A /* Controller.swift in Sources */,
@@ -370,6 +409,7 @@
 				400E9D3F1D5021B3006AAD64 /* PreguntasViewController.swift in Sources */,
 				40FF0DFE1D373C6B00ED8A64 /* UIViewController.swift in Sources */,
 				40CC5DB51D80F77300E1D8E5 /* WelcomeViewController.swift in Sources */,
+				402F24821DF4CF51004E5EF2 /* PreguntaEscalaViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
