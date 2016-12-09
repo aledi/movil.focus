@@ -15,6 +15,7 @@ public class Pregunta {
     public static final int SINGLE_OPTION = 2;
     public static final int MULTIPLE_OPTION = 3;
     public static final int ORDERING = 4;
+    public static final int MATRIX = 5;
     public static final int SCALE = 6;
     public static final int MAX_OPTIONS = 20;
 
