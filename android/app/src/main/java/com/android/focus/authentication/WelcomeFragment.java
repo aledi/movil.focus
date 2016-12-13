@@ -54,7 +54,7 @@ public class WelcomeFragment extends Fragment implements OnClickListener {
         dearUser = (TextView) view.findViewById(R.id.txt_dear_user);
         welcomeMessage = (TextView) view.findViewById(R.id.txt_welcome_message_1);
 
-        privacyPolicy = (TextView) view.findViewById(R.id.txt_privacy_policy);
+        privacyPolicy = (TextView) view.findViewById(R.id.btn_privacy_policy);
         privacyPolicy.setOnClickListener(this);
 
         updateView();

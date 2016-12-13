@@ -93,7 +93,7 @@ public class PerfilFragment extends Fragment implements OnClickListener {
         sendEmailButton.setOnClickListener(this);
         callPhoneButton = (TextView) view.findViewById(R.id.txt_call_phone);
         callPhoneButton.setOnClickListener(this);
-        privacyPolicy = (TextView) view.findViewById(R.id.txt_privacy_policy);
+        privacyPolicy = (TextView) view.findViewById(R.id.btn_privacy_policy);
         privacyPolicy.setOnClickListener(this);
 
         signOutButton = (Button) view.findViewById(R.id.btn_sign_out);
