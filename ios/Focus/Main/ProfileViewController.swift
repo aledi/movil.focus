@@ -12,14 +12,15 @@ import MessageUI
 enum Sections: Int {
     case User
     case Panels
-    case Contact
+    case Help
+    case Other
     case LogOut
 }
 
 let phoneNumber: String = "+528183387258"
 let email: String = "atencion@focuscg.com.mx"
 
-class ProfileViewController: UITableViewController, MFMailComposeViewControllerDelegate {
+class ProfileViewController: UITableViewController, UIActivityItemSource, MFMailComposeViewControllerDelegate {
     
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var emailLabel: UILabel!
@@ -77,14 +78,20 @@ class ProfileViewController: UITableViewController, MFMailComposeViewControllerD
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
         switch Sections(rawValue: indexPath.section)! {
-        case .Contact:
-            if (indexPath.row == 0) {
+        case .Help:
+            if (indexPath.row == 1) {
                 self.sendEmail()
-            } else if (indexPath.row == 1) {
+            } else if (indexPath.row == 2) {
                 self.call()
             }
             
             return
+        case .Other:
+            if (indexPath.row == 0) {
+                self.shareApp()
+            } else if (indexPath.row == 1) {
+                self.rateApp()
+            }
         case .LogOut:
             func firstBlock(action: UIAlertAction) {
                 Controller.requestForAction(.UNREGISTER_DEVICE, withParameters: ["id" : User.currentUser!.id], withSuccessHandler: nil, andErrorHandler: nil)
@@ -142,6 +149,47 @@ class ProfileViewController: UITableViewController, MFMailComposeViewControllerD
     
     func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
         controller.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    // -----------------------------------------------------------------------------------------------------------
+    // MARK: - Share/Rate App
+    // -----------------------------------------------------------------------------------------------------------
+    
+    func shareApp() {
+        let activityController = UIActivityViewController(activityItems: [self], applicationActivities: nil)
+        if #available(iOS 9.0, *) {
+            let excludedActivityTypes = [
+                UIActivityTypePrint,
+                UIActivityTypeCopyToPasteboard,
+                UIActivityTypeAssignToContact,
+                UIActivityTypeSaveToCameraRoll,
+                UIActivityTypeAddToReadingList,
+                UIActivityTypePostToFlickr,
+                UIActivityTypePostToVimeo,
+                UIActivityTypePostToTencentWeibo,
+                UIActivityTypeOpenInIBooks
+            ]
+            
+            activityController.excludedActivityTypes = excludedActivityTypes
+        }
+        
+        self.presentViewController(activityController, animated: true, completion: nil)
+    }
+    
+    func activityViewControllerPlaceholderItem(activityViewController: UIActivityViewController) -> AnyObject {
+        return ""
+    }
+    
+    func activityViewController(activityViewController: UIActivityViewController, itemForActivityType activityType: String) -> AnyObject? {
+        return "¡Dale un vistazo a la aplicación de Focus!\n\nhttps://itunes.apple.com/us/app/focus/id1156729510?ls=1&mt=8"
+    }
+    
+    func activityViewController(activityViewController: UIActivityViewController, subjectForActivityType activityType: String?) -> String {
+        return "Focus"
+    }
+    
+    func rateApp() {
+        UIApplication.sharedApplication().openURL(NSURL(string: "itms-apps://itunes.apple.com/app/id1156729510")!)
     }
     
 }
