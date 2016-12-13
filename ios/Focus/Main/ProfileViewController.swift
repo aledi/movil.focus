@@ -133,12 +133,13 @@ class ProfileViewController: UITableViewController, UIActivityItemSource, MFMail
     }
     
     func mailComposerViewController() -> MFMailComposeViewController {
+        let user = self.appDelegate.user!
         let mailComposerViewController = MFMailComposeViewController()
         
         mailComposerViewController.mailComposeDelegate = self
         mailComposerViewController.setToRecipients([email])
-        mailComposerViewController.setSubject("")
-        mailComposerViewController.setMessageBody("", isHTML: false)
+        mailComposerViewController.setSubject("Soporte Aplicación Móvil")
+        mailComposerViewController.setMessageBody("\n\n\n\nUsuario: \(user.username)\nID: \(user.id)\nCorreo: \(user.email)", isHTML: false)
         
         return mailComposerViewController
     }
