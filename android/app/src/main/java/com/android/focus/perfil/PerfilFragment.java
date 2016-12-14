@@ -1,6 +1,7 @@
 package com.android.focus.perfil;
 
 import android.app.Activity;
+import android.content.ActivityNotFoundException;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
@@ -26,6 +27,7 @@ public class PerfilFragment extends Fragment implements OnClickListener {
 
     private static final String PHONE_NUMBER = "tel:+528183387258";
     private static final String RECIPIENT = "mailto:focus@focuscg.com.mx";
+    private static final String RATE_APP_URI = "market://details?id=com.focus.android";
 
     private Activity activity;
     // User.
@@ -36,10 +38,13 @@ public class PerfilFragment extends Fragment implements OnClickListener {
     // Panels.
     private TextView activePanelsCount;
     private TextView pendingSurveysCount;
-    // Contact.
-    private TextView callPhoneButton;
-    private TextView privacyPolicy;
+    // Help.
     private TextView sendEmailButton;
+    private TextView callPhoneButton;
+    // Other.
+    private TextView shareButton;
+    private TextView rateButton;
+    private TextView privacyPolicy;
     // Sign out.
     private Button signOutButton;
 
@@ -81,21 +86,31 @@ public class PerfilFragment extends Fragment implements OnClickListener {
 
         View view = inflater.inflate(R.layout.fragment_perfil, container, false);
 
+        // Set up for 'User' section
         user = (TextView) view.findViewById(R.id.txt_user);
         email = (TextView) view.findViewById(R.id.txt_email);
         changePasswordButton = (TextView) view.findViewById(R.id.btn_change_password);
         changePasswordButton.setOnClickListener(this);
 
+        // Set up for 'Paneles' section
         activePanelsCount = (TextView) view.findViewById(R.id.txt_active_panels_count);
         pendingSurveysCount = (TextView) view.findViewById(R.id.txt_pending_surveys_count);
 
+        // Set up for 'Ayuda' section
         sendEmailButton = (TextView) view.findViewById(R.id.txt_send_email);
         sendEmailButton.setOnClickListener(this);
         callPhoneButton = (TextView) view.findViewById(R.id.txt_call_phone);
         callPhoneButton.setOnClickListener(this);
-        privacyPolicy = (TextView) view.findViewById(R.id.txt_privacy_policy);
+
+        // Set up for 'Otro' section
+        shareButton = (TextView) view.findViewById(R.id.btn_share);
+        shareButton.setOnClickListener(this);
+        rateButton = (TextView) view.findViewById(R.id.btn_rate);
+        rateButton.setOnClickListener(this);
+        privacyPolicy = (TextView) view.findViewById(R.id.btn_privacy_policy);
         privacyPolicy.setOnClickListener(this);
 
+        // Set up for sign out button.
         signOutButton = (Button) view.findViewById(R.id.btn_sign_out);
         signOutButton.setOnClickListener(this);
 
@@ -136,6 +151,10 @@ public class PerfilFragment extends Fragment implements OnClickListener {
             sendEmail();
         } else if (view.equals(callPhoneButton)) {
             callPhone();
+        } else if (view.equals(shareButton)) {
+            shareApp();
+        } else if (view.equals(rateButton)) {
+            rateApp();
         } else if (view.equals(privacyPolicy)) {
             startActivity(new Intent(activity, PrivacyPolicyActivity.class));
         } else if (view.equals(signOutButton)) {
@@ -149,13 +168,47 @@ public class PerfilFragment extends Fragment implements OnClickListener {
         Intent intent = new Intent(Intent.ACTION_SENDTO);
         intent.setType("text/plain");
         intent.setData(Uri.parse(RECIPIENT));
-        activity.startActivity(intent);
+
+        try {
+            startActivity(intent);
+        } catch (ActivityNotFoundException exception) {
+            UIUtils.showAlertDialog(R.string.error, R.string.send_email_error, activity);
+        }
     }
 
     private void callPhone() {
         Intent intent = new Intent(Intent.ACTION_DIAL);
         intent.setData(Uri.parse(PHONE_NUMBER));
-        startActivity(intent);
+
+        try {
+            startActivity(intent);
+        } catch (ActivityNotFoundException exception) {
+            UIUtils.showAlertDialog(R.string.error, R.string.call_phone_error, activity);
+        }
+    }
+
+    private void shareApp() {
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.setType("text/plain");
+        intent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.app_name));
+        intent.putExtra(Intent.EXTRA_TEXT, getString(R.string.share_message));
+
+        try {
+            startActivity(Intent.createChooser(intent, getString(R.string.share)));
+        } catch (ActivityNotFoundException exception) {
+            UIUtils.showAlertDialog(R.string.error, R.string.share_error, activity);
+        }
+    }
+
+    private void rateApp() {
+        Uri uri = Uri.parse(RATE_APP_URI);
+        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+
+        try {
+            startActivity(intent);
+        } catch (ActivityNotFoundException exception) {
+            UIUtils.showAlertDialog(R.string.error, R.string.rate_error, activity);
+        }
     }
     // endregion
 }

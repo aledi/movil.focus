@@ -59,7 +59,7 @@ public class PrivacyPolicyFragment extends Fragment {
         super.onCreateView(inflater, container, savedInstanceState);
 
         View view = inflater.inflate(R.layout.fragment_privacy_policy, container, false);
-        privacyPolicy = (TextView) view.findViewById(R.id.txt_privacy_policy);
+        privacyPolicy = (TextView) view.findViewById(R.id.btn_privacy_policy);
 
         return view;
     }
