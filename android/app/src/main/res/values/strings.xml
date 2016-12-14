@@ -145,10 +145,15 @@
     <string name="help">Ayuda</string>
     <string name="faq">Preguntas Frecuentes</string>
     <string name="send_email">Enviar Correo</string>
+    <string name="send_email_error">Su dispositivo parece no estar configurado para enviar correo.s</string>
     <string name="call_phone">Llamar</string>
+    <string name="call_phone_error">No se puede realizar la llamada.</string>
     <string name="other">Otro</string>
     <string name="share">Compartir</string>
+    <string name="share_error">No es posible compartir la aplicación por el momento. Intente más tarde.</string>
+    <string name="share_message">¡Dale un vistazo a la aplicación de Focus!\n\nhttps://play.google.com/store/apps/details?id=com.focus.android</string>
     <string name="rate">Calificar</string>
+    <string name="rate_error">No es posible calificar la aplicación por el momento. Intente más tarde.</string>
     <string name="sign_out">Cerrar Sesión</string>
     <string name="sign_out_message">La próxima vez que abra la aplicación se le pedirán sus datos de acceso.</string>
 
