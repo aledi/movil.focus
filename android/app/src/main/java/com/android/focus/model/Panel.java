@@ -73,19 +73,23 @@ public class Panel {
         return Integer.toString(getUserPaneles().size());
     }
 
-    public static String getPendingSurveys() {
-        int pendingSurveys = 0;
+    public static List<Encuesta> getPendingSurveys() {
         List<Panel> userPanels = getUserPaneles();
+        List<Encuesta> pendingSurveys = new ArrayList<>();
 
         for (Panel userPanel : userPanels) {
             List<Encuesta> encuestas = userPanel.getEncuestas();
 
             for (Encuesta encuesta : encuestas) {
-                pendingSurveys += encuesta.isContestada() ? 0 : 1;
+                if (encuesta.isContestada()) {
+                    continue;
+                }
+
+                pendingSurveys.add(encuesta);
             }
         }
 
-        return Integer.toString(pendingSurveys);
+        return pendingSurveys;
     }
     // endregion
 }

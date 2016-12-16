@@ -33,4 +33,12 @@ public class DateUtils {
     public static int getMinYear() {
         return Calendar.getInstance().get(Calendar.YEAR) - 18;
     }
+
+    public static Calendar getCalendar(Date date) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.clear();
+        calendar.setTime(date);
+
+        return calendar;
+    }
 }
