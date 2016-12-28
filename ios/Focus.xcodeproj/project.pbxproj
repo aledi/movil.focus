@@ -24,6 +24,9 @@
 		406537251D7FA8D7000C7C9C /* PrivacyPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406537241D7FA8D7000C7C9C /* PrivacyPolicyViewController.swift */; };
 		408C37F11D838B4000A75784 /* MoviePlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408C37F01D838B4000A75784 /* MoviePlayerViewController.swift */; };
 		40982F1C1DDBECD40031EBED /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40982F1B1DDBECD40031EBED /* ForgotPasswordViewController.swift */; };
+		40A8B6931E144111002B271D /* Historial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A8B6921E144111002B271D /* Historial.swift */; };
+		40A8B6951E1447EE002B271D /* HistorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A8B6941E1447EE002B271D /* HistorialViewController.swift */; };
+		40A8B6971E144846002B271D /* HistorialViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A8B6961E144846002B271D /* HistorialViewCell.swift */; };
 		40A8DC301D56801B0065B734 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A8DC2F1D56801B0065B734 /* RegistrationViewController.swift */; };
 		40A8DC321D569E010065B734 /* PreguntaViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40A8DC311D569E010065B734 /* PreguntaViewCell.xib */; };
 		40A8DC341D569E1B0065B734 /* PreguntaViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A8DC331D569E1B0065B734 /* PreguntaViewCell.swift */; };
@@ -78,6 +81,9 @@
 		406537241D7FA8D7000C7C9C /* PrivacyPolicyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PrivacyPolicyViewController.swift; path = Extras/PrivacyPolicyViewController.swift; sourceTree = "<group>"; };
 		408C37F01D838B4000A75784 /* MoviePlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MoviePlayerViewController.swift; path = Preguntas/MoviePlayerViewController.swift; sourceTree = "<group>"; };
 		40982F1B1DDBECD40031EBED /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ForgotPasswordViewController.swift; path = "Log In/ForgotPasswordViewController.swift"; sourceTree = "<group>"; };
+		40A8B6921E144111002B271D /* Historial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Historial.swift; path = Model/Historial.swift; sourceTree = "<group>"; };
+		40A8B6941E1447EE002B271D /* HistorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HistorialViewController.swift; path = Extras/HistorialViewController.swift; sourceTree = "<group>"; };
+		40A8B6961E144846002B271D /* HistorialViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HistorialViewCell.swift; path = Extras/HistorialViewCell.swift; sourceTree = "<group>"; };
 		40A8DC2F1D56801B0065B734 /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegistrationViewController.swift; path = "Log In/RegistrationViewController.swift"; sourceTree = "<group>"; };
 		40A8DC311D569E010065B734 /* PreguntaViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PreguntaViewCell.xib; path = Preguntas/PreguntaViewCell.xib; sourceTree = "<group>"; };
 		40A8DC331D569E1B0065B734 /* PreguntaViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreguntaViewCell.swift; path = Preguntas/PreguntaViewCell.swift; sourceTree = "<group>"; };
@@ -164,6 +170,8 @@
 				40CC5DB21D80EF5900E1D8E5 /* Extras.storyboard */,
 				40CC5DB41D80F77300E1D8E5 /* WelcomeViewController.swift */,
 				406537241D7FA8D7000C7C9C /* PrivacyPolicyViewController.swift */,
+				40A8B6941E1447EE002B271D /* HistorialViewController.swift */,
+				40A8B6961E144846002B271D /* HistorialViewCell.swift */,
 			);
 			name = Extras;
 			sourceTree = "<group>";
@@ -213,6 +221,7 @@
 				40AFB76C1D49A25100C0099A /* Panel.swift */,
 				40AFB76E1D49A3D800C0099A /* Encuesta.swift */,
 				40AFB7701D49A50800C0099A /* Pregunta.swift */,
+				40A8B6921E144111002B271D /* Historial.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -390,12 +399,15 @@
 				40FF0DB01D371F4000ED8A64 /* LogInViewController.swift in Sources */,
 				40D810661D5811EE00EB8FCE /* LoadingViewController.swift in Sources */,
 				40AFB76F1D49A3D800C0099A /* Encuesta.swift in Sources */,
+				40A8B6951E1447EE002B271D /* HistorialViewController.swift in Sources */,
 				40AFB76D1D49A25100C0099A /* Panel.swift in Sources */,
 				40A8DC301D56801B0065B734 /* RegistrationViewController.swift in Sources */,
 				40E7F9C01D4D353700BCD0DB /* NSUserDefaults.swift in Sources */,
+				40A8B6971E144846002B271D /* HistorialViewCell.swift in Sources */,
 				40E400E21DD421480095488F /* Button.swift in Sources */,
 				40AFB7711D49A50800C0099A /* Pregunta.swift in Sources */,
 				4004146B1D56B899005113D1 /* RadioButton.swift in Sources */,
+				40A8B6931E144111002B271D /* Historial.swift in Sources */,
 				40E7F9C21D4D5A9E00BCD0DB /* ProfileViewController.swift in Sources */,
 				40E400E41DD547330095488F /* ChangePasswordViewController.swift in Sources */,
 				408C37F11D838B4000A75784 /* MoviePlayerViewController.swift in Sources */,
