@@ -19,6 +19,7 @@ enum Actions: String {
     case REGISTER_USER = "ALTA_PANELISTA"
     case CHANGE_PASSWORD = "CHANGE_PANELISTA_PASSWORD"
     case FORGOT_PASSWORD = "FORGOT_PANELISTA_PASSWORD"
+    case GET_HISTORY = "GET_HISTORIAL"
 }
 
 class Controller {
