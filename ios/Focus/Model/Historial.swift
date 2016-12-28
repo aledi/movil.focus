@@ -22,7 +22,7 @@ class Historial {
         self.nombrePanel = nombrePanel
         self.nombreEncuesta = nombreEncuesta
         
-        var dateFormatter = NSDateFormatter()
+        let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "YYYY-MM-dd"
         
         if (fechaIniPanel != nil) {
@@ -41,10 +41,8 @@ class Historial {
             self.fechaFinEncuesta = dateFormatter.dateFromString(fechaFinEncuesta!)
         }
         
-        dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "hh:mm:ss YYYY-MM-dd"
-        
         if (fechaRespuesta != nil) {
+            dateFormatter.dateFormat = "hh:mm:ss YYYY-MM-dd"
             self.fechaRespuesta = dateFormatter.dateFromString("\(horaRespuesta!) \(fechaRespuesta!)")
         }
     }

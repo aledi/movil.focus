@@ -11,15 +11,23 @@ import UIKit
 class HistorialViewCell: UITableViewCell {
     
     @IBOutlet var encuestaLabel: UILabel!
+    @IBOutlet var panelLabel: UILabel!
+    
+    @IBOutlet var fechaRespuestaLabel: UILabel!
     @IBOutlet var fechaInicioLabel: UILabel!
     @IBOutlet var fechaFinLabel: UILabel!
-    @IBOutlet var panelLabel: UILabel!
-    @IBOutlet var fechaRespuestaLabel: UILabel!
     
     func configureforHistorial(historial: Historial) {
         self.encuestaLabel.text = historial.nombreEncuesta
+        self.panelLabel.text = historial.nombrePanel
         
-        var dateFormatter = NSDateFormatter()
+        self.fechaRespuestaLabel.text = "---"
+        self.fechaInicioLabel.text = "---"
+        self.fechaFinLabel.text = "---"
+        
+        self.accessoryType = .None
+        
+        let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "MMMM d, YYYY"
         
         if (historial.fechaIniEncuesta != nil) {
@@ -30,15 +38,11 @@ class HistorialViewCell: UITableViewCell {
             self.fechaFinLabel.text = dateFormatter.stringFromDate(historial.fechaFinEncuesta!)
         }
         
-        dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "MMMM d, YYYY hh:mm"
-        
         if (historial.fechaRespuesta != nil) {
+            dateFormatter.dateFormat = "MMMM d, YYYY hh:mm"
+            
             self.fechaRespuestaLabel.text = dateFormatter.stringFromDate(historial.fechaRespuesta!)
             self.accessoryType = .Checkmark
-        } else {
-            self.fechaRespuestaLabel.text = "---"
-            self.accessoryType = .None
         }
     }
     
