@@ -214,6 +214,6 @@
         \n\nLe informamos que sus datos personales no serán transferidos a terceros, salvo en el caso de que usted proporcione como referencia a esta empresa. Sin embargo, Focus Estudios Cualitativos hará transferencia de datos personales en el caso de que autoridad competente así lo solicite por mandato judicial.\n</string>
 
     <!-- Notifications -->
-    <string name="notification_title">Recordatorio de Encuesta</string>
+    <string name="notification_title">Encuesta Pendiente</string>
     <string name="notification_text">Recuerda contestar la encuesta %s antes de que cierre.</string>
 </resources>

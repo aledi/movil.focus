@@ -39,7 +39,6 @@ public class NotificationManager {
             PendingIntent broadcast = PendingIntent.getBroadcast(context, pendingSurveyId, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
             scheduleNotification(broadcast, getNotificationFireDate(pendingSurvey.getFechaFin()));
         }
-
     }
 
     private static Intent getNotificationIntent(Encuesta pendingSurvey, Context context, PendingIntent contentIntent) {
@@ -56,7 +55,8 @@ public class NotificationManager {
                 .setContentText(message)
                 .setContentIntent(contentIntent)
                 .setLocalOnly(true)
-                .setSmallIcon(R.drawable.ic_check_off)
+                .setShowWhen(false)
+                .setSmallIcon(R.drawable.ic_notification)
                 .setStyle(new NotificationCompat.BigTextStyle().bigText(message));
 
         notificationIntent.putExtra(NOTIFICATION, builder.build());
@@ -66,12 +66,11 @@ public class NotificationManager {
     }
 
     private static long getNotificationFireDate(Date endDate) {
-//        Calendar calendar = DateUtils.getCalendar(endDate);
-//        calendar.set(Calendar.HOUR_OF_DAY, 10);
-//        calendar.add(Calendar.DAY_OF_MONTH, -3);
-//
-//        return calendar.getTime().getTime();
-        return getNextHour(Calendar.getInstance()).getTime().getTime();
+        Calendar calendar = DateUtils.getCalendar(endDate);
+        calendar.add(Calendar.DAY_OF_MONTH, -3);
+        calendar.set(Calendar.HOUR_OF_DAY, 10);
+
+        return calendar.getTime().getTime();
     }
 
     private static void scheduleNotification(PendingIntent broadcast, long fireTime) {
@@ -86,12 +85,5 @@ public class NotificationManager {
 
     private static AlarmManager getAlarmManager() {
         return (AlarmManager) FocusApp.getContext().getSystemService(Context.ALARM_SERVICE);
-    }
-
-
-    private static Calendar getNextHour(Calendar calendar) {
-        calendar.add(Calendar.MINUTE, 1);
-
-        return calendar;
     }
 }
