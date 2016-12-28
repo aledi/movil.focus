@@ -27,6 +27,8 @@ class ProfileViewController: UITableViewController, UIActivityItemSource, MFMail
     @IBOutlet var panelsLabel: UILabel!
     @IBOutlet var encuestasLabel: UILabel!
     
+    var loadingAlert: UIAlertController?
+    
     // -----------------------------------------------------------------------------------------------------------
     // MARK: - Lifecycle
     // -----------------------------------------------------------------------------------------------------------
@@ -67,6 +69,9 @@ class ProfileViewController: UITableViewController, UIActivityItemSource, MFMail
         if (segue.identifier == "logOut") {
             NSUserDefaults.removeUserDefaults()
             self.appDelegate.user = nil
+        } else if (segue.identifier == "showHistorial") {
+            let historialViewController = segue.destinationViewController as! HistorialViewController
+            historialViewController.data = sender as! [Historial]
         }
     }
     
@@ -78,6 +83,10 @@ class ProfileViewController: UITableViewController, UIActivityItemSource, MFMail
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
         switch Sections(rawValue: indexPath.section)! {
+        case .Panels:
+            if (indexPath.row == 2) {
+                self.downloadHistory()
+            }
         case .Help:
             if (indexPath.row == 1) {
                 self.sendEmail()
@@ -142,6 +151,54 @@ class ProfileViewController: UITableViewController, UIActivityItemSource, MFMail
         mailComposerViewController.setMessageBody("\n\n\n\nUsuario: \(user.username)\nID: \(user.id)\nCorreo: \(user.email)", isHTML: false)
         
         return mailComposerViewController
+    }
+    
+    // -----------------------------------------------------------------------------------------------------------
+    // MARK: - History
+    // -----------------------------------------------------------------------------------------------------------
+    
+    func downloadHistory() {
+        self.loadingAlert = self.presentAlertWithTitle("Cargando", withMessage: nil, withButtonTitles: [], withButtonStyles: [], andButtonHandlers: [])
+        Controller.requestForAction(.GET_HISTORY, withParameters: ["panelista" : "\(User.currentUser!.id)"], withSuccessHandler: self.successHandler, andErrorHandler: self.errorHandler)
+    }
+    
+    func successHandler(response: NSDictionary) {
+        self.loadingAlert?.dismissViewControllerAnimated(true, completion: {
+            var data: [Historial] = []
+            
+            if (response["status"] as? String == "SUCCESS") {
+                if let results = response["results"] as? [AnyObject] {
+                    for object in results {
+                        let history = object as! NSDictionary
+                        data.append(Historial(nombrePanel: history["nombrePanel"] as! String, fechaIniPanel: history["fechaInicioPanel"] as? String, fechaFinPanel: history["fechaFinPanel"] as? String, nombreEncuesta: history["nombreEncuesta"] as! String, fechaIniEncuesta: history["fechaInicioEncuesta"] as? String, fechaFinEncuesta: history["fechaFinEncuesta"] as? String, fechaRespuesta: history["fechaRespuesta"] as? String, horaRespuesta: history["horaRespuesta"] as? String))
+                    }
+                    
+                    self.performSegueWithIdentifier("showHistorial", sender: data)
+                    return
+                }
+            }
+            
+            self.presentAlertWithTitle("Error", withMessage: "No hemos podido cargar los datos.", withButtonTitles: ["OK"], withButtonStyles: [.Cancel], andButtonHandlers: [nil])
+        })
+    }
+    
+    func errorHandler(response: NSDictionary) {
+        self.loadingAlert?.dismissViewControllerAnimated(true, completion: {
+            var alertTitle = ""
+            var alertMessage = ""
+            
+            switch (response["error"] as! NSError).code {
+            case -1009:
+                alertTitle = "Sin conexión a internet"
+                alertMessage = "Para utilizar la aplicación, su dispositivo debe estar conectado a internet."
+            default:
+                alertTitle = "Servidor no disponible"
+                alertMessage = "Nuestro servidor no está disponible por el momento."
+            }
+            
+            self.presentAlertWithTitle(alertTitle, withMessage: alertMessage, withButtonTitles: ["OK"], withButtonStyles: [.Cancel], andButtonHandlers: [nil])
+            print(response["error"])
+        })
     }
     
     // -----------------------------------------------------------------------------------------------------------
