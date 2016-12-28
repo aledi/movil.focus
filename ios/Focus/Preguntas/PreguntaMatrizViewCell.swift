@@ -77,12 +77,7 @@ class PreguntaMatrizViewCell: UITableViewCell, UIPickerViewDelegate, UIPickerVie
             self.labels[i].text = pregunta.subPreguntas[i]
             
             let selectedOption = pregunta.selectedSubPreguntas[i]
-            
-            if (selectedOption != -1) {
-                self.textFields[i].text = pregunta.opciones[selectedOption]
-            } else {
-                self.textFields[i].text = nil
-            }
+            self.textFields[i].text = selectedOption != -1 ? pregunta.opciones[selectedOption] : nil
             
             let newPicker = UIPickerView()
             newPicker.delegate = self
@@ -109,11 +104,11 @@ class PreguntaMatrizViewCell: UITableViewCell, UIPickerViewDelegate, UIPickerVie
     }
     
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return self.pregunta?.opciones.count ?? 0
+        return (self.pregunta?.opciones.count ?? 0) + 1
     }
     
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return self.pregunta!.opciones[row]
+        return row == 0 ? "- Sin Respuesta -" : self.pregunta!.opciones[row - 1]
     }
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
@@ -126,8 +121,8 @@ class PreguntaMatrizViewCell: UITableViewCell, UIPickerViewDelegate, UIPickerVie
             }
         }
         
-        self.textFields[index].text = self.pregunta!.opciones[row]
-        self.pregunta!.selectedSubPreguntas[index] = row
+        self.textFields[index].text = row == 0 ? nil : self.pregunta!.opciones[row - 1]
+        self.pregunta!.selectedSubPreguntas[index] = row == 0 ? -1 : row - 1
     }
     
 }
