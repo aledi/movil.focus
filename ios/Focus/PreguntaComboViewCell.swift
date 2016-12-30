@@ -81,22 +81,26 @@ class PreguntaComboViewCell: UITableViewCell, UIPickerViewDelegate, UIPickerView
     }
     
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return self.pregunta?.opciones.count ?? 0
+        return (self.pregunta?.opciones.count ?? 0) + 1
     }
     
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return self.pregunta?.opciones[row]
+        return row == 0 ? "- Sin Respuesta -" : self.pregunta!.opciones[row - 1]
     }
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        self.optionTextField.text = self.pregunta!.opciones[row]
-        
         for i in 0...19 {
-            pregunta!.selectedOptions[i] = false
+            self.pregunta!.selectedOptions[i] = false
         }
         
-        pregunta!.selectedOptions[row] = true
-        pregunta!.respuesta = pregunta!.opciones[row]
+        if (row == 0) {
+            self.pregunta!.respuesta = ""
+        } else {
+            self.pregunta!.selectedOptions[row - 1] = true
+            self.pregunta!.respuesta = pregunta!.opciones[row - 1]
+        }
+        
+        self.optionTextField.text = self.pregunta!.respuesta
     }
     
 }
