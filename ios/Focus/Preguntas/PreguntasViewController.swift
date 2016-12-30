@@ -131,6 +131,8 @@ class PreguntasViewController: UITableViewController {
         
         for pregunta in self.preguntas! {
             if (pregunta.tipo == TipoPregunta.Multiple.rawValue) {
+                pregunta.respuesta = ""
+                
                 for i in 0..<pregunta.opciones.count {
                     pregunta.respuesta += pregunta.selectedOptions[i] ? "\(pregunta.opciones[i])&" : ""
                 }
@@ -138,6 +140,8 @@ class PreguntasViewController: UITableViewController {
                 if (!pregunta.matrizAnswered) {
                     return self.missingAnswerAlert(pregunta.numPregunta)
                 }
+                
+                pregunta.respuesta = ""
                 
                 for i in 0..<pregunta.subPreguntas.count {
                     let selectedOption = pregunta.selectedSubPreguntas[i]
