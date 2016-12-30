@@ -24,18 +24,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func applicationDidEnterBackground(application: UIApplication) {
-        guard let _ = User.currentUser, paneles = self.paneles else {
+        guard let _ = User.currentUser, _ = self.paneles else {
             UIApplication.sharedApplication().applicationIconBadgeNumber = 0
+            UIApplication.sharedApplication().cancelAllLocalNotifications()
+            
             return
         }
         
-        var pending = 0
-        
-        for panel in paneles {
-            pending += panel.encuestasPendientes
-        }
-        
-        UIApplication.sharedApplication().applicationIconBadgeNumber = pending
+        self.updateBadgeIcon()
+        self.scheduleLocalNotifications()
     }
     
     func applicationWillEnterForeground(application: UIApplication) {
@@ -43,6 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func applicationDidBecomeActive(application: UIApplication) {
+        UIApplication.sharedApplication().cancelAllLocalNotifications()
     }
     
     func applicationWillTerminate(application: UIApplication) {
@@ -56,7 +54,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.user = storedUser
         
         if (self.user!.token == "") {
-            self.registerForPushNotifications()
+            self.registerForNotifications()
         }
         
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
@@ -64,13 +62,45 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.makeKeyAndVisible()
     }
     
+    func updateBadgeIcon() {
+        var pending = 0
+        
+        for panel in self.paneles! {
+            pending += panel.encuestasPendientes
+        }
+        
+        UIApplication.sharedApplication().applicationIconBadgeNumber = pending
+    }
+    
     // -----------------------------------------------------------------------------------------------------------
-    // MARK: - Push Notifications
+    // MARK: - Notifications
     // -----------------------------------------------------------------------------------------------------------
     
-    func registerForPushNotifications() {
+    func registerForNotifications() {
         let notificationSettings = UIUserNotificationSettings(forTypes: [.Badge, .Sound, .Alert], categories: nil)
         UIApplication.sharedApplication().registerUserNotificationSettings(notificationSettings)
+    }
+    
+    func scheduleLocalNotifications() {
+        for panel in self.paneles! {
+            guard let encuestas = panel.encuestas else {
+                continue
+            }
+            
+            for encuesta in encuestas {
+                if (!encuesta.contestada) {
+                    let localNotification = UILocalNotification()
+                    
+                    localNotification.alertBody = "Encusta Pendiente\nRecuerda contestar la encuesta \"\(encuesta.nombre)\" antes de que cierre."
+                    localNotification.soundName = UILocalNotificationDefaultSoundName
+                    
+                    let fireDate = encuesta.fechaFin.dateByAddingTimeInterval(60 * 60 * 24 * -3 + (60 * 60 * 10)) // Defaults to 6:00h
+                    localNotification.fireDate = fireDate
+                    print(encuesta.fechaFin, fireDate)
+                    UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
+                }
+            }
+        }
     }
     
     func application(application: UIApplication, didRegisterUserNotificationSettings notificationSettings: UIUserNotificationSettings) {
