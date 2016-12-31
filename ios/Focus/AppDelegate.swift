@@ -93,7 +93,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     let fireDate = encuesta.fechaFin.dateByAddingTimeInterval(60 * 60 * 24 * -3 + (60 * 60 * 10))
                     
                     localNotification.fireDate = fireDate
-                    localNotification.alertBody = "Encusta Pendiente\nRecuerda contestar la encuesta \"\(encuesta.nombre)\" antes de que cierre."
+                    localNotification.alertTitle = "Encuesta Pendiente"
+                    localNotification.alertBody = "Recuerda contestar la encuesta \"\(encuesta.nombre)\" antes de que cierre."
                     localNotification.soundName = UILocalNotificationDefaultSoundName
                     
                     UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
