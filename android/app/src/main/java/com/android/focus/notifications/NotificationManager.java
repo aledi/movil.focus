@@ -37,7 +37,11 @@ public class NotificationManager {
             PendingIntent contentIntent = PendingIntent.getActivity(context, pendingSurveyId, new Intent(context, LoadingActivity.class), PendingIntent.FLAG_UPDATE_CURRENT);
             Intent notificationIntent = getNotificationIntent(pendingSurvey, context, contentIntent);
             PendingIntent broadcast = PendingIntent.getBroadcast(context, pendingSurveyId, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
-            scheduleNotification(broadcast, getNotificationFireDate(pendingSurvey.getFechaFin()));
+            Date fireDate = getNotificationFireDate(pendingSurvey.getFechaFin());
+
+            if (fireDate.after(DateUtils.getNow())) {
+                scheduleNotification(broadcast, fireDate.getTime());
+            }
         }
     }
 
@@ -65,12 +69,12 @@ public class NotificationManager {
         return notificationIntent;
     }
 
-    private static long getNotificationFireDate(Date endDate) {
+    private static Date getNotificationFireDate(Date endDate) {
         Calendar calendar = DateUtils.getCalendar(endDate);
         calendar.add(Calendar.DAY_OF_MONTH, -3);
         calendar.set(Calendar.HOUR_OF_DAY, 10);
 
-        return calendar.getTime().getTime();
+        return calendar.getTime();
     }
 
     private static void scheduleNotification(PendingIntent broadcast, long fireTime) {

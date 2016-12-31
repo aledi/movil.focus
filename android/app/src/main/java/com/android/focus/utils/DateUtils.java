@@ -41,4 +41,8 @@ public class DateUtils {
 
         return calendar;
     }
+
+    public static Date getNow() {
+        return Calendar.getInstance().getTime();
+    }
 }
