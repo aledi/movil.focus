@@ -23,6 +23,8 @@ import com.android.focus.model.Panel;
 import com.android.focus.model.User;
 import com.android.focus.utils.UIUtils;
 
+import java.util.Locale;
+
 public class PerfilFragment extends Fragment implements OnClickListener {
 
     private static final String PHONE_NUMBER = "tel:+528183387258";
@@ -138,7 +140,7 @@ public class PerfilFragment extends Fragment implements OnClickListener {
         user.setText(currentUser.getNombre());
         email.setText(currentUser.getEmail());
         activePanelsCount.setText(Panel.getActivePanels());
-        pendingSurveysCount.setText(Panel.getPendingSurveys());
+        pendingSurveysCount.setText(String.format(Locale.getDefault(), "%d", Panel.getPendingSurveys().size()));
     }
     // endregion
 

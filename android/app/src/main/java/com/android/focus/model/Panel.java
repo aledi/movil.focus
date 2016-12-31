@@ -10,9 +10,14 @@ import java.util.List;
 
 public class Panel {
 
+    public static final int PENDING = 0;
+    public static final int ACCEPTED = 1;
+    public static final int REJECTED = 2;
+
     private static List<Panel> userPanels;
 
     private int id;
+    private int estado;
     private String nombre;
     private Date fechaInicio;
     private Date fechaFin;
@@ -25,6 +30,14 @@ public class Panel {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public int getEstado() {
+        return estado;
+    }
+
+    public void setEstado(int estado) {
+        this.estado = estado;
     }
 
     public String getNombre() {
@@ -66,26 +79,41 @@ public class Panel {
     }
 
     public static List<Panel> getUserPaneles() {
-        return (userPanels == null) ? new ArrayList<Panel>() : userPanels;
+        List<Panel> notRejectedPanels = new ArrayList<>();
+        List<Panel> panels = (userPanels == null) ? new ArrayList<Panel>() : userPanels;
+
+        for (Panel panel : panels) {
+            if (panel.getEstado() == REJECTED) {
+                continue;
+            }
+
+            notRejectedPanels.add(panel);
+        }
+
+        return notRejectedPanels;
     }
 
     public static String getActivePanels() {
         return Integer.toString(getUserPaneles().size());
     }
 
-    public static String getPendingSurveys() {
-        int pendingSurveys = 0;
+    public static List<Encuesta> getPendingSurveys() {
         List<Panel> userPanels = getUserPaneles();
+        List<Encuesta> pendingSurveys = new ArrayList<>();
 
         for (Panel userPanel : userPanels) {
             List<Encuesta> encuestas = userPanel.getEncuestas();
 
             for (Encuesta encuesta : encuestas) {
-                pendingSurveys += encuesta.isContestada() ? 0 : 1;
+                if (encuesta.isContestada()) {
+                    continue;
+                }
+
+                pendingSurveys.add(encuesta);
             }
         }
 
-        return Integer.toString(pendingSurveys);
+        return pendingSurveys;
     }
     // endregion
 }

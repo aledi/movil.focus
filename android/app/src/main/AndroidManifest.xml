@@ -13,6 +13,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
+        <!-- Notifications -->
+        <receiver android:name=".notifications.NotificationListenerService">
+            <intent-filter>
+                <action android:name="android.media.action.DISPLAY_NOTIFICATION" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+
+        <!-- Activities -->
         <activity
             android:name=".SplashScreenActivity"
             android:screenOrientation="portrait">
