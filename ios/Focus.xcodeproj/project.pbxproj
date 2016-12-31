@@ -8,10 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		4004146B1D56B899005113D1 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4004146A1D56B899005113D1 /* RadioButton.swift */; };
-		400A4E821DD69195002C02BA /* estados.plist in Resources */ = {isa = PBXBuildFile; fileRef = 400A4E811DD69195002C02BA /* estados.plist */; };
+		400A4E821DD69195002C02BA /* Estados.plist in Resources */ = {isa = PBXBuildFile; fileRef = 400A4E811DD69195002C02BA /* Estados.plist */; };
 		400E9D3D1D5020CA006AAD64 /* Preguntas.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 400E9D3C1D5020CA006AAD64 /* Preguntas.storyboard */; };
 		400E9D3F1D5021B3006AAD64 /* PreguntasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400E9D3E1D5021B3006AAD64 /* PreguntasViewController.swift */; };
 		400F4EF41D49B46500538BCD /* EncuestasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400F4EF31D49B46500538BCD /* EncuestasViewController.swift */; };
+		401924561E173F6A00B02F37 /* FAQ.html in Resources */ = {isa = PBXBuildFile; fileRef = 401924551E173F6A00B02F37 /* FAQ.html */; };
+		401924581E17402F00B02F37 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401924571E17402F00B02F37 /* WebViewController.swift */; };
 		402DC9971DF790610062877C /* PreguntaMatrizViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 402DC9961DF790610062877C /* PreguntaMatrizViewCell.xib */; };
 		402DC9991DF791680062877C /* PreguntaMatrizViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402DC9981DF791680062877C /* PreguntaMatrizViewCell.swift */; };
 		402F247C1DF49FA0004E5EF2 /* PreguntaComboViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 402F247B1DF49FA0004E5EF2 /* PreguntaComboViewCell.xib */; };
@@ -65,10 +67,12 @@
 
 /* Begin PBXFileReference section */
 		4004146A1D56B899005113D1 /* RadioButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RadioButton.swift; path = Extensions/RadioButton.swift; sourceTree = "<group>"; };
-		400A4E811DD69195002C02BA /* estados.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = estados.plist; sourceTree = "<group>"; };
+		400A4E811DD69195002C02BA /* Estados.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Estados.plist; sourceTree = "<group>"; };
 		400E9D3C1D5020CA006AAD64 /* Preguntas.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Preguntas.storyboard; path = Preguntas/Preguntas.storyboard; sourceTree = "<group>"; };
 		400E9D3E1D5021B3006AAD64 /* PreguntasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreguntasViewController.swift; path = Preguntas/PreguntasViewController.swift; sourceTree = "<group>"; };
 		400F4EF31D49B46500538BCD /* EncuestasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EncuestasViewController.swift; path = Main/EncuestasViewController.swift; sourceTree = "<group>"; };
+		401924551E173F6A00B02F37 /* FAQ.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = FAQ.html; sourceTree = "<group>"; };
+		401924571E17402F00B02F37 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebViewController.swift; path = Extras/WebViewController.swift; sourceTree = "<group>"; };
 		402DC9961DF790610062877C /* PreguntaMatrizViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PreguntaMatrizViewCell.xib; path = Preguntas/PreguntaMatrizViewCell.xib; sourceTree = "<group>"; };
 		402DC9981DF791680062877C /* PreguntaMatrizViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreguntaMatrizViewCell.swift; path = Preguntas/PreguntaMatrizViewCell.swift; sourceTree = "<group>"; };
 		402F247B1DF49FA0004E5EF2 /* PreguntaComboViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PreguntaComboViewCell.xib; path = Preguntas/PreguntaComboViewCell.xib; sourceTree = "<group>"; };
@@ -170,6 +174,7 @@
 				40CC5DB21D80EF5900E1D8E5 /* Extras.storyboard */,
 				40CC5DB41D80F77300E1D8E5 /* WelcomeViewController.swift */,
 				406537241D7FA8D7000C7C9C /* PrivacyPolicyViewController.swift */,
+				401924571E17402F00B02F37 /* WebViewController.swift */,
 				40A8B6941E1447EE002B271D /* HistorialViewController.swift */,
 				40A8B6961E144846002B271D /* HistorialViewCell.swift */,
 			);
@@ -207,7 +212,8 @@
 				400E9D3B1D50208A006AAD64 /* Preguntas */,
 				40CC5DB11D80EF0A00E1D8E5 /* Extras */,
 				40FF0DA31D37138500ED8A64 /* Info.plist */,
-				400A4E811DD69195002C02BA /* estados.plist */,
+				400A4E811DD69195002C02BA /* Estados.plist */,
+				401924551E173F6A00B02F37 /* FAQ.html */,
 				40DDEC941D8E622F00B02BF9 /* Focus.entitlements */,
 			);
 			path = Focus;
@@ -327,10 +333,11 @@
 				40FF0DAE1D371DB600ED8A64 /* LogIn.storyboard in Resources */,
 				402F24801DF4CF3D004E5EF2 /* PreguntaEscalaViewCell.xib in Resources */,
 				40CC5DB31D80EF5900E1D8E5 /* Extras.storyboard in Resources */,
-				400A4E821DD69195002C02BA /* estados.plist in Resources */,
+				400A4E821DD69195002C02BA /* Estados.plist in Resources */,
 				400E9D3D1D5020CA006AAD64 /* Preguntas.storyboard in Resources */,
 				402DC9971DF790610062877C /* PreguntaMatrizViewCell.xib in Resources */,
 				40FF0DA21D37138500ED8A64 /* LaunchScreen.storyboard in Resources */,
+				401924561E173F6A00B02F37 /* FAQ.html in Resources */,
 				40FF0D9F1D37138500ED8A64 /* Assets.xcassets in Resources */,
 				402F247C1DF49FA0004E5EF2 /* PreguntaComboViewCell.xib in Resources */,
 				40A8DC321D569E010065B734 /* PreguntaViewCell.xib in Resources */,
@@ -406,6 +413,7 @@
 				40A8B6971E144846002B271D /* HistorialViewCell.swift in Sources */,
 				40E400E21DD421480095488F /* Button.swift in Sources */,
 				40AFB7711D49A50800C0099A /* Pregunta.swift in Sources */,
+				401924581E17402F00B02F37 /* WebViewController.swift in Sources */,
 				4004146B1D56B899005113D1 /* RadioButton.swift in Sources */,
 				40A8B6931E144111002B271D /* Historial.swift in Sources */,
 				40E7F9C21D4D5A9E00BCD0DB /* ProfileViewController.swift in Sources */,
