@@ -163,7 +163,7 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
                 self.appDelegate.paneles = paneles
             }
             
-            self.appDelegate.registerForPushNotifications()
+            self.appDelegate.registerForNotifications()
             self.spinner.stopAnimating()
             self.performSegueWithIdentifier("logIn", sender: self)
         } else {

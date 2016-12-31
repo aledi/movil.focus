@@ -326,7 +326,7 @@ class RegistrationViewController: UIViewController, UIPickerViewDelegate, UIPick
         if (response["status"] as? String == "SUCCESS") {
             self.saveUser(response["id"] as! Int)
             self.appDelegate.paneles = []
-            self.appDelegate.registerForPushNotifications()
+            self.appDelegate.registerForNotifications()
             self.performSegueWithIdentifier("welcome", sender: nil)
         } else if (response["status"] as? String == "USER_EXISTS") {
             self.userExistsAlert()
