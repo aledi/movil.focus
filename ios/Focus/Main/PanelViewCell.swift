@@ -14,11 +14,7 @@ class PanelViewCell: UITableViewCell {
     @IBOutlet var fechaIniLabel: UILabel!
     @IBOutlet var fechaFinLabel: UILabel!
     
-    var panelId: Int = -1
-    
     func configureFor(panel: Panel) {
-        self.panelId = panel.id
-        
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "MMMM d, YYYY"
         

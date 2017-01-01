@@ -27,9 +27,7 @@ class PanelsViewController: UITableViewController {
         
         UIApplication.sharedApplication().setStatusBarStyle(.LightContent, animated: false)
         
-        self.paneles = self.appDelegate.paneles?.filter({ (panel) -> Bool in
-            panel.estado != .Rejected
-        })
+        self.paneles = self.appDelegate.paneles
         self.tableView.reloadData()
     }
     
@@ -97,7 +95,6 @@ class PanelsViewController: UITableViewController {
             return
         }
         
-        self.selectedAction = 1
         self.acceptRejectCall(panelistaId, panelId: panelId, status: EstadoPanel.Accepted.rawValue)
     }
     
@@ -106,7 +103,6 @@ class PanelsViewController: UITableViewController {
             return
         }
         
-        self.selectedAction = 2
         self.acceptRejectCall(panelistaId, panelId: panelId, status: EstadoPanel.Rejected.rawValue)
     }
     
@@ -117,6 +113,7 @@ class PanelsViewController: UITableViewController {
             "estado" : status
         ]
         
+        self.selectedAction = status
         self.loadingAlert = self.presentAlertWithTitle("Cargando", withMessage: nil, withButtonTitles: [], withButtonStyles: [], andButtonHandlers: [])
         Controller.requestForAction(.INVITATION_RESPONE, withParameters: parameters, withSuccessHandler: self.successHandler, andErrorHandler: self.errorHandler)
     }
