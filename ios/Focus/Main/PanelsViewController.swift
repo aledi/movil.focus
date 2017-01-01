@@ -11,6 +11,7 @@ import UIKit
 class PanelsViewController: UITableViewController {
     
     var paneles: [Panel]?
+    var selectedPanel: Panel?
     
     // -----------------------------------------------------------------------------------------------------------
     // MARK: - Lifecycle
@@ -62,26 +63,8 @@ class PanelsViewController: UITableViewController {
             return tableView.dequeueReusableCellWithIdentifier("noContentCell", forIndexPath: indexPath)
         }
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("panelCell", forIndexPath: indexPath)
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "MMMM d, YYYY"
-        
-        if let panel = self.paneles?[indexPath.row] {
-            (cell.viewWithTag(10) as! UILabel).text = panel.nombre
-            (cell.viewWithTag(20) as! UILabel).text = dateFormatter.stringFromDate(panel.fechaInicio).capitalizedString
-            (cell.viewWithTag(30) as! UILabel).text = dateFormatter.stringFromDate(panel.fechaFin).capitalizedString
-            
-            cell.accessoryType = .None
-            cell.selectionStyle = .None
-            
-            if (panel.estado != .Accepted) {
-                cell.accessoryType = .DetailButton
-            } else if (panel.encuestas?.count == 0) {
-                cell.accessoryType = .DisclosureIndicator
-            } else {
-                cell.selectionStyle = .Default
-            }
-        }
+        let cell = tableView.dequeueReusableCellWithIdentifier("panelCell", forIndexPath: indexPath) as! PanelViewCell
+        cell.configureFor(self.paneles![indexPath.row])
         
         return cell
     }
@@ -89,6 +72,7 @@ class PanelsViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         let panel = self.paneles![indexPath.row]
+        self.selectedPanel = panel
         
         if (panel.estado != .Accepted) {
             self.presentAlertWithTitle("Invitación", withMessage: "\(panel.descripcion)\n\nAcepte la invitación para comenzar a participar.", withButtonTitles: ["Aceptar", "Rechazar", "Cancelar"], withButtonStyles: [.Default, .Destructive, .Cancel], andButtonHandlers: [nil, nil, nil])

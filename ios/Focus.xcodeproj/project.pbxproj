@@ -35,6 +35,7 @@
 		40AFB76D1D49A25100C0099A /* Panel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AFB76C1D49A25100C0099A /* Panel.swift */; };
 		40AFB76F1D49A3D800C0099A /* Encuesta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AFB76E1D49A3D800C0099A /* Encuesta.swift */; };
 		40AFB7711D49A50800C0099A /* Pregunta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AFB7701D49A50800C0099A /* Pregunta.swift */; };
+		40BB93DD1E18869C007A038E /* PanelViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BB93DC1E18869C007A038E /* PanelViewCell.swift */; };
 		40CC5DB31D80EF5900E1D8E5 /* Extras.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40CC5DB21D80EF5900E1D8E5 /* Extras.storyboard */; };
 		40CC5DB51D80F77300E1D8E5 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CC5DB41D80F77300E1D8E5 /* WelcomeViewController.swift */; };
 		40D810661D5811EE00EB8FCE /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D810651D5811EE00EB8FCE /* LoadingViewController.swift */; };
@@ -94,6 +95,7 @@
 		40AFB76C1D49A25100C0099A /* Panel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Panel.swift; path = Model/Panel.swift; sourceTree = "<group>"; };
 		40AFB76E1D49A3D800C0099A /* Encuesta.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Encuesta.swift; path = Model/Encuesta.swift; sourceTree = "<group>"; };
 		40AFB7701D49A50800C0099A /* Pregunta.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Pregunta.swift; path = Model/Pregunta.swift; sourceTree = "<group>"; };
+		40BB93DC1E18869C007A038E /* PanelViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PanelViewCell.swift; path = Main/PanelViewCell.swift; sourceTree = "<group>"; };
 		40CC5DB21D80EF5900E1D8E5 /* Extras.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Extras.storyboard; path = Extras/Extras.storyboard; sourceTree = "<group>"; };
 		40CC5DB41D80F77300E1D8E5 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WelcomeViewController.swift; path = Extras/WelcomeViewController.swift; sourceTree = "<group>"; };
 		40D810651D5811EE00EB8FCE /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoadingViewController.swift; path = Main/LoadingViewController.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 				405313091D386EFA0073751A /* Main.storyboard */,
 				40D810651D5811EE00EB8FCE /* LoadingViewController.swift */,
 				4053130B1D386F370073751A /* PanelsViewController.swift */,
+				40BB93DC1E18869C007A038E /* PanelViewCell.swift */,
 				400F4EF31D49B46500538BCD /* EncuestasViewController.swift */,
 				40E7F9C11D4D5A9E00BCD0DB /* ProfileViewController.swift */,
 				40E400E31DD547330095488F /* ChangePasswordViewController.swift */,
@@ -416,6 +419,7 @@
 				401924581E17402F00B02F37 /* WebViewController.swift in Sources */,
 				4004146B1D56B899005113D1 /* RadioButton.swift in Sources */,
 				40A8B6931E144111002B271D /* Historial.swift in Sources */,
+				40BB93DD1E18869C007A038E /* PanelViewCell.swift in Sources */,
 				40E7F9C21D4D5A9E00BCD0DB /* ProfileViewController.swift in Sources */,
 				40E400E41DD547330095488F /* ChangePasswordViewController.swift in Sources */,
 				408C37F11D838B4000A75784 /* MoviePlayerViewController.swift in Sources */,
