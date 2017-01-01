@@ -83,7 +83,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func scheduleLocalNotifications() {
         for panel in self.paneles! {
-            guard let encuestas = panel.encuestas else {
+            guard let encuestas = panel.encuestas where panel.estado == .Accepted else {
                 continue
             }
             

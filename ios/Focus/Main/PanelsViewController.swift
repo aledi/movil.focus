@@ -22,7 +22,10 @@ class PanelsViewController: UITableViewController {
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
         
         UIApplication.sharedApplication().setStatusBarStyle(.LightContent, animated: false)
-        self.paneles = self.appDelegate.paneles
+        
+        self.paneles = self.appDelegate.paneles?.filter({ (panel) -> Bool in
+            panel.estado != .Rejected
+        })
         self.tableView.reloadData()
     }
     
@@ -68,9 +71,15 @@ class PanelsViewController: UITableViewController {
             (cell.viewWithTag(20) as! UILabel).text = dateFormatter.stringFromDate(panel.fechaInicio).capitalizedString
             (cell.viewWithTag(30) as! UILabel).text = dateFormatter.stringFromDate(panel.fechaFin).capitalizedString
             
-            if (panel.encuestas?.count == 0) {
-                cell.accessoryType = .None
-                cell.selectionStyle = .None
+            cell.accessoryType = .None
+            cell.selectionStyle = .None
+            
+            if (panel.estado != .Accepted) {
+                cell.accessoryType = .DetailButton
+            } else if (panel.encuestas?.count == 0) {
+                cell.accessoryType = .DisclosureIndicator
+            } else {
+                cell.selectionStyle = .Default
             }
         }
         
@@ -81,12 +90,13 @@ class PanelsViewController: UITableViewController {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         let panel = self.paneles![indexPath.row]
         
-        if (panel.encuestas?.count > 0) {
+        if (panel.estado != .Accepted) {
+            self.presentAlertWithTitle("Invitación", withMessage: "\(panel.descripcion)\n\nAcepte la invitación para comenzar a participar.", withButtonTitles: ["Aceptar", "Rechazar", "Cancelar"], withButtonStyles: [.Default, .Destructive, .Cancel], andButtonHandlers: [nil, nil, nil])
+        } else if (panel.encuestas?.count == 0) {
+            self.presentAlertWithTitle("No hay Encuestas", withMessage: "Este panel aún no cuenta con encuestas. Por favor, espere a que una encuesta sea habilitada.", withButtonTitles: ["OK"], withButtonStyles: [.Cancel], andButtonHandlers: [nil])
+        } else {
             self.performSegueWithIdentifier("showEncuestas", sender: panel)
-            return
         }
-        
-        self.presentAlertWithTitle("No hay Encuestas", withMessage: "Este panel aún no cuenta con encuestas. Por favor, espere a que una encuesta sea habilitada.", withButtonTitles: ["OK"], withButtonStyles: [.Cancel], andButtonHandlers: [nil])
     }
     
 }

@@ -10,9 +10,9 @@ import Foundation
 import UIKit
 
 enum EstadoPanel: Int {
-    case Pendiente = 0
-    case Aceptado = 1
-    case Rechazado = 2
+    case Pending = 0
+    case Accepted = 1
+    case Rejected = 2
 }
 
 class Panel {
@@ -26,7 +26,7 @@ class Panel {
     var estado: EstadoPanel
     
     var encuestasPendientes: Int {
-        guard let encuestas = self.encuestas else {
+        guard let encuestas = self.encuestas where self.estado == .Accepted else {
             return 0
         }
         
