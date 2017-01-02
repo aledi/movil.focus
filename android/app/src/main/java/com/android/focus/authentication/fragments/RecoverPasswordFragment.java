@@ -1,4 +1,4 @@
-package com.android.focus.authentication;
+package com.android.focus.authentication.fragments;
 
 import android.app.Activity;
 import android.os.Bundle;

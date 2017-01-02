@@ -1,4 +1,4 @@
-package com.android.focus.perfil;
+package com.android.focus.perfil.fragments;
 
 import android.app.Activity;
 import android.os.Bundle;

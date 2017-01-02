@@ -1,9 +1,10 @@
-package com.android.focus.authentication;
+package com.android.focus.authentication.activities;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import com.android.focus.R;
+import com.android.focus.authentication.fragments.AuthenticationFragment;
 
 public class AuthenticationActivity extends AppCompatActivity {
 

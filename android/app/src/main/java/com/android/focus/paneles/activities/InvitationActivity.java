@@ -6,7 +6,7 @@ import android.view.MenuItem;
 import com.android.focus.R;
 import com.android.focus.helpers.activities.ToolbarActivity;
 import com.android.focus.paneles.fragments.InvitationFragment;
-import com.android.focus.perfil.ChangePasswordFragment;
+import com.android.focus.perfil.fragments.ChangePasswordFragment;
 
 public class InvitationActivity extends ToolbarActivity {
 

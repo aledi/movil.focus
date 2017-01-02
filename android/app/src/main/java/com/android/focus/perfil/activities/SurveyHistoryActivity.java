@@ -1,9 +1,10 @@
-package com.android.focus.perfil;
+package com.android.focus.perfil.activities;
 
 import android.os.Bundle;
 
 import com.android.focus.R;
 import com.android.focus.helpers.activities.ToolbarActivity;
+import com.android.focus.perfil.fragments.SurveyHistoryFragment;
 
 public class SurveyHistoryActivity extends ToolbarActivity {
 

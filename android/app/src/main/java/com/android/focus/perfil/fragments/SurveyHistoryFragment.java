@@ -1,4 +1,4 @@
-package com.android.focus.perfil;
+package com.android.focus.perfil.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;

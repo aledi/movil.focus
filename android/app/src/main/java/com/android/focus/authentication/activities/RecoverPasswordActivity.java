@@ -1,4 +1,4 @@
-package com.android.focus.authentication;
+package com.android.focus.authentication.activities;
 
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
@@ -7,10 +7,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 import com.android.focus.R;
+import com.android.focus.authentication.fragments.RecoverPasswordFragment;
 
-public class RegistrationActivity extends AppCompatActivity {
+public class RecoverPasswordActivity extends AppCompatActivity {
 
-    private RegistrationFragment fragment;
+    private RecoverPasswordFragment fragment;
 
     // region Activity lifecycle
     @Override
@@ -24,16 +25,16 @@ public class RegistrationActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
 
         if (actionBar != null) {
-            actionBar.setTitle(getString(R.string.register));
+            actionBar.setTitle(getString(R.string.recover_password));
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
 
-        fragment = RegistrationFragment.newInstance();
+        fragment = RecoverPasswordFragment.newInstance();
 
         if (savedInstanceState == null) {
             getSupportFragmentManager()
                     .beginTransaction()
-                    .replace(R.id.container, fragment, RegistrationFragment.FRAGMENT_TAG)
+                    .replace(R.id.container, fragment, RecoverPasswordFragment.FRAGMENT_TAG)
                     .commit();
         }
     }

@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import com.android.focus.R;
-import com.android.focus.authentication.AuthenticationActivity;
+import com.android.focus.authentication.activities.AuthenticationActivity;
 import com.android.focus.managers.UserPreferencesManager;
 
 public class SplashScreenActivity extends AppCompatActivity {

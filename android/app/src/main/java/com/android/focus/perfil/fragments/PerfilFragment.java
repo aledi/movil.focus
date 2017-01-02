@@ -1,4 +1,4 @@
-package com.android.focus.perfil;
+package com.android.focus.perfil.fragments;
 
 import android.app.Activity;
 import android.content.ActivityNotFoundException;
@@ -17,7 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.focus.R;
-import com.android.focus.authentication.PrivacyPolicyActivity;
+import com.android.focus.authentication.activities.PrivacyPolicyActivity;
 import com.android.focus.helpers.activities.SplashScreenActivity;
 import com.android.focus.helpers.activities.WebViewActivity;
 import com.android.focus.managers.UserPreferencesManager;
@@ -25,6 +25,8 @@ import com.android.focus.model.Panel;
 import com.android.focus.model.User;
 import com.android.focus.network.HttpResponseHandler;
 import com.android.focus.network.NetworkManager;
+import com.android.focus.perfil.activities.ChangePasswordActivity;
+import com.android.focus.perfil.activities.SurveyHistoryActivity;
 import com.android.focus.utils.UIUtils;
 import com.loopj.android.http.RequestParams;
 

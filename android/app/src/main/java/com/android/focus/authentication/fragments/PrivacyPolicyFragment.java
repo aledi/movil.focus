@@ -1,4 +1,4 @@
-package com.android.focus.authentication;
+package com.android.focus.authentication.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;

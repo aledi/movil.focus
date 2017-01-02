@@ -11,7 +11,7 @@ import android.support.v4.view.ViewPager.OnPageChangeListener;
 import com.android.focus.R;
 import com.android.focus.helpers.activities.ToolbarActivity;
 import com.android.focus.paneles.fragments.PanelesFragment;
-import com.android.focus.perfil.PerfilFragment;
+import com.android.focus.perfil.fragments.PerfilFragment;
 
 import java.util.ArrayList;
 import java.util.List;
