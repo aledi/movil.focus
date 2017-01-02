@@ -204,6 +204,7 @@
     <string name="send">Enviar</string>
     <string name="cancel">Cancelar</string>
     <string name="error">Error</string>
+    <string name="server_error">Internal Server Error</string>
 
     <!-- Privacy Policy -->
     <string name="privacy_policy">Aviso de Privacidad</string>

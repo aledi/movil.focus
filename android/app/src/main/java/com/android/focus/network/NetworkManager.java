@@ -16,6 +16,7 @@ import com.loopj.android.http.RequestParams;
 import static com.android.focus.network.APIConstants.ACTION;
 import static com.android.focus.network.APIConstants.CHANGE_PASSWORD;
 import static com.android.focus.network.APIConstants.GET_DATA;
+import static com.android.focus.network.APIConstants.GET_HISTORY;
 import static com.android.focus.network.APIConstants.PRIVACY_POLICY;
 import static com.android.focus.network.APIConstants.RECOVER_PASSWORD;
 import static com.android.focus.network.APIConstants.REGISTER_USER;
@@ -67,6 +68,10 @@ public class NetworkManager {
 
     public static void recoverPassword(RequestParams params, AsyncHttpResponseHandler responseHandler) {
         post(RECOVER_PASSWORD, params, responseHandler);
+    }
+
+    public static void downloadHistory(RequestParams params, AsyncHttpResponseHandler responseHandler) {
+        post(GET_HISTORY, params, responseHandler);
     }
 
     private static void post(String action, RequestParams params, AsyncHttpResponseHandler responseHandler) {

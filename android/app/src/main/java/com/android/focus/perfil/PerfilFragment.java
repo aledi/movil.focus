@@ -14,6 +14,7 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.focus.R;
 import com.android.focus.SplashScreenActivity;
@@ -21,9 +22,18 @@ import com.android.focus.authentication.PrivacyPolicyActivity;
 import com.android.focus.managers.UserPreferencesManager;
 import com.android.focus.model.Panel;
 import com.android.focus.model.User;
+import com.android.focus.network.HttpResponseHandler;
+import com.android.focus.network.NetworkManager;
 import com.android.focus.utils.UIUtils;
+import com.loopj.android.http.RequestParams;
+
+import org.json.JSONObject;
 
 import java.util.Locale;
+
+import cz.msebera.android.httpclient.Header;
+
+import static com.android.focus.network.APIConstants.PANELISTA;
 
 public class PerfilFragment extends Fragment implements OnClickListener {
 
@@ -32,6 +42,8 @@ public class PerfilFragment extends Fragment implements OnClickListener {
     private static final String RATE_APP_URI = "market://details?id=com.focus.android";
 
     private Activity activity;
+    private boolean enableBack = true;
+    private View loader;
     // User.
     private TextView email;
     private TextView user;
@@ -88,6 +100,7 @@ public class PerfilFragment extends Fragment implements OnClickListener {
         super.onCreateView(inflater, container, savedInstanceState);
 
         View view = inflater.inflate(R.layout.fragment_perfil, container, false);
+        loader = view.findViewById(R.id.loader);
 
         // Set up for 'User' section
         user = (TextView) view.findViewById(R.id.txt_user);
@@ -145,6 +158,12 @@ public class PerfilFragment extends Fragment implements OnClickListener {
         activePanelsCount.setText(Panel.getActivePanels());
         pendingSurveysCount.setText(String.format(Locale.getDefault(), "%d", Panel.getPendingSurveys().size()));
     }
+
+    private void showError(String error) {
+        enableBack = true;
+        loader.setVisibility(View.GONE);
+        Toast.makeText(activity, error, Toast.LENGTH_SHORT).show();
+    }
     // endregion
 
     // region Listeners
@@ -153,7 +172,7 @@ public class PerfilFragment extends Fragment implements OnClickListener {
         if (view.equals(changePasswordButton)) {
             startActivity(new Intent(activity, ChangePasswordActivity.class));
         } else if (view.equals(surveyHistoryButton)) {
-            startActivity(new Intent(activity, SurveyHistoryActivity.class));
+            downloadHistory();
         } else if (view.equals(sendEmailButton)) {
             sendEmail();
         } else if (view.equals(callPhoneButton)) {
@@ -171,6 +190,44 @@ public class PerfilFragment extends Fragment implements OnClickListener {
     // endregion
 
     // region Click Actions
+    private void downloadHistory() {
+        if (NetworkManager.isNetworkUnavailable(activity)) {
+            return;
+        }
+
+        enableBack = false;
+        loader.setVisibility(View.VISIBLE);
+        RequestParams params = new RequestParams();
+        params.put(PANELISTA, UserPreferencesManager.getCurrentUserId());
+
+        NetworkManager.downloadHistory(params, new HttpResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                if (activity == null || activity.isFinishing()) {
+                    return;
+                }
+
+                System.out.println(response);
+                enableBack = true;
+                loader.setVisibility(View.GONE);
+                startActivity(new Intent(activity, SurveyHistoryActivity.class));
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, String errorResponse, Throwable throwable) {
+                if (activity == null || activity.isFinishing()) {
+                    return;
+                }
+
+                if (statusCode == 500) {
+                    errorResponse = getString(R.string.server_error);
+                }
+
+                showError(errorResponse);
+            }
+        });
+    }
+
     private void sendEmail() {
         Intent intent = new Intent(Intent.ACTION_SENDTO);
         intent.setType("text/plain");
@@ -215,6 +272,12 @@ public class PerfilFragment extends Fragment implements OnClickListener {
             startActivity(intent);
         } catch (ActivityNotFoundException exception) {
             UIUtils.showAlertDialog(R.string.error, R.string.rate_error, activity);
+        }
+    }
+
+    public void handleOnBackPressedEvent() {
+        if (enableBack) {
+            activity.finish();
         }
     }
     // endregion
