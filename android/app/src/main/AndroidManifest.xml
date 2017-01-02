@@ -80,5 +80,9 @@
         <activity
             android:name=".perfil.ChangePasswordActivity"
             android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".perfil.SurveyHistoryActivity"
+            android:screenOrientation="portrait" />
     </application>
 </manifest>

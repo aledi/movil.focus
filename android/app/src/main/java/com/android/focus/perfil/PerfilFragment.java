@@ -40,6 +40,7 @@ public class PerfilFragment extends Fragment implements OnClickListener {
     // Panels.
     private TextView activePanelsCount;
     private TextView pendingSurveysCount;
+    private TextView surveyHistoryButton;
     // Help.
     private TextView sendEmailButton;
     private TextView callPhoneButton;
@@ -97,6 +98,8 @@ public class PerfilFragment extends Fragment implements OnClickListener {
         // Set up for 'Paneles' section
         activePanelsCount = (TextView) view.findViewById(R.id.txt_active_panels_count);
         pendingSurveysCount = (TextView) view.findViewById(R.id.txt_pending_surveys_count);
+        surveyHistoryButton = (TextView) view.findViewById(R.id.btn_survey_history);
+        surveyHistoryButton.setOnClickListener(this);
 
         // Set up for 'Ayuda' section
         sendEmailButton = (TextView) view.findViewById(R.id.txt_send_email);
@@ -149,6 +152,8 @@ public class PerfilFragment extends Fragment implements OnClickListener {
     public void onClick(View view) {
         if (view.equals(changePasswordButton)) {
             startActivity(new Intent(activity, ChangePasswordActivity.class));
+        } else if (view.equals(surveyHistoryButton)) {
+            startActivity(new Intent(activity, SurveyHistoryActivity.class));
         } else if (view.equals(sendEmailButton)) {
             sendEmail();
         } else if (view.equals(callPhoneButton)) {
