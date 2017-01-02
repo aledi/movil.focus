@@ -20,8 +20,8 @@
                 style="@style/TextViewPrimary"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:minHeight="@dimen/text_view_height_mini"
                 android:gravity="center"
+                android:minHeight="@dimen/text_view_height_mini"
                 android:padding="16dp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
@@ -32,8 +32,8 @@
                 style="@style/TextView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:padding="16dp"
                 android:gravity="center"
+                android:padding="16dp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txt_title" />
@@ -87,7 +87,7 @@
                     android:id="@+id/btn_reject"
                     style="@style/MaterialButton"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="@dimen/button_height"
                     android:background="@drawable/ripple_effect"
                     android:text="@string/reject"
                     android:textColor="@color/bluePrimary" />
@@ -108,4 +108,12 @@
                 app:layout_constraintTop_toBottomOf="@+id/card_reject" />
         </android.support.constraint.ConstraintLayout>
     </ScrollView>
+
+    <View
+        android:id="@+id/loader"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/loader"
+        android:clickable="true"
+        android:visibility="gone" />
 </FrameLayout>

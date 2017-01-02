@@ -24,6 +24,7 @@ import com.android.focus.utils.UIUtils;
 
 import java.util.List;
 
+import static com.android.focus.model.Panel.PENDING;
 import static com.android.focus.paneles.activities.EncuestasActivity.EXTRA_PANEL_ID;
 
 public class PanelesFragment extends Fragment {
@@ -90,7 +91,7 @@ public class PanelesFragment extends Fragment {
         TextView endDate = (TextView) view.findViewById(R.id.txt_end_date);
         endDate.setText(DateUtils.dateFormat(panel.getFechaFin()));
 
-        if (panel.getEstado() == Panel.PENDING) {
+        if (panel.getEstado() == PENDING) {
             image.setImageResource(R.drawable.ic_pending);
             view.setOnClickListener(getAcceptRejectPanelListener(panel.getId(), activity));
         } else if (panel.getEncuestas().isEmpty()) {
