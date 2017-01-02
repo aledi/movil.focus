@@ -1,9 +1,10 @@
-package com.android.focus.helpers;
+package com.android.focus.helpers.activities;
 
 import android.os.Bundle;
 
 import com.android.focus.R;
 import com.android.focus.ToolbarActivity;
+import com.android.focus.helpers.fragments.WebViewFragment;
 
 public class WebViewActivity extends ToolbarActivity {
 

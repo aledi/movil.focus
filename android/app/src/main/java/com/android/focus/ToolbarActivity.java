@@ -8,6 +8,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 import com.android.focus.authentication.WelcomeActivity;
+import com.android.focus.helpers.activities.LoadingActivity;
 import com.android.focus.notifications.NotificationManager;
 
 public class ToolbarActivity extends AppCompatActivity {

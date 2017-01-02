@@ -19,7 +19,7 @@ import android.widget.Toast;
 import com.android.focus.R;
 import com.android.focus.SplashScreenActivity;
 import com.android.focus.authentication.PrivacyPolicyActivity;
-import com.android.focus.helpers.WebViewActivity;
+import com.android.focus.helpers.activities.WebViewActivity;
 import com.android.focus.managers.UserPreferencesManager;
 import com.android.focus.model.Panel;
 import com.android.focus.model.User;

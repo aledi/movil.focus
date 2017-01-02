@@ -1,4 +1,4 @@
-package com.android.focus.helpers;
+package com.android.focus.helpers.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
