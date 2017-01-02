@@ -14,11 +14,13 @@ public class APIConstants {
     static final String CHANGE_PASSWORD = "CHANGE_PANELISTA_PASSWORD";
     static final String RECOVER_PASSWORD = "FORGOT_PANELISTA_PASSWORD";
     static final String GET_HISTORY = "GET_HISTORIAL";
+    static final String INVITATION_RESPONE = "INVITATION_RESPONSE";
 
     public static final String STATUS = "status";
     public static final String CONTENT = "content";
     public static final String USERNAME = "username";
     public static final String PASSWORD = "password";
+    public static final String PANEL = "panel";
     public static final String PANELS = "paneles";
     public static final String PANELISTA = "panelista";
     public static final String ENCUESTA = "encuesta";
@@ -27,6 +29,7 @@ public class APIConstants {
     public static final String OLD_PASSWORD = "old";
     public static final String NEW_PASSWORD = "new";
     public static final String EMAIL = "email";
+    public static final String ESTADO = "estado";
 
     public static final String SUCCESS = "SUCCESS";
     public static final String WRONG_PASSWORD = "WRONG_PASSWORD";

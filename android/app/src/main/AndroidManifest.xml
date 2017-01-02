@@ -65,6 +65,10 @@
             android:screenOrientation="portrait" />
 
         <activity
+            android:name=".paneles.activities.InvitationActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
             android:name=".paneles.activities.EncuestasActivity"
             android:screenOrientation="portrait" />
 
