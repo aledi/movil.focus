@@ -70,7 +70,7 @@ class RegistrationViewController: UIViewController, UIPickerViewDelegate, UIPick
     }
     
     func fetchEstados() {
-        if let path = NSBundle.mainBundle().pathForResource("estados", ofType: "plist") {
+        if let path = NSBundle.mainBundle().pathForResource("Estados", ofType: "plist") {
             self.states = NSArray(contentsOfFile: path) as! [[String : AnyObject]]
         }
     }

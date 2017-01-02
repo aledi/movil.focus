@@ -83,21 +83,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func scheduleLocalNotifications() {
         for panel in self.paneles! {
-            guard let encuestas = panel.encuestas else {
+            guard let encuestas = panel.encuestas where panel.estado == .Accepted else {
                 continue
             }
             
             for encuesta in encuestas {
                 if (!encuesta.contestada) {
-                    let localNotification = UILocalNotification()
                     let fireDate = encuesta.fechaFin.dateByAddingTimeInterval(60 * 60 * 24 * -3 + (60 * 60 * 10))
                     
-                    localNotification.fireDate = fireDate
-                    localNotification.alertTitle = "Encuesta Pendiente"
-                    localNotification.alertBody = "Recuerda contestar la encuesta \"\(encuesta.nombre)\" antes de que cierre."
-                    localNotification.soundName = UILocalNotificationDefaultSoundName
-                    
-                    UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
+                    if (fireDate.compare(NSDate()) == .OrderedDescending) {
+                        let localNotification = UILocalNotification()
+                        
+                        localNotification.fireDate = fireDate
+                        localNotification.alertTitle = "Encuesta Pendiente"
+                        localNotification.alertBody = "Recuerda contestar la encuesta \"\(encuesta.nombre)\" antes de que cierre."
+                        localNotification.soundName = UILocalNotificationDefaultSoundName
+                        
+                        UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
+                    }
                 }
             }
         }

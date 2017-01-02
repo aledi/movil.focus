@@ -48,14 +48,16 @@ class ProfileViewController: UITableViewController, UIActivityItemSource, MFMail
         }
         
         var pending = 0
+        var active = 0
         
         for panel in paneles {
+            active += panel.estado == .Accepted ? 1 : 0
             pending += panel.encuestasPendientes
         }
         
         self.nameLabel.text = user.nombre
         self.emailLabel.text = user.email
-        self.panelsLabel.text = "\(paneles.count)"
+        self.panelsLabel.text = "\(active)"
         self.encuestasLabel.text = "\(pending)"
     }
     

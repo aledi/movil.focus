@@ -135,7 +135,7 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
             if let panels = response["paneles"] as? [AnyObject] {
                 for object in panels {
                     let panel = object as! NSDictionary
-                    let newPanel = Panel(id: panel["id"] as! Int, nombre: panel["nombre"] as! String, fechaInicio: panel["fechaInicio"] as! String, fechaFin: panel["fechaFin"] as! String)
+                    let newPanel = Panel(id: panel["id"] as! Int, nombre: panel["nombre"] as! String, descripcion: panel["descripcion"] as! String, fechaInicio: panel["fechaInicio"] as! String, fechaFin: panel["fechaFin"] as! String, estado: panel["estado"] as! Int)
                     
                     var encuestas: [Encuesta] = []
                     
