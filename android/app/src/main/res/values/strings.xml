@@ -124,6 +124,10 @@
     <string name="startDate">Fecha de Inicio:\u0020</string>
     <string name="endDate">Fecha de Fin:\u0020</string>
     <string name="no_active_panels">Sin Paneles Activos</string>
+    <string name="panel_invitation">Responder Invitación</string>
+    <string name="panel_invitation_message">Acepte la invitación para comenzar a participar.</string>
+    <string name="accept">Aceptar</string>
+    <string name="reject">Rechazar</string>
 
     <!-- Surveys -->
     <string name="survey">Encuesta</string>

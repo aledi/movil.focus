@@ -124,5 +124,17 @@ public class Panel {
 
         return pendingSurveys;
     }
+
+    public static Panel getPanel(int panelId) {
+        List<Panel> userPanels = getUserPaneles();
+
+        for (Panel panel : userPanels) {
+            if (panel.getId() == panelId) {
+                return panel;
+            }
+        }
+
+        return null;
+    }
     // endregion
 }

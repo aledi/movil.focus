@@ -18,6 +18,7 @@ import com.android.focus.FocusApp;
 import com.android.focus.R;
 import com.android.focus.model.Panel;
 import com.android.focus.paneles.activities.EncuestasActivity;
+import com.android.focus.paneles.activities.InvitationActivity;
 import com.android.focus.utils.DateUtils;
 import com.android.focus.utils.UIUtils;
 
@@ -91,7 +92,7 @@ public class PanelesFragment extends Fragment {
 
         if (panel.getEstado() == Panel.PENDING) {
             image.setImageResource(R.drawable.ic_pending);
-            view.setOnClickListener(getAcceptRejectPanelListener(panel));
+            view.setOnClickListener(getAcceptRejectPanelListener(panel.getId(), activity));
         } else if (panel.getEncuestas().isEmpty()) {
             view.setOnClickListener(showNoSurveysDialog(activity));
         } else {
@@ -104,11 +105,13 @@ public class PanelesFragment extends Fragment {
     // endregion
 
     // region Helper methods
-    private OnClickListener getAcceptRejectPanelListener(final Panel panel) {
+    private OnClickListener getAcceptRejectPanelListener(final int panelId, final Activity activity) {
         return new OnClickListener() {
             @Override
             public void onClick(View v) {
-                // TODO: Show dialog
+                Intent intent = new Intent(activity, InvitationActivity.class);
+                intent.putExtra(InvitationActivity.EXTRA_PANEL_ID, panelId);
+                startActivity(intent);
             }
         };
     }
