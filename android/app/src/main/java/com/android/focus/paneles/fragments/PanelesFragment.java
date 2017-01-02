@@ -89,7 +89,10 @@ public class PanelesFragment extends Fragment {
         TextView endDate = (TextView) view.findViewById(R.id.txt_end_date);
         endDate.setText(DateUtils.dateFormat(panel.getFechaFin()));
 
-        if (panel.getEncuestas().isEmpty()) {
+        if (panel.getEstado() == Panel.PENDING) {
+            image.setImageResource(R.drawable.ic_pending);
+            view.setOnClickListener(getAcceptRejectPanelListener(panel));
+        } else if (panel.getEncuestas().isEmpty()) {
             view.setOnClickListener(showNoSurveysDialog(activity));
         } else {
             image.setImageResource(R.drawable.ic_arrow);
@@ -101,13 +104,11 @@ public class PanelesFragment extends Fragment {
     // endregion
 
     // region Helper methods
-    private OnClickListener getViewPanelListener(final int panelId, final Activity activity) {
+    private OnClickListener getAcceptRejectPanelListener(final Panel panel) {
         return new OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(activity, EncuestasActivity.class);
-                intent.putExtra(EXTRA_PANEL_ID, panelId);
-                startActivity(intent);
+            public void onClick(View v) {
+                // TODO: Show dialog
             }
         };
     }
@@ -117,6 +118,17 @@ public class PanelesFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 UIUtils.showAlertDialog(R.string.no_surveys_title, R.string.no_surveys_message, activity);
+            }
+        };
+    }
+
+    private OnClickListener getViewPanelListener(final int panelId, final Activity activity) {
+        return new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(activity, EncuestasActivity.class);
+                intent.putExtra(EXTRA_PANEL_ID, panelId);
+                startActivity(intent);
             }
         };
     }
