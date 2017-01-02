@@ -19,6 +19,7 @@ public class Panel {
     private int id;
     private int estado;
     private String nombre;
+    private String descripcion;
     private Date fechaInicio;
     private Date fechaFin;
     private List<Encuesta> encuestas;
@@ -46,6 +47,14 @@ public class Panel {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 
     public Date getFechaInicio() {
@@ -114,6 +123,18 @@ public class Panel {
         }
 
         return pendingSurveys;
+    }
+
+    public static Panel getPanel(int panelId) {
+        List<Panel> userPanels = getUserPaneles();
+
+        for (Panel panel : userPanels) {
+            if (panel.getId() == panelId) {
+                return panel;
+            }
+        }
+
+        return null;
     }
     // endregion
 }
