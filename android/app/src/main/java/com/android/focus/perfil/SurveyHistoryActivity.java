@@ -3,7 +3,7 @@ package com.android.focus.perfil;
 import android.os.Bundle;
 
 import com.android.focus.R;
-import com.android.focus.ToolbarActivity;
+import com.android.focus.helpers.activities.ToolbarActivity;
 
 public class SurveyHistoryActivity extends ToolbarActivity {
 

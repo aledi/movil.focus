@@ -6,7 +6,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 
-import com.android.focus.ToolbarActivity;
+import com.android.focus.helpers.activities.ToolbarActivity;
 
 public class NotificationListenerService extends BroadcastReceiver {
 

@@ -3,7 +3,7 @@ package com.android.focus.paneles.activities;
 import android.os.Bundle;
 
 import com.android.focus.R;
-import com.android.focus.ToolbarActivity;
+import com.android.focus.helpers.activities.ToolbarActivity;
 import com.android.focus.paneles.fragments.PreguntasFragment;
 import com.android.focus.paneles.fragments.VideoViewFragment;
 

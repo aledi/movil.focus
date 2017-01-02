@@ -5,7 +5,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.android.focus.R;
-import com.android.focus.ToolbarActivity;
+import com.android.focus.helpers.activities.ToolbarActivity;
 import com.android.focus.paneles.fragments.PreguntasFragment;
 
 public class PreguntasActivity extends ToolbarActivity {

@@ -11,7 +11,6 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.android.focus.R;
-import com.android.focus.ToolbarActivity;
 import com.android.focus.main.MainActivity;
 import com.android.focus.managers.UserPreferencesManager;
 import com.android.focus.model.User;

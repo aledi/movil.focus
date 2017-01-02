@@ -6,7 +6,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.android.focus.R;
-import com.android.focus.ToolbarActivity;
+import com.android.focus.helpers.activities.ToolbarActivity;
 import com.android.focus.main.MainActivity;
 import com.android.focus.model.User;
 
