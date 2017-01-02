@@ -19,6 +19,7 @@ import android.widget.Toast;
 import com.android.focus.R;
 import com.android.focus.SplashScreenActivity;
 import com.android.focus.authentication.PrivacyPolicyActivity;
+import com.android.focus.helpers.WebViewActivity;
 import com.android.focus.managers.UserPreferencesManager;
 import com.android.focus.model.Panel;
 import com.android.focus.model.User;
@@ -54,6 +55,7 @@ public class PerfilFragment extends Fragment implements OnClickListener {
     private TextView pendingSurveysCount;
     private TextView surveyHistoryButton;
     // Help.
+    private TextView faqButton;
     private TextView sendEmailButton;
     private TextView callPhoneButton;
     // Other.
@@ -115,6 +117,8 @@ public class PerfilFragment extends Fragment implements OnClickListener {
         surveyHistoryButton.setOnClickListener(this);
 
         // Set up for 'Ayuda' section
+        faqButton = (TextView) view.findViewById(R.id.txt_faq);
+        faqButton.setOnClickListener(this);
         sendEmailButton = (TextView) view.findViewById(R.id.txt_send_email);
         sendEmailButton.setOnClickListener(this);
         callPhoneButton = (TextView) view.findViewById(R.id.txt_call_phone);
@@ -173,6 +177,8 @@ public class PerfilFragment extends Fragment implements OnClickListener {
             startActivity(new Intent(activity, ChangePasswordActivity.class));
         } else if (view.equals(surveyHistoryButton)) {
             downloadHistory();
+        } else if (view.equals(faqButton)) {
+            openFAQ();
         } else if (view.equals(sendEmailButton)) {
             sendEmail();
         } else if (view.equals(callPhoneButton)) {
@@ -226,6 +232,13 @@ public class PerfilFragment extends Fragment implements OnClickListener {
                 showError(errorResponse);
             }
         });
+    }
+
+    private void openFAQ() {
+        Intent intent = new Intent(activity, WebViewActivity.class);
+        intent.putExtra(WebViewActivity.EXTRA_TITLE, getString(R.string.faq));
+        intent.putExtra(WebViewActivity.EXTRA_URL, "file:///android_asset/FAQ.html");
+        startActivity(intent);
     }
 
     private void sendEmail() {
