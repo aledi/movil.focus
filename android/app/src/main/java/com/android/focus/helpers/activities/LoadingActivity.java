@@ -10,8 +10,8 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.android.focus.MainActivity;
 import com.android.focus.R;
-import com.android.focus.main.MainActivity;
 import com.android.focus.managers.UserPreferencesManager;
 import com.android.focus.model.User;
 import com.android.focus.network.APIConstants;

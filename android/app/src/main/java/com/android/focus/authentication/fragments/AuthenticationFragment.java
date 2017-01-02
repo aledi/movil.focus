@@ -19,10 +19,10 @@ import android.widget.TextView;
 import android.widget.TextView.OnEditorActionListener;
 import android.widget.Toast;
 
+import com.android.focus.MainActivity;
 import com.android.focus.R;
 import com.android.focus.authentication.activities.RecoverPasswordActivity;
 import com.android.focus.authentication.activities.RegistrationActivity;
-import com.android.focus.main.MainActivity;
 import com.android.focus.managers.UserPreferencesManager;
 import com.android.focus.model.User;
 import com.android.focus.network.HttpResponseHandler;

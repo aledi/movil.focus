@@ -1,4 +1,4 @@
-package com.android.focus.main;
+package com.android.focus;
 
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
