@@ -106,4 +106,3 @@ public class SurveyHistoryFragment extends Fragment {
     }
     // endregion
 }
-
