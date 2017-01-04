@@ -32,11 +32,13 @@ import java.util.List;
 import cz.msebera.android.httpclient.Header;
 
 import static com.android.focus.network.APIConstants.ENCUESTA;
+import static com.android.focus.network.APIConstants.ID;
 import static com.android.focus.network.APIConstants.PANELISTA;
 import static com.android.focus.network.APIConstants.STATUS;
 import static com.android.focus.network.APIConstants.SUCCESS;
 import static com.android.focus.paneles.activities.PreguntasActivity.EXTRA_ENCUESTA_ID;
 import static com.android.focus.paneles.activities.PreguntasActivity.EXTRA_PANEL_ID;
+import static com.android.focus.paneles.activities.PreguntasActivity.EXTRA_RESPUESTA_ID;
 
 public class EncuestasFragment extends Fragment {
 
@@ -189,6 +191,7 @@ public class EncuestasFragment extends Fragment {
                     Intent intent = new Intent(getActivity(), PreguntasActivity.class);
                     intent.putExtra(EXTRA_PANEL_ID, panelId);
                     intent.putExtra(EXTRA_ENCUESTA_ID, encuesta.getId());
+                    intent.putExtra(EXTRA_RESPUESTA_ID, response.optInt(ID));
                     startActivity(intent);
                 }
 
