@@ -112,11 +112,12 @@ public class EncuestasFragment extends Fragment {
 
     // region UI methods
     private View createViewForEncuesta(final Encuesta encuesta) {
-        View view = View.inflate(FocusApp.getContext(), R.layout.card_detail, null);
+        View view = View.inflate(FocusApp.getContext(), R.layout.fragment_encuestas_item, null);
         TextView title = (TextView) view.findViewById(R.id.txt_title);
         title.setText(encuesta.getNombre());
         TextView preguntas = (TextView) view.findViewById(R.id.txt_preguntas);
         preguntas.setText(getResources().getQuantityString(R.plurals.preguntas_count, encuesta.getPreguntas().size(), encuesta.getPreguntas().size()));
+        preguntas.setVisibility(View.VISIBLE);
         ImageView image = (ImageView) view.findViewById(R.id.image);
         image.setImageResource(encuesta.isContestada() ? R.drawable.ic_check_mark : R.drawable.ic_arrow);
         TextView startDate = (TextView) view.findViewById(R.id.txt_start_date);
