@@ -3,36 +3,39 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:layout_marginBottom="@dimen/card_layout_margin_bottom"
+    android:layout_marginTop="@dimen/card_layout_margin_top"
+    app:cardBackgroundColor="@color/white"
+    app:cardUseCompatPadding="true">
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/ripple_effect">
+        android:layout_height="wrap_content">
 
         <TextView
             android:id="@+id/txt_survey_label"
             style="@style/TextViewLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="56dp"
+            android:layout_width="118dp"
+            android:layout_height="@dimen/text_view_height"
             android:padding="16dp"
             android:text="@string/history_survey"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/txt_survey"
+            android:id="@+id/txt_title"
             style="@style/TextViewTitle"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="@dimen/text_view_height"
             android:padding="16dp"
+            app:layout_constraintLeft_toRightOf="@id/txt_survey_label"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/txt_answered_label"
             style="@style/TextViewLabel"
-            android:layout_width="wrap_content"
+            android:layout_width="118dp"
             android:layout_height="@dimen/text_view_height"
             android:padding="16dp"
             android:text="@string/history_answered"
@@ -42,17 +45,18 @@
         <TextView
             android:id="@+id/txt_answered"
             style="@style/TextView"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="@dimen/text_view_height"
             android:padding="16dp"
             android:textColor="@color/blueDark"
+            app:layout_constraintLeft_toRightOf="@id/txt_answered_label"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txt_survey_label" />
 
         <TextView
             android:id="@+id/txt_start_date_label"
             style="@style/TextViewLabel"
-            android:layout_width="wrap_content"
+            android:layout_width="118dp"
             android:layout_height="@dimen/text_view_height"
             android:padding="16dp"
             android:text="@string/history_start_date"
@@ -62,16 +66,17 @@
         <TextView
             android:id="@+id/txt_start_date"
             style="@style/TextView"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="@dimen/text_view_height"
             android:padding="16dp"
+            app:layout_constraintLeft_toRightOf="@id/txt_start_date_label"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txt_start_date_label" />
+            app:layout_constraintTop_toBottomOf="@+id/txt_answered_label" />
 
         <TextView
             android:id="@+id/txt_end_date_label"
             style="@style/TextViewLabel"
-            android:layout_width="wrap_content"
+            android:layout_width="118dp"
             android:layout_height="@dimen/text_view_height"
             android:padding="16dp"
             android:text="@string/history_end_date"
@@ -81,16 +86,17 @@
         <TextView
             android:id="@+id/txt_end_date"
             style="@style/TextView"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="@dimen/text_view_height"
             android:padding="16dp"
+            app:layout_constraintLeft_toRightOf="@id/txt_end_date_label"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txt_start_date_label" />
 
         <TextView
             android:id="@+id/txt_panel_label"
             style="@style/TextViewLabel"
-            android:layout_width="wrap_content"
+            android:layout_width="118dp"
             android:layout_height="@dimen/text_view_height"
             android:padding="16dp"
             android:text="@string/history_panel"
@@ -101,10 +107,11 @@
         <TextView
             android:id="@+id/txt_panel"
             style="@style/TextView"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="@dimen/text_view_height"
             android:padding="16dp"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/txt_panel_label"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txt_end_date_label" />
     </android.support.constraint.ConstraintLayout>
