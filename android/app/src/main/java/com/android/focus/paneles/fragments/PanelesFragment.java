@@ -82,7 +82,7 @@ public class PanelesFragment extends Fragment {
 
     private View createViewForPanel(final Panel panel) {
         final Activity activity = getActivity();
-        View view = View.inflate(FocusApp.getContext(), R.layout.card_detail, null);
+        View view = View.inflate(FocusApp.getContext(), R.layout.fragment_encuestas_item, null);
         TextView title = (TextView) view.findViewById(R.id.txt_title);
         title.setText(panel.getNombre());
         ImageView image = (ImageView) view.findViewById(R.id.image);
