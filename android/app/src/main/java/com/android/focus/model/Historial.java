@@ -131,6 +131,7 @@ public class Historial {
             calendar.set(Calendar.HOUR_OF_DAY, Integer.valueOf(horaRespuestaComponents[0]));
             calendar.set(Calendar.MINUTE, Integer.valueOf(horaRespuestaComponents[1]));
             calendar.set(Calendar.SECOND, Integer.valueOf(horaRespuestaComponents[2]));
+            history.setFechaRespuesta(calendar.getTime());
         }
     }
 
