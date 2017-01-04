@@ -21,6 +21,7 @@ import com.android.focus.authentication.activities.PrivacyPolicyActivity;
 import com.android.focus.helpers.activities.SplashScreenActivity;
 import com.android.focus.helpers.activities.WebViewActivity;
 import com.android.focus.managers.UserPreferencesManager;
+import com.android.focus.model.Historial;
 import com.android.focus.model.Panel;
 import com.android.focus.model.User;
 import com.android.focus.network.HttpResponseHandler;
@@ -37,6 +38,8 @@ import java.util.Locale;
 import cz.msebera.android.httpclient.Header;
 
 import static com.android.focus.network.APIConstants.PANELISTA;
+import static com.android.focus.network.APIConstants.STATUS;
+import static com.android.focus.network.APIConstants.SUCCESS;
 
 public class PerfilFragment extends Fragment implements OnClickListener {
 
@@ -215,7 +218,12 @@ public class PerfilFragment extends Fragment implements OnClickListener {
                     return;
                 }
 
-                System.out.println(response);
+                if (!response.optString(STATUS).equals(SUCCESS)) {
+                    showError(getString(R.string.survey_history_error));
+                    return;
+                }
+
+                Historial.initData(response);
                 enableBack = true;
                 loader.setVisibility(View.GONE);
                 startActivity(new Intent(activity, SurveyHistoryActivity.class));
@@ -227,11 +235,7 @@ public class PerfilFragment extends Fragment implements OnClickListener {
                     return;
                 }
 
-                if (statusCode == 500) {
-                    errorResponse = getString(R.string.server_error);
-                }
-
-                showError(errorResponse);
+                showError(getString(R.string.server_error));
             }
         });
     }

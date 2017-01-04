@@ -30,6 +30,8 @@ public class APIConstants {
     public static final String NEW_PASSWORD = "new";
     public static final String EMAIL = "email";
     public static final String ESTADO = "estado";
+    public static final String RESULTS = "results";
+    public static final String HORA_RESPUESTA = "horaRespuesta";
 
     public static final String SUCCESS = "SUCCESS";
     public static final String WRONG_PASSWORD = "WRONG_PASSWORD";

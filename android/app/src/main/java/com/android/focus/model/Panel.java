@@ -14,7 +14,7 @@ public class Panel {
     public static final int ACCEPTED = 1;
     public static final int REJECTED = 2;
 
-    private static List<Panel> userPanels;
+    private static List<Panel> userPanels = new ArrayList<>();
 
     private int id;
     private int estado;
@@ -89,9 +89,8 @@ public class Panel {
 
     public static List<Panel> getUserPaneles() {
         List<Panel> notRejectedPanels = new ArrayList<>();
-        List<Panel> panels = (userPanels == null) ? new ArrayList<Panel>() : userPanels;
 
-        for (Panel panel : panels) {
+        for (Panel panel : userPanels) {
             if (panel.getEstado() == REJECTED) {
                 continue;
             }
