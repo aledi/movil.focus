@@ -1,4 +1,4 @@
-package com.android.focus.main;
+package com.android.focus;
 
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
@@ -7,20 +7,18 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 
 import com.android.focus.R;
-import com.android.focus.ToolbarActivity;
+import com.android.focus.helpers.activities.ToolbarActivity;
 import com.android.focus.paneles.fragments.PanelesFragment;
-import com.android.focus.perfil.PerfilFragment;
+import com.android.focus.perfil.fragments.PerfilFragment;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends ToolbarActivity implements OnPageChangeListener {
 
+    private Fragment fragment;
     private ViewPager viewPager;
     private ViewPagerAdapter adapter;
 
@@ -68,7 +66,18 @@ public class MainActivity extends ToolbarActivity implements OnPageChangeListene
 
     @Override
     public void onPageSelected(int position) {
-        // Do nothing.
+        fragment = adapter.getItem(position);
+    }
+    // endregion
+
+    // region OnBackPressed interface
+    @Override
+    public void onBackPressed() {
+        if (fragment instanceof PerfilFragment) {
+            ((PerfilFragment) fragment).handleOnBackPressedEvent();
+        } else {
+            super.onBackPressed();
+        }
     }
     // endregion
 

@@ -23,7 +23,7 @@
 
         <!-- Activities -->
         <activity
-            android:name=".SplashScreenActivity"
+            android:name=".helpers.activities.SplashScreenActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -33,35 +33,35 @@
         </activity>
 
         <activity
-            android:name=".authentication.AuthenticationActivity"
+            android:name=".authentication.activities.AuthenticationActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
 
         <activity
-            android:name=".authentication.RegistrationActivity"
+            android:name=".authentication.activities.RegistrationActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
 
         <activity
-            android:name=".authentication.RecoverPasswordActivity"
+            android:name=".authentication.activities.RecoverPasswordActivity"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".authentication.WelcomeActivity"
+            android:name=".authentication.activities.WelcomeActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
 
         <activity
-            android:name=".authentication.PrivacyPolicyActivity"
+            android:name=".authentication.activities.PrivacyPolicyActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
 
         <activity
-            android:name=".LoadingActivity"
+            android:name=".helpers.activities.LoadingActivity"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".main.MainActivity"
+            android:name=".MainActivity"
             android:screenOrientation="portrait" />
 
         <activity
@@ -82,7 +82,15 @@
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".perfil.ChangePasswordActivity"
+            android:name=".perfil.activities.ChangePasswordActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".perfil.activities.SurveyHistoryActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".helpers.activities.WebViewActivity"
             android:screenOrientation="portrait" />
     </application>
 </manifest>

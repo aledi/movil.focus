@@ -1,13 +1,14 @@
-package com.android.focus.authentication;
+package com.android.focus.authentication.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.android.focus.MainActivity;
 import com.android.focus.R;
-import com.android.focus.ToolbarActivity;
-import com.android.focus.main.MainActivity;
+import com.android.focus.authentication.fragments.WelcomeFragment;
+import com.android.focus.helpers.activities.ToolbarActivity;
 import com.android.focus.model.User;
 
 public class WelcomeActivity extends ToolbarActivity {

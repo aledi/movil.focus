@@ -13,6 +13,7 @@ import com.google.gson.reflect.TypeToken;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static com.android.focus.model.User.EMAIL;
@@ -76,6 +77,12 @@ public class UserPreferencesManager {
 
         // Set panels.
         JSONArray panelsArray = response.optJSONArray(PANELS);
+
+        if (panelsArray == null) {
+            Panel.setUserPaneles(new ArrayList<Panel>());
+            return;
+        }
+
         List<Panel> panels = gson.fromJson(panelsArray.toString(), new TypeToken<List<Panel>>() {
         }.getType());
         Panel.setUserPaneles(panels);

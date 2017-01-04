@@ -1,4 +1,4 @@
-package com.android.focus;
+package com.android.focus.helpers.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,7 +7,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
-import com.android.focus.authentication.WelcomeActivity;
+import com.android.focus.R;
+import com.android.focus.authentication.activities.WelcomeActivity;
 import com.android.focus.notifications.NotificationManager;
 
 public class ToolbarActivity extends AppCompatActivity {

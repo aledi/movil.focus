@@ -1,4 +1,4 @@
-package com.android.focus.authentication;
+package com.android.focus.authentication.fragments;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.android.focus.R;
+import com.android.focus.authentication.activities.PrivacyPolicyActivity;
 import com.android.focus.model.User;
 
 public class WelcomeFragment extends Fragment implements OnClickListener {

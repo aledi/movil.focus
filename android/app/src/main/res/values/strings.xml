@@ -143,10 +143,12 @@
     <string name="answer">Respuesta:</string>
 
     <!-- Profile -->
-    <string name="profile">Profile</string>
+    <string name="profile">Perfil</string>
     <string name="user">Usuario</string>
     <string name="active_panels">Paneles Activos</string>
     <string name="pending_surveys">Encuestas Pendientes</string>
+    <string name="survey_history">Historial de Encuestas</string>
+    <string name="survey_history_error">No hemos podido cargar los datos.</string>
     <string name="help">Ayuda</string>
     <string name="faq">Preguntas Frecuentes</string>
     <string name="send_email">Enviar Correo</string>
@@ -172,6 +174,15 @@
     <string name="change_password_success_message">Su nueva contraseña ha sido guardada. A partir de este momento, utilícela para iniciar sesión en la aplicación.</string>
     <string name="change_password_error">Hubo un error al intentar cambiar su contraseña. Por favor, intente más tarde o póngase en contacto con el servicio de soporte.</string>
     <string name="wrong_password">Su contraseña actual no coincide con nuestros registros.</string>
+
+    <!-- Survey History -->
+    <string name="no_history_survey">Sin Historial</string>
+    <string name="history_survey">Encuesta:</string>
+    <string name="history_answered">Respuesta:</string>
+    <string name="history_start_date">Fecha Inicio:</string>
+    <string name="history_end_date">Fecha Fin:</string>
+    <string name="history_panel">Panel:</string>
+    <string name="not_answered">"- - -"</string>
 
     <!-- Toasts -->
     <string name="no_internet">Sin Conexión A Internet</string>
@@ -201,6 +212,7 @@
     <string name="send">Enviar</string>
     <string name="cancel">Cancelar</string>
     <string name="error">Error</string>
+    <string name="server_error">Internal Server Error</string>
 
     <!-- Privacy Policy -->
     <string name="privacy_policy">Aviso de Privacidad</string>

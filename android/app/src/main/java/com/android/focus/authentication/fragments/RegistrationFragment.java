@@ -1,4 +1,4 @@
-package com.android.focus.authentication;
+package com.android.focus.authentication.fragments;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -28,6 +28,7 @@ import android.widget.Toast;
 
 import com.android.focus.FocusApp;
 import com.android.focus.R;
+import com.android.focus.authentication.activities.WelcomeActivity;
 import com.android.focus.managers.UserPreferencesManager;
 import com.android.focus.model.User;
 import com.android.focus.network.HttpResponseHandler;

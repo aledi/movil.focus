@@ -5,14 +5,15 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.android.focus.R;
-import com.android.focus.ToolbarActivity;
+import com.android.focus.helpers.activities.ToolbarActivity;
 import com.android.focus.paneles.fragments.PreguntasFragment;
 
 public class PreguntasActivity extends ToolbarActivity {
 
     private static final String TAG = PreguntasActivity.class.getCanonicalName();
-    public static final String EXTRA_PANEL_ID = TAG + ".panelId";
     public static final String EXTRA_ENCUESTA_ID = TAG + ".encuestaId";
+    public static final String EXTRA_PANEL_ID = TAG + ".panelId";
+    public static final String EXTRA_RESPUESTA_ID = TAG + ".respuestaId";
 
     private PreguntasFragment fragment;
 
@@ -23,7 +24,7 @@ public class PreguntasActivity extends ToolbarActivity {
         title = getString(R.string.survey);
         super.onCreate(savedInstanceState);
 
-        fragment = PreguntasFragment.newInstance(getIntent().getIntExtra(EXTRA_PANEL_ID, -1), getIntent().getIntExtra(EXTRA_ENCUESTA_ID, -1));
+        fragment = PreguntasFragment.newInstance(getIntent().getIntExtra(EXTRA_PANEL_ID, -1), getIntent().getIntExtra(EXTRA_ENCUESTA_ID, -1), getIntent().getIntExtra(EXTRA_RESPUESTA_ID, -1));
 
         if (savedInstanceState == null) {
             getSupportFragmentManager()

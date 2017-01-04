@@ -1,39 +1,28 @@
-package com.android.focus.authentication;
+package com.android.focus.perfil.activities;
 
 import android.os.Bundle;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 import com.android.focus.R;
+import com.android.focus.helpers.activities.ToolbarActivity;
+import com.android.focus.perfil.fragments.ChangePasswordFragment;
 
-public class RecoverPasswordActivity extends AppCompatActivity {
+public class ChangePasswordActivity extends ToolbarActivity {
 
-    private RecoverPasswordFragment fragment;
+    private ChangePasswordFragment fragment;
 
     // region Activity lifecycle
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        title = getString(R.string.change_password);
         super.onCreate(savedInstanceState);
 
-        super.setContentView(R.layout.activity_toolbar);
-
-        Toolbar toolbar = ((Toolbar) findViewById(R.id.toolbar));
-        setSupportActionBar(toolbar);
-        ActionBar actionBar = getSupportActionBar();
-
-        if (actionBar != null) {
-            actionBar.setTitle(getString(R.string.recover_password));
-            actionBar.setDisplayHomeAsUpEnabled(true);
-        }
-
-        fragment = RecoverPasswordFragment.newInstance();
+        fragment = ChangePasswordFragment.newInstance();
 
         if (savedInstanceState == null) {
             getSupportFragmentManager()
                     .beginTransaction()
-                    .replace(R.id.container, fragment, RecoverPasswordFragment.FRAGMENT_TAG)
+                    .replace(R.id.container, fragment, ChangePasswordFragment.FRAGMENT_TAG)
                     .commit();
         }
     }

@@ -1,4 +1,4 @@
-package com.android.focus.perfil;
+package com.android.focus.perfil.fragments;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -172,7 +172,6 @@ public class ChangePasswordFragment extends Fragment implements OnClickListener,
 
     // region Click actions
     public void changePassword() {
-        enableBack = false;
         UIUtils.hideKeyboardIfShowing(activity);
         params = new RequestParams();
 
@@ -184,6 +183,7 @@ public class ChangePasswordFragment extends Fragment implements OnClickListener,
             return;
         }
 
+        enableBack = false;
         loader.setVisibility(View.VISIBLE);
 
         NetworkManager.changePassword(params, new HttpResponseHandler() {

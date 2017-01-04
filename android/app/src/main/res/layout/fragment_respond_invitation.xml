@@ -20,6 +20,7 @@
                 style="@style/TextViewPrimary"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
                 android:gravity="center"
                 android:minHeight="@dimen/text_view_height_mini"
                 android:padding="16dp"

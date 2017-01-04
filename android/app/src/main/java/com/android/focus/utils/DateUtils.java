@@ -10,10 +10,17 @@ import java.util.Locale;
 public class DateUtils {
 
     private static final String DATE_FORMAT_LONG = "MMMM dd, yyyy";
+    private static final String DATE_AND_TIME_FORMAT_LONG = "MMMM dd, yyyy hh:mm";
     public static final String DATE_FORMAT = "yyyy-MM-dd";
 
     public static String dateFormat(Date date) {
         String text = new SimpleDateFormat(DATE_FORMAT_LONG, Locale.getDefault()).format(date);
+
+        return text.substring(0, 1).toUpperCase() + text.substring(1);
+    }
+
+    public static String dateAndTimeFormat(Date date) {
+        String text = new SimpleDateFormat(DATE_AND_TIME_FORMAT_LONG, Locale.getDefault()).format(date);
 
         return text.substring(0, 1).toUpperCase() + text.substring(1);
     }

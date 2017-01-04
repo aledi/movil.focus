@@ -1,9 +1,8 @@
-package com.android.focus;
+package com.android.focus.helpers.activities;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -11,7 +10,8 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.android.focus.main.MainActivity;
+import com.android.focus.MainActivity;
+import com.android.focus.R;
 import com.android.focus.managers.UserPreferencesManager;
 import com.android.focus.model.User;
 import com.android.focus.network.APIConstants;

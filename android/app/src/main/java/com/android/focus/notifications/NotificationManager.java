@@ -9,8 +9,8 @@ import android.os.Build;
 import android.support.v4.app.NotificationCompat;
 
 import com.android.focus.FocusApp;
-import com.android.focus.LoadingActivity;
 import com.android.focus.R;
+import com.android.focus.helpers.activities.LoadingActivity;
 import com.android.focus.model.Encuesta;
 import com.android.focus.model.Panel;
 import com.android.focus.utils.DateUtils;
