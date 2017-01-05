@@ -15,7 +15,8 @@ let PREGUNTA_MATRIZ_CELL = "PreguntaMatrizViewCell"
 
 class PreguntasViewController: UITableViewController {
     
-    var id: Int?
+    var responseId: Int?
+    var encuestaId: Int?
     var preguntas: [Pregunta]?
     var respuesta: String = ""
     
@@ -190,8 +191,10 @@ class PreguntasViewController: UITableViewController {
     
     func saveAnswers() {
         let parameters: [String : AnyObject] = [
-            "id" : self.id!,
-            "respuestas" : self.respuesta
+            "id" : self.responseId!,
+            "respuestas" : self.respuesta,
+            "panelista" : User.currentUser!.id,
+            "encuesta" : self.encuestaId!
         ]
         
         Controller.requestForAction(.SAVE_ANSWERS, withParameters: parameters, withSuccessHandler: self.successHandler, andErrorHandler: self.errorHandler)

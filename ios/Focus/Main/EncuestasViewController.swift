@@ -26,7 +26,8 @@ class EncuestasViewController: UITableViewController {
             let preguntasViewController = navigationController.topViewController as! PreguntasViewController
             
             preguntasViewController.preguntas = self.selectedEncuesta!.preguntas
-            preguntasViewController.id = sender as? Int
+            preguntasViewController.responseId = sender as? Int
+            preguntasViewController.encuestaId = self.selectedEncuesta?.id
         }
     }
     
