@@ -79,7 +79,6 @@ class EncuestasViewController: UITableViewController {
                     "panelista" : User.currentUser!.id
                 ]
                 
-                
                 self.loadingAlert = self.presentAlertWithTitle("Cargando", withMessage: nil, withButtonTitles: [], withButtonStyles: [], andButtonHandlers: [])
                 Controller.requestForAction(.START_SURVEY, withParameters: parameters, withSuccessHandler: self.successHandler, andErrorHandler: self.errorHandler)
             }
