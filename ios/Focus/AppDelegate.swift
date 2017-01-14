@@ -87,16 +87,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 continue
             }
             
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "MMMM d"
+            
             for encuesta in encuestas {
                 if (!encuesta.contestada) {
-                    let fireDate = encuesta.fechaFin.dateByAddingTimeInterval(60 * 60 * 24 * -3 + (60 * 60 * 10))
+                    let fireDate = encuesta.fechaFin.dateByAddingTimeInterval(60 * 60 * 24 * -2 + (60 * 60 * 10))
                     
                     if (fireDate.compare(NSDate()) == .OrderedDescending) {
                         let localNotification = UILocalNotification()
                         
                         localNotification.fireDate = fireDate
                         localNotification.alertTitle = "Encuesta Pendiente"
-                        localNotification.alertBody = "Recuerda contestar la encuesta \"\(encuesta.nombre)\" antes de que cierre."
+                        localNotification.alertBody = "Recuerda contestar la encuesta \"\(encuesta.nombre)\" antes de \(dateFormatter.stringFromDate(encuesta.fechaFin))."
                         localNotification.soundName = UILocalNotificationDefaultSoundName
                         
                         UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
