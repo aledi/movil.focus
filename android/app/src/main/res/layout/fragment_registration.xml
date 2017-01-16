@@ -294,39 +294,11 @@
                 android:layout_marginRight="16dp"
                 android:layout_marginTop="16dp"
                 android:hint="@string/colonia"
-                android:inputType="textCapWords"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/txt_street_num" />
-
-            <EditText
-                android:id="@+id/txt_zip_code"
-                style="@style/EditText"
-                android:layout_width="0dp"
-                android:layout_height="@dimen/edit_text_height"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                android:layout_marginTop="16dp"
-                android:hint="@string/zip_code"
-                android:inputType="number"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/txt_colonia" />
-
-            <EditText
-                android:id="@+id/txt_city"
-                style="@style/EditText"
-                android:layout_width="0dp"
-                android:layout_height="@dimen/edit_text_height"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                android:layout_marginTop="16dp"
-                android:hint="@string/city"
                 android:imeOptions="actionDone"
                 android:inputType="textCapWords"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/txt_zip_code" />
+                app:layout_constraintTop_toBottomOf="@id/txt_street_num" />
 
             <Spinner
                 android:id="@+id/spinner_state"
@@ -338,7 +310,34 @@
                 android:layout_marginTop="16dp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/txt_city" />
+                app:layout_constraintTop_toBottomOf="@id/txt_colonia" />
+
+            <Spinner
+                android:id="@+id/spinner_city"
+                style="@style/Spinner"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/spinner_state" />
+
+            <EditText
+                android:id="@+id/txt_zip_code"
+                style="@style/EditText"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/edit_text_height"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="16dp"
+                android:hint="@string/zip_code"
+                android:imeOptions="actionDone"
+                android:inputType="number"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/spinner_city" />
 
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
@@ -351,7 +350,7 @@
                 app:cardUseCompatPadding="true"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/spinner_state">
+                app:layout_constraintTop_toBottomOf="@id/txt_zip_code">
 
                 <Button
                     android:id="@+id/btn_register_user"

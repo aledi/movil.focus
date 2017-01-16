@@ -26,7 +26,8 @@ class EncuestasViewController: UITableViewController {
             let preguntasViewController = navigationController.topViewController as! PreguntasViewController
             
             preguntasViewController.preguntas = self.selectedEncuesta!.preguntas
-            preguntasViewController.id = sender as? Int
+            preguntasViewController.responseId = sender as? Int
+            preguntasViewController.encuestaId = self.selectedEncuesta?.id
         }
     }
     
@@ -77,7 +78,6 @@ class EncuestasViewController: UITableViewController {
                     "encuesta" : self.selectedEncuesta!.id,
                     "panelista" : User.currentUser!.id
                 ]
-                
                 
                 self.loadingAlert = self.presentAlertWithTitle("Cargando", withMessage: nil, withButtonTitles: [], withButtonStyles: [], andButtonHandlers: [])
                 Controller.requestForAction(.START_SURVEY, withParameters: parameters, withSuccessHandler: self.successHandler, andErrorHandler: self.errorHandler)

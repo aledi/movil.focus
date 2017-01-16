@@ -29,6 +29,7 @@ import android.widget.TextView;
 
 import com.android.focus.FocusApp;
 import com.android.focus.R;
+import com.android.focus.managers.UserPreferencesManager;
 import com.android.focus.model.Encuesta;
 import com.android.focus.model.Pregunta;
 import com.android.focus.network.HttpResponseHandler;
@@ -54,18 +55,22 @@ import static com.android.focus.model.Pregunta.ORDERING;
 import static com.android.focus.model.Pregunta.SCALE;
 import static com.android.focus.model.Pregunta.SINGLE_OPTION;
 import static com.android.focus.model.Pregunta.TEXT_ANSWER;
+import static com.android.focus.network.APIConstants.ENCUESTA;
 import static com.android.focus.network.APIConstants.ID;
+import static com.android.focus.network.APIConstants.PANELISTA;
 import static com.android.focus.network.APIConstants.RESPUESTAS;
 
 public class PreguntasFragment extends Fragment {
 
     public static final String FRAGMENT_TAG = PreguntasFragment.class.getCanonicalName();
-    private static final String ARGS_PANEL_ID = FRAGMENT_TAG + ".panelId";
     private static final String ARGS_ENCUESTA_ID = FRAGMENT_TAG + ".encuestaId";
+    private static final String ARGS_PANEL_ID = FRAGMENT_TAG + ".panelId";
+    private static final String ARGS_RESPUESTA_ID = FRAGMENT_TAG + ".respuestaId";
 
     private Activity activity;
     private int encuestaId;
     private int panelId;
+    private int respuestaId;
     private List<Pregunta> preguntas;
     private String dialogTitle;
     private int dialogMessage;
@@ -91,11 +96,12 @@ public class PreguntasFragment extends Fragment {
      * @return A new instance of fragment PreguntasFragment.
      */
     @NonNull
-    public static PreguntasFragment newInstance(int panelId, int encuestaId) {
+    public static PreguntasFragment newInstance(int panelId, int encuestaId, int respuestaId) {
         PreguntasFragment fragment = new PreguntasFragment();
         Bundle args = new Bundle();
         args.putInt(ARGS_PANEL_ID, panelId);
         args.putInt(ARGS_ENCUESTA_ID, encuestaId);
+        args.putInt(ARGS_RESPUESTA_ID, respuestaId);
         fragment.setArguments(args);
 
         return fragment;
@@ -109,6 +115,7 @@ public class PreguntasFragment extends Fragment {
 
         panelId = getArguments().getInt(ARGS_PANEL_ID);
         encuestaId = getArguments().getInt(ARGS_ENCUESTA_ID);
+        respuestaId = getArguments().getInt(ARGS_RESPUESTA_ID);
         picasso = Picasso.with(FocusApp.getContext());
     }
 
@@ -688,8 +695,10 @@ public class PreguntasFragment extends Fragment {
 
     private RequestParams getRequestParams() {
         RequestParams params = new RequestParams();
-        params.put(ID, encuestaId);
+        params.put(ID, respuestaId);
         params.put(RESPUESTAS, respuestas);
+        params.put(ENCUESTA, encuestaId);
+        params.put(PANELISTA, UserPreferencesManager.getCurrentUserId());
 
         return params;
     }

@@ -16,6 +16,8 @@ import com.loopj.android.http.RequestParams;
 import static com.android.focus.network.APIConstants.ACTION;
 import static com.android.focus.network.APIConstants.CHANGE_PASSWORD;
 import static com.android.focus.network.APIConstants.GET_DATA;
+import static com.android.focus.network.APIConstants.GET_HISTORY;
+import static com.android.focus.network.APIConstants.INVITATION_RESPONE;
 import static com.android.focus.network.APIConstants.PRIVACY_POLICY;
 import static com.android.focus.network.APIConstants.RECOVER_PASSWORD;
 import static com.android.focus.network.APIConstants.REGISTER_USER;
@@ -30,6 +32,8 @@ import static com.android.focus.network.APIConstants.START_SURVEY;
 public class NetworkManager {
 
     private static final String BASIC_URL = "http://focusestudios.mx/paneles/";
+//    private static final String BASIC_URL = "http://tenorio94.tk/focus/";
+//    private static final String BASIC_URL = "http://192.168.1.68:8888/focus/";
     private static final String URL = BASIC_URL + "api/controller.php";
     public static final String IMAGES_URL = BASIC_URL + "resources/images/";
     public static final String VIDEOS_URL = BASIC_URL + "resources/videos/";
@@ -65,6 +69,14 @@ public class NetworkManager {
 
     public static void recoverPassword(RequestParams params, AsyncHttpResponseHandler responseHandler) {
         post(RECOVER_PASSWORD, params, responseHandler);
+    }
+
+    public static void downloadHistory(RequestParams params, AsyncHttpResponseHandler responseHandler) {
+        post(GET_HISTORY, params, responseHandler);
+    }
+
+    public static void respondInvitation(RequestParams params, AsyncHttpResponseHandler responseHandler) {
+        post(INVITATION_RESPONE, params, responseHandler);
     }
 
     private static void post(String action, RequestParams params, AsyncHttpResponseHandler responseHandler) {

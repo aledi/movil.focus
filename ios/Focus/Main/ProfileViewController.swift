@@ -12,19 +12,22 @@ import MessageUI
 enum Sections: Int {
     case User
     case Panels
-    case Contact
+    case Help
+    case Other
     case LogOut
 }
 
 let phoneNumber: String = "+528183387258"
 let email: String = "atencion@focuscg.com.mx"
 
-class ProfileViewController: UITableViewController, MFMailComposeViewControllerDelegate {
+class ProfileViewController: UITableViewController, UIActivityItemSource, MFMailComposeViewControllerDelegate {
     
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var emailLabel: UILabel!
     @IBOutlet var panelsLabel: UILabel!
     @IBOutlet var encuestasLabel: UILabel!
+    
+    var loadingAlert: UIAlertController?
     
     // -----------------------------------------------------------------------------------------------------------
     // MARK: - Lifecycle
@@ -45,14 +48,16 @@ class ProfileViewController: UITableViewController, MFMailComposeViewControllerD
         }
         
         var pending = 0
+        var active = 0
         
         for panel in paneles {
+            active += panel.estado == .Accepted ? 1 : 0
             pending += panel.encuestasPendientes
         }
         
         self.nameLabel.text = user.nombre
         self.emailLabel.text = user.email
-        self.panelsLabel.text = "\(paneles.count)"
+        self.panelsLabel.text = "\(active)"
         self.encuestasLabel.text = "\(pending)"
     }
     
@@ -66,6 +71,9 @@ class ProfileViewController: UITableViewController, MFMailComposeViewControllerD
         if (segue.identifier == "logOut") {
             NSUserDefaults.removeUserDefaults()
             self.appDelegate.user = nil
+        } else if (segue.identifier == "showHistorial") {
+            let historialViewController = segue.destinationViewController as! HistorialViewController
+            historialViewController.data = sender as! [Historial]
         }
     }
     
@@ -77,14 +85,24 @@ class ProfileViewController: UITableViewController, MFMailComposeViewControllerD
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
         switch Sections(rawValue: indexPath.section)! {
-        case .Contact:
-            if (indexPath.row == 0) {
+        case .Panels:
+            if (indexPath.row == 2) {
+                self.downloadHistory()
+            }
+        case .Help:
+            if (indexPath.row == 1) {
                 self.sendEmail()
-            } else if (indexPath.row == 1) {
+            } else if (indexPath.row == 2) {
                 self.call()
             }
             
             return
+        case .Other:
+            if (indexPath.row == 0) {
+                self.shareApp()
+            } else if (indexPath.row == 1) {
+                self.rateApp()
+            }
         case .LogOut:
             func firstBlock(action: UIAlertAction) {
                 Controller.requestForAction(.UNREGISTER_DEVICE, withParameters: ["id" : User.currentUser!.id], withSuccessHandler: nil, andErrorHandler: nil)
@@ -126,14 +144,63 @@ class ProfileViewController: UITableViewController, MFMailComposeViewControllerD
     }
     
     func mailComposerViewController() -> MFMailComposeViewController {
+        let user = self.appDelegate.user!
         let mailComposerViewController = MFMailComposeViewController()
         
         mailComposerViewController.mailComposeDelegate = self
         mailComposerViewController.setToRecipients([email])
-        mailComposerViewController.setSubject("")
-        mailComposerViewController.setMessageBody("", isHTML: false)
+        mailComposerViewController.setSubject("Soporte Aplicación Móvil")
+        mailComposerViewController.setMessageBody("\n\n\n\nUsuario: \(user.username)\nID: \(user.id)\nCorreo: \(user.email)", isHTML: false)
         
         return mailComposerViewController
+    }
+    
+    // -----------------------------------------------------------------------------------------------------------
+    // MARK: - History
+    // -----------------------------------------------------------------------------------------------------------
+    
+    func downloadHistory() {
+        self.loadingAlert = self.presentAlertWithTitle("Cargando", withMessage: nil, withButtonTitles: [], withButtonStyles: [], andButtonHandlers: [])
+        Controller.requestForAction(.GET_HISTORY, withParameters: ["panelista" : "\(User.currentUser!.id)"], withSuccessHandler: self.successHandler, andErrorHandler: self.errorHandler)
+    }
+    
+    func successHandler(response: NSDictionary) {
+        self.loadingAlert?.dismissViewControllerAnimated(true, completion: {
+            var data: [Historial] = []
+            
+            if (response["status"] as? String == "SUCCESS") {
+                if let results = response["results"] as? [AnyObject] {
+                    for object in results {
+                        let history = object as! NSDictionary
+                        data.append(Historial(nombrePanel: history["nombrePanel"] as! String, fechaIniPanel: history["fechaInicioPanel"] as? String, fechaFinPanel: history["fechaFinPanel"] as? String, nombreEncuesta: history["nombreEncuesta"] as! String, fechaIniEncuesta: history["fechaInicioEncuesta"] as? String, fechaFinEncuesta: history["fechaFinEncuesta"] as? String, fechaRespuesta: history["fechaRespuesta"] as? String, horaRespuesta: history["horaRespuesta"] as? String))
+                    }
+                    
+                    self.performSegueWithIdentifier("showHistorial", sender: data)
+                    return
+                }
+            }
+            
+            self.presentAlertWithTitle("Error", withMessage: "No hemos podido cargar los datos.", withButtonTitles: ["OK"], withButtonStyles: [.Cancel], andButtonHandlers: [nil])
+        })
+    }
+    
+    func errorHandler(response: NSDictionary) {
+        self.loadingAlert?.dismissViewControllerAnimated(true, completion: {
+            var alertTitle = ""
+            var alertMessage = ""
+            
+            switch (response["error"] as! NSError).code {
+            case -1009:
+                alertTitle = "Sin conexión a internet"
+                alertMessage = "Para utilizar la aplicación, su dispositivo debe estar conectado a internet."
+            default:
+                alertTitle = "Servidor no disponible"
+                alertMessage = "Nuestro servidor no está disponible por el momento."
+            }
+            
+            self.presentAlertWithTitle(alertTitle, withMessage: alertMessage, withButtonTitles: ["OK"], withButtonStyles: [.Cancel], andButtonHandlers: [nil])
+            print(response["error"])
+        })
     }
     
     // -----------------------------------------------------------------------------------------------------------
@@ -142,6 +209,47 @@ class ProfileViewController: UITableViewController, MFMailComposeViewControllerD
     
     func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
         controller.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    // -----------------------------------------------------------------------------------------------------------
+    // MARK: - Share/Rate App
+    // -----------------------------------------------------------------------------------------------------------
+    
+    func shareApp() {
+        let activityController = UIActivityViewController(activityItems: [self], applicationActivities: nil)
+        if #available(iOS 9.0, *) {
+            let excludedActivityTypes = [
+                UIActivityTypePrint,
+                UIActivityTypeCopyToPasteboard,
+                UIActivityTypeAssignToContact,
+                UIActivityTypeSaveToCameraRoll,
+                UIActivityTypeAddToReadingList,
+                UIActivityTypePostToFlickr,
+                UIActivityTypePostToVimeo,
+                UIActivityTypePostToTencentWeibo,
+                UIActivityTypeOpenInIBooks
+            ]
+            
+            activityController.excludedActivityTypes = excludedActivityTypes
+        }
+        
+        self.presentViewController(activityController, animated: true, completion: nil)
+    }
+    
+    func activityViewControllerPlaceholderItem(activityViewController: UIActivityViewController) -> AnyObject {
+        return ""
+    }
+    
+    func activityViewController(activityViewController: UIActivityViewController, itemForActivityType activityType: String) -> AnyObject? {
+        return "¡Dale un vistazo a la aplicación de Focus!\n\nhttps://itunes.apple.com/us/app/focus/id1156729510?ls=1&mt=8"
+    }
+    
+    func activityViewController(activityViewController: UIActivityViewController, subjectForActivityType activityType: String?) -> String {
+        return "Focus"
+    }
+    
+    func rateApp() {
+        UIApplication.sharedApplication().openURL(NSURL(string: "itms-apps://itunes.apple.com/app/id1156729510")!)
     }
     
 }

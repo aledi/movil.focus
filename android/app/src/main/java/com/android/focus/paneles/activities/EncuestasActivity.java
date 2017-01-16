@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.android.focus.R;
-import com.android.focus.ToolbarActivity;
+import com.android.focus.helpers.activities.ToolbarActivity;
 import com.android.focus.paneles.fragments.EncuestasFragment;
 
 public class EncuestasActivity extends ToolbarActivity {

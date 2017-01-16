@@ -124,6 +124,11 @@
     <string name="startDate">Fecha de Inicio:\u0020</string>
     <string name="endDate">Fecha de Fin:\u0020</string>
     <string name="no_active_panels">Sin Paneles Activos</string>
+    <string name="panel_invitation">Responder Invitación</string>
+    <string name="panel_invitation_message">Acepte la invitación para comenzar a participar.</string>
+    <string name="panel_invitation_error">Hubo un error al procesar su respuesta. Por favor, inténtelo más tarde.</string>
+    <string name="accept">Aceptar</string>
+    <string name="reject">Rechazar</string>
 
     <!-- Surveys -->
     <string name="survey">Encuesta</string>
@@ -138,13 +143,24 @@
     <string name="answer">Respuesta:</string>
 
     <!-- Profile -->
-    <string name="profile">Profile</string>
+    <string name="profile">Perfil</string>
     <string name="user">Usuario</string>
     <string name="active_panels">Paneles Activos</string>
     <string name="pending_surveys">Encuestas Pendientes</string>
-    <string name="contact">Contacto</string>
+    <string name="survey_history">Historial de Encuestas</string>
+    <string name="survey_history_error">No hemos podido cargar los datos.</string>
+    <string name="help">Ayuda</string>
+    <string name="faq">Preguntas Frecuentes</string>
     <string name="send_email">Enviar Correo</string>
+    <string name="send_email_error">Su dispositivo parece no estar configurado para enviar correo.s</string>
     <string name="call_phone">Llamar</string>
+    <string name="call_phone_error">No se puede realizar la llamada.</string>
+    <string name="other">Otro</string>
+    <string name="share">Compartir</string>
+    <string name="share_error">No es posible compartir la aplicación por el momento. Intente más tarde.</string>
+    <string name="share_message">¡Dale un vistazo a la aplicación de Focus!\n\nhttps://play.google.com/store/apps/details?id=com.focus.android</string>
+    <string name="rate">Calificar</string>
+    <string name="rate_error">No es posible calificar la aplicación por el momento. Intente más tarde.</string>
     <string name="sign_out">Cerrar Sesión</string>
     <string name="sign_out_message">La próxima vez que abra la aplicación se le pedirán sus datos de acceso.</string>
 
@@ -158,6 +174,15 @@
     <string name="change_password_success_message">Su nueva contraseña ha sido guardada. A partir de este momento, utilícela para iniciar sesión en la aplicación.</string>
     <string name="change_password_error">Hubo un error al intentar cambiar su contraseña. Por favor, intente más tarde o póngase en contacto con el servicio de soporte.</string>
     <string name="wrong_password">Su contraseña actual no coincide con nuestros registros.</string>
+
+    <!-- Survey History -->
+    <string name="no_history_survey">Sin Historial</string>
+    <string name="history_survey">Encuesta:</string>
+    <string name="history_answered">Respuesta:</string>
+    <string name="history_start_date">Fecha Inicio:</string>
+    <string name="history_end_date">Fecha Fin:</string>
+    <string name="history_panel">Panel:</string>
+    <string name="not_answered">"- - -"</string>
 
     <!-- Toasts -->
     <string name="no_internet">Sin Conexión A Internet</string>
@@ -187,6 +212,7 @@
     <string name="send">Enviar</string>
     <string name="cancel">Cancelar</string>
     <string name="error">Error</string>
+    <string name="server_error">Internal Server Error</string>
 
     <!-- Privacy Policy -->
     <string name="privacy_policy">Aviso de Privacidad</string>
@@ -203,4 +229,9 @@
         \n\nPara el caso de que usted quisiera Acceder, Rectificar, Cancelar u Oponerse (Derechos ARCO) al tratamiento de los datos y revocar el consentimiento que para tal fin nos haya otorgado, tácita o expresamente, lo podrá realizar en cualquier momento, para ello es necesario que usted presente solicitud la cual debe contener: Nombre del titular y domicilio o medio para comunicarle respuesta, documento que acredite su identidad, descripción del derecho que pretende ejercer y cualquier otro dato que facilite la localización de los datos. Una vez presentada esta solicitud, se le dará respuesta en un plazo no mayor a 20 días a través del medio que proporcionó para contactarlo.
         \n\nEl área responsable de resguardar sus datos personales, así como dar continuidad a la solicitud que usted realice en cuanto a sus derechos ARCO o a limitar el uso y divulgación de sus datos, es el área de sistemas, la cual pone a su disposición el siguiente correo: focus@focuscg.com.mx con la finalidad de atender sus peticiones relacionadas al tratamiento de sus datos personales.
         \n\nLe informamos que sus datos personales no serán transferidos a terceros, salvo en el caso de que usted proporcione como referencia a esta empresa. Sin embargo, Focus Estudios Cualitativos hará transferencia de datos personales en el caso de que autoridad competente así lo solicite por mandato judicial.\n</string>
+
+    <!-- Notifications -->
+    <string name="notification_title">Encuesta Pendiente</string>
+    <string name="notification_text">Recuerda contestar la encuesta %s\u0020</string>
+    <string name="notification_text_cont">antes de %s.</string>
 </resources>

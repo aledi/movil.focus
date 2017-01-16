@@ -9,11 +9,38 @@ import java.util.Locale;
 
 public class DateUtils {
 
+    private static final String DATE_FORMAT_SHORT = "MMMM dd";
     private static final String DATE_FORMAT_LONG = "MMMM dd, yyyy";
+    private static final String DATE_AND_TIME_FORMAT_LONG = "MMMM dd, yyyy hh:mm a";
+    public static final Locale LOCALE = new Locale("es", "MX");
     public static final String DATE_FORMAT = "yyyy-MM-dd";
 
     public static String dateFormat(Date date) {
-        String text = new SimpleDateFormat(DATE_FORMAT_LONG, Locale.getDefault()).format(date);
+        if (date == null) {
+            return "";
+        }
+
+        String text = new SimpleDateFormat(DATE_FORMAT_LONG, LOCALE).format(date);
+
+        return text.substring(0, 1).toUpperCase() + text.substring(1);
+    }
+
+    public static String dateShortFormat(Date date) {
+        if (date == null) {
+            return "";
+        }
+
+        String text = new SimpleDateFormat(DATE_FORMAT_SHORT, LOCALE).format(date);
+
+        return text.substring(0, 1).toUpperCase() + text.substring(1);
+    }
+
+    public static String dateAndTimeFormat(Date date) {
+        if (date == null) {
+            return "";
+        }
+
+        String text = new SimpleDateFormat(DATE_AND_TIME_FORMAT_LONG, LOCALE).format(date);
 
         return text.substring(0, 1).toUpperCase() + text.substring(1);
     }
@@ -32,5 +59,17 @@ public class DateUtils {
 
     public static int getMinYear() {
         return Calendar.getInstance().get(Calendar.YEAR) - 18;
+    }
+
+    public static Calendar getCalendar(Date date) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.clear();
+        calendar.setTime(date);
+
+        return calendar;
+    }
+
+    public static Date getNow() {
+        return Calendar.getInstance().getTime();
     }
 }

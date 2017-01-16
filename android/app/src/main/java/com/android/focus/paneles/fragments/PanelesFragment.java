@@ -18,11 +18,13 @@ import com.android.focus.FocusApp;
 import com.android.focus.R;
 import com.android.focus.model.Panel;
 import com.android.focus.paneles.activities.EncuestasActivity;
+import com.android.focus.paneles.activities.InvitationActivity;
 import com.android.focus.utils.DateUtils;
 import com.android.focus.utils.UIUtils;
 
 import java.util.List;
 
+import static com.android.focus.model.Panel.PENDING;
 import static com.android.focus.paneles.activities.EncuestasActivity.EXTRA_PANEL_ID;
 
 public class PanelesFragment extends Fragment {
@@ -80,7 +82,7 @@ public class PanelesFragment extends Fragment {
 
     private View createViewForPanel(final Panel panel) {
         final Activity activity = getActivity();
-        View view = View.inflate(FocusApp.getContext(), R.layout.card_detail, null);
+        View view = View.inflate(FocusApp.getContext(), R.layout.fragment_encuestas_item, null);
         TextView title = (TextView) view.findViewById(R.id.txt_title);
         title.setText(panel.getNombre());
         ImageView image = (ImageView) view.findViewById(R.id.image);
@@ -89,7 +91,10 @@ public class PanelesFragment extends Fragment {
         TextView endDate = (TextView) view.findViewById(R.id.txt_end_date);
         endDate.setText(DateUtils.dateFormat(panel.getFechaFin()));
 
-        if (panel.getEncuestas().isEmpty()) {
+        if (panel.getEstado() == PENDING) {
+            image.setImageResource(R.drawable.ic_pending);
+            view.setOnClickListener(getAcceptRejectPanelListener(panel.getId(), activity));
+        } else if (panel.getEncuestas().isEmpty()) {
             view.setOnClickListener(showNoSurveysDialog(activity));
         } else {
             image.setImageResource(R.drawable.ic_arrow);
@@ -101,12 +106,12 @@ public class PanelesFragment extends Fragment {
     // endregion
 
     // region Helper methods
-    private OnClickListener getViewPanelListener(final int panelId, final Activity activity) {
+    private OnClickListener getAcceptRejectPanelListener(final int panelId, final Activity activity) {
         return new OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(activity, EncuestasActivity.class);
-                intent.putExtra(EXTRA_PANEL_ID, panelId);
+            public void onClick(View v) {
+                Intent intent = new Intent(activity, InvitationActivity.class);
+                intent.putExtra(InvitationActivity.EXTRA_PANEL_ID, panelId);
                 startActivity(intent);
             }
         };
@@ -117,6 +122,17 @@ public class PanelesFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 UIUtils.showAlertDialog(R.string.no_surveys_title, R.string.no_surveys_message, activity);
+            }
+        };
+    }
+
+    private OnClickListener getViewPanelListener(final int panelId, final Activity activity) {
+        return new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(activity, EncuestasActivity.class);
+                intent.putExtra(EXTRA_PANEL_ID, panelId);
+                startActivity(intent);
             }
         };
     }

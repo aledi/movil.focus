@@ -10,10 +10,16 @@ import java.util.List;
 
 public class Panel {
 
-    private static List<Panel> userPanels;
+    public static final int PENDING = 0;
+    public static final int ACCEPTED = 1;
+    public static final int REJECTED = 2;
+
+    private static List<Panel> userPanels = new ArrayList<>();
 
     private int id;
+    private int estado;
     private String nombre;
+    private String descripcion;
     private Date fechaInicio;
     private Date fechaFin;
     private List<Encuesta> encuestas;
@@ -27,12 +33,28 @@ public class Panel {
         this.id = id;
     }
 
+    public int getEstado() {
+        return estado;
+    }
+
+    public void setEstado(int estado) {
+        this.estado = estado;
+    }
+
     public String getNombre() {
         return nombre;
     }
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 
     public Date getFechaInicio() {
@@ -66,26 +88,52 @@ public class Panel {
     }
 
     public static List<Panel> getUserPaneles() {
-        return (userPanels == null) ? new ArrayList<Panel>() : userPanels;
+        List<Panel> notRejectedPanels = new ArrayList<>();
+
+        for (Panel panel : userPanels) {
+            if (panel.getEstado() == REJECTED) {
+                continue;
+            }
+
+            notRejectedPanels.add(panel);
+        }
+
+        return notRejectedPanels;
     }
 
     public static String getActivePanels() {
         return Integer.toString(getUserPaneles().size());
     }
 
-    public static String getPendingSurveys() {
-        int pendingSurveys = 0;
+    public static List<Encuesta> getPendingSurveys() {
         List<Panel> userPanels = getUserPaneles();
+        List<Encuesta> pendingSurveys = new ArrayList<>();
 
         for (Panel userPanel : userPanels) {
             List<Encuesta> encuestas = userPanel.getEncuestas();
 
             for (Encuesta encuesta : encuestas) {
-                pendingSurveys += encuesta.isContestada() ? 0 : 1;
+                if (encuesta.isContestada()) {
+                    continue;
+                }
+
+                pendingSurveys.add(encuesta);
             }
         }
 
-        return Integer.toString(pendingSurveys);
+        return pendingSurveys;
+    }
+
+    public static Panel getPanel(int panelId) {
+        List<Panel> userPanels = getUserPaneles();
+
+        for (Panel panel : userPanels) {
+            if (panel.getId() == panelId) {
+                return panel;
+            }
+        }
+
+        return null;
     }
     // endregion
 }

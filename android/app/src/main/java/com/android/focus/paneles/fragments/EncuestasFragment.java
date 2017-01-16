@@ -32,11 +32,13 @@ import java.util.List;
 import cz.msebera.android.httpclient.Header;
 
 import static com.android.focus.network.APIConstants.ENCUESTA;
+import static com.android.focus.network.APIConstants.ID;
 import static com.android.focus.network.APIConstants.PANELISTA;
 import static com.android.focus.network.APIConstants.STATUS;
 import static com.android.focus.network.APIConstants.SUCCESS;
 import static com.android.focus.paneles.activities.PreguntasActivity.EXTRA_ENCUESTA_ID;
 import static com.android.focus.paneles.activities.PreguntasActivity.EXTRA_PANEL_ID;
+import static com.android.focus.paneles.activities.PreguntasActivity.EXTRA_RESPUESTA_ID;
 
 public class EncuestasFragment extends Fragment {
 
@@ -110,11 +112,12 @@ public class EncuestasFragment extends Fragment {
 
     // region UI methods
     private View createViewForEncuesta(final Encuesta encuesta) {
-        View view = View.inflate(FocusApp.getContext(), R.layout.card_detail, null);
+        View view = View.inflate(FocusApp.getContext(), R.layout.fragment_encuestas_item, null);
         TextView title = (TextView) view.findViewById(R.id.txt_title);
         title.setText(encuesta.getNombre());
         TextView preguntas = (TextView) view.findViewById(R.id.txt_preguntas);
         preguntas.setText(getResources().getQuantityString(R.plurals.preguntas_count, encuesta.getPreguntas().size(), encuesta.getPreguntas().size()));
+        preguntas.setVisibility(View.VISIBLE);
         ImageView image = (ImageView) view.findViewById(R.id.image);
         image.setImageResource(encuesta.isContestada() ? R.drawable.ic_check_mark : R.drawable.ic_arrow);
         TextView startDate = (TextView) view.findViewById(R.id.txt_start_date);
@@ -189,6 +192,7 @@ public class EncuestasFragment extends Fragment {
                     Intent intent = new Intent(getActivity(), PreguntasActivity.class);
                     intent.putExtra(EXTRA_PANEL_ID, panelId);
                     intent.putExtra(EXTRA_ENCUESTA_ID, encuesta.getId());
+                    intent.putExtra(EXTRA_RESPUESTA_ID, response.optInt(ID));
                     startActivity(intent);
                 }
 
