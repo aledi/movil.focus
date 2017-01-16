@@ -232,5 +232,6 @@
 
     <!-- Notifications -->
     <string name="notification_title">Encuesta Pendiente</string>
-    <string name="notification_text">Recuerda contestar la encuesta %s antes de que cierre.</string>
+    <string name="notification_text">Recuerda contestar la encuesta %s\u0020</string>
+    <string name="notification_text_cont">antes de %s.</string>
 </resources>

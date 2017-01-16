@@ -93,6 +93,10 @@ public class Historial {
     public String getRespuesta() {
         return (fechaRespuesta == null) ? FocusApp.getAppResources().getString(R.string.not_answered) : DateUtils.dateAndTimeFormat(fechaRespuesta);
     }
+
+    public boolean isAnswered() {
+        return fechaRespuesta != null;
+    }
     // endregion
 
     // region Utility methods
