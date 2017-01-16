@@ -7,12 +7,12 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.android.focus.R;
 import com.android.focus.model.Historial;
-import com.android.focus.utils.DateUtils;
 
 import java.util.List;
 
@@ -95,12 +95,8 @@ public class SurveyHistoryFragment extends Fragment {
         title.setText(survey.getNombreEncuesta());
         TextView answered = (TextView) view.findViewById(R.id.txt_answered);
         answered.setText(survey.getRespuesta());
-        TextView startDate = (TextView) view.findViewById(R.id.txt_start_date);
-        startDate.setText(DateUtils.dateFormat(survey.getFechaInicioEncuesta()));
-        TextView endDate = (TextView) view.findViewById(R.id.txt_end_date);
-        endDate.setText(DateUtils.dateFormat(survey.getFechaFinEncuesta()));
-        TextView panel = (TextView) view.findViewById(R.id.txt_panel);
-        panel.setText(survey.getNombrePanel());
+        ImageView checkmark = (ImageView) view.findViewById(R.id.image);
+        checkmark.setVisibility(survey.isAnswered() ? View.VISIBLE : View.GONE);
 
         return view;
     }

@@ -33,13 +33,12 @@ import com.loopj.android.http.RequestParams;
 
 import org.json.JSONObject;
 
-import java.util.Locale;
-
 import cz.msebera.android.httpclient.Header;
 
 import static com.android.focus.network.APIConstants.PANELISTA;
 import static com.android.focus.network.APIConstants.STATUS;
 import static com.android.focus.network.APIConstants.SUCCESS;
+import static com.android.focus.utils.DateUtils.LOCALE;
 
 public class PerfilFragment extends Fragment implements OnClickListener {
 
@@ -165,7 +164,7 @@ public class PerfilFragment extends Fragment implements OnClickListener {
         user.setText(currentUser.getNombre());
         email.setText(currentUser.getEmail());
         activePanelsCount.setText(Panel.getActivePanels());
-        pendingSurveysCount.setText(String.format(Locale.getDefault(), "%d", Panel.getPendingSurveys().size()));
+        pendingSurveysCount.setText(String.format(LOCALE, "%d", Panel.getPendingSurveys().size()));
     }
 
     private void showError(String error) {

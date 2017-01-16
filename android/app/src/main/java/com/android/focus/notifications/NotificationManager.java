@@ -48,6 +48,7 @@ public class NotificationManager {
     private static Intent getNotificationIntent(Encuesta pendingSurvey, Context context, PendingIntent contentIntent) {
         Resources resources = FocusApp.getAppResources();
         String message = resources.getString(R.string.notification_text, pendingSurvey.getNombre());
+        message += resources.getString(R.string.notification_text_cont, DateUtils.dateShortFormat(pendingSurvey.getFechaFin()));
 
         Intent notificationIntent = new Intent(DISPLAY_NOTIFICATION);
         notificationIntent.addCategory(CATEGORY_DEFAULT);
@@ -71,7 +72,7 @@ public class NotificationManager {
 
     private static Date getNotificationFireDate(Date endDate) {
         Calendar calendar = DateUtils.getCalendar(endDate);
-        calendar.add(Calendar.DAY_OF_MONTH, -3);
+        calendar.add(Calendar.DAY_OF_MONTH, -2);
         calendar.set(Calendar.HOUR_OF_DAY, 10);
 
         return calendar.getTime();
