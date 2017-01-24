@@ -12,8 +12,8 @@ class Encuesta {
     
     var id: Int
     var nombre: String
-    var fechaInicio: NSDate
-    var fechaFin: NSDate
+    var fechaInicio: Date
+    var fechaFin: Date
     var contestada: Bool
     var preguntas: [Pregunta]?
     
@@ -21,11 +21,11 @@ class Encuesta {
         self.id = id
         self.nombre = nombre
         
-        let dateFormatter = NSDateFormatter()
+        let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "YYYY-MM-dd"
         
-        self.fechaInicio = dateFormatter.dateFromString(fechaInicio)!
-        self.fechaFin = dateFormatter.dateFromString(fechaFin)!
+        self.fechaInicio = dateFormatter.date(from: fechaInicio)!
+        self.fechaFin = dateFormatter.date(from: fechaFin)!
         
         self.contestada = contestada
     }

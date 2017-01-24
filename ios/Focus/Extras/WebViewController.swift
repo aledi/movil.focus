@@ -21,8 +21,8 @@ class WebViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let url = NSBundle.mainBundle().URLForResource("FAQ", withExtension:"html")
-        self.webView!.loadRequest(NSURLRequest(URL: url!))
+        let url = Bundle.main.url(forResource: "FAQ", withExtension:"html")
+        self.webView!.load(URLRequest(url: url!))
     }
     
 }

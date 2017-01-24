@@ -15,14 +15,14 @@ class RadioButton: UIButton {
     var multiSelection: Bool = false
     var ordered: Bool = false
     
-    @IBInspectable override var selected: Bool {
+    @IBInspectable override var isSelected: Bool {
         didSet {
             if (self.ordered) {
-                let image = UIImage(named: selected ? "Selected\(self.optionNumber)" : "UnmarkedButton")
-                self.setImage(image, forState: .Normal)
+                let image = UIImage(named: isSelected ? "Selected\(self.optionNumber)" : "UnmarkedButton")
+                self.setImage(image, for: .normal)
             } else {
-                let image = selected ? UIImage(named: self.multiSelection ? "MarkedButton" : "SelectedButton") : UIImage(named: self.multiSelection ? "UnmarkedButton" : "UnselectedButton")
-                self.setImage(image, forState: .Normal)
+                let image = isSelected ? UIImage(named: self.multiSelection ? "MarkedButton" : "SelectedButton") : UIImage(named: self.multiSelection ? "UnmarkedButton" : "UnselectedButton")
+                self.setImage(image, for: .normal)
             }
         }
     }

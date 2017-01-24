@@ -25,18 +25,18 @@ class User {
         self.genero = genero
     }
     
-    static func saveUser(user: User) {
-        let delegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    static func saveUser(_ user: User) {
+        let delegate = UIApplication.shared.delegate as! AppDelegate
         delegate.user = user
     }
     
     static var currentUser: User? {
-        let delegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let delegate = UIApplication.shared.delegate as! AppDelegate
         return delegate.user
     }
     
     var firstName: String {
-        return self.nombre.componentsSeparatedByString(" ")[0]
+        return self.nombre.components(separatedBy: " ")[0]
     }
     
     var isMale: Bool {

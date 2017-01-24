@@ -23,9 +23,9 @@ class PanelsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         
-        UIApplication.sharedApplication().setStatusBarStyle(.LightContent, animated: false)
+        UIApplication.shared.setStatusBarStyle(.lightContent, animated: false)
         
         self.paneles = self.appDelegate.paneles
         self.tableView.reloadData()
@@ -35,11 +35,11 @@ class PanelsViewController: UITableViewController {
     // MARK: - Navigation
     // -----------------------------------------------------------------------------------------------------------
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        super.prepareForSegue(segue, sender: sender)
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
         
         if (segue.identifier == "showEncuestas") {
-            (segue.destinationViewController as! EncuestasViewController).encuestas = (sender as! Panel).encuestas
+            (segue.destination as! EncuestasViewController).encuestas = (sender as! Panel).encuestas
         }
     }
     
@@ -47,42 +47,42 @@ class PanelsViewController: UITableViewController {
     // MARK: - TableView
     // -----------------------------------------------------------------------------------------------------------
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return (self.paneles == nil || self.paneles!.count == 0) ? 1 : self.paneles!.count
     }
     
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return (self.paneles == nil || self.paneles!.count == 0) ? 270 : super.tableView(tableView, heightForRowAtIndexPath: indexPath)
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return (self.paneles == nil || self.paneles!.count == 0) ? 270 : super.tableView(tableView, heightForRowAt: indexPath)
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if (self.paneles == nil || self.paneles!.count == 0) {
-            return tableView.dequeueReusableCellWithIdentifier("noContentCell", forIndexPath: indexPath)
+            return tableView.dequeueReusableCell(withIdentifier: "noContentCell", for: indexPath)
         }
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("panelCell", forIndexPath: indexPath) as! PanelViewCell
-        cell.configureFor(self.paneles![indexPath.row])
+        let cell = tableView.dequeueReusableCell(withIdentifier: "panelCell", for: indexPath) as! PanelViewCell
+        cell.configure(for: self.paneles![indexPath.row])
         
         return cell
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         let panel = self.paneles![indexPath.row]
         
         self.selectedPanel = panel
         self.selectedIndex = indexPath.row
         
-        if (panel.estado != .Accepted) {
-            self.presentAlertWithTitle("Invitación", withMessage: "\(panel.descripcion)\n\nAcepte la invitación para comenzar a participar.", withButtonTitles: ["Aceptar", "Rechazar", "Cancelar"], withButtonStyles: [.Default, .Destructive, .Cancel], andButtonHandlers: [self.acceptInvitation, self.rejectInvitation, nil])
+        if (panel.estado != .accepted) {
+            self.presentAlertWithTitle("Invitación", withMessage: "\(panel.descripcion)\n\nAcepte la invitación para comenzar a participar.", withButtonTitles: ["Aceptar", "Rechazar", "Cancelar"], withButtonStyles: [.default, .destructive, .cancel], andButtonHandlers: [self.acceptInvitation, self.rejectInvitation, nil])
         } else if (panel.encuestas?.count == 0) {
-            self.presentAlertWithTitle("No hay Encuestas", withMessage: "Este panel aún no cuenta con encuestas. Por favor, espere a que una encuesta sea habilitada.", withButtonTitles: ["OK"], withButtonStyles: [.Cancel], andButtonHandlers: [nil])
+            self.presentAlertWithTitle("No hay Encuestas", withMessage: "Este panel aún no cuenta con encuestas. Por favor, espere a que una encuesta sea habilitada.", withButtonTitles: ["OK"], withButtonStyles: [.cancel], andButtonHandlers: [nil])
         } else {
-            self.performSegueWithIdentifier("showEncuestas", sender: panel)
+            self.performSegue(withIdentifier: "showEncuestas", sender: panel)
         }
     }
     
@@ -90,24 +90,24 @@ class PanelsViewController: UITableViewController {
     // MARK: - Accept/Reject
     // -----------------------------------------------------------------------------------------------------------
     
-    func acceptInvitation(action: UIAlertAction) {
+    func acceptInvitation(_ action: UIAlertAction) {
         guard let panelistaId = User.currentUser?.id, let panelId = self.selectedPanel?.id else {
             return
         }
         
-        self.acceptRejectCall(panelistaId, panelId: panelId, status: EstadoPanel.Accepted.rawValue)
+        self.acceptRejectCall(panelistaId, panelId: panelId, status: EstadoPanel.accepted.rawValue)
     }
     
-    func rejectInvitation(action: UIAlertAction) {
+    func rejectInvitation(_ action: UIAlertAction) {
         guard let panelistaId = User.currentUser?.id, let panelId = self.selectedPanel?.id else {
             return
         }
         
-        self.acceptRejectCall(panelistaId, panelId: panelId, status: EstadoPanel.Rejected.rawValue)
+        self.acceptRejectCall(panelistaId, panelId: panelId, status: EstadoPanel.rejected.rawValue)
     }
     
-    func acceptRejectCall(panelistaId: Int, panelId: Int, status: Int) {
-        let parameters: [String : AnyObject] = [
+    func acceptRejectCall(_ panelistaId: Int, panelId: Int, status: Int) {
+        let parameters: [String : Any] = [
             "panelista" : panelistaId,
             "panel" : panelId,
             "estado" : status
@@ -115,17 +115,17 @@ class PanelsViewController: UITableViewController {
         
         self.selectedAction = status
         self.loadingAlert = self.presentAlertWithTitle("Cargando", withMessage: nil, withButtonTitles: [], withButtonStyles: [], andButtonHandlers: [])
-        Controller.requestForAction(.INVITATION_RESPONE, withParameters: parameters, withSuccessHandler: self.successHandler, andErrorHandler: self.errorHandler)
+        Controller.request(for: .invitationReponse, withParameters: parameters, withSuccessHandler: self.successHandler, andErrorHandler: self.errorHandler)
     }
     
-    func successHandler(response: NSDictionary) {
-        self.loadingAlert?.dismissViewControllerAnimated(false, completion: {
+    func successHandler(_ response: NSDictionary) {
+        self.loadingAlert?.dismiss(animated: false, completion: {
             if (response["status"] as? String == "SUCCESS") {
                 if (self.selectedAction == 1) {
-                    self.selectedPanel?.estado = .Accepted
+                    self.selectedPanel?.estado = .accepted
                 } else {
-                    self.selectedPanel?.estado = .Rejected
-                    self.paneles?.removeAtIndex(self.selectedIndex)
+                    self.selectedPanel?.estado = .rejected
+                    self.paneles?.remove(at: self.selectedIndex)
                 }
                 
                 self.selectedAction = 0
@@ -134,13 +134,13 @@ class PanelsViewController: UITableViewController {
                 
                 self.tableView.reloadData()
             } else {
-                self.presentAlertWithTitle("Error", withMessage: "Hubo un error al procesar su respuesta. Por favor, inténtelo más tarde.", withButtonTitles: ["OK"], withButtonStyles: [.Cancel], andButtonHandlers: [nil])
+                self.presentAlertWithTitle("Error", withMessage: "Hubo un error al procesar su respuesta. Por favor, inténtelo más tarde.", withButtonTitles: ["OK"], withButtonStyles: [.cancel], andButtonHandlers: [nil])
             }
         })
     }
     
-    func errorHandler(response: NSDictionary) {
-        self.loadingAlert?.dismissViewControllerAnimated(false, completion: {
+    func errorHandler(_ response: NSDictionary) {
+        self.loadingAlert?.dismiss(animated: false, completion: {
             var alertTitle = ""
             var alertMessage = ""
             
@@ -153,8 +153,8 @@ class PanelsViewController: UITableViewController {
                 alertMessage = "Nuestro servidor no está disponible por el momento."
             }
             
-            self.presentAlertWithTitle(alertTitle, withMessage: alertMessage, withButtonTitles: ["OK"], withButtonStyles: [.Cancel], andButtonHandlers: [nil])
-            print(response["error"])
+            self.presentAlertWithTitle(alertTitle, withMessage: alertMessage, withButtonTitles: ["OK"], withButtonStyles: [.cancel], andButtonHandlers: [nil])
+            print(response["error"] ?? "")
         })
     }
     

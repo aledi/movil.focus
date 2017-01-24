@@ -15,18 +15,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var user: User?
     var paneles: [Panel]?
     
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         self.showStoryboard()
         return true
     }
     
-    func applicationWillResignActive(application: UIApplication) {
+    func applicationWillResignActive(_ application: UIApplication) {
     }
     
-    func applicationDidEnterBackground(application: UIApplication) {
-        guard let _ = User.currentUser, _ = self.paneles else {
-            UIApplication.sharedApplication().applicationIconBadgeNumber = 0
-            UIApplication.sharedApplication().cancelAllLocalNotifications()
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        guard let _ = User.currentUser, let _ = self.paneles else {
+            UIApplication.shared.applicationIconBadgeNumber = 0
+            UIApplication.shared.cancelAllLocalNotifications()
             
             return
         }
@@ -35,19 +35,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.scheduleLocalNotifications()
     }
     
-    func applicationWillEnterForeground(application: UIApplication) {
+    func applicationWillEnterForeground(_ application: UIApplication) {
         self.showStoryboard()
     }
     
-    func applicationDidBecomeActive(application: UIApplication) {
-        UIApplication.sharedApplication().cancelAllLocalNotifications()
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        UIApplication.shared.cancelAllLocalNotifications()
     }
     
-    func applicationWillTerminate(application: UIApplication) {
+    func applicationWillTerminate(_ application: UIApplication) {
     }
     
     func showStoryboard() {
-        guard let storedUser = NSUserDefaults.retreiveUserDefaults() else {
+        guard let storedUser = UserDefaults.retreiveUserDefaults() else {
             return
         }
         
@@ -57,7 +57,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.registerForNotifications()
         }
         
-        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
         self.window?.makeKeyAndVisible()
     }
@@ -69,7 +69,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             pending += panel.encuestasPendientes
         }
         
-        UIApplication.sharedApplication().applicationIconBadgeNumber = pending
+        UIApplication.shared.applicationIconBadgeNumber = pending
     }
     
     // -----------------------------------------------------------------------------------------------------------
@@ -77,55 +77,55 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // -----------------------------------------------------------------------------------------------------------
     
     func registerForNotifications() {
-        let notificationSettings = UIUserNotificationSettings(forTypes: [.Badge, .Sound, .Alert], categories: nil)
-        UIApplication.sharedApplication().registerUserNotificationSettings(notificationSettings)
+        let notificationSettings = UIUserNotificationSettings(types: [.badge, .sound, .alert], categories: nil)
+        UIApplication.shared.registerUserNotificationSettings(notificationSettings)
     }
     
     func scheduleLocalNotifications() {
         for panel in self.paneles! {
-            guard let encuestas = panel.encuestas where panel.estado == .Accepted else {
+            guard let encuestas = panel.encuestas , panel.estado == .accepted else {
                 continue
             }
             
-            let dateFormatter = NSDateFormatter()
+            let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "MMMM d"
             
             for encuesta in encuestas {
                 if (!encuesta.contestada) {
-                    let fireDate = encuesta.fechaFin.dateByAddingTimeInterval(60 * 60 * 24 * -2 + (60 * 60 * 10))
+                    let fireDate = encuesta.fechaFin.addingTimeInterval(-136800)
                     
-                    if (fireDate.compare(NSDate()) == .OrderedDescending) {
+                    if (fireDate.compare(Date()) == .orderedDescending) {
                         let localNotification = UILocalNotification()
                         
                         localNotification.fireDate = fireDate
                         localNotification.alertTitle = "Encuesta Pendiente"
-                        localNotification.alertBody = "Recuerda contestar la encuesta \"\(encuesta.nombre)\" antes de \(dateFormatter.stringFromDate(encuesta.fechaFin))."
+                        localNotification.alertBody = "Recuerda contestar la encuesta \"\(encuesta.nombre)\" antes de \(dateFormatter.string(from: encuesta.fechaFin as Date))."
                         localNotification.soundName = UILocalNotificationDefaultSoundName
                         
-                        UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
+                        UIApplication.shared.scheduleLocalNotification(localNotification)
                     }
                 }
             }
         }
     }
     
-    func application(application: UIApplication, didRegisterUserNotificationSettings notificationSettings: UIUserNotificationSettings) {
-        if (notificationSettings.types != .None) {
+    func application(_ application: UIApplication, didRegister notificationSettings: UIUserNotificationSettings) {
+        if (notificationSettings.types != UIUserNotificationType()) {
             application.registerForRemoteNotifications()
         } else {
-            Controller.requestForAction(.UNREGISTER_DEVICE, withParameters: ["id" : User.currentUser!.id], withSuccessHandler: nil, andErrorHandler: nil)
+            Controller.request(for: .unregisterDevice, withParameters: ["id" : User.currentUser!.id], withSuccessHandler: nil, andErrorHandler: nil)
         }
     }
     
-    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
-        let tokenChars = UnsafePointer<CChar>(deviceToken.bytes)
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        let tokenChars = (deviceToken as NSData).bytes.bindMemory(to: CChar.self, capacity: deviceToken.count)
         var tokenString = ""
         
-        for i in 0..<deviceToken.length {
+        for i in 0..<deviceToken.count {
             tokenString += String(format: "%02.2hhx", arguments: [tokenChars[i]])
         }
         
-        let parameters: [String : AnyObject] = [
+        let parameters: [String : Any] = [
             "id" : User.currentUser!.id,
             "deviceToken" : tokenString,
             "deviceType" : 1
@@ -133,13 +133,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if (self.user!.token == "") {
             self.user!.token = tokenString
-            Controller.requestForAction(.REGISTER_DEVICE, withParameters: parameters, withSuccessHandler: nil, andErrorHandler: nil)
+            Controller.request(for: .registerDevice, withParameters: parameters, withSuccessHandler: nil, andErrorHandler: nil)
         }
         
         print("Device Token:", tokenString)
     }
     
-    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
         print("Failed to register:", error)
     }
     

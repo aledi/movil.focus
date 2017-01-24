@@ -10,19 +10,19 @@ import UIKit
 
 @IBDesignable class Button: UIButton {
     
-    @IBInspectable var normalColor: UIColor = UIColor.whiteColor()
-    @IBInspectable var highlightedColor: UIColor = UIColor.whiteColor()
+    @IBInspectable var normalColor: UIColor = UIColor.white
+    @IBInspectable var highlightedColor: UIColor = UIColor.white
     @IBInspectable var borderColor: UIColor? {
         didSet {
             self.layer.borderWidth = 2.0
-            self.layer.borderColor = borderColor?.CGColor
-            self.setTitleColor(UIColor.whiteColor(), forState: .Highlighted)
+            self.layer.borderColor = borderColor?.cgColor
+            self.setTitleColor(UIColor.white, for: .highlighted)
         }
     }
     
-    override var highlighted: Bool {
+    override var isHighlighted: Bool {
         didSet {
-            self.backgroundColor = highlighted ? self.highlightedColor : self.normalColor
+            self.backgroundColor = isHighlighted ? self.highlightedColor : self.normalColor
         }
     }
 

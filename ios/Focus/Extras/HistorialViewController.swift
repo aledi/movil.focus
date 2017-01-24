@@ -24,17 +24,17 @@ class HistorialViewController: UITableViewController {
     // MARK: - TableView
     // -----------------------------------------------------------------------------------------------------------
     
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.data.count
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("historialCell", forIndexPath: indexPath) as! HistorialViewCell
-        cell.configureforHistorial(self.data[indexPath.row])
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "historialCell", for: indexPath) as! HistorialViewCell
+        cell.configure(for: self.data[indexPath.row])
         
         return cell
     }

@@ -29,7 +29,7 @@ class PreguntaEscalaViewCell: UITableViewCell {
     var pregunta: Pregunta?
     var videoHandler: Selector? {
         didSet {
-            self.videoButton.addTarget(nil, action: videoHandler!, forControlEvents: .TouchUpInside)
+            self.videoButton.addTarget(nil, action: videoHandler!, for: .touchUpInside)
         }
     }
     
@@ -37,7 +37,7 @@ class PreguntaEscalaViewCell: UITableViewCell {
     // MARK: - Configure
     // -----------------------------------------------------------------------------------------------------------
     
-    func configureForPregunta(numPregunta: Int) {
+    func configureForPregunta(_ numPregunta: Int) {
         guard let pregunta = self.pregunta else {
             return
         }
@@ -72,7 +72,7 @@ class PreguntaEscalaViewCell: UITableViewCell {
         self.responseLabel.text = pregunta.respuesta.isEmpty ? nil : pregunta.respuesta
     }
 
-    @IBAction func stepperChanged(sender: UIStepper) {
+    @IBAction func stepperChanged(_ sender: UIStepper) {
         if (self.pregunta!.respuesta.isEmpty) {
             sender.value = sender.minimumValue
         }

@@ -33,7 +33,7 @@ class PreguntaMatrizViewCell: UITableViewCell, UIPickerViewDelegate, UIPickerVie
     var pregunta: Pregunta?
     var videoHandler: Selector? {
         didSet {
-            self.videoButton.addTarget(nil, action: videoHandler!, forControlEvents: .TouchUpInside)
+            self.videoButton.addTarget(nil, action: videoHandler!, for: .touchUpInside)
         }
     }
     
@@ -41,7 +41,7 @@ class PreguntaMatrizViewCell: UITableViewCell, UIPickerViewDelegate, UIPickerVie
     // MARK: - Configure
     // -----------------------------------------------------------------------------------------------------------
     
-    func configureForPregunta(numPregunta: Int) {
+    func configureForPregunta(_ numPregunta: Int) {
         guard let pregunta = self.pregunta else {
             return
         }
@@ -99,19 +99,19 @@ class PreguntaMatrizViewCell: UITableViewCell, UIPickerViewDelegate, UIPickerVie
     // MARK: - UIPickerDelegate/DataSource
     // -----------------------------------------------------------------------------------------------------------
     
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return (self.pregunta?.opciones.count ?? 0) + 1
     }
     
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return row == 0 ? "- Sin Respuesta -" : self.pregunta!.opciones[row - 1]
     }
     
-    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         var index = 0
         
         for i in 0..<self.optionsPickers.count {

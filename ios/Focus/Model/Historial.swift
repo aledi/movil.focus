@@ -11,39 +11,39 @@ import Foundation
 class Historial {
     
     var nombrePanel = ""
-    var fechaIniPanel: NSDate?
-    var fechaFinPanel: NSDate?
+    var fechaIniPanel: Date?
+    var fechaFinPanel: Date?
     var nombreEncuesta = ""
-    var fechaIniEncuesta: NSDate?
-    var fechaFinEncuesta: NSDate?
-    var fechaRespuesta: NSDate?
+    var fechaIniEncuesta: Date?
+    var fechaFinEncuesta: Date?
+    var fechaRespuesta: Date?
     
     init(nombrePanel: String, fechaIniPanel: String?, fechaFinPanel: String?, nombreEncuesta: String, fechaIniEncuesta: String?, fechaFinEncuesta: String?, fechaRespuesta: String?, horaRespuesta: String?) {
         self.nombrePanel = nombrePanel
         self.nombreEncuesta = nombreEncuesta
         
-        let dateFormatter = NSDateFormatter()
+        let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "YYYY-MM-dd"
         
         if (fechaIniPanel != nil) {
-            self.fechaIniPanel = dateFormatter.dateFromString(fechaIniPanel!)
+            self.fechaIniPanel = dateFormatter.date(from: fechaIniPanel!)
         }
         
         if (fechaFinPanel != nil) {
-            self.fechaFinPanel = dateFormatter.dateFromString(fechaFinPanel!)
+            self.fechaFinPanel = dateFormatter.date(from: fechaFinPanel!)
         }
         
         if (fechaIniEncuesta != nil) {
-            self.fechaIniEncuesta = dateFormatter.dateFromString(fechaIniEncuesta!)
+            self.fechaIniEncuesta = dateFormatter.date(from: fechaIniEncuesta!)
         }
         
         if (fechaFinEncuesta != nil) {
-            self.fechaFinEncuesta = dateFormatter.dateFromString(fechaFinEncuesta!)
+            self.fechaFinEncuesta = dateFormatter.date(from: fechaFinEncuesta!)
         }
         
         if (fechaRespuesta != nil) {
             dateFormatter.dateFormat = "hh:mm:ss YYYY-MM-dd"
-            self.fechaRespuesta = dateFormatter.dateFromString("\(horaRespuesta!) \(fechaRespuesta!)")
+            self.fechaRespuesta = dateFormatter.date(from: "\(horaRespuesta!) \(fechaRespuesta!)")
         }
     }
     

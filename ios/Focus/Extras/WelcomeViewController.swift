@@ -39,7 +39,7 @@ class WelcomeViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        self.scrollView.setContentOffset(CGPointZero, animated: false)
+        self.scrollView.setContentOffset(CGPoint.zero, animated: false)
     }
     
 }

@@ -10,9 +10,9 @@ import Foundation
 import UIKit
 
 enum EstadoPanel: Int {
-    case Pending = 0
-    case Accepted = 1
-    case Rejected = 2
+    case pending = 0
+    case accepted = 1
+    case rejected = 2
 }
 
 class Panel {
@@ -20,13 +20,13 @@ class Panel {
     var id: Int
     var nombre: String
     var descripcion: String
-    var fechaInicio: NSDate
-    var fechaFin: NSDate
+    var fechaInicio: Date
+    var fechaFin: Date
     var encuestas: [Encuesta]?
     var estado: EstadoPanel
     
     var encuestasPendientes: Int {
-        guard let encuestas = self.encuestas where self.estado == .Accepted else {
+        guard let encuestas = self.encuestas , self.estado == .accepted else {
             return 0
         }
         
@@ -44,17 +44,17 @@ class Panel {
         self.nombre = nombre
         self.descripcion = descripcion
         
-        let dateFormatter = NSDateFormatter()
+        let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "YYYY-MM-dd"
         
-        self.fechaInicio = dateFormatter.dateFromString(fechaInicio)!
-        self.fechaFin = dateFormatter.dateFromString(fechaFin)!
+        self.fechaInicio = dateFormatter.date(from: fechaInicio)!
+        self.fechaFin = dateFormatter.date(from: fechaFin)!
         
         self.estado = EstadoPanel(rawValue: estado)!
     }
     
-    static func savePaneles(paneles: [Panel]?) {
-        let delegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    static func savePaneles(_ paneles: [Panel]?) {
+        let delegate = UIApplication.shared.delegate as! AppDelegate
         delegate.paneles = paneles
     }
     
