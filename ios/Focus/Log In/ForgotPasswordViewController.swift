@@ -15,16 +15,15 @@ class ForgotPasswordViewController: UITableViewController {
     
     var loadingAlert: UIAlertController?
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     // -----------------------------------------------------------------------------------------------------------
     // MARK: - Lifecycle
     // -----------------------------------------------------------------------------------------------------------
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        UIApplication.sharedApplication().setStatusBarStyle(.LightContent, animated: false)
-    }
-    
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.dismissKeyboard()
     }
@@ -33,25 +32,25 @@ class ForgotPasswordViewController: UITableViewController {
     // MARK: - Recover Password
     // -----------------------------------------------------------------------------------------------------------
     
-    @IBAction func recoverPassword(sender: AnyObject?) {
+    @IBAction func recoverPassword(_ sender: AnyObject?) {
         self.dismissKeyboard()
         
         if ((self.userText.text == nil || self.userText.text!.isEmpty) && (self.emailText.text == nil || self.emailText.text!.isEmpty)) {
-            self.presentAlertWithTitle("Campos Requeridos", withMessage: "Por favor, ingrese su nombre de usuario o correo electrónico.", withButtonTitles: ["OK"], withButtonStyles: [.Cancel], andButtonHandlers: [nil])
+            self.presentAlertWithTitle("Campos Requeridos", withMessage: "Por favor, ingrese su nombre de usuario o correo electrónico.", withButtonTitles: ["OK"], withButtonStyles: [.cancel], andButtonHandlers: [nil])
             return
         }
         
-        let parameters: [String : AnyObject] = [
-            "username" : self.userText.text ?? "",
-            "email" : self.emailText.text ?? ""
+        let parameters: [String : Any] = [
+            "username" : self.userText.text as AnyObject? ?? "",
+            "email" : self.emailText.text as AnyObject? ?? ""
         ]
         
         self.loadingAlert = self.presentAlertWithTitle("Espere, por favor...", withMessage: nil, withButtonTitles: [], withButtonStyles: [], andButtonHandlers: [])
-        Controller.requestForAction(.FORGOT_PASSWORD, withParameters: parameters, withSuccessHandler: self.successHandler, andErrorHandler: self.errorHandler)
+        Controller.request(for: .forgotPassword, withParameters: parameters, withSuccessHandler: self.successHandler, andErrorHandler: self.errorHandler)
     }
     
-    func successHandler(response: NSDictionary) {
-        self.loadingAlert?.dismissViewControllerAnimated(false, completion: {
+    func successHandler(_ response: NSDictionary) {
+        self.loadingAlert?.dismiss(animated: false, completion: {
             guard let status = response["status"] as? String else {
                 return
             }
@@ -73,12 +72,12 @@ class ForgotPasswordViewController: UITableViewController {
                 alertMessage = "Hubo un error al enviar su petición. Por favor, intente más tarde o póngase en contacto con el servicio de soporte."
             }
             
-            self.presentAlertWithTitle(alertTitle, withMessage: alertMessage, withButtonTitles: ["OK"], withButtonStyles: [.Cancel], andButtonHandlers: [nil])
+            self.presentAlertWithTitle(alertTitle, withMessage: alertMessage, withButtonTitles: ["OK"], withButtonStyles: [.cancel], andButtonHandlers: [nil])
         })
     }
     
-    func errorHandler(response: NSDictionary) {
-        self.loadingAlert?.dismissViewControllerAnimated(false, completion: {
+    func errorHandler(_ response: NSDictionary) {
+        self.loadingAlert?.dismiss(animated: false, completion: {
             var alertTitle = ""
             var alertMessage = ""
             
@@ -91,12 +90,12 @@ class ForgotPasswordViewController: UITableViewController {
                 alertMessage = "Nuestro servidor no está disponible por el momento."
             }
             
-            func firstBlock(action: UIAlertAction) {
+            func firstBlock(_ action: UIAlertAction) {
                 self.recoverPassword(nil)
             }
             
-            self.presentAlertWithTitle(alertTitle, withMessage: alertMessage, withButtonTitles: ["Reintentar", "OK"], withButtonStyles: [.Default, .Cancel], andButtonHandlers: [firstBlock, nil])
-            print(response["error"])
+            self.presentAlertWithTitle(alertTitle, withMessage: alertMessage, withButtonTitles: ["Reintentar", "OK"], withButtonStyles: [.default, .cancel], andButtonHandlers: [firstBlock, nil])
+            print(response["error"] ?? "")
         })
     }
     

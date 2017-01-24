@@ -14,23 +14,23 @@ class PanelViewCell: UITableViewCell {
     @IBOutlet var fechaIniLabel: UILabel!
     @IBOutlet var fechaFinLabel: UILabel!
     
-    func configureFor(panel: Panel) {
-        let dateFormatter = NSDateFormatter()
+    func configure(for panel: Panel) {
+        let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MMMM d, YYYY"
         
         self.nombreLabel.text = panel.nombre
-        self.fechaIniLabel.text = dateFormatter.stringFromDate(panel.fechaInicio).capitalizedString
-        self.fechaFinLabel.text = dateFormatter.stringFromDate(panel.fechaFin).capitalizedString
+        self.fechaIniLabel.text = dateFormatter.string(from: panel.fechaInicio as Date).capitalized
+        self.fechaFinLabel.text = dateFormatter.string(from: panel.fechaFin as Date).capitalized
         
-        self.accessoryType = .DisclosureIndicator
-        self.selectionStyle = .Default
+        self.accessoryType = .disclosureIndicator
+        self.selectionStyle = .default
         
-        if (panel.estado != .Accepted) {
-            self.accessoryType = .DetailButton
-            self.selectionStyle = .None
+        if (panel.estado != .accepted) {
+            self.accessoryType = .detailButton
+            self.selectionStyle = .none
         } else if (panel.encuestas?.count == 0) {
-            self.accessoryType = .None
-            self.selectionStyle = .None
+            self.accessoryType = .none
+            self.selectionStyle = .none
         }
     }
     

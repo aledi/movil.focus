@@ -25,7 +25,7 @@ class ChangePasswordViewController: UITableViewController {
         self.oldPasswordText.becomeFirstResponder()
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.dismissKeyboard()
     }
@@ -34,7 +34,7 @@ class ChangePasswordViewController: UITableViewController {
     // MARK: - Change Password
     // -----------------------------------------------------------------------------------------------------------
     
-    @IBAction func changePassword(sender: AnyObject?) {
+    @IBAction func changePassword(_ sender: AnyObject?) {
         self.dismissKeyboard()
         
         var alertMessage = ""
@@ -48,22 +48,22 @@ class ChangePasswordViewController: UITableViewController {
         }
         
         if (!alertMessage.isEmpty) {
-            self.presentAlertWithTitle("Campos Requeridos", withMessage: alertMessage, withButtonTitles: ["OK"], withButtonStyles: [.Cancel], andButtonHandlers: [nil])
+            self.presentAlertWithTitle("Campos Requeridos", withMessage: alertMessage, withButtonTitles: ["OK"], withButtonStyles: [.cancel], andButtonHandlers: [nil])
             return
         }
         
-        let parameters: [String : AnyObject] = [
+        let parameters: [String : Any] = [
             "panelista" : User.currentUser!.id,
             "old" : self.oldPasswordText.text!,
             "new" : self.newPasswordText.text!
         ]
         
         self.loadingAlert = self.presentAlertWithTitle("Espere, por favor...", withMessage: nil, withButtonTitles: [], withButtonStyles: [], andButtonHandlers: [])
-        Controller.requestForAction(.CHANGE_PASSWORD, withParameters: parameters, withSuccessHandler: self.successHandler, andErrorHandler: self.errorHandler)
+        Controller.request(for: .changePassword, withParameters: parameters, withSuccessHandler: self.successHandler, andErrorHandler: self.errorHandler)
     }
     
-    func successHandler(response: NSDictionary) {
-        self.loadingAlert?.dismissViewControllerAnimated(false, completion: { 
+    func successHandler(_ response: NSDictionary) {
+        self.loadingAlert?.dismiss(animated: false, completion: { 
             guard let status = response["status"] as? String else {
                 return
             }
@@ -83,12 +83,12 @@ class ChangePasswordViewController: UITableViewController {
                 alertMessage = "Hubo un error al intentar cambiar su contraseña. Por favor, intente más tarde o póngase en contacto con el servicio de soporte."
             }
             
-            self.presentAlertWithTitle(alertTitle, withMessage: alertMessage, withButtonTitles: ["OK"], withButtonStyles: [.Cancel], andButtonHandlers: [nil])
+            self.presentAlertWithTitle(alertTitle, withMessage: alertMessage, withButtonTitles: ["OK"], withButtonStyles: [.cancel], andButtonHandlers: [nil])
         })
     }
     
-    func errorHandler(response: NSDictionary) {
-        self.loadingAlert?.dismissViewControllerAnimated(false, completion: { 
+    func errorHandler(_ response: NSDictionary) {
+        self.loadingAlert?.dismiss(animated: false, completion: { 
             var alertTitle = ""
             var alertMessage = ""
             
@@ -101,12 +101,12 @@ class ChangePasswordViewController: UITableViewController {
                 alertMessage = "Nuestro servidor no está disponible por el momento."
             }
             
-            func firstBlock(action: UIAlertAction) {
+            func firstBlock(_ action: UIAlertAction) {
                 self.changePassword(nil)
             }
             
-            self.presentAlertWithTitle(alertTitle, withMessage: alertMessage, withButtonTitles: ["Reintentar", "OK"], withButtonStyles: [.Default, .Cancel], andButtonHandlers: [firstBlock, nil])
-            print(response["error"])
+            self.presentAlertWithTitle(alertTitle, withMessage: alertMessage, withButtonTitles: ["Reintentar", "OK"], withButtonStyles: [.default, .cancel], andButtonHandlers: [firstBlock, nil])
+            print(response["error"] ?? "")
         })
     }
     

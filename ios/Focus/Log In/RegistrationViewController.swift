@@ -56,13 +56,15 @@ class RegistrationViewController: UIViewController, UIPickerViewDelegate, UIPick
     
     var states = [[String : AnyObject]]()
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        UIApplication.sharedApplication().setStatusBarStyle(.LightContent, animated: false)
-        
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.keyboardDidShow(_:)), name: UIKeyboardDidShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.keyboardWillBeHidden(_:)), name: UIKeyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardDidShow(_:)), name: NSNotification.Name.UIKeyboardDidShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillBeHidden(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
         self.fetchEstados()
@@ -70,12 +72,12 @@ class RegistrationViewController: UIViewController, UIPickerViewDelegate, UIPick
     }
     
     func fetchEstados() {
-        if let path = NSBundle.mainBundle().pathForResource("Estados", ofType: "plist") {
+        if let path = Bundle.main.path(forResource: "Estados", ofType: "plist") {
             self.states = NSArray(contentsOfFile: path) as! [[String : AnyObject]]
         }
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.dismissKeyboard()
     }
@@ -85,12 +87,12 @@ class RegistrationViewController: UIViewController, UIPickerViewDelegate, UIPick
     // -----------------------------------------------------------------------------------------------------------
     
     func configurePickers() {
-        let calendar = NSCalendar.currentCalendar()
+        let calendar = Calendar.current
         
-        self.birthdayPicker.addTarget(self, action: #selector(self.dateChanged(_:)), forControlEvents: .ValueChanged)
-        self.birthdayPicker.datePickerMode = .Date
-        self.birthdayPicker.minimumDate = calendar.dateByAddingUnit(.Year, value: -100, toDate: NSDate(), options: [])
-        self.birthdayPicker.maximumDate = calendar.dateByAddingUnit(.Year, value: -18, toDate: NSDate(), options: [])
+        self.birthdayPicker.addTarget(self, action: #selector(self.dateChanged(_:)), for: .valueChanged)
+        self.birthdayPicker.datePickerMode = .date
+        self.birthdayPicker.minimumDate = (calendar as NSCalendar).date(byAdding: .year, value: -100, to: Date(), options: [])
+        self.birthdayPicker.maximumDate = (calendar as NSCalendar).date(byAdding: .year, value: -18, to: Date(), options: [])
         self.birthdayText.inputView = self.birthdayPicker
         
         self.genderPicker.delegate = self
@@ -110,17 +112,17 @@ class RegistrationViewController: UIViewController, UIPickerViewDelegate, UIPick
         self.cityText.inputView = self.cityPicker
     }
     
-    func dateChanged(sender: UIDatePicker) {
-        let formatter = NSDateFormatter()
+    func dateChanged(_ sender: UIDatePicker) {
+        let formatter = DateFormatter()
         formatter.dateFormat = "MMMM dd, YYYY"
-        self.birthdayText.text = formatter.stringFromDate(sender.date)
+        self.birthdayText.text = formatter.string(from: sender.date)
     }
     
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if (pickerView == self.genderPicker) {
             return self.gender.count
         }
@@ -133,10 +135,10 @@ class RegistrationViewController: UIViewController, UIPickerViewDelegate, UIPick
             return self.states.count
         }
         
-        return self.municipiosForStateAtIndex(self.statePicker.selectedRowInComponent(0)).count
+        return self.municipiosForStateAtIndex(self.statePicker.selectedRow(inComponent: 0)).count
     }
     
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if (pickerView == self.genderPicker) {
             return self.gender[row].1
         }
@@ -149,10 +151,10 @@ class RegistrationViewController: UIViewController, UIPickerViewDelegate, UIPick
             return self.estadoAtIndex(row)
         }
         
-        return self.municipiosForStateAtIndex(self.statePicker.selectedRowInComponent(0))[row]
+        return self.municipiosForStateAtIndex(self.statePicker.selectedRow(inComponent: 0))[row]
     }
     
-    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if (pickerView == self.genderPicker) {
             self.genderText.text = (row > 0) ? self.gender[row].1 : nil
         } else if (pickerView == self.educationPicker) {
@@ -162,12 +164,12 @@ class RegistrationViewController: UIViewController, UIPickerViewDelegate, UIPick
             self.cityPicker.selectRow(0, inComponent: 0, animated: false)
             self.cityText.text = nil
         } else {
-            if (self.statePicker.selectedRowInComponent(0) == 0) {
+            if (self.statePicker.selectedRow(inComponent: 0) == 0) {
                 self.cityText.text = nil
                 return
             }
             
-            let municipios = self.municipiosForStateAtIndex(self.statePicker.selectedRowInComponent(0))
+            let municipios = self.municipiosForStateAtIndex(self.statePicker.selectedRow(inComponent: 0))
             self.cityText.text = municipios[row]
         }
     }
@@ -176,43 +178,43 @@ class RegistrationViewController: UIViewController, UIPickerViewDelegate, UIPick
     // MARK: - Keyboard
     // -----------------------------------------------------------------------------------------------------------
     
-    func textFieldDidEndEditing(textField: UITextField) {
+    func textFieldDidEndEditing(_ textField: UITextField) {
         self.activeField = nil
     }
     
-    func textFieldDidBeginEditing(textField: UITextField) {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
         if (textField == self.birthdayText) {
-            let formatter = NSDateFormatter()
+            let formatter = DateFormatter()
             formatter.dateFormat = "MMMM dd, YYYY"
-            self.birthdayText.text = formatter.stringFromDate(self.birthdayPicker.date)
+            self.birthdayText.text = formatter.string(from: self.birthdayPicker.date)
         }
         
         self.activeField = textField
     }
     
-    func keyboardDidShow(notification: NSNotification) {
-        if let activeField = self.activeField, keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
+    func keyboardDidShow(_ notification: Notification) {
+        if let activeField = self.activeField, let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
             self.scrollView.contentInset = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyboardSize.height + 10, right: 0.0)
             self.scrollView.scrollIndicatorInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyboardSize.height + 10, right: 0.0)
             var aRect = self.view.frame
             aRect.size.height -= keyboardSize.size.height
             
-            if (!CGRectContainsPoint(aRect, activeField.frame.origin)) {
+            if (!aRect.contains(activeField.frame.origin)) {
                 self.scrollView.scrollRectToVisible(activeField.frame, animated: true)
             }
         }
     }
     
-    func keyboardWillBeHidden(notification: NSNotification) {
-        self.scrollView.contentInset = UIEdgeInsetsZero
-        self.scrollView.scrollIndicatorInsets = UIEdgeInsetsZero
+    func keyboardWillBeHidden(_ notification: Notification) {
+        self.scrollView.contentInset = UIEdgeInsets.zero
+        self.scrollView.scrollIndicatorInsets = UIEdgeInsets.zero
     }
     
     func dismissKeyboard() {
         self.view.endEditing(true)
     }
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         (self.contentView.viewWithTag(textField.tag + 10) as! UITextField).becomeFirstResponder()
         return false
     }
@@ -221,12 +223,12 @@ class RegistrationViewController: UIViewController, UIPickerViewDelegate, UIPick
     // MARK: - Actions
     // -----------------------------------------------------------------------------------------------------------
    
-    @IBAction func noDate(sender: AnyObject) {
+    @IBAction func noDate(_ sender: AnyObject) {
         self.birthdayText.text = ""
         self.activeField?.resignFirstResponder()
     }
     
-    @IBAction func registerAttempt(sender: AnyObject) {
+    @IBAction func registerAttempt(_ sender: AnyObject) {
         if (self.usernameText.text == nil || self.usernameText.text!.isEmpty) {
             return self.missingDataAlert(self.usernameText)
         }
@@ -287,34 +289,34 @@ class RegistrationViewController: UIViewController, UIPickerViewDelegate, UIPick
     }
     
     func register() {
-        let formatter = NSDateFormatter()
+        let formatter = DateFormatter()
         formatter.dateFormat = "YYYY-MM-dd"
         
-        var parameters: [String : AnyObject] = [:]
+        var parameters: [String : Any] = [:]
         
         parameters["username"] = self.usernameText.text!
         parameters["password"] = self.passwordText.text!
         parameters["nombre"] = self.nameText.text!
         parameters["apellidos"] = self.lastnameText.text!
         parameters["email"] = self.emailText.text!
-        parameters["genero"] = self.gender[self.genderPicker.selectedRowInComponent(0)].0
-        parameters["fechaNacimiento"] = (self.birthdayText.text == nil || self.birthdayText.text!.isEmpty) ? "" : formatter.stringFromDate(self.birthdayPicker.date)
-        parameters["educacion"] = self.education[self.educationPicker.selectedRowInComponent(0)].0
+        parameters["genero"] = self.gender[self.genderPicker.selectedRow(inComponent: 0)].0
+        parameters["fechaNacimiento"] = (self.birthdayText.text == nil || self.birthdayText.text!.isEmpty) ? "" : formatter.string(from: self.birthdayPicker.date)
+        parameters["educacion"] = self.education[self.educationPicker.selectedRow(inComponent: 0)].0
         parameters["calleNumero"] = "\(self.streetText.text ?? "") \(self.numberText.text ?? "")"
-        parameters["colonia"] = self.coloniaText.text ?? ""
-        parameters["estado"] = self.states[self.statePicker.selectedRowInComponent(0)]["abreviacion"] as! String
-        parameters["municipio"] = self.cityText.text ?? ""
-        parameters["cp"] = self.postalText.text ?? ""
+        parameters["colonia"] = self.coloniaText.text as AnyObject?? ?? ""
+        parameters["estado"] = self.states[self.statePicker.selectedRow(inComponent: 0)]["abreviacion"] as! String
+        parameters["municipio"] = self.cityText.text as AnyObject?? ?? ""
+        parameters["cp"] = self.postalText.text as AnyObject?? ?? ""
         
-        Controller.requestForAction(.REGISTER_USER, withParameters: parameters, withSuccessHandler: successHandler, andErrorHandler: errorHandler)
+        Controller.request(for: .registerUser, withParameters: parameters, withSuccessHandler: successHandler, andErrorHandler: errorHandler)
     }
     
-    func saveUser(id: Int) {
-        let user = User(id: id, username: self.usernameText.text!, email: self.emailText.text!, nombre: "\(self.nameText.text!) \(self.lastnameText.text!)", genero: self.gender[self.genderPicker.selectedRowInComponent(0)].0 <= 0 ? 0 : 1)
+    func saveUser(_ id: Int) {
+        let user = User(id: id, username: self.usernameText.text!, email: self.emailText.text!, nombre: "\(self.nameText.text!) \(self.lastnameText.text!)", genero: self.gender[self.genderPicker.selectedRow(inComponent: 0)].0 <= 0 ? 0 : 1)
         User.saveUser(user)
         
         if let user = User.currentUser {
-            NSUserDefaults.saveUserDefaults(user)
+            UserDefaults.saveUserDefaults(user)
         }
     }
     
@@ -322,12 +324,12 @@ class RegistrationViewController: UIViewController, UIPickerViewDelegate, UIPick
     // MARK: - Handlers
     // -----------------------------------------------------------------------------------------------------------
     
-    func successHandler(response: NSDictionary) {
+    func successHandler(_ response: NSDictionary) {
         if (response["status"] as? String == "SUCCESS") {
             self.saveUser(response["id"] as! Int)
             self.appDelegate.paneles = []
             self.appDelegate.registerForNotifications()
-            self.performSegueWithIdentifier("welcome", sender: nil)
+            self.performSegue(withIdentifier: "welcome", sender: nil)
         } else if (response["status"] as? String == "USER_EXISTS") {
             self.userExistsAlert()
         } else {
@@ -335,7 +337,7 @@ class RegistrationViewController: UIViewController, UIPickerViewDelegate, UIPick
         }
     }
     
-    func errorHandler(response: NSDictionary) {
+    func errorHandler(_ response: NSDictionary) {
         var alertTitle = ""
         var alertMessage = ""
         
@@ -348,51 +350,51 @@ class RegistrationViewController: UIViewController, UIPickerViewDelegate, UIPick
             alertMessage = "Nuestro servidor no está disponible por el momento."
         }
         
-        func firstBlock(action: UIAlertAction) {
+        func firstBlock(_ action: UIAlertAction) {
             self.register()
         }
         
-        self.presentAlertWithTitle(alertTitle, withMessage: alertMessage, withButtonTitles: ["Reintentar", "OK"], withButtonStyles: [.Default, .Cancel], andButtonHandlers: [firstBlock, nil])
-        print(response["error"])
+        self.presentAlertWithTitle(alertTitle, withMessage: alertMessage, withButtonTitles: ["Reintentar", "OK"], withButtonStyles: [.default, .cancel], andButtonHandlers: [firstBlock, nil])
+        print(response["error"] ?? "")
     }
     
     // -----------------------------------------------------------------------------------------------------------
     // MARK: - Alerts
     // -----------------------------------------------------------------------------------------------------------
     
-    func missingDataAlert(input: UITextField) {
-        func firstBlock(action: UIAlertAction) {
+    func missingDataAlert(_ input: UITextField) {
+        func firstBlock(_ action: UIAlertAction) {
             input.becomeFirstResponder()
         }
         
-        self.presentAlertWithTitle("Faltan Datos", withMessage: "Por favor, ingresa todos los datos obligatorios.", withButtonTitles: ["OK"], withButtonStyles: [.Cancel], andButtonHandlers: [firstBlock])
+        self.presentAlertWithTitle("Faltan Datos", withMessage: "Por favor, ingresa todos los datos obligatorios.", withButtonTitles: ["OK"], withButtonStyles: [.cancel], andButtonHandlers: [firstBlock])
     }
     
     func userExistsAlert() {
-        func firstBlock(action: UIAlertAction) {
+        func firstBlock(_ action: UIAlertAction) {
             self.usernameText.becomeFirstResponder()
         }
         
-        self.presentAlertWithTitle("Usuario Existente", withMessage: "El usuario que ingresó ya existe. Por favor, intente con otro usuario.", withButtonTitles: ["OK"], withButtonStyles: [.Cancel], andButtonHandlers: [firstBlock])
+        self.presentAlertWithTitle("Usuario Existente", withMessage: "El usuario que ingresó ya existe. Por favor, intente con otro usuario.", withButtonTitles: ["OK"], withButtonStyles: [.cancel], andButtonHandlers: [firstBlock])
     }
     
     func errorAlert() {
-        func firstBlock(action: UIAlertAction) {
+        func firstBlock(_ action: UIAlertAction) {
             self.register()
         }
         
-        self.presentAlertWithTitle("Error", withMessage: "Hubo un error al guardar su registro. Por favor, intente de nuevo o contáctenos para ayudarle.", withButtonTitles: ["Reintentar", "OK"], withButtonStyles: [.Default, .Cancel], andButtonHandlers: [firstBlock, nil])
+        self.presentAlertWithTitle("Error", withMessage: "Hubo un error al guardar su registro. Por favor, intente de nuevo o contáctenos para ayudarle.", withButtonTitles: ["Reintentar", "OK"], withButtonStyles: [.default, .cancel], andButtonHandlers: [firstBlock, nil])
     }
     
     // -----------------------------------------------------------------------------------------------------------
     // MARK: - Helpers
     // -----------------------------------------------------------------------------------------------------------
     
-    func estadoAtIndex(index: Int) -> String {
+    func estadoAtIndex(_ index: Int) -> String {
         return self.states[index]["estado"] as! String
     }
     
-    func municipiosForStateAtIndex(index: Int) -> [String] {
+    func municipiosForStateAtIndex(_ index: Int) -> [String] {
         return self.states[index]["municipios"] as! [String]
     }
     

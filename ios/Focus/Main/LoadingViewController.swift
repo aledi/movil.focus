@@ -12,27 +12,29 @@ class LoadingViewController: UIViewController {
 
     @IBOutlet var spinner: UIActivityIndicatorView!
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .default
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        UIApplication.sharedApplication().setStatusBarStyle(.Default, animated: false)
         self.loadContent()
     }
     
     func loadContent() {
-        let parameters: [String : AnyObject] = [
+        let parameters: [String : Any] = [
             "panelista" : "\(User.currentUser!.id)"
         ]
         
         self.spinner.startAnimating()
-        Controller.requestForAction(.GET_DATA, withParameters: parameters, withSuccessHandler: self.successHandler, andErrorHandler: self.errorHandler)
+        Controller.request(for: .getData, withParameters: parameters, withSuccessHandler: self.successHandler, andErrorHandler: self.errorHandler)
     }
     
     // -----------------------------------------------------------------------------------------------------------
     // MARK: - Fetch
     // -----------------------------------------------------------------------------------------------------------
     
-    func successHandler(response: NSDictionary) {
+    func successHandler(_ response: NSDictionary) {
         var paneles: [Panel] = []
         
         if let panels = response["paneles"] as? [AnyObject] {
@@ -65,11 +67,11 @@ class LoadingViewController: UIViewController {
             
             self.appDelegate.paneles = paneles
             self.spinner.stopAnimating()
-            self.performSegueWithIdentifier("showContent", sender: nil)
+            self.performSegue(withIdentifier: "showContent", sender: nil)
         }
     }
     
-    func errorHandler(response: NSDictionary) {
+    func errorHandler(_ response: NSDictionary) {
         self.spinner.stopAnimating()
         var alertTitle = ""
         var alertMessage = ""
@@ -83,12 +85,12 @@ class LoadingViewController: UIViewController {
             alertMessage = "Nuestro servidor no está disponible por el momento."
         }
         
-        func firstBlock(action: UIAlertAction) {
+        func firstBlock(_ action: UIAlertAction) {
             self.loadContent()
         }
         
-        self.presentAlertWithTitle(alertTitle, withMessage: alertMessage, withButtonTitles: ["Reintentar", "OK"], withButtonStyles: [.Default, .Cancel], andButtonHandlers: [firstBlock, nil])
-        print(response["error"])
+        self.presentAlertWithTitle(alertTitle, withMessage: alertMessage, withButtonTitles: ["Reintentar", "OK"], withButtonStyles: [.default, .cancel], andButtonHandlers: [firstBlock, nil])
+        print(response["error"] ?? "")
     }
 
 }

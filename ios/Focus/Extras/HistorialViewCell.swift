@@ -13,20 +13,20 @@ class HistorialViewCell: UITableViewCell {
     @IBOutlet var encuestaLabel: UILabel!
     @IBOutlet var fechaRespuestaLabel: UILabel!
     
-    func configureforHistorial(historial: Historial) {
+    func configure(for historial: Historial) {
         self.encuestaLabel.text = historial.nombreEncuesta
         self.fechaRespuestaLabel.text = "---"
         
-        self.accessoryType = .None
+        self.accessoryType = .none
         
-        let dateFormatter = NSDateFormatter()
+        let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MMMM d, YYYY"
         
         if (historial.fechaRespuesta != nil) {
             dateFormatter.dateFormat = "MMMM d, YYYY hh:mm"
             
-            self.fechaRespuestaLabel.text = dateFormatter.stringFromDate(historial.fechaRespuesta!)
-            self.accessoryType = .Checkmark
+            self.fechaRespuestaLabel.text = dateFormatter.string(from: historial.fechaRespuesta! as Date)
+            self.accessoryType = .checkmark
         }
     }
     
