@@ -17,10 +17,6 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     
     var activeField: UITextField?
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
-    
     // -----------------------------------------------------------------------------------------------------------
     // MARK: - Lifecycle
     // -----------------------------------------------------------------------------------------------------------
@@ -35,6 +31,7 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        UIApplication.shared.setStatusBarStyle(.lightContent, animated: false)
     }
     
     // -----------------------------------------------------------------------------------------------------------

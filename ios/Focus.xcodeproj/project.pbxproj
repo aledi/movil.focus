@@ -24,7 +24,6 @@
 		4053130A1D386EFA0073751A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 405313091D386EFA0073751A /* Main.storyboard */; };
 		4053130C1D386F370073751A /* PanelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4053130B1D386F370073751A /* PanelsViewController.swift */; };
 		406537251D7FA8D7000C7C9C /* PrivacyPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406537241D7FA8D7000C7C9C /* PrivacyPolicyViewController.swift */; };
-		408C37F11D838B4000A75784 /* MoviePlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408C37F01D838B4000A75784 /* MoviePlayerViewController.swift */; };
 		40982F1C1DDBECD40031EBED /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40982F1B1DDBECD40031EBED /* ForgotPasswordViewController.swift */; };
 		40A8B6931E144111002B271D /* Historial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A8B6921E144111002B271D /* Historial.swift */; };
 		40A8B6951E1447EE002B271D /* HistorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A8B6941E1447EE002B271D /* HistorialViewController.swift */; };
@@ -84,7 +83,6 @@
 		405313091D386EFA0073751A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Main/Main.storyboard; sourceTree = "<group>"; };
 		4053130B1D386F370073751A /* PanelsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PanelsViewController.swift; path = Main/PanelsViewController.swift; sourceTree = "<group>"; };
 		406537241D7FA8D7000C7C9C /* PrivacyPolicyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PrivacyPolicyViewController.swift; path = Extras/PrivacyPolicyViewController.swift; sourceTree = "<group>"; };
-		408C37F01D838B4000A75784 /* MoviePlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MoviePlayerViewController.swift; path = Preguntas/MoviePlayerViewController.swift; sourceTree = "<group>"; };
 		40982F1B1DDBECD40031EBED /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ForgotPasswordViewController.swift; path = "Log In/ForgotPasswordViewController.swift"; sourceTree = "<group>"; };
 		40A8B6921E144111002B271D /* Historial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Historial.swift; path = Model/Historial.swift; sourceTree = "<group>"; };
 		40A8B6941E1447EE002B271D /* HistorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HistorialViewController.swift; path = Extras/HistorialViewController.swift; sourceTree = "<group>"; };
@@ -143,7 +141,6 @@
 				402F247F1DF4CF3D004E5EF2 /* PreguntaEscalaViewCell.xib */,
 				402DC9981DF791680062877C /* PreguntaMatrizViewCell.swift */,
 				402DC9961DF790610062877C /* PreguntaMatrizViewCell.xib */,
-				408C37F01D838B4000A75784 /* MoviePlayerViewController.swift */,
 			);
 			name = Preguntas;
 			sourceTree = "<group>";
@@ -296,7 +293,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Eduardo Cristerna";
 				TargetAttributes = {
 					40FF0D931D37138500ED8A64 = {
@@ -423,7 +420,6 @@
 				40BB93DD1E18869C007A038E /* PanelViewCell.swift in Sources */,
 				40E7F9C21D4D5A9E00BCD0DB /* ProfileViewController.swift in Sources */,
 				40E400E41DD547330095488F /* ChangePasswordViewController.swift in Sources */,
-				408C37F11D838B4000A75784 /* MoviePlayerViewController.swift in Sources */,
 				40FF0D981D37138500ED8A64 /* AppDelegate.swift in Sources */,
 				402F247E1DF49FB4004E5EF2 /* PreguntaComboViewCell.swift in Sources */,
 				4053130C1D386F370073751A /* PanelsViewController.swift in Sources */,
@@ -546,7 +542,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E492C13DC6B1D1B621066D0F /* Pods-Focus.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Focus/Focus.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -566,7 +562,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 75F133A753BBCBB3C49761B9 /* Pods-Focus.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Focus/Focus.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";

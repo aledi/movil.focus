@@ -12,13 +12,10 @@ class LoadingViewController: UIViewController {
 
     @IBOutlet var spinner: UIActivityIndicatorView!
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .default
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.loadContent()
+        UIApplication.shared.setStatusBarStyle(.default, animated: false)
     }
     
     func loadContent() {

@@ -29,10 +29,6 @@ class ProfileViewController: UITableViewController, UIActivityItemSource, MFMail
     
     var loadingAlert: UIAlertController?
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
-    
     // -----------------------------------------------------------------------------------------------------------
     // MARK: - Lifecycle
     // -----------------------------------------------------------------------------------------------------------
@@ -40,6 +36,7 @@ class ProfileViewController: UITableViewController, UIActivityItemSource, MFMail
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        UIApplication.shared.setStatusBarStyle(.lightContent, animated: false)
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -16,10 +16,6 @@ class PanelsViewController: UITableViewController {
     var selectedAction = 0
     var loadingAlert: UIAlertController?
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
-    
     // -----------------------------------------------------------------------------------------------------------
     // MARK: - Lifecycle
     // -----------------------------------------------------------------------------------------------------------
@@ -28,6 +24,8 @@ class PanelsViewController: UITableViewController {
         super.viewDidLoad()
         
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        
+        UIApplication.shared.setStatusBarStyle(.lightContent, animated: false)
         
         self.paneles = self.appDelegate.paneles
         self.tableView.reloadData()

@@ -56,12 +56,10 @@ class RegistrationViewController: UIViewController, UIPickerViewDelegate, UIPick
     
     var states = [[String : AnyObject]]()
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        UIApplication.shared.setStatusBarStyle(.lightContent, animated: false)
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardDidShow(_:)), name: NSNotification.Name.UIKeyboardDidShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillBeHidden(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)

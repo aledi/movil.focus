@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import AVFoundation
+import AVKit
 
 let PREGUNTA_CELL = "PreguntaViewCell"
 let PREGUNTA_COMBO_CELL = "PreguntaComboViewCell"
@@ -19,6 +21,9 @@ class PreguntasViewController: UITableViewController {
     var encuestaId: Int?
     var preguntas: [Pregunta]?
     var respuesta: String = ""
+    
+    var videoPlayerController = AVPlayerViewController()
+    var videoplayer: AVPlayer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,20 +49,17 @@ class PreguntasViewController: UITableViewController {
     // MARK: - Video
     // -----------------------------------------------------------------------------------------------------------
     
-    @IBAction func dismissVideoPlayer(_ segue: UIStoryboardSegue) {
-        self.dismissSegueSourceViewController(segue)
-    }
-    
     func presentVideo(_ sender: UIButton) {
-        let navigationController = UIStoryboard(name: "Preguntas", bundle: nil).instantiateViewController(withIdentifier: "Video") as! UINavigationController
-        let moviePlayerController = navigationController.topViewController as! MoviePlayerViewController
-        
         let pregunta = self.preguntas![sender.tag]
         
-        moviePlayerController.videoName = pregunta.video
-        pregunta.didSeeVideo = true
-        
-        self.present(navigationController, animated: true, completion: nil)
+        if let videoURL = URL(string: Controller.videosURL + pregunta.video) {
+            self.videoplayer = AVPlayer(url: videoURL)
+            self.videoPlayerController.player = self.videoplayer
+            self.present(self.videoPlayerController, animated: true, completion: {
+                pregunta.didSeeVideo = true
+                self.videoPlayerController.player?.play()
+            })
+        }
     }
     
     // -----------------------------------------------------------------------------------------------------------
