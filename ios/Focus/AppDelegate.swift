@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import OneSignal
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var paneles: [Panel]?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        OneSignal.initWithLaunchOptions(launchOptions, appId: "b8b1467b-33df-458f-9cc7-f7f6d781560a")
         self.showStoryboard()
         return true
     }
@@ -118,6 +120,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        guard let user = User.currentUser else {
+            return
+        }
+        
         let tokenChars = (deviceToken as NSData).bytes.bindMemory(to: CChar.self, capacity: deviceToken.count)
         var tokenString = ""
         
@@ -126,13 +132,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         let parameters: [String : Any] = [
-            "id" : User.currentUser!.id,
+            "id" : user.id,
             "deviceToken" : tokenString,
             "deviceType" : 1
         ]
         
-        if (self.user!.token == "") {
-            self.user!.token = tokenString
+        if (user.token == "") {
+            user.token = tokenString
             Controller.request(for: .registerDevice, withParameters: parameters, withSuccessHandler: nil, andErrorHandler: nil)
         }
         
