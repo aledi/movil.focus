@@ -115,7 +115,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if (notificationSettings.types != UIUserNotificationType()) {
             application.registerForRemoteNotifications()
         } else {
-            Controller.request(for: .unregisterDevice, withParameters: ["id" : User.currentUser!.id], withSuccessHandler: nil, andErrorHandler: nil)
+            guard let user = User.currentUser else {
+                return
+            }
+            
+            Controller.request(for: .unregisterDevice, withParameters: ["id" : user.id], withSuccessHandler: nil, andErrorHandler: nil)
         }
     }
     
