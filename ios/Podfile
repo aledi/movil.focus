@@ -5,5 +5,6 @@ use_frameworks!
 target 'Focus' do
 
     pod 'Alamofire'
-
+    pod 'OneSignal'
+    
 end
