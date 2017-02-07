@@ -24,11 +24,14 @@ import com.android.focus.R;
 import com.android.focus.authentication.activities.RecoverPasswordActivity;
 import com.android.focus.authentication.activities.RegistrationActivity;
 import com.android.focus.managers.UserPreferencesManager;
+import com.android.focus.messaging.RegistrationIntentService;
 import com.android.focus.model.User;
 import com.android.focus.network.HttpResponseHandler;
 import com.android.focus.network.NetworkManager;
 import com.android.focus.utils.TextUtils;
 import com.android.focus.utils.UIUtils;
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.gson.Gson;
 import com.loopj.android.http.RequestParams;
 
@@ -44,6 +47,7 @@ import static com.android.focus.network.APIConstants.USERNAME;
 public class AuthenticationFragment extends Fragment implements OnClickListener, OnEditorActionListener {
 
     private static final String TAG = AuthenticationFragment.class.getCanonicalName();
+    private static final int PLAY_SERVICES_RESOLUTION_REQUEST = 900;
     public static final String FRAGMENT_TAG = TAG + ".authenticationFragment";
 
     private Activity activity;
@@ -175,6 +179,21 @@ public class AuthenticationFragment extends Fragment implements OnClickListener,
 
         return false;
     }
+
+    private boolean noGooglePlayServices() {
+        GoogleApiAvailability apiAvailability = GoogleApiAvailability.getInstance();
+        int resultCode = apiAvailability.isGooglePlayServicesAvailable(activity);
+
+        if (resultCode != ConnectionResult.SUCCESS) {
+            if (apiAvailability.isUserResolvableError(resultCode)) {
+                apiAvailability.getErrorDialog(activity, resultCode, PLAY_SERVICES_RESOLUTION_REQUEST).show();
+            }
+
+            return true;
+        }
+
+        return false;
+    }
     // endregion
 
     // region Listeners
@@ -234,7 +253,10 @@ public class AuthenticationFragment extends Fragment implements OnClickListener,
                 User.setCurrentUser(user);
                 UserPreferencesManager.saveCurrentUser(user);
 
-                // TODO: Register device token.
+                // Register device token.
+                if (!noGooglePlayServices()) {
+                    activity.startService(new Intent(activity, RegistrationIntentService.class));
+                }
 
                 // Close any authentication activity before starting main activity.
                 Intent intent = new Intent(activity, MainActivity.class);

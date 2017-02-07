@@ -21,6 +21,18 @@
             </intent-filter>
         </receiver>
 
+        <!-- Firebase -->
+        <service
+            android:name=".messaging.FocusInstanceIDService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".messaging.RegistrationIntentService"
+            android:exported="false" />
+
         <!-- Activities -->
         <activity
             android:name=".helpers.activities.SplashScreenActivity"

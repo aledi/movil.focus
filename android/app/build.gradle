@@ -28,8 +28,11 @@ dependencies {
     compile 'com.google.android.gms:play-services-gcm:10.0.1'
     compile 'com.google.android.gms:play-services-location:10.0.1'
     compile 'com.google.code.gson:gson:2.4'
+    compile 'com.google.firebase:firebase-messaging:10.0.1'
     compile 'com.loopj.android:android-async-http:1.4.9'
     compile 'com.onesignal:OneSignal:3.+@aar'
     compile 'com.squareup.picasso:picasso:2.5.2'
     compile 'cz.msebera.android:httpclient:4.4.1.1'
 }
+
+apply plugin: 'com.google.gms.google-services'

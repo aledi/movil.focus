@@ -20,10 +20,12 @@ import static com.android.focus.network.APIConstants.GET_HISTORY;
 import static com.android.focus.network.APIConstants.INVITATION_RESPONE;
 import static com.android.focus.network.APIConstants.PRIVACY_POLICY;
 import static com.android.focus.network.APIConstants.RECOVER_PASSWORD;
+import static com.android.focus.network.APIConstants.REGISTER_DEVICE;
 import static com.android.focus.network.APIConstants.REGISTER_USER;
 import static com.android.focus.network.APIConstants.SAVE_ANSWERS;
 import static com.android.focus.network.APIConstants.SIGN_IN;
 import static com.android.focus.network.APIConstants.START_SURVEY;
+import static com.android.focus.network.APIConstants.UNREGISTER_DEVICE;
 
 /**
  * Manager to perform network operations.
@@ -45,6 +47,14 @@ public class NetworkManager {
 
     public static void registerUser(RequestParams params, AsyncHttpResponseHandler responseHandler) {
         post(REGISTER_USER, params, responseHandler);
+    }
+
+    public static void registerDevice(RequestParams params, AsyncHttpResponseHandler responseHandler) {
+        post(REGISTER_DEVICE, params, responseHandler);
+    }
+
+    public static void unregisterDevice(RequestParams params, AsyncHttpResponseHandler responseHandler) {
+        post(UNREGISTER_DEVICE, params, responseHandler);
     }
 
     public static void privacyPolicy(AsyncHttpResponseHandler responseHandler) {
