@@ -5,6 +5,8 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
 
+import com.onesignal.OneSignal;
+
 /**
  * Base Activity
  */
@@ -18,6 +20,9 @@ public class FocusApp extends Application {
         super.onCreate();
 
         app = this;
+
+        // One Signal.
+        OneSignal.startInit(this).init();
     }
     // endregion
 
