@@ -19,6 +19,7 @@ import android.widget.TextView;
 import android.widget.TextView.OnEditorActionListener;
 import android.widget.Toast;
 
+import com.android.focus.FocusApp;
 import com.android.focus.MainActivity;
 import com.android.focus.R;
 import com.android.focus.authentication.activities.RecoverPasswordActivity;
@@ -30,8 +31,6 @@ import com.android.focus.network.HttpResponseHandler;
 import com.android.focus.network.NetworkManager;
 import com.android.focus.utils.TextUtils;
 import com.android.focus.utils.UIUtils;
-import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.gson.Gson;
 import com.loopj.android.http.RequestParams;
 
@@ -39,6 +38,7 @@ import org.json.JSONObject;
 
 import cz.msebera.android.httpclient.Header;
 
+import static com.android.focus.FocusApp.noGooglePlayServices;
 import static com.android.focus.network.APIConstants.PASSWORD;
 import static com.android.focus.network.APIConstants.STATUS;
 import static com.android.focus.network.APIConstants.SUCCESS;
@@ -47,7 +47,6 @@ import static com.android.focus.network.APIConstants.USERNAME;
 public class AuthenticationFragment extends Fragment implements OnClickListener, OnEditorActionListener {
 
     private static final String TAG = AuthenticationFragment.class.getCanonicalName();
-    private static final int PLAY_SERVICES_RESOLUTION_REQUEST = 900;
     public static final String FRAGMENT_TAG = TAG + ".authenticationFragment";
 
     private Activity activity;
@@ -179,21 +178,6 @@ public class AuthenticationFragment extends Fragment implements OnClickListener,
 
         return false;
     }
-
-    private boolean noGooglePlayServices() {
-        GoogleApiAvailability apiAvailability = GoogleApiAvailability.getInstance();
-        int resultCode = apiAvailability.isGooglePlayServicesAvailable(activity);
-
-        if (resultCode != ConnectionResult.SUCCESS) {
-            if (apiAvailability.isUserResolvableError(resultCode)) {
-                apiAvailability.getErrorDialog(activity, resultCode, PLAY_SERVICES_RESOLUTION_REQUEST).show();
-            }
-
-            return true;
-        }
-
-        return false;
-    }
     // endregion
 
     // region Listeners
@@ -254,7 +238,7 @@ public class AuthenticationFragment extends Fragment implements OnClickListener,
                 UserPreferencesManager.saveCurrentUser(user);
 
                 // Register device token.
-                if (!noGooglePlayServices()) {
+                if (!noGooglePlayServices(activity)) {
                     activity.startService(new Intent(activity, RegistrationIntentService.class));
                 }
 
