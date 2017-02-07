@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.android.focus.MainActivity;
 import com.android.focus.R;
 import com.android.focus.managers.UserPreferencesManager;
+import com.android.focus.messaging.RegistrationIntentService;
 import com.android.focus.model.User;
 import com.android.focus.network.APIConstants;
 import com.android.focus.network.HttpResponseHandler;
@@ -22,6 +23,8 @@ import com.loopj.android.http.RequestParams;
 import org.json.JSONObject;
 
 import cz.msebera.android.httpclient.Header;
+
+import static com.android.focus.FocusApp.noGooglePlayServices;
 
 public class LoadingActivity extends ToolbarActivity {
 
@@ -86,6 +89,11 @@ public class LoadingActivity extends ToolbarActivity {
                 // Save user and init data.
                 User.setCurrentUser(UserPreferencesManager.getCurrentUser());
                 UserPreferencesManager.initData(response);
+
+                // Register device token.
+                if (!noGooglePlayServices(activity)) {
+                    activity.startService(new Intent(activity, RegistrationIntentService.class));
+                }
 
                 // Close any loading activity before starting main activity.
                 Intent intent = new Intent(activity, MainActivity.class);
