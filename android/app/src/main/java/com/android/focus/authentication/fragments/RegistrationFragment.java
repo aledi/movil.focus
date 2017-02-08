@@ -30,6 +30,7 @@ import com.android.focus.FocusApp;
 import com.android.focus.R;
 import com.android.focus.authentication.activities.WelcomeActivity;
 import com.android.focus.managers.UserPreferencesManager;
+import com.android.focus.messaging.RegistrationIntentService;
 import com.android.focus.model.User;
 import com.android.focus.network.HttpResponseHandler;
 import com.android.focus.network.NetworkManager;
@@ -54,6 +55,7 @@ import java.util.List;
 
 import cz.msebera.android.httpclient.Header;
 
+import static com.android.focus.FocusApp.noGooglePlayServices;
 import static com.android.focus.model.User.APELLIDOS;
 import static com.android.focus.model.User.CALLE_NUMERO;
 import static com.android.focus.model.User.COLONIA;
@@ -528,7 +530,10 @@ public class RegistrationFragment extends Fragment implements OnCheckedChangeLis
                 User.setCurrentUser(user);
                 UserPreferencesManager.saveCurrentUser(user);
 
-                // TODO: Register device token.
+                // Register device token.
+                if (!noGooglePlayServices(activity)) {
+                    activity.startService(new Intent(activity, RegistrationIntentService.class));
+                }
 
                 // Close any authentication activity before starting welcome activity.
                 Intent intent = new Intent(activity, WelcomeActivity.class);

@@ -16,7 +16,7 @@ class PrivacyPolicyViewController: UIViewController {
         super.viewDidLoad()
         
         
-        Controller.requestForAction(.PRIVACY_POLICY, withParameters: [:], withSuccessHandler: { (response) in
+        Controller.request(for: .privacyPolicy, withParameters: [:], withSuccessHandler: { (response) in
             if let content = response["content"] as? String {
                 self.contentTextView.text = content
             }
@@ -26,7 +26,7 @@ class PrivacyPolicyViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        self.contentTextView.setContentOffset(CGPointZero, animated: false)
+        self.contentTextView.setContentOffset(CGPoint.zero, animated: false)
     }
     
 }

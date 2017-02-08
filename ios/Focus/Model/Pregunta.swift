@@ -10,12 +10,12 @@ import Foundation
 import UIKit
 
 enum TipoPregunta: Int {
-    case Abierta = 1
-    case Unica = 2
-    case Multiple = 3
-    case Ordenamiento = 4
-    case Matriz = 5
-    case Escala = 6
+    case abierta = 1
+    case unica = 2
+    case multiple = 3
+    case ordenamiento = 4
+    case matriz = 5
+    case escala = 6
 }
 
 class Pregunta {
@@ -68,7 +68,7 @@ class Pregunta {
         self.video = video
         self.didSeeVideo = self.video.isEmpty
         
-        if let url = NSURL(string: Controller.imagesURL + imagen), data = NSData(contentsOfURL: url), image = UIImage(data: data) {
+        if let url = URL(string: Controller.imagesURL + imagen), let data = try? Data(contentsOf: url), let image = UIImage(data: data) {
             self.imagen = image
         }
         

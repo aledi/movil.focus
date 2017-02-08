@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import AVFoundation
+import AVKit
 
 let PREGUNTA_CELL = "PreguntaViewCell"
 let PREGUNTA_COMBO_CELL = "PreguntaComboViewCell"
@@ -20,18 +22,21 @@ class PreguntasViewController: UITableViewController {
     var preguntas: [Pregunta]?
     var respuesta: String = ""
     
+    var videoPlayerController = AVPlayerViewController()
+    var videoplayer: AVPlayer?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableView.registerNib(UINib(nibName: PREGUNTA_CELL, bundle: nil), forCellReuseIdentifier: PREGUNTA_CELL)
-        self.tableView.registerNib(UINib(nibName: PREGUNTA_COMBO_CELL, bundle: nil), forCellReuseIdentifier: PREGUNTA_COMBO_CELL)
-        self.tableView.registerNib(UINib(nibName: PREGUNTA_ESCALA_CELL, bundle: nil), forCellReuseIdentifier: PREGUNTA_ESCALA_CELL)
-        self.tableView.registerNib(UINib(nibName: PREGUNTA_MATRIZ_CELL, bundle: nil), forCellReuseIdentifier: PREGUNTA_MATRIZ_CELL)
+        self.tableView.register(UINib(nibName: PREGUNTA_CELL, bundle: nil), forCellReuseIdentifier: PREGUNTA_CELL)
+        self.tableView.register(UINib(nibName: PREGUNTA_COMBO_CELL, bundle: nil), forCellReuseIdentifier: PREGUNTA_COMBO_CELL)
+        self.tableView.register(UINib(nibName: PREGUNTA_ESCALA_CELL, bundle: nil), forCellReuseIdentifier: PREGUNTA_ESCALA_CELL)
+        self.tableView.register(UINib(nibName: PREGUNTA_MATRIZ_CELL, bundle: nil), forCellReuseIdentifier: PREGUNTA_MATRIZ_CELL)
         
         self.tableView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.dismissKeyboard()
     }
@@ -44,67 +49,64 @@ class PreguntasViewController: UITableViewController {
     // MARK: - Video
     // -----------------------------------------------------------------------------------------------------------
     
-    @IBAction func dismissVideoPlayer(segue: UIStoryboardSegue) {
-        self.dismissSegueSourceViewController(segue)
-    }
-    
-    func presentVideo(sender: UIButton) {
-        let navigationController = UIStoryboard(name: "Preguntas", bundle: nil).instantiateViewControllerWithIdentifier("Video") as! UINavigationController
-        let moviePlayerController = navigationController.topViewController as! MoviePlayerViewController
-        
+    func presentVideo(_ sender: UIButton) {
         let pregunta = self.preguntas![sender.tag]
         
-        moviePlayerController.videoName = pregunta.video
-        pregunta.didSeeVideo = true
-        
-        self.presentViewController(navigationController, animated: true, completion: nil)
+        if let videoURL = URL(string: Controller.videosURL + pregunta.video) {
+            self.videoplayer = AVPlayer(url: videoURL)
+            self.videoPlayerController.player = self.videoplayer
+            self.present(self.videoPlayerController, animated: true, completion: {
+                pregunta.didSeeVideo = true
+                self.videoPlayerController.player?.play()
+            })
+        }
     }
     
     // -----------------------------------------------------------------------------------------------------------
     // MARK: - TableView
     // -----------------------------------------------------------------------------------------------------------
     
-    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "Pregunta \(section + 1)"
     }
     
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return self.preguntas?.count ?? 0
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
     
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
     }
     
-    override func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let pregunta = self.preguntas![indexPath.section]
         
-        if (pregunta.tipo == TipoPregunta.Unica.rawValue && pregunta.asCombo) {
-            let cell = tableView.dequeueReusableCellWithIdentifier(PREGUNTA_COMBO_CELL, forIndexPath: indexPath) as! PreguntaComboViewCell
+        if (pregunta.tipo == TipoPregunta.unica.rawValue && pregunta.asCombo) {
+            let cell = tableView.dequeueReusableCell(withIdentifier: PREGUNTA_COMBO_CELL, for: indexPath) as! PreguntaComboViewCell
             
             cell.pregunta = pregunta
             cell.videoHandler = #selector(self.presentVideo)
             cell.configureForPregunta(indexPath.section)
             
             return cell
-        } else if (pregunta.tipo == TipoPregunta.Matriz.rawValue) {
-            let cell = tableView.dequeueReusableCellWithIdentifier(PREGUNTA_MATRIZ_CELL, forIndexPath: indexPath) as! PreguntaMatrizViewCell
+        } else if (pregunta.tipo == TipoPregunta.matriz.rawValue) {
+            let cell = tableView.dequeueReusableCell(withIdentifier: PREGUNTA_MATRIZ_CELL, for: indexPath) as! PreguntaMatrizViewCell
             
             cell.pregunta = pregunta
             cell.videoHandler = #selector(self.presentVideo)
             cell.configureForPregunta(indexPath.section)
             
             return cell
-        } else if (pregunta.tipo == TipoPregunta.Escala.rawValue) {
-            let cell = tableView.dequeueReusableCellWithIdentifier(PREGUNTA_ESCALA_CELL, forIndexPath: indexPath) as! PreguntaEscalaViewCell
+        } else if (pregunta.tipo == TipoPregunta.escala.rawValue) {
+            let cell = tableView.dequeueReusableCell(withIdentifier: PREGUNTA_ESCALA_CELL, for: indexPath) as! PreguntaEscalaViewCell
             
             cell.pregunta = pregunta
             cell.videoHandler = #selector(self.presentVideo)
@@ -113,11 +115,11 @@ class PreguntasViewController: UITableViewController {
             return cell
         }
         
-        let cell = tableView.dequeueReusableCellWithIdentifier(PREGUNTA_CELL, forIndexPath: indexPath) as! PreguntaViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: PREGUNTA_CELL, for: indexPath) as! PreguntaViewCell
         
         cell.pregunta = pregunta
         cell.videoHandler = #selector(self.presentVideo)
-        cell.configureForPregunta(indexPath.section)
+        cell.configure(for: indexPath.section)
         
         return cell
     }
@@ -126,18 +128,18 @@ class PreguntasViewController: UITableViewController {
     // MARK: - Save Answers
     // -----------------------------------------------------------------------------------------------------------
     
-    @IBAction func doneAnswering(sender: AnyObject) {
+    @IBAction func doneAnswering(_ sender: AnyObject) {
         self.dismissKeyboard()
         self.respuesta = ""
         
         for pregunta in self.preguntas! {
-            if (pregunta.tipo == TipoPregunta.Multiple.rawValue) {
+            if (pregunta.tipo == TipoPregunta.multiple.rawValue) {
                 pregunta.respuesta = ""
                 
                 for i in 0..<pregunta.opciones.count {
                     pregunta.respuesta += pregunta.selectedOptions[i] ? "\(pregunta.opciones[i])&" : ""
                 }
-            } else if (pregunta.tipo == TipoPregunta.Matriz.rawValue) {
+            } else if (pregunta.tipo == TipoPregunta.matriz.rawValue) {
                 if (!pregunta.matrizAnswered) {
                     return self.missingAnswerAlert(pregunta.numPregunta)
                 }
@@ -158,7 +160,7 @@ class PreguntasViewController: UITableViewController {
                 return self.missingAnswerAlert(pregunta.numPregunta)
             }
             
-            if (pregunta.tipo == TipoPregunta.Ordenamiento.rawValue && pregunta.nextOption <= pregunta.opciones.count) {
+            if (pregunta.tipo == TipoPregunta.ordenamiento.rawValue && pregunta.nextOption <= pregunta.opciones.count) {
                 return self.missingOrder(pregunta.numPregunta)
             }
             
@@ -168,39 +170,39 @@ class PreguntasViewController: UITableViewController {
         self.saveAnswers()
     }
     
-    func missingAnswerAlert(numPregunta: Int) {
+    func missingAnswerAlert(_ numPregunta: Int) {
         let alertTitle = "La pregunta \(numPregunta) no ha sido respondida."
         let alertMesssage = "Por favor, responda a todas las preguntas e intente enviar las respuestas nuevamente."
         
-        self.presentAlertWithTitle(alertTitle, withMessage: alertMesssage, withButtonTitles: ["OK"], withButtonStyles: [.Cancel], andButtonHandlers: [nil])
+        self.presentAlertWithTitle(alertTitle, withMessage: alertMesssage, withButtonTitles: ["OK"], withButtonStyles: [.cancel], andButtonHandlers: [nil])
     }
     
-    func missingVideo(numPregunta: Int) {
+    func missingVideo(_ numPregunta: Int) {
         let alertTitle = "El video de la pregunta \(numPregunta) no ha sido visto."
         let alertMesssage = "Por favor, vea el video antes de responder a la pregunta."
         
-        self.presentAlertWithTitle(alertTitle, withMessage: alertMesssage, withButtonTitles: ["OK"], withButtonStyles: [.Cancel], andButtonHandlers: [nil])
+        self.presentAlertWithTitle(alertTitle, withMessage: alertMesssage, withButtonTitles: ["OK"], withButtonStyles: [.cancel], andButtonHandlers: [nil])
     }
     
-    func missingOrder(numPregunta: Int) {
+    func missingOrder(_ numPregunta: Int) {
         let alertTitle = "La pregunta \(numPregunta) no ha sido ordenada."
         let alertMesssage = "Por favor, ordene todas las opciones disponibles."
         
-        self.presentAlertWithTitle(alertTitle, withMessage: alertMesssage, withButtonTitles: ["OK"], withButtonStyles: [.Cancel], andButtonHandlers: [nil])
+        self.presentAlertWithTitle(alertTitle, withMessage: alertMesssage, withButtonTitles: ["OK"], withButtonStyles: [.cancel], andButtonHandlers: [nil])
     }
     
     func saveAnswers() {
-        let parameters: [String : AnyObject] = [
+        let parameters: [String : Any] = [
             "id" : self.responseId!,
             "respuestas" : self.respuesta,
             "panelista" : User.currentUser!.id,
             "encuesta" : self.encuestaId!
         ]
         
-        Controller.requestForAction(.SAVE_ANSWERS, withParameters: parameters, withSuccessHandler: self.successHandler, andErrorHandler: self.errorHandler)
+        Controller.request(for: .saveAnswers, withParameters: parameters, withSuccessHandler: self.successHandler, andErrorHandler: self.errorHandler)
     }
     
-    func successHandler(response: NSDictionary) {
+    func successHandler(_ response: NSDictionary) {
         if (response["status"] as? String != "SUCCESS") {
             return self.errorHandler(response)
         }
@@ -208,24 +210,24 @@ class PreguntasViewController: UITableViewController {
         let alertTitle = "Respuestas Guardadas"
         let alertMesssage = "Gracias por responder la encuesta."
         
-        func firstBlock(action: UIAlertAction) {
-            self.performSegueWithIdentifier("doneAnswering", sender: nil)
+        func firstBlock(_ action: UIAlertAction) {
+            self.performSegue(withIdentifier: "doneAnswering", sender: nil)
         }
         
-        self.presentAlertWithTitle(alertTitle, withMessage: alertMesssage, withButtonTitles: ["OK"], withButtonStyles: [.Cancel], andButtonHandlers: [firstBlock])
+        self.presentAlertWithTitle(alertTitle, withMessage: alertMesssage, withButtonTitles: ["OK"], withButtonStyles: [.cancel], andButtonHandlers: [firstBlock])
     }
     
-    func errorHandler(response: NSDictionary) {
+    func errorHandler(_ response: NSDictionary) {
         let alertTitle = "Error"
         let alertMesssage = "No pudimos guardar tus respuestas en este momento. Intente de nuevo o póngase en contacto."
         
-        func firstBlock(action: UIAlertAction) {
+        func firstBlock(_ action: UIAlertAction) {
             self.saveAnswers()
         }
         
-        self.presentAlertWithTitle(alertTitle, withMessage: alertMesssage, withButtonTitles: ["Reintentar", "OK"], withButtonStyles: [.Default, .Cancel], andButtonHandlers: [firstBlock, nil])
+        self.presentAlertWithTitle(alertTitle, withMessage: alertMesssage, withButtonTitles: ["Reintentar", "OK"], withButtonStyles: [.default, .cancel], andButtonHandlers: [firstBlock, nil])
         
-        print(response["error"])
+        print(response["error"] ?? "")
     }
     
 }

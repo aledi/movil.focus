@@ -32,6 +32,9 @@ public class APIConstants {
     public static final String ESTADO = "estado";
     public static final String RESULTS = "results";
     public static final String HORA_RESPUESTA = "horaRespuesta";
+    public static final String DEVICE_TOKEN = "deviceToken";
+    public static final String DEVICE_TYPE = "deviceType";
+    public static final int ANDROID = 2;
 
     public static final String SUCCESS = "SUCCESS";
     public static final String WRONG_PASSWORD = "WRONG_PASSWORD";

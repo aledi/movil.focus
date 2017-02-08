@@ -19,11 +19,13 @@ import android.widget.TextView;
 import android.widget.TextView.OnEditorActionListener;
 import android.widget.Toast;
 
+import com.android.focus.FocusApp;
 import com.android.focus.MainActivity;
 import com.android.focus.R;
 import com.android.focus.authentication.activities.RecoverPasswordActivity;
 import com.android.focus.authentication.activities.RegistrationActivity;
 import com.android.focus.managers.UserPreferencesManager;
+import com.android.focus.messaging.RegistrationIntentService;
 import com.android.focus.model.User;
 import com.android.focus.network.HttpResponseHandler;
 import com.android.focus.network.NetworkManager;
@@ -36,6 +38,7 @@ import org.json.JSONObject;
 
 import cz.msebera.android.httpclient.Header;
 
+import static com.android.focus.FocusApp.noGooglePlayServices;
 import static com.android.focus.network.APIConstants.PASSWORD;
 import static com.android.focus.network.APIConstants.STATUS;
 import static com.android.focus.network.APIConstants.SUCCESS;
@@ -234,7 +237,10 @@ public class AuthenticationFragment extends Fragment implements OnClickListener,
                 User.setCurrentUser(user);
                 UserPreferencesManager.saveCurrentUser(user);
 
-                // TODO: Register device token.
+                // Register device token.
+                if (!noGooglePlayServices(activity)) {
+                    activity.startService(new Intent(activity, RegistrationIntentService.class));
+                }
 
                 // Close any authentication activity before starting main activity.
                 Intent intent = new Intent(activity, MainActivity.class);

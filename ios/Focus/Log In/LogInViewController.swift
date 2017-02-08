@@ -17,6 +17,10 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     
     var activeField: UITextField?
     
+    override var preferredStatusBarStyle : UIStatusBarStyle {
+        return .lightContent
+    }
+    
     // -----------------------------------------------------------------------------------------------------------
     // MARK: - Lifecycle
     // -----------------------------------------------------------------------------------------------------------
@@ -24,52 +28,51 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        UIApplication.sharedApplication().setStatusBarStyle(.Default, animated: false)
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.keyboardDidShow(_:)), name: UIKeyboardDidShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.keyboardWillBeHidden(_:)), name: UIKeyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardDidShow(_:)), name: NSNotification.Name.UIKeyboardDidShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillBeHidden(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        UIApplication.sharedApplication().setStatusBarStyle(.Default, animated: false)
+        self.setNeedsStatusBarAppearanceUpdate()
     }
     
     // -----------------------------------------------------------------------------------------------------------
     // MARK: - Keyboard
     // -----------------------------------------------------------------------------------------------------------
     
-    func textFieldDidEndEditing(textField: UITextField) {
+    func textFieldDidEndEditing(_ textField: UITextField) {
         self.activeField = nil
     }
     
-    func textFieldDidBeginEditing(textField: UITextField) {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
         self.activeField = textField
     }
     
-    func keyboardDidShow(notification: NSNotification) {
-        if let activeField = self.activeField, keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
+    func keyboardDidShow(_ notification: Notification) {
+        if let activeField = self.activeField, let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
             self.scrollView.contentInset = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyboardSize.height + 10, right: 0.0)
             self.scrollView.scrollIndicatorInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyboardSize.height + 10, right: 0.0)
             var aRect = self.view.frame
             aRect.size.height -= keyboardSize.size.height
             
-            if (!CGRectContainsPoint(aRect, activeField.frame.origin)) {
+            if (!aRect.contains(activeField.frame.origin)) {
                 self.scrollView.scrollRectToVisible(activeField.frame, animated: true)
             }
         }
     }
     
-    func keyboardWillBeHidden(notification: NSNotification) {
-        self.scrollView.contentInset = UIEdgeInsetsZero
-        self.scrollView.scrollIndicatorInsets = UIEdgeInsetsZero
+    func keyboardWillBeHidden(_ notification: Notification) {
+        self.scrollView.contentInset = UIEdgeInsets.zero
+        self.scrollView.scrollIndicatorInsets = UIEdgeInsets.zero
     }
     
     func dismissKeyboard() {
         self.view.endEditing(true)
     }
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if (textField.tag == 10) {
             self.passwordText.becomeFirstResponder()
         } else {
@@ -84,15 +87,15 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     // MARK: - Actions
     // -----------------------------------------------------------------------------------------------------------
     
-    @IBAction func cancelPasswordForgot(segue: UIStoryboardSegue) {
+    @IBAction func cancelPasswordForgot(_ segue: UIStoryboardSegue) {
         self.dismissSegueSourceViewController(segue)
     }
     
-    @IBAction func cancelRegistration(segue: UIStoryboardSegue) {
+    @IBAction func cancelRegistration(_ segue: UIStoryboardSegue) {
         self.dismissSegueSourceViewController(segue)
     }
     
-    @IBAction func doneRegistration(segue: UIStoryboardSegue) {
+    @IBAction func doneRegistration(_ segue: UIStoryboardSegue) {
         self.dismissSegueSourceViewController(segue)
         
         self.usernameText.text = "Carlos"
@@ -101,7 +104,7 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         self.logIn()
     }
     
-    @IBAction func logInAttempt(sender: AnyObject) {
+    @IBAction func logInAttempt(_ sender: AnyObject) {
         self.logIn()
     }
     
@@ -110,24 +113,24 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     // -----------------------------------------------------------------------------------------------------------
     
     func logIn() {
-        let parameters: [String : AnyObject] = [
+        let parameters: [String : Any] = [
             "username" : self.usernameText.text!,
             "password" : self.passwordText.text!
         ]
         
         self.spinner.startAnimating()
         
-        Controller.requestForAction(.LOG_IN, withParameters: parameters, withSuccessHandler: self.successHandler, andErrorHandler: self.errorHandler)
+        Controller.request(for: .logIn, withParameters: parameters, withSuccessHandler: self.successHandler, andErrorHandler: self.errorHandler)
     }
     
-    func successHandler(response: NSDictionary) {
+    func successHandler(_ response: NSDictionary) {
         if (response["status"] as? String == "SUCCESS") {
-            if let id = response["id"] as? Int, username = response["username"] as? String, email = response["email"] as? String, nombre = response["nombre"] as? String, genero = response["genero"] as? Int {
+            if let id = response["id"] as? Int, let username = response["username"] as? String, let email = response["email"] as? String, let nombre = response["nombre"] as? String, let genero = response["genero"] as? Int {
                 let user = User(id: id, username: username, email: email, nombre: nombre, genero: genero)
                 User.saveUser(user)
                 
                 if let user = User.currentUser {
-                    NSUserDefaults.saveUserDefaults(user)
+                    UserDefaults.saveUserDefaults(user)
                 }
             }
             
@@ -165,15 +168,15 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
             
             self.appDelegate.registerForNotifications()
             self.spinner.stopAnimating()
-            self.performSegueWithIdentifier("logIn", sender: self)
+            self.performSegue(withIdentifier: "logIn", sender: self)
         } else {
-            self.presentAlertWithTitle("Usuario o contraseña incorrectos", withMessage: "Verifique su usuario y contraseña", withButtonTitles: ["OK"], withButtonStyles: [.Cancel], andButtonHandlers: [nil])
+            self.presentAlertWithTitle("Usuario o contraseña incorrectos", withMessage: "Verifique su usuario y contraseña", withButtonTitles: ["OK"], withButtonStyles: [.cancel], andButtonHandlers: [nil])
         }
         
         self.spinner.stopAnimating()
     }
     
-    func errorHandler(response: NSDictionary) {
+    func errorHandler(_ response: NSDictionary) {
         self.spinner.stopAnimating()
         var alertTitle = ""
         var alertMessage = ""
@@ -187,12 +190,12 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
             alertMessage = "Nuestro servidor no está disponible por el momento."
         }
         
-        func firstBlock(action: UIAlertAction) {
+        func firstBlock(_ action: UIAlertAction) {
             self.logIn()
         }
         
-        self.presentAlertWithTitle(alertTitle, withMessage: alertMessage, withButtonTitles: ["Reintentar", "OK"], withButtonStyles: [.Default, .Cancel], andButtonHandlers: [firstBlock, nil])
-        print(response["error"])
+        self.presentAlertWithTitle(alertTitle, withMessage: alertMessage, withButtonTitles: ["Reintentar", "OK"], withButtonStyles: [.default, .cancel], andButtonHandlers: [firstBlock, nil])
+        print(response["error"] ?? "")
     }
     
 }

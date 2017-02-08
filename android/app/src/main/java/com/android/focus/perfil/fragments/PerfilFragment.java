@@ -35,6 +35,7 @@ import org.json.JSONObject;
 
 import cz.msebera.android.httpclient.Header;
 
+import static com.android.focus.network.APIConstants.ID;
 import static com.android.focus.network.APIConstants.PANELISTA;
 import static com.android.focus.network.APIConstants.STATUS;
 import static com.android.focus.network.APIConstants.SUCCESS;
@@ -73,6 +74,16 @@ public class PerfilFragment extends Fragment implements OnClickListener {
     private DialogInterface.OnClickListener signOutListener = new DialogInterface.OnClickListener() {
         @Override
         public void onClick(DialogInterface dialog, int which) {
+            // Unregister device token.
+            RequestParams params = new RequestParams();
+            params.put(ID, UserPreferencesManager.getCurrentUserId());
+            NetworkManager.unregisterDevice(params, new HttpResponseHandler() {
+                @Override
+                public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                }
+            });
+
+            // Clear current user.
             UserPreferencesManager.clearCurrentUser();
 
             // Close any Schoolhub activity before starting Welcome activity.

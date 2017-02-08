@@ -40,8 +40,8 @@ class PreguntaViewCell: UITableViewCell, UITextViewDelegate {
     var tipo: TipoPregunta? {
         didSet {
             for button in self.buttons {
-                button.multiSelection = tipo == .Multiple
-                button.ordered = tipo == .Ordenamiento
+                button.multiSelection = tipo == .multiple
+                button.ordered = tipo == .ordenamiento
             }
         }
     }
@@ -58,7 +58,7 @@ class PreguntaViewCell: UITableViewCell, UITextViewDelegate {
     
     var videoHandler: Selector? {
         didSet {
-            self.videoButton.addTarget(nil, action: videoHandler!, forControlEvents: .TouchUpInside)
+            self.videoButton.addTarget(nil, action: videoHandler!, for: .touchUpInside)
         }
     }
     
@@ -66,7 +66,7 @@ class PreguntaViewCell: UITableViewCell, UITextViewDelegate {
     // MARK: - Configure
     // -----------------------------------------------------------------------------------------------------------
     
-    func configureForPregunta(numPregunta: Int) {
+    func configure(for numPregunta: Int) {
         guard let pregunta = self.pregunta else {
             return
         }
@@ -94,14 +94,14 @@ class PreguntaViewCell: UITableViewCell, UITextViewDelegate {
         
         self.preguntaLabel.text = pregunta.pregunta
         
-        if (tipo == .Abierta) {
+        if (tipo == .abierta) {
             self.textViewHeightConstraint.constant = 100
             self.textViewBottomConstraint.constant = 15
             self.textView.layer.borderWidth = 0.5
-            self.textView.layer.borderColor = UIColor.lightGrayColor().CGColor
+            self.textView.layer.borderColor = UIColor.lightGray.cgColor
             self.textView.delegate = self
             self.textView.text = self.pregunta!.respuesta.isEmpty ? "Indique aquí su respuesta..." : self.pregunta!.respuesta
-            self.textView.textColor = self.pregunta!.respuesta.isEmpty ? UIColor.lightGrayColor() : UIColor.blackColor()
+            self.textView.textColor = self.pregunta!.respuesta.isEmpty ? UIColor.lightGray : UIColor.black
             
             for i in 0...19 {
                 self.heightConstraints[i].constant = 0
@@ -121,7 +121,7 @@ class PreguntaViewCell: UITableViewCell, UITextViewDelegate {
                 self.bottomConstraints[i].constant = 8
                 self.labels[i].text = pregunta.opciones[i]
                 self.buttons[i].optionNumber = pregunta.selectedOrder[i]
-                self.buttons[i].selected = pregunta.selectedOptions[i]
+                self.buttons[i].isSelected = pregunta.selectedOptions[i]
                 self.buttons[i].alpha = 1.0
             }
             
@@ -131,7 +131,7 @@ class PreguntaViewCell: UITableViewCell, UITextViewDelegate {
                 self.buttons[i].alpha = 0
             }
             
-            if (tipo == .Ordenamiento) {
+            if (tipo == .ordenamiento) {
                 self.resetBottomConstraint.constant = 8
                 self.resetHeightConstraint.constant = 50
                 self.resetButton.alpha = 1.0
@@ -147,14 +147,14 @@ class PreguntaViewCell: UITableViewCell, UITextViewDelegate {
     // MARK: - Selection
     // -----------------------------------------------------------------------------------------------------------
     
-    @IBAction func selectOption(sender: RadioButton) {
+    @IBAction func selectOption(_ sender: RadioButton) {
         guard let pregunta = self.pregunta else {
             return
         }
         
         var index = 0
         
-        for (i, button) in self.buttons.enumerate() {
+        for (i, button) in self.buttons.enumerated() {
             if (button == sender) {
                 index = i
                 break
@@ -162,27 +162,27 @@ class PreguntaViewCell: UITableViewCell, UITextViewDelegate {
         }
         
         switch (self.tipo!) {
-        case .Abierta:
+        case .abierta:
             break
-        case .Unica:
+        case .unica:
             for button in self.buttons {
-                button.selected = false
+                button.isSelected = false
             }
             
-            sender.selected = true
+            sender.isSelected = true
             
             for i in 0...19 {
-                pregunta.selectedOptions[i] = self.buttons[i].selected
+                pregunta.selectedOptions[i] = self.buttons[i].isSelected
             }
             
             pregunta.respuesta = pregunta.opciones[index]
-        case .Multiple:
-            sender.selected = !sender.selected
-            pregunta.selectedOptions[index] = sender.selected
-        case .Ordenamiento:
-            if (!sender.selected) {
+        case .multiple:
+            sender.isSelected = !sender.isSelected
+            pregunta.selectedOptions[index] = sender.isSelected
+        case .ordenamiento:
+            if (!sender.isSelected) {
                 sender.optionNumber = pregunta.nextOption
-                sender.selected = true
+                sender.isSelected = true
                 pregunta.respuesta += "\(pregunta.opciones[index])&"
                 pregunta.selectedOrder[index] = pregunta.nextOption
                 pregunta.selectedOptions[index] = true
@@ -193,26 +193,26 @@ class PreguntaViewCell: UITableViewCell, UITextViewDelegate {
         }
     }
     
-    @IBAction func resetSelection(sender: AnyObject) {
+    @IBAction func resetSelection(_ sender: AnyObject) {
         self.pregunta?.respuesta = ""
         self.pregunta?.nextOption = 1
         
         for button in self.buttons {
-            button.selected = false
+            button.isSelected = false
         }
     }
     
-    func textViewDidBeginEditing(textView: UITextView) {
-        if (textView.textColor == UIColor.lightGrayColor()) {
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if (textView.textColor == UIColor.lightGray) {
             textView.text = nil
-            textView.textColor = UIColor.blackColor()
+            textView.textColor = UIColor.black
         }
     }
     
-    func textViewDidEndEditing(textView: UITextView) {
+    func textViewDidEndEditing(_ textView: UITextView) {
         if (textView.text.isEmpty) {
             textView.text = "Indique aquí su respuesta..."
-            textView.textColor = UIColor.lightGrayColor()
+            textView.textColor = UIColor.lightGray
             self.pregunta!.respuesta = ""
         } else {
             self.pregunta!.respuesta = textView.text

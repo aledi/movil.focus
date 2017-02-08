@@ -14,34 +14,34 @@ extension UIViewController {
     
     var appDelegate: AppDelegate {
         get {
-            return UIApplication.sharedApplication().delegate as! AppDelegate
+            return UIApplication.shared.delegate as! AppDelegate
         } set {
             
         }
     }
     
-    func dismissSegueSourceViewController(segue: UIStoryboardSegue) {
+    func dismissSegueSourceViewController(_ segue: UIStoryboardSegue) {
         if #available(iOS 9, *) {
             return
         }
         
-        if (!segue.sourceViewController.isBeingDismissed()) {
-            segue.sourceViewController.dismissViewControllerAnimated(true, completion: nil)
+        if (!segue.source.isBeingDismissed) {
+            segue.source.dismiss(animated: true, completion: nil)
         }
     }
     
-    func presentAlertWithTitle(title: String?, withMessage message: String?, withButtonTitles buttonTitles: [String], withButtonStyles styles: [UIAlertActionStyle], andButtonHandlers handlers: [AlertHandler?]) -> UIAlertController {
+    @discardableResult func presentAlertWithTitle(_ title: String?, withMessage message: String?, withButtonTitles buttonTitles: [String], withButtonStyles styles: [UIAlertActionStyle], andButtonHandlers handlers: [AlertHandler?]) -> UIAlertController {
         let alertController = UIAlertController(
             title: title,
             message: message,
-            preferredStyle: .Alert
+            preferredStyle: .alert
         )
         
         for i in 0..<buttonTitles.count {
             alertController.addAction(UIAlertAction(title: buttonTitles[i], style: styles[i], handler: handlers[i]))
         }
         
-        self.presentViewController(alertController, animated: true, completion: nil)
+        self.present(alertController, animated: true, completion: nil)
         return alertController
     }
     

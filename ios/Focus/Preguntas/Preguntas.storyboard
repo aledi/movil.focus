@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="mlM-L3-Inp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="mlM-L3-Inp">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -38,53 +37,6 @@
                 <exit id="xdV-o2-f8F" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1164" y="509"/>
-        </scene>
-        <!--Video-->
-        <scene sceneID="cTW-fz-bQ5">
-            <objects>
-                <viewController id="bIp-UC-lIf" customClass="MoviePlayerViewController" customModule="Focus" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="e8X-rE-2FK"/>
-                        <viewControllerLayoutGuide type="bottom" id="wJ5-eg-3v8"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ME9-62-XoC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Video" id="G8K-NW-mq3">
-                        <barButtonItem key="leftBarButtonItem" title="Cerrar" id="vsR-dm-6EC">
-                            <connections>
-                                <segue destination="pM6-X8-bOK" kind="unwind" identifier="exit" unwindAction="dismissVideoPlayer:" id="pLq-6r-un6"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gSv-oH-Epp" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="pM6-X8-bOK" userLabel="Exit" sceneMemberID="exit"/>
-            </objects>
-            <point key="canvasLocation" x="1164" y="1206"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="XKN-Zu-XdG">
-            <objects>
-                <navigationController storyboardIdentifier="Video" id="ENt-6b-bgW" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mzz-NQ-pgG">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="barTintColor" red="0.12549019610000001" green="0.13725490200000001" blue="0.50980392159999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <textAttributes key="titleTextAttributes">
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </textAttributes>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="bIp-UC-lIf" kind="relationship" relationship="rootViewController" id="gMi-Fs-VBK"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aC6-70-NmW" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="344" y="1206"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="joX-V6-7BQ">
