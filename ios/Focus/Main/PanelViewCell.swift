@@ -13,6 +13,8 @@ class PanelViewCell: UITableViewCell {
     @IBOutlet var nombreLabel: UILabel!
     @IBOutlet var fechaIniLabel: UILabel!
     @IBOutlet var fechaFinLabel: UILabel!
+    @IBOutlet var countView: UIView!
+    @IBOutlet var countLabel: UILabel!
     
     func configure(for panel: Panel) {
         let dateFormatter = DateFormatter()
@@ -25,9 +27,14 @@ class PanelViewCell: UITableViewCell {
         self.accessoryType = .disclosureIndicator
         self.selectionStyle = .default
         
-        if (panel.estado != .accepted) {
+        self.countView.layer.cornerRadius = 12.5
+        self.countView.isHidden = false
+        self.countLabel.text = "\(panel.encuestasPendientes)"
+        
+        if (panel.estado == .pending) {
             self.accessoryType = .detailButton
             self.selectionStyle = .none
+            self.countView.isHidden = true
         } else if (panel.encuestas?.count == 0) {
             self.accessoryType = .none
             self.selectionStyle = .none

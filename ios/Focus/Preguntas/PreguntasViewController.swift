@@ -244,7 +244,7 @@ class PreguntasViewController: UITableViewController {
     // -----------------------------------------------------------------------------------------------------------
     
     func enableInterface(_ enabled: Bool) {
-        self.forgotPasswordButton.isEnabled = enabled
+        self.sendButton.isEnabled = enabled
     }
     
 }
