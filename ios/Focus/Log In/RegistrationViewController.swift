@@ -89,8 +89,9 @@ class RegistrationViewController: UIViewController, UIPickerViewDelegate, UIPick
         
         self.birthdayPicker.addTarget(self, action: #selector(self.dateChanged(_:)), for: .valueChanged)
         self.birthdayPicker.datePickerMode = .date
-        self.birthdayPicker.minimumDate = (calendar as NSCalendar).date(byAdding: .year, value: -100, to: Date(), options: [])
-        self.birthdayPicker.maximumDate = (calendar as NSCalendar).date(byAdding: .year, value: -18, to: Date(), options: [])
+        self.birthdayPicker.minimumDate = calendar.date(byAdding: .year, value: -100, to: Date())
+        self.birthdayPicker.maximumDate = calendar.date(byAdding: .year, value: -18, to: Date())
+        self.birthdayPicker.date = calendar.date(byAdding: .year, value: -21, to: Date())!
         self.birthdayText.inputView = self.birthdayPicker
         
         self.genderPicker.delegate = self
