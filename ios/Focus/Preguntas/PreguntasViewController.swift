@@ -17,6 +17,8 @@ let PREGUNTA_MATRIZ_CELL = "PreguntaMatrizViewCell"
 
 class PreguntasViewController: UITableViewController {
     
+    @IBOutlet var sendButton: UIBarButtonItem!
+    
     var responseId: Int?
     var encuestaId: Int?
     var preguntas: [Pregunta]?
@@ -199,10 +201,14 @@ class PreguntasViewController: UITableViewController {
             "encuesta" : self.encuestaId!
         ]
         
+        self.enableInterface(false)
+        
         Controller.request(for: .saveAnswers, withParameters: parameters, withSuccessHandler: self.successHandler, andErrorHandler: self.errorHandler)
     }
     
     func successHandler(_ response: NSDictionary) {
+        self.enableInterface(true)
+        
         if (response["status"] as? String != "SUCCESS") {
             return self.errorHandler(response)
         }
@@ -218,16 +224,27 @@ class PreguntasViewController: UITableViewController {
     }
     
     func errorHandler(_ response: NSDictionary) {
+        self.enableInterface(true)
+        
         let alertTitle = "Error"
         let alertMesssage = "No pudimos guardar tus respuestas en este momento. Intente de nuevo o póngase en contacto."
         
         func firstBlock(_ action: UIAlertAction) {
+            self.enableInterface(false)
             self.saveAnswers()
         }
         
         self.presentAlertWithTitle(alertTitle, withMessage: alertMesssage, withButtonTitles: ["Reintentar", "OK"], withButtonStyles: [.default, .cancel], andButtonHandlers: [firstBlock, nil])
         
         print(response["error"] ?? "")
+    }
+    
+    // -----------------------------------------------------------------------------------------------------------
+    // MARK: - Helpers
+    // -----------------------------------------------------------------------------------------------------------
+    
+    func enableInterface(_ enabled: Bool) {
+        self.forgotPasswordButton.isEnabled = enabled
     }
     
 }

@@ -12,6 +12,9 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var usernameText: UITextField!
     @IBOutlet var passwordText: UITextField!
+    @IBOutlet var logInButton: UIButton!
+    @IBOutlet var signUpButton: Button!
+    @IBOutlet var forgotPasswordButton: UIButton!
     @IBOutlet var spinner: UIActivityIndicatorView!
     @IBOutlet var scrollView: UIScrollView!
     
@@ -119,6 +122,7 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         ]
         
         self.spinner.startAnimating()
+        self.enableInterface(false)
         
         Controller.request(for: .logIn, withParameters: parameters, withSuccessHandler: self.successHandler, andErrorHandler: self.errorHandler)
     }
@@ -167,17 +171,20 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
             }
             
             self.appDelegate.registerForNotifications()
-            self.spinner.stopAnimating()
+            
             self.performSegue(withIdentifier: "logIn", sender: self)
         } else {
             self.presentAlertWithTitle("Usuario o contraseña incorrectos", withMessage: "Verifique su usuario y contraseña", withButtonTitles: ["OK"], withButtonStyles: [.cancel], andButtonHandlers: [nil])
         }
         
         self.spinner.stopAnimating()
+        self.enableInterface(true)
     }
     
     func errorHandler(_ response: NSDictionary) {
         self.spinner.stopAnimating()
+        self.enableInterface(true)
+        
         var alertTitle = ""
         var alertMessage = ""
         
@@ -196,6 +203,18 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         
         self.presentAlertWithTitle(alertTitle, withMessage: alertMessage, withButtonTitles: ["Reintentar", "OK"], withButtonStyles: [.default, .cancel], andButtonHandlers: [firstBlock, nil])
         print(response["error"] ?? "")
+    }
+    
+    // -----------------------------------------------------------------------------------------------------------
+    // MARK: - Helpers
+    // -----------------------------------------------------------------------------------------------------------
+    
+    func enableInterface(_ enabled: Bool) {
+        self.usernameText.isEnabled = enabled
+        self.passwordText.isEnabled = enabled
+        self.logInButton.isEnabled = enabled
+        self.signUpButton.isEnabled = enabled
+        self.forgotPasswordButton.isEnabled = enabled
     }
     
 }

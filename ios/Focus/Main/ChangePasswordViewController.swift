@@ -14,6 +14,8 @@ class ChangePasswordViewController: UITableViewController {
     @IBOutlet var newPasswordText: UITextField!
     @IBOutlet var confirmPasswordField: UITextField!
     
+    @IBOutlet var sendButton: UIBarButtonItem!
+    
     var loadingAlert: UIAlertController?
     
     // -----------------------------------------------------------------------------------------------------------
@@ -58,11 +60,15 @@ class ChangePasswordViewController: UITableViewController {
             "new" : self.newPasswordText.text!
         ]
         
+        self.enableInterface(false)
         self.loadingAlert = self.presentAlertWithTitle("Espere, por favor...", withMessage: nil, withButtonTitles: [], withButtonStyles: [], andButtonHandlers: [])
+        
         Controller.request(for: .changePassword, withParameters: parameters, withSuccessHandler: self.successHandler, andErrorHandler: self.errorHandler)
     }
     
     func successHandler(_ response: NSDictionary) {
+        self.enableInterface(true)
+        
         self.loadingAlert?.dismiss(animated: false, completion: { 
             guard let status = response["status"] as? String else {
                 return
@@ -88,6 +94,8 @@ class ChangePasswordViewController: UITableViewController {
     }
     
     func errorHandler(_ response: NSDictionary) {
+        self.enableInterface(true)
+        
         self.loadingAlert?.dismiss(animated: false, completion: { 
             var alertTitle = ""
             var alertMessage = ""
@@ -124,6 +132,13 @@ class ChangePasswordViewController: UITableViewController {
         self.oldPasswordText.text = nil
         self.newPasswordText.text = nil
         self.confirmPasswordField.text = nil
+    }
+    
+    func enableInterface(_ enabled: Bool) {
+        self.oldPasswordText.isEnabled = enabled
+        self.newPasswordText.isEnabled = enabled
+        self.confirmPasswordField.isEnabled = enabled
+        self.sendButton.isEnabled = enabled
     }
     
 }
