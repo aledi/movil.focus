@@ -13,6 +13,8 @@ class ForgotPasswordViewController: UITableViewController {
     @IBOutlet var userText: UITextField!
     @IBOutlet var emailText: UITextField!
     
+    @IBOutlet var sendButton: UIBarButtonItem!
+    
     var loadingAlert: UIAlertController?
     
     override var preferredStatusBarStyle : UIStatusBarStyle {
@@ -50,11 +52,15 @@ class ForgotPasswordViewController: UITableViewController {
             "email" : self.emailText.text as AnyObject? ?? ""
         ]
         
+        self.enableInterface(false)
         self.loadingAlert = self.presentAlertWithTitle("Espere, por favor...", withMessage: nil, withButtonTitles: [], withButtonStyles: [], andButtonHandlers: [])
+        
         Controller.request(for: .forgotPassword, withParameters: parameters, withSuccessHandler: self.successHandler, andErrorHandler: self.errorHandler)
     }
     
     func successHandler(_ response: NSDictionary) {
+        self.enableInterface(true)
+        
         self.loadingAlert?.dismiss(animated: false, completion: {
             guard let status = response["status"] as? String else {
                 return
@@ -82,6 +88,8 @@ class ForgotPasswordViewController: UITableViewController {
     }
     
     func errorHandler(_ response: NSDictionary) {
+        self.enableInterface(true)
+        
         self.loadingAlert?.dismiss(animated: false, completion: {
             var alertTitle = ""
             var alertMessage = ""
@@ -116,6 +124,12 @@ class ForgotPasswordViewController: UITableViewController {
     func cleanFields() {
         self.userText.text = nil
         self.emailText.text = nil
+    }
+    
+    func enableInterface(_ enabled: Bool) {
+        self.userText.isEnabled = enabled
+        self.emailText.isEnabled = enabled
+        self.sendButton.isEnabled = enabled
     }
     
 }

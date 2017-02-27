@@ -30,6 +30,9 @@ class RegistrationViewController: UIViewController, UIPickerViewDelegate, UIPick
     @IBOutlet var cityText: UITextField!
     @IBOutlet var postalText: UITextField!
     
+    @IBOutlet var sendButton: UIBarButtonItem!
+    @IBOutlet var noDateButton: UIButton!
+    
     var activeField: UITextField?
     
     var birthdayPicker = UIDatePicker()
@@ -288,6 +291,8 @@ class RegistrationViewController: UIViewController, UIPickerViewDelegate, UIPick
     }
     
     func register() {
+        self.enableInterface(false)
+        
         let formatter = DateFormatter()
         formatter.dateFormat = "YYYY-MM-dd"
         
@@ -324,6 +329,8 @@ class RegistrationViewController: UIViewController, UIPickerViewDelegate, UIPick
     // -----------------------------------------------------------------------------------------------------------
     
     func successHandler(_ response: NSDictionary) {
+        self.enableInterface(true)
+        
         if (response["status"] as? String == "SUCCESS") {
             self.saveUser(response["id"] as! Int)
             self.appDelegate.paneles = []
@@ -337,6 +344,8 @@ class RegistrationViewController: UIViewController, UIPickerViewDelegate, UIPick
     }
     
     func errorHandler(_ response: NSDictionary) {
+        self.enableInterface(true)
+        
         var alertTitle = ""
         var alertMessage = ""
         
@@ -395,6 +404,25 @@ class RegistrationViewController: UIViewController, UIPickerViewDelegate, UIPick
     
     func municipiosForStateAtIndex(_ index: Int) -> [String] {
         return self.states[index]["municipios"] as! [String]
+    }
+    
+    func enableInterface(_ enabled: Bool) {
+        self.usernameText.isEnabled = enabled
+        self.passwordText.isEnabled = enabled
+        self.nameText.isEnabled = enabled
+        self.lastnameText.isEnabled = enabled
+        self.emailText.isEnabled = enabled
+        self.birthdayText.isEnabled = enabled
+        self.genderText.isEnabled = enabled
+        self.educationText.isEnabled = enabled
+        self.streetText.isEnabled = enabled
+        self.numberText.isEnabled = enabled
+        self.coloniaText.isEnabled = enabled
+        self.cityText.isEnabled = enabled
+        self.stateText.isEnabled = enabled
+        self.postalText.isEnabled = enabled
+        self.noDateButton.isEnabled = enabled
+        self.sendButton.isEnabled = enabled
     }
     
 }

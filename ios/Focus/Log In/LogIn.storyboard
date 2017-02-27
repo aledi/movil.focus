@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ysr-db-x1i">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ysr-db-x1i">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -146,8 +145,11 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="forgotPasswordButton" destination="OqW-hR-zU1" id="x7a-Io-QcT"/>
+                        <outlet property="logInButton" destination="9o2-Zr-y2t" id="OnT-qx-lwX"/>
                         <outlet property="passwordText" destination="Hur-U3-hBL" id="iS6-gV-Vdp"/>
                         <outlet property="scrollView" destination="tSh-1O-5Sg" id="4QO-n0-DN7"/>
+                        <outlet property="signUpButton" destination="BcE-aV-yV2" id="D4m-1d-qut"/>
                         <outlet property="spinner" destination="W5U-un-ki4" id="DV1-Bc-Z7e"/>
                         <outlet property="usernameText" destination="aqX-M4-lpv" id="Q12-ii-Afp"/>
                         <segue destination="mbI-nn-iWz" kind="showDetail" identifier="logIn" id="hT8-5g-RVL"/>
@@ -447,10 +449,12 @@
                         <outlet property="genderText" destination="NWz-RX-qZj" id="AEi-MO-XGG"/>
                         <outlet property="lastnameText" destination="yU8-xl-Bbw" id="kzS-k2-0NR"/>
                         <outlet property="nameText" destination="vbW-df-JQ9" id="HCg-ka-nlp"/>
+                        <outlet property="noDateButton" destination="RAS-Kb-KWZ" id="cMh-G0-DUq"/>
                         <outlet property="numberText" destination="Lrr-TA-0Ix" id="XUc-Fs-QNO"/>
                         <outlet property="passwordText" destination="6Kh-Ns-KLQ" id="e17-dR-pIg"/>
                         <outlet property="postalText" destination="WLw-uM-OD7" id="5q8-fj-B0p"/>
                         <outlet property="scrollView" destination="ggt-eq-AWX" id="mgT-JP-eST"/>
+                        <outlet property="sendButton" destination="IQP-Ik-zkR" id="V4S-5n-jSh"/>
                         <outlet property="stateText" destination="J19-TS-dEC" id="x5I-Vi-K5l"/>
                         <outlet property="streetText" destination="pYX-Pu-AfA" id="3lg-8P-z9D"/>
                         <outlet property="usernameText" destination="amr-vJ-2us" id="Ix2-Wj-bN2"/>
@@ -490,10 +494,10 @@
                             <tableViewSection headerTitle="Para recuperar su contraseña, por favor ingrese su nombre de usuario, o el correo electrónico que utilizó para registrarse." footerTitle="La contraseña le será enviada al correo al que está asociada su cuenta." id="xGp-TT-7Ob">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="h8k-uv-W4S">
-                                        <rect key="frame" x="0.0" y="92" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="91.5" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="h8k-uv-W4S" id="yQt-Ih-o56">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Usuario" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B7c-zr-rJB">
@@ -511,10 +515,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="PA1-4t-I15">
-                                        <rect key="frame" x="0.0" y="136" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="135.5" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PA1-4t-I15" id="Bx2-wM-jiU">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Correo" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="crd-YL-KPO">
@@ -549,6 +553,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="emailText" destination="crd-YL-KPO" id="dZn-Ju-4qT"/>
+                        <outlet property="sendButton" destination="iRl-aI-aor" id="Pg5-Ff-kb0"/>
                         <outlet property="userText" destination="B7c-zr-rJB" id="e8t-wW-NzM"/>
                     </connections>
                 </tableViewController>
