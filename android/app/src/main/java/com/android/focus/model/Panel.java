@@ -82,6 +82,21 @@ public class Panel {
     }
     // endregion
 
+    // region Properties
+    public int getPendingSurveysCount() {
+        int count = 0;
+        List<Encuesta> encuestas = getEncuestas();
+
+        for (Encuesta encuesta : encuestas) {
+            if (!encuesta.isContestada()) {
+                count = +1;
+            }
+        }
+
+        return count;
+    }
+    // endregion
+
     // region Utility methods
     public static void setUserPaneles(List<Panel> panels) {
         userPanels = panels;
