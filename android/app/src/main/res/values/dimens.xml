@@ -43,4 +43,5 @@
 
     <!-- Spinner -->
     <dimen name="spinner_margin_right">16dp</dimen>
+    <dimen name="spinner_height">56dp</dimen>
 </resources>

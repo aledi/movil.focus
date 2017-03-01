@@ -3,9 +3,5 @@
     android:id="@android:id/text1"
     style="@style/TextView"
     android:layout_width="match_parent"
-    android:layout_height="56dp"
-    android:background="@drawable/border"
-    android:ellipsize="marquee"
-    android:padding="16dp"
-    android:singleLine="true"
-    android:textAlignment="inherit" />
+    android:layout_height="@dimen/spinner_height"
+    android:padding="16dp"/>

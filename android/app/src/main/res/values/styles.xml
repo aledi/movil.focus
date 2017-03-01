@@ -38,12 +38,20 @@
     </style>
 
     <style name="TextViewTitle" parent="TextView">
+        <item name="android:ellipsize">none</item>
+        <item name="android:singleLine">false</item>
         <item name="android:textColor">@color/blueDark</item>
         <item name="android:textSize">@dimen/font_18sp</item>
     </style>
 
     <style name="TextViewLabel" parent="TextView">
         <item name="android:textColor">@color/grayPrimary</item>
+    </style>
+
+    <style name="TextViewLabelMatrix" parent="TextViewLabel">
+        <item name="android:ellipsize">none</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:singleLine">false</item>
     </style>
 
     <style name="TextViewClickable" parent="TextView">
