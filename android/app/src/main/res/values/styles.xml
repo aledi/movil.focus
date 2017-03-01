@@ -48,6 +48,18 @@
         <item name="android:textColor">@color/grayPrimary</item>
     </style>
 
+    <style name="TextViewLabelMatrix" parent="TextViewLabel">
+        <item name="android:ellipsize">none</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:singleLine">false</item>
+    </style>
+
+    <style name="TextViewSpinner" parent="TextView">
+        <item name="android:ellipsize">none</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:singleLine">false</item>
+    </style>
+
     <style name="TextViewClickable" parent="TextView">
         <item name="android:background">@drawable/ripple_effect</item>
         <item name="android:clickable">true</item>

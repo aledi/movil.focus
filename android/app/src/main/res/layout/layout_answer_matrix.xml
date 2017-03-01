@@ -8,10 +8,12 @@
 
     <TextView
         android:id="@+id/txt_sub_question"
-        style="@style/TextViewLabel"
+        style="@style/TextViewLabelMatrix"
         android:layout_width="0dp"
-        android:layout_height="@dimen/text_view_height"
-        android:layout_weight="1" />
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:minHeight="@dimen/text_view_height" />
 
     <Space
         android:layout_width="16dp"
@@ -19,10 +21,9 @@
 
     <Spinner
         android:id="@+id/spinner_options"
-        style="@style/TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:minWidth="120dp"
-        android:paddingLeft="8dp"
-        android:paddingRight="8dp" />
+        style="@style/Spinner"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:minHeight="@dimen/spinner_min_height" />
 </LinearLayout>
