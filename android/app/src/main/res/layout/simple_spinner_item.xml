@@ -3,5 +3,5 @@
     android:id="@android:id/text1"
     style="@style/TextView"
     android:layout_width="match_parent"
-    android:layout_height="56dp"
+    android:layout_height="@dimen/spinner_height"
     android:padding="16dp"/>
