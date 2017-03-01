@@ -33,6 +33,21 @@
             app:layout_constraintTop_toBottomOf="@id/txt_title" />
 
         <TextView
+            android:id="@+id/txt_count"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/circle"
+            android:contentDescription="@string/image_description"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:visibility="gone"
+            app:layout_constraintRight_toLeftOf="@id/image"
+            app:layout_constraintTop_toBottomOf="@id/txt_title" />
+
+        <TextView
             android:id="@+id/txt_preguntas"
             style="@style/TextViewLabel"
             android:layout_width="0dp"
@@ -45,8 +60,8 @@
 
         <TextView
             android:id="@+id/label_start_date"
-            style="@style/TextViewLabel"
-            android:layout_width="wrap_content"
+            style="@style/TextViewLabelPanel"
+            android:layout_width="65dp"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
             android:text="@string/startDate"
@@ -68,8 +83,8 @@
 
         <TextView
             android:id="@+id/label_end_date"
-            style="@style/TextViewLabel"
-            android:layout_width="wrap_content"
+            style="@style/TextViewLabelPanel"
+            android:layout_width="65dp"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
             android:text="@string/endDate"
