@@ -45,8 +45,8 @@
 
         <TextView
             android:id="@+id/label_start_date"
-            style="@style/TextViewLabel"
-            android:layout_width="wrap_content"
+            style="@style/TextViewLabelPanel"
+            android:layout_width="65dp"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
             android:text="@string/startDate"
@@ -68,8 +68,8 @@
 
         <TextView
             android:id="@+id/label_end_date"
-            style="@style/TextViewLabel"
-            android:layout_width="wrap_content"
+            style="@style/TextViewLabelPanel"
+            android:layout_width="65dp"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
             android:text="@string/endDate"
