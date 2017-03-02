@@ -31,7 +31,7 @@
 
     <!-- Radio Button -->
     <dimen name="radio_button_height">36dp</dimen>
-    <dimen name="radio_button_padding_left">32dp</dimen>
+    <dimen name="radio_button_padding_left">8dp</dimen>
 
     <!-- CheckBox -->
     <dimen name="check_box_padding_left">8dp</dimen>
