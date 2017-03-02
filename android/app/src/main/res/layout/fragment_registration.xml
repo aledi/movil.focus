@@ -165,6 +165,10 @@
                     android:layout_height="@dimen/radio_button_height"
                     android:button="@drawable/ic_radio_on"
                     android:checked="true"
+                    android:paddingEnd="0dp"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="0dp"
+                    android:paddingStart="8dp"
                     android:text="@string/male" />
 
                 <RadioButton
@@ -172,6 +176,10 @@
                     style="@style/RadioButton"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/radio_button_height"
+                    android:paddingEnd="0dp"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="0dp"
+                    android:paddingStart="8dp"
                     android:text="@string/female" />
             </RadioGroup>
 

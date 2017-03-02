@@ -127,7 +127,7 @@
     <!-- Check Box -->
     <style name="CheckBox">
         <item name="android:button">@drawable/ic_check_off</item>
-        <item name="android:minHeight">@dimen/radio_button_height</item>
+        <item name="android:minHeight">@dimen/check_box_height</item>
         <item name="android:paddingLeft">@dimen/check_box_padding_left</item>
         <item name="android:textColor">@color/black</item>
         <item name="android:textSize">@dimen/font_16sp</item>
