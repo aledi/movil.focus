@@ -24,7 +24,7 @@ class PanelViewCell: UITableViewCell {
         self.fechaIniLabel.text = dateFormatter.string(from: panel.fechaInicio as Date).capitalized
         self.fechaFinLabel.text = dateFormatter.string(from: panel.fechaFin as Date).capitalized
         
-        self.accessoryType = .disclosureIndicator
+        self.accessoryType = .none
         self.selectionStyle = .default
         
         self.countView.layer.cornerRadius = 12.5
@@ -35,8 +35,7 @@ class PanelViewCell: UITableViewCell {
             self.accessoryType = .detailButton
             self.selectionStyle = .none
             self.countView.isHidden = true
-        } else if (panel.encuestas?.count == 0) {
-            self.accessoryType = .none
+        } else if (panel.encuestas?.count ?? 0 == 0) {
             self.selectionStyle = .none
         }
     }
