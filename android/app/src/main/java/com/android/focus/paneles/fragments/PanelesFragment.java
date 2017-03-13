@@ -85,8 +85,8 @@ public class PanelesFragment extends Fragment {
         View view = View.inflate(FocusApp.getContext(), R.layout.fragment_encuestas_item, null);
         TextView title = (TextView) view.findViewById(R.id.txt_title);
         title.setText(panel.getNombre());
-        TextView count = (TextView) view.findViewById(R.id.txt_count);
         int pendingSurveysCount = panel.getPendingSurveysCount();
+        TextView count = (TextView) view.findViewById(R.id.txt_count);
         ImageView image = (ImageView) view.findViewById(R.id.image);
         TextView startDate = (TextView) view.findViewById(R.id.txt_start_date);
         startDate.setText(DateUtils.dateFormat(panel.getFechaInicio()));
@@ -100,16 +100,13 @@ public class PanelesFragment extends Fragment {
             return view;
         }
 
+        count.setVisibility(View.VISIBLE);
+        count.setText(String.valueOf(pendingSurveysCount));
+
         if (panel.getEncuestas().isEmpty()) {
             view.setOnClickListener(showNoSurveysDialog(activity));
         } else {
-            image.setImageResource(R.drawable.ic_arrow);
             view.setOnClickListener(getViewPanelListener(panel.getId(), activity));
-        }
-
-        if (pendingSurveysCount > 0) {
-            count.setVisibility(View.VISIBLE);
-            count.setText(String.valueOf(pendingSurveysCount));
         }
 
         return view;
