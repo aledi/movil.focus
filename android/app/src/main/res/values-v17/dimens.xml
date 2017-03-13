@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Radio Button -->
+
+    <!-- Radio Button -->>
     <dimen name="radio_button_padding_left">8dp</dimen>
+
+    <!-- CheckBox -->
+    <dimen name="check_box_padding_left">8dp</dimen>
 </resources>
