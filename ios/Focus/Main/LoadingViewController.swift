@@ -12,10 +12,23 @@ class LoadingViewController: UIViewController {
 
     @IBOutlet var spinner: UIActivityIndicatorView!
     
+    // -----------------------------------------------------------------------------------------------------------
+    // MARK: - Lifecycle
+    // -----------------------------------------------------------------------------------------------------------
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.loadContent()
-        UIApplication.shared.setStatusBarStyle(.default, animated: false)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        UIApplication.shared.statusBarStyle = .default
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        UIApplication.shared.statusBarStyle = .lightContent
     }
     
     func loadContent() {
