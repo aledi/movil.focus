@@ -265,9 +265,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		40FF0D931D37138500ED8A64 /* Focus */ = {
+		40FF0D931D37138500ED8A64 /* Crowd-It */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 40FF0DA61D37138500ED8A64 /* Build configuration list for PBXNativeTarget "Focus" */;
+			buildConfigurationList = 40FF0DA61D37138500ED8A64 /* Build configuration list for PBXNativeTarget "Crowd-It" */;
 			buildPhases = (
 				38E31A350058AF46BB4959FA /* [CP] Check Pods Manifest.lock */,
 				40FF0D901D37138500ED8A64 /* Sources */,
@@ -281,7 +281,7 @@
 			);
 			dependencies = (
 			);
-			name = Focus;
+			name = "Crowd-It";
 			productName = Focus;
 			productReference = 40FF0D941D37138500ED8A64 /* Focus.app */;
 			productType = "com.apple.product-type.application";
@@ -321,7 +321,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				40FF0D931D37138500ED8A64 /* Focus */,
+				40FF0D931D37138500ED8A64 /* Crowd-It */,
 			);
 		};
 /* End PBXProject section */
@@ -590,7 +590,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		40FF0DA61D37138500ED8A64 /* Build configuration list for PBXNativeTarget "Focus" */ = {
+		40FF0DA61D37138500ED8A64 /* Build configuration list for PBXNativeTarget "Crowd-It" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				40FF0DA71D37138500ED8A64 /* Debug */,

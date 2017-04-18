@@ -239,11 +239,11 @@ class ProfileViewController: UITableViewController, UIActivityItemSource, MFMail
     }
     
     func activityViewController(_ activityViewController: UIActivityViewController, itemForActivityType activityType: UIActivityType) -> Any? {
-        return "¡Dale un vistazo a la aplicación de Focus!\n\nhttps://itunes.apple.com/us/app/focus/id1156729510?ls=1&mt=8"
+        return "¡Dale un vistazo a la aplicación de Crowd-It!\n\nhttps://itunes.apple.com/us/app/focus/id1156729510?ls=1&mt=8"
     }
     
     func activityViewController(_ activityViewController: UIActivityViewController, subjectForActivityType activityType: UIActivityType?) -> String {
-        return "Focus"
+        return "Crowd-It"
     }
     
     func rateApp() {
