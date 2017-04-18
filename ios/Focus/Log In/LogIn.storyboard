@@ -12,7 +12,7 @@
         <!--Log In View Controller-->
         <scene sceneID="baF-ou-RKA">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="ysr-db-x1i" customClass="LogInViewController" customModule="Focus" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="ysr-db-x1i" customClass="LogInViewController" customModule="Crowd_It" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="68T-V8-yji"/>
                         <viewControllerLayoutGuide type="bottom" id="zcp-px-vSQ"/>
@@ -41,7 +41,7 @@
                                                     <constraint firstAttribute="width" secondItem="Xbh-et-kZ3" secondAttribute="height" multiplier="3:1" id="tso-zh-PjD"/>
                                                 </constraints>
                                             </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BcE-aV-yV2" customClass="Button" customModule="Focus" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BcE-aV-yV2" customClass="Button" customModule="Crowd_It" customModuleProvider="target">
                                                 <rect key="frame" x="50" y="356.5" width="220" height="40"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -79,7 +79,7 @@
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="19"/>
                                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <state key="normal" title="Iniciar Sesión">
+                                                <state key="normal" title="Iniciar sesión">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
@@ -91,8 +91,8 @@
                                                 <color key="color" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </activityIndicatorView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OqW-hR-zU1">
-                                                <rect key="frame" x="79" y="448.5" width="162" height="30"/>
-                                                <state key="normal" title="¿Olvidó su Contraseña?">
+                                                <rect key="frame" x="80" y="448.5" width="160" height="30"/>
+                                                <state key="normal" title="¿Olvidó su contraseña?">
                                                     <color key="titleColor" red="0.92549019610000005" green="0.19215686269999999" blue="0.27450980390000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
@@ -162,7 +162,7 @@
         <!--Registro-->
         <scene sceneID="Bgg-FM-OcD">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="zsh-8v-Rab" customClass="RegistrationViewController" customModule="Focus" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="zsh-8v-Rab" customClass="RegistrationViewController" customModule="Crowd_It" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PJJ-Ox-eeD"/>
                         <viewControllerLayoutGuide type="bottom" id="AKA-9n-IA9"/>
@@ -485,7 +485,7 @@
         <!--Recuperar-->
         <scene sceneID="myC-78-gEr">
             <objects>
-                <tableViewController id="kf9-JV-OgH" customClass="ForgotPasswordViewController" customModule="Focus" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="kf9-JV-OgH" customClass="ForgotPasswordViewController" customModule="Crowd_It" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="jAG-co-t51">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -608,6 +608,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Logo" width="2803" height="705"/>
+        <image name="Logo" width="946" height="316"/>
     </resources>
 </document>

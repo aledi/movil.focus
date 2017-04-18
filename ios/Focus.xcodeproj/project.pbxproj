@@ -50,6 +50,7 @@
 		40FF0DB01D371F4000ED8A64 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40FF0DAF1D371F4000ED8A64 /* LogInViewController.swift */; };
 		40FF0DFE1D373C6B00ED8A64 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40FF0DFD1D373C6B00ED8A64 /* UIViewController.swift */; };
 		5060CC7BF387C2E77B9ACAD7 /* Pods_Focus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D126240C7D2BA8CFF11AC1B1 /* Pods_Focus.framework */; };
+		A07F0F8D1EA6BCE7004AAD49 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07F0F8C1EA6BCE7004AAD49 /* TableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -102,7 +103,7 @@
 		40E400E31DD547330095488F /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChangePasswordViewController.swift; path = Main/ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		40E7F9BF1D4D353700BCD0DB /* UserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserDefaults.swift; path = Extensions/UserDefaults.swift; sourceTree = "<group>"; };
 		40E7F9C11D4D5A9E00BCD0DB /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = Main/ProfileViewController.swift; sourceTree = "<group>"; };
-		40FF0D941D37138500ED8A64 /* Focus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Focus.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		40FF0D941D37138500ED8A64 /* Focus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Focus.app; path = "Crowd-It.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		40FF0D971D37138500ED8A64 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		40FF0D9E1D37138500ED8A64 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		40FF0DA11D37138500ED8A64 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -112,6 +113,7 @@
 		40FF0DAF1D371F4000ED8A64 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogInViewController.swift; path = "Log In/LogInViewController.swift"; sourceTree = "<group>"; };
 		40FF0DFD1D373C6B00ED8A64 /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewController.swift; path = Extensions/UIViewController.swift; sourceTree = "<group>"; };
 		75F133A753BBCBB3C49761B9 /* Pods-Focus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Focus.release.xcconfig"; path = "Pods/Target Support Files/Pods-Focus/Pods-Focus.release.xcconfig"; sourceTree = "<group>"; };
+		A07F0F8C1EA6BCE7004AAD49 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableViewCell.swift; path = Extensions/TableViewCell.swift; sourceTree = "<group>"; };
 		D126240C7D2BA8CFF11AC1B1 /* Pods_Focus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Focus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E492C13DC6B1D1B621066D0F /* Pods-Focus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Focus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Focus/Pods-Focus.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -241,6 +243,7 @@
 				40E7F9BF1D4D353700BCD0DB /* UserDefaults.swift */,
 				4004146A1D56B899005113D1 /* RadioButton.swift */,
 				40E400E11DD421480095488F /* Button.swift */,
+				A07F0F8C1EA6BCE7004AAD49 /* TableViewCell.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -423,6 +426,7 @@
 				40FF0D981D37138500ED8A64 /* AppDelegate.swift in Sources */,
 				402F247E1DF49FB4004E5EF2 /* PreguntaComboViewCell.swift in Sources */,
 				4053130C1D386F370073751A /* PanelsViewController.swift in Sources */,
+				A07F0F8D1EA6BCE7004AAD49 /* TableViewCell.swift in Sources */,
 				40A8DC341D569E1B0065B734 /* PreguntaViewCell.swift in Sources */,
 				405313051D385ED10073751A /* Controller.swift in Sources */,
 				40FF0DAB1D37143500ED8A64 /* User.swift in Sources */,

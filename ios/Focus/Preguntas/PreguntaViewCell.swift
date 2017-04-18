@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PreguntaViewCell: UITableViewCell, UITextViewDelegate {
+class PreguntaViewCell: TableViewCell, UITextViewDelegate {
 
     @IBOutlet var tituloLabel: UILabel!
     @IBOutlet var tituloHeightConstraint: NSLayoutConstraint!
