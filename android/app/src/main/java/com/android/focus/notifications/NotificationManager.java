@@ -55,7 +55,7 @@ public class NotificationManager {
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context)
                 .setAutoCancel(true)
-                .setColor(resources.getColor(R.color.bluePrimary))
+                .setColor(resources.getColor(R.color.redPrimary))
                 .setContentTitle(resources.getString(R.string.notification_title))
                 .setContentText(message)
                 .setContentIntent(contentIntent)

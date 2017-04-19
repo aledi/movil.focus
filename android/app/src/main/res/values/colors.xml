@@ -3,19 +3,20 @@
     <color name="white">#FFFFFF</color>
     <color name="black">#CC000000</color>
 
-    <color name="text_hint">#4D000000</color>
-    <color name="divider">#A7A7AA</color>
     <color name="background">#EFEFF4</color>
-    <color name="tabs_background">#F6F6F6</color>
+    <color name="divider">#A7A7AA</color>
+    <color name="invalid">#DD7766</color>
     <color name="loader">#50000000</color>
     <color name="state_ripple">#DDDDDD</color>
     <color name="state_selected">#F3F3F3</color>
+    <color name="tabs_background">#F6F6F6</color>
+    <color name="text_hint">#4D000000</color>
 
-    <color name="bluePrimary">#202382</color>
-    <color name="blueDark">#181A63</color>
-    <color name="blueRipple">#101242</color>
-    <color name="grayPrimary">#707070</color>
-    <color name="grayDark">#5C5C5C</color>
-    <color name="grayRipple">#474747</color>
-    <color name="invalid">#DD7766</color>
+    <color name="redPrimary">#EC3146</color>
+    <color name="redDark">#E0152D</color>
+    <color name="redRipple">#BB1125</color>
+
+    <color name="grayPrimary">#5C6770</color>
+    <color name="grayDark">#49525A</color>
+    <color name="grayRipple">#373E43</color>
 </resources>

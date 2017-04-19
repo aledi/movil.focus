@@ -1,28 +1,28 @@
 <resources>
-    <string name="app_name">Focus</string>
+    <string name="app_name">Crowd-It</string>
 
     <!-- Splash -->
-    <string name="copyright">Copyright © 2016 Focus Consulting Group, SA. de C.V.</string>
+    <string name="copyright">Copyright © 2017 Focus Consulting Group, SA. de C.V.</string>
 
     <!-- Authentication -->
     <string name="username">Usuario</string>
     <string name="password">Contraseña</string>
-    <string name="sign_in">Iniciar Sesión</string>
+    <string name="sign_in">Iniciar sesión</string>
     <string name="sign_in_error">Usuario o contraseña incorrectos</string>
 
     <!-- Registration -->
     <string name="sign_up">Registrarse</string>
     <string name="sign_up_error">No se ha podido registrar al usuario. Intente más tarde.</string>
     <string name="register">Registro</string>
-    <string name="user_info">Información del Usuario</string>
-    <string name="general_info">Información General</string>
+    <string name="user_info">Información del usuario</string>
+    <string name="general_info">Información general</string>
     <string name="first_name">Nombre(s)</string>
     <string name="last_name">Apellido(s)</string>
-    <string name="email">Correo Electrónico</string>
+    <string name="email">Correo electrónico</string>
     <string name="genre">Género</string>
     <string name="male">Masculino</string>
     <string name="female">Femenino</string>
-    <string name="birthday">Fecha de Nacimiento</string>
+    <string name="birthday">Fecha de nacimiento</string>
     <string-array name="month_array">
         <item>Enero</item>
         <item>Febrero</item>
@@ -39,7 +39,7 @@
     </string-array>
     <string name="education">Educación</string>
     <string-array name="education_array">
-        <item>Nivel de Educación</item>
+        <item>Nivel de educación</item>
         <item>Primaria</item>
         <item>Secundaria</item>
         <item>Preparatoria o Técnica</item>
@@ -87,24 +87,24 @@
         <item>Yucatan</item>
         <item>Zacatecas</item>
     </string-array>
-    <string name="zip_code">Código Postal</string>
+    <string name="zip_code">Código postal</string>
 
     <!-- Recover Password -->
-    <string name="forgot_password">¿Olvidó su Contraseña?</string>
-    <string name="recover_password">Recuperar Contraseña</string>
+    <string name="forgot_password">¿Olvidó su contraseña?</string>
+    <string name="recover_password">Recuperar contraseña</string>
     <string name="recover_password_title">Para recuperar su contraseña, por favor ingrese su nombre de usuario, o el correo electrónico que utilizó para registrarse.</string>
     <string name="recover_password_footer">La contraseña le será enviada al correo al que está asociada su cuenta.</string>
-    <string name="recover_password_success_title">Envío Exitoso</string>
+    <string name="recover_password_success_title">Envío exitoso</string>
     <string name="recover_password_success_message">Hemos enviado un correo a %s con su contraseña. Si usted no recibe el correo en pocos minutos, por favor revise su bandeja de correon SPAM.</string>
     <string name="recover_password_error">Hubo un error al enviar su petición. Por favor, intente más tarde o póngase en contacto con el servicio de soporte.</string>
-    <string name="recover_password_empty_fields_title">Campos Requeridos</string>
+    <string name="recover_password_empty_fields_title">Campos requeridos</string>
     <string name="recover_password_empty_fields_message">Por favor, ingrese su nombre de usuario o correo electrónico.</string>
     <string name="wrong_user">No hemos encontrado un usuario registrado con los datos proporcionados, Por favor, verifique los datos.</string>
 
     <!-- Welcome -->
     <string name="continuar">Continuar</string>
-    <string name="welcome_to_focus">¡%s a la app de panelistas Focus!</string>
-    <string name="welcome_message_1">Su inscripción al panel Focus ha sido confirmada. A partir de ahora queda %s para participar en nuestros estudios y compartir su opinión</string>
+    <string name="welcome_to_focus">¡%s a la app de panelistas Crowd-It!</string>
+    <string name="welcome_message_1">Su inscripción a Crowd-It ha sido confirmada. A partir de ahora queda %s para participar en nuestros estudios y compartir su opinión</string>
     <string name="welcome_message_2">Tendrá la posibilidad de ganar magníficos premios.</string>
     <string name="welcome_message_3">Pronto llegará la invitación para la primera encuesta. ¡Espérala!</string>
     <string name="welcome_message_4">Opina y gana premios al instante.</string>
@@ -115,7 +115,7 @@
     <string name="welcome_footer_4">focuscg.com.mx</string>
 
     <!-- Loading -->
-    <string name="loading_data">Cargando Datos</string>
+    <string name="loading_data">Cargando datos</string>
     <string name="no_internet_message">Para utilizar la aplicación, su dispositivo debe estar conectado a internet.</string>
     <string name="try_again">Reintentar</string>
 
@@ -123,8 +123,8 @@
     <string name="panels">Paneles</string>
     <string name="startDate">Inicio:\u0020</string>
     <string name="endDate">Fin:\u0020</string>
-    <string name="no_active_panels">Sin Paneles Activos</string>
-    <string name="panel_invitation">Responder Invitación</string>
+    <string name="no_active_panels">Sin paneles activos</string>
+    <string name="panel_invitation">Responder invitación</string>
     <string name="panel_invitation_message">Acepte la invitación para comenzar a participar.</string>
     <string name="panel_invitation_error">Hubo un error al procesar su respuesta. Por favor, inténtelo más tarde.</string>
     <string name="accept">Aceptar</string>
@@ -134,69 +134,69 @@
     <string name="survey">Encuesta</string>
     <string name="surveys">Encuestas</string>
     <string name="done">Terminar</string>
-    <string name="view_video">Ver Video</string>
+    <string name="view_video">Ver video</string>
     <string name="video">Video</string>
     <string name="video_unavailable">Video No Disponible\nPor favor póngase en contacto.</string>
     <string name="text_answer_hint">Indique aquí su respuesta</string>
     <string name="text_answer_combo">Elija su respuesta</string>
-    <string name="reset">REINICIAR</string>
+    <string name="reset">Reiniciar</string>
     <string name="answer">Respuesta:</string>
 
     <!-- Profile -->
     <string name="profile">Perfil</string>
     <string name="user">Usuario</string>
-    <string name="active_panels">Paneles Activos</string>
-    <string name="pending_surveys">Encuestas Pendientes</string>
-    <string name="survey_history">Historial de Encuestas</string>
+    <string name="active_panels">Paneles activos</string>
+    <string name="pending_surveys">Encuestas pendientes</string>
+    <string name="survey_history">Historial de encuestas</string>
     <string name="survey_history_error">No hemos podido cargar los datos.</string>
     <string name="help">Ayuda</string>
-    <string name="faq">Preguntas Frecuentes</string>
-    <string name="send_email">Enviar Correo</string>
+    <string name="faq">Preguntas frecuentes</string>
+    <string name="send_email">Enviar correo</string>
     <string name="send_email_error">Su dispositivo parece no estar configurado para enviar correo.s</string>
     <string name="call_phone">Llamar</string>
     <string name="call_phone_error">No se puede realizar la llamada.</string>
     <string name="other">Otro</string>
     <string name="share">Compartir</string>
     <string name="share_error">No es posible compartir la aplicación por el momento. Intente más tarde.</string>
-    <string name="share_message">¡Dale un vistazo a la aplicación de Focus!\n\nhttps://play.google.com/store/apps/details?id=com.focus.android</string>
+    <string name="share_message">¡Dale un vistazo a la aplicación de Crowd-It!\n\nhttps://play.google.com/store/apps/details?id=com.focus.android</string>
     <string name="rate">Calificar</string>
     <string name="rate_error">No es posible calificar la aplicación por el momento. Intente más tarde.</string>
-    <string name="sign_out">Cerrar Sesión</string>
+    <string name="sign_out">Cerrar sesión</string>
     <string name="sign_out_message">La próxima vez que abra la aplicación se le pedirán sus datos de acceso.</string>
 
     <!-- Change Password -->
-    <string name="change_password">Cambiar Contraseña</string>
-    <string name="current_password">Contraseña Actual</string>
-    <string name="new_password">Nueva Contraseña</string>
-    <string name="confirm_new_password">Confirma Contraseña</string>
+    <string name="change_password">Cambiar contraseña</string>
+    <string name="current_password">Contraseña actual</string>
+    <string name="new_password">Nueva contraseña</string>
+    <string name="confirm_new_password">Confirma contraseña</string>
     <string name="confirm_new_password_error">Los campos de nueva contraseña no coinciden.</string>
-    <string name="change_password_success_title">Cambio Exitoso</string>
+    <string name="change_password_success_title">Cambio exitoso</string>
     <string name="change_password_success_message">Su nueva contraseña ha sido guardada. A partir de este momento, utilícela para iniciar sesión en la aplicación.</string>
     <string name="change_password_error">Hubo un error al intentar cambiar su contraseña. Por favor, intente más tarde o póngase en contacto con el servicio de soporte.</string>
     <string name="wrong_password">Su contraseña actual no coincide con nuestros registros.</string>
 
     <!-- Survey History -->
-    <string name="no_history_survey">Sin Historial</string>
+    <string name="no_history_survey">Sin historial</string>
     <string name="history_survey">Encuesta:</string>
     <string name="history_answered">Respuesta:</string>
     <string name="history_panel">Panel:</string>
     <string name="not_answered">"- - -"</string>
 
     <!-- Toasts -->
-    <string name="no_internet">Sin Conexión A Internet</string>
+    <string name="no_internet">Sin conexión a internet</string>
 
     <!-- Dialogs -->
-    <string name="no_surveys_title">No Hay Encuestas</string>
+    <string name="no_surveys_title">No hay encuestas</string>
     <string name="no_surveys_message">Este panel aún no cuenta con encuestas. Por favor, espere a que una encuesta sea habilitada.</string>
-    <string name="answered_title">Encuesta Contestada</string>
+    <string name="answered_title">Encuesta contestada</string>
     <string name="answered_message">Esta encuensta ya ha sido contestada. Solo se puede contestar una vez.</string>
     <string name="no_answered_title">Atención</string>
     <string name="no_answered_message">Una vez iniciada la encuesta, deberá contestarla completamente. No se podrá salir y regresar de la encuesta, ni contestarla nuevamente.</string>
     <string name="no_answered_button">Contestar</string>
-    <string name="success_save_title">Respuestas Guardadas</string>
+    <string name="success_save_title">Respuestas guardadas</string>
     <string name="success_save_message">Gracias por responder la encuesta.</string>
     <string name="error_save_message">No pudimos guardar tus respuestas en este momento.</string>
-    <string name="server_unavailable_title">Servidor No Disponible</string>
+    <string name="server_unavailable_title">Servidor no disponible</string>
     <string name="server_unavailable_message">Nuestro servidor no está disponible por el momento.</string>
     <string name="error_start_survey_title">Error</string>
     <string name="error_start_survey_message">Por favor, intenta más tarde.</string>
@@ -210,10 +210,9 @@
     <string name="send">Enviar</string>
     <string name="cancel">Cancelar</string>
     <string name="error">Error</string>
-    <string name="server_error">Internal Server Error</string>
 
     <!-- Privacy Policy -->
-    <string name="privacy_policy">Aviso de Privacidad</string>
+    <string name="privacy_policy">Aviso de privacidad</string>
     <string name="privacy_policy_text">En cumplimiento con la Ley Federal de Protección de datos personales en posesión de los particulares, en lo sucesivo \"La Ley\", Focus Estudios Cualitativos SA de CV denominada en delante \"Focus Estudios Cualitativos\", con domicilio en Calle Independencia 233 colonia Centro, San Pedro Garza García, Nuevo León C.P. 66230 con RFC FEC980226G92, es responsable del tratamiento de los datos personales que usted proporcione, así como de su protección, en términos y de conformidad con los principios previstos en \"La Ley\".
         \n\nLos datos personales que usted nos proporcione ya sea directamente, vía telefónica o vía Internet podrán incluir de manera enunciativa, más no limitativa, lo siguiente:
         \n- Datos de Identificación: Su nombre, fecha de nacimiento, edad, nacionalidad.
@@ -229,7 +228,7 @@
         \n\nLe informamos que sus datos personales no serán transferidos a terceros, salvo en el caso de que usted proporcione como referencia a esta empresa. Sin embargo, Focus Estudios Cualitativos hará transferencia de datos personales en el caso de que autoridad competente así lo solicite por mandato judicial.\n</string>
 
     <!-- Notifications -->
-    <string name="notification_title">Encuesta Pendiente</string>
+    <string name="notification_title">Encuesta pendiente</string>
     <string name="notification_text">Recuerda contestar la encuesta %s\u0020</string>
     <string name="notification_text_cont">antes de %s.</string>
 </resources>
