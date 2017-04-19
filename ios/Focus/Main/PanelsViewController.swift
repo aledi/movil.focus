@@ -24,9 +24,6 @@ class PanelsViewController: UITableViewController {
         super.viewDidLoad()
         
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-        
-        UIApplication.shared.setStatusBarStyle(.lightContent, animated: false)
-        
         self.paneles = self.appDelegate.paneles
         self.tableView.reloadData()
     }

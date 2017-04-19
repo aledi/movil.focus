@@ -15,14 +15,14 @@ class WelcomeViewController: UIViewController {
     @IBOutlet var salutLabel: UILabel!
     @IBOutlet var firstParagraphLabel: UILabel!
     
-    let firstPart = "Su inscripción al panel Focus ha sido confirmada. A partir de ahora queda"
+    let firstPart = "Su inscripción a Crowd-It ha sido confirmada. A partir de ahora queda"
     let secondPart = "para participar en nuestros estudios y compartir su opinión."
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.navigationItem.title = (User.currentUser?.isMale ?? true) ? "Bienvenido" : "Bienvenida"
-        self.welcomeLabel.text = "¡\(self.navigationItem.title!) a la app de panelistas Focus!"
+        self.welcomeLabel.text = "¡\(self.navigationItem.title!) a la app de panelistas Crowd-It!"
         self.firstParagraphLabel.text = (User.currentUser?.isMale ?? true) ? "\(self.firstPart) registrado \(self.secondPart)" : "\(self.firstPart) registrada \(self.secondPart)"
         
         var salut = (User.currentUser?.isMale ?? true) ? "Estimado" : "Estimada"

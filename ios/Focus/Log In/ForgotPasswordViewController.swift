@@ -17,18 +17,9 @@ class ForgotPasswordViewController: UITableViewController {
     
     var loadingAlert: UIAlertController?
     
-    override var preferredStatusBarStyle : UIStatusBarStyle {
-        return .lightContent
-    }
-    
     // -----------------------------------------------------------------------------------------------------------
     // MARK: - Lifecycle
     // -----------------------------------------------------------------------------------------------------------
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.setNeedsStatusBarAppearanceUpdate()
-    }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
