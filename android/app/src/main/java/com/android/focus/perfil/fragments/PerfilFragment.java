@@ -245,7 +245,7 @@ public class PerfilFragment extends Fragment implements OnClickListener {
                     return;
                 }
 
-                showError(getString(R.string.server_error));
+                showError(getString(R.string.server_unavailable_title));
             }
         });
     }
