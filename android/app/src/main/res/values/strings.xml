@@ -1,8 +1,8 @@
 <resources>
-    <string name="app_name">Focus</string>
+    <string name="app_name">Crowd-It</string>
 
     <!-- Splash -->
-    <string name="copyright">Copyright © 2016 Focus Consulting Group, SA. de C.V.</string>
+    <string name="copyright">Copyright © 2016 Crowd-It Consulting Group, SA. de C.V.</string>
 
     <!-- Authentication -->
     <string name="username">Usuario</string>
@@ -103,8 +103,8 @@
 
     <!-- Welcome -->
     <string name="continuar">Continuar</string>
-    <string name="welcome_to_focus">¡%s a la app de panelistas Focus!</string>
-    <string name="welcome_message_1">Su inscripción al panel Focus ha sido confirmada. A partir de ahora queda %s para participar en nuestros estudios y compartir su opinión</string>
+    <string name="welcome_to_focus">¡%s a la app de panelistas Crowd-It!</string>
+    <string name="welcome_message_1">Su inscripción al panel Crowd-It ha sido confirmada. A partir de ahora queda %s para participar en nuestros estudios y compartir su opinión</string>
     <string name="welcome_message_2">Tendrá la posibilidad de ganar magníficos premios.</string>
     <string name="welcome_message_3">Pronto llegará la invitación para la primera encuesta. ¡Espérala!</string>
     <string name="welcome_message_4">Opina y gana premios al instante.</string>
@@ -158,7 +158,7 @@
     <string name="other">Otro</string>
     <string name="share">Compartir</string>
     <string name="share_error">No es posible compartir la aplicación por el momento. Intente más tarde.</string>
-    <string name="share_message">¡Dale un vistazo a la aplicación de Focus!\n\nhttps://play.google.com/store/apps/details?id=com.focus.android</string>
+    <string name="share_message">¡Dale un vistazo a la aplicación de Crowd-It!\n\nhttps://play.google.com/store/apps/details?id=com.focus.android</string>
     <string name="rate">Calificar</string>
     <string name="rate_error">No es posible calificar la aplicación por el momento. Intente más tarde.</string>
     <string name="sign_out">Cerrar Sesión</string>
@@ -214,7 +214,7 @@
 
     <!-- Privacy Policy -->
     <string name="privacy_policy">Aviso de Privacidad</string>
-    <string name="privacy_policy_text">En cumplimiento con la Ley Federal de Protección de datos personales en posesión de los particulares, en lo sucesivo \"La Ley\", Focus Estudios Cualitativos SA de CV denominada en delante \"Focus Estudios Cualitativos\", con domicilio en Calle Independencia 233 colonia Centro, San Pedro Garza García, Nuevo León C.P. 66230 con RFC FEC980226G92, es responsable del tratamiento de los datos personales que usted proporcione, así como de su protección, en términos y de conformidad con los principios previstos en \"La Ley\".
+    <string name="privacy_policy_text">En cumplimiento con la Ley Federal de Protección de datos personales en posesión de los particulares, en lo sucesivo \"La Ley\", Crowd-It Estudios Cualitativos SA de CV denominada en delante \"Crowd-It Estudios Cualitativos\", con domicilio en Calle Independencia 233 colonia Centro, San Pedro Garza García, Nuevo León C.P. 66230 con RFC FEC980226G92, es responsable del tratamiento de los datos personales que usted proporcione, así como de su protección, en términos y de conformidad con los principios previstos en \"La Ley\".
         \n\nLos datos personales que usted nos proporcione ya sea directamente, vía telefónica o vía Internet podrán incluir de manera enunciativa, más no limitativa, lo siguiente:
         \n- Datos de Identificación: Su nombre, fecha de nacimiento, edad, nacionalidad.
         \n- Datos de Contacto: Domicilio, correo electrónico y números telefónicos.
@@ -226,7 +226,7 @@
         \n\nEn el caso de que usted quiera limitar el uso o divulgación de sus datos personales, evitando recibir publicidad, promociones o evitar algún otro contacto de cualquier naturaleza usted podrá ponerse en contacto con nuestra área encargada del tratamiento de sus datos personales.
         \n\nPara el caso de que usted quisiera Acceder, Rectificar, Cancelar u Oponerse (Derechos ARCO) al tratamiento de los datos y revocar el consentimiento que para tal fin nos haya otorgado, tácita o expresamente, lo podrá realizar en cualquier momento, para ello es necesario que usted presente solicitud la cual debe contener: Nombre del titular y domicilio o medio para comunicarle respuesta, documento que acredite su identidad, descripción del derecho que pretende ejercer y cualquier otro dato que facilite la localización de los datos. Una vez presentada esta solicitud, se le dará respuesta en un plazo no mayor a 20 días a través del medio que proporcionó para contactarlo.
         \n\nEl área responsable de resguardar sus datos personales, así como dar continuidad a la solicitud que usted realice en cuanto a sus derechos ARCO o a limitar el uso y divulgación de sus datos, es el área de sistemas, la cual pone a su disposición el siguiente correo: focus@focuscg.com.mx con la finalidad de atender sus peticiones relacionadas al tratamiento de sus datos personales.
-        \n\nLe informamos que sus datos personales no serán transferidos a terceros, salvo en el caso de que usted proporcione como referencia a esta empresa. Sin embargo, Focus Estudios Cualitativos hará transferencia de datos personales en el caso de que autoridad competente así lo solicite por mandato judicial.\n</string>
+        \n\nLe informamos que sus datos personales no serán transferidos a terceros, salvo en el caso de que usted proporcione como referencia a esta empresa. Sin embargo, Crowd-It Estudios Cualitativos hará transferencia de datos personales en el caso de que autoridad competente así lo solicite por mandato judicial.\n</string>
 
     <!-- Notifications -->
     <string name="notification_title">Encuesta Pendiente</string>
