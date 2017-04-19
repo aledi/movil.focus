@@ -1,9 +1,9 @@
 <resources>
     <!-- Base application theme -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="colorAccent">@color/bluePrimary</item>
-        <item name="colorPrimary">@color/bluePrimary</item>
-        <item name="colorPrimaryDark">@color/blueDark</item>
+        <item name="colorAccent">@color/redPrimary</item>
+        <item name="colorPrimary">@color/redPrimary</item>
+        <item name="colorPrimaryDark">@color/redDark</item>
         <item name="android:windowBackground">@color/background</item>
     </style>
 
@@ -24,7 +24,7 @@
 
     <style name="TextViewPrimary">
         <item name="android:gravity">center</item>
-        <item name="android:textColor">@color/blueDark</item>
+        <item name="android:textColor">@color/redDark</item>
         <item name="android:textSize">@dimen/font_24sp</item>
         <item name="android:textStyle">bold</item>
     </style>
@@ -38,7 +38,7 @@
     <style name="TextViewTitle" parent="TextView">
         <item name="android:ellipsize">none</item>
         <item name="android:singleLine">false</item>
-        <item name="android:textColor">@color/blueDark</item>
+        <item name="android:textColor">@color/redDark</item>
         <item name="android:textSize">@dimen/font_18sp</item>
     </style>
 
@@ -66,7 +66,7 @@
     <style name="TextViewBoldClickable" parent="TextView">
         <item name="android:background">@drawable/ripple_effect</item>
         <item name="android:clickable">true</item>
-        <item name="android:textColor">@color/blueDark</item>
+        <item name="android:textColor">@color/redDark</item>
         <item name="android:textStyle">bold</item>
     </style>
 
