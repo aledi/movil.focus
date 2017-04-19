@@ -236,7 +236,7 @@
                                                     <outlet property="delegate" destination="zsh-8v-Rab" id="iUU-h9-B2J"/>
                                                 </connections>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" tag="60" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Fecha de Nacimiento" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6MU-7k-Hjh">
+                                            <textField opaque="NO" clipsSubviews="YES" tag="60" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Fecha de nacimiento" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6MU-7k-Hjh">
                                                 <rect key="frame" x="25" y="382.5" width="165" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
@@ -305,7 +305,7 @@
                                                     <outlet property="delegate" destination="zsh-8v-Rab" id="y0k-bt-HkQ"/>
                                                 </connections>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" tag="130" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Código Postal" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WLw-uM-OD7">
+                                            <textField opaque="NO" clipsSubviews="YES" tag="130" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Código postal" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WLw-uM-OD7">
                                                 <rect key="frame" x="25" y="773" width="270" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="go"/>
@@ -608,6 +608,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Logo" width="946" height="316"/>
+        <image name="Logo" width="400" height="101"/>
     </resources>
 </document>

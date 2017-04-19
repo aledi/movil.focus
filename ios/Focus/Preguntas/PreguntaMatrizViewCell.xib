@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="PreguntaMatrizViewCell" rowHeight="1632" id="D6j-a4-Rs0" customClass="PreguntaMatrizViewCell" customModule="Focus" customModuleProvider="target">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="PreguntaMatrizViewCell" rowHeight="1632" id="D6j-a4-Rs0" customClass="PreguntaMatrizViewCell" customModule="Crowd_It" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="486" height="1648"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="D6j-a4-Rs0" id="BYw-M6-9od">
@@ -35,7 +35,7 @@
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <state key="normal" title="Ver Video">
+                        <state key="normal" title="Ver video">
                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>
                     </button>
