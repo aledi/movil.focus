@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PreguntaMatrizViewCell: UITableViewCell, UIPickerViewDelegate, UIPickerViewDataSource {
+class PreguntaMatrizViewCell: TableViewCell, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet var tituloLabel: UILabel!
     @IBOutlet var tituloHeightConstraint: NSLayoutConstraint!

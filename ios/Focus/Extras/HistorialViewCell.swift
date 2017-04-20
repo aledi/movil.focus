@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HistorialViewCell: UITableViewCell {
+class HistorialViewCell: TableViewCell {
     
     @IBOutlet var encuestaLabel: UILabel!
     @IBOutlet var fechaRespuestaLabel: UILabel!

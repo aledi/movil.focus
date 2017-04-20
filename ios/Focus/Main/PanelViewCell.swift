@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PanelViewCell: UITableViewCell {
+class PanelViewCell: TableViewCell {
     
     @IBOutlet var nombreLabel: UILabel!
     @IBOutlet var fechaIniLabel: UILabel!

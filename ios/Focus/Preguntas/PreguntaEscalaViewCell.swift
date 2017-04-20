@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PreguntaEscalaViewCell: UITableViewCell {
+class PreguntaEscalaViewCell: TableViewCell {
 
     @IBOutlet var tituloLabel: UILabel!
     @IBOutlet var tituloHeightConstraint: NSLayoutConstraint!

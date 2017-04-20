@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="4MF-SS-dYG">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="4MF-SS-dYG">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="barTintColor" red="0.12549019610000001" green="0.13725490200000001" blue="0.51372549020000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.92549019610000005" green="0.19215686269999999" blue="0.27450980390000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
@@ -34,7 +34,7 @@
         <!--Bienvenido-->
         <scene sceneID="bte-Wv-6gd">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="lwk-43-vns" customClass="WelcomeViewController" customModule="Focus" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="lwk-43-vns" customClass="WelcomeViewController" customModule="Crowd_It" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="D5i-Cy-fiM"/>
                         <viewControllerLayoutGuide type="bottom" id="cEN-SY-KFR"/>
@@ -51,7 +51,7 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e4g-5q-XgC">
                                                 <rect key="frame" x="25" y="300.5" width="325" height="81.5"/>
-                                                <string key="text">Su inscripción al panel Focus ha sido confirmada. A partir de ahora queda registrado para participar en nuestros estudios y compartir su opinión.</string>
+                                                <string key="text">Su inscripción a Crowd-It ha sido confirmada. A partir de ahora queda registrado para participar en nuestros estudios y compartir su opinión.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -69,7 +69,7 @@
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Natalia Barbosa Atención al Panelistas atencion@focuscg.com.mx focuscg.com.mx" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Noj-If-PVn">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Natalia Barbosa Atención al Panelista atencion@focuscg.com.mx focuscg.com.mx" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Noj-If-PVn">
                                                 <rect key="frame" x="142" y="554.5" width="208" height="82"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -85,7 +85,7 @@
                                                     <segue destination="1YZ-ub-mHi" kind="show" id="hK0-Ms-1dc"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¡Bienvenido a la app de panelistas Focus!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UF1-66-QJu">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¡Bienvenido a la app de panelistas Crowd-It!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UF1-66-QJu">
                                                 <rect key="frame" x="25" y="160" width="325" height="60"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -169,7 +169,7 @@
         <!--Aviso de Privacidad-->
         <scene sceneID="inC-Qp-5UR">
             <objects>
-                <viewController storyboardIdentifier="PrivacyPolicy" automaticallyAdjustsScrollViewInsets="NO" id="1YZ-ub-mHi" customClass="PrivacyPolicyViewController" customModule="Focus" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PrivacyPolicy" automaticallyAdjustsScrollViewInsets="NO" id="1YZ-ub-mHi" customClass="PrivacyPolicyViewController" customModule="Crowd_It" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Nke-l3-kLJ"/>
                         <viewControllerLayoutGuide type="bottom" id="cpR-hu-IoP"/>
@@ -181,7 +181,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="wFX-Oh-F7w">
                                 <rect key="frame" x="15" y="72" width="345" height="590"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <string key="text">En cumplimiento con la Ley Federal de Protección de datos personales en posesión de los particulares, en lo sucesivo "La Ley", Focus Estudios Cualitativos SA de CV denominada en delante "Focus Estudios Cualitativos", con domicilio en Calle Independencia 233 colonia Centro, San Pedro Garza García, nuevo León C.P. 66230 con RFC FEC980226G92, es responsable del tratamiento de los datos personales que usted proporcione, así como de su protección, en términos y de conformidad con los principios previstos en "La Ley".
+                                <mutableString key="text">En cumplimiento con la Ley Federal de Protección de datos personales en posesión de los particulares, en lo sucesivo "La Ley", Focus Estudios Cualitativos SA de CV denominada en delante "Focus Estudios Cualitativos", con domicilio en Calle Independencia 233 colonia Centro, San Pedro Garza García, nuevo León C.P. 66230 con RFC FEC980226G92, es responsable del tratamiento de los datos personales que usted proporcione, así como de su protección, en términos y de conformidad con los principios previstos en "La Ley".
 
 Los datos personales que usted nos proporcione ya sea directamente, vía telefónica o vía Internet podrán incluir de manera enunciativa, más no limitativa, lo siguiente:
 - Datos de Identificación: Su nombre, fecha de nacimiento, edad, nacionalidad.
@@ -201,7 +201,7 @@ Para el caso de que usted quisiera Acceder, Rectificar, Cancelar u Oponerse (Der
 
 El área responsable de resguardar sus datos personales, así como dar continuidad a la solicitud que usted realice en cuanto a sus derechos ARCO o a limitar el uso y divulgación de sus datos, es el área de sistemas, la cual pone a su disposición el siguiente correo: focus@focuscg.com.mx con la finalidad de atender sus peticiones relacionadas al tratamiento de sus datos personales.
 
-Le informamos que sus datos personales no serán transferidos a terceros, salvo en el caso de que usted proporcione como referencia a esta empresa. Sin embargo, Focus Estudios Cualitativos hará transferencia de datos personales en el caso de que autoridad competente así lo solicite por mandato judicial.</string>
+Le informamos que sus datos personales no serán transferidos a terceros, salvo en el caso de que usted proporcione como referencia a esta empresa. Sin embargo, Focus Estudios Cualitativos hará transferencia de datos personales en el caso de que autoridad competente así lo solicite por mandato judicial.</mutableString>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -225,6 +225,6 @@ Le informamos que sus datos personales no serán transferidos a terceros, salvo 
         </scene>
     </scenes>
     <resources>
-        <image name="Logo" width="400" height="120"/>
+        <image name="Logo" width="946" height="316"/>
     </resources>
 </document>

@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="PreguntaViewCell" rowHeight="1796" id="yoL-q3-JOK" customClass="PreguntaViewCell" customModule="Focus" customModuleProvider="target">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="PreguntaViewCell" rowHeight="1796" id="yoL-q3-JOK" customClass="PreguntaViewCell" customModule="Crowd_It" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="486" height="1812"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yoL-q3-JOK" id="KwG-mW-Vyz">
-                <rect key="frame" x="0.0" y="0.0" width="486" height="1811"/>
+                <rect key="frame" x="0.0" y="0.0" width="486" height="1811.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Título" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W1F-lT-UC9">
@@ -25,18 +24,18 @@
                             <constraint firstAttribute="height" constant="60" id="9zl-1B-06H"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                        <color key="textColor" red="0.12549019610000001" green="0.13725490200000001" blue="0.51372549020000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="textColor" red="0.92549019610000005" green="0.19215686269999999" blue="0.27450980390000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Xk-My-ejn">
                         <rect key="frame" x="25" y="90" width="436" height="40"/>
-                        <color key="backgroundColor" red="0.12549019610000001" green="0.13725490200000001" blue="0.50980392159999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.92549019610000005" green="0.19215686269999999" blue="0.27450980390000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="40" id="RJY-7l-uVG"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <state key="normal" title="Ver Video">
+                        <state key="normal" title="Ver video">
                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>
                     </button>
@@ -49,7 +48,7 @@
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pregunta" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xfQ-OW-c8q">
                         <rect key="frame" x="23" y="360" width="440" height="103"/>
                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                        <color key="textColor" red="0.12549019610000001" green="0.13725490200000001" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="textColor" red="0.92549019610000005" green="0.19215686269999999" blue="0.27450980390000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Indique aquí su respuesta..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="00a-tG-C9Y">
@@ -71,7 +70,7 @@
                                 <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MBg-tV-naU" customClass="RadioButton" customModule="Focus" customModuleProvider="target">
+                            <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MBg-tV-naU" customClass="RadioButton" customModule="Crowd_It" customModuleProvider="target">
                                 <rect key="frame" x="415" y="12" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="Egc-hU-YY2"/>
@@ -106,7 +105,7 @@
                                 <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hZE-7l-AZV" customClass="RadioButton" customModule="Focus" customModuleProvider="target">
+                            <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hZE-7l-AZV" customClass="RadioButton" customModule="Crowd_It" customModuleProvider="target">
                                 <rect key="frame" x="415" y="12" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="Isf-G4-2T0"/>
@@ -141,7 +140,7 @@
                                 <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5cc-EG-twg" customClass="RadioButton" customModule="Focus" customModuleProvider="target">
+                            <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5cc-EG-twg" customClass="RadioButton" customModule="Crowd_It" customModuleProvider="target">
                                 <rect key="frame" x="415" y="12" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="1bx-QQ-eCy"/>
@@ -176,7 +175,7 @@
                                 <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9TH-2a-yJS" customClass="RadioButton" customModule="Focus" customModuleProvider="target">
+                            <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9TH-2a-yJS" customClass="RadioButton" customModule="Crowd_It" customModuleProvider="target">
                                 <rect key="frame" x="415" y="12" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="25" id="6qR-LW-dFX"/>
@@ -211,7 +210,7 @@
                                 <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iSW-Do-937" customClass="RadioButton" customModule="Focus" customModuleProvider="target">
+                            <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iSW-Do-937" customClass="RadioButton" customModule="Crowd_It" customModuleProvider="target">
                                 <rect key="frame" x="415" y="12" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="25" id="51J-aY-pBa"/>
@@ -246,7 +245,7 @@
                                 <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qo5-XQ-Yjc" customClass="RadioButton" customModule="Focus" customModuleProvider="target">
+                            <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qo5-XQ-Yjc" customClass="RadioButton" customModule="Crowd_It" customModuleProvider="target">
                                 <rect key="frame" x="415" y="12" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="JaR-zT-vSm"/>
@@ -281,7 +280,7 @@
                                 <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A51-fR-gkS" customClass="RadioButton" customModule="Focus" customModuleProvider="target">
+                            <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A51-fR-gkS" customClass="RadioButton" customModule="Crowd_It" customModuleProvider="target">
                                 <rect key="frame" x="415" y="12" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="ABo-lU-xoT"/>
@@ -316,7 +315,7 @@
                                 <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JPj-st-vm7" customClass="RadioButton" customModule="Focus" customModuleProvider="target">
+                            <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JPj-st-vm7" customClass="RadioButton" customModule="Crowd_It" customModuleProvider="target">
                                 <rect key="frame" x="415" y="12" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="25" id="WD5-Nw-KB5"/>
@@ -351,7 +350,7 @@
                                 <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HP9-Zn-5zf" customClass="RadioButton" customModule="Focus" customModuleProvider="target">
+                            <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HP9-Zn-5zf" customClass="RadioButton" customModule="Crowd_It" customModuleProvider="target">
                                 <rect key="frame" x="415" y="12" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="25" id="3Eo-7q-4vf"/>
@@ -386,7 +385,7 @@
                                 <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X9j-uq-0fF" customClass="RadioButton" customModule="Focus" customModuleProvider="target">
+                            <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X9j-uq-0fF" customClass="RadioButton" customModule="Crowd_It" customModuleProvider="target">
                                 <rect key="frame" x="415" y="12" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="TTy-Mf-Sr2"/>
@@ -421,7 +420,7 @@
                                 <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Obp-yG-eCW" customClass="RadioButton" customModule="Focus" customModuleProvider="target">
+                            <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Obp-yG-eCW" customClass="RadioButton" customModule="Crowd_It" customModuleProvider="target">
                                 <rect key="frame" x="415" y="13" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="25" id="hFM-ht-cni"/>
@@ -456,7 +455,7 @@
                                 <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lzi-y9-7kz" customClass="RadioButton" customModule="Focus" customModuleProvider="target">
+                            <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lzi-y9-7kz" customClass="RadioButton" customModule="Crowd_It" customModuleProvider="target">
                                 <rect key="frame" x="415" y="13" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="Rh4-fW-BLc"/>
@@ -491,7 +490,7 @@
                                 <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lew-Bf-rcG" customClass="RadioButton" customModule="Focus" customModuleProvider="target">
+                            <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lew-Bf-rcG" customClass="RadioButton" customModule="Crowd_It" customModuleProvider="target">
                                 <rect key="frame" x="415" y="13" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="25" id="lih-fN-bbs"/>
@@ -526,7 +525,7 @@
                                 <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YLy-Xx-PDF" customClass="RadioButton" customModule="Focus" customModuleProvider="target">
+                            <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YLy-Xx-PDF" customClass="RadioButton" customModule="Crowd_It" customModuleProvider="target">
                                 <rect key="frame" x="415" y="13" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="ECx-D2-Afj"/>
@@ -561,7 +560,7 @@
                                 <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pRu-oB-EnT" customClass="RadioButton" customModule="Focus" customModuleProvider="target">
+                            <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pRu-oB-EnT" customClass="RadioButton" customModule="Crowd_It" customModuleProvider="target">
                                 <rect key="frame" x="415" y="13" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="25" id="lpR-YE-Hzg"/>
@@ -596,7 +595,7 @@
                                 <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dTY-Vs-wlg" customClass="RadioButton" customModule="Focus" customModuleProvider="target">
+                            <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dTY-Vs-wlg" customClass="RadioButton" customModule="Crowd_It" customModuleProvider="target">
                                 <rect key="frame" x="415" y="13" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="25" id="U7b-e5-ymt"/>
@@ -631,7 +630,7 @@
                                 <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PVb-fN-Fib" customClass="RadioButton" customModule="Focus" customModuleProvider="target">
+                            <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PVb-fN-Fib" customClass="RadioButton" customModule="Crowd_It" customModuleProvider="target">
                                 <rect key="frame" x="415" y="12.5" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="lZ6-r3-4Qz"/>
@@ -666,7 +665,7 @@
                                 <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bcx-vi-5rL" customClass="RadioButton" customModule="Focus" customModuleProvider="target">
+                            <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bcx-vi-5rL" customClass="RadioButton" customModule="Crowd_It" customModuleProvider="target">
                                 <rect key="frame" x="415" y="12.5" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="25" id="eoG-jw-m9V"/>
@@ -701,7 +700,7 @@
                                 <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dIk-3n-hGr" customClass="RadioButton" customModule="Focus" customModuleProvider="target">
+                            <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dIk-3n-hGr" customClass="RadioButton" customModule="Crowd_It" customModuleProvider="target">
                                 <rect key="frame" x="415" y="12.5" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="e79-e9-d69"/>
@@ -736,7 +735,7 @@
                                 <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bfb-EF-KwG" customClass="RadioButton" customModule="Focus" customModuleProvider="target">
+                            <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bfb-EF-KwG" customClass="RadioButton" customModule="Crowd_It" customModuleProvider="target">
                                 <rect key="frame" x="415" y="12.5" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="25" id="LvT-31-td2"/>
@@ -769,7 +768,7 @@
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                         <state key="normal" title="Reiniciar">
-                            <color key="titleColor" red="0.12549019610000001" green="0.13725490200000001" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="titleColor" red="0.92549019610000005" green="0.19215686269999999" blue="0.27450980390000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>
                         <connections>
                             <action selector="resetSelection:" destination="yoL-q3-JOK" eventType="touchUpInside" id="YSS-e2-fXm"/>

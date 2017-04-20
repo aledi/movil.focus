@@ -17,7 +17,7 @@
         <receiver android:name=".notifications.NotificationListenerService">
             <intent-filter>
                 <action android:name="android.media.action.DISPLAY_NOTIFICATION" />
-                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="${applicationId}" />
             </intent-filter>
         </receiver>
 

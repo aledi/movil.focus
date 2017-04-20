@@ -62,7 +62,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:minHeight="@dimen/text_view_height_mini"
-            android:textColor="@color/blueDark"
+            android:textColor="@color/redDark"
             app:layout_constraintLeft_toRightOf="@id/txt_answered_label"
             app:layout_constraintRight_toLeftOf="@id/image"
             app:layout_constraintTop_toBottomOf="@id/txt_title" />
